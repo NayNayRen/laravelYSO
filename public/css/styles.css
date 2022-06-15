@@ -243,6 +243,90 @@
     display: none;
 }
 
+.banner-image-featured-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fashion/puma-banner.png");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fashion/puma-banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-featured-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/planet-fitness-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/planet-fitness-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-featured-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/top-golf-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/top-golf-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-featured-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/tech/micro-center-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/tech/micro-center-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .banner-image-main-1 {
     background-color: #333333;
     background-image: -webkit-gradient(
@@ -2140,6 +2224,30 @@ html {
     cursor: pointer;
 }
 
+.view-all {
+    background-color: #808080;
+}
+
+.view-all-container-heading {
+    background-color: #808080;
+    padding: 50px 0 20px 0;
+}
+
+.view-all-container-heading h1 {
+    border-bottom: solid 1px #000;
+    color: #fff;
+    font-size: 40px;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    width: 800px;
+}
+
+.view-all-container-heading h3 {
+    font-size: 30px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+}
+
 .yso-header-link {
     -webkit-transform: translateY(-50%);
     -webkit-transition: opacity 150ms ease;
@@ -2416,6 +2524,23 @@ html {
     .user-initials-container,
     .user-register-container {
         right: 45px;
+    }
+
+    .view-all-container-heading {
+        padding: 40px 0 10px 0;
+    }
+
+    .view-all-container-heading h1 {
+        font-size: 30px;
+        margin: 0 auto 10px auto;
+        padding: 0 5px;
+        width: 600px;
+    }
+
+    .view-all-container-heading h3 {
+        font-size: 25px;
+        margin: 20px auto 0 auto;
+        padding: 0 5px;
     }
 
     .yso-header-link {
@@ -2745,6 +2870,22 @@ html {
         transform: translate(0, 0);
         width: 100%;
         /* outline: solid 1px blue; */
+    }
+
+    .banner-image-featured-1 {
+        background-image: url("../img/fashion/puma-banner-mobile.png");
+    }
+
+    .banner-image-featured-2 {
+        background-image: url("../img/health/planet-fitness-banner-mobile.jpg");
+    }
+
+    .banner-image-featured-3 {
+        background-image: url("../img/fun/top-golf-banner-mobile.jpg");
+    }
+
+    .banner-image-featured-4 {
+        background-image: url("../img/tech/micro-center-banner-mobile.jpg");
     }
 
     .banner-image-main-1 {
@@ -3310,6 +3451,15 @@ html {
         width: 100%;
     }
 
+    .view-all-container-heading h1 {
+        font-size: 25px;
+        width: 400px;
+    }
+
+    .view-all-container-heading h3 {
+        font-size: 20px;
+    }
+
     .yso-header-link,
     .yso-header-link-alternate {
         -webkit-transform: translateX(-50%);
@@ -3561,6 +3711,20 @@ html {
 
     .users-name-register div:first-of-type {
         margin-right: 0;
+    }
+
+    .view-all-container-heading {
+        padding: 20px 0 10px 0;
+    }
+
+    .view-all-container-heading h1 {
+        font-size: 20px;
+        width: 95%;
+    }
+
+    .view-all-container-heading h3 {
+        font-size: 16px;
+        margin: 10px auto 0 auto;
     }
 
     .yso-header-link,
