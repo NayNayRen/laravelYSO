@@ -18,12 +18,12 @@ class Deal extends Model
         ->paginate(3, ['*'], 'featured');
     }
 
-//     public static function getFeatured()
+//     public static function getFeatured($currentPage = null)
 // {
 //     $deals = Deal::get()->take(30); // get 30 deals
 
 //     $perPage = 3;
-//     $currentPage = $request->currentPage ?? 1;
+//     $currentPage = $currentPage ?? 1;
 
 //     $pagination = new LengthAwarePaginator(
 //     $deals->slice($currentPage, $perPage),
@@ -47,21 +47,21 @@ class Deal extends Model
 
     // INDEX CATEGORY GROUPINGS, FOOD, TECH. ETC.
     public static function getType($type){
-        return DB::table('deals')->where('category', '=', $type)->paginate(3, ['*'], $type);
+        return Deal::where('category', '=', $type)->paginate(3, ['*'], $type);
     }
 
     // VIEW ALL CATEGORY GROUPING
     public static function viewAllType($type){
-        return DB::table('deals')->where('category', '=', $type)->paginate(6);
+        return Deal::where('category', '=', $type)->paginate(6);
     }
 
     // INDEX POPULAR GROUPING, PULLS DEALS WITH VIEWS GRETAER THAN 200
     public static function getPopular(){
-        return DB::table('deals')->orderBy('views', 'asc')->where('views', '>', 200)->paginate(3, ['*'], 'popular');
+        return Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(3, ['*'], 'popular');
     }
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllPopular(){
-        return DB::table('deals')->orderBy('views', 'asc')->where('views', '>', 200)->paginate(6);
+        return Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(6);
     }
 }

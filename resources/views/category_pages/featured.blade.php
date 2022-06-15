@@ -2,7 +2,7 @@
 <div class="main">
     <div class="banner">
         <div class="banner-slide-container">
-            <!-- SLIDE 1 -->
+            {{-- SLIDE 1 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
@@ -15,7 +15,7 @@
                 <img class="banner-logo" src="{{ asset('img/fashion/puma-banner-logo.png') }}"
                     alt="Puma Company Logo">
             </div>
-            <!-- SLIDE 2 -->
+            {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo"
                     src="{{ asset('img/health/planet-fitness-banner-logo.png') }}"
@@ -29,7 +29,7 @@
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
             </div>
-            <!-- SLIDE 3 -->
+            {{-- SLIDE 3 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
@@ -42,7 +42,7 @@
                 <img class="banner-logo" src="{{ asset('img/fun/top-golf-banner-logo.png') }}"
                     alt="Top Golf Company Logo">
             </div>
-            <!-- SLIDE 4 -->
+            {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo"
                     src="{{ asset('img/tech/micro-center-banner-logo.png') }}"
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <!-- BANNER ARROWS -->
+        {{-- BANNER ARROWS --}}
         <div class="banner-arrows banner-arrows-alternate">
             <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
             <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
