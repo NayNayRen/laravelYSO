@@ -42,7 +42,7 @@ class Deal extends Model
     public static function viewAllFeatured(){
         return Deal::query()
         ->whereIn('id', Deal::select('id')->orderByDesc('id')->take(30)->get()->modelKeys())
-        ->paginate(6, ['*'], 'featured');
+        ->paginate(6);
     }
 
     // INDEX CATEGORY GROUPINGS, FOOD, TECH. ETC.
@@ -52,7 +52,7 @@ class Deal extends Model
 
     // VIEW ALL CATEGORY GROUPING
     public static function viewAllType($type){
-        return DB::table('deals')->where('category', '=', $type)->paginate(6, ['*'], $type);
+        return DB::table('deals')->where('category', '=', $type)->paginate(6);
     }
 
     // INDEX POPULAR GROUPING, PULLS DEALS WITH VIEWS GRETAER THAN 200
@@ -62,6 +62,6 @@ class Deal extends Model
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllPopular(){
-        return DB::table('deals')->orderBy('views', 'asc')->where('views', '>', 200)->paginate(6, ['*'], 'popular');
+        return DB::table('deals')->orderBy('views', 'asc')->where('views', '>', 200)->paginate(6);
     }
 }
