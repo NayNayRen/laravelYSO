@@ -259,6 +259,7 @@
     </div>
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
-<script src="{{ asset('js/banner-and-ad.js') }}"></script>
+<script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/change-category.js') }}"></script>
+<script src="{{ asset('js/fading-ad.js') }}"></script>
 @include('includes._footer')
