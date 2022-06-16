@@ -10,7 +10,7 @@ use App\Http\Controllers\NavigationPageController;
 Route::get('/', [DealController::class, 'index'])->name('deals.index');
 
 // SINGLE DEAL SELECTED ROUTE
-Route::get('/deals/{deal}', [DealController::class, 'showDeal']);
+Route::get('/deals/{deal}', [DealController::class, 'showDeal'])->name('deals.show');
 
 // CATEGORY ROUTES
 Route::get('/category_pages/featured', [DealController::class, 'allFeatured'])->name('deals.featured');
@@ -43,50 +43,3 @@ Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.show
 Route::post('/user_pages/authenticate', [UserController::class, 'loginUser'])->name('login');
 // logs user out
 Route::post('/logout', [UserController::class, 'logoutUser'])->name('logout');
-
-/*<?php
-
-use App\Models\Deal;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DealController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\NavigationPageController;
-
-// MAIN/LANDING PAGE ROUTE
-Route::get('/', [DealController::class, 'index'])->name('deals.index');
-
-// SINGLE DEAL SELECTED ROUTE
-Route::get('/deals/{deal}', [DealController::class, 'show'])->name('deals.show');
-
-// CATEGORY ROUTES
-Route::get('/category/featured', [DealController::class, 'allFeatured'])->name('deals.featured');
-
-Route::get('/category/food', [DealController::class, 'allFood'])->name('deals.food');
-
-Route::get('/category/fashion', [DealController::class, 'allFashion'])->name('deals.fashion');
-
-Route::get('/category/tech', [DealController::class, 'allTech'])->name('deals.tech');
-
-Route::get('/category/popular', [DealController::class, 'allPopular'])->name('deals.popular');
-
-// HEADER NAVIGATION ROUTES
-Route::get('/rewards', [NavigationPageController::class, 'rewards'])->name('rewards');
-
-Route::get('/enhance', [NavigationPageController::class, 'enhance'])->name('enhance');
-
-Route::get('/support', [NavigationPageController::class, 'support'])->name('support');
-
-Route::get('/about', [NavigationPageController::class, 'about'])->name('about');
-
-// REGISTER, LOG IN, AND LOGOUT ROUTES
-// shows register form
-Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('user.create');
-// registers user
-Route::post('/register', [UserController::class, 'registerUser'])->name('user.store');
-// shows log in form
-Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.showLoginForm');
-// log user in
-Route::post('/login', [UserController::class, 'loginUser'])->name('login');
-// logs user out
-Route::post('/logout', [UserController::class, 'logoutUser'])->name('logout');
-*/

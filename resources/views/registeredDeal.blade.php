@@ -30,7 +30,7 @@
                     class="registered-user-profile-picture" alt="Profile Picture">
                 <span id="registered-user-profile-name">{{ ucfirst($user->firstName) }}
                     {{ ucfirst($user->lastName) }}</span>
-                <span id="not-registered-user"><a href="/register">Not
+                <span id="not-registered-user"><a href={{ route('user.create') }}>Not
                         {{ ucfirst($user->firstName) }}?</a></span>
             </div>
             {{-- REGISTERED SEND METHOD --}}

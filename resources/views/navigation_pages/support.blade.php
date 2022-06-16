@@ -7,7 +7,7 @@
         <p>If you are having difficulty with our system trying to register for or redeem a reward, please give us a call
             or contact us via email.</p>
         <div class="page-hero-button-container">
-            <a href="/register" class="page-hero-button">Sign Up</a>
+            <a href={{ route('user.create') }} class="page-hero-button">Sign Up</a>
         </div>
     </div>
     {{-- MAIN CONTENT CONTAINER --}}

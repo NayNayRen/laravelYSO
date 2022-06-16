@@ -5,7 +5,7 @@
         <h1>Who We Are</h1>
         <h2>Innovators of Social Media Marketing</h2>
         <p>
-            <a href="/" class="page-hero-logo">
+            <a href={{ route('deals.index') }} class="page-hero-logo">
                 <span>
                     Y<span class="gray-text">our</span>S<span class="gray-text">ocial</span>O<span
                         class="gray-text">ffers</span><span class="red-background">.com</span>
@@ -14,9 +14,9 @@
             media billion-dollar marketplace.
         </p>
         <div class="page-hero-button-container">
-            <a href="/navigation_pages/support" class="page-hero-button">Learn
+            <a href={{ route('support') }} class="page-hero-button">Learn
                 More</a>
-            <a href="/register" class="page-hero-button">Sign Up</a>
+            <a href={{ route('user.create') }} class="page-hero-button">Sign Up</a>
         </div>
     </div>
     {{-- MAIN CONTENT CONTAINER --}}

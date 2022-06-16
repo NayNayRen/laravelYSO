@@ -5,9 +5,9 @@
         <h1>Rewards and Deals</h1>
         <h2>For you, and those that matter to you.</h2>
         <div class="page-hero-button-container">
-            <a href="/navigation_pages/support" class="page-hero-button">Learn
+            <a href={{ route('support') }} class="page-hero-button">Learn
                 More</a>
-            <a href="/register" class="page-hero-button">Sign Up</a>
+            <a href={{ route('user.create') }} class="page-hero-button">Sign Up</a>
         </div>
     </div>
     {{-- MAIN CONTENT CONTAINER --}}
@@ -28,7 +28,7 @@
                     <p>Crowd sourced takes the "I got You!!" approach a whole lot farther. Deals come to you by
                         automated DealSeek. It also comes to those who are a part of your circle, and share based on
                         like minded interests.</p>
-                    <a href="/navigation_pages/support" class="page-hero-button">Learn
+                    <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     <p>We have all heard that before and it's still true. Crowd sourced opportunities mimic this intent
                         with the speed of remote communications. I share a deal with you that I JUST USED!!! How could
                         it be more qualified than that?</p>
-                    <a href="/navigation_pages/support" class="page-hero-button">Learn
+                    <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
                 </div>
             </div>
@@ -58,7 +58,7 @@
         <div class="rewards-bottom-banner">
             <h1>All inclusive, all at your fingertips.</h1>
             <h2>All within reach at YSO.</h2>
-            <a href="/register" class="page-hero-button">Sign Up Now</a>
+            <a href={{ route('user.create') }} class="page-hero-button">Sign Up Now</a>
         </div>
     </div>
 </div>

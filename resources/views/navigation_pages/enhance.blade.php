@@ -5,9 +5,9 @@
         <h1>Sales and Revenue</h1>
         <h2>Get more of each with YSO.</h2>
         <div class="page-hero-button-container">
-            <a href="/navigation_pages/support" class="page-hero-button">Learn
+            <a href={{ route('support') }} class="page-hero-button">Learn
                 More</a>
-            <a href="/register" class="page-hero-button">Sign Up</a>
+            <a href={{ route('user.create') }} class="page-hero-button">Sign Up</a>
         </div>
     </div>
     {{-- SCROLL POINT KICKS IN --}}
@@ -38,7 +38,7 @@
                     <p>Reaching into Social media with a YSO campaign to find new customers brings a depth of people you
                         can not find otherwise. The time and budget it would take to reach the masses with a
                         conventional campaign is out of reach for most.</p>
-                    <a href="/navigation_pages/support" class="page-hero-button">Learn
+                    <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <p>Customers benefit while being rewarded when shopping in-store or online. Sharing their
                         experiences also benefits the merchant. We help these merchants by offering complete flexibility
                         to easily create and share all of their offers and services.</p>
-                    <a href="/navigation_pages/support" class="page-hero-button">Learn
+                    <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
                 </div>
             </div>
@@ -69,7 +69,7 @@
         <div class="enhance-middle-banner">
             <h1>All inclusive, all at your fingertips.</h1>
             <h2>All within reach at YSO.</h2>
-            <a href="/register" class="page-hero-button">Sign Up Now</a>
+            <a href={{ route('user.create') }} class="page-hero-button">Sign Up Now</a>
         </div>
         {{-- LOYALTIES BLOCK --}}
         <div class="enhance-info">
@@ -81,7 +81,7 @@
                         friends, creating an organic and viral marketing campaign that brings you to a vast new customer
                         base. Rewards can be distributed and shared via your social media outlets. YSO lets you design
                         your custom campaign and share it quickly, reaching your new and existing customers.</p>
-                    <a href="/navigation_pages/support" class="page-hero-button">Learn
+                    <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                     <p>Creating a unique rewards program allows you to customize incentives tailored to your customers.
                         In turn you can update, and track each incentive you create, knowing which incentive hits home
                         with your customers.</p>
-                    <a href="/navigation_pages/support" class="page-hero-button">Learn
+                    <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
                 </div>
             </div>
