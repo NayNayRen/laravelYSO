@@ -4,7 +4,8 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Sign In</h1>
-        <span class="users-form-greeting gray-text">New to YSO? <a href="/register">Sign Up</a></span>
+        <span class="users-form-greeting gray-text">New to YSO? <a
+                href={{ route('user.create') }}>Sign Up</a></span>
         {{-- SOCIAL MEDIA SIGN INS --}}
         <div class="users-buttons-container">
             <a href="#" class="users-buttons facebook">
@@ -22,7 +23,7 @@
         </div>
         <span class="gray-text">Continue signing in using email bellow.</span>
         {{-- SIGN IN FORM --}}
-        <form action="/user_pages/authenticate" method="POST">
+        <form action={{ route('login') }} method="POST">
             @csrf
             {{-- EMAIL --}}
             <div class="users-form-group">

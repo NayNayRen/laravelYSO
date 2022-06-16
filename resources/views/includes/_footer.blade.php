@@ -6,7 +6,7 @@
         <div class="footer-top-section">
             <div class="footer-top-section-left">
                 <div class="footer-top-section-left-header">
-                    <a href="/">
+                    <a href={{ route('deals.index') }}>
                         <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
                             alt="Your Social Offers Logo">
                     </a>

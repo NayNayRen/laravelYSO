@@ -2,7 +2,8 @@
 <div class="main">
     <div class="users">
         <h1>Sign Up</h1>
-        <span class="users-form-greeting gray-text">Already have an account? <a href="/login">Sign
+        <span class="users-form-greeting gray-text">Already have an account? <a
+                href={{ route('login.showLoginForm') }}>Sign
                 In</a></span>
         {{-- SOCIAL MEDIA SIGN INS --}}
         <div class="users-buttons-container">
@@ -21,7 +22,7 @@
         </div>
         <span class="gray-text">Continue signing up using email bellow.</span>
         {{-- REGISTER FORM --}}
-        <form action="/user_pages" method="POST">
+        <form action={{ route('user.store') }} method="POST">
             @csrf
             <div class="users-name-register">
                 {{-- FIRST NAME --}}

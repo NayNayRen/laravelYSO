@@ -26,8 +26,9 @@
         </div>
         {{-- BACK BUTTON AND LOGO --}}
         <div class="header-navigation">
-            <a href="/" class="back-button"><i class="fa fa-chevron-left" aria-hidden="true"></i><span>Back</span></a>
-            <a href="/">
+            <a href={{ route('deals.index') }} class="back-button"><i class="fa fa-chevron-left"
+                    aria-hidden="true"></i><span>Back</span></a>
+            <a href={{ route('deals.index') }}>
                 <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-header-link-alternate"
                     alt="Your Social Offers Logo">
             </a>
@@ -35,11 +36,11 @@
             <div class="links-user-container dont-display">
                 <ul class="links-container">
                     <li><a href="https://yso.netrbx.com" target="__blank">cashback</a></li>
-                    <li><a href="{{ asset('navigation_pages/rewards') }}">rewards</a></li>
-                    <li><a href="{{ asset('navigation_pages/enhance') }}">enhance your sales</a>
+                    <li><a href={{ route('rewards') }}>rewards</a></li>
+                    <li><a href={{ route('enhance') }}>enhance your sales</a>
                     </li>
-                    <li><a href="{{ asset('navigation_pages/support') }}">support</a></li>
-                    <li><a href="{{ asset('navigation_pages/about') }}">about yso</a></li>
+                    <li><a href={{ route('support') }}>support</a></li>
+                    <li><a href={{ route('about') }}>about yso</a></li>
                 </ul>
                 {{-- LOGGED IN USER INITIALS --}}
                 @auth
@@ -47,7 +48,7 @@
                         <span>Logged in as:</span>
                         <div class="user-initials">
                             {{ auth()->user()->firstName[0] . auth()->user()->lastName[0] }}</div>
-                        <form action="/logout" method="POST">
+                        <form action={{ route('logout') }} method="POST">
                             @csrf
                             <button type="submit" class="user-logout-button">Logout <i
                                     class="fa fa-sign-out"></i></button>
@@ -56,8 +57,9 @@
                 @else
                     {{-- LOG IN/REGISTER BUTTONS --}}
                     <div class="user-register-container">
-                        <a href="/login" class="user-login-button">Log In</a>
-                        <a href="/register" class="user-register-button">Sign
+                        <a href={{ route('login.showLoginForm') }} class="user-login-button">Log
+                            In</a>
+                        <a href={{ route('user.create') }} class="user-register-button">Sign
                             Up</a>
                     </div>
                 @endauth
