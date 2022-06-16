@@ -2240,6 +2240,46 @@ html {
 
 .view-all {
     background-color: #808080;
+    /* grid-template-columns: 100%; */
+}
+
+.view-all .card {
+    background-color: #333333;
+    color: #fff;
+    height: 300px;
+    width: 200px;
+}
+
+.view-all .card-discount {
+    font-size: 14px;
+}
+
+.view-all .card-logo-container {
+    max-height: 100px;
+}
+
+/* .view-all .container-arrow-left,
+.view-all .container-arrow-right {
+    -webkit-transform: translateY(0);
+    top: 0;
+    transform: translateY(0);
+}
+
+.view-all .container-arrow-left {
+    left: calc(100% - 90px);
+}
+
+.view-all .container-arrow-right {
+    right: 10px;
+} */
+
+.view-all .get-deal-button {
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+.view-all .views-likes-icons i {
+    font-size: 22px;
 }
 
 .view-all-container-heading {
@@ -2680,7 +2720,7 @@ html {
     .card {
         height: 275px;
         margin: 2px 5px;
-        padding: 2px;
+        /* padding: 2px; */
         width: 200px;
     }
 
