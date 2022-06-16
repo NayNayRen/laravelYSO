@@ -544,7 +544,7 @@ body {
     /* -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5); */
     background-color: #fff;
     border-radius: 5px;
-    border: solid 1px #000;
+    /* border: solid 1px #000; */
     /* box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5); */
     display: -ms-flexbox;
     display: -webkit-box;
@@ -555,7 +555,7 @@ body {
     justify-content: space-between;
     margin: 5px 10px;
     padding: 5px;
-    width: 300px;
+    width: 325px;
 }
 
 .card a {
@@ -564,7 +564,7 @@ body {
 
 .card-discount {
     font-size: 16px;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .card-display {
@@ -625,6 +625,7 @@ body {
     display: flex;
     height: 150px;
     justify-content: center;
+    margin-bottom: 5px;
     overflow: hidden;
     width: 100%;
     /* outline: solid 1px blue; */
@@ -632,7 +633,7 @@ body {
 
 .card-name {
     color: #808080;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .category-heading {
@@ -1177,6 +1178,19 @@ body {
 
 .gray-background {
     background-color: #808080;
+}
+
+.gray-background .card {
+    background-color: #808080;
+    color: #fff;
+}
+
+.gray-background .card-discount {
+    color: #000;
+}
+
+.gray-background .card-name {
+    color: #fff;
 }
 
 .gray-text {
@@ -2261,6 +2275,36 @@ html {
     background-color: #333333;
 }
 
+.views-likes-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: justify;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: justify;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: space-between;
+    padding: 5px 0;
+    /* outline: solid 1px blue; */
+}
+
+.views-likes-icons i {
+    -webkit-transition: color 150ms ease;
+    font-size: 28px;
+    transition: color 150ms ease;
+}
+
+.views-likes-icons i:hover {
+    color: #e6331f;
+    cursor: pointer;
+}
+
 .yso-header-link {
     -webkit-transform: translateY(-50%);
     -webkit-transition: opacity 150ms ease;
@@ -2410,7 +2454,8 @@ html {
         width: 250px;
     }
 
-    .card-discount {
+    .card-discount,
+    .card-name {
         font-size: 14px;
     }
 
@@ -3476,6 +3521,18 @@ html {
     .view-all-user-icon {
         top: 5px;
     }
+
+    .views-likes-container {
+        padding: 5px 0 0 0;
+    }
+
+    .views-likes-icons i {
+        font-size: 22px;
+    }
+
+    /* .views-likes-icons i:hover {
+        color: #e6331f;
+    } */
 
     .yso-header-link,
     .yso-header-link-alternate {
