@@ -64,6 +64,8 @@
         </div>
     </div>
     <div class="view-all-container-heading">
+        <button id="open-hidden-dashboard" class="user-icon view-all-user-icon"><i class="fa fa-user"
+                aria-hidden="true"></i></button>
         <h1>All of your Featured choices.</h1>
         <h3>In one location, for easy picking.</h3>
     </div>

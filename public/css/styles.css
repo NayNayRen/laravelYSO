@@ -2231,6 +2231,7 @@ html {
 .view-all-container-heading {
     background-color: #808080;
     padding: 50px 0 20px 0;
+    position: relative;
 }
 
 .view-all-container-heading h1 {
@@ -2246,6 +2247,18 @@ html {
     font-size: 30px;
     margin: 30px auto 0 auto;
     text-align: center;
+}
+
+.view-all-user-icon {
+    -webkit-transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    top: 10px;
+    transform: translateX(-50%);
+}
+
+.view-all-user-icon:hover {
+    background-color: #333333;
 }
 
 .yso-header-link {
@@ -3460,6 +3473,10 @@ html {
         font-size: 20px;
     }
 
+    .view-all-user-icon {
+        top: 5px;
+    }
+
     .yso-header-link,
     .yso-header-link-alternate {
         -webkit-transform: translateX(-50%);
@@ -3544,6 +3561,11 @@ html {
         height: 250px;
         margin: 2px;
         width: 175px;
+    }
+
+    .category-heading {
+        font-size: 22px;
+        min-height: 35px;
     }
 
     .container {
@@ -3714,7 +3736,7 @@ html {
     }
 
     .view-all-container-heading {
-        padding: 20px 0 10px 0;
+        padding: 30px 0 10px 0;
     }
 
     .view-all-container-heading h1 {
@@ -3725,6 +3747,10 @@ html {
     .view-all-container-heading h3 {
         font-size: 16px;
         margin: 10px auto 0 auto;
+    }
+
+    .view-all-user-icon {
+        top: 0;
     }
 
     .yso-header-link,
