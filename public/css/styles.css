@@ -754,19 +754,23 @@ body {
 .dashboard {
     -webkit-transition: opacity 250ms ease;
     background-color: #808080;
+    box-shadow: 0 0 20px #000;
     min-height: 300px;
-    opacity: 0;
+    /* opacity: 0; */
+    overflow: hidden;
+    opacity: 1;
     position: absolute;
     top: 0;
     transition: opacity 250ms ease;
     width: 100%;
-    z-index: -1;
+    /* z-index: -1; */
+    z-index: 1;
 }
 
 .dashboard-close-button {
     -webkit-transition: color 150ms ease;
     color: #fff;
-    font-size: 28px;
+    font-size: 18px;
     position: absolute;
     right: 10px;
     top: 5px;
@@ -779,6 +783,11 @@ body {
 }
 
 .dashboard-content {
+    -ms-flex-direction: row;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     flex-direction: row;
     min-height: 300px;
@@ -786,13 +795,30 @@ body {
     /* outline: solid 1px blue; */
 }
 
-.dashboard-left-container {
+.dashboard-right-container {
+    min-height: 100%;
+    width: 100%;
+}
+
+.dashboard-user-container {
     background-color: #fff;
+    min-height: 100%;
     min-width: 200px;
 }
 
-.dashboard-right-container {
-    width: 100%;
+.dashboard-user-preferences-button {
+    -webkit-transition: left 250ms ease;
+    color: #fff;
+    display: none;
+    font-size: 25px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    transition: left 250ms ease;
+}
+
+.dashboard-user-preferences-button:hover {
+    cursor: pointer;
 }
 
 .enhance-background {
@@ -3242,6 +3268,29 @@ html {
 
     .container-left a:hover {
         opacity: 1;
+    }
+
+    .dashboard-close-button:hover {
+        color: #fff;
+    }
+
+    .dashboard-user-container {
+        left: -200px;
+        position: absolute;
+        top: 0;
+        transition: left 250ms ease;
+    }
+
+    .dashboard-user-container-show {
+        left: 0;
+    }
+
+    .dashboard-user-preferences-button {
+        display: block;
+    }
+
+    .dashboard-user-preferences-button-move {
+        left: 205px;
     }
 
     .enhance-info,

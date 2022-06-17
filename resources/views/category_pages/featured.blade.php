@@ -69,30 +69,7 @@
         <h1>All of your Featured choices.</h1>
         <h3>In one location, for easy picking.</h3>
         {{-- HIDDEN DASHBOARD --}}
-        <div id='dashboard' class="dashboard">
-            <div class="dashboard-content">
-                <span id="dashboard-close-button" class="dashboard-close-button"><i class="fa fa-times"
-                        aria-hidden="true"></i>
-                </span>
-                @auth
-                    <div class="dashboard-left-container">
-                        <div>Welcome {{ ucfirst(auth()->user()->firstName) }}</div>
-                        <div>Left Side Container</div>
-                    </div>
-                    <div class="dashboard-right-container">
-                        <span>Right Side Container</span>
-                    </div>
-                @else
-                    <div class="dashboard-left-container">
-                        <div>Hello Guest</div>
-                        <div>Left Side Container</div>
-                    </div>
-                    <div class="dashboard-right-container">
-                        <span>Right Side Container</span>
-                    </div>
-                @endauth
-            </div>
-        </div>
+        @include('includes._dashboard')
     </div>
     <div class="container view-all">
         <div class="container-left">
