@@ -764,6 +764,7 @@ body {
 }
 
 .dashboard-close-button {
+    -webkit-transition: color 150ms ease;
     color: #fff;
     font-size: 28px;
     position: absolute;
