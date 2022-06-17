@@ -87,11 +87,36 @@
             <button id="fun" class="filter-selection" value="fun">Fun</button>
             <button id="health" class="filter-selection" value="health">Health</button>
             <button id="all" class="filter-selection">All</button>
-            <button id="open-hidden-dashboard" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
+            <button id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
         </div>
     </div>
     {{-- FEATURED CONTAINER USING DEALS DATA --}}
     <div class="container">
+        {{-- HIDDEN DASHBOARD --}}
+        <div id='dashboard' class="dashboard">
+            <div class="dashboard-content">
+                <span id="dashboard-close-button" class="dashboard-close-button"><i class="fa fa-times"
+                        aria-hidden="true"></i>
+                </span>
+                @auth
+                    <div class="dashboard-left-container">
+                        <div>Welcome {{ ucfirst(auth()->user()->firstName) }}</div>
+                        <div>Left Side Container</div>
+                    </div>
+                    <div class="dashboard-right-container">
+                        <span>Right Side Container</span>
+                    </div>
+                @else
+                    <div class="dashboard-left-container">
+                        <div>Hello Guest</div>
+                        <div>Left Side Container</div>
+                    </div>
+                    <div class="dashboard-right-container">
+                        <span>Right Side Container</span>
+                    </div>
+                @endauth
+            </div>
+        </div>
         <div class="container-left">
             <span class="category-heading">Featured</span>
             <a href={{ route('deals.featured') }}>View All</a>
@@ -302,4 +327,5 @@
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/change-category.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
+<script src="{{ asset('js/show-dashboard.js') }}"></script>
 @include('includes._footer')
