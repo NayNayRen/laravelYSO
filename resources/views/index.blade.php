@@ -96,7 +96,7 @@
         @include('includes._dashboard')
         <div class="container-left">
             <span class="category-heading">Featured</span>
-            <a href={{ route('deals.featured') }}>View All</a>
+            <a href={{ route('deals.featured') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
@@ -136,7 +136,7 @@
     <div id='food-container' class="container">
         <div class="container-left">
             <span class="category-heading">Food</span>
-            <a href={{ route('deals.food') }}>View All</a>
+            <a href={{ route('deals.food') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
@@ -176,7 +176,7 @@
     <div id='fashion-container' class="container">
         <div class="container-left">
             <span class="category-heading">Fashion</span>
-            <a href={{ route('deals.fashion') }}>View All</a>
+            <a href={{ route('deals.fashion') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
@@ -216,7 +216,7 @@
     <div class="container">
         <div class="container-left">
             <span class="category-heading">Tech</span>
-            <a href={{ route('deals.tech') }}>View All</a>
+            <a href={{ route('deals.tech') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
@@ -263,7 +263,7 @@
     <div class="container gray-background">
         <div class="container-left">
             <span class="category-heading">Popular</span>
-            <a href={{ route('deals.popular') }}>View All</a>
+            <a href={{ route('deals.popular') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}

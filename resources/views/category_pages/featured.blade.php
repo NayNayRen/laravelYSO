@@ -74,11 +74,13 @@
     <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Featured Deals</span>
+            {{-- CUSTOM PAGE ARROWS --}}
+            <div class="view-all-arrow-container">
+                {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
+            </div>
         </div>
         {{-- MAIN CONTENT CONTAINER --}}
         <div class="container-right">
-            {{-- CUSTOM PAGE ARROWS --}}
-            {{ $deals->links('vendor.pagination.custom-pagination') }}
             <div class="card-display-view-all">
                 @foreach($deals as $deal)
                     {{-- CARD BLOCK --}}
