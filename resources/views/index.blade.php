@@ -90,14 +90,14 @@
             <button id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
         </div>
     </div>
-    {{-- FOOD CONTAINER --}}
+    {{-- CASHBACK CONTAINER --}}
     <div id='food-container' class="container">
+        {{-- HIDDEN DASHBOARD --}}
+        @include('includes._dashboard')
         <div class="container-left">
             <span class="category-heading">Cashback</span>
-
         </div>
         <div class="container-right">
-
             {{-- CARD BLOCK --}}
             <div class="cashback-display">
                 <div class="card-cashback">
@@ -199,8 +199,6 @@
     </div>
     {{-- FEATURED CONTAINER USING DEALS DATA --}}
     <div class="container">
-        {{-- HIDDEN DASHBOARD --}}
-        @include('includes._dashboard')
         <div class="container-left">
             <span class="category-heading">Featured</span>
             <a href={{ route('deals.featured') }} class="view-all-link">View All</a>
