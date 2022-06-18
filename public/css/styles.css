@@ -542,11 +542,8 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: justify;
-    /* -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5); */
     background-color: #fff;
     border-radius: 5px;
-    /* border: solid 1px #000; */
-    /* box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5); */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -563,9 +560,107 @@ body {
     text-decoration: none;
 }
 
+.card-cashback {
+    -webkit-transition: -webkit-transform 150ms ease;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #808080;
+    height: 200px;
+    margin: 5px;
+    transition: -webkit-transform 150ms ease;
+    transition: transform 150ms ease, -webkit-transform 150ms ease;
+    transition: transform 150ms ease;
+    width: 175px;
+}
+
+.card-cashback:hover {
+    -webkit-transform: scale(1.1);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cashback-display {
+    -ms-flex-pack: left;
+    -webkit-box-pack: left;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: left;
+    margin: 0 auto 10px auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 10px 10px 60px;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.cashback-discount {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    background-color: #f8f8ff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: center;
+    position: relative;
+}
+
+.cashback-discount h4 {
+    color: #e6331f;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    width: 50%;
+    /* outline: solid 1px blue; */
+}
+
+.cashback-discount p {
+    color: #808080;
+    font-size: 14px;
+    margin: 0;
+}
+
+.cashback-discount span {
+    color: #e6331f;
+    font-size: 12px;
+    left: 20px;
+    position: absolute;
+    top: 18px;
+}
+
+.cashback-logo {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
+    border-radius: 5px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    height: 60%;
+    justify-content: center;
+    padding: 2px 5px;
+    width: 100%;
+}
+
+.cashback-logo img {
+    border-radius: 5px;
+    width: 100%;
+}
+
 .card-discount {
     font-size: 16px;
-    /* font-weight: bold; */
 }
 
 .card-display {
@@ -2610,6 +2705,10 @@ html {
         height: 115px;
     }
 
+    .cashback-display {
+        padding: 10px;
+    }
+
     .category-heading {
         font-size: 25px;
         min-height: 35px;
@@ -2833,6 +2932,33 @@ html {
 
     .card-logo-container {
         height: 100px;
+    }
+
+    .card-cashback {
+        -webkit-transition: -webkit-transform 150ms ease;
+        height: 175px;
+        transition: -webkit-transform 150ms ease;
+        transition: transform 150ms ease, -webkit-transform 150ms ease;
+        transition: transform 150ms ease;
+        width: 150px;
+    }
+
+    .card-cashback:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .cashback-discount h4 {
+        font-size: 20px;
+    }
+
+    .cashback-discount p {
+        font-size: 12px;
+    }
+
+    .cashback-discount span {
+        left: 15px;
+        top: 15px;
     }
 
     .category-heading {
@@ -3243,6 +3369,15 @@ html {
 
     .card-display::before {
         width: 0;
+    }
+
+    .card-cashback:hover {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    .cashback-display {
+        padding: 5px;
     }
 
     .category-heading {

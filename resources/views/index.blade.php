@@ -90,6 +90,113 @@
             <button id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
         </div>
     </div>
+    {{-- FOOD CONTAINER --}}
+    <div id='food-container' class="container">
+        <div class="container-left">
+            <span class="category-heading">Cashback</span>
+
+        </div>
+        <div class="container-right">
+
+            {{-- CARD BLOCK --}}
+            <div class="cashback-display">
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img
+                            src="{{ asset('img/fashion/bed-bath-logo.png') }}"
+                            alt="Bed Bath and Beyond Logo"></div>
+                    <div class="cashback-discount">
+                        <span>up to</span>
+                        <h4>1.15%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img
+                            src="{{ asset('img/fashion/earthbound-logo.png') }}"
+                            alt="Earthbound Logo"></div>
+                    <div class="cashback-discount">
+                        <span>up to</span>
+                        <h4>2.3%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img
+                            src="{{ asset('img/fashion/pacsun-logo.png') }}" alt="PacSun Logo">
+                    </div>
+                    <div class="cashback-discount">
+                        <h4>3.2%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img src="{{ asset('img/fashion/puma-logo.png') }}"
+                            alt="Puma Logo"></div>
+                    <div class="cashback-discount">
+                        <span>up to</span>
+                        <h4>1.5%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img
+                            src="{{ asset('img/food/papa-johns-logo.png') }}"
+                            alt="Papa Johns Logo"></div>
+                    <div class="cashback-discount">
+                        <span>up to</span>
+                        <h4>1.75%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img src="{{ asset('img/food/dominos-logo.png') }}"
+                            alt="Dominos Logo"></div>
+                    <div class="cashback-discount">
+                        <h4>5%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img
+                            src="{{ asset('img/fun/busch-gardens-logo.png') }}"
+                            alt="Busch Gardens Logo"></div>
+                    <div class="cashback-discount">
+                        <span>up to</span>
+                        <h4>1.25%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img src="{{ asset('img/fun/top-golf-logo.png') }}"
+                            alt="Top Golf Logo"></div>
+                    <div class="cashback-discount">
+                        <h4>5%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img
+                            src="{{ asset('img/health/planet-fitness-logo.png') }}"
+                            alt="Planet Fitness Logo"></div>
+                    <div class="cashback-discount">
+                        <span>up to</span>
+                        <h4>2.2%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+                <div class="card-cashback">
+                    <div class="cashback-logo"><img
+                            src="{{ asset('img/tech/google-play-logo.png') }}"
+                            alt="Google Play Logo"></div>
+                    <div class="cashback-discount">
+                        <span>up to</span>
+                        <h4>1.25%</h4>
+                        <p>Cash Back Rewards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     {{-- FEATURED CONTAINER USING DEALS DATA --}}
     <div class="container">
         {{-- HIDDEN DASHBOARD --}}
