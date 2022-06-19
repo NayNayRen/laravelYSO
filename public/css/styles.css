@@ -612,15 +612,15 @@ body {
     flex-direction: column;
     height: 40%;
     justify-content: center;
-    position: relative;
 }
 
 .cashback-discount h4 {
     color: #e6331f;
     font-size: 24px;
     margin: 0;
+    position: relative;
     text-align: center;
-    width: 50%;
+    width: auto;
     /* outline: solid 1px blue; */
 }
 
@@ -633,9 +633,10 @@ body {
 .cashback-discount span {
     color: #e6331f;
     font-size: 12px;
-    left: 20px;
+    left: -37px;
     position: absolute;
-    top: 18px;
+    top: 0;
+    width: auto;
 }
 
 .cashback-logo {
@@ -2954,11 +2955,6 @@ html {
 
     .cashback-discount p {
         font-size: 12px;
-    }
-
-    .cashback-discount span {
-        left: 14px;
-        top: 15px;
     }
 
     .category-heading {
