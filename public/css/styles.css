@@ -2457,8 +2457,8 @@ html {
 }
 
 .view-all-arrow-container {
-    -ms-flex-pack: justify;
-    -webkit-box-pack: justify;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -2492,6 +2492,7 @@ html {
 }
 
 .view-all-item-counter {
+    -webkit-transform: translateX(-50%);
     bottom: -15px;
     color: #fff;
     font-family: "Roboto", "FontAwesome", sans-serif;
