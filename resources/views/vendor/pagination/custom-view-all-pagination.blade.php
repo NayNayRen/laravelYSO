@@ -21,15 +21,15 @@
     @endif
 
     {{-- item count --}}
-    {{-- <div class="container-item-counter">
-@if($paginator->firstItem())
+    <div class="view-all-item-counter">
+        @if($paginator->firstItem())
             <span>{{ $paginator->firstItem() }}</span>
-    to
-    <span>{{ $paginator->lastItem() }}</span>
-@else
-    {{ $paginator->count() }}
-@endif
-of
-<span>{{ $paginator->total() }}</span>
-</div> --}}
+            to
+            <span>{{ $paginator->lastItem() }}</span>
+        @else
+            {{ $paginator->count() }}
+        @endif
+        of
+        <span>{{ $paginator->total() }}</span>
+    </div>
 @endif
