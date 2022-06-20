@@ -594,6 +594,10 @@ body {
     /* outline: solid 1px blue; */
 }
 
+.cashback-display a {
+    text-decoration: none;
+}
+
 .cashback-discount {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -645,6 +649,7 @@ body {
     -webkit-box-align: center;
     -webkit-box-pack: center;
     align-items: center;
+    background-color: #fff;
     border-radius: 5px;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -656,7 +661,7 @@ body {
 }
 
 .cashback-logo img {
-    border-radius: 5px;
+    /* border-radius: 5px; */
     width: 100%;
 }
 
