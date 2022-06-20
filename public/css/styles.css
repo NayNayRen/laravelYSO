@@ -582,8 +582,15 @@ body {
 }
 
 .card-cashback-message {
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     background-color: #808080;
     color: #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     flex-direction: column;
     height: 60%;
@@ -596,6 +603,7 @@ body {
 }
 
 .card-cashback-message a {
+    -webkit-transition: color 150ms ease;
     color: #fff;
     font-size: 18px;
     transition: color 150ms ease;
@@ -3429,6 +3437,10 @@ html {
     .card-cashback:hover {
         -webkit-transform: scale(1);
         transform: scale(1);
+    }
+
+    .card-cashback-message a:hover {
+        color: #fff;
     }
 
     .cashback-display {

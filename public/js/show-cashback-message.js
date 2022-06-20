@@ -1,3 +1,4 @@
+// shows cash back card message if not logged in
 function showMessage(card) {
     const div = document.createElement("div");
     div.innerHTML = `

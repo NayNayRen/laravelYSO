@@ -100,6 +100,7 @@
         <div class="container-right">
             {{-- CARD BLOCK --}}
             <div class="cashback-display">
+                {{-- CASHBACK CARDS WHEN LOGGED IN --}}
                 @auth
                     <a href="https://yso.netrbx.com/stores/188-bed-bath-beyond" target="_blank">
                         <div class="card-cashback">
@@ -158,6 +159,7 @@
                             </div>
                         </div>
                     </a>
+                    {{-- CASHBACK CARDS WHEN NOT LOGGED IN --}}
                 @else
                     <div class="card-cashback" onclick="showMessage(this)">
                         <div class="cashback-logo"><img
@@ -207,42 +209,8 @@
                         </div>
                     </div>
                 @endauth
-                {{-- <div class="card-cashback">
-            <div class="cashback-logo"><img src="{{ asset('img/fun/busch-gardens-logo.png') }}"
-                alt="Busch Gardens Logo">
-            </div>
-            <div class="cashback-discount">
-                <h4><span>up to</span>1.25%</h4>
-                <p>Cash Back Rewards</p>
             </div>
         </div>
-        <div class="card-cashback">
-            <div class="cashback-logo"><img src="{{ asset('img/fun/top-golf-logo.png') }}"
-                    alt="Top Golf Logo"></div>
-            <div class="cashback-discount">
-                <h4>5%</h4>
-                <p>Cash Back Rewards</p>
-            </div>
-        </div>
-        <div class="card-cashback">
-            <div class="cashback-logo"><img
-                    src="{{ asset('img/health/planet-fitness-logo.png') }}"
-                    alt="Planet Fitness Logo"></div>
-            <div class="cashback-discount">
-                <h4><span>up to</span>2.2%</h4>
-                <p>Cash Back Rewards</p>
-            </div>
-        </div>
-        <div class="card-cashback">
-            <div class="cashback-logo"><img src="{{ asset('img/tech/google-play-logo.png') }}"
-                    alt="Google Play Logo"></div>
-            <div class="cashback-discount">
-                <h4><span>up to</span>1.25%</h4>
-                <p>Cash Back Rewards</p>
-            </div>
-        </div> --}}
-    </div>
-    </div>
     </div>
     {{-- FEATURED CONTAINER USING DEALS DATA --}}
     <div class="container">
