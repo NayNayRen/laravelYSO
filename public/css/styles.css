@@ -3397,7 +3397,6 @@ html {
 
     .view-all .card {
         height: 275px;
-        /* margin: 2px; */
         width: 185px;
     }
 
@@ -4572,10 +4571,10 @@ html {
         margin-right: 0;
     }
 
-    .view-all .card {
+    /* .view-all .card {
         height: 275px;
         width: 170px;
-    }
+    } */
 
     .view-all-arrow-container {
         top: 5px;
