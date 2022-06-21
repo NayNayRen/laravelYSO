@@ -3397,8 +3397,8 @@ html {
 
     .view-all .card {
         height: 275px;
-        margin: 2px;
-        width: 175px;
+        /* margin: 2px; */
+        width: 185px;
     }
 
     .view-all-arrow-container {
@@ -3741,6 +3741,21 @@ html {
 
     .card-display::before {
         width: 0;
+    }
+
+    .card-display-view-all {
+        -ms-flex-pack: justify;
+        -webkit-box-pack: justify;
+        display: -ms-grid;
+        display: grid;
+        grid-auto-flow: column;
+        height: auto;
+        justify-content: space-between;
+        margin: 0 auto 10px auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 15px;
+        width: 100%;
     }
 
     .cashback-card:hover {
@@ -4238,6 +4253,10 @@ html {
         width: 100%;
     }
 
+    .view-all .card {
+        margin: 2px 5px;
+    }
+
     .view-all .get-deal-button {
         font-size: 16px;
         padding: 3px 0;
@@ -4555,7 +4574,6 @@ html {
 
     .view-all .card {
         height: 275px;
-        margin: 2px 1px;
         width: 170px;
     }
 
