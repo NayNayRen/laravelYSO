@@ -103,7 +103,7 @@
                 {{-- CASHBACK CARDS WHEN LOGGED IN --}}
                 @auth
                     <a href="https://yso.netrbx.com/stores/188-bed-bath-beyond" target="_blank">
-                        <div class="card-cashback">
+                        <div class="cashback-card">
                             <div class="cashback-logo"><img
                                     src="{{ asset('img/fashion/bed-bath-logo.png') }}"
                                     alt="Bed Bath and Beyond Logo"></div>
@@ -114,7 +114,7 @@
                         </div>
                     </a>
                     <a href="https://yso.netrbx.com/stores/1108-office-depot" target="_blank">
-                        <div class="card-cashback">
+                        <div class="cashback-card">
                             <div class="cashback-logo"><img
                                     src="{{ asset('img/tech/office-depot-logo.png') }}"
                                     alt="Office Depot Logo"></div>
@@ -125,7 +125,7 @@
                         </div>
                     </a>
                     <a href="https://yso.netrbx.com/stores/579-finish-line" target="_blank">
-                        <div class="card-cashback">
+                        <div class="cashback-card">
                             <div class="cashback-logo"><img
                                     src="{{ asset('img/fashion/finish-line-logo.png') }}"
                                     alt="Finish Line Logo">
@@ -137,7 +137,7 @@
                         </div>
                     </a>
                     <a href="https://yso.netrbx.com/stores/837-journeys" target="_blank">
-                        <div class="card-cashback">
+                        <div class="cashback-card">
                             <div class="cashback-logo"><img
                                     src="{{ asset('img/fashion/journeys-logo.png') }}"
                                     alt="Journeys Logo"></div>
@@ -148,7 +148,7 @@
                         </div>
                     </a>
                     <a href="https://yso.netrbx.com/stores/9280-best-buy-u-s" target="_blank">
-                        <div class="card-cashback">
+                        <div class="cashback-card">
                             <div class="cashback-logo"><img
                                     src="{{ asset('img/tech/best-buy-logo2.png') }}"
                                     alt="Best Buy Logo">
@@ -161,7 +161,7 @@
                     </a>
                     {{-- CASHBACK CARDS WHEN NOT LOGGED IN --}}
                 @else
-                    <div class="card-cashback" onclick="showMessage(this)">
+                    <div class="cashback-card" onclick="showMessage(this)">
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/fashion/bed-bath-logo.png') }}"
                                 alt="Bed Bath and Beyond Logo"></div>
@@ -170,7 +170,7 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="card-cashback" onclick="showMessage(this)">
+                    <div class="cashback-card" onclick="showMessage(this)">
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/tech/office-depot-logo.png') }}"
                                 alt="Office Depot Logo"></div>
@@ -179,7 +179,7 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="card-cashback" onclick="showMessage(this)">
+                    <div class="cashback-card" onclick="showMessage(this)">
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/fashion/finish-line-logo.png') }}"
                                 alt="Finish Line Logo">
@@ -189,7 +189,7 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="card-cashback" onclick="showMessage(this)">
+                    <div class="cashback-card" onclick="showMessage(this)">
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/fashion/journeys-logo.png') }}"
                                 alt="Journeys Logo"></div>
@@ -198,7 +198,7 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="card-cashback" onclick="showMessage(this)">
+                    <div class="cashback-card" onclick="showMessage(this)">
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/tech/best-buy-logo2.png') }}"
                                 alt="Best Buy Logo">

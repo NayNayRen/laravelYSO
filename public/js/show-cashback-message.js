@@ -7,6 +7,6 @@ function showMessage(card) {
       <a href="/login">Log In</a>
       <span>to continue.</span>
       `;
-    div.classList.add("card-cashback-message");
+    div.classList.add("cashback-card-message");
     card.appendChild(div);
 }
