@@ -50,7 +50,7 @@
                 </div>
                 <div class="banner-container-text">
                     <span class='banner-text-one'>2nd color</span>
-                    <span class='banner-text-two'>free with first mixs.</span>
+                    <span class='banner-text-two'>free when added to first mix.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
             </div>
