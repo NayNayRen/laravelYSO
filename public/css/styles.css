@@ -244,6 +244,90 @@
     display: none;
 }
 
+.banner-image-food-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/food/pizza-hut-banner.png");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/pizza-hut-banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-food-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/food/hooters-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/hooters-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-food-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/food/subway-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/subway-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-food-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/food/checkers-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/checkers-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .banner-image-featured-1 {
     background-color: #333333;
     background-image: -webkit-gradient(
@@ -623,7 +707,7 @@ body {
     margin: 0 auto 10px auto;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 10px 10px 10px 60px;
+    padding: 5px 10px 10px 60px;
     width: 100%;
     /* outline: solid 1px blue; */
 }
@@ -871,9 +955,9 @@ body {
     color: #000;
     font-family: "Roboto", "FontAwesome", sans-serif;
     font-size: 12px;
-    left: 0;
+    left: 5px;
     position: absolute;
-    top: -11px;
+    top: -10px;
 }
 
 .container-right {
@@ -2765,7 +2849,7 @@ html {
     }
 
     .cashback-display {
-        padding: 10px;
+        padding: 5px 10px 10px 10px;
     }
 
     .category-heading {
@@ -3271,6 +3355,22 @@ html {
         /* outline: solid 1px blue; */
     }
 
+    .banner-image-food-1 {
+        background-image: url("../img/food/pizza-hut-banner-mobile.png");
+    }
+
+    .banner-image-food-2 {
+        background-image: url("../img/food/hooters-banner-mobile.jpg");
+    }
+
+    .banner-image-food-3 {
+        background-image: url("../img/food/subway-banner-mobile.jpg");
+    }
+
+    .banner-image-food-4 {
+        background-image: url("../img/food/checkers-banner-mobile.jpg");
+    }
+
     .banner-image-featured-1 {
         background-image: url("../img/fashion/puma-banner-mobile.png");
     }
@@ -3444,11 +3544,12 @@ html {
     }
 
     .cashback-display {
-        padding: 5px;
+        padding: 0 0 10px 0;
     }
 
     .category-heading {
         font-size: 25px;
+        margin-left: 5px;
         min-height: 35px;
         padding: 0 5px;
         width: 50%;
@@ -3466,11 +3567,11 @@ html {
 
     .container {
         grid-template-columns: 100%;
-        padding: 10px 0 0 10px;
+        padding: 10px 0 0 5px;
     }
 
     .container ~ .container {
-        padding: 10px 0 0 10px;
+        padding: 10px 0 0 5px;
     }
 
     .container-arrow-left,
@@ -3928,6 +4029,11 @@ html {
         width: 100%;
     }
 
+    .view-all .get-deal-button {
+        font-size: 16px;
+        padding: 3px 0;
+    }
+
     .view-all-arrow-container {
         -webkit-transform: translateX(-100%);
         left: calc(100% - 20px);
@@ -4232,6 +4338,12 @@ html {
 
     .users-name-register div:first-of-type {
         margin-right: 0;
+    }
+
+    .view-all .card {
+        height: 275px;
+        margin: 2px 1px;
+        width: 170px;
     }
 
     .view-all-arrow-container {

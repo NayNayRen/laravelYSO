@@ -63,6 +63,7 @@
             <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
         </div>
     </div>
+    {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
                 aria-hidden="true"></i></button>
@@ -79,7 +80,6 @@
                 {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
             </div>
         </div>
-        {{-- MAIN CONTENT CONTAINER --}}
         <div class="container-right">
             <div class="card-display-view-all">
                 @foreach($deals as $deal)
