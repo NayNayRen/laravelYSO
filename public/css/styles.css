@@ -496,6 +496,90 @@
     background-size: cover;
 }
 
+.banner-image-popular-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/congo-river-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/congo-river-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-popular-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/amc-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/amc-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-popular-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/auto/advanced-auto-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/advanced-auto-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-popular-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/auto/sw-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/sw-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .banner-image-tech-1 {
     background-color: #333333;
     background-image: -webkit-gradient(
@@ -660,10 +744,11 @@
 
 .banner-text-one,
 .banner-text-two {
-    font-weight: 900;
+    font-weight: bold;
     height: auto;
     letter-spacing: 1px;
     text-align: center;
+    text-shadow: 1px 0 #000;
     text-transform: capitalize;
     width: 100%;
 }
@@ -3488,14 +3573,53 @@ html {
         background-image: url("../img/fashion/adidas-banner-mobile.jpg");
     }
 
+    .banner-image-popular-1 {
+        background-image: url("../img/fun/congo-river-banner-mobile.jpg");
+    }
+
+    .banner-image-popular-2 {
+        background-image: url("../img/fun/amc-banner-mobile.jpg");
+    }
+
+    .banner-image-popular-3 {
+        background-image: url("../img/auto/advanced-auto-banner-mobile.jpg");
+    }
+
+    .banner-image-popular-4 {
+        background-image: url("../img/auto/sw-banner-mobile.jpg");
+    }
+
+    .banner-image-tech-1 {
+        background-image: url("../img/tech/micro-center-banner-mobile.jpg");
+    }
+
+    .banner-image-tech-2 {
+        background-image: url("../img/tech/newegg-banner-mobile.jpg");
+    }
+
+    .banner-image-tech-3 {
+        background-image: url("../img/tech/best-buy-banner-mobile.jpg");
+    }
+
+    .banner-image-tech-4 {
+        background-image: url("../img/tech/apple-store-banner-mobile.jpg");
+    }
+
     .banner-logo {
         -webkit-filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
         -webkit-transform: translate(0, -50%);
         filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
         left: 30px;
-        top: 50%;
+        top: calc(50% + 20px);
         transform: translate(0, -50%);
-        width: 125px;
+        width: 150px;
+    }
+
+    .banner-logo.left {
+        -webkit-transform: translate(0, -50%);
+        left: 30px;
+        top: calc(50% + 20px);
+        transform: translate(0, -50%);
     }
 
     .banner-logo.right {
@@ -4222,7 +4346,7 @@ html {
         filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.75));
         left: 10px;
         top: calc(50% + 25px);
-        width: 85px;
+        width: 95px;
     }
 
     .banner-logo.left {
@@ -4237,6 +4361,10 @@ html {
 
     .banner-text-one img {
         width: 275px;
+    }
+
+    .banner-text-two {
+        font-size: 25px;
     }
 
     #campaigns,
