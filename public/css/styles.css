@@ -3657,7 +3657,7 @@ html {
     }
 
     .banner-text-one {
-        font-size: 52px;
+        font-size: 48px;
     }
 
     .banner-text-one img {
@@ -4377,12 +4377,16 @@ html {
         top: calc(50% + 25px);
     }
 
+    .banner-text-one {
+        font-size: 40px;
+    }
+
     .banner-text-one img {
         width: 275px;
     }
 
     .banner-text-two {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     #campaigns,
@@ -4571,10 +4575,9 @@ html {
         margin-right: 0;
     }
 
-    /* .view-all .card {
-        height: 275px;
-        width: 170px;
-    } */
+    .view-all .category-heading {
+        width: 60%;
+    }
 
     .view-all-arrow-container {
         top: 5px;
