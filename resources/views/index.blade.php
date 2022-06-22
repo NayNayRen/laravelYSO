@@ -71,8 +71,9 @@
     {{-- SEARCH BLOCK --}}
     <div class="filter-search-container">
         <div class="search-container">
-            <form id="search-form">
-                <input type="text" id="search-field" class="search-field" placeholder="Search by type, city, or zip...">
+            <form action={{ route('deals.search') }} id="search-form" method="GET">
+                <input type="text" name="search" id="search-field" class="search-field"
+                    placeholder="Search by type, city, or zip...">
                 <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
                         aria-hidden="true"></i></button>
                 <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker"
@@ -91,7 +92,7 @@
         </div>
     </div>
     {{-- CASHBACK CONTAINER --}}
-    <div id='food-container' class="container">
+    <div class="container">
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         <div class="container-left">

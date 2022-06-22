@@ -31,6 +31,17 @@ class Deal extends Model
 //   return $pagination;
 // }
 
+    // SEARCH METHOD
+    public static function scopeFilter($query, array $filters){
+        if($filters['search'] ?? false){
+            return Deal::query()
+            ->where('name', 'like',request('search') . '%')
+            ->orWhere('location', 'like', '%' . request('search') . '%')
+            ->orWhere('category', 'like', '%' . request('search') . '%')
+            ->paginate(10);
+        }
+    }
+
     // INDEX FEATURED GROUPING, GETS 10, SORTS BY ID
     public static function getFeatured(){
         return Deal::query()

@@ -19,6 +19,7 @@ class DealController extends Controller
                 'popularDeals' => Deal::getPopular()
             ]);
     }
+    
     // SINGLED DEAL PAGE, SHOWS REGISTERED AND NONREGISTERED VIEWS
     public function showDeal(Deal $deal, User $user){
         if(Auth::check()){
@@ -32,30 +33,42 @@ class DealController extends Controller
             ]);
         }
     }
+
+    // SEARCHED DEALS RESULTS PAGE
+    public function searchDeal(){
+            return view('category_pages/searchResults', [
+                'searchedDeals' => Deal::filter(request(['search']))
+            ]);
+    }
+
     // VIEW ALL FEATURED
     public function allFeatured(){
         return view('category_pages/featured', [
             'deals' => Deal::viewAllFeatured() 
          ]);
     }
+
     // VIEW ALL FOOD
     public function allFood(){
         return view('category_pages/food', [
             'deals' => Deal::viewAllType('Restaurant') 
          ]);
     }
+
     // VIEW ALL FASHION
     public function allFashion(){
         return view('category_pages/fashion', [
             'deals' => Deal::viewAllType('Nail Salon') 
          ]);
     }
+
     // VIEW ALL TECH
     public function allTech(){
         return view('category_pages/tech', [
             'deals' => Deal::viewAllType('Pizza')
         ]);
     }
+
     // VIEW ALL POPULAR
     public function allPopular(){
         return view('category_pages/popular', [

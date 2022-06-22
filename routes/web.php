@@ -13,6 +13,8 @@ Route::get('/', [DealController::class, 'index'])->name('deals.index');
 Route::get('/deals/{deal}', [DealController::class, 'showDeal'])->name('deals.show');
 
 // CATEGORY ROUTES
+Route::get('/category_pages/searchResults', [DealController::class, 'searchDeal'])->name('deals.search');
+
 Route::get('/category_pages/featured', [DealController::class, 'allFeatured'])->name('deals.featured');
 
 Route::get('/category_pages/food', [DealController::class, 'allFood'])->name('deals.food');
