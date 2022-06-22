@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\Auth;
 
 class DealController extends Controller
 {
+
+//     public function index(Request $request){
+//         return view('index', [
+//             'featuredDeals' => Deal::getFeatured($request->currentPage),
+//             'foodDeals' => Deal::getType('Restaurant'),
+//             'fashionDeals' => Deal::getType('Nail Salon'),
+//             'techDeals' => Deal::getType('Pizza'),
+//             'popularDeals' => Deal::getPopular()
+//         ]);
+// }
+
     // INDEX PAGE AND DATA METHODS
     public function index(){
             return view('index', [
