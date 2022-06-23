@@ -29,17 +29,18 @@
                 </div>
             </div>
             {{-- SLIDE 3 --}}
-            <div class="banner-slide">
+            <div class="banner-slide even">
+                <img class="banner-logo left"
+                    src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                    alt="Adidas Company Logo">
                 <div class="banner-gradient"></div>
+                <div class="banner-container-image banner-image-main-4">
+                </div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>lower</span>
-                    <span class='banner-text-two'>rates with groups of 4 or more.</span>
+                    <span class='banner-text-one'>1/2 off</span>
+                    <span class='banner-text-two'>second pair + a set of laces.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
-                <div class="banner-container-image banner-image-featured-3">
-                </div>
-                <img class="banner-logo" src="{{ asset('img/fun/top-golf-banner-logo.png') }}"
-                    alt="Top Golf Company Logo">
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
