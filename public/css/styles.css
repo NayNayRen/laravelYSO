@@ -1804,7 +1804,7 @@ html {
 .main {
     background-color: #fff;
     margin: auto;
-    min-height: 100%;
+    height: auto;
     position: relative;
     width: 80%;
 }
@@ -2270,6 +2270,24 @@ html {
 
 .search-field:focus {
     outline: none;
+}
+
+.search-results-message-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+    /* outline: solid 1px blue; */
 }
 
 .selected-deal-container {

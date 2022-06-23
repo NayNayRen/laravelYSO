@@ -1,19 +1,86 @@
 @include('includes._header')
 <div class="main">
-    <div class="container view-all">
-        {{-- IF NO SEARCH TERM WAS TYPED --}}
-        @if($request->search === null)
-            <div class="container-left">
-                <span class="category-heading">Search Results</span>
+    <div class="banner">
+        <div class="banner-slide-container">
+            {{-- SLIDE 1 --}}
+            <div class="banner-slide">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>20% off</span>
+                    <span class='banner-text-two'>first use of geek squad.</span>
+                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                </div>
+                <div class="banner-container-image banner-image-tech-3">
+                </div>
+                <img class="banner-logo" src="{{ asset('img/tech/best-buy-logo.png') }}"
+                    alt="Best Buy Logo">
             </div>
-            <div class="container-right">
-                <div class="search-results-message-container">
-                    <h1>You did not enter a search term.</h1>
-                    <p>Return back to our homepage and try again.</p>
+            {{-- SLIDE 2 --}}
+            <div class="banner-slide even">
+                <img class="banner-logo" src="{{ asset('img/food/checkers-banner-logo.png') }}"
+                    alt="Micro Center Company Logo">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-image banner-image-food-4">
+                </div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>2 for $5</span>
+                    <span class='banner-text-two'>mix from a limited menu.</span>
+                    <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
             </div>
-            {{-- IF A SEARCH TERM WAS TYPED --}}
-        @else
+            {{-- SLIDE 3 --}}
+            <div class="banner-slide">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>lower</span>
+                    <span class='banner-text-two'>rates with groups of 4 or more.</span>
+                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                </div>
+                <div class="banner-container-image banner-image-featured-3">
+                </div>
+                <img class="banner-logo" src="{{ asset('img/fun/top-golf-banner-logo.png') }}"
+                    alt="Top Golf Company Logo">
+            </div>
+            {{-- SLIDE 4 --}}
+            <div class="banner-slide even">
+                <img class="banner-logo"
+                    src="{{ asset('img/tech/micro-center-banner-logo.png') }}"
+                    alt="Micro Center Company Logo">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-image banner-image-featured-4">
+                </div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>free!!!</span>
+                    <span class='banner-text-two'>tech support with first purchase.</span>
+                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                </div>
+            </div>
+        </div>
+        {{-- BANNER ARROWS --}}
+        <div class="banner-arrows banner-arrows-alternate">
+            <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+            <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+    </div>
+    {{-- MAIN CONTENT CONTAINER --}}
+    <div class="view-all-container-heading">
+        <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
+                aria-hidden="true"></i></button>
+        <h1>The choices you want.</h1>
+        <h3>That's why you searched for them.</h3>
+        {{-- HIDDEN DASHBOARD --}}
+        @include('includes._dashboard')
+    </div>
+    {{-- IF NO SEARCH TERM WAS TYPED --}}
+    @if($request->search === null)
+
+        <div class="search-results-message-container">
+            <h1>You did not enter a search term.</h1>
+            <p>Return back to our homepage and try again.</p>
+        </div>
+        {{-- IF A SEARCH TERM WAS TYPED --}}
+    @else
+        <div class="container view-all">
             <div class="container-left">
                 <span class="category-heading">Search Results</span>
                 {{-- CUSTOM PAGE ARROWS --}}
@@ -52,7 +119,10 @@
                     @endforeach
                 </div>
             </div>
-        @endif
-    </div>
+    @endif
 </div>
+</div>
+{{-- PAGE SPECIFIC SCRIPTS --}}
+<script src="{{ asset('js/scrolling-banner.js') }}"></script>
+<script src="{{ asset('js/show-dashboard.js') }}"></script>
 @include('includes._footer')

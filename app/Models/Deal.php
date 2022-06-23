@@ -33,6 +33,7 @@ class Deal extends Model
 
     // SEARCH METHOD
     public static function scopeFilter($query, array $filters){
+        $words = explode(' ', request('search'));
         if($filters['search'] ?? false){
             return Deal::query()
             ->where('name', 'like', '%' . request('search') . '%')
