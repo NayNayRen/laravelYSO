@@ -71,7 +71,8 @@
     {{-- SEARCH BLOCK --}}
     <div class="filter-search-container">
         <div class="search-container">
-            <form action={{ route('deals.search') }} id="search-form" method="GET">
+            <form action={{ route('deals.search') }} class="search-form" name="searchForm"
+                method="GET">
                 <input type="text" name="search" id="search-field" class="search-field"
                     placeholder="Search by type, city, or zip...">
                 <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"

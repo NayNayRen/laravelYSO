@@ -35,7 +35,7 @@ class Deal extends Model
     public static function scopeFilter($query, array $filters){
         if($filters['search'] ?? false){
             return Deal::query()
-            ->where('name', 'like',request('search') . '%')
+            ->where('name', 'like', '%' . request('search') . '%')
             ->orWhere('location', 'like', '%' . request('search') . '%')
             ->orWhere('category', 'like', '%' . request('search') . '%')
             ->paginate(10);

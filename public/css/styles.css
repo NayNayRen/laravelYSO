@@ -2245,7 +2245,7 @@ html {
     font-size: 28px;
 }
 
-#search-form {
+.search-form {
     -ms-flex-direction: row;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
