@@ -88,9 +88,16 @@
     </div>
     {{-- IF NO SEARCH TERM WAS TYPED --}}
     @if($request->search === null)
-
         <div class="search-results-message-container">
-            <h1>You did not enter a search term.</h1>
+            <h1>You did not enter a term to search by.</h1>
+            <p>Return back home to browse...</p>
+            <span>or...</span>
+            <p>Continue your search above.</p>
+        </div>
+        {{-- IF SEARCH DOESN'T RETURN ANY RESULTS --}}
+    @elseif($searchedDeals->count() === 0)
+        <div class="search-results-message-container">
+            <h1>Youre search did not return any results.</h1>
             <p>Return back home to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>

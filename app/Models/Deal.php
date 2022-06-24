@@ -40,15 +40,29 @@ class Deal extends Model
     //         ->orWhere('category', 'like', '%' . request('search') . '%')
     //         ->paginate(10);
     // }
+    
+    // public static function search(Request $request){
+        //     $words = explode(' ', $request->search);
+        //         return Deal::query()
+        //         ->where('name', 'like', '%' . $request->search . '%')
+        //         ->orWhere('location', 'like', '%' . $request->search . '%')
+        //         ->orWhere('category', 'like', '%' . $request->search . '%')
+        //         ->paginate(10);
+        // }
 
     // SEARCH METHOD
+    // $q is used as a closure function to group queries together
+    // $words is hoisted into the foreach scope
     public static function search(Request $request){
         $words = explode(' ', $request->search);
-            return Deal::query()
-            ->where('name', 'like', '%' . $request->search . '%')
-            ->orWhere('location', 'like', '%' . $request->search . '%')
-            ->orWhere('category', 'like', '%' . $request->search . '%')
-            ->paginate(10);
+        $results = Deal::where(function ($q) use ($words) {
+            foreach ($words as $word) {
+                $q->orWhere('name', 'like', '%' . $word . '%')
+                ->orWhere('location', 'like', '%' . $word . '%')
+                ->orWhere('category', 'like', '%' . $word . '%');
+            }
+        })->paginate(10);
+        return $results;
     }
 
     // INDEX FEATURED GROUPING, GETS 10, SORTS BY ID
