@@ -2287,7 +2287,47 @@ html {
     flex-direction: column;
     justify-content: center;
     min-height: 300px;
+    padding: 0 10px;
     /* outline: solid 1px blue; */
+}
+
+.search-results-message-container h1 {
+    font-size: 35px;
+    text-align: center;
+    width: 100%;
+}
+
+.search-results-message-container p {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.search-results-message-container span {
+    border-bottom: solid 1px #000;
+    color: #e6331f;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100px;
+}
+
+.search-results-search-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    background-color: #808080;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 5px;
+    position: relative;
 }
 
 .selected-deal-container {
@@ -2768,12 +2808,11 @@ html {
 }
 
 .view-all-arrow-container {
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
+    -ms-flex-pack: distribute;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     left: 0;
     position: absolute;
     top: 65px;
@@ -2791,20 +2830,21 @@ html {
     border-bottom: solid 1px #000;
     color: #fff;
     font-size: 40px;
-    margin: 0 auto 10px auto;
+    margin: 10px auto;
+    padding: 0 5px 10px 5px;
     text-align: center;
     width: 800px;
 }
 
 .view-all-container-heading h3 {
     font-size: 30px;
-    margin: 30px auto 0 auto;
+    margin: 30px auto 10px auto;
     text-align: center;
 }
 
 .view-all-item-counter {
     -webkit-transform: translateX(-50%);
-    bottom: -15px;
+    bottom: -20px;
     color: #fff;
     font-family: "Roboto", "FontAwesome", sans-serif;
     font-size: 12px;
@@ -3149,6 +3189,14 @@ html {
         font-size: 18px;
     }
 
+    .search-results-message-container h1 {
+        font-size: 30px;
+    }
+
+    .search-results-message-container p {
+        font-size: 18px;
+    }
+
     .user-icon {
         font-size: 22px;
         height: 30px;
@@ -3166,14 +3214,12 @@ html {
 
     .view-all-container-heading h1 {
         font-size: 30px;
-        margin: 0 auto 10px auto;
-        padding: 0 5px;
         width: 600px;
     }
 
     .view-all-container-heading h3 {
         font-size: 25px;
-        margin: 20px auto 0 auto;
+        margin: 20px auto 10px auto;
         padding: 0 5px;
     }
 
@@ -3771,7 +3817,7 @@ html {
         margin: 0 auto 10px auto;
         overflow-x: auto;
         overflow-y: hidden;
-        padding-bottom: 15px;
+        padding: 15px 0;
         width: 100%;
     }
 
@@ -3856,8 +3902,9 @@ html {
     }
 
     .dashboard-right-container h4 {
+        display: block;
         font-size: 18px;
-        margin: 0 10px 0 0;
+        margin: 0 0 15px 0;
     }
 
     .dashboard-right-container h4:hover {
@@ -3903,7 +3950,7 @@ html {
         justify-content: center;
         position: absolute;
         right: 20px;
-        top: 25px;
+        top: 35px;
         transition: -webkit-transform 250ms ease;
         transition: transform 250ms ease, -webkit-transform 250ms ease;
         transition: transform 250ms ease;
@@ -4177,6 +4224,14 @@ html {
         color: #808080;
     }
 
+    .search-results-message-container h1 {
+        font-size: 25px;
+    }
+
+    .search-results-message-container p {
+        font-size: 16px;
+    }
+
     .selected-deal-container {
         width: 100%;
     }
@@ -4280,11 +4335,14 @@ html {
     }
 
     .view-all-arrow-container {
+        -ms-flex-pack: end;
+        -webkit-box-pack: end;
         -webkit-transform: translateX(-100%);
-        left: calc(100% - 20px);
+        justify-content: flex-end;
+        left: 100%;
         top: 0;
         transform: translateX(-100%);
-        width: 80px;
+        width: 100%;
         /* outline: solid 1px blue; */
     }
 
@@ -4295,6 +4353,15 @@ html {
 
     .view-all-container-heading h3 {
         font-size: 20px;
+    }
+
+    .view-all-item-counter {
+        -webkit-transform: translateX(-100%);
+        bottom: -17px;
+        left: 100%;
+        padding-right: 20px;
+        text-align: right;
+        transform: translateX(-100%);
     }
 
     .view-all-link {
@@ -4612,7 +4679,10 @@ html {
 
     .view-all-container-heading h3 {
         font-size: 16px;
-        margin: 10px auto 0 auto;
+    }
+
+    .view-all-item-counter {
+        padding-right: 15px;
     }
 
     .view-all-link {

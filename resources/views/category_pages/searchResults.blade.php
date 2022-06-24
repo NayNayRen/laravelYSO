@@ -63,21 +63,36 @@
             <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
         </div>
     </div>
+    {{-- SEARCH CONTAINER --}}
+    <div class="search-results-search-container">
+        <div class="search-container">
+            <form action={{ route('deals.search') }} class="search-form" name="searchForm"
+                method="GET">
+                <input type="text" name="search" id="search-field" class="search-field"
+                    placeholder="Search by type, city, or zip...">
+                <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
+                        aria-hidden="true"></i></button>
+                {{-- <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker"
+                        aria-hidden="true"></i></button> --}}
+            </form>
+        </div>
+        {{-- HIDDEN DASHBOARD --}}
+        @include('includes._dashboard')
+    </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
                 aria-hidden="true"></i></button>
         <h1>The choices you want.</h1>
         <h3>That's why you searched for them.</h3>
-        {{-- HIDDEN DASHBOARD --}}
-        @include('includes._dashboard')
     </div>
     {{-- IF NO SEARCH TERM WAS TYPED --}}
     @if($request->search === null)
-
         <div class="search-results-message-container">
             <h1>You did not enter a search term.</h1>
-            <p>Return back to our homepage and try again.</p>
+            <p>Return back home to browse...</p>
+            <span>or...</span>
+            <p>Continue your search above.</p>
         </div>
         {{-- IF A SEARCH TERM WAS TYPED --}}
     @else
