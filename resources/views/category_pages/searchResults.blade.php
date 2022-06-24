@@ -88,6 +88,7 @@
     </div>
     {{-- IF NO SEARCH TERM WAS TYPED --}}
     @if($request->search === null)
+
         <div class="search-results-message-container">
             <h1>You did not enter a search term.</h1>
             <p>Return back home to browse...</p>

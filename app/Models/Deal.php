@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Deal extends Model
 {
@@ -32,15 +32,23 @@ class Deal extends Model
 // }
 
     // SEARCH METHOD
-    public static function scopeFilter($query, array $filters){
-        $words = explode(' ', request('search'));
-        if($filters['search'] ?? false){
+    // public static function scopeFilter($query, array $filters){
+    //     $words = explode(' ', request('search'));
+    //         return Deal::query()
+    //         ->where('name', 'like', '%' . request('search') . '%')
+    //         ->orWhere('location', 'like', '%' . request('search') . '%')
+    //         ->orWhere('category', 'like', '%' . request('search') . '%')
+    //         ->paginate(10);
+    // }
+
+    // SEARCH METHOD
+    public static function search(Request $request){
+        $words = explode(' ', $request->search);
             return Deal::query()
-            ->where('name', 'like', '%' . request('search') . '%')
-            ->orWhere('location', 'like', '%' . request('search') . '%')
-            ->orWhere('category', 'like', '%' . request('search') . '%')
+            ->where('name', 'like', '%' . $request->search . '%')
+            ->orWhere('location', 'like', '%' . $request->search . '%')
+            ->orWhere('category', 'like', '%' . $request->search . '%')
             ->paginate(10);
-        }
     }
 
     // INDEX FEATURED GROUPING, GETS 10, SORTS BY ID

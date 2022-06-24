@@ -48,7 +48,8 @@ class DealController extends Controller
     // SEARCHED DEALS RESULTS PAGE
     public function searchDeal(Request $request){
             return view('category_pages/searchResults', [
-                'searchedDeals' => Deal::filter(request(['search'])),
+                // 'searchedDeals' => Deal::filter(request(['search'])),
+                'searchedDeals' => Deal::search($request),
                 'request' => $request
             ]);
     }
