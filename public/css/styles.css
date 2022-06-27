@@ -2253,6 +2253,8 @@ html {
     display: -webkit-box;
     display: flex;
     flex-direction: row;
+    position: relative;
+    /* outline: solid 1px blue; */
 }
 
 .search-field {
@@ -2270,6 +2272,18 @@ html {
 
 .search-field:focus {
     outline: none;
+}
+
+.search-form-error {
+    bottom: -20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    /* outline: solid 1px blue; */
 }
 
 .search-results-message-container {
@@ -2326,8 +2340,13 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 5px;
+    padding: 20px 5px 20px 5px;
     position: relative;
+}
+
+.search-results-search-container .search-button {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .selected-deal-container {
@@ -2842,6 +2861,18 @@ html {
     text-align: center;
 }
 
+.view-all-container-heading p {
+    font-size: 20px;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.view-all-container-heading p span {
+    color: #fff;
+}
+
 .view-all-item-counter {
     -webkit-transform: translateX(-50%);
     bottom: -20px;
@@ -2999,8 +3030,7 @@ html {
         font-size: 16px;
     }
 
-    .search-button,
-    .search-field {
+    .search-button {
         padding: 5px 10px;
     }
 
@@ -3105,7 +3135,7 @@ html {
         -ms-flex-pack: distribute;
         justify-content: space-around;
         min-height: auto;
-        padding: 10px 20px;
+        padding: 15px 20px;
     }
 
     .filter-selection {
@@ -3418,7 +3448,11 @@ html {
 
     .search-button {
         font-size: 14px;
-        padding: 5px 8px;
+        padding: 3px 8px;
+    }
+
+    .search-button:nth-child(odd) {
+        padding: 3px 10px;
     }
 
     .selected-deal-discount {
@@ -4032,7 +4066,7 @@ html {
     }
 
     .filter-search-container {
-        padding: 5px 0;
+        padding: 15px 0;
     }
 
     .filter-selection {
@@ -4353,6 +4387,11 @@ html {
 
     .view-all-container-heading h3 {
         font-size: 20px;
+    }
+
+    .view-all-container-heading p {
+        font-size: 16px;
+        margin: 5px auto;
     }
 
     .view-all-item-counter {
@@ -4687,10 +4726,6 @@ html {
 
     .view-all-link {
         right: 80px;
-    }
-
-    .view-all-user-icon {
-        top: 0;
     }
 
     .yso-header-link,

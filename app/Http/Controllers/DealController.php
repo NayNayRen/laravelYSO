@@ -47,11 +47,18 @@ class DealController extends Controller
 
     // SEARCHED DEALS RESULTS PAGE
     public function searchDeal(Request $request){
+        $words = explode(' ', $request->search);
+        // dd(count($words));
+        // if(count($words) > 3){
+        //     return redirect('category_pages/searchResults')->withErrors(['search' => 'Please limit search to 3 words or less.']);
+        // }else{
             return view('category_pages/searchResults', [
                 // 'searchedDeals' => Deal::filter(request(['search'])),
                 'searchedDeals' => Deal::search($request),
-                'request' => $request
+                'request' => $request,
+                'searchedWords' => $words
             ]);
+        // }
     }
 
     // VIEW ALL FEATURED
