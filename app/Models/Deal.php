@@ -11,34 +11,23 @@ class Deal extends Model
 {
     use HasFactory;
 
-    //     public static function getFeatured($currentPage = null)
-// {
-//     $deals = Deal::get()->take(30); // get 30 deals
+    // public static function getFeatured($currentPage = null){
+    //     $deals = Deal::get()->take(30); // get 30 deals
 
-//     $perPage = 3;
-//     $currentPage = $currentPage ?? 1;
+    //     $perPage = 3;
+    //     $currentPage = $currentPage ?? 1;
 
-//     $pagination = new LengthAwarePaginator(
-//     $deals->slice($currentPage, $perPage),
-//     $deals->count(),
-//     $perPage,
-//     $currentPage,
-//     [
-//         'path' => request()->url(),
-//         'query' => request()->query(),
-//     ]
-// );
-//   return $pagination;
-// }
-
-    // SEARCH METHOD
-    // public static function scopeFilter($query, array $filters){
-    //     $words = explode(' ', request('search'));
-    //         return Deal::query()
-    //         ->where('name', 'like', '%' . request('search') . '%')
-    //         ->orWhere('location', 'like', '%' . request('search') . '%')
-    //         ->orWhere('category', 'like', '%' . request('search') . '%')
-    //         ->paginate(10);
+    //     $pagination = new LengthAwarePaginator(
+    //     $deals->slice($currentPage, $perPage),
+    //     $deals->count(),
+    //     $perPage,
+    //     $currentPage,
+    //         [
+    //             'path' => request()->url(),
+    //             'query' => request()->query(),
+    //         ]
+    //     );
+    //     return $pagination;
     // }
     
     // public static function search(Request $request){

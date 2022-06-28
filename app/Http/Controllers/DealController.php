@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPUnit\Framework\isEmpty;
+
 class DealController extends Controller
 {
 
@@ -48,17 +50,33 @@ class DealController extends Controller
     // SEARCHED DEALS RESULTS PAGE
     public function searchDeal(Request $request){
         $words = explode(' ', $request->search);
-        // dd(count($words));
-        // if(count($words) > 3){
-        //     return redirect('category_pages/searchResults')->withErrors(['search' => 'Please limit search to 3 words or less.']);
-        // }else{
+        $results = Deal::search($request);
+        // dd($words);
+        if(count($words) > 3){
+            $results = 0;
             return view('category_pages/searchResults', [
-                // 'searchedDeals' => Deal::filter(request(['search'])),
-                'searchedDeals' => Deal::search($request),
+                'searchedDeals' => $results,
                 'request' => $request,
-                'searchedWords' => $words
+                'searchedWords' => $words,
+                'message' => 'Limit your search to 3 words or less.'
             ]);
-        // }
+        }
+        elseif($request->search === null){
+            $results = 0;
+            return view('category_pages/searchResults', [
+                'searchedDeals' => $results,
+                'request' => $request,
+                'searchedWords' => $words,
+                'message' => 'Type something to search for.'
+            ]);
+        }else{
+            return view('category_pages/searchResults', [
+                'searchedDeals' => $results,
+                'request' => $request,
+                'searchedWords' => $words,
+                'message' => ''
+            ]);
+        }
     }
 
     // VIEW ALL FEATURED

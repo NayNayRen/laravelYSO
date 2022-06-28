@@ -70,9 +70,7 @@
                 method="GET">
                 <input type="text" name="search" id="search-field" class="search-field"
                     placeholder="Search by type, city, or zip...">
-                {{-- @error('search')
-                    <span class="search-form-error">{{ $message }}</span>
-                @enderror--}}
+                <span class="search-form-error">{{ $message }}</span>
                 {{-- <span class="search-form-error">Please limit search to 3 words or less.</span> --}}
                 <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
                         aria-hidden="true"></i></button>
@@ -95,16 +93,8 @@
             @endforeach
         </p>
     </div>
-    {{-- IF NO SEARCH TERM WAS TYPED --}}
-    @if($request->search === null)
-        <div class="search-results-message-container">
-            <h1>It seems you didn't enter a term to search by.</h1>
-            <p>Return back home to browse...</p>
-            <span>or...</span>
-            <p>Continue your search above.</p>
-        </div>
-        {{-- IF SEARCH DOESN'T RETURN ANY RESULTS --}}
-    @elseif($searchedDeals->count() === 0)
+    {{-- IF SEARCH DOESN'T RETURN ANY RESULTS OR LEFT EMPTY --}}
+    @if($searchedDeals === 0 || $searchedDeals->count() === 0)
         <div class="search-results-message-container">
             <h1>Youre search didn't return any results.</h1>
             <p>Return back home to browse...</p>
