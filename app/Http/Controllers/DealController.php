@@ -52,7 +52,6 @@ class DealController extends Controller
     // SEARCHED DEALS RESULTS PAGE
     public function searchDeal(Request $request){
         $words = explode(' ', $request->search);
-        $results = Deal::search($request);
         // limits search to 3 words or less
         if(count($words) > 3){
             $results = 0;
@@ -72,8 +71,9 @@ class DealController extends Controller
                 'searchedWords' => ['no results'],
                 'message' => 'Type something to search for.'
             ]);
-            // if all goes well
+        // if all goes well
         }else{
+            $results = Deal::search($request);
             return view('category_pages/searchResults', [
                 'searchedDeals' => $results,
                 'request' => $request,
