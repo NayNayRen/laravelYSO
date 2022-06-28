@@ -75,10 +75,6 @@
                 method="GET">
                 <input type="text" name="search" id="search-field" class="search-field"
                     placeholder="Search by type, city, or zip...">
-                {{-- @error('search')
-                    <span class="search-form-error">{{ $message }}</span>
-                @enderror--}}
-                {{-- <span class="search-form-error">Test for the eror message</span> --}}
                 <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
                         aria-hidden="true"></i></button>
                 <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker"

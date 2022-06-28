@@ -2260,10 +2260,8 @@ html {
 .search-field {
     background-color: #fff;
     border-bottom-left-radius: 5px;
-    border-bottom: none;
-    border-left: none;
+    border: none;
     border-top-left-radius: 5px;
-    border-top: none;
     font-size: 16px;
     height: 40px;
     padding: 8px 8px 8px 10px;
@@ -2276,9 +2274,10 @@ html {
 
 .search-form-error {
     bottom: -20px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: italic;
     left: 0;
     position: absolute;
     width: 100%;
@@ -2312,6 +2311,7 @@ html {
 }
 
 .search-results-message-container p {
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
     text-align: center;
     width: 100%;
@@ -2345,6 +2345,7 @@ html {
 }
 
 .search-results-search-container .search-button {
+    border-left: solid 1px #000;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -2840,8 +2841,15 @@ html {
 }
 
 .view-all-container-heading {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     background-color: #808080;
-    padding: 50px 0 20px 0;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 0 0;
     position: relative;
 }
 
@@ -2857,20 +2865,24 @@ html {
 
 .view-all-container-heading h3 {
     font-size: 30px;
-    margin: 30px auto 10px auto;
+    margin: 20px auto 10px auto;
     text-align: center;
 }
 
 .view-all-container-heading p {
+    background-color: #b5b2b4;
+    color: #000;
+    font-family: "Roboto", sans-serif;
     font-size: 20px;
-    margin: 10px auto;
+    margin: 10px auto 0 auto;
+    padding: 10px 5px;
     text-align: center;
     width: 100%;
     /* outline: solid 1px blue; */
 }
 
 .view-all-container-heading p span {
-    color: #fff;
+    color: #e6331f;
 }
 
 .view-all-item-counter {
@@ -3228,9 +3240,9 @@ html {
     }
 
     .user-icon {
-        font-size: 22px;
-        height: 30px;
-        width: 30px;
+        font-size: 24px;
+        height: 35px;
+        width: 35px;
     }
 
     .user-initials-container,
@@ -3239,7 +3251,7 @@ html {
     }
 
     .view-all-container-heading {
-        padding: 40px 0 10px 0;
+        padding: 40px 0 0 0;
     }
 
     .view-all-container-heading h1 {
@@ -3249,7 +3261,7 @@ html {
 
     .view-all-container-heading h3 {
         font-size: 25px;
-        margin: 20px auto 10px auto;
+        margin: 10px auto;
         padding: 0 5px;
     }
 
@@ -4070,9 +4082,9 @@ html {
     }
 
     .filter-selection {
-        font-size: 14px;
+        font-size: 16px;
         padding: 5px 10px;
-        margin: 2px 4px;
+        margin: 4px;
     }
 
     .filter-selection:hover,
@@ -4314,12 +4326,6 @@ html {
         font-size: 14px;
     }
 
-    .user-icon {
-        font-size: 20px;
-        height: 30px;
-        width: 30px;
-    }
-
     .user-initials {
         margin: 0 10px 0 10px;
     }
@@ -4390,8 +4396,8 @@ html {
     }
 
     .view-all-container-heading p {
-        font-size: 16px;
-        margin: 5px auto;
+        font-size: 18px;
+        margin: 5px auto 0 auto;
     }
 
     .view-all-item-counter {
@@ -4557,10 +4563,6 @@ html {
         transform: translateY(0);
     }
 
-    .filter-selection {
-        padding: 3px 8px;
-    }
-
     .get-deal-button {
         font-size: 14px;
         padding: 3px 0;
@@ -4650,9 +4652,8 @@ html {
     }
 
     .user-icon {
-        font-size: 22px;
-        height: 28px;
-        width: 28px;
+        height: 32px;
+        width: 32px;
     }
 
     .user-login-button,
@@ -4708,16 +4709,17 @@ html {
     }
 
     .view-all-container-heading {
-        padding: 30px 0 10px 0;
+        padding: 30px 0 0 0;
     }
 
     .view-all-container-heading h1 {
-        font-size: 20px;
+        font-size: 24px;
+        padding: 10px 5px;
         width: 95%;
     }
 
     .view-all-container-heading h3 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .view-all-item-counter {

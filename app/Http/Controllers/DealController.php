@@ -35,11 +35,13 @@ class DealController extends Controller
     
     // SINGLED DEAL PAGE, SHOWS REGISTERED AND NONREGISTERED VIEWS
     public function showDeal(Deal $deal, User $user){
+        // if signed in
         if(Auth::check()){
             return view('registeredDeal', [
                 'deal' => $deal,
                 'user' => auth()->user()
             ]);
+            // if not signed in
         }else{
             return view('unregisteredDeal', [
                 'deal' => $deal
@@ -51,7 +53,7 @@ class DealController extends Controller
     public function searchDeal(Request $request){
         $words = explode(' ', $request->search);
         $results = Deal::search($request);
-        // dd($words);
+        // limits search to 3 words or less
         if(count($words) > 3){
             $results = 0;
             return view('category_pages/searchResults', [
@@ -61,14 +63,16 @@ class DealController extends Controller
                 'message' => 'Limit your search to 3 words or less.'
             ]);
         }
+        // if nothing is typed, sets results to 0, essentially empty
         elseif($request->search === null){
             $results = 0;
             return view('category_pages/searchResults', [
                 'searchedDeals' => $results,
                 'request' => $request,
-                'searchedWords' => $words,
+                'searchedWords' => ['no results'],
                 'message' => 'Type something to search for.'
             ]);
+            // if all goes well
         }else{
             return view('category_pages/searchResults', [
                 'searchedDeals' => $results,

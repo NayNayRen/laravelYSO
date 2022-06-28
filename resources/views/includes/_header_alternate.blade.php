@@ -26,7 +26,7 @@
         </div>
         {{-- BACK BUTTON AND LOGO --}}
         <div class="header-navigation">
-            <a href={{ route('deals.index') }} class="back-button"><i class="fa fa-chevron-left"
+            <a href={{ url()->previous() }} class="back-button"><i class="fa fa-chevron-left"
                     aria-hidden="true"></i><span>Back</span></a>
             <a href={{ route('deals.index') }}>
                 <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-header-link-alternate"
