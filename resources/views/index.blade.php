@@ -83,13 +83,16 @@
         </div>
         {{-- FILTER BLOCK --}}
         <div class="filter-container">
-            <button id="food" class="filter-selection" value="food">Food</button>
-            <button id="fashion" class="filter-selection" value="fashion">Fashion</button>
-            <button id="auto" class="filter-selection" value="auto">Auto</button>
-            <button id="fun" class="filter-selection" value="fun">Fun</button>
-            <button id="health" class="filter-selection" value="health">Health</button>
-            <button id="all" class="filter-selection">All</button>
-            <button id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></button>
+            <form action="/" method="GET">
+                <input type='submit' class="filter-selection" value="food"></input>
+                <input type='submit' class="filter-selection" value="fashion"></input>
+                <input type='submit' class="filter-selection" value="auto"></input>
+                <input type='submit' class="filter-selection" value="fun"></input>
+                <input type='submit' class="filter-selection" value="health"></input>
+                <input type='submit' class="filter-selection" value="all"></input>
+                <button id="dashboard-open-button" class="user-icon"><i class="fa fa-user"
+                        aria-hidden="true"></i></button>
+            </form>
         </div>
     </div>
     {{-- CASHBACK CONTAINER --}}
@@ -222,7 +225,7 @@
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $featuredDeals->appends(['Restaurant' => $foodDeals->currentPage()], ['Nail Salon' => $fashionDeals->currentPage()], ['Pizza' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $featuredDeals->appends(['food' => $categoryDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['tech' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($featuredDeals as $deal)
@@ -262,10 +265,10 @@
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $foodDeals->appends(['featured' => $featuredDeals->currentPage()], ['Nail Salon' => $fashionDeals->currentPage()], ['Pizza' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $categoryDeals->appends(['featured' => $featuredDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['tech' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
-                @foreach($foodDeals as $deal)
+                @foreach($categoryDeals as $deal)
                     <div class="card">
                         <div>
                             <div class="card-logo-container">
@@ -295,45 +298,45 @@
         </div>
     </div>
     {{-- FASHION CONTAINER --}}
-    <div id='fashion-container' class="container">
+    {{-- <div id='fashion-container' class="container">
         <div class="container-left">
             <span class="category-heading">Fashion</span>
             <a href={{ route('deals.fashion') }} class="view-all-link">View All</a>
-        </div>
-        <div class="container-right">
-            {{-- PAGE ARROWS --}}
-            {{ $fashionDeals->appends(['featured' => $featuredDeals->currentPage()], ['Restaurant' => $foodDeals->currentPage()], ['Pizza' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
-            {{-- CARD BLOCK --}}
-            <div class="card-display">
-                @foreach($fashionDeals as $deal)
-                    <div class="card">
-                        <div>
-                            <div class="card-logo-container">
-                                <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
-                            </div>
-                            <span class="card-discount">{{ $deal->location }}</span><br>
-                            <span class="card-name">{{ $deal->name }}</span><br>
+    </div>
+    <div class="container-right">
+        PAGE ARROWS
+        {{ $fashionDeals->appends(['featured' => $featuredDeals->currentPage()], ['food' => $categoryDeals->currentPage()], ['tech' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+        CARD BLOCK
+        <div class="card-display">
+            @foreach($fashionDeals as $deal)
+                <div class="card">
+                    <div>
+                        <div class="card-logo-container">
+                            <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
                         </div>
-                        <div>
-                            <div class="views-likes-container">
-                                <div>
-                                    <span>Views: {{ $deal->views }}</span><br>
-                                    <span>Likes:</span>
-                                </div>
-                                <div class="views-likes-icons">
-                                    <i class="fa fa-share" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <a href="/deals/{{ $deal->id }}">
-                                <div class="get-deal-button">Get Deal Now!</div>
-                            </a>
-                        </div>
+                        <span class="card-discount">{{ $deal->location }}</span><br>
+                        <span class="card-name">{{ $deal->name }}</span><br>
                     </div>
-                @endforeach
-            </div>
+                    <div>
+                        <div class="views-likes-container">
+                            <div>
+                                <span>Views: {{ $deal->views }}</span><br>
+                                <span>Likes:</span>
+                            </div>
+                            <div class="views-likes-icons">
+                                <i class="fa fa-share" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <a href="/deals/{{ $deal->id }}">
+                            <div class="get-deal-button">Get Deal Now!</div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
+    </div> --}}
     {{-- TECH CONTAINER --}}
     <div class="container">
         <div class="container-left">
@@ -342,7 +345,7 @@
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $techDeals->appends(['featured' => $featuredDeals->currentPage()], ['Restaurant' => $foodDeals->currentPage()], ['Nail Salon' => $fashionDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $techDeals->appends(['featured' => $featuredDeals->currentPage()], ['food' => $categoryDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($techDeals as $deal)
@@ -389,7 +392,7 @@
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $popularDeals->appends(['featured' => $featuredDeals->currentPage()], ['Restaurant' => $foodDeals->currentPage()], ['Nail Salon' => $fashionDeals->currentPage()], ['Pizza' => $techDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $popularDeals->appends(['featured' => $featuredDeals->currentPage()], ['food' => $categoryDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['tech' => $techDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($popularDeals as $deal)
@@ -424,7 +427,7 @@
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
-<script src="{{ asset('js/change-category.js') }}"></script>
+{{-- <script src="{{ asset('js/change-category.js') }}"></script> --}}
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>

@@ -1398,7 +1398,7 @@ body {
     display: none;
 }
 
-.filter-container {
+.filter-container form {
     -ms-flex-align: center;
     -ms-flex-direction: row;
     -ms-flex-pack: center;
@@ -1416,6 +1416,10 @@ body {
     justify-content: center;
     text-align: right;
     /* outline: solid 1px blue; */
+}
+
+.filter-container input {
+    text-transform: capitalize;
 }
 
 .filter-search-container {
@@ -3402,7 +3406,7 @@ html {
     }
 
     .filter-container {
-        margin-top: 5px;
+        margin-top: 10px;
     }
 
     .footer {

@@ -26,9 +26,9 @@ class DealController extends Controller
     public function index(){
             return view('index', [
                 'featuredDeals' => Deal::getFeatured(),
-                'foodDeals' => Deal::getType('Restaurant'),
-                'fashionDeals' => Deal::getType('Nail Salon'),
-                'techDeals' => Deal::getType('Pizza'),
+                'categoryDeals' => Deal::getType('food'),
+                'fashionDeals' => Deal::getType('fashion'),
+                'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular()
             ]);
     }
@@ -93,21 +93,21 @@ class DealController extends Controller
     // VIEW ALL FOOD
     public function allFood(){
         return view('category_pages/food', [
-            'deals' => Deal::viewAllType('Restaurant') 
+            'deals' => Deal::viewAllType('food') 
          ]);
     }
 
     // VIEW ALL FASHION
     public function allFashion(){
         return view('category_pages/fashion', [
-            'deals' => Deal::viewAllType('Nail Salon') 
+            'deals' => Deal::viewAllType('fashion') 
          ]);
     }
 
     // VIEW ALL TECH
     public function allTech(){
         return view('category_pages/tech', [
-            'deals' => Deal::viewAllType('Pizza')
+            'deals' => Deal::viewAllType('tech')
         ]);
     }
 
@@ -115,6 +115,17 @@ class DealController extends Controller
     public function allPopular(){
         return view('category_pages/popular', [
             'deals' => Deal::viewAllPopular()
+        ]);
+    }
+
+    public function changeCategory(Request $request){
+        dd($request->value);
+        return view('index', [
+            'featuredDeals' => Deal::getFeatured(),
+                'categoryDeals' => Deal::getType($request->value),
+                'fashionDeals' => Deal::getType('fashion'),
+                'techDeals' => Deal::getType('tech'),
+                'popularDeals' => Deal::getPopular()
         ]);
     }
 }

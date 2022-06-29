@@ -70,12 +70,18 @@ class Deal extends Model
 
     // INDEX CATEGORY GROUPINGS, FOOD, TECH. ETC.
     public static function getType($type){
-        return Deal::where('category', '=', $type)->paginate(3, ['*'], $type);
+        return Deal::where('name', 'like', '%' . $type . '%')
+                ->orWhere('location', 'like', '%' . $type . '%')
+                ->orWhere('category', 'like', '%' . $type . '%')
+                ->paginate(3, ['*'], $type);
     }
 
     // VIEW ALL CATEGORY GROUPING
     public static function viewAllType($type){
-        return Deal::where('category', '=', $type)->paginate(10);
+        return Deal::where('name', 'like', '%' . $type . '%')
+        ->orWhere('location', 'like', '%' . $type . '%')
+        ->orWhere('category', 'like', '%' . $type . '%')
+        ->paginate(10);
     }
 
     // INDEX POPULAR GROUPING, PULLS DEALS WITH VIEWS GRETAER THAN 200
