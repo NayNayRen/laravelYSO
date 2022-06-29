@@ -90,8 +90,7 @@
                 <input type='submit' class="filter-selection" value="fun"></input>
                 <input type='submit' class="filter-selection" value="health"></input>
                 <input type='submit' class="filter-selection" value="all"></input>
-                <button id="dashboard-open-button" class="user-icon"><i class="fa fa-user"
-                        aria-hidden="true"></i></button>
+                <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
             </form>
         </div>
     </div>
