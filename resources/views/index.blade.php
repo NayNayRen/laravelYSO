@@ -84,11 +84,11 @@
         {{-- FILTER BLOCK --}}
         <div class="filter-container">
             <form action="/" method="GET">
-                <input type='submit' class="filter-selection" value="food"></input>
-                <input type='submit' class="filter-selection" value="fashion"></input>
-                <input type='submit' class="filter-selection" value="auto"></input>
-                <input type='submit' class="filter-selection" value="fun"></input>
-                <input type='submit' class="filter-selection" value="health"></input>
+                <input type='submit' class="filter-selection" name="food" value="food"></input>
+                <input type='submit' class="filter-selection" name="fashion" value="fashion"></input>
+                <input type='submit' class="filter-selection" name="auto" value="auto"></input>
+                <input type='submit' class="filter-selection" name="fun" value="fun"></input>
+                <input type='submit' class="filter-selection" name="health" value="health"></input>
                 <input type='submit' class="filter-selection" value="all"></input>
                 <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
             </form>
@@ -296,46 +296,6 @@
             </div>
         </div>
     </div>
-    {{-- FASHION CONTAINER --}}
-    {{-- <div id='fashion-container' class="container">
-        <div class="container-left">
-            <span class="category-heading">Fashion</span>
-            <a href={{ route('deals.fashion') }} class="view-all-link">View All</a>
-    </div>
-    <div class="container-right">
-        PAGE ARROWS
-        {{ $fashionDeals->appends(['featured' => $featuredDeals->currentPage()], ['food' => $categoryDeals->currentPage()], ['tech' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
-        CARD BLOCK
-        <div class="card-display">
-            @foreach($fashionDeals as $deal)
-                <div class="card">
-                    <div>
-                        <div class="card-logo-container">
-                            <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
-                        </div>
-                        <span class="card-discount">{{ $deal->location }}</span><br>
-                        <span class="card-name">{{ $deal->name }}</span><br>
-                    </div>
-                    <div>
-                        <div class="views-likes-container">
-                            <div>
-                                <span>Views: {{ $deal->views }}</span><br>
-                                <span>Likes:</span>
-                            </div>
-                            <div class="views-likes-icons">
-                                <i class="fa fa-share" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <a href="/deals/{{ $deal->id }}">
-                            <div class="get-deal-button">Get Deal Now!</div>
-                        </a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-    </div> --}}
     {{-- TECH CONTAINER --}}
     <div class="container">
         <div class="container-left">

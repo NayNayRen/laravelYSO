@@ -1414,12 +1414,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: right;
     /* outline: solid 1px blue; */
-}
-
-.filter-container input {
-    text-transform: capitalize;
 }
 
 .filter-search-container {
@@ -1456,6 +1451,7 @@ body {
     margin: 3px 5px;
     padding: 10px 0 10px 10px;
     text-align: left;
+    text-transform: capitalize;
     transition: all 150ms ease;
     width: 100px;
 }
@@ -3405,8 +3401,8 @@ html {
         font-size: 25px;
     }
 
-    .filter-container {
-        margin-top: 10px;
+    .filter-container form {
+        padding: 5px 0;
     }
 
     .footer {
