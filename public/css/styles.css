@@ -1040,6 +1040,7 @@ body {
     min-height: 40px;
     padding: 0 5px;
     position: relative;
+    text-transform: capitalize;
     width: 80%;
 }
 

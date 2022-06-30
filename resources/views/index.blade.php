@@ -83,7 +83,7 @@
         </div>
         {{-- FILTER BLOCK --}}
         <div class="filter-container">
-            <form action={{ route('deals.changeCategory') }} method="GET">
+            <form action={{ route('deals.index') }} method="GET">
                 <input type='submit' class="filter-selection" name="food" value="food"></input>
                 <input type='submit' class="filter-selection" name="fashion" value="fashion"></input>
                 <input type='submit' class="filter-selection" name="auto" value="auto"></input>
@@ -233,7 +233,7 @@
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $featuredDeals->appends(['food' => $categoryDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['tech' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $featuredDeals->appends(['featured' => $featuredDeals->currentPage(),$categoryHeading => $categoryDeals->currentPage(), 'tech' => $techDeals->currentPage(), 'popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($featuredDeals as $deal)
@@ -265,15 +265,19 @@
             </div>
         </div>
     </div>
-    {{-- FOOD CONTAINER --}}
+    {{-- SELECTED CATEGORY CONTAINER --}}
     <div id='food-container' class="container">
         <div class="container-left">
-            <span class="category-heading">Food</span>
-            <a href={{ route('deals.food') }} class="view-all-link">View All</a>
+            <span class="category-heading">{{ $categoryHeading }}</span>
+            {{-- <a href={{ route('deals.' . $categoryHeading) }}
+            class="view-all-link">View
+            All</a> --}}
+            <a href={{ route('deals.food') }} class="view-all-link">View
+                All</a>
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $categoryDeals->appends(['featured' => $featuredDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['tech' => $techDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $categoryDeals->appends([$categoryHeading => $categoryDeals->currentPage(), 'featured' => $featuredDeals->currentPage(), 'tech' => $techDeals->currentPage(), 'popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($categoryDeals as $deal)
@@ -313,7 +317,7 @@
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $techDeals->appends(['featured' => $featuredDeals->currentPage()], ['food' => $categoryDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $techDeals->appends(['tech' => $techDeals->currentPage(), 'featured' => $featuredDeals->currentPage(), $categoryHeading => $categoryDeals->currentPage(), 'popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($techDeals as $deal)
@@ -360,7 +364,7 @@
         </div>
         <div class="container-right">
             {{-- PAGE ARROWS --}}
-            {{ $popularDeals->appends(['featured' => $featuredDeals->currentPage()], ['food' => $categoryDeals->currentPage()], ['fashion' => $fashionDeals->currentPage()], ['tech' => $techDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
+            {{ $popularDeals->appends(['popular' => $popularDeals->currentPage(),'featured' => $featuredDeals->currentPage(), $categoryHeading => $categoryDeals->currentPage(), 'tech' => $techDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($popularDeals as $deal)

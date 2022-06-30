@@ -9,8 +9,6 @@ use App\Http\Controllers\NavigationPageController;
 // MAIN/LANDING PAGE ROUTE
 Route::get('/', [DealController::class, 'index'])->name('deals.index');
 
-Route::get('/changeCategory', [DealController::class, 'changeCategory'])->name('deals.changeCategory');
-
 // SINGLE DEAL SELECTED ROUTE
 Route::get('/deals/{deal}', [DealController::class, 'showDeal'])->name('deals.show');
 

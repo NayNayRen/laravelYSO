@@ -23,14 +23,70 @@ class DealController extends Controller
 // }
 
     // INDEX PAGE AND DATA METHODS
-    public function index(){
+    public function index(Request $request){
+        // category input selection
+        $food = $request->input('food');
+        $fashion = $request->input('fashion');
+        $auto = $request->input('auto');
+        $fun = $request->input('fun');
+        $health = $request->input('health');
+        // return view('index', [
+        //     'featuredDeals' => Deal::getFeatured(),
+        //     'categoryDeals' => Deal::getType('food'),
+        //     'techDeals' => Deal::getType('tech'),
+        //     'popularDeals' => Deal::getPopular(),
+        //     'categoryHeading' => 'food'
+        // ]);
+        // views based on selection
+        if($food){
             return view('index', [
                 'featuredDeals' => Deal::getFeatured(),
                 'categoryDeals' => Deal::getType('food'),
-                'fashionDeals' => Deal::getType('fashion'),
                 'techDeals' => Deal::getType('tech'),
-                'popularDeals' => Deal::getPopular()
+                'popularDeals' => Deal::getPopular(),
+                'categoryHeading' => 'food'
             ]);
+        }elseif($fashion){
+            return view('index', [
+                'featuredDeals' => Deal::getFeatured(),
+                'categoryDeals' => Deal::getType('fashion'),
+                'techDeals' => Deal::getType('tech'),
+                'popularDeals' => Deal::getPopular(),
+                'categoryHeading' => 'fashion'
+            ]);
+        }elseif($auto){
+            return view('index', [
+                'featuredDeals' => Deal::getFeatured(),
+                'categoryDeals' => Deal::getType('auto'),
+                'techDeals' => Deal::getType('tech'),
+                'popularDeals' => Deal::getPopular(),
+                'categoryHeading' => 'auto'
+            ]);
+        }elseif($fun){
+            return view('index', [
+                'featuredDeals' => Deal::getFeatured(),
+                'categoryDeals' => Deal::getType('fun'),
+                'techDeals' => Deal::getType('tech'),
+                'popularDeals' => Deal::getPopular(),
+                'categoryHeading' => 'fun'
+            ]);
+        }elseif($health){
+            return view('index', [
+                'featuredDeals' => Deal::getFeatured(),
+                'categoryDeals' => Deal::getType('health'),
+                'techDeals' => Deal::getType('tech'),
+                'popularDeals' => Deal::getPopular(),
+                'categoryHeading' => 'health'
+            ]);
+        }else{
+            return view('index', [
+                'featuredDeals' => Deal::getFeatured(),
+                'categoryDeals' => Deal::getType('food'),
+                'techDeals' => Deal::getType('tech'),
+                'popularDeals' => Deal::getPopular(),
+                'categoryHeading' => 'food'
+            ]);
+        }
     }
     
     // SINGLED DEAL PAGE, SHOWS REGISTERED AND NONREGISTERED VIEWS
@@ -116,17 +172,5 @@ class DealController extends Controller
         return view('category_pages/popular', [
             'deals' => Deal::viewAllPopular()
         ]);
-    }
-
-    public function changeCategory(Request $request){
-        $inputValue = $request->input();
-        dd($inputValue);
-        // return view('index', [
-        //     'featuredDeals' => Deal::getFeatured(),
-        //     'categoryDeals' => Deal::getType($inputValue),
-        //     'fashionDeals' => Deal::getType('fashion'),
-        //     'techDeals' => Deal::getType('tech'),
-        //     'popularDeals' => Deal::getPopular()
-        // ]);
     }
 }

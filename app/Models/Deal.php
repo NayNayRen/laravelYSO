@@ -29,15 +29,6 @@ class Deal extends Model
     //     );
     //     return $pagination;
     // }
-    
-    // public static function search(Request $request){
-        //     $words = explode(' ', $request->search);
-        //         return Deal::query()
-        //         ->where('name', 'like', '%' . $request->search . '%')
-        //         ->orWhere('location', 'like', '%' . $request->search . '%')
-        //         ->orWhere('category', 'like', '%' . $request->search . '%')
-        //         ->paginate(10);
-        // }
 
     // SEARCH METHOD
     // $q is used as a closure function to group queries together
@@ -56,41 +47,47 @@ class Deal extends Model
 
     // INDEX FEATURED GROUPING, GETS 10, SORTS BY ID
     public static function getFeatured(){
-        return Deal::query()
+        $featured = Deal::query()
         ->whereIn('id', Deal::select('id')->orderByDesc('id')->take(30)->get()->modelKeys())
         ->paginate(3, ['*'], 'featured');
+        return $featured;
     }
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllFeatured(){
-        return Deal::query()
+        $allFeatured = Deal::query()
         ->whereIn('id', Deal::select('id')->orderByDesc('id')->take(30)->get()->modelKeys())
         ->paginate(10);
+        return $allFeatured;
     }
 
     // INDEX CATEGORY GROUPINGS, FOOD, TECH. ETC.
     public static function getType($type){
-        return Deal::where('name', 'like', '%' . $type . '%')
-                ->orWhere('location', 'like', '%' . $type . '%')
-                ->orWhere('category', 'like', '%' . $type . '%')
-                ->paginate(3, ['*'], $type);
+        $category = Deal::where('name', 'like', '%' . $type . '%')
+        ->orWhere('location', 'like', '%' . $type . '%')
+        ->orWhere('category', 'like', '%' . $type . '%')
+        ->paginate(3, ['*'], $type);
+        return $category;
     }
 
     // VIEW ALL CATEGORY GROUPING
     public static function viewAllType($type){
-        return Deal::where('name', 'like', '%' . $type . '%')
+        $allCategory = Deal::where('name', 'like', '%' . $type . '%')
         ->orWhere('location', 'like', '%' . $type . '%')
         ->orWhere('category', 'like', '%' . $type . '%')
         ->paginate(10);
+        return $allCategory;
     }
 
     // INDEX POPULAR GROUPING, PULLS DEALS WITH VIEWS GRETAER THAN 200
     public static function getPopular(){
-        return Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(3, ['*'], 'popular');
+        $popular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(3, ['*'], 'popular');
+        return $popular;
     }
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllPopular(){
-        return Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(10);
+        $allPopular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(10);
+        return $allPopular;
     }
 }
