@@ -118,15 +118,15 @@ class DealController extends Controller
         ]);
     }
 
-    // public function changeCategory(Request $request){
-    //     $inputValue = $request->all();
-    //     // dd($inputValue);
-    //     return view('index', [
-    //         'featuredDeals' => Deal::getFeatured(),
-    //         'categoryDeals' => Deal::getType(reset($inputValue)),
-    //         'fashionDeals' => Deal::getType('fashion'),
-    //         'techDeals' => Deal::getType('tech'),
-    //         'popularDeals' => Deal::getPopular()
-    //     ]);
-    // }
+    public function changeCategory(Request $request){
+        $inputValue = $request->input();
+        dd($inputValue);
+        // return view('index', [
+        //     'featuredDeals' => Deal::getFeatured(),
+        //     'categoryDeals' => Deal::getType($inputValue),
+        //     'fashionDeals' => Deal::getType('fashion'),
+        //     'techDeals' => Deal::getType('tech'),
+        //     'popularDeals' => Deal::getPopular()
+        // ]);
+    }
 }

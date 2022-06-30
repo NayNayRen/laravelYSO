@@ -83,7 +83,7 @@
         </div>
         {{-- FILTER BLOCK --}}
         <div class="filter-container">
-            <form action="/" method="GET">
+            <form action={{ route('deals.changeCategory') }} method="GET">
                 <input type='submit' class="filter-selection" name="food" value="food"></input>
                 <input type='submit' class="filter-selection" name="fashion" value="fashion"></input>
                 <input type='submit' class="filter-selection" name="auto" value="auto"></input>
@@ -92,6 +92,15 @@
                 <input type='submit' class="filter-selection" value="all"></input>
                 <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
             </form>
+            {{-- <a href={{ route('deals.food') }} class="filter-selection" name="food"
+            value="food">food</a>
+            <a href={{ route('deals.fashion') }} class="filter-selection" name="fashion"
+                value="fashion">fashion</a>
+            <a class="filter-selection" name="auto" value="auto">auto</a>
+            <a class="filter-selection" name="fun" value="fun">fun</a>
+            <a class="filter-selection" name="health" value="health">health</a>
+            <a class="filter-selection" value="all">all</a>
+            <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span> --}}
         </div>
     </div>
     {{-- CASHBACK CONTAINER --}}
