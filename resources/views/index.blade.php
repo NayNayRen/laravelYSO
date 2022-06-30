@@ -89,18 +89,18 @@
                 <input type='submit' class="filter-selection" name="auto" value="auto"></input>
                 <input type='submit' class="filter-selection" name="fun" value="fun"></input>
                 <input type='submit' class="filter-selection" name="health" value="health"></input>
-                <input type='submit' class="filter-selection" value="all"></input>
+                <div class="filter-selection-dropdown">
+                    <input type='button' id="all-button" class="filter-selection" value="all"></input>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                </div>
                 <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
             </form>
-            {{-- <a href={{ route('deals.food') }} class="filter-selection" name="food"
-            value="food">food</a>
-            <a href={{ route('deals.fashion') }} class="filter-selection" name="fashion"
-                value="fashion">fashion</a>
-            <a class="filter-selection" name="auto" value="auto">auto</a>
-            <a class="filter-selection" name="fun" value="fun">fun</a>
-            <a class="filter-selection" name="health" value="health">health</a>
-            <a class="filter-selection" value="all">all</a>
-            <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span> --}}
         </div>
     </div>
     {{-- CASHBACK CONTAINER --}}
@@ -399,7 +399,7 @@
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
-{{-- <script src="{{ asset('js/change-category.js') }}"></script> --}}
+<script src="{{ asset('js/show-all-category.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
