@@ -160,6 +160,27 @@ class DealController extends Controller
          ]);
     }
 
+    // VIEW ALL AUTO
+    public function allAuto(){
+        return view('category_pages/auto', [
+            'deals' => Deal::viewAllType('auto') 
+         ]);
+    }
+
+    // VIEW ALL FUN
+    public function allFun(){
+        return view('category_pages/fun', [
+            'deals' => Deal::viewAllType('fun') 
+         ]);
+    }
+
+    // VIEW ALL HEALTH
+    public function allHealth(){
+        return view('category_pages/health', [
+            'deals' => Deal::viewAllType('health') 
+         ]);
+    }
+
     // VIEW ALL TECH
     public function allTech(){
         return view('category_pages/tech', [

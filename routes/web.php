@@ -21,6 +21,12 @@ Route::get('/category_pages/food', [DealController::class, 'allFood'])->name('de
 
 Route::get('/category_pages/fashion', [DealController::class, 'allFashion'])->name('deals.fashion');
 
+Route::get('/category_pages/auto', [DealController::class, 'allAuto'])->name('deals.auto');
+
+Route::get('/category_pages/fun', [DealController::class, 'allFun'])->name('deals.fun');
+
+Route::get('/category_pages/health', [DealController::class, 'allHealth'])->name('deals.health');
+
 Route::get('/category_pages/tech', [DealController::class, 'allTech'])->name('deals.tech');
 
 Route::get('/category_pages/popular', [DealController::class, 'allPopular'])->name('deals.popular');
