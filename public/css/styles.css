@@ -113,7 +113,8 @@
 
 .all-button-arrow {
     -webkit-transform: translateY(-50%);
-    font-size: 20px;
+    color: #000;
+    font-size: 18px;
     padding: 0;
     position: absolute;
     right: 10px;
@@ -1416,6 +1417,7 @@ body {
 .filter-container div {
     margin: 3px 5px;
     position: relative;
+    /* outline: solid 1px blue; */
 }
 
 .filter-container form {
@@ -1487,6 +1489,7 @@ body {
 }
 
 .filter-selection-dropdown {
+    -webkit-transform: translateX(-50%);
     -webkit-transition: max-height 500ms ease;
     background-color: #808080;
     border-radius: 5px;
@@ -1497,16 +1500,19 @@ body {
     padding: 0;
     position: absolute;
     top: calc(100% + 5px);
-    transition: max-height 500ms ease;
     transform: translateX(-50%);
-    width: 150px;
+    transition: max-height 500ms ease;
+    width: 175px;
 }
 
 .filter-selection-dropdown li {
     color: #000;
+    font-size: 14px;
+    font-weight: bold;
     height: auto;
     list-style-type: none;
-    padding: 10px 5px;
+    padding: 15px 5px 15px 10px;
+    text-transform: capitalize;
     width: 100%;
     /* outline: solid 1px blue; */
 }
@@ -2485,7 +2491,7 @@ html {
 .show-dropdown {
     -webkit-box-shadow: 0 2px 5px #808080;
     box-shadow: 0 2px 5px #808080;
-    max-height: 200px;
+    max-height: 250px;
     overflow-y: scroll;
     scrollbar-width: initial;
 }
@@ -3132,12 +3138,13 @@ html {
     }
 
     .all-button-arrow {
-        font-size: 18px;
+        font-size: 16px;
         right: 5px;
+        top: calc(50% - 2px);
     }
 
     .all-button-arrow-rotate {
-        top: calc(25% - 3px);
+        top: calc(25% - 2px);
     }
 
     .banner {

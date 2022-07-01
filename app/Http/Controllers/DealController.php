@@ -30,6 +30,8 @@ class DealController extends Controller
         $auto = $request->input('auto');
         $fun = $request->input('fun');
         $health = $request->input('health');
+        $categories = Deal::getCategories();
+        // dd($categories);
         // return view('index', [
         //     'featuredDeals' => Deal::getFeatured(),
         //     'categoryDeals' => Deal::getType('food'),
@@ -44,6 +46,7 @@ class DealController extends Controller
                 'categoryDeals' => Deal::getType('food'),
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
+                'categories' => $categories,
                 'categoryHeading' => 'food'
             ]);
         }elseif($fashion){
@@ -52,6 +55,7 @@ class DealController extends Controller
                 'categoryDeals' => Deal::getType('fashion'),
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
+                'categories' => $categories,
                 'categoryHeading' => 'fashion'
             ]);
         }elseif($auto){
@@ -60,6 +64,7 @@ class DealController extends Controller
                 'categoryDeals' => Deal::getType('auto'),
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
+                'categories' => $categories,
                 'categoryHeading' => 'auto'
             ]);
         }elseif($fun){
@@ -68,6 +73,7 @@ class DealController extends Controller
                 'categoryDeals' => Deal::getType('fun'),
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
+                'categories' => $categories,
                 'categoryHeading' => 'fun'
             ]);
         }elseif($health){
@@ -76,6 +82,7 @@ class DealController extends Controller
                 'categoryDeals' => Deal::getType('health'),
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
+                'categories' => $categories,
                 'categoryHeading' => 'health'
             ]);
         }else{
@@ -84,6 +91,7 @@ class DealController extends Controller
                 'categoryDeals' => Deal::getType('food'),
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
+                'categories' => $categories,
                 'categoryHeading' => 'food'
             ]);
         }

@@ -30,6 +30,13 @@ class Deal extends Model
     //     return $pagination;
     // }
 
+    // CATEGORY METHOD
+    // lists categories in dropdown menu
+    public static function getCategories(){
+        $categories = Deal::distinct()->orderBy('category')->pluck('category');
+        return $categories;
+    }
+
     // SEARCH METHOD
     // $q is used as a closure function to group queries together
     // $words is hoisted into the foreach scope

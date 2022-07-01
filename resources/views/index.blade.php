@@ -96,7 +96,10 @@
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </span>
                     <ul class="filter-selection-dropdown">
-                        <li>Category 1</li>
+                        @foreach($categories as $category)
+                            <li>{{ $category }}</li>
+                        @endforeach
+                        {{-- <li>Category 1</li>
                         <li>Category 2</li>
                         <li>Category 3</li>
                         <li>Category 4</li>
@@ -104,7 +107,7 @@
                         <li>Category 6</li>
                         <li>Category 7</li>
                         <li>Category 8</li>
-                        <li>Category 9</li>
+                        <li>Category 9</li> --}}
                     </ul>
                 </div>
                 <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
