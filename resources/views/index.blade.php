@@ -73,8 +73,7 @@
         <div class="search-container">
             <form action={{ route('deals.search') }} class="search-form" name="searchForm"
                 method="GET">
-                <input type="text" name="search" id="search-field" class="search-field"
-                    placeholder="Search by type, city, or zip...">
+                <input type="text" name="search" class="search-field" placeholder="Search by type, city, or zip...">
                 <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
                         aria-hidden="true"></i></button>
                 <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker"
@@ -97,17 +96,8 @@
                     </span>
                     <ul class="filter-selection-dropdown">
                         @foreach($categories as $category)
-                            <li>{{ $category }}</li>
+                            <li class="category-item">{{ $category }}</li>
                         @endforeach
-                        {{-- <li>Category 1</li>
-                        <li>Category 2</li>
-                        <li>Category 3</li>
-                        <li>Category 4</li>
-                        <li>Category 5</li>
-                        <li>Category 6</li>
-                        <li>Category 7</li>
-                        <li>Category 8</li>
-                        <li>Category 9</li> --}}
                     </ul>
                 </div>
                 <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
