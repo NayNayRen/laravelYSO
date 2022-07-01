@@ -270,10 +270,7 @@
     <div id='food-container' class="container">
         <div class="container-left">
             <span class="category-heading">{{ $categoryHeading }}</span>
-            {{-- <a href={{ route('deals.' . $categoryHeading) }}
-            class="view-all-link">View
-            All</a> --}}
-            <a href={{ route('deals.food') }} class="view-all-link">View
+            <a href={{ route('deals.' . $categoryHeading) }} class="view-all-link">View
                 All</a>
         </div>
         <div class="container-right">

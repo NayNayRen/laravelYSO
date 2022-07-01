@@ -26,6 +26,7 @@
         </div>
         {{-- BACK BUTTON AND LOGO --}}
         <div class="header-navigation">
+            {{-- <a href={{ url()->previous() }}> --}}
             <a href={{ route('deals.index') }}>
                 <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-header-link"
                     alt="Your Social Offers Logo">

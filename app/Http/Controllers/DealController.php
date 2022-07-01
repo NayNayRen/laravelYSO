@@ -31,14 +31,6 @@ class DealController extends Controller
         $fun = $request->input('fun');
         $health = $request->input('health');
         $categories = Deal::getCategories();
-        // dd($categories);
-        // return view('index', [
-        //     'featuredDeals' => Deal::getFeatured(),
-        //     'categoryDeals' => Deal::getType('food'),
-        //     'techDeals' => Deal::getType('tech'),
-        //     'popularDeals' => Deal::getPopular(),
-        //     'categoryHeading' => 'food'
-        // ]);
         // views based on selection
         if($food){
             return view('index', [

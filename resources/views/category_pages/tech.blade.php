@@ -62,6 +62,12 @@
             <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
         </div>
     </div>
+    <div class="search-results-search-container">
+        {{-- SEARCH CONTAINER --}}
+        @include('includes._search_container')
+        {{-- HIDDEN DASHBOARD --}}
+        @include('includes._dashboard')
+    </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
@@ -69,7 +75,7 @@
         <h1>Looking for Tech deals?</h1>
         <h3>We've got just the selection.</h3>
         {{-- HIDDEN DASHBOARD --}}
-        @include('includes._dashboard')
+        {{-- @include('includes._dashboard') --}}
     </div>
     <div class="container view-all">
         <div class="container-left">

@@ -263,7 +263,7 @@
     display: none;
 }
 
-.banner-image-food-1 {
+.banner-image-fashion-1 {
     background-color: #333333;
     background-image: -webkit-gradient(
             linear,
@@ -272,19 +272,19 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("..img/food/pizza-hut-banner.png");
+        url("..img/fashion/pacsun-banner.jpg");
     background-image: linear-gradient(
             to right,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/food/pizza-hut-banner.png");
+        url("../img/fashion/pacsun-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.banner-image-food-2 {
+.banner-image-fashion-2 {
     background-color: #333333;
     background-image: -webkit-gradient(
             linear,
@@ -293,19 +293,19 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("../img/food/hooters-banner.jpg");
+        url("..img/fashion/puma-banner.png");
     background-image: linear-gradient(
             to left,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/food/hooters-banner.jpg");
+        url("../img/fashion/puma-banner.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.banner-image-food-3 {
+.banner-image-fashion-3 {
     background-color: #333333;
     background-image: -webkit-gradient(
             linear,
@@ -314,19 +314,19 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("../img/food/subway-banner.jpg");
+        url("..img/fashion/adidas-banner.jpg");
     background-image: linear-gradient(
             to right,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/food/subway-banner.jpg");
+        url("../img/fashion/adidas-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.banner-image-food-4 {
+.banner-image-fashion-4 {
     background-color: #333333;
     background-image: -webkit-gradient(
             linear,
@@ -335,13 +335,13 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("../img/food/checkers-banner.jpg");
+        url("..img/fashion/fantastic-sams-banner.jpg");
     background-image: linear-gradient(
             to left,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/food/checkers-banner.jpg");
+        url("../img/fashion/fantastic-sams-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -426,6 +426,90 @@
             rgba(255, 255, 255, 0) 40%
         ),
         url("../img/tech/micro-center-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-food-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/food/pizza-hut-banner.png");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/pizza-hut-banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-food-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/food/hooters-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/hooters-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-food-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/food/subway-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/subway-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-food-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/food/checkers-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/food/checkers-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3717,20 +3801,20 @@ html {
         /* outline: solid 1px blue; */
     }
 
-    .banner-image-food-1 {
-        background-image: url("../img/food/pizza-hut-banner-mobile.png");
+    .banner-image-fashion-1 {
+        background-image: url("../img/fashion/pacsun-banner-mobile.jpg");
     }
 
-    .banner-image-food-2 {
-        background-image: url("../img/food/hooters-banner-mobile.jpg");
+    .banner-image-fashion-2 {
+        background-image: url("../img/fashion/puma-banner-mobile.png");
     }
 
-    .banner-image-food-3 {
-        background-image: url("../img/food/subway-banner-mobile.jpg");
+    .banner-image-fashion-3 {
+        background-image: url("../img/fashion/adidas-banner-mobile.jpg");
     }
 
-    .banner-image-food-4 {
-        background-image: url("../img/food/checkers-banner-mobile.jpg");
+    .banner-image-fashion-4 {
+        background-image: url("../img/fashion/fantastic-sams-banner-mobile.png");
     }
 
     .banner-image-featured-1 {
@@ -3747,6 +3831,22 @@ html {
 
     .banner-image-featured-4 {
         background-image: url("../img/tech/micro-center-banner-mobile.jpg");
+    }
+
+    .banner-image-food-1 {
+        background-image: url("../img/food/pizza-hut-banner-mobile.png");
+    }
+
+    .banner-image-food-2 {
+        background-image: url("../img/food/hooters-banner-mobile.jpg");
+    }
+
+    .banner-image-food-3 {
+        background-image: url("../img/food/subway-banner-mobile.jpg");
+    }
+
+    .banner-image-food-4 {
+        background-image: url("../img/food/checkers-banner-mobile.jpg");
     }
 
     .banner-image-main-1 {
