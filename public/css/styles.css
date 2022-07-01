@@ -111,6 +111,24 @@
     width: 100%;
 }
 
+.all-button-arrow {
+    -webkit-transform: translateY(-50%);
+    font-size: 20px;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 150ms ease;
+    /* outline: solid 1px blue; */
+}
+
+.all-button-arrow-rotate {
+    -webkit-transform: rotate(180deg);
+    top: 25%;
+    transform: rotate(180deg);
+}
+
 .back-button {
     -ms-flex-align: center;
     -ms-flex-direction: row;
@@ -1395,8 +1413,9 @@ body {
     padding: 0 20px 5px 0;
 }
 
-#fashion-container {
-    display: none;
+.filter-container div {
+    margin: 3px 5px;
+    position: relative;
 }
 
 .filter-container form {
@@ -1463,30 +1482,39 @@ body {
     cursor: pointer;
 }
 
-.filter-selection-dropdown {
-    margin: 3px 5px;
-    position: relative;
-    /* outline: solid 1px blue; */
+.filter-selection.all-button {
+    margin: 0;
 }
 
-.filter-selection-dropdown ul {
-    background-color: #000;
-    top: 100%;
-    height: 200px;
-    left: 0;
+.filter-selection-dropdown {
+    -webkit-transition: max-height 500ms ease;
+    background-color: #808080;
+    border-radius: 5px;
+    left: 50%;
     margin: 0;
-    padding: 5px;
+    max-height: 0;
+    overflow-y: hidden;
+    padding: 0;
     position: absolute;
-    width: 100%;
+    top: calc(100% + 5px);
+    transition: max-height 500ms ease;
+    transform: translateX(-50%);
+    width: 150px;
 }
 
 .filter-selection-dropdown li {
-    color: #fff;
+    color: #000;
+    height: auto;
     list-style-type: none;
+    padding: 10px 5px;
+    width: 100%;
+    /* outline: solid 1px blue; */
 }
 
-#all-button {
-    margin: 0;
+.filter-selection-dropdown li:hover {
+    background-color: #333333;
+    color: #fff;
+    cursor: pointer;
 }
 
 .flash-message-user {
@@ -2454,6 +2482,14 @@ html {
     transition: background-color 250ms ease;
 }
 
+.show-dropdown {
+    -webkit-box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px #808080;
+    max-height: 200px;
+    overflow-y: scroll;
+    scrollbar-width: initial;
+}
+
 #show-password {
     display: none;
 }
@@ -3091,6 +3127,19 @@ html {
         height: 200px;
     }
 
+    .filter-selection.all-button {
+        padding: 7px 35px 7px 15px;
+    }
+
+    .all-button-arrow {
+        font-size: 18px;
+        right: 5px;
+    }
+
+    .all-button-arrow-rotate {
+        top: calc(25% - 3px);
+    }
+
     .banner {
         height: 375px;
     }
@@ -3178,7 +3227,8 @@ html {
 
     .filter-selection {
         font-size: 18px;
-        padding: 5px 15px;
+        padding: 7px 15px;
+        text-align: center;
         width: auto;
     }
 
@@ -4109,7 +4159,7 @@ html {
 
     .filter-selection {
         font-size: 16px;
-        padding: 5px 10px;
+        /* padding: 5px 10px; */
         margin: 4px;
     }
 

@@ -89,14 +89,22 @@
                 <input type='submit' class="filter-selection" name="auto" value="auto"></input>
                 <input type='submit' class="filter-selection" name="fun" value="fun"></input>
                 <input type='submit' class="filter-selection" name="health" value="health"></input>
-                <div class="filter-selection-dropdown">
-                    <input type='button' id="all-button" class="filter-selection" value="all"></input>
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                <div>
+                    <input type='button' class="filter-selection all-button" value="all">
+                    </input>
+                    <span class="all-button-arrow">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </span>
+                    <ul class="filter-selection-dropdown">
+                        <li>Category 1</li>
+                        <li>Category 2</li>
+                        <li>Category 3</li>
+                        <li>Category 4</li>
+                        <li>Category 5</li>
+                        <li>Category 6</li>
+                        <li>Category 7</li>
+                        <li>Category 8</li>
+                        <li>Category 9</li>
                     </ul>
                 </div>
                 <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
