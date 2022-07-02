@@ -2578,8 +2578,8 @@ html {
 
 .show-dropdown {
     -webkit-box-shadow: 0 5px 10px #333333;
-    box-shadow: 0 2px 10px #333333;
-    max-height: 250px;
+    box-shadow: 0 5px 10px #333333;
+    max-height: 275px;
     overflow-y: scroll;
     opacity: 1;
 }
