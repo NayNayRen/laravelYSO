@@ -65,18 +65,8 @@
     </div>
     {{-- SEARCH CONTAINER --}}
     <div class="search-results-search-container">
-        <div class="search-container">
-            <form action={{ route('deals.search') }} class="search-form" name="searchForm"
-                method="GET">
-                <input type="text" name="search" id="search-field" class="search-field"
-                    placeholder="Search by type, city, or zip...">
-                <span class="search-form-error">{{ $message }}</span>
-                <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
-                        aria-hidden="true"></i></button>
-                {{-- <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker"
-                        aria-hidden="true"></i></button> --}}
-            </form>
-        </div>
+        {{-- SEARCH CONTAINER --}}
+        @include('includes._search_container')
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
     </div>
@@ -95,7 +85,7 @@
     {{-- IF SEARCH DOESN'T RETURN ANY RESULTS OR LEFT EMPTY --}}
     @if($searchedDeals === 0 || $searchedDeals->count() === 0)
         <div class="search-results-message-container">
-            <h1>Youre search didn't return any results.</h1>
+            <h1>Your search didn't return any results.</h1>
             <p>Return back home to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>

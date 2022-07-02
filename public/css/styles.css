@@ -1574,28 +1574,31 @@ body {
 
 .filter-selection-dropdown {
     -webkit-transform: translateX(-50%);
-    -webkit-transition: max-height 500ms ease;
+    -webkit-transition: max-height 500ms ease, opacity 250ms ease;
     background-color: #808080;
     border-radius: 5px;
     left: 50%;
     margin: 0;
     max-height: 0;
+    opacity: 0;
     overflow-y: hidden;
     padding: 0;
     position: absolute;
     top: calc(100% + 5px);
     transform: translateX(-50%);
-    transition: max-height 500ms ease;
-    width: 175px;
+    transition: max-height 500ms ease, opacity 250ms ease;
+    width: 200px;
 }
 
 .filter-selection-dropdown li {
-    color: #000;
-    font-size: 14px;
+    border-bottom: solid 1px #fff;
+    color: #fff;
+    font-size: 16px;
     font-weight: bold;
     height: auto;
     list-style-type: none;
-    padding: 15px 5px 15px 10px;
+    padding: 15px 10px;
+    text-shadow: 0 2px 2px #000;
     text-transform: capitalize;
     width: 100%;
     /* outline: solid 1px blue; */
@@ -1603,8 +1606,11 @@ body {
 
 .filter-selection-dropdown li:hover {
     background-color: #333333;
-    color: #fff;
     cursor: pointer;
+}
+
+.filter-selection-dropdown li:last-child {
+    border-bottom: none;
 }
 
 .flash-message-user {
@@ -2371,7 +2377,7 @@ html {
     cursor: pointer;
 }
 
-.search-button:nth-child(even) {
+.search-button:nth-of-type(1) {
     border-bottom-right-radius: 5px;
     border-bottom: none;
     border-left: solid 1px #000;
@@ -2381,7 +2387,7 @@ html {
     margin: 0 8px 0 -5px;
 }
 
-.search-button:nth-child(odd) {
+.search-button:nth-of-type(2) {
     border: none;
     border-radius: 5px;
 }
@@ -2407,7 +2413,7 @@ html {
     border-bottom-left-radius: 5px;
     border: none;
     border-top-left-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     height: 40px;
     padding: 8px 8px 8px 10px;
     width: 300px;
@@ -2418,12 +2424,16 @@ html {
 }
 
 .search-form-error {
-    bottom: -20px;
-    color: #000;
+    -webkit-transform: translateX(-50%);
+    color: #fff;
     font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    left: 0;
+    font-size: 18px;
+    left: 50%;
     position: absolute;
+    text-align: center;
+    text-shadow: 0 2px 2px #000;
+    top: 100%;
+    transform: translateX(-50%);
     width: 100%;
     z-index: 1;
     /* outline: solid 1px blue; */
@@ -2484,14 +2494,8 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 5px 20px 5px;
+    padding: 15px 5px 30px 5px;
     position: relative;
-}
-
-.search-results-search-container .search-button {
-    border-left: solid 1px #000;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
 }
 
 .selected-deal-container {
@@ -2573,11 +2577,11 @@ html {
 }
 
 .show-dropdown {
-    -webkit-box-shadow: 0 2px 5px #808080;
-    box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 5px 10px #333333;
+    box-shadow: 0 2px 10px #333333;
     max-height: 250px;
     overflow-y: scroll;
-    scrollbar-width: initial;
+    opacity: 1;
 }
 
 #show-password {
@@ -3022,12 +3026,12 @@ html {
 }
 
 .view-all-container-heading p {
-    background-color: #b5b2b4;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-family: "Roboto", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     margin: 10px auto 0 auto;
-    padding: 10px 5px;
+    padding: 15px 5px;
     text-align: center;
     width: 100%;
     /* outline: solid 1px blue; */
@@ -3035,6 +3039,7 @@ html {
 
 .view-all-container-heading p span {
     color: #e6331f;
+    text-transform: capitalize;
 }
 
 .view-all-item-counter {
@@ -3192,10 +3197,6 @@ html {
 
     .search-button {
         font-size: 16px;
-    }
-
-    .search-button {
-        padding: 5px 10px;
     }
 
     .up-arrow {
@@ -3382,7 +3383,12 @@ html {
 
     .search-button {
         height: auto;
+        padding: 5px 10px;
         width: auto;
+    }
+
+    .search-button:nth-of-type(2) {
+        padding: 5px 12px;
     }
 
     .search-button i {
@@ -3407,9 +3413,9 @@ html {
     }
 
     .user-icon {
-        font-size: 24px;
-        height: 35px;
-        width: 35px;
+        font-size: 26px;
+        height: 38px;
+        width: 38px;
     }
 
     .user-initials-container,
@@ -4266,7 +4272,6 @@ html {
 
     .filter-selection {
         font-size: 16px;
-        /* padding: 5px 10px; */
         margin: 4px;
     }
 
@@ -4274,6 +4279,10 @@ html {
     .user-icon:hover {
         background-color: #fff;
         color: #000;
+    }
+
+    .filter-selection-dropdown {
+        width: 175px;
     }
 
     .footer {
@@ -4458,7 +4467,7 @@ html {
     }
 
     .search-results-message-container p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .selected-deal-container {
@@ -4581,6 +4590,7 @@ html {
     .view-all-container-heading p {
         font-size: 18px;
         margin: 5px auto 0 auto;
+        padding: 15px 20px;
     }
 
     .view-all-item-counter {
@@ -4811,6 +4821,10 @@ html {
         width: 90%;
     }
 
+    .search-results-message-container h1 {
+        font-size: 22px;
+    }
+
     .selected-deal-discount,
     .selected-deal-name {
         font-size: 16px;
@@ -4835,8 +4849,9 @@ html {
     }
 
     .user-icon {
-        height: 32px;
-        width: 32px;
+        font-size: 24px;
+        height: 34px;
+        width: 34px;
     }
 
     .user-login-button,

@@ -70,16 +70,8 @@
     </div>
     {{-- SEARCH BLOCK --}}
     <div class="filter-search-container">
-        <div class="search-container">
-            <form action={{ route('deals.search') }} class="search-form" name="searchForm"
-                method="GET">
-                <input type="text" name="search" class="search-field" placeholder="Search by type, city, or zip...">
-                <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
-                        aria-hidden="true"></i></button>
-                <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker"
-                        aria-hidden="true"></i></button>
-            </form>
-        </div>
+        {{-- SEARCH CONTAINER --}}
+        @include('includes._search_container')
         {{-- FILTER BLOCK --}}
         <div class="filter-container">
             <form action={{ route('deals.index') }} method="GET">

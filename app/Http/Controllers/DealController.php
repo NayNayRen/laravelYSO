@@ -39,7 +39,8 @@ class DealController extends Controller
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
-                'categoryHeading' => 'food'
+                'categoryHeading' => 'food',
+                'message' => ''
             ]);
         }elseif($fashion){
             return view('index', [
@@ -48,7 +49,8 @@ class DealController extends Controller
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
-                'categoryHeading' => 'fashion'
+                'categoryHeading' => 'fashion',
+                'message' => ''
             ]);
         }elseif($auto){
             return view('index', [
@@ -57,7 +59,8 @@ class DealController extends Controller
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
-                'categoryHeading' => 'auto'
+                'categoryHeading' => 'auto',
+                'message' => ''
             ]);
         }elseif($fun){
             return view('index', [
@@ -66,7 +69,8 @@ class DealController extends Controller
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
-                'categoryHeading' => 'fun'
+                'categoryHeading' => 'fun',
+                'message' => ''
             ]);
         }elseif($health){
             return view('index', [
@@ -75,7 +79,8 @@ class DealController extends Controller
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
-                'categoryHeading' => 'health'
+                'categoryHeading' => 'health',
+                'message' => ''
             ]);
         }else{
             return view('index', [
@@ -84,7 +89,8 @@ class DealController extends Controller
                 'techDeals' => Deal::getType('tech'),
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
-                'categoryHeading' => 'food'
+                'categoryHeading' => 'food',
+                'message' => ''
             ]);
         }
     }
@@ -124,7 +130,7 @@ class DealController extends Controller
             return view('category_pages/searchResults', [
                 'searchedDeals' => $results,
                 'request' => $request,
-                'searchedWords' => ['no results'],
+                'searchedWords' => ['no results found.'],
                 'message' => 'Type something to search for.'
             ]);
         // if all goes well
@@ -142,56 +148,64 @@ class DealController extends Controller
     // VIEW ALL FEATURED
     public function allFeatured(){
         return view('category_pages/featured', [
-            'deals' => Deal::viewAllFeatured() 
+            'deals' => Deal::viewAllFeatured(),
+            'message' => ''
          ]);
     }
 
     // VIEW ALL FOOD
     public function allFood(){
         return view('category_pages/food', [
-            'deals' => Deal::viewAllType('food') 
+            'deals' => Deal::viewAllType('food'),
+            'message' => ''
          ]);
     }
 
     // VIEW ALL FASHION
     public function allFashion(){
         return view('category_pages/fashion', [
-            'deals' => Deal::viewAllType('fashion') 
+            'deals' => Deal::viewAllType('fashion'),
+            'message' => ''
          ]);
     }
 
     // VIEW ALL AUTO
     public function allAuto(){
         return view('category_pages/auto', [
-            'deals' => Deal::viewAllType('auto') 
+            'deals' => Deal::viewAllType('auto'),
+            'message' => ''
          ]);
     }
 
     // VIEW ALL FUN
     public function allFun(){
         return view('category_pages/fun', [
-            'deals' => Deal::viewAllType('fun') 
+            'deals' => Deal::viewAllType('fun'),
+            'message' => ''
          ]);
     }
 
     // VIEW ALL HEALTH
     public function allHealth(){
         return view('category_pages/health', [
-            'deals' => Deal::viewAllType('health') 
+            'deals' => Deal::viewAllType('health'),
+            'message' => ''
          ]);
     }
 
     // VIEW ALL TECH
     public function allTech(){
         return view('category_pages/tech', [
-            'deals' => Deal::viewAllType('tech')
+            'deals' => Deal::viewAllType('tech'),
+            'message' => ''
         ]);
     }
 
     // VIEW ALL POPULAR
     public function allPopular(){
         return view('category_pages/popular', [
-            'deals' => Deal::viewAllPopular()
+            'deals' => Deal::viewAllPopular(),
+            'message' => ''
         ]);
     }
 }
