@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <title>YourSocialOffers.com</title>
+    <title>YourSocialOffers.com || {{ $pageTitle }}</title>
     <link rel="icon" href="{{ asset('img/yso-clipped-rw.png') }}" type="image/x-icon">
 </head>
 

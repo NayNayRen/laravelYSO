@@ -10,7 +10,9 @@ class UserController extends Controller
 {
     // show the registration form
     public function showRegistrationForm(){
-        return view('user_pages/register');
+        return view('user_pages/register', [
+            'pageTitle' => 'Register With YSO'
+        ]);
     }
 
     // register a new user 
@@ -33,7 +35,9 @@ class UserController extends Controller
 
     // show the log in form
     public function showLoginForm(){
-        return view('user_pages/login');
+        return view('user_pages/login', [
+            'pageTitle' => 'Log In'
+        ]);
     }
 
     // log user in

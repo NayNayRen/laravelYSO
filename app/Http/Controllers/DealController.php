@@ -40,7 +40,8 @@ class DealController extends Controller
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
                 'categoryHeading' => 'food',
-                'message' => ''
+                'message' => '',
+                'pageTitle' => 'Home'
             ]);
         }elseif($fashion){
             return view('index', [
@@ -50,7 +51,8 @@ class DealController extends Controller
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
                 'categoryHeading' => 'fashion',
-                'message' => ''
+                'message' => '',
+                'pageTitle' => 'Home'
             ]);
         }elseif($auto){
             return view('index', [
@@ -60,7 +62,8 @@ class DealController extends Controller
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
                 'categoryHeading' => 'auto',
-                'message' => ''
+                'message' => '',
+                'pageTitle' => 'Home'
             ]);
         }elseif($fun){
             return view('index', [
@@ -70,7 +73,8 @@ class DealController extends Controller
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
                 'categoryHeading' => 'fun',
-                'message' => ''
+                'message' => '',
+                'pageTitle' => 'Home'
             ]);
         }elseif($health){
             return view('index', [
@@ -80,7 +84,8 @@ class DealController extends Controller
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
                 'categoryHeading' => 'health',
-                'message' => ''
+                'message' => '',
+                'pageTitle' => 'Home'
             ]);
         }else{
             return view('index', [
@@ -90,7 +95,8 @@ class DealController extends Controller
                 'popularDeals' => Deal::getPopular(),
                 'categories' => $categories,
                 'categoryHeading' => 'food',
-                'message' => ''
+                'message' => '',
+                'pageTitle' => 'Home'
             ]);
         }
     }
@@ -101,12 +107,14 @@ class DealController extends Controller
         if(Auth::check()){
             return view('registeredDeal', [
                 'deal' => $deal,
-                'user' => auth()->user()
+                'user' => auth()->user(),
+                'pageTitle' => 'Selected Deal'
             ]);
             // if not signed in
         }else{
             return view('unregisteredDeal', [
-                'deal' => $deal
+                'deal' => $deal,
+                'pageTitle' => 'Selected Deal'
             ]);
         }
     }
@@ -121,7 +129,8 @@ class DealController extends Controller
                 'searchedDeals' => $results,
                 'request' => $request,
                 'searchedWords' => $words,
-                'message' => 'Limit your search to 3 words or less.'
+                'message' => 'Limit your search to 3 words or less.',
+                'pageTitle' => 'Search Results'
             ]);
         }
         // if nothing is typed, sets results to 0, essentially empty
@@ -131,7 +140,8 @@ class DealController extends Controller
                 'searchedDeals' => $results,
                 'request' => $request,
                 'searchedWords' => ['no results found.'],
-                'message' => 'Type something to search for.'
+                'message' => 'Type something to search for.',
+                'pageTitle' => 'Search Results'
             ]);
         // if all goes well
         }else{
@@ -140,7 +150,8 @@ class DealController extends Controller
                 'searchedDeals' => $results,
                 'request' => $request,
                 'searchedWords' => $words,
-                'message' => ''
+                'message' => '',
+                'pageTitle' => 'Search Results'
             ]);
         }
     }
@@ -149,7 +160,8 @@ class DealController extends Controller
     public function allFeatured(){
         return view('category_pages/featured', [
             'deals' => Deal::viewAllFeatured(),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Featured Deals'
          ]);
     }
 
@@ -157,7 +169,8 @@ class DealController extends Controller
     public function allFood(){
         return view('category_pages/food', [
             'deals' => Deal::viewAllType('food'),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Food Deals'
          ]);
     }
 
@@ -165,7 +178,8 @@ class DealController extends Controller
     public function allFashion(){
         return view('category_pages/fashion', [
             'deals' => Deal::viewAllType('fashion'),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Fashion Deals'
          ]);
     }
 
@@ -173,7 +187,8 @@ class DealController extends Controller
     public function allAuto(){
         return view('category_pages/auto', [
             'deals' => Deal::viewAllType('auto'),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Automotive Deals'
          ]);
     }
 
@@ -181,7 +196,8 @@ class DealController extends Controller
     public function allFun(){
         return view('category_pages/fun', [
             'deals' => Deal::viewAllType('fun'),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Fun Deals'
          ]);
     }
 
@@ -189,7 +205,8 @@ class DealController extends Controller
     public function allHealth(){
         return view('category_pages/health', [
             'deals' => Deal::viewAllType('health'),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Healthy Deals'
          ]);
     }
 
@@ -197,7 +214,8 @@ class DealController extends Controller
     public function allTech(){
         return view('category_pages/tech', [
             'deals' => Deal::viewAllType('tech'),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Tech Deals'
         ]);
     }
 
@@ -205,7 +223,8 @@ class DealController extends Controller
     public function allPopular(){
         return view('category_pages/popular', [
             'deals' => Deal::viewAllPopular(),
-            'message' => ''
+            'message' => '',
+            'pageTitle' => 'Popular Deals'
         ]);
     }
 }
