@@ -2981,6 +2981,7 @@ html {
 
 .view-all {
     background-color: #808080;
+    /* background-color: #fff; */
     /* grid-template-columns: 100%; */
 }
 
