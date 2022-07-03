@@ -111,6 +111,27 @@
     width: 100%;
 }
 
+.all-button {
+    -webkit-transition: all 150ms ease;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    color: #000;
+    font-size: 20px;
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    text-align: left;
+    text-transform: capitalize;
+    transition: all 150ms ease;
+    width: 100px;
+}
+
+.all-button:hover {
+    background-color: #808080;
+    color: #fff;
+    cursor: pointer;
+}
+
 .all-button-arrow {
     -webkit-transform: translateY(-50%);
     color: #000;
@@ -124,10 +145,21 @@
     /* outline: solid 1px blue; */
 }
 
+.all-button-arrow:hover {
+    cursor: pointer;
+}
+
 .all-button-arrow-rotate {
     -webkit-transform: rotate(180deg);
     top: 25%;
     transform: rotate(180deg);
+}
+
+.all-button-toggle {
+    background-color: #808080;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #fff;
 }
 
 .back-button {
@@ -1568,10 +1600,6 @@ body {
     cursor: pointer;
 }
 
-.filter-selection.all-button {
-    margin: 0;
-}
-
 .filter-selection-dropdown {
     -webkit-transform: translateX(-50%);
     -webkit-transition: max-height 500ms ease, opacity 250ms ease;
@@ -1584,28 +1612,33 @@ body {
     overflow-y: hidden;
     padding: 0;
     position: absolute;
-    top: calc(100% + 5px);
+    top: 100%;
     transform: translateX(-50%);
     transition: max-height 500ms ease, opacity 250ms ease;
     width: 200px;
 }
 
+.filter-selection-dropdown-toggle {
+    -webkit-box-shadow: 0 15px 20px #333333;
+    box-shadow: 0 20px 20px #333333;
+    max-height: 350px;
+    overflow-y: scroll;
+    opacity: 1;
+}
+
 .filter-selection-dropdown li {
-    border-bottom: solid 1px #fff;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
-    height: auto;
     list-style-type: none;
     padding: 15px 10px;
-    text-shadow: 0 2px 2px #000;
+    text-shadow: 0 1px 1px #000;
     text-transform: capitalize;
     width: 100%;
-    /* outline: solid 1px blue; */
 }
 
 .filter-selection-dropdown li:hover {
-    background-color: #333333;
+    background-color: #000;
     cursor: pointer;
 }
 
@@ -2576,14 +2609,6 @@ html {
     transition: background-color 250ms ease;
 }
 
-.show-dropdown {
-    -webkit-box-shadow: 0 5px 10px #333333;
-    box-shadow: 0 5px 10px #333333;
-    max-height: 275px;
-    overflow-y: scroll;
-    opacity: 1;
-}
-
 #show-password {
     display: none;
 }
@@ -3218,8 +3243,10 @@ html {
         height: 200px;
     }
 
-    .filter-selection.all-button {
+    .all-button {
+        font-size: 18px;
         padding: 7px 35px 7px 15px;
+        width: auto;
     }
 
     .all-button-arrow {
@@ -3718,6 +3745,10 @@ html {
     .ad-container {
         height: 145px;
         padding: 5px;
+    }
+
+    .all-button {
+        font-size: 16px;
     }
 
     .back-button {

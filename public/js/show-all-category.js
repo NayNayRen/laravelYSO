@@ -7,13 +7,25 @@ const filterSelectionDropdown = document.querySelector(
 );
 
 allButton.addEventListener("click", () => {
-    filterSelectionDropdown.classList.toggle("show-dropdown");
+    filterSelectionDropdown.classList.toggle(
+        "filter-selection-dropdown-toggle"
+    );
     allButtonArrow.classList.toggle("all-button-arrow-rotate");
+    allButtonArrow.classList.toggle("all-button-toggle");
+    allButton.classList.toggle("all-button-toggle");
+});
+
+allButtonArrow.addEventListener("click", () => {
+    filterSelectionDropdown.classList.toggle(
+        "filter-selection-dropdown-toggle"
+    );
+    allButtonArrow.classList.toggle("all-button-arrow-rotate");
+    allButtonArrow.classList.toggle("all-button-toggle");
+    allButton.classList.toggle("all-button-toggle");
 });
 
 categoryItem.forEach((item) => {
     item.addEventListener("click", (e) => {
-        // console.log(e.target.innerText);
         searchField.value = e.target.innerText;
     });
 });

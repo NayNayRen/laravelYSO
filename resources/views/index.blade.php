@@ -81,7 +81,7 @@
                 <input type='submit' class="filter-selection" name="fun" value="fun"></input>
                 <input type='submit' class="filter-selection" name="health" value="health"></input>
                 <div>
-                    <input type='button' class="filter-selection all-button" value="all">
+                    <input type='button' class="all-button" value="all">
                     </input>
                     <span class="all-button-arrow">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
