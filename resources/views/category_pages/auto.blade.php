@@ -7,8 +7,8 @@
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>$25 gift card</span>
-                    <span class='banner-text-two'>after spending $75 or more.</span>
+                    <span class='banner-text-one'>free wipers</span>
+                    <span class='banner-text-two'>with purchase of $50 or more.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
                 <div class="banner-container-image banner-image-auto-1">
@@ -18,14 +18,14 @@
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
-                <img class="banner-logo left" src="{{ asset('img/auto/aamco-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/auto/aamco-logo.png') }}"
                     alt="Hooters Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-auto-2">
                 </div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>50% off!!!</span>
-                    <span class='banner-text-two'>extra set of spikes with purchase.</span>
+                    <span class='banner-text-one'>30% off!!!</span>
+                    <span class='banner-text-two'>your next transmission fluid change.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
             </div>
@@ -33,13 +33,13 @@
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>1/2 off</span>
-                    <span class='banner-text-two'>second pair + a set of laces.</span>
+                    <span class='banner-text-one'>free rotation!!!</span>
+                    <span class='banner-text-two'>with purchase of 2 tires.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
                 <div class="banner-container-image banner-image-auto-3">
                 </div>
-                <img class="banner-logo right" src="{{ asset('img/auto/tires-plus-logo2.png') }}"
+                <img class="banner-logo" src="{{ asset('img/auto/tires-plus-logo2.png') }}"
                     alt="Subway Company Logo">
             </div>
             {{-- SLIDE 4 --}}
@@ -50,10 +50,8 @@
                 <div class="banner-container-image banner-image-auto-4">
                 </div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'><img
-                            src="{{ asset('img/fashion/fantastic-sams-logo.png') }}"
-                            alt="Fantastic Sams Company Logo"></span>
-                    <span class='banner-text-two'>$10 gift card.</span>
+                    <span class='banner-text-one'>2nd color</span>
+                    <span class='banner-text-two'>free with first mix.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
             </div>
