@@ -295,6 +295,90 @@
     display: none;
 }
 
+.banner-image-auto-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/advanced-auto-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/advanced-auto-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-auto-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/aamco-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/aamco-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-auto-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/tires-plus-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/tires-plus-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-auto-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/sw-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/sw-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .banner-image-fashion-1 {
     background-color: #333333;
     background-image: -webkit-gradient(
@@ -2989,7 +3073,7 @@ html {
     background-color: #333333;
     color: #fff;
     height: 300px;
-    width: 200px;
+    width: 225px;
 }
 
 .view-all .card-discount {
@@ -3837,6 +3921,22 @@ html {
         transform: translate(0, 0);
         width: 100%;
         /* outline: solid 1px blue; */
+    }
+
+    .banner-image-auto-1 {
+        background-image: url("../img/auto/advanced-auto-banner-mobile.jpg");
+    }
+
+    .banner-image-auto-2 {
+        background-image: url("../img/auto/aamco-banner-mobile.jpg");
+    }
+
+    .banner-image-auto-3 {
+        background-image: url("../img/auto/tires-plus-banner-mobile.jpg");
+    }
+
+    .banner-image-auto-4 {
+        background-image: url("../img/auto/sw-banner-mobile.jpg");
     }
 
     .banner-image-fashion-1 {
