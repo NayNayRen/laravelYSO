@@ -7,13 +7,13 @@
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
                     <span class='banner-text-one'>free round</span>
-                    <span class='banner-text-two'>for you and a guest after initial purchase.</span>
+                    <span class='banner-text-two'>for you & a guest after initial purchase.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
                 <div class="banner-container-image banner-image-popular-1">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/fun/congo-logo.png') }}"
-                    alt="Micro Center Company Logo">
+                    alt="Congo River Company Logo">
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">

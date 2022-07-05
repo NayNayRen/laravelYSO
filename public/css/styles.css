@@ -631,6 +631,174 @@
     background-size: cover;
 }
 
+.banner-image-fun-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/congo-river-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/congo-river-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-fun-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/amc-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/amc-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-fun-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/top-golf-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/top-golf-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-fun-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/adventure-island-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/adventure-island-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/planet-fitness-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/planet-fitness-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/whole-foods-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/whole-foods-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/walgreens-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/walgreens-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/natures-banner.png");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/natures-banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .banner-image-main-1 {
     background-color: #333333;
     background-image: -webkit-gradient(
@@ -3985,6 +4153,38 @@ html {
 
     .banner-image-food-4 {
         background-image: url("../img/food/checkers-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-1 {
+        background-image: url("../img/fun/congo-river-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-2 {
+        background-image: url("../img/fun/amc-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-3 {
+        background-image: url("../img/fun/top-golf-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-4 {
+        background-image: url("../img/fun/adventure-island-banner-mobile.jpg");
+    }
+
+    .banner-image-health-1 {
+        background-image: url("../img/health/planet-fitness-banner-mobile.jpg");
+    }
+
+    .banner-image-health-2 {
+        background-image: url("../img/health/whole-foods-banner-mobile.jpg");
+    }
+
+    .banner-image-health-3 {
+        background-image: url("../img/health/walgreens-banner-mobile.jpg");
+    }
+
+    .banner-image-health-4 {
+        background-image: url("../img/health/natures-banner-mobile.png");
     }
 
     .banner-image-main-1 {

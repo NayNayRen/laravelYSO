@@ -14,7 +14,7 @@
                 <div class="banner-container-image banner-image-fashion-1">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/fashion/pacsun-logo2.png') }}"
-                    alt="Pizza Hut Company Logo">
+                    alt="Pacsun Company Logo">
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
@@ -39,8 +39,7 @@
                 </div>
                 <div class="banner-container-image banner-image-fashion-3">
                 </div>
-                <img class="banner-logo right"
-                    src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Subway Company Logo">
             </div>
             {{-- SLIDE 4 --}}
