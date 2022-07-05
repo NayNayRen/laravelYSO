@@ -45,7 +45,7 @@
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/food/checkers-banner-logo.png') }}"
-                    alt="Micro Center Company Logo">
+                    alt="Checkers Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-food-4">
                 </div>

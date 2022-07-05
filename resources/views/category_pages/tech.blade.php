@@ -40,7 +40,7 @@
                 <div class="banner-container-image banner-image-tech-3">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/tech/best-buy-logo.png') }}"
-                    alt="Best Buy Logo">
+                    alt="Best Buy Company Logo">
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">

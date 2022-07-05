@@ -14,12 +14,12 @@
                 <div class="banner-container-image banner-image-auto-1">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/auto/advanced-auto-logo.png') }}"
-                    alt="Pizza Hut Company Logo">
+                    alt="Advanced Auto Parts Company Logo">
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/auto/aamco-logo.png') }}"
-                    alt="Hooters Company Logo">
+                    alt="Aamco Transmission Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-auto-2">
                 </div>
@@ -40,12 +40,12 @@
                 <div class="banner-container-image banner-image-auto-3">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/auto/tires-plus-logo2.png') }}"
-                    alt="Subway Company Logo">
+                    alt="Tires Plus Company Logo">
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/auto/sw-logo3.png') }}"
-                    alt="Micro Center Company Logo">
+                    alt="Sherwin Williams Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-auto-4">
                 </div>

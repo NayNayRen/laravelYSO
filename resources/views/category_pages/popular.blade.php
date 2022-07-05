@@ -18,7 +18,7 @@
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/fun/amc-logo.png') }}"
-                    alt="Newegg Company Logo">
+                    alt="AMC Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-popular-2">
                 </div>
@@ -39,12 +39,12 @@
                 <div class="banner-container-image banner-image-popular-3">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/auto/advanced-auto-logo.png') }}"
-                    alt="Best Buy Logo">
+                    alt="Advanced Auto Company Logo">
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/auto/sw-logo2.png') }}"
-                    alt="Apple Store Company Logo">
+                    alt="Sherwin Williams Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-popular-4">
                 </div>

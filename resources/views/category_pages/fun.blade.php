@@ -45,7 +45,7 @@
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/fun/adventure-island-logo2.png') }}"
-                    alt="Micro Center Company Logo">
+                    alt="Adventure Island Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-fun-4">
                 </div>
