@@ -135,6 +135,7 @@
 </div>
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
+<script src="{{ asset('js/show-input-error.js') }}"></script>
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 @include('includes._footer')

@@ -2710,14 +2710,13 @@ html {
 
 .search-form-error {
     -webkit-transform: translateX(-50%);
-    /* background-color: #000; */
+    background-color: #000;
     border-radius: 5px;
+    box-shadow: 0 2px 5px #333333;
     color: #e6331f;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
-    font-weight: bold;
     left: 50%;
-    /* padding: 2px 0; */
     position: absolute;
     text-align: center;
     top: calc(100% + 5px);
@@ -3359,7 +3358,7 @@ html {
     -webkit-transform: translateX(-50%);
     left: 50%;
     position: absolute;
-    top: 10px;
+    top: 15px;
     transform: translateX(-50%);
 }
 
@@ -4955,7 +4954,7 @@ html {
     }
 
     .view-all-user-icon {
-        top: 5px;
+        top: 10px;
     }
 
     .views-likes-container {
