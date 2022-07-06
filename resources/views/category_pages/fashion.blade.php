@@ -39,7 +39,7 @@
                 </div>
                 <div class="banner-container-image banner-image-fashion-3">
                 </div>
-                <img class="banner-logo" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/fashion/adidas-logo.png') }}"
                     alt="Adidas Company Logo">
             </div>
             {{-- SLIDE 4 --}}
