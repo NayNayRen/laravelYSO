@@ -18,7 +18,7 @@
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/fun/amc-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/fun/amc-logo2.png') }}"
                     alt="AMC Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-fun-2">
