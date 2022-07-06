@@ -6,7 +6,7 @@ function showErrorMessage() {
         searchFormError.style.padding = "0";
     } else {
         // has an error message
-        searchFormError.style.padding = "2px 0";
+        searchFormError.style.padding = "5px 0";
     }
 }
 

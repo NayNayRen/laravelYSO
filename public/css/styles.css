@@ -2710,16 +2710,17 @@ html {
 
 .search-form-error {
     -webkit-transform: translateX(-50%);
-    background-color: #000;
+    background-color: #e6331f;
     border-radius: 5px;
     box-shadow: 0 2px 5px #333333;
-    color: #e6331f;
+    color: #fff;
     font-family: "Roboto", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
     left: 50%;
     position: absolute;
     text-align: center;
-    top: calc(100% + 5px);
+    top: calc(100% + 2px);
     transform: translateX(-50%);
     width: 100%;
     z-index: 1;
@@ -3319,6 +3320,7 @@ html {
 
 .view-all-container-heading p span {
     color: #e6331f;
+    font-weight: bold;
     text-transform: capitalize;
 }
 
