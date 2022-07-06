@@ -39,7 +39,7 @@
                 </div>
                 <div class="banner-container-image banner-image-food-3">
                 </div>
-                <img class="banner-logo" src="{{ asset('img/food/subway-banner-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/food/subway-logo2.png') }}"
                     alt="Subway Company Logo">
             </div>
             {{-- SLIDE 4 --}}
