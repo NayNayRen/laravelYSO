@@ -2709,7 +2709,9 @@ html {
 }
 
 .search-form-error {
+    -webkit-box-shadow: 0 2px 5px #333333;
     -webkit-transform: translateX(-50%);
+    -webkit-transition: all 500ms ease;
     background-color: #e6331f;
     border-radius: 5px;
     box-shadow: 0 2px 5px #333333;
@@ -2718,10 +2720,13 @@ html {
     font-size: 16px;
     font-weight: bold;
     left: 50%;
+    opacity: 0;
+    padding: 0;
     position: absolute;
     text-align: center;
     top: calc(100% + 2px);
     transform: translateX(-50%);
+    transition: all 500ms ease;
     width: 100%;
     z-index: 1;
     /* outline: solid 1px blue; */
