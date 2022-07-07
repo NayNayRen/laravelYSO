@@ -86,7 +86,7 @@
                     <span class="all-button-arrow">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </span>
-                    <ul class="filter-selection-dropdown">
+                    <ul class="all-button-dropdown">
                         @foreach($categories as $category)
                             <li class="category-item">{{ $category }}</li>
                         @endforeach
@@ -389,7 +389,7 @@
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
-<script src="{{ asset('js/show-all-category.js') }}"></script>
+<script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>

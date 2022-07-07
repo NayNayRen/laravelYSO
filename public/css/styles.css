@@ -155,6 +155,52 @@
     transform: rotate(180deg);
 }
 
+.all-button-dropdown {
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: max-height 500ms ease, opacity 250ms ease;
+    background-color: #808080;
+    border-radius: 5px;
+    left: 50%;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    transition: max-height 500ms ease, opacity 250ms ease;
+    width: 200px;
+}
+
+.all-button-dropdown-toggle {
+    -webkit-box-shadow: 0 10px 10px #333333;
+    box-shadow: 0 10px 10px #333333;
+    max-height: 350px;
+    overflow-y: scroll;
+    opacity: 1;
+}
+
+.all-button-dropdown li {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 15px 10px;
+    text-shadow: 0 1px 1px #000;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.all-button-dropdown li:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
+.all-button-dropdown li:last-child {
+    border-bottom: none;
+}
+
 .all-button-toggle {
     background-color: #808080;
     border-bottom-left-radius: 0;
@@ -1852,52 +1898,6 @@ body {
     background-color: #808080;
     color: #fff;
     cursor: pointer;
-}
-
-.filter-selection-dropdown {
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: max-height 500ms ease, opacity 250ms ease;
-    background-color: #808080;
-    border-radius: 5px;
-    left: 50%;
-    margin: 0;
-    max-height: 0;
-    opacity: 0;
-    overflow-y: hidden;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    transform: translateX(-50%);
-    transition: max-height 500ms ease, opacity 250ms ease;
-    width: 200px;
-}
-
-.filter-selection-dropdown-toggle {
-    -webkit-box-shadow: 0 10px 10px #333333;
-    box-shadow: 0 10px 10px #333333;
-    max-height: 350px;
-    overflow-y: scroll;
-    opacity: 1;
-}
-
-.filter-selection-dropdown li {
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    list-style-type: none;
-    padding: 15px 10px;
-    text-shadow: 0 1px 1px #000;
-    text-transform: capitalize;
-    width: 100%;
-}
-
-.filter-selection-dropdown li:hover {
-    background-color: #000;
-    cursor: pointer;
-}
-
-.filter-selection-dropdown li:last-child {
-    border-bottom: none;
 }
 
 .flash-message-user {
@@ -4015,6 +4015,10 @@ html {
         font-size: 16px;
     }
 
+    .all-button-dropdown {
+        width: 200px;
+    }
+
     .back-button {
         left: 50px;
     }
@@ -4622,10 +4626,6 @@ html {
     .user-icon:hover {
         background-color: #fff;
         color: #000;
-    }
-
-    .filter-selection-dropdown {
-        width: 175px;
     }
 
     .footer {
