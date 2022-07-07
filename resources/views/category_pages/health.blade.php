@@ -68,6 +68,8 @@
         @include('includes._search_container')
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
     </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
@@ -76,8 +78,6 @@
         <h1>Healthy choices, & healthy discounts.</h1>
         <h3>For the healthy you.</h3>
     </div>
-    {{-- HIDDEN DASHBOARD --}}
-    {{-- @include('includes._dashboard') --}}
     <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Health Deals</span>
@@ -122,4 +122,5 @@
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
+<script src="{{ asset('js/show-map.js') }}"></script>
 @include('includes._footer')

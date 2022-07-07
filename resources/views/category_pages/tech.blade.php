@@ -67,6 +67,8 @@
         @include('includes._search_container')
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
+        {{-- HIDDEN  MAP --}}
+        @include('includes._map')
     </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
@@ -74,8 +76,6 @@
                 aria-hidden="true"></i></button>
         <h1>Looking for Tech deals?</h1>
         <h3>We've got just the selection.</h3>
-        {{-- HIDDEN DASHBOARD --}}
-        {{-- @include('includes._dashboard') --}}
     </div>
     <div class="container view-all">
         <div class="container-left">
@@ -121,4 +121,5 @@
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
+<script src="{{ asset('js/show-map.js') }}"></script>
 @include('includes._footer')

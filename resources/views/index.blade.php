@@ -100,6 +100,8 @@
     <div class="container">
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
         <div class="container-left">
             <span class="category-heading">Cashback</span>
         </div>
@@ -392,5 +394,6 @@
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
+<script src="{{ asset('js/show-map.js') }}"></script>
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
 @include('includes._footer')

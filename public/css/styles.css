@@ -157,7 +157,7 @@
 
 .all-button-dropdown {
     -webkit-transform: translateX(-50%);
-    -webkit-transition: max-height 500ms ease, opacity 250ms ease;
+    -webkit-transition: max-height 250ms ease, opacity 250ms ease;
     background-color: #808080;
     border-radius: 5px;
     left: 50%;
@@ -169,7 +169,7 @@
     position: absolute;
     top: 100%;
     transform: translateX(-50%);
-    transition: max-height 500ms ease, opacity 250ms ease;
+    transition: max-height 250ms ease, opacity 250ms ease;
     width: 200px;
 }
 
@@ -1285,7 +1285,6 @@ body {
     text-align: center;
     top: 0;
     width: 100%;
-    z-index: 1;
 }
 
 .cashback-card-message a {
@@ -2243,6 +2242,62 @@ html {
     height: auto;
     position: relative;
     width: 80%;
+}
+
+.map {
+    -webkit-transition: opacity 250ms ease;
+    background-color: #808080;
+    box-shadow: 0 0 20px #000;
+    color: #fff;
+    min-height: 400px;
+    opacity: 0;
+    /* opacity: 1; */
+    overflow: hidden;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    transition: opacity 250ms ease;
+    width: 100%;
+    z-index: -1;
+    /* z-index: 1; */
+}
+
+.map-close-button {
+    -webkit-transition: color 150ms ease;
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    transition: color 150ms ease;
+}
+
+.map-close-button:hover {
+    color: #e6331f;
+    cursor: pointer;
+}
+
+.map-content {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    background-color: #333333;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+    /* outline: solid 1px blue; */
+}
+
+.map-content h1 {
+    margin: 0;
 }
 
 .page-hero {
@@ -3849,7 +3904,9 @@ html {
     }
 
     .dashboard,
-    .dashboard-content {
+    .dashboard-content,
+    .map,
+    .map-content {
         min-height: 300px;
     }
 
@@ -4013,9 +4070,9 @@ html {
         font-size: 16px;
     }
 
-    .all-button-dropdown {
+    /* .all-button-dropdown {
         width: 200px;
-    }
+    } */
 
     .back-button {
         left: 50px;
@@ -4473,7 +4530,8 @@ html {
         margin-bottom: 10px;
     }
 
-    .dashboard-close-button:hover {
+    .dashboard-close-button:hover,
+    .map-close-button:hover {
         color: #fff;
     }
 
