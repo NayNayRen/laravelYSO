@@ -1273,9 +1273,7 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
-    -webkit-box-shadow: 0 5px 10px #333333;
     background-color: #808080;
-    box-shadow: 0 5px 10px #333333;
     color: #000;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -4614,7 +4612,7 @@ html {
     }
 
     .filter-search-container {
-        padding: 15px 0;
+        padding: 15px 15px;
     }
 
     .filter-selection {
