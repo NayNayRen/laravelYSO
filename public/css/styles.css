@@ -1273,7 +1273,10 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
+    -webkit-box-shadow: 0 5px 5px #333333;
+    -webkit-transition: top 250ms ease;
     background-color: #808080;
+    box-shadow: 0 5px 5px #333333;
     color: #000;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1283,8 +1286,13 @@ body {
     justify-content: center;
     position: absolute;
     text-align: center;
-    top: 0;
+    top: calc(-60% - 10px);
+    transition: top 250ms ease;
     width: 100%;
+}
+
+.show-message {
+    top: 0;
 }
 
 .cashback-card-message a {
@@ -1297,6 +1305,10 @@ body {
 
 .cashback-card-message a:hover {
     color: #e6331f;
+}
+
+.cashback-card-message span {
+    font-size: 16px;
 }
 
 .cashback-display {
@@ -3888,6 +3900,10 @@ html {
     .cashback-card:hover {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
+    }
+
+    .cashback-card-message a {
+        font-size: 16px;
     }
 
     .cashback-discount h4 {

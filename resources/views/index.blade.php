@@ -169,7 +169,13 @@
                     </a>
                     {{-- CASHBACK CARDS WHEN NOT LOGGED IN --}}
                 @else
-                    <div class="cashback-card" onclick="showMessage(this)">
+                    <div class="cashback-card guest">
+                        <div class="cashback-card-message">
+                            <a href="/register">Register</a>
+                            <span>and/or</span>
+                            <a href="/login">Log In</a>
+                            <span>to continue.</span>
+                        </div>
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/fashion/bed-bath-logo.png') }}"
                                 alt="Bed Bath and Beyond Logo"></div>
@@ -178,7 +184,13 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="cashback-card" onclick="showMessage(this)">
+                    <div class="cashback-card guest">
+                        <div class="cashback-card-message">
+                            <a href="/register">Register</a>
+                            <span>and/or</span>
+                            <a href="/login">Log In</a>
+                            <span>to continue.</span>
+                        </div>
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/tech/office-depot-logo.png') }}"
                                 alt="Office Depot Logo"></div>
@@ -187,7 +199,13 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="cashback-card" onclick="showMessage(this)">
+                    <div class="cashback-card guest">
+                        <div class="cashback-card-message">
+                            <a href="/register">Register</a>
+                            <span>and/or</span>
+                            <a href="/login">Log In</a>
+                            <span>to continue.</span>
+                        </div>
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/fashion/finish-line-logo.png') }}"
                                 alt="Finish Line Logo">
@@ -197,7 +215,13 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="cashback-card" onclick="showMessage(this)">
+                    <div class="cashback-card guest">
+                        <div class="cashback-card-message">
+                            <a href="/register">Register</a>
+                            <span>and/or</span>
+                            <a href="/login">Log In</a>
+                            <span>to continue.</span>
+                        </div>
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/fashion/journeys-logo.png') }}"
                                 alt="Journeys Logo"></div>
@@ -206,7 +230,13 @@
                             <p>Cash Back Rewards</p>
                         </div>
                     </div>
-                    <div class="cashback-card" onclick="showMessage(this)">
+                    <div class="cashback-card guest">
+                        <div class="cashback-card-message">
+                            <a href="/register">Register</a>
+                            <span>and/or</span>
+                            <a href="/login">Log In</a>
+                            <span>to continue.</span>
+                        </div>
                         <div class="cashback-logo"><img
                                 src="{{ asset('img/tech/best-buy-logo2.png') }}"
                                 alt="Best Buy Logo">
