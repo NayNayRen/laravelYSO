@@ -1407,18 +1407,21 @@ body {
 
 .card-display-view-all {
     -ms-flex-direction: row;
-    -ms-flex-pack: center;
+    /* -ms-flex-pack: center; */
+    -ms-flex-pack: start;
     -ms-flex-wrap: wrap;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
+    -webkit-box-pack: start;
+    /* -webkit-box-pack: center; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: flex-start;
     margin: 0 auto 10px auto;
     width: 100%;
 }
@@ -1570,12 +1573,13 @@ body {
 
 .dashboard {
     -webkit-transition: opacity 250ms ease;
-    background-color: #333333;
+    background-color: #808080;
     box-shadow: 0 0 20px #000;
     min-height: 400px;
     opacity: 0;
     overflow: hidden;
     /* opacity: 1; */
+    padding: 5px;
     position: absolute;
     top: 0;
     transition: opacity 250ms ease;
@@ -1603,6 +1607,7 @@ body {
     -ms-flex-direction: row;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
+    background-color: #333333;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -3295,8 +3300,9 @@ html {
 }
 
 .view-all {
-    background-color: #808080;
+    /* background-color: #808080; */
     /* background-color: #fff; */
+    background-color: #d3d3d3;
     /* grid-template-columns: 100%; */
 }
 
@@ -3387,7 +3393,8 @@ html {
 .view-all-item-counter {
     -webkit-transform: translateX(-50%);
     bottom: -20px;
-    color: #fff;
+    /* color: #fff; */
+    color: #000;
     font-family: "Roboto", "FontAwesome", sans-serif;
     font-size: 12px;
     left: 50%;
@@ -4450,7 +4457,7 @@ html {
         display: grid;
         grid-auto-flow: column;
         height: auto;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         margin: 0 auto 10px auto;
         overflow-x: auto;
         overflow-y: hidden;
