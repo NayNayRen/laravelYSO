@@ -49,7 +49,7 @@ class Deal extends Model
                 ->orWhere('location', 'like', '%' . $word . '%')
                 ->orWhere('category', 'like', '%' . $word . '%');
             }
-        })->paginate(8);
+        })->paginate(10);
         return $results;
     }
 
@@ -65,7 +65,7 @@ class Deal extends Model
     public static function viewAllFeatured(){
         $allFeatured = Deal::query()
         ->whereIn('id', Deal::select('id')->orderByDesc('id')->take(30)->get()->modelKeys())
-        ->paginate(8);
+        ->paginate(10);
         return $allFeatured;
     }
 
@@ -83,7 +83,7 @@ class Deal extends Model
         $allCategory = Deal::where('name', 'like', '%' . $type . '%')
         ->orWhere('location', 'like', '%' . $type . '%')
         ->orWhere('category', 'like', '%' . $type . '%')
-        ->paginate(8);
+        ->paginate(10);
         return $allCategory;
     }
 
@@ -95,7 +95,7 @@ class Deal extends Model
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllPopular(){
-        $allPopular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(8);
+        $allPopular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(10);
         return $allPopular;
     }
 }

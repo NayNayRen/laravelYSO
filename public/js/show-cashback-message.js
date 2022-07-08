@@ -4,7 +4,8 @@ function loadScript() {
     cashbackCard.forEach((card) => {
         card.addEventListener("click", () => {
             if (card.children[0].classList.contains("cashback-card-message")) {
-                card.children[0].classList.toggle("show-message");
+                card.children[0].classList.add("show-message");
+                // card.children[0].classList.toggle("show-message");
             }
         });
     });
