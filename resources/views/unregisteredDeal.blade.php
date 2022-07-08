@@ -1,6 +1,28 @@
 @include('includes._header_alternate')
 <main class="main">
     <div class="selected-deal-container">
+        {{-- HIDDEN SHARE MESSAGE --}}
+        <div class="selected-deal-share-message">
+            <p>Share this deal</p>
+            <div class="selected-deal-social-container">
+                <a href="#">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                </a>
+            </div>
+            <button type="button" id="remove-share-message" class="selected-deal-message-button">OK</button>
+        </div>
         {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
         <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo'
@@ -37,14 +59,15 @@
             </div>
             {{-- SHARE OR FAVORITE SELECTION --}}
             <div class="unregistered-share-fav-container">
-                <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button"><i
-                        class="fa fa-share" aria-hidden="true"></i>Share</button>
-                <button id="unregistered-favorite-deal-button" class="selected-deal-share-fav-button"><i
-                        class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
+                <button id='share-button' class="selected-deal-share-fav-button"><i class="fa fa-share"
+                        aria-hidden="true"></i>Share</button>
+                <button id='favorite-button' class="selected-deal-share-fav-button"><i class="fa fa-star-o"
+                        aria-hidden="true"></i>Favorite</button>
             </div>
         </div>
     </div>
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/unregistered-deal.js') }}"></script>
+<script src="{{ asset('js/show-selected-deal-message.js') }}"></script>
 @include('includes._footer')
