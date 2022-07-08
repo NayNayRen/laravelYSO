@@ -3,6 +3,8 @@
     <div class="selected-deal-container">
         {{-- HIDDEN SHARE MESSAGE --}}
         @include('includes._share_message')
+        {{-- HIDDEN FAVORITED MESSAGE --}}
+        @include('includes._favorite_message')
         {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
         <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo'

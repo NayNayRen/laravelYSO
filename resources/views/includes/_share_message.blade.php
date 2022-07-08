@@ -1,6 +1,6 @@
 {{-- SHARE MESSAGE WITH SOCIAL LINKS THAT DISPLAYS ON SINGLE DEAL PAGE --}}
 <div class="selected-deal-share-message">
-    <p>Share this deal</p>
+    <h2>Share this deal</h2>
     <div class="selected-deal-social-container">
         <a href="#">
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
