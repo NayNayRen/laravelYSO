@@ -7,15 +7,15 @@
                 In</a></span>
         {{-- SOCIAL MEDIA SIGN INS --}}
         <div class="users-buttons-container">
-            <a href="#" class="users-buttons facebook">
+            <a href="#" class="users-buttons facebook" aria-label="Continue with Facebook">
                 <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 Continue with Facebook
             </a>
-            <a href="#" class="users-buttons google">
+            <a href="#" class="users-buttons google" aria-label="Continue with Google">
                 <i class="fa fa-google" aria-hidden="true"></i>
                 Continue with Google
             </a>
-            <a href="#" class="users-buttons apple">
+            <a href="#" class="users-buttons apple" aria-label="Continue with Apple">
                 <i class="fa fa-apple" aria-hidden="true"></i>
                 Continue with Apple
             </a>

@@ -8,15 +8,15 @@
                 href={{ route('user.create') }}>Sign Up</a></span>
         {{-- SOCIAL MEDIA SIGN INS --}}
         <div class="users-buttons-container">
-            <a href="#" class="users-buttons facebook">
+            <a href="#" class="users-buttons facebook" aria-label="Continue with Facebook">
                 <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 Continue with Facebook
             </a>
-            <a href="#" class="users-buttons google">
+            <a href="#" class="users-buttons google" aria-label="Continue with Google">
                 <i class="fa fa-google" aria-hidden="true"></i>
                 Continue with Google
             </a>
-            <a href="#" class="users-buttons apple">
+            <a href="#" class="users-buttons apple" aria-label="Continue with Apple">
                 <i class="fa fa-apple" aria-hidden="true"></i>
                 Continue with Apple
             </a>
@@ -39,8 +39,10 @@
                     password?</span>
                 <input type="password" name="password" id="password">
                 {{-- SHOW/HIDE PASSWORD EYE --}}
-                <i id="hide-password" class="fa fa-eye-slash" aria-hidden="true" onclick="hide()"></i>
-                <i id="show-password" class="fa fa-eye" aria-hidden="true" onclick="show()"></i>
+                <i id="hide-password" class="fa fa-eye-slash" aria-hidden="false" aria-label="Show password."
+                    onclick="hide()"></i>
+                <i id="show-password" class="fa fa-eye" aria-hidden="false" aria-label="Hide password."
+                    onclick="show()"></i>
                 @error('password')
                     <span class="users-form-group-error">{{ $message }}</span>
                 @enderror

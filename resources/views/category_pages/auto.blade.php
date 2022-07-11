@@ -58,8 +58,8 @@
         </div>
         {{-- BANNER ARROWS --}}
         <div class="banner-arrows banner-arrows-alternate">
-            <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-            <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            <span id='prev' aria-label="Previous Slide"><i class="fa fa-arrow-left" aria-hidden="false"></i></span>
+            <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
     <div class="search-results-search-container">
@@ -73,7 +73,7 @@
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
-                aria-hidden="true"></i></button>
+                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
         <h1>The automotive deals you're looking for.</h1>
         <h3>To keep you running in top shape.</h3>
     </div>

@@ -92,8 +92,8 @@
                         @endforeach
                     </ul>
                 </div>
-                <span id="dashboard-open-button" class="user-icon" aria-label="Open dashboard."><i class="fa fa-user"
-                        aria-hidden="false" title="Open your dashboard."></i></span>
+                <span id="dashboard-open-button" class="user-icon" aria-label="Open dashboard."
+                    title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></span>
             </form>
         </div>
     </div>

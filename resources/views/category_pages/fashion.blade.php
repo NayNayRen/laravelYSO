@@ -61,8 +61,8 @@
         </div>
         {{-- BANNER ARROWS --}}
         <div class="banner-arrows banner-arrows-alternate">
-            <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-            <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            <span id='prev' aria-label="Previous Slide"><i class="fa fa-arrow-left" aria-hidden="false"></i></span>
+            <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
     <div class="search-results-search-container">
@@ -75,8 +75,8 @@
     </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
-        <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
-                aria-hidden="true"></i></button>
+        <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
+            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
         <h1>The latest fashion trends.</h1>
         <h3>All season long.</h3>
     </div>
