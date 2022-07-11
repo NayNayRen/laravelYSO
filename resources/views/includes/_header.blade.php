@@ -24,7 +24,7 @@
         <div class="header-greeting">Find deals, share them with friends... Your Social Offers become their offers too!
             <a href="{{ asset('navigation_pages/support') }}">Learn More</a>
         </div>
-        {{-- BACK BUTTON AND LOGO --}}
+        {{-- LOGO/HOME ICON BUTTON --}}
         <div class="header-navigation">
             {{-- <a href={{ url()->previous() }}> --}}
             <a href={{ route('deals.index') }}>
@@ -58,8 +58,8 @@
                             {{ auth()->user()->firstName[0] . auth()->user()->lastName[0] }}</div>
                         <form action={{ route('logout') }} method="POST">
                             @csrf
-                            <button type="submit" class="user-logout-button">Logout <i
-                                    class="fa fa-sign-out"></i></button>
+                            <button type="submit" class="user-logout-button" aria-label="Logout">Logout <i
+                                    class="fa fa-sign-out" aria-hidden="true"></i></button>
                         </form>
                     </div>
                 @else

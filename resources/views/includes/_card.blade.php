@@ -13,8 +13,12 @@
                 <span>Likes:</span>
             </div>
             <div class="views-likes-icons">
-                <i class="fa fa-share" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
+                <span aria-label="Share this item.">
+                    <i class="fa fa-share" aria-hidden="false"></i>
+                </span>
+                <span aria-label="Favorite this item.">
+                    <i class="fa fa-star" aria-hidden="false"></i>
+                </span>
             </div>
         </div>
         <a href="/deals/{{ $deal->id }}">

@@ -2,20 +2,20 @@
 <div class="selected-deal-share-message">
     <h2>Share this deal</h2>
     <div class="selected-deal-social-container">
-        <a href="#">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+        <a href="#" aria-label="Share with mail.">
+            <i class="fa fa-envelope-o" aria-hidden="false" title="Share this item via email."></i>
         </a>
-        <a href="#">
-            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <a href="#" aria-label="Share with Facebook.">
+            <i class="fa fa-facebook-official" aria-hidden="false" title="Share this item via Facebook."></i>
         </a>
-        <a href="#">
-            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+        <a href="#" aria-label="Share with Twitter.">
+            <i class="fa fa-twitter-square" aria-hidden="false" title="Share this item via Twitter."></i>
         </a>
-        <a href="#">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
+        <a href="#" aria-label="Share with Instagram.">
+            <i class="fa fa-instagram" aria-hidden="false" title="Share this item via Instagram."></i>
         </a>
-        <a href="#">
-            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        <a href="#" aria-label="Share with LinkedIn.">
+            <i class="fa fa-linkedin-square" aria-hidden="false" title="Share this item via LinkedIn."></i>
         </a>
     </div>
     <button type="button" id="remove-share-message" class="selected-deal-message-button">OK</button>

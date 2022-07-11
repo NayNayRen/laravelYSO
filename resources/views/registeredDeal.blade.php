@@ -14,10 +14,10 @@
         {{-- REGISTERED USER CONTENT --}}
         <div class="registered-user-display">
             <div class="registered-share-fav-container">
-                <button id='share-button' class="selected-deal-share-fav-button"><i class="fa fa-share"
-                        aria-hidden="true"></i>Share</button>
-                <button id='favorite-button' class="selected-deal-share-fav-button"><i class="fa fa-star-o"
-                        aria-hidden="true"></i>Favorite</button>
+                <button id='share-button' class="selected-deal-share-fav-button" aria-label="Share this item."><i
+                        class="fa fa-share" aria-hidden="true"></i>Share</button>
+                <button id='favorite-button' class="selected-deal-share-fav-button" aria-label="Favorite this item."><i
+                        class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
             </div>
             {{-- DISCLAIMER --}}
             <div class="registered-disclaimer">

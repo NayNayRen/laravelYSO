@@ -64,8 +64,8 @@
             {{-- BANNER ARROWS --}}
         </div>
         <div class="banner-arrows">
-            <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-            <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            <span id='prev' aria-label="Previous Slide"><i class="fa fa-arrow-left" aria-hidden="false"></i></span>
+            <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
     {{-- SEARCH BLOCK --}}
@@ -92,7 +92,8 @@
                         @endforeach
                     </ul>
                 </div>
-                <span id="dashboard-open-button" class="user-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <span id="dashboard-open-button" class="user-icon" aria-label="Open dashboard."><i class="fa fa-user"
+                        aria-hidden="false" title="Open your dashboard."></i></span>
             </form>
         </div>
     </div>
