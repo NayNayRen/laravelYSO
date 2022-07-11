@@ -21,7 +21,7 @@
                 {{-- SOCIAL MEDIA BLOCK --}}
                 <div class="footer-social-media-container">
                     <a href="mailto: Support@YourSocialOffers.com" class="footer-social-media-links"
-                        aria-label="Contact vi email.">
+                        aria-label="Contact via email.">
                         {{-- <img src="{{ asset('img/social/mail.png') }}"
                         alt="Email link"> --}}
                         <i class="fa fa-envelope-o" aria-hidden="false"></i>

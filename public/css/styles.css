@@ -4213,10 +4213,6 @@ html {
         width: 400px;
     }
 
-    .up-arrow-message {
-        display: none;
-    }
-
     .user-initials-container,
     .user-register-container {
         right: 10px;
@@ -4918,6 +4914,10 @@ html {
         color: #fff;
     }
 
+    .gray-background .views-likes-icons i:hover {
+        color: #fff;
+    }
+
     .header-greeting {
         font-size: 12px;
         padding: 2px;
@@ -5107,6 +5107,10 @@ html {
         color: #e6331f;
     }
 
+    .up-arrow-message {
+        display: none;
+    }
+
     .users h1 {
         font-size: 30px;
     }
@@ -5161,6 +5165,10 @@ html {
     .view-all .get-deal-button {
         font-size: 16px;
         padding: 3px 0;
+    }
+
+    .view-all .views-likes-icons i:hover {
+        color: #fff;
     }
 
     .view-all-arrow-container {
@@ -5226,6 +5234,10 @@ html {
 
     .views-likes-icons i {
         font-size: 22px;
+    }
+
+    .views-likes-icons i:hover {
+        color: #000;
     }
 
     .yso-header-link,
