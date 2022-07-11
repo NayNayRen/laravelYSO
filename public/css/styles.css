@@ -2032,7 +2032,20 @@ body {
     padding: 75px 0;
 }
 
-.footer-social-media-links {
+.footer-social-media-container a {
+    -webkit-transition: color 150ms ease;
+    color: #fff;
+    font-size: 35px;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.footer-social-media-container a:hover {
+    color: #808080;
+}
+
+/* .footer-social-media-links {
     -webkit-transition: opacity 150ms ease;
     display: inline-block;
     height: auto;
@@ -2046,7 +2059,7 @@ body {
 
 .footer-social-media-links:hover {
     opacity: 0.75;
-}
+} */
 
 .footer-top-section {
     display: -ms-grid;
@@ -4111,10 +4124,14 @@ html {
         width: 95%;
     }
 
-    .footer-social-media-links {
+    .footer-social-media-container a {
+        font-size: 30px;
+    }
+
+    /* .footer-social-media-links {
         height: 35px;
         width: 35px;
-    }
+    } */
 
     .get-deal-button {
         font-size: 16px;
