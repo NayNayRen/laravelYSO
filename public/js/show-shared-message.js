@@ -6,6 +6,7 @@ function loadSharedMessage() {
     const selectedDealShareMessage = document.querySelector(
         ".selected-deal-share-message"
     );
+
     shareButton.forEach((button) => {
         button.addEventListener("click", () => {
             selectedDealShareMessage.classList.add(
