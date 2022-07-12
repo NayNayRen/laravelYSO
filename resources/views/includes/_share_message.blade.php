@@ -1,6 +1,7 @@
 {{-- SHARE MESSAGE WITH SOCIAL LINKS THAT DISPLAYS ON SINGLE DEAL PAGE --}}
 <div class="selected-deal-share-message">
     <h2>Share this deal</h2>
+    {{-- <span>{{ $this->deal->name }}</span> --}}
     <div class="selected-deal-social-container">
         <a href="#" aria-label="Share with mail.">
             <i class="fa fa-envelope-o" aria-hidden="false"></i>
