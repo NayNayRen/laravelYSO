@@ -59,5 +59,6 @@
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/registered-deal.js') }}"></script>
-<script src="{{ asset('js/show-selected-deal-message.js') }}"></script>
+<script src="{{ asset('js/show-favorited-message.js') }}"></script>
+<script src="{{ asset('js/show-shared-message.js') }}"></script>
 @include('includes._footer')

@@ -2,6 +2,8 @@
 <main class="main">
     {{-- USER LOG IN OR OUT MESSAGE --}}
     @include('includes._flash_message_user')
+    {{-- HIDDEN SHARE MESSAGE --}}
+    @include('includes._share_message')
     {{-- BANNER BLOCK --}}
     <div class="banner">
         <div class="banner-slide-container">
@@ -339,4 +341,5 @@
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
+<script src="{{ asset('js/show-shared-message.js') }}"></script>
 @include('includes._footer')
