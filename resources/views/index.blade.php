@@ -2,8 +2,6 @@
 <main class="main">
     {{-- USER LOG IN OR OUT MESSAGE --}}
     @include('includes._flash_message_user')
-    {{-- HIDDEN SHARE MESSAGE --}}
-    {{-- @include('includes._share_message') --}}
     {{-- BANNER BLOCK --}}
     <div class="banner">
         <div class="banner-slide-container">
@@ -265,6 +263,8 @@
             {{-- CARD BLOCK --}}
             <div class="card-display">
                 @foreach($featuredDeals as $deal)
+                    {{-- HIDDEN SHARE MESSAGE --}}
+                    {{-- @include('includes._share_message') --}}
                     {{-- CARD COMPONENT --}}
                     @include('includes._card')
                 @endforeach

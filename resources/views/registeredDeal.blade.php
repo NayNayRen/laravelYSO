@@ -10,7 +10,7 @@
         <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo'
             alt="{{ $deal['name'] }}">
         <span class="selected-deal-discount">{{ $deal['location'] }}</span>
-        <span class="selected-deal-name">{{ $deal['name'] }}</span>
+        <span id='card-name' class="selected-deal-name">{{ $deal['name'] }}</span>
         {{-- REGISTERED USER CONTENT --}}
         <div class="registered-user-display">
             <div class="registered-share-fav-container">

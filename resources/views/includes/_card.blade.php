@@ -13,10 +13,10 @@
                 <span>Likes:</span>
             </div>
             <div class="views-likes-icons">
-                <span id='share-button' aria-label="Share this item.">
+                <span class='share-button' aria-label="Share this item.">
                     <i class="fa fa-share" aria-hidden="false"></i>
                 </span>
-                <span aria-label="Favorite this item.">
+                <span class='favorite-button' aria-label="Favorite this item.">
                     <i class="fa fa-star" aria-hidden="false"></i>
                 </span>
             </div>
