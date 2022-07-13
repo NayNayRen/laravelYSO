@@ -19,5 +19,5 @@
             <i class="fa fa-linkedin-square" aria-hidden="false"></i>
         </a>
     </div>
-    <button type="button" id="remove-share-message" class="selected-deal-message-button">OK</button>
+    <button type="button" class="selected-deal-message-button remove-share-message">OK</button>
 </div>

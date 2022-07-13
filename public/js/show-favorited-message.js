@@ -1,9 +1,9 @@
 // loads elements for the favorited message
 function loadFavoritedMessage() {
     const windowOverlay = document.querySelector("#window-overlay");
-    const favoriteButton = document.querySelector("#favorite-button");
+    const favoriteButton = document.querySelector(".favorite-button");
     const removeFavoriteMessage = document.querySelector(
-        "#remove-favorite-message"
+        ".remove-favorite-message"
     );
     const selectedDealFavoriteMessage = document.querySelector(
         ".selected-deal-favorite-message"

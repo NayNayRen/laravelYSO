@@ -18,6 +18,6 @@
             You can manage your saved deals in your Dashboard.
         </span>
     </div>
-    <button type="button" id="remove-favorite-message" class="selected-deal-message-button">OK</button>
+    <button type="button" class="selected-deal-message-button remove-favorite-message">OK</button>
     <a href={{ route('deals.index') }}>Show me more deals</a>
 </div>

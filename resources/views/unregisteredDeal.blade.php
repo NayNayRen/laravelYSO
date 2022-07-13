@@ -41,9 +41,9 @@
             </div>
             {{-- SHARE OR FAVORITE SELECTION --}}
             <div class="unregistered-share-fav-container">
-                <button id='share-button' class="selected-deal-share-fav-button" aria-label="Share this item."><i
+                <button class="selected-deal-share-fav-button share-button" aria-label="Share this item."><i
                         class="fa fa-share" aria-hidden="true"></i>Share</button>
-                <button id='favorite-button' class="selected-deal-share-fav-button" aria-label="Favorite this item."><i
+                <button class="selected-deal-share-fav-button favorite-button" aria-label="Favorite this item."><i
                         class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
             </div>
         </div>
