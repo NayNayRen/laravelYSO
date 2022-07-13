@@ -1,6 +1,7 @@
 {{-- HIDDEN FAVORITE MESSAGE FOR THE SINGLED DEAL PAGE --}}
 <div class="selected-deal-favorite-message">
     <h2>Saved to your Favorites</h2>
+    <p>{{ $deal->name }}</p>
     <div>
         <span>
             <i class="fa fa-check" aria-hidden="true"></i>

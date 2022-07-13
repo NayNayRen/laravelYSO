@@ -3026,6 +3026,7 @@ html {
     border: none;
     color: #fff;
     font-size: 18px;
+    margin: 10px 0;
     padding: 10px 5px;
     transition: background-color 150ms ease;
     width: 90%;
@@ -3060,6 +3061,16 @@ html {
 .selected-deal-text-email-button:hover {
     background-color: #000;
     cursor: pointer;
+}
+
+.selected-deal-favorite-message p,
+.selected-deal-share-message p {
+    border-bottom: solid 1px #000;
+    color: #808080;
+    font-size: 20px;
+    padding-bottom: 5px;
+    width: 90%;
+    /* outline: solid 1px blue; */
 }
 
 .selected-deal-social-container {
@@ -5091,6 +5102,11 @@ html {
         width: 300px;
     }
 
+    .selected-deal-favorite-message p,
+    .selected-deal-share-message p {
+        font-size: 18px;
+    }
+
     .support-text a {
         font-size: 18px;
     }
@@ -5444,7 +5460,7 @@ html {
     .selected-deal-favorite-message,
     .selected-deal-share-message {
         border-radius: 0;
-        min-height: 200px;
+        min-height: 225px;
         width: 100%;
     }
 

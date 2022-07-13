@@ -1,7 +1,7 @@
 @include('includes._header')
 <div class="main">
     {{-- HIDDEN SHARE MESSAGE --}}
-    @include('includes._share_message')
+    {{-- @include('includes._share_message') --}}
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
@@ -102,5 +102,5 @@
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
-<script src="{{ asset('js/show-shared-message.js') }}"></script>
+{{-- <script src="{{ asset('js/show-shared-message.js') }}"></script> --}}
 @include('includes._footer')
