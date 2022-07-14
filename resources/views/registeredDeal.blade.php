@@ -14,8 +14,8 @@
         {{-- REGISTERED USER CONTENT --}}
         <div class="registered-user-display">
             <div class="registered-share-fav-container">
-                <button class="selected-deal-share-fav-button share-button" aria-label="Share this item."><i
-                        class="fa fa-share" aria-hidden="true"></i>Share</button>
+                <button class="selected-deal-share-fav-button share-button" aria-label="Share this item."
+                    onclick="showSharedMessage()"><i class="fa fa-share" aria-hidden="true"></i>Share</button>
                 <button class="selected-deal-share-fav-button favorite-button" aria-label="Favorite this item."><i
                         class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
             </div>

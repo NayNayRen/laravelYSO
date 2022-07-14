@@ -4,7 +4,7 @@
             <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
         </div>
         <span class="card-discount">{{ $deal->location }}</span><br>
-        <span class="card-name">{{ $deal->name }}</span><br>
+        <span id="card-name">{{ $deal->name }}</span><br>
     </div>
     <div>
         <div class="views-likes-container">
@@ -13,6 +13,7 @@
                 <span>Likes:</span>
             </div>
             <div class="views-likes-icons">
+                {{-- <span class='share-button' aria-label="Share this item." onclick="showSharedMessage()"> --}}
                 <span class='share-button' aria-label="Share this item.">
                     <i class="fa fa-share" aria-hidden="false"></i>
                 </span>

@@ -7,7 +7,6 @@ const dashboard = document.querySelector("#dashboard");
 const dashboardUserContainer = document.querySelector(
     ".dashboard-user-container"
 );
-const windowOverlay = document.querySelector("#window-overlay");
 
 dashboardOpenButton.addEventListener("click", () => {
     dashboard.style.zIndex = 2;
