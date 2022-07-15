@@ -1,5 +1,7 @@
 @include('includes._header')
 <div class="main">
+    {{-- HIDDEN SHARE MESSAGE --}}
+    {{-- @include('includes._share_message') --}}
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}

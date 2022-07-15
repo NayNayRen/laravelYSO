@@ -5,7 +5,6 @@ const burgerMenu = document.querySelector(".burger-menu");
 const upArrow = document.getElementById("up-arrow");
 const upArrowMessage = document.getElementById("up-arrow-message");
 const windowOverlay = document.querySelector("#window-overlay");
-
 // sticky settings for makeItStick
 function makeItStickSettings() {
     header.style.position = "fixed";

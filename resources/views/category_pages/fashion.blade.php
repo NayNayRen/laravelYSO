@@ -13,12 +13,12 @@
                 <div class="banner-container-image banner-image-fashion-1">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/fashion/pacsun-logo2.png') }}"
-                    alt="Pizza Hut Company Logo">
+                    alt="Pacsun Company Logo">
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/fashion/puma-logo.png') }}"
-                    alt="Hooters Company Logo">
+                    alt="Puma Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-fashion-2">
                 </div>
@@ -38,15 +38,14 @@
                 </div>
                 <div class="banner-container-image banner-image-fashion-3">
                 </div>
-                <img class="banner-logo right"
-                    src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
-                    alt="Subway Company Logo">
+                <img class="banner-logo" src="{{ asset('img/fashion/adidas-logo.png') }}"
+                    alt="Adidas Company Logo">
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left"
                     src="{{ asset('img/fashion/fantastic-sams-banner-logo.png') }}"
-                    alt="Micro Center Company Logo">
+                    alt="Fantastic Sams Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-fashion-4">
                 </div>

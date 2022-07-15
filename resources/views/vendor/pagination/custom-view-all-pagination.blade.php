@@ -2,21 +2,22 @@
 
     {{-- previous button (left arrow) --}}
     @if($paginator->onFirstPage())
-        <span class="view-all-left-arrow"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <span class="view-all-left-arrow" aria-label="Previous Deal"><i class="fa fa-arrow-left"
+                aria-hidden="false"></i>
         </span>
     @else
-        <a href="{{ $paginator->previousPageUrl() }}" class="view-all-left-arrow"><i class="fa fa-arrow-left"
-                aria-hidden="true"></i>
+        <a href="{{ $paginator->previousPageUrl() }}" class="view-all-left-arrow" aria-label="Previous Deal"><i
+                class="fa fa-arrow-left" aria-hidden="false"></i>
         </a>
     @endif
 
     {{-- next button (right arrow) --}}
     @if($paginator->hasMorePages())
-        <a href="{{ $paginator->nextPageUrl() }}" class="view-all-right-arrow"><i class="fa fa-arrow-right"
-                aria-hidden="true"></i>
+        <a href="{{ $paginator->nextPageUrl() }}" class="view-all-right-arrow" aria-label="Next Deal"><i
+                class="fa fa-arrow-right" aria-hidden="false"></i>
         </a>
     @else
-        <span class="view-all-right-arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+        <span class="view-all-right-arrow" aria-label="Next Deal"><i class="fa fa-arrow-right" aria-hidden="false"></i>
         </span>
     @endif
 

@@ -1,5 +1,7 @@
 @include('includes._header')
 <div class="main">
+    {{-- HIDDEN SHARE MESSAGE --}}
+    {{-- @include('includes._share_message') --}}
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
@@ -18,7 +20,7 @@
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/food/checkers-banner-logo.png') }}"
-                    alt="Micro Center Company Logo">
+                    alt="Checkers Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-food-4">
                 </div>
@@ -87,7 +89,7 @@
     {{-- IF SEARCH DOESN'T RETURN ANY RESULTS OR LEFT EMPTY --}}
     @if($searchedDeals === 0 || $searchedDeals->count() === 0)
         <div class="search-results-message-container">
-            <h1>Youre search didn't return any results.</h1>
+            <h1>Your search didn't return any results.</h1>
             <p>Return back home to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>
@@ -104,6 +106,7 @@
                 </div>
             </div>
             <div class="container-right">
+                {{-- CARD BLOCK --}}
                 <div class="card-display-view-all">
                     @foreach($searchedDeals as $deal)
                         {{-- CARD COMPONENT --}}

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">    
     <script src="//unpkg.com/alpinejs" defer></script>
-    <title>YourSocialOffers.com</title>
+    <title>YourSocialOffers.com || {{ $pageTitle }}</title>
     <link rel="icon" href="{{ asset('img/yso-clipped-rw.png') }}" type="image/x-icon">
 </head>
 
@@ -26,10 +26,10 @@
         <div class="header-greeting">Find deals, share them with friends... Your Social Offers become their offers too!
             <a href="{{ asset('navigation_pages/support') }}">Learn More</a>
         </div>
-        {{-- BACK BUTTON AND LOGO --}}
+        {{-- BACK BUTTON --}}
         <div class="header-navigation">
-            <a href={{ url()->previous() }} class="back-button"><i class="fa fa-chevron-left"
-                    aria-hidden="true"></i><span>Back</span></a>
+            <a href={{ url()->previous() }} class="back-button" aria-label='Previous Page'><i class="fa fa-chevron-left"
+                    aria-hidden="false" title="Back to previous page."></i><span>Back</span></a>
             <a href={{ route('deals.index') }}>
                 <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-header-link-alternate"
                     alt="Your Social Offers Logo">
@@ -52,8 +52,8 @@
                             {{ auth()->user()->firstName[0] . auth()->user()->lastName[0] }}</div>
                         <form action={{ route('logout') }} method="POST">
                             @csrf
-                            <button type="submit" class="user-logout-button">Logout <i
-                                    class="fa fa-sign-out"></i></button>
+                            <button type="submit" class="user-logout-button" aria-label="Logout">Logout <i
+                                    class="fa fa-sign-out" aria-hidden="true"></i></button>
                         </form>
                     </div>
                 @else

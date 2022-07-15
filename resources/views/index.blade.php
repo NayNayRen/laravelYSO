@@ -1,5 +1,7 @@
 @include('includes._header')
 <main class="main">
+    {{-- HIDDEN SHARE MESSAGE --}}
+    {{-- @include('includes._share_message') --}}
     {{-- USER LOG IN OR OUT MESSAGE --}}
     @include('includes._flash_message_user')
     {{-- BANNER BLOCK --}}

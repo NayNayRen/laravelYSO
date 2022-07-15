@@ -1,29 +1,36 @@
 @include('includes._header_alternate')
 <main class="main">
+    {{-- HIDDEN SHARE MESSAGE --}}
+    @include('includes._share_message')
+    {{-- HIDDEN FAVORITED MESSAGE --}}
+    @include('includes._favorite_message')
     <div class="selected-deal-container">
-        {{-- SELECTED DEAL USING ROOMS DATA --}}
+        {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
         <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo'
             alt="{{ $deal['name'] }}">
         <span class="selected-deal-discount">{{ $deal['location'] }}</span>
-        <span class="selected-deal-name">{{ $deal['name'] }}</span>
+        <span id='card-name' class="selected-deal-name">{{ $deal['name'] }}</span>
         {{-- REGISTERED USER CONTENT --}}
         <div class="registered-user-display">
             <div class="registered-share-fav-container">
                 <button id="registered-share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share"
                         aria-hidden="true"></i>Share</button>
                 @php
-                    $check = App\Models\Favourite::where('deal_id',(string)$deal['id'])->get()->first();  
+                    $check = App\Models\Favourite::where('deal_id',(string)$deal['id'])->get()->first();
                 @endphp
-                @if($check !=null && auth()->user() && $check->user_id == auth()->user()->id)
+                <blade
+                    if|(%24check%20!%3Dnull%20%26%26%20auth()-%3Euser()%20%26%26%20%24check-%3Euser_id%20%3D%3D%20auth()-%3Euser()-%3Eid)>
 
                     {{-- id="registered-favorite-deal-button" --}}
-                    <button  class="selected-deal-share-fav-button add-favourit " id="{{$deal['id']}}"><i
-                        class="fa fa-star favourite2" aria-hidden="true"></i>Favorite</button>
+                    <button class="selected-deal-share-fav-button add-favourit "
+                        id="{{ $deal['id'] }}"><i class="fa fa-star favourite2"
+                            aria-hidden="true"></i>Favorite</button>
                 @else
-                {{-- id="registered-favorite-deal-button" --}}
-                    <button   class="selected-deal-share-fav-button add-favourite" id="{{$deal['id']}}"><i
-                        class="fa fa-star" aria-hidden="true"></i>Favorite</button>
+                    {{-- id="registered-favorite-deal-button" --}}
+                    <button class="selected-deal-share-fav-button add-favourite"
+                        id="{{ $deal['id'] }}"><i class="fa fa-star"
+                            aria-hidden="true"></i>Favorite</button>
                 @endif
             </div>
             {{-- DISCLAIMER --}}
@@ -46,8 +53,8 @@
             </div>
             {{-- REGISTERED SEND METHOD --}}
             <div class="registered-text-email-container">
-            {{-- <form action="{{ route('add.coupon')}}" method="POST">
-                @csrf --}}
+                {{-- <form action="{{ route('add.coupon') }}" method="POST">
+                @csrf--}}
                 <span id="registered-deal-label">Send the coupon via:</span>
                 <div class='registered-text-email-button-container'>
                     <button id="registered-text-button" class="selected-deal-text-email-button">Text</button>
@@ -75,39 +82,39 @@
     $(document).ready(function () {
         var old_email = '{{ $user->email }}';
         var old_phone = '{{ $user->phone }}';
-        
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-        
 
-    $('#registered-text-button ').click(function () {
-        $('#registered-deal-email').attr('value'," ");
-    });
-
-    $('#registered-email-button ').click(function () {
-        $('#registered-deal-phone').attr('value'," ");
-    });
-
-    $('.registered-text-redemption ').click(function () {
-        $('#registered-deal-phone').attr('value',old_phone);
-        $('#registered-deal-email').attr('value'," ");
-    });
-
-    $('.registered-email-redemption ').click(function () {
-        $('#registered-deal-phone').attr('value'," ");
-        $('#registered-deal-email').attr('value',old_email);
-    });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
 
+        $('#registered-text-button ').click(function () {
+            $('#registered-deal-email').attr('value', " ");
+        });
 
-    $('.add-favourite').click(function () {
+        $('#registered-email-button ').click(function () {
+            $('#registered-deal-phone').attr('value', " ");
+        });
+
+        $('.registered-text-redemption ').click(function () {
+            $('#registered-deal-phone').attr('value', old_phone);
+            $('#registered-deal-email').attr('value', " ");
+        });
+
+        $('.registered-email-redemption ').click(function () {
+            $('#registered-deal-phone').attr('value', " ");
+            $('#registered-deal-email').attr('value', old_email);
+        });
+
+
+
+        $('.add-favourite').click(function () {
             var id = $(this).attr('id');
             console.log(id);
             $.ajax({
-                url: "{{route('add.favourite')}}",
+                url: "{{ route('add.favourite') }}",
                 method: "POST",
                 dataType: "json",
 
@@ -117,64 +124,55 @@
                     id: id,
                 },
                 success: function (data) {
-                 if(data['success'])
-                 {
-                    var r=(data['success']);
-                    $('#'+parseInt(id)).find('i').addClass('favourite2');
-                    console.log(r);
-                    alert(r);
-                 }
-                 if(data['delete'])
-                 {
-                    var r=(data['delete']);
-                    $('#'+parseInt(id)).find('i').removeClass('favourite2')
-                    console.log(r);
-                    alert(r);
-                 }
-                 if(data['error'])
-                 {
-                    var r=(data['error']);
-                    console.log(r);
-                    alert(r);
-                 }
-     
+                    if (data['success']) {
+                        var r = (data['success']);
+                        $('#' + parseInt(id)).find('i').addClass('favourite2');
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['delete']) {
+                        var r = (data['delete']);
+                        $('#' + parseInt(id)).find('i').removeClass('favourite2')
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['error']) {
+                        var r = (data['error']);
+                        console.log(r);
+                        alert(r);
+                    }
+
                 }
             });
-     });
+        });
 
     });
 
     $('.add-coupon').click(function () {
-            var dealid = $('#deal-id').attr('value');
-            var email = $('#registered-deal-email').attr('value');
-            var phone =  $('#registered-deal-phone').attr('value');
-            console.log(dealid);
-            $.ajax({
-                url: "{{route('add.coupon')}}",
-                method: "POST",
-                dataType: "json",
+        var dealid = $('#deal-id').attr('value');
+        var email = $('#registered-deal-email').attr('value');
+        var phone = $('#registered-deal-phone').attr('value');
+        console.log(dealid);
+        $.ajax({
+            url: "{{ route('add.coupon') }}",
+            method: "POST",
+            dataType: "json",
 
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    dealid : dealid,
-                    email : email,
-                    phone : phone
-                },
-                success: function (data) {
-                 if(data['message'])
-                 {
-                    var r=(data['message']);
+            data: {
+                _token: "{{ csrf_token() }}",
+                dealid: dealid,
+                email: email,
+                phone: phone
+            },
+            success: function (data) {
+                if (data['message']) {
+                    var r = (data['message']);
                     alert(r);
-                 }
                 }
-            });
+            }
+        });
     });
 
-
-    
-    
-    
 </script>
 
 @include('includes._footer')
-

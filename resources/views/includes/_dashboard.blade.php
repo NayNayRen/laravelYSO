@@ -2,8 +2,8 @@
     <div class="dashboard-content">
         <span id="dashboard-close-button" class="dashboard-close-button">Close
         </span>
-        <span id="dashboard-user-preferences-button" class="dashboard-user-preferences-button"><i
-                class="fa fa-ellipsis-h" aria-hidden="true"></i>
+        <span id="dashboard-user-preferences-button" class="dashboard-user-preferences-button"
+            aria-label="User details." title="User details."><i class="fa fa-ellipsis-h" aria-hidden="false"></i>
         </span>
         @auth
             <div class="dashboard-user-container">

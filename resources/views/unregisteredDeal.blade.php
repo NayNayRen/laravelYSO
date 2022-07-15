@@ -1,12 +1,16 @@
 @include('includes._header_alternate')
 <main class="main">
     <div class="selected-deal-container">
-        {{-- SELECTED DEAL USING ROOMS DATA --}}
+        {{-- HIDDEN SHARE MESSAGE --}}
+        @include('includes._share_message')
+        {{-- HIDDEN FAVORITED MESSAGE --}}
+        @include('includes._favorite_message')
+        {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
         <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo'
             alt="{{ $deal['name'] }}">
         <span class="selected-deal-discount">{{ $deal['location'] }}</span>
-        <span class="selected-deal-name">{{ $deal['name'] }}</span>
+        <span id='card-name' class="selected-deal-name">{{ $deal['name'] }}</span>
         {{-- UNREGISTERED USER CONTENT --}}
         <div class="unregistered-user-display">
             <p class="unregistered-user-heading">Let's get that coupon ready.</p>
@@ -25,7 +29,8 @@
                     placeholder="mail@mail.com"></input>
                 <span class="unregistered-text-redemption"></span>
                 <span class="unregistered-email-redemption"></span>
-                <button id="unregistered-send-button" class="unregistered-send-button add-coupon">Send me the deal</button>
+                <button id="unregistered-send-button" class="unregistered-send-button add-coupon">Send me the
+                    deal</button>
             </div>
             {{-- DISCLAIMER --}}
             <div class="unregistered-disclaimer">
@@ -50,17 +55,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    $('.add-favourite').click(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('.add-favourite').click(function () {
             var id = $(this).attr('id');
             alert(id);
             console.log(id);
             $.ajax({
-                url: "{{route('add.favourite')}}",
+                url: "{{ route('add.favourite') }}",
                 method: "POST",
                 dataType: "json",
 
@@ -70,55 +75,52 @@
                     id: id,
                 },
                 success: function (data) {
-                 if(data['success'])
-                 {
-                    var r=(data['success']);
-                    $('#'+parseInt(id)).find('i').addClass('favourite2');
-                    console.log(r);
-                    alert(r);
-                 }
-                 if(data['delete'])
-                 {
-                    var r=(data['delete']);
-                    $('#'+parseInt(id)).find('i').removeClass('favourite2')
-                    console.log(r);
-                    alert(r);
-                 }
-                 if(data['error'])
-                 {
-                    var r=(data['error']);
-                    console.log(r);
-                    alert(r);
-                 }
-     
+                    if (data['success']) {
+                        var r = (data['success']);
+                        $('#' + parseInt(id)).find('i').addClass('favourite2');
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['delete']) {
+                        var r = (data['delete']);
+                        $('#' + parseInt(id)).find('i').removeClass('favourite2')
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['error']) {
+                        var r = (data['error']);
+                        console.log(r);
+                        alert(r);
+                    }
+
                 }
             });
-     });
+        });
 
     });
 
     $('.add-coupon').click(function () {
-            var dealid = $('#deal-id').attr('value');
-            var email = $('#registered-deal-email').attr('value');
-            console.log(dealid);
-            $.ajax({
-                url: "{{route('add.coupon')}}",
-                method: "POST",
-                dataType: "json",
+        var dealid = $('#deal-id').attr('value');
+        var email = $('#registered-deal-email').attr('value');
+        console.log(dealid);
+        $.ajax({
+            url: "{{ route('add.coupon') }}",
+            method: "POST",
+            dataType: "json",
 
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    dealid : dealid,
-                    email : email
-                },
-                success: function (data) {
-                 if(data['message'])
-                 {
-                    var r=(data['message']);
+            data: {
+                _token: "{{ csrf_token() }}",
+                dealid: dealid,
+                email: email
+            },
+            success: function (data) {
+                if (data['message']) {
+                    var r = (data['message']);
                     alert(r);
-                 }
                 }
-            });
+            }
+        });
     });
+
 </script>
 @include('includes._footer')

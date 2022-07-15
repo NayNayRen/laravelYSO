@@ -38,13 +38,13 @@
                 </div>
                 <div class="banner-container-image banner-image-food-3">
                 </div>
-                <img class="banner-logo" src="{{ asset('img/food/subway-banner-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/food/subway-logo2.png') }}"
                     alt="Subway Company Logo">
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/food/checkers-banner-logo.png') }}"
-                    alt="Micro Center Company Logo">
+                    alt="Checkers Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-food-4">
                 </div>
@@ -75,8 +75,6 @@
                 aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
         <h1>All of your Food choices.</h1>
         <h3>For when that hunger arrives.</h3>
-        {{-- HIDDEN DASHBOARD --}}
-        {{-- @include('includes._dashboard') --}}
     </div>
     <div class="container view-all">
         <div class="container-left">

@@ -213,12 +213,14 @@ class DealController extends Controller
         if(Auth::check()){
             return view('registeredDeal', [
                 'deal' => $deal,
-                'user' => auth()->user()
+                'user' => auth()->user(),
+                'pageTitle' => 'Selected Deal'
             ]);
             // if not signed in
         }else{
             return view('unregisteredDeal', [
-                'deal' => $deal
+                'deal' => $deal,
+                'pageTitle' => 'Selected Deal'
             ]);
         }
     }

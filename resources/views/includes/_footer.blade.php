@@ -1,6 +1,7 @@
     {{-- BACK TO TOP ARROW --}}
     <span id="up-arrow-message" class="up-arrow-message">To Top</span>
-    <a href="#top" id="up-arrow" class="up-arrow"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    <a href="#top" id="up-arrow" class="up-arrow" aria-label="Back to top."><i class="fa fa-arrow-up"
+            aria-hidden="false"></i></a>
     {{-- FOOTER BLOCK --}}
     <div class="footer">
         <div class="footer-top-section">

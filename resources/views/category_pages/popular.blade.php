@@ -1,5 +1,7 @@
 @include('includes._header')
 <div class="main">
+    {{-- HIDDEN SHARE MESSAGE --}}
+    {{-- @include('includes._share_message') --}}
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
@@ -7,7 +9,7 @@
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
                     <span class='banner-text-one'>free round</span>
-                    <span class='banner-text-two'>for you and a guest after initial purchase.</span>
+                    <span class='banner-text-two'>for you & a guest after initial purchase.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
                 <div class="banner-container-image banner-image-popular-1">
@@ -50,7 +52,7 @@
                 </div>
                 <div class="banner-container-text">
                     <span class='banner-text-one'>2nd color</span>
-                    <span class='banner-text-two'>free when added to first mix.</span>
+                    <span class='banner-text-two'>free with first mix.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
             </div>
