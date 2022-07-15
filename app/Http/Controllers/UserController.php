@@ -50,12 +50,12 @@ class UserController extends Controller
     public function showVerifyForm($id){
         $user = User::find($id);
         // return $user;
-        return view('user_pages/verify',compact('user'));
+        return view('user_pages/verify',compact('user'), ['pageTitle' => 'Verify User']);
     }
 
     // show the forgot password form
     public function showForgotForm(){
-        return view('user_pages/forgot');
+        return view('user_pages/forgot', ['pageTitle' => 'Forgot Password']);
     }
 
     // send reset password code
@@ -77,11 +77,12 @@ class UserController extends Controller
 
     public function savePasswrod(Request $request)
     {
+        $user = User::find($request->user_id);
         if($request->password !=null )
         {
             if($request->password == $request->password_confirmation)
             {
-                $user = User::find($request->user_id);
+                // $user = User::find($request->user_id);
                 $user->password = bcrypt($request->password);
                 $user->update();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully Reset Your Password.');
@@ -120,7 +121,7 @@ class UserController extends Controller
             Mail::to($request->id)->send(new VerifyMail($data));
 
             return response()->json([
-                'success' =>'Verification Code Sended on '.$request->id,
+                'success' =>'Verification Code Emailed '.$request->id,
             ]);
         }
 
@@ -136,7 +137,7 @@ class UserController extends Controller
             $this->sendSms($recipient,$message_to_send);
 
             return response()->json([
-                'success' =>'Verification Code Texted on '.$recipient,
+                'success' =>'Verification Code Texted '.$recipient,
             ]);
         }
         
@@ -172,7 +173,7 @@ class UserController extends Controller
                 Mail::to($request->email)->send(new VerifyMail($data));
 
                 return response()->json([
-                    'success' =>'Verification Code Sended on '.$request->email,
+                    'success' =>'Verification Code Emailed To '.$request->email,
                 ]);
             }
             else
@@ -261,7 +262,7 @@ class UserController extends Controller
             {
                 $user->email_verified = 1;
                 $user->save();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully Verified you Email.');
+                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email.');
             }
             else
             {
@@ -276,7 +277,7 @@ class UserController extends Controller
             {
                 $user->phone_verified = 1;
                 $user->save();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully Verified your Phone#.');
+                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone #.');
             }
             else
             {
@@ -311,7 +312,7 @@ class UserController extends Controller
             }
             else
             {
-                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ',kindly Verify Your Email or Phone to Log In.');
+                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your Email or Phone to log in.');
             }
         }
         
