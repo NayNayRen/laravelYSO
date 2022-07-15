@@ -78,13 +78,15 @@ $(document).ready(function () {
         items: 3,
         autoplay: false,
         autoplayTimeout: 3000,
-        smartSpeed: 1000,
+        smartSpeed: 500, // length of time to scroll in ms
         autoplayHoverPause: true,
         dots: false,
         touchDrag: true,
         navText: [
-            "<div class='arrow-box arrow-box1'><i class='fa fa-arrow-left'></i></div>",
-            "<div class='arrow-box arrow-box2'><i class='fa fa-arrow-right'></i></div>",
+            "<div class='container-arrow-left'><i class='fa fa-arrow-left'></i></div>",
+            "<div class='container-arrow-right'><i class='fa fa-arrow-right'></i></div>",
+            // "<div class='arrow-box arrow-box1'><i class='fa fa-arrow-left'></i></div>",
+            // "<div class='arrow-box arrow-box2'><i class='fa fa-arrow-right'></i></div>",
         ],
         responsive: {
             0: {
