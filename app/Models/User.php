@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Deal;
+use App\Models\UserCoupon;
+
 
 class User extends Authenticatable
 {
@@ -43,4 +46,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function deals()
+    {
+        // return $this->belongsToMany(Deal::class);
+        return $this->hasMany(Deal::class);
+    }
+
+    public function user_coupons()
+    {
+        return $this->hasMany(UserCoupon::class);
+    }
 }

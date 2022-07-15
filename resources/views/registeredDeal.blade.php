@@ -12,8 +12,19 @@
             <div class="registered-share-fav-container">
                 <button id="registered-share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share"
                         aria-hidden="true"></i>Share</button>
-                <button id="registered-favorite-deal-button" class="selected-deal-share-fav-button"><i
-                        class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
+                @php
+                    $check = App\Models\Favourite::where('deal_id',(string)$deal['id'])->get()->first();  
+                @endphp
+                @if($check !=null && auth()->user() && $check->user_id == auth()->user()->id)
+
+                    {{-- id="registered-favorite-deal-button" --}}
+                    <button  class="selected-deal-share-fav-button add-favourit " id="{{$deal['id']}}"><i
+                        class="fa fa-star favourite2" aria-hidden="true"></i>Favorite</button>
+                @else
+                {{-- id="registered-favorite-deal-button" --}}
+                    <button   class="selected-deal-share-fav-button add-favourite" id="{{$deal['id']}}"><i
+                        class="fa fa-star" aria-hidden="true"></i>Favorite</button>
+                @endif
             </div>
             {{-- DISCLAIMER --}}
             <div class="registered-disclaimer">
@@ -35,6 +46,8 @@
             </div>
             {{-- REGISTERED SEND METHOD --}}
             <div class="registered-text-email-container">
+            {{-- <form action="{{ route('add.coupon')}}" method="POST">
+                @csrf --}}
                 <span id="registered-deal-label">Send the coupon via:</span>
                 <div class='registered-text-email-button-container'>
                     <button id="registered-text-button" class="selected-deal-text-email-button">Text</button>
@@ -42,17 +55,126 @@
                 </div>
                 {{-- SEND METHOD BUTTON --}}
                 <span class="registered-deal-response"></span>
+                <input type='hidden' value="{{ (string)$deal['id'] }}" id="deal-id">
                 <input type="tel" id='registered-deal-phone' class="registered-send-method" value="{{ $user->phone }}"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></input>
                 <input type="email" id='registered-deal-email' class="registered-send-method"
                     value="{{ $user->email }}"></input>
                 <span class="registered-text-redemption"></span>
                 <span class="registered-email-redemption"></span>
-                <button id="registered-send-button" class="registered-send-button">Send me the deal</button>
+                <button id="registered-send-button" class="registered-send-button add-coupon">Send me the deal</button>
             </div>
+            {{-- </form> --}}
         </div>
     </div>
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ asset('js/registered-deal.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        var old_email = '{{ $user->email }}';
+        var old_phone = '{{ $user->phone }}';
+        
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+        
+
+    $('#registered-text-button ').click(function () {
+        $('#registered-deal-email').attr('value'," ");
+    });
+
+    $('#registered-email-button ').click(function () {
+        $('#registered-deal-phone').attr('value'," ");
+    });
+
+    $('.registered-text-redemption ').click(function () {
+        $('#registered-deal-phone').attr('value',old_phone);
+        $('#registered-deal-email').attr('value'," ");
+    });
+
+    $('.registered-email-redemption ').click(function () {
+        $('#registered-deal-phone').attr('value'," ");
+        $('#registered-deal-email').attr('value',old_email);
+    });
+
+
+
+    $('.add-favourite').click(function () {
+            var id = $(this).attr('id');
+            console.log(id);
+            $.ajax({
+                url: "{{route('add.favourite')}}",
+                method: "POST",
+                dataType: "json",
+
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    status: status,
+                    id: id,
+                },
+                success: function (data) {
+                 if(data['success'])
+                 {
+                    var r=(data['success']);
+                    $('#'+parseInt(id)).find('i').addClass('favourite2');
+                    console.log(r);
+                    alert(r);
+                 }
+                 if(data['delete'])
+                 {
+                    var r=(data['delete']);
+                    $('#'+parseInt(id)).find('i').removeClass('favourite2')
+                    console.log(r);
+                    alert(r);
+                 }
+                 if(data['error'])
+                 {
+                    var r=(data['error']);
+                    console.log(r);
+                    alert(r);
+                 }
+     
+                }
+            });
+     });
+
+    });
+
+    $('.add-coupon').click(function () {
+            var dealid = $('#deal-id').attr('value');
+            var email = $('#registered-deal-email').attr('value');
+            var phone =  $('#registered-deal-phone').attr('value');
+            console.log(dealid);
+            $.ajax({
+                url: "{{route('add.coupon')}}",
+                method: "POST",
+                dataType: "json",
+
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    dealid : dealid,
+                    email : email,
+                    phone : phone
+                },
+                success: function (data) {
+                 if(data['message'])
+                 {
+                    var r=(data['message']);
+                    alert(r);
+                 }
+                }
+            });
+    });
+
+
+    
+    
+    
+</script>
+
 @include('includes._footer')
+

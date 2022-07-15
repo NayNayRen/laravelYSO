@@ -1,12 +1,13 @@
-// shows cash back card message if not logged in
-function showMessage(card) {
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <a href="/register">Register</a>
-      <span>and/or</span>
-      <a href="/login">Log In</a>
-      <span>to continue.</span>
-      `;
-    div.classList.add("cashback-card-message");
-    card.appendChild(div);
+// shows cashback card message if not logged in
+function loadScript() {
+    const cashbackCard = document.querySelectorAll(".cashback-card.guest");
+    cashbackCard.forEach((card) => {
+        card.addEventListener("click", () => {
+            if (card.children[0].classList.contains("cashback-card-message")) {
+                card.children[0].classList.add("show-message");
+                // card.children[0].classList.toggle("show-message");
+            }
+        });
+    });
 }
+window.onload = loadScript;

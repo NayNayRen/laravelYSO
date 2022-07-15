@@ -111,6 +111,27 @@
     width: 100%;
 }
 
+.all-button {
+    -webkit-transition: all 150ms ease;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    color: #000;
+    font-size: 20px;
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    text-align: left;
+    text-transform: capitalize;
+    transition: all 150ms ease;
+    width: 100px;
+}
+
+.all-button:hover {
+    background-color: #808080;
+    color: #fff;
+    cursor: pointer;
+}
+
 .all-button-arrow {
     -webkit-transform: translateY(-50%);
     color: #000;
@@ -124,10 +145,68 @@
     /* outline: solid 1px blue; */
 }
 
+.all-button-arrow:hover {
+    cursor: pointer;
+}
+
 .all-button-arrow-rotate {
     -webkit-transform: rotate(180deg);
     top: 25%;
     transform: rotate(180deg);
+}
+
+.all-button-dropdown {
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: max-height 250ms ease, opacity 250ms ease;
+    background-color: #808080;
+    border-radius: 5px;
+    left: 50%;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    transition: max-height 250ms ease, opacity 250ms ease;
+    width: 200px;
+    z-index: 1;
+}
+
+.all-button-dropdown-toggle {
+    -webkit-box-shadow: 0 10px 10px #333333;
+    box-shadow: 0 10px 10px #333333;
+    max-height: 350px;
+    overflow-y: scroll;
+    opacity: 1;
+}
+
+.all-button-dropdown li {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    list-style-type: none;
+    padding: 15px 10px;
+    text-shadow: 0 1px 1px #000;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.all-button-dropdown li:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
+.all-button-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.all-button-toggle {
+    background-color: #808080;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #fff;
 }
 
 .back-button {
@@ -261,6 +340,90 @@
 
 .banner-gradient {
     display: none;
+}
+
+.banner-image-auto-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/advanced-auto-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/advanced-auto-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-auto-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/aamco-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/aamco-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-auto-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/tires-plus-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/tires-plus-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-auto-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("..img/auto/sw-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/auto/sw-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .banner-image-fashion-1 {
@@ -510,6 +673,174 @@
             rgba(255, 255, 255, 0) 40%
         ),
         url("../img/food/checkers-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-fun-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/congo-river-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/congo-river-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-fun-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/amc-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/amc-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-fun-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/top-golf-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/top-golf-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-fun-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/fun/adventure-island-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/fun/adventure-island-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-1 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/planet-fitness-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/planet-fitness-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-2 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/whole-foods-banner.jpg");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/whole-foods-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-3 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/walgreens-banner.jpg");
+    background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/walgreens-banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image-health-4 {
+    background-color: #333333;
+    background-image: -webkit-gradient(
+            linear,
+            right top,
+            left top,
+            from(rgba(255, 255, 255, 1)),
+            color-stop(40%, rgba(255, 255, 255, 0))
+        ),
+        url("../img/health/natures-banner.png");
+    background-image: linear-gradient(
+            to left,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 40%
+        ),
+        url("../img/health/natures-banner.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -943,7 +1274,10 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
+    -webkit-box-shadow: 0 5px 5px #333333;
+    -webkit-transition: top 250ms ease;
     background-color: #808080;
+    box-shadow: 0 5px 5px #333333;
     color: #000;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -953,9 +1287,9 @@ body {
     justify-content: center;
     position: absolute;
     text-align: center;
-    top: 0;
+    top: calc(-60% - 10px);
+    transition: top 250ms ease;
     width: 100%;
-    z-index: 1;
 }
 
 .cashback-card-message a {
@@ -968,6 +1302,10 @@ body {
 
 .cashback-card-message a:hover {
     color: #e6331f;
+}
+
+.cashback-card-message span {
+    font-size: 16px;
 }
 
 .cashback-display {
@@ -1078,18 +1416,21 @@ body {
 
 .card-display-view-all {
     -ms-flex-direction: row;
-    -ms-flex-pack: center;
+    /* -ms-flex-pack: center; */
+    -ms-flex-pack: start;
     -ms-flex-wrap: wrap;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
+    -webkit-box-pack: start;
+    /* -webkit-box-pack: center; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: flex-start;
     margin: 0 auto 10px auto;
     width: 100%;
 }
@@ -1241,12 +1582,13 @@ body {
 
 .dashboard {
     -webkit-transition: opacity 250ms ease;
-    background-color: #333333;
+    background-color: #808080;
     box-shadow: 0 0 20px #000;
     min-height: 400px;
     opacity: 0;
     overflow: hidden;
     /* opacity: 1; */
+    padding: 5px;
     position: absolute;
     top: 0;
     transition: opacity 250ms ease;
@@ -1274,6 +1616,7 @@ body {
     -ms-flex-direction: row;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
+    background-color: #333333;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -1285,6 +1628,7 @@ body {
 
 .dashboard-right-container {
     min-height: 100%;
+    overflow: hidden;
     padding: 5px 15px;
     width: 100%;
 }
@@ -1294,7 +1638,7 @@ body {
     color: #fff;
     display: inline;
     font-size: 20px;
-    margin: 0 15px 0 0;
+    margin: 0 15px 20px 0;
     transition: color 150ms ease;
 }
 
@@ -1544,7 +1888,7 @@ body {
     padding: 5px 50px;
     position: relative;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .filter-selection {
@@ -1564,45 +1908,6 @@ body {
 
 .filter-selection:hover {
     background-color: #808080;
-    color: #fff;
-    cursor: pointer;
-}
-
-.filter-selection.all-button {
-    margin: 0;
-}
-
-.filter-selection-dropdown {
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: max-height 500ms ease;
-    background-color: #808080;
-    border-radius: 5px;
-    left: 50%;
-    margin: 0;
-    max-height: 0;
-    overflow-y: hidden;
-    padding: 0;
-    position: absolute;
-    top: calc(100% + 5px);
-    transform: translateX(-50%);
-    transition: max-height 500ms ease;
-    width: 175px;
-}
-
-.filter-selection-dropdown li {
-    color: #000;
-    font-size: 14px;
-    font-weight: bold;
-    height: auto;
-    list-style-type: none;
-    padding: 15px 5px 15px 10px;
-    text-transform: capitalize;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-
-.filter-selection-dropdown li:hover {
-    background-color: #333333;
     color: #fff;
     cursor: pointer;
 }
@@ -1729,7 +2034,20 @@ body {
     padding: 75px 0;
 }
 
-.footer-social-media-links {
+.footer-social-media-container a {
+    -webkit-transition: color 150ms ease;
+    color: #fff;
+    font-size: 35px;
+    margin-right: 25px;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.footer-social-media-container a:hover {
+    color: #808080;
+}
+
+/* .footer-social-media-links {
     -webkit-transition: opacity 150ms ease;
     display: inline-block;
     height: auto;
@@ -1743,7 +2061,7 @@ body {
 
 .footer-social-media-links:hover {
     opacity: 0.75;
-}
+} */
 
 .footer-top-section {
     display: -ms-grid;
@@ -1839,6 +2157,7 @@ body {
 .header-greeting a {
     -webkit-transition: color 150ms ease;
     color: #fff;
+    text-decoration: underline;
     transition: color 150ms ease;
 }
 
@@ -1952,6 +2271,66 @@ html {
     height: auto;
     position: relative;
     width: 80%;
+}
+
+.map {
+    -webkit-transition: opacity 250ms ease;
+    background-color: #808080;
+    box-shadow: 0 0 20px #000;
+    color: #fff;
+    min-height: 400px;
+    opacity: 0;
+    /* opacity: 1; */
+    overflow: hidden;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    transition: opacity 250ms ease;
+    width: 100%;
+    z-index: -1;
+    /* z-index: 1; */
+}
+
+.map-close-button {
+    -webkit-transition: color 150ms ease;
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    transition: color 150ms ease;
+}
+
+.map-close-button:hover {
+    color: #e6331f;
+    cursor: pointer;
+}
+
+.map-content {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    background-color: #333333;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+    /* outline: solid 1px blue; */
+}
+
+.map-content h1 {
+    margin: 0;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
 }
 
 .page-hero {
@@ -2371,7 +2750,7 @@ html {
     cursor: pointer;
 }
 
-.search-button:nth-child(even) {
+.search-button:nth-of-type(1) {
     border-bottom-right-radius: 5px;
     border-bottom: none;
     border-left: solid 1px #000;
@@ -2381,7 +2760,7 @@ html {
     margin: 0 8px 0 -5px;
 }
 
-.search-button:nth-child(odd) {
+.search-button:nth-of-type(2) {
     border: none;
     border-radius: 5px;
 }
@@ -2407,7 +2786,7 @@ html {
     border-bottom-left-radius: 5px;
     border: none;
     border-top-left-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     height: 40px;
     padding: 8px 8px 8px 10px;
     width: 300px;
@@ -2418,12 +2797,24 @@ html {
 }
 
 .search-form-error {
-    bottom: -20px;
-    color: #000;
+    -webkit-box-shadow: 0 2px 5px #333333;
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: all 500ms ease;
+    background-color: #e6331f;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #333333;
+    color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
-    left: 0;
+    font-weight: bold;
+    left: 50%;
+    opacity: 0;
+    padding: 0;
     position: absolute;
+    text-align: center;
+    top: calc(100% + 2px);
+    transform: translateX(-50%);
+    transition: all 500ms ease;
     width: 100%;
     z-index: 1;
     /* outline: solid 1px blue; */
@@ -2484,14 +2875,8 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 5px 20px 5px;
+    padding: 15px 5px 30px 5px;
     position: relative;
-}
-
-.search-results-search-container .search-button {
-    border-left: solid 1px #000;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
 }
 
 .selected-deal-container {
@@ -2509,6 +2894,7 @@ html {
     height: auto;
     margin: auto;
     padding-bottom: 25px;
+    position: relative;
     width: 500px;
     /* outline: solid 1px blue; */
 }
@@ -2525,12 +2911,137 @@ html {
     width: 450px;
 }
 
+.selected-deal-favorite-message,
+.selected-deal-share-message {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: justify;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    -webkit-box-shadow: 0 0 10px #333333;
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: top 500ms ease;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #333333;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    min-height: 250px;
+    padding: 10px;
+    position: fixed;
+    top: -100%;
+    /* top: 150px; */
+    transform: translateX(-50%);
+    transition: top 500ms ease;
+    width: 400px;
+    z-index: 2;
+}
+
+.selected-deal-favorite-message a {
+    color: #000;
+    margin-top: 10px;
+    transition: color 150ms ease;
+}
+
+.selected-deal-favorite-message a:hover {
+    color: #808080;
+}
+
+.selected-deal-favorite-message div {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    width: 90%;
+}
+
+.selected-deal-favorite-message div:nth-of-type(1) span:nth-of-type(1) {
+    background-color: #008000;
+    color: #fff;
+    font-size: 22px;
+    height: 40px;
+}
+
+.selected-deal-favorite-message div span:nth-of-type(1) {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    align-items: center;
+    border-radius: 50%;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    height: 45px;
+    justify-content: center;
+    margin-right: 10px;
+    outline: solid 1px #000;
+    padding: 2px;
+    width: 65px;
+}
+
+.selected-deal-favorite-message div span:nth-of-type(2) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.selected-deal-favorite-message div img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.selected-deal-favorite-message h2,
+.selected-deal-share-message h2 {
+    color: #000;
+    font-size: 20px;
+    margin: 10px 0 0 0;
+    width: 90%;
+    /* outline: solid 1px blue; */
+}
+
 .selected-deal-logo {
     border-radius: 8px;
     height: auto;
     margin-bottom: 10px;
     width: 450px;
     /* outline: solid 1px blue; */
+}
+
+.selected-deal-message-button {
+    -webkit-transition: background-color 150ms ease;
+    background-color: #e6331f;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 10px 5px;
+    transition: background-color 150ms ease;
+    width: 90%;
+}
+
+.selected-deal-message-button:hover {
+    background-color: #000;
+    cursor: pointer;
 }
 
 .selected-deal-name {
@@ -2553,10 +3064,56 @@ html {
     transition: background-color 250ms ease;
 }
 
+.selected-deal-share-fav-button .fa-star {
+    color: #000;
+}
+.selected-deal-share-fav-button:hover .fa-star {
+    color: #fff;
+}
+
 .selected-deal-share-fav-button:hover,
 .selected-deal-text-email-button:hover {
     background-color: #000;
     cursor: pointer;
+}
+
+.selected-deal-favorite-message p,
+.selected-deal-share-message p {
+    border-bottom: solid 1px #000;
+    color: #808080;
+    font-size: 20px;
+    padding-bottom: 5px;
+    width: 90%;
+    /* outline: solid 1px blue; */
+}
+
+.selected-deal-social-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: distribute;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    /* outline: solid 1px blue; */
+}
+
+.selected-deal-social-container a {
+    -webkit-transition: color 150ms ease;
+    color: #000;
+    font-size: 40px;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.selected-deal-social-container a:hover {
+    color: #808080;
 }
 
 .selected-deal-text-email-button {
@@ -2572,16 +3129,16 @@ html {
     transition: background-color 250ms ease;
 }
 
-.show-dropdown {
-    -webkit-box-shadow: 0 2px 5px #808080;
-    box-shadow: 0 2px 5px #808080;
-    max-height: 250px;
-    overflow-y: scroll;
-    scrollbar-width: initial;
+.show-message {
+    top: 0;
 }
 
 #show-password {
     display: none;
+}
+
+.show-selected-deal-message {
+    top: 150px;
 }
 
 .support-background {
@@ -2816,8 +3373,11 @@ html {
 }
 
 .users h1 {
-    font-size: 35px;
+    font-size: 32px;
     margin: 0 0 10px 0;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
 }
 
 .users form {
@@ -2835,7 +3395,7 @@ html {
     border: none;
     color: #fff;
     font-size: 16px;
-    margin: 5px 0;
+    margin: 5px 0 15px 0;
     padding: 12px 0;
     text-align: center;
     width: 100%;
@@ -2857,7 +3417,12 @@ html {
     text-decoration: none;
 }
 
-.users-form-greeting,
+.users-form-greeting {
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
 .users-form-disclaimer {
     font-size: 14px;
 }
@@ -2875,7 +3440,9 @@ html {
 }
 
 .users-form-group {
+    /* margin: 25px 0 0 0; */
     position: relative;
+    /* outline: solid 1px blue; */
 }
 
 .users-form-group input {
@@ -2951,7 +3518,9 @@ html {
 }
 
 .view-all {
-    background-color: #808080;
+    /* background-color: #808080; */
+    /* background-color: #fff; */
+    background-color: #d3d3d3;
     /* grid-template-columns: 100%; */
 }
 
@@ -2959,7 +3528,7 @@ html {
     background-color: #333333;
     color: #fff;
     height: 300px;
-    width: 200px;
+    width: 225px;
 }
 
 .view-all .card-discount {
@@ -3022,12 +3591,12 @@ html {
 }
 
 .view-all-container-heading p {
-    background-color: #b5b2b4;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-family: "Roboto", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     margin: 10px auto 0 auto;
-    padding: 10px 5px;
+    padding: 15px 5px;
     text-align: center;
     width: 100%;
     /* outline: solid 1px blue; */
@@ -3035,12 +3604,15 @@ html {
 
 .view-all-container-heading p span {
     color: #e6331f;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
 .view-all-item-counter {
     -webkit-transform: translateX(-50%);
     bottom: -20px;
-    color: #fff;
+    /* color: #fff; */
+    color: #000;
     font-family: "Roboto", "FontAwesome", sans-serif;
     font-size: 12px;
     left: 50%;
@@ -3073,7 +3645,7 @@ html {
     -webkit-transform: translateX(-50%);
     left: 50%;
     position: absolute;
-    top: 10px;
+    top: 15px;
     transform: translateX(-50%);
 }
 
@@ -3107,6 +3679,11 @@ html {
 }
 
 .views-likes-icons i:hover {
+    color: #e6331f;
+    cursor: pointer;
+}
+
+.views-likes-icons .fa-star.favourite {
     color: #e6331f;
     cursor: pointer;
 }
@@ -3153,7 +3730,7 @@ html {
 
 .window-overlay-dim {
     opacity: 0.85;
-    z-index: 2;
+    z-index: 3;
 }
 
 @media (max-width: 1920px) {
@@ -3194,14 +3771,17 @@ html {
         font-size: 16px;
     }
 
-    .search-button {
-        padding: 5px 10px;
-    }
-
     .up-arrow {
         font-size: 40px;
     }
 }
+
+/* @media (max-width: 1400px) {
+    .card {
+        width: 280px;
+        margin: 0;
+    }
+} */
 
 @media (max-width: 1300px) {
     .about-us-personal-info p {
@@ -3217,8 +3797,10 @@ html {
         height: 200px;
     }
 
-    .filter-selection.all-button {
+    .all-button {
+        font-size: 18px;
         padding: 7px 35px 7px 15px;
+        width: auto;
     }
 
     .all-button-arrow {
@@ -3382,7 +3964,12 @@ html {
 
     .search-button {
         height: auto;
+        padding: 5px 10px;
         width: auto;
+    }
+
+    .search-button:nth-of-type(2) {
+        padding: 5px 12px;
     }
 
     .search-button i {
@@ -3407,9 +3994,9 @@ html {
     }
 
     .user-icon {
-        font-size: 24px;
-        height: 35px;
-        width: 35px;
+        font-size: 26px;
+        height: 38px;
+        width: 38px;
     }
 
     .user-initials-container,
@@ -3533,6 +4120,10 @@ html {
         transform: scale(1.1);
     }
 
+    .cashback-card-message a {
+        font-size: 16px;
+    }
+
     .cashback-discount h4 {
         font-size: 20px;
     }
@@ -3554,7 +4145,9 @@ html {
     }
 
     .dashboard,
-    .dashboard-content {
+    .dashboard-content,
+    .map,
+    .map-content {
         min-height: 300px;
     }
 
@@ -3578,10 +4171,19 @@ html {
         width: 95%;
     }
 
-    .footer-social-media-links {
+    .footer-social-media-container a {
+        font-size: 30px;
+        margin-right: 15px;
+    }
+
+    .footer-social-media-container a:hover {
+        color: #fff;
+    }
+
+    /* .footer-social-media-links {
         height: 35px;
         width: 35px;
-    }
+    } */
 
     .get-deal-button {
         font-size: 16px;
@@ -3663,10 +4265,6 @@ html {
         width: 400px;
     }
 
-    .up-arrow-message {
-        display: none;
-    }
-
     .user-initials-container,
     .user-register-container {
         right: 10px;
@@ -3713,6 +4311,14 @@ html {
         height: 145px;
         padding: 5px;
     }
+
+    .all-button {
+        font-size: 16px;
+    }
+
+    /* .all-button-dropdown {
+        width: 200px;
+    } */
 
     .back-button {
         left: 50px;
@@ -3801,6 +4407,22 @@ html {
         /* outline: solid 1px blue; */
     }
 
+    .banner-image-auto-1 {
+        background-image: url("../img/auto/advanced-auto-banner-mobile.jpg");
+    }
+
+    .banner-image-auto-2 {
+        background-image: url("../img/auto/aamco-banner-mobile.jpg");
+    }
+
+    .banner-image-auto-3 {
+        background-image: url("../img/auto/tires-plus-banner-mobile.jpg");
+    }
+
+    .banner-image-auto-4 {
+        background-image: url("../img/auto/sw-banner-mobile.jpg");
+    }
+
     .banner-image-fashion-1 {
         background-image: url("../img/fashion/pacsun-banner-mobile.jpg");
     }
@@ -3847,6 +4469,38 @@ html {
 
     .banner-image-food-4 {
         background-image: url("../img/food/checkers-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-1 {
+        background-image: url("../img/fun/congo-river-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-2 {
+        background-image: url("../img/fun/amc-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-3 {
+        background-image: url("../img/fun/top-golf-banner-mobile.jpg");
+    }
+
+    .banner-image-fun-4 {
+        background-image: url("../img/fun/adventure-island-banner-mobile.jpg");
+    }
+
+    .banner-image-health-1 {
+        background-image: url("../img/health/planet-fitness-banner-mobile.jpg");
+    }
+
+    .banner-image-health-2 {
+        background-image: url("../img/health/whole-foods-banner-mobile.jpg");
+    }
+
+    .banner-image-health-3 {
+        background-image: url("../img/health/walgreens-banner-mobile.jpg");
+    }
+
+    .banner-image-health-4 {
+        background-image: url("../img/health/natures-banner-mobile.png");
     }
 
     .banner-image-main-1 {
@@ -4042,7 +4696,7 @@ html {
         display: grid;
         grid-auto-flow: column;
         height: auto;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         margin: 0 auto 10px auto;
         overflow-x: auto;
         overflow-y: hidden;
@@ -4122,7 +4776,8 @@ html {
         margin-bottom: 10px;
     }
 
-    .dashboard-close-button:hover {
+    .dashboard-close-button:hover,
+    .map-close-button:hover {
         color: #fff;
     }
 
@@ -4261,12 +4916,11 @@ html {
     }
 
     .filter-search-container {
-        padding: 15px 0;
+        padding: 15px 15px;
     }
 
     .filter-selection {
         font-size: 16px;
-        /* padding: 5px 10px; */
         margin: 4px;
     }
 
@@ -4309,6 +4963,10 @@ html {
     }
 
     .get-deal-button:hover {
+        color: #fff;
+    }
+
+    .gray-background .views-likes-icons i:hover {
         color: #fff;
     }
 
@@ -4458,7 +5116,7 @@ html {
     }
 
     .search-results-message-container p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .selected-deal-container {
@@ -4485,6 +5143,11 @@ html {
         width: 300px;
     }
 
+    .selected-deal-favorite-message p,
+    .selected-deal-share-message p {
+        font-size: 18px;
+    }
+
     .support-text a {
         font-size: 18px;
     }
@@ -4501,8 +5164,12 @@ html {
         color: #e6331f;
     }
 
+    .up-arrow-message {
+        display: none;
+    }
+
     .users h1 {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .users label {
@@ -4557,6 +5224,10 @@ html {
         padding: 3px 0;
     }
 
+    .view-all .views-likes-icons i:hover {
+        color: #fff;
+    }
+
     .view-all-arrow-container {
         -ms-flex-pack: end;
         -webkit-box-pack: end;
@@ -4581,6 +5252,7 @@ html {
     .view-all-container-heading p {
         font-size: 18px;
         margin: 5px auto 0 auto;
+        padding: 15px 20px;
     }
 
     .view-all-item-counter {
@@ -4610,7 +5282,7 @@ html {
     }
 
     .view-all-user-icon {
-        top: 5px;
+        top: 10px;
     }
 
     .views-likes-container {
@@ -4619,6 +5291,10 @@ html {
 
     .views-likes-icons i {
         font-size: 22px;
+    }
+
+    .views-likes-icons i:hover {
+        color: #000;
     }
 
     .yso-header-link,
@@ -4811,10 +5487,34 @@ html {
         width: 90%;
     }
 
+    .search-results-message-container h1 {
+        font-size: 22px;
+    }
+
     .selected-deal-discount,
     .selected-deal-name {
         font-size: 16px;
         padding: 0 5px 5px 10px;
+        width: 100%;
+    }
+
+    .selected-deal-favorite-message,
+    .selected-deal-share-message {
+        border-radius: 0;
+        min-height: 225px;
+        width: 100%;
+    }
+
+    .selected-deal-favorite-message div:nth-of-type(1) span:nth-of-type(1) {
+        height: 40px;
+    }
+
+    .selected-deal-favorite-message div span:nth-of-type(1) {
+        height: 42px;
+    }
+
+    .selected-deal-logo {
+        border-radius: 0;
         width: 100%;
     }
 
@@ -4829,14 +5529,18 @@ html {
         padding: 8px 45px;
     }
 
-    .selected-deal-logo {
-        border-radius: 0;
-        width: 100%;
+    .selected-deal-social-container a {
+        font-size: 35px;
+    }
+
+    .selected-deal-social-container a:hover {
+        color: #000;
     }
 
     .user-icon {
-        height: 32px;
-        width: 32px;
+        font-size: 24px;
+        height: 34px;
+        width: 34px;
     }
 
     .user-login-button,

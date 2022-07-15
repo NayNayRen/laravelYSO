@@ -4,6 +4,7 @@ const scrollPoint = document.getElementById("scroll-point");
 const burgerMenu = document.querySelector(".burger-menu");
 const upArrow = document.getElementById("up-arrow");
 const upArrowMessage = document.getElementById("up-arrow-message");
+const windowOverlay = document.querySelector("#window-overlay");
 
 // sticky settings for makeItStick
 function makeItStickSettings() {
@@ -66,4 +67,46 @@ upArrow.addEventListener("mouseover", () => {
 upArrow.addEventListener("mouseout", () => {
     upArrowMessage.style.opacity = "0";
     upArrowMessage.style.left = "-80px";
+});
+$(document).ready(function () {
+    // $('.views-likes-icons .fa-star').click(function(){
+    //     $(this).toggleClass('favourite');
+    // });
+    var owl = $(".card-display");
+    owl.owlCarousel({
+        loop: true,
+        nav: true,
+        items: 3,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        autoplayHoverPause: true,
+        dots: false,
+        touchDrag: true,
+        navText: [
+            "<div class='arrow-box arrow-box1'><i class='fa fa-arrow-left'></i></div>",
+            "<div class='arrow-box arrow-box2'><i class='fa fa-arrow-right'></i></div>",
+        ],
+        responsive: {
+            0: {
+                items: 1,
+                dots: false,
+            },
+            540: {
+                items: 2,
+            },
+            1300: {
+                items: 3,
+            },
+        },
+    });
+
+    $(".c-list__link").click(function () {
+        $(".c-list__link").removeClass("active");
+        $(this).addClass("active");
+        var activeCard = $(this).attr("link");
+        $(activeCard).addClass("active");
+        $(activeCard).nextAll().removeClass("active");
+        $(activeCard).prevAll().removeClass("active");
+    });
 });

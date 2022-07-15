@@ -19,24 +19,40 @@
                 </div>
                 {{-- SOCIAL MEDIA BLOCK --}}
                 <div class="footer-social-media-container">
-                    <a href="mailto: Support@YourSocialOffers.com" class="footer-social-media-links">
-                        <img src="{{ asset('img/social/mail.png') }}" alt="Email link">
+                    <a href="mailto: Support@YourSocialOffers.com" class="footer-social-media-links"
+                        aria-label="Contact via email.">
+                        {{-- <img src="{{ asset('img/social/mail.png') }}"
+                        alt="Email link"> --}}
+                        <i class="fa fa-envelope-o" aria-hidden="false"></i>
                     </a>
-                    <a href="https://www.facebook.com/yoursocialoffers/?ref=py_c" class="footer-social-media-links">
-                        <img src="{{ asset('img/social/facebook.png') }}" alt="Facebook link">
+                    <a href="https://www.facebook.com/yoursocialoffers/?ref=py_c" class="footer-social-media-links"
+                        aria-label="Contact via Facebook.">
+                        {{-- <img src="{{ asset('img/social/facebook.png') }}"
+                        alt="Facebook link"> --}}
+                        <i class="fa fa-facebook-official" aria-hidden="false"></i>
                     </a>
-                    <a href="https://twitter.com/ysoffers" class="footer-social-media-links">
-                        <img src="{{ asset('img/social/twitter.png') }}" alt="Twitter link">
+                    <a href="https://twitter.com/ysoffers" class="footer-social-media-links"
+                        aria-label="Contact via Twitter.">
+                        {{-- <img src="{{ asset('img/social/twitter.png') }}"
+                        alt="Twitter link"> --}}
+                        <i class="fa fa-twitter" aria-hidden="false"></i>
                     </a>
-                    <a href="https://www.instagram.com/yoursocialoffers/" class="footer-social-media-links">
-                        <img src="{{ asset('img/social/instagram.png') }}" alt="Instagram link">
+                    <a href="https://www.instagram.com/yoursocialoffers/" class="footer-social-media-links"
+                        aria-label="Contact via Instagram.">
+                        {{-- <img src="{{ asset('img/social/instagram.png') }}"
+                        alt="Instagram link"> --}}
+                        <i class="fa fa-instagram" aria-hidden="false"></i>
                     </a>
-                    <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA"
-                        class="footer-social-media-links">
-                        <img src="{{ asset('img/social/youtube.png') }}" alt="Youtube link">
+                    <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA" class="footer-social-media-links"
+                        aria-label="Visit us on YouTube.">
+                        {{-- <img src="{{ asset('img/social/youtube.png') }}"
+                        alt="Youtube link"> --}}
+                        <i class="fa fa-youtube" aria-hidden="false"></i>
                     </a>
-                    <a href="#" class="footer-social-media-links">
-                        <img src="{{ asset('img/social/linkedin.png') }}" alt="LinkedIn link">
+                    <a href="#" class="footer-social-media-links" aria-label="Contact via LinkedIn.">
+                        {{-- <img src="{{ asset('img/social/linkedin.png') }}"
+                        alt="LinkedIn link"> --}}
+                        <i class="fa fa-linkedin" aria-hidden="false"></i>
                     </a>
                 </div>
             </div>
@@ -69,6 +85,8 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     </body>
 

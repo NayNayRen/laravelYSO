@@ -22,7 +22,14 @@
 
     {{-- item count --}}
     <div class="container-item-counter">
-        @if($paginator->firstItem())
+        
+        {{ $paginator->count() }}
+        of
+        <span>{{ $paginator->total() }}</span>
+
+
+        {{-- old pagination  --}}
+        {{-- @if($paginator->firstItem())
             <span>{{ $paginator->firstItem() }}</span>
             to
             <span>{{ $paginator->lastItem() }}</span>
@@ -30,6 +37,6 @@
             {{ $paginator->count() }}
         @endif
         of
-        <span>{{ $paginator->total() }}</span>
+        <span>{{ $paginator->total() }}</span> --}}
     </div>
 @endif

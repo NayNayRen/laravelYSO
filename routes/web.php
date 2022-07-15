@@ -4,6 +4,8 @@ use App\Models\Deal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DealController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FavouriteController;
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\NavigationPageController;
 
 // MAIN/LANDING PAGE ROUTE
@@ -40,6 +42,12 @@ Route::get('/navigation_pages/support', [NavigationPageController::class, 'suppo
 
 Route::get('/navigation_pages/about', [NavigationPageController::class, 'about'])->name('about');
 
+// FAVOURITE ROUTES
+Route::post('/favourite', [FavouriteController::class,'favouriteDeal'])->name('add.favourite');
+Route::post('/coupon', [CouponController::class,'userCoupons'])->name('add.coupon');
+Route::post('/code', [UserController::class,'sendCode'])->name('send.code');
+Route::post('/resetcode', [UserController::class,'sendResetCode'])->name('send.reset_code');
+
 // REGISTER, LOG IN, AND LOGOUT ROUTES
 // shows register form
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('user.create');
@@ -47,6 +55,15 @@ Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('
 Route::post('/user_pages', [UserController::class, 'registerUser'])->name('user.store');
 // shows log in form
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.showLoginForm');
+// veriy email or password
+Route::get('/verify/{id}', [UserController::class, 'showVerifyForm'])->name('login.showVerifyForm');
+Route::post('/verify/code/{id}', [UserController::class, 'verifyForm'])->name('login.VerifyForm');
+
+//forgot password
+Route::get('/forgotpasswrod/', [UserController::class, 'showForgotForm'])->name('login.forgotpasswrod');
+Route::post('/resetpasswrod/', [UserController::class, 'forgotForm'])->name('login.resetpasswrod');
+Route::post('/savepasswrod/', [UserController::class, 'savePasswrod'])->name('login.savepasswrod');
+
 // log user in
 Route::post('/user_pages/authenticate', [UserController::class, 'loginUser'])->name('login');
 // logs user out

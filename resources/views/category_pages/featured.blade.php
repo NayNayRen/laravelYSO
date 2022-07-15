@@ -59,8 +59,8 @@
         </div>
         {{-- BANNER ARROWS --}}
         <div class="banner-arrows banner-arrows-alternate">
-            <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-            <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            <span id='prev' aria-label="Previous Slide"><i class="fa fa-arrow-left" aria-hidden="false"></i></span>
+            <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
     <div class="search-results-search-container">
@@ -68,15 +68,15 @@
         @include('includes._search_container')
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
     </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
-                aria-hidden="true"></i></button>
+                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
         <h1>All of your Featured choices.</h1>
         <h3>In one location, for easy picking.</h3>
-        {{-- HIDDEN DASHBOARD --}}
-        {{-- @include('includes._dashboard') --}}
     </div>
     <div class="container view-all">
         <div class="container-left">
@@ -87,39 +87,65 @@
             </div>
         </div>
         <div class="container-right">
+            {{-- CARD BLOCK --}}
             <div class="card-display-view-all">
                 @foreach($deals as $deal)
-                    {{-- CARD BLOCK --}}
-                    <div class="card">
-                        <div>
-                            <div class="card-logo-container">
-                                <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
-                            </div>
-                            <span class="card-discount">{{ $deal->location }}</span><br>
-                            <span class="card-name">{{ $deal->name }}</span><br>
-                        </div>
-                        <div>
-                            <div class="views-likes-container">
-                                <div>
-                                    <span>Views: {{ $deal->views }}</span><br>
-                                    <span>Likes:</span>
-                                </div>
-                                <div class="views-likes-icons">
-                                    <i class="fa fa-share" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <a href="/deals/{{ $deal->id }}">
-                                <div class="get-deal-button">Get Deal Now!</div>
-                            </a>
-                        </div>
-                    </div>
+                    {{-- CARD COMPONENT --}}
+                    @include('includes._card')
                 @endforeach
             </div>
         </div>
     </div>
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
+<script src="{{ asset('js/show-map.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('.add-favourite').click(function () {
+            var id = $(this).attr('id');
+            console.log(id);
+            $.ajax({
+                url: "{{ route('add.favourite') }}",
+                method: "POST",
+                dataType: "json",
+
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    status: status,
+                    id: id,
+                },
+                success: function (data) {
+                    if (data['success']) {
+                        var r = (data['success']);
+                        $('#' + id).addClass('favourite');
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['delete']) {
+                        var r = (data['delete']);
+                        $('#' + parseInt(id)).removeClass('favourite')
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['error']) {
+                        var r = (data['error']);
+                        console.log(r);
+                        alert(r);
+                    }
+
+                }
+            });
+        });
+
+    });
+
+</script>
 @include('includes._footer')

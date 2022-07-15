@@ -1,0 +1,146 @@
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+}
+.d-col {
+    flex-direction: column;
+}
+.al-center {
+    align-items: center;
+}
+.jst-center {
+    justify-content: center;
+}
+.jst-btw {
+    justify-content: space-between;
+}
+.jst-end {
+    justify-content: flex-end;
+}
+.mgb-0 {
+    margin-bottom: 0 !important;
+}
+.mgt-0 {
+    margin-top: 0 !important;
+}
+.mgr-0 {
+    margin-right: 0 !important;
+}
+.mgl-0 {
+    margin-left: 0 !important;
+}
+.mgl-auto {
+    margin-left: auto;
+}
+.mgr-auto {
+    margin-right: auto;
+}
+.arrow-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6331f;
+    border-radius: 50%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    transition: color 150ms ease;
+    /* outline: solid 1px blue; */
+}
+.arrow-box:hover {
+    color: #000;
+    transition: color 150ms ease;
+}
+.arrow-box1 {
+    position: absolute;
+    z-index: 999;
+    top: calc(50% - 30px);
+    left: 0px;
+}
+.arrow-box2 {
+    position: absolute;
+    z-index: 999;
+    top: calc(50% - 30px);
+    right: 0px;
+}
+.owl-carousel.owl-drag .owl-item {
+    display: flex;
+    justify-content: center;
+}
+.favourite2 {
+    color: #fff !important;
+}
+.c-list__item {
+    padding: 10px 20px;
+}
+.c-list__link {
+    color: #fff;
+    /* font-size: 18px; */
+    font-weight: 500;
+}
+.c-list__link.active h4 {
+    color: red;
+}
+.favBox {
+    display: none;
+}
+.favBox.active {
+    display: block;
+}
+.favBox h1 {
+    color: #fff;
+}
+.white {
+    color: #fff;
+}
+.auth-select {
+    width: 100%;
+    padding: 0 10px;
+    height: 38px;
+    border-radius: 5px;
+    margin-bottom: 28px;
+    font-size: 16px;
+    background-color: #808080;
+    margin-top: 5px;
+}
+.auth-select option {
+    width: 100%;
+    padding: 10px 10px;
+    height: 38px;
+    border-radius: 5px;
+    margin-bottom: 28px;
+    font-size: 16px;
+    background-color: #fff;
+}
+.verify_by {
+    margin-bottom: 5px;
+}
+.verify_btn {
+    -webkit-transition: color 150ms ease;
+    background-color: #e6331f;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto;
+    padding: 8px 0;
+    text-align: center;
+    transition: color 150ms ease;
+    width: 100%;
+    margin-bottom: 25px;
+    border: none;
+    text-transform: capitalize;
+}
+.main .footer {
+    width: 100%;
+}
+.d-none {
+    display: none;
+}

@@ -34,13 +34,6 @@ const bannerAds = [
     },
     {
         url: "N/A",
-        img: "img/food/chewy-logo.png",
-        name: "Chewy.com",
-        discount: "Savings On Pet Supplies",
-        views: 1547,
-    },
-    {
-        url: "N/A",
         img: "img/food/subway-banner-logo.png",
         name: "Subway",
         discount: "Free footlong with purchase",

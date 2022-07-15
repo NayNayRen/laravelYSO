@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 
 class Deal extends Model
 {
@@ -54,14 +55,16 @@ class Deal extends Model
 
     // INDEX FEATURED GROUPING, GETS 10, SORTS BY ID
     public static function getFeatured(){
+        $take = 30;
         $featured = Deal::query()
-        ->whereIn('id', Deal::select('id')->orderByDesc('id')->take(30)->get()->modelKeys())
-        ->paginate(3, ['*'], 'featured');
+        ->whereIn('id', Deal::select('id')->orderByDesc('id')->take($take)->get()->modelKeys())
+        ->paginate($take, ['*'], 'featured');
         return $featured;
     }
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllFeatured(){
+        // $take = 30;
         $allFeatured = Deal::query()
         ->whereIn('id', Deal::select('id')->orderByDesc('id')->take(30)->get()->modelKeys())
         ->paginate(10);
@@ -70,10 +73,14 @@ class Deal extends Model
 
     // INDEX CATEGORY GROUPINGS, FOOD, TECH. ETC.
     public static function getType($type){
+        $take = $category = Deal::where('name', 'like', '%' . $type . '%')
+        ->orWhere('location', 'like', '%' . $type . '%')
+        ->orWhere('category', 'like', '%' . $type . '%')->count();
+
         $category = Deal::where('name', 'like', '%' . $type . '%')
         ->orWhere('location', 'like', '%' . $type . '%')
         ->orWhere('category', 'like', '%' . $type . '%')
-        ->paginate(3, ['*'], $type);
+        ->paginate($take, ['*'], $type);
         return $category;
     }
 
@@ -88,7 +95,7 @@ class Deal extends Model
 
     // INDEX POPULAR GROUPING, PULLS DEALS WITH VIEWS GRETAER THAN 200
     public static function getPopular(){
-        $popular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(3, ['*'], 'popular');
+        $popular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(30, ['*'], 'popular');
         return $popular;
     }
 
@@ -97,4 +104,11 @@ class Deal extends Model
         $allPopular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(10);
         return $allPopular;
     }
+
+    public function users()
+    {
+        // return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class);
+    }
+
 }

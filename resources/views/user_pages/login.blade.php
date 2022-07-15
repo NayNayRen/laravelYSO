@@ -21,7 +21,7 @@
                 Continue with Apple
             </a>
         </div>
-        <span class="gray-text">Continue signing in using email bellow.</span>
+        <span class="gray-text">Continue signing in using email below.</span>
         {{-- SIGN IN FORM --}}
         <form action={{ route('login') }} method="POST">
             @csrf
@@ -35,8 +35,10 @@
             </div>
             {{-- PASSWORD --}}
             <div class="users-form-group password-signin">
-                <label for="password">Password</label><span class="gray-text password-message">Forgot your
-                    password?</span>
+                <label for="password">Password</label>
+                <a href="{{ route('login.forgotpasswrod') }}"><span
+                        class="gray-text password-message">Forgot your
+                        password?</span></a>
                 <input type="password" name="password" id="password">
                 {{-- SHOW/HIDE PASSWORD EYE --}}
                 <i id="hide-password" class="fa fa-eye-slash" aria-hidden="true" onclick="hide()"></i>

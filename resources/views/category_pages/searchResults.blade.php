@@ -59,31 +59,23 @@
         </div>
         {{-- BANNER ARROWS --}}
         <div class="banner-arrows banner-arrows-alternate">
-            <span id='prev'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-            <span id='next'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+            <span id='prev' aria-label="Previous Slide"><i class="fa fa-arrow-left" aria-hidden="false"></i></span>
+            <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
     {{-- SEARCH CONTAINER --}}
     <div class="search-results-search-container">
-        <div class="search-container">
-            <form action={{ route('deals.search') }} class="search-form" name="searchForm"
-                method="GET">
-                <input type="text" name="search" id="search-field" class="search-field"
-                    placeholder="Search by type, city, or zip...">
-                <span class="search-form-error">{{ $message }}</span>
-                <button type="submit" id="search-button" class="search-button"><i class="fa fa-search"
-                        aria-hidden="true"></i></button>
-                {{-- <button type="button" id="map-button" class="search-button"><i class="fa fa-map-marker"
-                        aria-hidden="true"></i></button> --}}
-            </form>
-        </div>
+        {{-- SEARCH CONTAINER --}}
+        @include('includes._search_container')
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
     </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
-        <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
-                aria-hidden="true"></i></button>
+        <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
+            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
         <h1>The choices you want.</h1>
         <h3>That's why you searched for them.</h3>
         <p>You searched for :
@@ -114,30 +106,8 @@
             <div class="container-right">
                 <div class="card-display-view-all">
                     @foreach($searchedDeals as $deal)
-                        <div class="card">
-                            <div>
-                                <div class="card-logo-container">
-                                    <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
-                                </div>
-                                <span class="card-discount">{{ $deal->location }}</span><br>
-                                <span class="card-name">{{ $deal->name }}</span><br>
-                            </div>
-                            <div>
-                                <div class="views-likes-container">
-                                    <div>
-                                        <span>Views: {{ $deal->views }}</span><br>
-                                        <span>Likes:</span>
-                                    </div>
-                                    <div class="views-likes-icons">
-                                        <i class="fa fa-share" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                                <a href="/deals/{{ $deal->id }}">
-                                    <div class="get-deal-button">Get Deal Now!</div>
-                                </a>
-                            </div>
-                        </div>
+                        {{-- CARD COMPONENT --}}
+                        @include('includes._card')
                     @endforeach
                 </div>
             </div>
@@ -145,6 +115,55 @@
 </div>
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ asset('js/show-search-error.js') }}"></script>
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
+<script src="{{ asset('js/show-map.js') }}"></script>
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('.add-favourite').click(function () {
+            var id = $(this).attr('id');
+            console.log(id);
+            $.ajax({
+                url: "{{ route('add.favourite') }}",
+                method: "POST",
+                dataType: "json",
+
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    status: status,
+                    id: id,
+                },
+                success: function (data) {
+                    if (data['success']) {
+                        var r = (data['success']);
+                        $('#' + id).addClass('favourite');
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['delete']) {
+                        var r = (data['delete']);
+                        $('#' + parseInt(id)).removeClass('favourite')
+                        console.log(r);
+                        alert(r);
+                    }
+                    if (data['error']) {
+                        var r = (data['error']);
+                        console.log(r);
+                        alert(r);
+                    }
+
+                }
+            });
+        });
+
+    });
+
+</script>
 @include('includes._footer')

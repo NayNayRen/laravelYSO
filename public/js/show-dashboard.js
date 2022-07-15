@@ -7,10 +7,9 @@ const dashboard = document.querySelector("#dashboard");
 const dashboardUserContainer = document.querySelector(
     ".dashboard-user-container"
 );
-const windowOverlay = document.querySelector("#window-overlay");
 
 dashboardOpenButton.addEventListener("click", () => {
-    dashboard.style.zIndex = 2;
+    dashboard.style.zIndex = 3;
     dashboard.style.opacity = 1;
     windowOverlay.classList.add("window-overlay-dim");
 });

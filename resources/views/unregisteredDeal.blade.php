@@ -25,7 +25,7 @@
                     placeholder="mail@mail.com"></input>
                 <span class="unregistered-text-redemption"></span>
                 <span class="unregistered-email-redemption"></span>
-                <button id="unregistered-send-button" class="unregistered-send-button">Send me the deal</button>
+                <button id="unregistered-send-button" class="unregistered-send-button add-coupon">Send me the deal</button>
             </div>
             {{-- DISCLAIMER --}}
             <div class="unregistered-disclaimer">
@@ -39,7 +39,7 @@
             <div class="unregistered-share-fav-container">
                 <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button"><i
                         class="fa fa-share" aria-hidden="true"></i>Share</button>
-                <button id="unregistered-favorite-deal-button" class="selected-deal-share-fav-button"><i
+                <button id="unregistered-favorite-deal-button " class="selected-deal-share-fav-button add-favourite"><i
                         class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
             </div>
         </div>
@@ -47,4 +47,78 @@
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="{{ asset('js/unregistered-deal.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $('.add-favourite').click(function () {
+            var id = $(this).attr('id');
+            alert(id);
+            console.log(id);
+            $.ajax({
+                url: "{{route('add.favourite')}}",
+                method: "POST",
+                dataType: "json",
+
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    status: status,
+                    id: id,
+                },
+                success: function (data) {
+                 if(data['success'])
+                 {
+                    var r=(data['success']);
+                    $('#'+parseInt(id)).find('i').addClass('favourite2');
+                    console.log(r);
+                    alert(r);
+                 }
+                 if(data['delete'])
+                 {
+                    var r=(data['delete']);
+                    $('#'+parseInt(id)).find('i').removeClass('favourite2')
+                    console.log(r);
+                    alert(r);
+                 }
+                 if(data['error'])
+                 {
+                    var r=(data['error']);
+                    console.log(r);
+                    alert(r);
+                 }
+     
+                }
+            });
+     });
+
+    });
+
+    $('.add-coupon').click(function () {
+            var dealid = $('#deal-id').attr('value');
+            var email = $('#registered-deal-email').attr('value');
+            console.log(dealid);
+            $.ajax({
+                url: "{{route('add.coupon')}}",
+                method: "POST",
+                dataType: "json",
+
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    dealid : dealid,
+                    email : email
+                },
+                success: function (data) {
+                 if(data['message'])
+                 {
+                    var r=(data['message']);
+                    alert(r);
+                 }
+                }
+            });
+    });
+</script>
 @include('includes._footer')
