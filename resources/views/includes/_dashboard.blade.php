@@ -321,8 +321,8 @@
                         @endif
                     @else
                         <div class="dashboard-right-container">
-                            <h4 class="mb-3">Coupons</h4>
-                            <h5 class="mb-3 white">No Items in Your Favourite List</h5>
+                            <h4 class="mb-3">My Coupons</h4>
+                            <h5 class="mb-3">No items in your Favorite list</h5>
                         </div>
                     @endif
                 </div>
@@ -341,7 +341,7 @@
             </div>
             <div class="dashboard-right-container">
                 <h4 class="mb-3">My Coupons</h4>
-                <h5 class="mb-3">Kindly login to see your Favourites.</h5>
+                <h5 class="mb-3">Kindly login to see your Favorites.</h5>
 
             </div>
         @endauth

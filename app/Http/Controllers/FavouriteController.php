@@ -21,7 +21,7 @@ class FavouriteController extends Controller
                 {
                     $check->delete();    
                     return response()->json([
-                        'delete' =>'Remove form Favourite List!',
+                        'delete' =>'Removed form Favorite list!',
                     ]);
                 }
                 else
@@ -31,7 +31,7 @@ class FavouriteController extends Controller
                     $new->user_id = $user_id;
                     $new->save();
                     return response()->json([
-                        'success' =>'Deal Farourites Successfully!',
+                        'success' =>'Added to Favorites successfully!',
                     ]);
                 }
             }

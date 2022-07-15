@@ -1647,6 +1647,13 @@ body {
     cursor: pointer;
 }
 
+.dashboard-right-container h5 {
+    color: #fff;
+    /* display: inline; */
+    font-size: 18px;
+    /* margin: 0 15px 20px 0; */
+}
+
 .dashboard-user-container {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -4887,6 +4894,10 @@ html {
 
     .dashboard-right-container h4:hover {
         color: #fff;
+    }
+
+    .dashboard-right-container h5 {
+        font-size: 16px;
     }
 
     .dashboard-user-container {
