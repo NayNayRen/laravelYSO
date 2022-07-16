@@ -21,12 +21,12 @@
                 <ul class="c-list wrapper al-center">
                     <li class="c-list__item">
                         <a link="#fav1" class="c-list__link active">
-                            <h4>Favorites Coupons</h4>
+                            <h4>Favorite Coupons</h4>
                         </a>
                     </li>
                     <li class="c-list__item">
                         <a link="#fav2" class="c-list__link">
-                            <h4>Coupons</h4>
+                            <h4>All Coupons</h4>
                         </a>
                     </li>
                     <li class="c-list__item">
@@ -107,8 +107,8 @@
                         @endif
                     @else
                         <div class="dashboard-right-container">
-                            <h4 class="mb-3">Favourites</h4>
-                            <h5 class="mb-3">No Items in Your Favourite List</h5>
+                            <h4 class="mb-3">Favorites</h4>
+                            <h5 class="mb-3">No items in your Favorites list.</h5>
                         </div>
                     @endif
                 </div>
@@ -213,8 +213,8 @@
 
                     @else
                         <div class="dashboard-right-container">
-                            <h4 class="mb-3">Coupons</h4>
-                            <h5 class="mb-3">No Items in Your Favourite List</h5>
+                            <h4 class="mb-3">All Coupons</h4>
+                            <h5 class="mb-3">No items in your Coupons list.</h5>
                         </div>
                     @endif
                 </div>
@@ -321,8 +321,8 @@
                         @endif
                     @else
                         <div class="dashboard-right-container">
-                            <h4 class="mb-3">My Coupons</h4>
-                            <h5 class="mb-3">No items in your Favorite list</h5>
+                            <h4 class="mb-3">Redeemed Coupons</h4>
+                            <h5 class="mb-3">No items in your Redeemed list.</h5>
                         </div>
                     @endif
                 </div>

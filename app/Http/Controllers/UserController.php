@@ -290,37 +290,53 @@ class UserController extends Controller
 
 
     // log user in
+    // public function loginUser(Request $request, User $user)
+    // {
+    //     $formInputs = $request->validate([
+    //         'email' => ['required', 'email'],
+    //         'password' => ['required']
+    //     ]);
+
+    //     $check = User::where('email',$request->email)->first();
+    //     if($check)
+    //     {
+    //         if($check->email_verified ==1 || $check->phone_verified==1)
+    //         {
+    //             // attempt is the log in method for Laravel
+    //             if(auth()->attempt($formInputs)){
+    //                 // generates a session token
+    //                 $request->session()->regenerate();
+    //                 // redirects home with a message
+    //                 return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
+    //             }
+    //         }
+    //         else
+    //         {
+    //             return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your Email or Phone to log in.');
+    //         }
+    //     }
+    //     // if log in fails stay on same page and show one error
+    //     // don't specify if the email is correct or not for security reasons
+    //     // email states where to put the solo message
+    //     return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
+    // }
+
+    // log user in
     public function loginUser(Request $request, User $user)
     {
         $formInputs = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
-
-        $check = User::where('email',$request->email)->first();
-        if($check)
-        {
-            if($check->email_verified ==1 || $check->phone_verified==1)
-            {
-                // attempt is the log in method for Laravel
-                if(auth()->attempt($formInputs)){
-                    // generates a session token
-                    $request->session()->regenerate();
-                    // redirects home with a message
-                    return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
-                }
-            }
-            else
-            {
-                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your Email or Phone to log in.');
-            }
+        // attempt is the log in method for Laravel
+        if(auth()->attempt($formInputs)){
+            // generates a session token
+            $request->session()->regenerate();
+            // redirects home with a message
+            return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
+        }else{
+            return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
         }
-        
-        
-        // if log in fails stay on same page and show one error
-        // don't specify if the email is correct or not for security reasons
-        // email states where to put the solo message
-        return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
     }
 
     // log user out

@@ -7,12 +7,16 @@ a {
 
 .wrapper {
     display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0 0 10px 10px;
+    /* outline: solid 1px blue; */
 }
 .d-col {
     flex-direction: column;
 }
 .al-center {
-    align-items: center;
+    align-items: flex-start;
 }
 .jst-center {
     justify-content: center;
@@ -78,7 +82,7 @@ a {
     color: #fff !important;
 }
 .c-list__item {
-    padding: 10px 20px;
+    padding: 0 20px 0 0;
 }
 .c-list__link {
     color: #fff;
@@ -86,7 +90,7 @@ a {
     font-weight: 500;
 }
 .c-list__link.active h4 {
-    color: red;
+    color: #e6331f;
 }
 .favBox {
     display: none;
@@ -143,4 +147,13 @@ a {
 }
 .d-none {
     display: none;
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0 0 10px 10px;
+    }
 }

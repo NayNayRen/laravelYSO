@@ -15,27 +15,15 @@ use function PHPUnit\Framework\isEmpty;
 class DealController extends Controller
 {
 
-//     public function index(Request $request){
-//         return view('index', [
-//             'featuredDeals' => Deal::getFeatured($request->currentPage),
-//             'foodDeals' => Deal::getType('Restaurant'),
-//             'fashionDeals' => Deal::getType('Nail Salon'),
-//             'techDeals' => Deal::getType('Pizza'),
-//             'popularDeals' => Deal::getPopular()
-//         ]);
-// }
-
     // INDEX PAGE AND DATA METHODS
     public function index(Request $request){
         // category input selection
-        // return $request;
         $food = $request->input('food');
         $fashion = $request->input('fashion');
         $auto = $request->input('auto');
         $fun = $request->input('fun');
         $health = $request->input('health');
         $categories = Deal::getCategories();
-        // return [$categories,$health,$fun,$auto,$fashion,$food];
         // views based on selection
         if($food){
             return view('index', [
@@ -93,17 +81,6 @@ class DealController extends Controller
                 'pageTitle' => 'Home'
             ]);
         }else{
-            // return Deal::count(); 
-            // return Deal::getFeatured()->count();
-            // return Deal::getType('food')->count();
-            // return Deal::getPopular()->count();
-            // return auth()->user()->id;
-            // return  Favourite::where('deal_id',37035)->where('user_id',5)->count(); 
-            // if (auth()->user()->id)
-            // {
-            
-            // }
-
             if ((auth()->user()))
             {
                 $user_id = (auth()->user()->id);
