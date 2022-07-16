@@ -21,12 +21,12 @@
                 <ul class="c-list wrapper al-center">
                     <li class="c-list__item">
                         <a link="#fav1" class="c-list__link active">
-                            <h4>Favourites Coupons</h4>
+                            <h4>Favorites Coupons</h4>
                         </a>
                     </li>
                     <li class="c-list__item">
                         <a link="#fav2" class="c-list__link">
-                            <h4>Coupuons </h4>
+                            <h4>Coupons</h4>
                         </a>
                     </li>
                     <li class="c-list__item">

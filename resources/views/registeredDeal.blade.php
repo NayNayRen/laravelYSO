@@ -19,8 +19,9 @@
                 @php
                     $check = App\Models\Favourite::where('deal_id',(string)$deal['id'])->get()->first();
                 @endphp
+                {{-- I THINK ITS A MISTYPED IF DIRECTIVE BUT DONT KNOW WHAT ITS SPOSED TO BE --}}
                 <blade
-                    if|(%24check%20!%3Dnull%20%26%26%20auth()-%3Euser()%20%26%26%20%24check-%3Euser_id%20%3D%3D%20auth()-%3Euser()-%3Eid)>
+                    if|(%2524check%2520!%253Dnull%2520%2526%2526%2520auth()-%253Euser()%2520%2526%2526%2520%2524check-%253Euser_id%2520%253D%253D%2520auth()-%253Euser()-%253Eid)>
 
                     {{-- id="registered-favorite-deal-button" --}}
                     <button class="selected-deal-share-fav-button add-favourit "
