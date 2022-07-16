@@ -9,7 +9,7 @@ a {
     display: flex;
     flex-direction: row;
     margin: 0;
-    padding: 0 0 10px 10px;
+    padding: 0 0 15px 10px;
     /* outline: solid 1px blue; */
 }
 .d-col {
@@ -82,7 +82,7 @@ a {
     color: #fff !important;
 }
 .c-list__item {
-    padding: 0 20px 0 0;
+    padding: 0 0 10px 0;
 }
 .c-list__link {
     color: #fff;
@@ -149,7 +149,7 @@ a {
     display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     .wrapper {
         display: flex;
         flex-direction: column;

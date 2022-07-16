@@ -1605,6 +1605,7 @@ body {
     right: 10px;
     top: 5px;
     transition: color 150ms ease;
+    z-index: 1;
 }
 
 .dashboard-close-button:hover {
@@ -1630,7 +1631,22 @@ body {
     min-height: 100%;
     overflow: hidden;
     padding: 5px 15px;
+    position: relative;
     width: 100%;
+}
+
+.dashboard-right-container .container-arrow-left {
+    -webkit-transform: translateY(0);
+    left: calc(100% - 200px);
+    top: 5px;
+    transform: translateY(0);
+}
+
+.dashboard-right-container .container-arrow-right {
+    -webkit-transform: translateY(0);
+    right: 100px;
+    top: 5px;
+    transform: translateY(0);
 }
 
 .dashboard-right-container h4 {
@@ -1670,6 +1686,7 @@ body {
     min-height: 100%;
     min-width: 200px;
     padding: 10px 5px;
+    z-index: 1;
 }
 
 .dashboard-user-container span {
@@ -3981,6 +3998,14 @@ html {
         right: -15px;
     }
 
+    .dashboard-right-container .container-arrow-left {
+        left: calc(100% - 175px);
+    }
+
+    .dashboard-right-container .container-arrow-right {
+        right: 75px;
+    }
+
     .enhance-middle-banner h1,
     .rewards-bottom-banner h1,
     .rewards-top-banner h1 {
@@ -4889,7 +4914,7 @@ html {
     .dashboard-right-container h4 {
         display: block;
         font-size: 18px;
-        margin: 0 0 15px 0;
+        /* margin: 0 0 15px 0; */
     }
 
     .dashboard-right-container h4:hover {
@@ -4944,6 +4969,7 @@ html {
         transition: transform 250ms ease, -webkit-transform 250ms ease;
         transition: transform 250ms ease;
         width: auto;
+        z-index: 1;
         /* outline: solid 1px blue; */
     }
 
@@ -5525,6 +5551,14 @@ html {
         right: 5px;
         top: -40px;
         transform: translateY(0);
+    }
+
+    .dashboard-right-container .container-arrow-left {
+        left: calc(100% - 135px);
+    }
+
+    .dashboard-right-container .container-arrow-right {
+        right: 65px;
     }
 
     .get-deal-button {
