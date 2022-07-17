@@ -25,164 +25,146 @@ class DealController extends Controller
         $health = $request->input('health');
         $categories = Deal::getCategories();
         // views based on selection
-        if($food){
-            return view('index', [
-                'featuredDeals' => Deal::getFeatured(),
-                'categoryDeals' => Deal::getType('food'),
-                'techDeals' => Deal::getType('tech'),
-                'popularDeals' => Deal::getPopular(),
-                'categories' => $categories,
-                'categoryHeading' => 'food',
-                'message' => '',
-                'pageTitle' => 'Home'
-            ]);
-        }elseif($fashion){
-            return view('index', [
-                'featuredDeals' => Deal::getFeatured(),
-                'categoryDeals' => Deal::getType('fashion'),
-                'techDeals' => Deal::getType('tech'),
-                'popularDeals' => Deal::getPopular(),
-                'categories' => $categories,
-                'categoryHeading' => 'fashion',
-                'message' => '',
-                'pageTitle' => 'Home'
-            ]);
-        }elseif($auto){
-            return view('index', [
-                'featuredDeals' => Deal::getFeatured(),
-                'categoryDeals' => Deal::getType('auto'),
-                'techDeals' => Deal::getType('tech'),
-                'popularDeals' => Deal::getPopular(),
-                'categories' => $categories,
-                'categoryHeading' => 'auto',
-                'message' => '',
-                'pageTitle' => 'Home'
-            ]);
-        }elseif($fun){
-            return view('index', [
-                'featuredDeals' => Deal::getFeatured(),
-                'categoryDeals' => Deal::getType('fun'),
-                'techDeals' => Deal::getType('tech'),
-                'popularDeals' => Deal::getPopular(),
-                'categories' => $categories,
-                'categoryHeading' => 'fun',
-                'message' => '',
-                'pageTitle' => 'Home'
-            ]);
-        }elseif($health){
-            return view('index', [
-                'featuredDeals' => Deal::getFeatured(),
-                'categoryDeals' => Deal::getType('health'),
-                'techDeals' => Deal::getType('tech'),
-                'popularDeals' => Deal::getPopular(),
-                'categories' => $categories,
-                'categoryHeading' => 'health',
-                'message' => '',
-                'pageTitle' => 'Home'
-            ]);
-        }else{
-            if ((auth()->user()))
-            {
-                $user_id = (auth()->user()->id);
-                
-                //favourite deals
-                $favs = Favourite::where('user_id',$user_id)->get();
-                $deals =  Deal::query();
-                if($favs->count() > 0 )
-                {
-                    foreach($favs as $fav)
-                    {
-                        if($deals ==null)
-                        {
-                            $deals->where('id',$fav->deal_id);
-                        }
-                        else
-                        {
-                            $deals->orwhere('id',$fav->deal_id);
-                        }
+        if ((auth()->user())){
+            $user_id = (auth()->user()->id);               
+            //favourite deals
+            $favs = Favourite::where('user_id',$user_id)->get();
+            $deals =  Deal::query();
+            if($favs->count() > 0 ){
+                foreach($favs as $fav){
+                    if($deals ==null){
+                        $deals->where('id',$fav->deal_id);
+                    }else{
+                        $deals->orwhere('id',$fav->deal_id);
                     }
-                    $deals = $deals->get();
-
                 }
-                else
-                {
+                    $deals = $deals->get();
+                }else{
                     $deals = null;
                 }
-                
                 //user coupons
                 $cous = UserCoupon::where('user_id',$user_id)->get();
                 $coupons =  Deal ::query();
-                if($cous->count() > 0 )
-                {
-                    foreach($cous as $cou)
-                    {
-                        if($coupons ==null)
-                        {
+                if($cous->count() > 0 ){
+                    foreach($cous as $cou){
+                        if($coupons ==null){
                             $coupons->where('id',$cou->deal_id);
-                        }
-                        else
-                        {
+                        }else{
                             $coupons->orwhere('id',$cou->deal_id);
                         }
-                        // return $fav->id;
                     }
                     $coupons = $coupons->get();
-                }
-                else
-                {
+                }else{
                     $coupons = null;
                 }
-                
-
                 //Redeemed coupons
                 $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
                 $redeems =  Deal ::query();
-                if($redms->count() > 0 )
-                {
-                    foreach($redms as $redm)
-                    {
-                        
-                        if($redeems ==null)
-                        {
+                if($redms->count() > 0 ){
+                    foreach($redms as $redm){
+                        if($redeems ==null){
                             $redeems->where('id',$redm->deal_id);
-                        }
-                        else
-                        {
+                        }else{
                             $redeems->orwhere('id',$redm->deal_id);
                         }
-                        // return $fav->id;
                     }
                     $redeems = $redeems->get();
-                }
-                else
-                {
+                }else{
                     $redeems = null;
                 }
-            }
-            else
-            {
+            }else{
                 $deals = null;
                 $coupons = null;
                 $redeems = null;
             }
-            
+            if($food){
+                return view('index', [
+                    'deals' => $deals,
+                    'redeems' => $redeems,
+                    'coupons' => $coupons,
+                    'featuredDeals' => Deal::getFeatured(),
+                    'categoryDeals' => Deal::getType('food'),
+                    'techDeals' => Deal::getType('tech'),
+                    'popularDeals' => Deal::getPopular(),
+                    'categories' => $categories,
+                    'categoryHeading' => 'food',
+                    'message' => '',
+                    'pageTitle' => 'Home'
+                ]);
+            }elseif($fashion){
+                return view('index', [
+                    'deals' => $deals,
+                    'redeems' => $redeems,
+                    'coupons' => $coupons,
+                    'featuredDeals' => Deal::getFeatured(),
+                    'categoryDeals' => Deal::getType('fashion'),
+                    'techDeals' => Deal::getType('tech'),
+                    'popularDeals' => Deal::getPopular(),
+                    'categories' => $categories,
+                    'categoryHeading' => 'fashion',
+                    'message' => '',
+                    'pageTitle' => 'Home'
+                ]);
+            }elseif($auto){
+                return view('index', [
+                    'deals' => $deals,
+                    'redeems' => $redeems,
+                    'coupons' => $coupons,
+                    'featuredDeals' => Deal::getFeatured(),
+                    'categoryDeals' => Deal::getType('auto'),
+                    'techDeals' => Deal::getType('tech'),
+                    'popularDeals' => Deal::getPopular(),
+                    'categories' => $categories,
+                    'categoryHeading' => 'auto',
+                    'message' => '',
+                    'pageTitle' => 'Home'
+                ]);
+            }elseif($fun){
+                return view('index', [
+                    'deals' => $deals,
+                    'redeems' => $redeems,
+                    'coupons' => $coupons,
+                    'featuredDeals' => Deal::getFeatured(),
+                    'categoryDeals' => Deal::getType('fun'),
+                    'techDeals' => Deal::getType('tech'),
+                    'popularDeals' => Deal::getPopular(),
+                    'categories' => $categories,
+                    'categoryHeading' => 'fun',
+                    'message' => '',
+                    'pageTitle' => 'Home'
+                ]);
+            }elseif($health){
+                return view('index', [
+                    'deals' => $deals,
+                    'redeems' => $redeems,
+                    'coupons' => $coupons,
+                    'featuredDeals' => Deal::getFeatured(),
+                    'categoryDeals' => Deal::getType('health'),
+                    'techDeals' => Deal::getType('tech'),
+                    'popularDeals' => Deal::getPopular(),
+                    'categories' => $categories,
+                    'categoryHeading' => 'health',
+                    'message' => '',
+                    'pageTitle' => 'Home'
+                ]);
+            }else{
             
             // return $user;
-            return view('index', [
-                'deals' => $deals,
-                'redeems' => $redeems,
-                'coupons' => $coupons,
-                'featuredDeals' => Deal::getFeatured(),
-                'categoryDeals' => Deal::getType('food'),
-                'techDeals' => Deal::getType('tech'),
-                'popularDeals' => Deal::getPopular(),
-                'categories' => $categories,
-                'categoryHeading' => 'food',
-                'message' => '',
-                'pageTitle' => 'Home'
-            ]);
+                return view('index', [
+                    'deals' => $deals,
+                    'redeems' => $redeems,
+                    'coupons' => $coupons,
+                    'featuredDeals' => Deal::getFeatured(),
+                    'categoryDeals' => Deal::getType('food'),
+                    'techDeals' => Deal::getType('tech'),
+                    'popularDeals' => Deal::getPopular(),
+                    'categories' => $categories,
+                    'categoryHeading' => 'food',
+                    'message' => '',
+                    'pageTitle' => 'Home'
+                ]);
+            }
         }
-    }
     
     // SINGLED DEAL PAGE, SHOWS REGISTERED AND NONREGISTERED VIEWS
     public function showDeal(Deal $deal, User $user){
