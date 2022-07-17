@@ -1630,7 +1630,7 @@ body {
 .dashboard-right-container {
     min-height: 100%;
     overflow: hidden;
-    padding: 5px 15px;
+    padding: 5px 10px;
     position: relative;
     width: 100%;
 }
@@ -1654,20 +1654,18 @@ body {
     color: #fff;
     display: inline;
     font-size: 20px;
-    margin: 0 15px 20px 0;
     transition: color 150ms ease;
 }
 
-.dashboard-right-container h4:hover {
+/* .dashboard-right-container h4:hover {
     color: #e6331f;
     cursor: pointer;
-}
+} */
 
 .dashboard-right-container h5 {
     color: #fff;
-    /* display: inline; */
     font-size: 18px;
-    /* margin: 0 15px 20px 0; */
+    font-style: italic;
 }
 
 .dashboard-user-container {
@@ -1678,7 +1676,6 @@ body {
     -webkit-box-orient: vertical;
     align-items: center;
     background-color: #808080;
-    border-right: solid 1px #000;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -3998,6 +3995,10 @@ html {
         right: -15px;
     }
 
+    .dashboard-right-container h4 {
+        font-size: 18px;
+    }
+
     .dashboard-right-container .container-arrow-left {
         left: calc(100% - 175px);
     }
@@ -4907,15 +4908,13 @@ html {
         color: #fff;
     }
 
-    .dashboard-right-container {
-        padding: 5px 10px;
-    }
+    /* .dashboard-right-container {
+        padding: 5px;
+    } */
 
-    .dashboard-right-container h4 {
+    /* .dashboard-right-container h4 {
         display: block;
-        font-size: 18px;
-        /* margin: 0 0 15px 0; */
-    }
+    } */
 
     .dashboard-right-container h4:hover {
         color: #fff;
