@@ -37,10 +37,10 @@
                 </ul>
                 <div class="favBox active" id="fav1">
                     <!-- Favourite Coupons -->
-                    @if($deals!=null && $deals->count() > 0)
-                        @if($deals->count() < 3)
+                    @if($favorites!=null && $favorites->count() > 0)
+                        @if($favorites->count() < 3)
                             <div style="display: flex;">
-                                @foreach($deals as $deal)
+                                @foreach($favorites as $deal)
                                     <div class="card card--favourite">
                                         <div>
                                             <div class="card-logo-container">
@@ -73,7 +73,7 @@
                             </div>
                         @else
                             <div class="card-display card-display--favourite owl-carousel owl-theme">
-                                @foreach($deals as $deal)
+                                @foreach($favorites as $deal)
                                     <div class="card card--favourite">
                                         <div>
                                             <div class="card-logo-container">

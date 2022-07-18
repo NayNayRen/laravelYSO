@@ -12,24 +12,77 @@ class Deal extends Model
 {
     use HasFactory;
 
-    // public static function getFeatured($currentPage = null){
-    //     $deals = Deal::get()->take(30); // get 30 deals
+    // GET USERS FAVORITES
+    public static function getUserFavorites(){
+        if ((auth()->user())){
+            $user_id = (auth()->user()->id);               
+            $favs = Favourite::where('user_id',$user_id)->get();
+            $favorites =  Deal::query();
+            if($favs->count() > 0 ){
+                foreach($favs as $fav){
+                    if($favorites ==null){
+                        $favorites->where('id',$fav->deal_id);
+                    }else{
+                        $favorites->orwhere('id',$fav->deal_id);
+                    }
+                }
+                    $favorites = $favorites->get();
+                }else{
+                    $favorites = null;
+                }
+            }else{
+                $favorites = null;
+        }
+        return $favorites;
+    }
 
-    //     $perPage = 3;
-    //     $currentPage = $currentPage ?? 1;
+    // GET USERS COUPONS
+    public static function getUserCoupons(){
+        if ((auth()->user())){
+            $user_id = (auth()->user()->id);               
+            $cous = UserCoupon::where('user_id',$user_id)->get();
+            $coupons =  Deal ::query();
+            if($cous->count() > 0 ){
+                foreach($cous as $cou){
+                    if($coupons ==null){
+                        $coupons->where('id',$cou->deal_id);
+                    }else{
+                        $coupons->orwhere('id',$cou->deal_id);
+                    }
+                }
+                $coupons = $coupons->get();
+            }else{
+                $coupons = null;
+            }
+        }else{
+            $coupons = null;
+        }
+        return $coupons;
+    }
 
-    //     $pagination = new LengthAwarePaginator(
-    //     $deals->slice($currentPage, $perPage),
-    //     $deals->count(),
-    //     $perPage,
-    //     $currentPage,
-    //         [
-    //             'path' => request()->url(),
-    //             'query' => request()->query(),
-    //         ]
-    //     );
-    //     return $pagination;
-    // }
+    // GET USERS REDEEMED COUPONS
+    public static function getUserRedeemedCoupons(){
+        if ((auth()->user())){
+            $user_id = (auth()->user()->id);               
+            $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
+            $redeems =  Deal ::query();
+            if($redms->count() > 0 ){
+                foreach($redms as $redm){
+                    if($redeems ==null){
+                        $redeems->where('id',$redm->deal_id);
+                    }else{
+                        $redeems->orwhere('id',$redm->deal_id);
+                    }
+                }
+                $redeems = $redeems->get();
+            }else{
+                $redeems = null;
+            }
+        }else{
+            $redeems = null;
+        }
+        return $redeems;
+    }
 
     // CATEGORY METHOD
     // lists categories in dropdown menu

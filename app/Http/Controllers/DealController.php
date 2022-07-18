@@ -14,7 +14,6 @@ use function PHPUnit\Framework\isEmpty;
 
 class DealController extends Controller
 {
-
     // INDEX PAGE AND DATA METHODS
     public function index(Request $request){
         // category input selection
@@ -24,64 +23,70 @@ class DealController extends Controller
         $fun = $request->input('fun');
         $health = $request->input('health');
         $categories = Deal::getCategories();
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         // views based on selection
-        if ((auth()->user())){
-            $user_id = (auth()->user()->id);               
-            //favourite deals
-            $favs = Favourite::where('user_id',$user_id)->get();
-            $deals =  Deal::query();
-            if($favs->count() > 0 ){
-                foreach($favs as $fav){
-                    if($deals ==null){
-                        $deals->where('id',$fav->deal_id);
-                    }else{
-                        $deals->orwhere('id',$fav->deal_id);
-                    }
-                }
-                    $deals = $deals->get();
-                }else{
-                    $deals = null;
-                }
-                //user coupons
-                $cous = UserCoupon::where('user_id',$user_id)->get();
-                $coupons =  Deal ::query();
-                if($cous->count() > 0 ){
-                    foreach($cous as $cou){
-                        if($coupons ==null){
-                            $coupons->where('id',$cou->deal_id);
-                        }else{
-                            $coupons->orwhere('id',$cou->deal_id);
-                        }
-                    }
-                    $coupons = $coupons->get();
-                }else{
-                    $coupons = null;
-                }
-                //Redeemed coupons
-                $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
-                $redeems =  Deal ::query();
-                if($redms->count() > 0 ){
-                    foreach($redms as $redm){
-                        if($redeems ==null){
-                            $redeems->where('id',$redm->deal_id);
-                        }else{
-                            $redeems->orwhere('id',$redm->deal_id);
-                        }
-                    }
-                    $redeems = $redeems->get();
-                }else{
-                    $redeems = null;
-                }
-            }else{
-                $deals = null;
-                $coupons = null;
-                $redeems = null;
-            }
+        // if ((auth()->user())){
+            // dd($deals);
+            // $user_id = (auth()->user()->id);               
+            // favourite deals
+            // $favs = Favourite::where('user_id',$user_id)->get();
+            // $deals =  Deal::query();
+            // if($favs->count() > 0 ){
+            //     foreach($favs as $fav){
+            //         if($deals ==null){
+            //             $deals->where('id',$fav->deal_id);
+            //         }else{
+            //             $deals->orwhere('id',$fav->deal_id);
+            //         }
+            //     }
+            //         $deals = $deals->get();
+            //     }else{
+            //         $deals = null;
+            //     }
+                // user coupons
+                // $cous = UserCoupon::where('user_id',$user_id)->get();
+                // $coupons =  Deal ::query();
+                // if($cous->count() > 0 ){
+                //     foreach($cous as $cou){
+                //         if($coupons ==null){
+                //             $coupons->where('id',$cou->deal_id);
+                //         }else{
+                //             $coupons->orwhere('id',$cou->deal_id);
+                //         }
+                //     }
+                //     $coupons = $coupons->get();
+                // }else{
+                //     $coupons = null;
+                // }
+                // redeemed coupons
+            //     $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
+            //     $redeems =  Deal ::query();
+            //     if($redms->count() > 0 ){
+            //         foreach($redms as $redm){
+            //             if($redeems ==null){
+            //                 $redeems->where('id',$redm->deal_id);
+            //             }else{
+            //                 $redeems->orwhere('id',$redm->deal_id);
+            //             }
+            //         }
+            //         $redeems = $redeems->get();
+            //     }else{
+            //         $redeems = null;
+            //     }
+            // }else{
+            //     $deals = null;
+            //     $coupons = null;
+            //     $redeems = null;
+            // }
+
+
             if($food){
                 return view('index', [
-                    'deals' => $deals,
-                    'redeems' => $redeems,
+                    'favorites' => $favorites,
                     'coupons' => $coupons,
+                    'redeems' => $redeems,
                     'featuredDeals' => Deal::getFeatured(),
                     'categoryDeals' => Deal::getType('food'),
                     'techDeals' => Deal::getType('tech'),
@@ -93,9 +98,9 @@ class DealController extends Controller
                 ]);
             }elseif($fashion){
                 return view('index', [
-                    'deals' => $deals,
-                    'redeems' => $redeems,
+                    'favorites' => $favorites,
                     'coupons' => $coupons,
+                    'redeems' => $redeems,
                     'featuredDeals' => Deal::getFeatured(),
                     'categoryDeals' => Deal::getType('fashion'),
                     'techDeals' => Deal::getType('tech'),
@@ -107,9 +112,9 @@ class DealController extends Controller
                 ]);
             }elseif($auto){
                 return view('index', [
-                    'deals' => $deals,
-                    'redeems' => $redeems,
+                    'favorites' => $favorites,
                     'coupons' => $coupons,
+                    'redeems' => $redeems,
                     'featuredDeals' => Deal::getFeatured(),
                     'categoryDeals' => Deal::getType('auto'),
                     'techDeals' => Deal::getType('tech'),
@@ -121,9 +126,9 @@ class DealController extends Controller
                 ]);
             }elseif($fun){
                 return view('index', [
-                    'deals' => $deals,
-                    'redeems' => $redeems,
+                    'favorites' => $favorites,
                     'coupons' => $coupons,
+                    'redeems' => $redeems,
                     'featuredDeals' => Deal::getFeatured(),
                     'categoryDeals' => Deal::getType('fun'),
                     'techDeals' => Deal::getType('tech'),
@@ -135,9 +140,9 @@ class DealController extends Controller
                 ]);
             }elseif($health){
                 return view('index', [
-                    'deals' => $deals,
-                    'redeems' => $redeems,
+                    'favorites' => $favorites,
                     'coupons' => $coupons,
+                    'redeems' => $redeems,
                     'featuredDeals' => Deal::getFeatured(),
                     'categoryDeals' => Deal::getType('health'),
                     'techDeals' => Deal::getType('tech'),
@@ -148,12 +153,11 @@ class DealController extends Controller
                     'pageTitle' => 'Home'
                 ]);
             }else{
-            
             // return $user;
                 return view('index', [
-                    'deals' => $deals,
-                    'redeems' => $redeems,
+                    'favorites' => $favorites,
                     'coupons' => $coupons,
+                    'redeems' => $redeems,
                     'featuredDeals' => Deal::getFeatured(),
                     'categoryDeals' => Deal::getType('food'),
                     'techDeals' => Deal::getType('tech'),
@@ -187,10 +191,16 @@ class DealController extends Controller
     // SEARCHED DEALS RESULTS PAGE
     public function searchDeal(Request $request){
         $words = explode(' ', $request->search);
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         // limits search to 3 words or less
         if(count($words) > 3){
             $results = 0;
             return view('category_pages/searchResults', [
+                'favorites' => $favorites,
+                'coupons' => $coupons,
+                'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
                 'searchedWords' => $words,
@@ -202,6 +212,9 @@ class DealController extends Controller
         elseif($request->search === null){
             $results = 0;
             return view('category_pages/searchResults', [
+                'favorites' => $favorites,
+                'coupons' => $coupons,
+                'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
                 'searchedWords' => ['no results'],
@@ -212,6 +225,9 @@ class DealController extends Controller
         }else{
             $results = Deal::search($request);
             return view('category_pages/searchResults', [
+                'favorites' => $favorites,
+                'coupons' => $coupons,
+                'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
                 'searchedWords' => $words,
