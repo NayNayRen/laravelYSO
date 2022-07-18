@@ -80,8 +80,6 @@ class DealController extends Controller
             //     $coupons = null;
             //     $redeems = null;
             // }
-
-
             if($food){
                 return view('index', [
                     'favorites' => $favorites,
@@ -170,7 +168,7 @@ class DealController extends Controller
             }
         }
     
-    // SINGLED DEAL PAGE, SHOWS REGISTERED AND NONREGISTERED VIEWS
+    // SINGLED DEAL PAGE, REGISTERED AND NONREGISTERED VIEWS
     public function showDeal(Deal $deal, User $user){
         // if signed in
         if(Auth::check()){
