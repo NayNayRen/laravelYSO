@@ -239,7 +239,13 @@ class DealController extends Controller
 
     // VIEW ALL FEATURED
     public function allFeatured(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/featured', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllFeatured(),
             'message' => '',
             'pageTitle' => 'Featured'
@@ -248,7 +254,13 @@ class DealController extends Controller
 
     // VIEW ALL FOOD
     public function allFood(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/food', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllType('food'),
             'message' => '',
             'pageTitle' => 'Food'
@@ -257,7 +269,13 @@ class DealController extends Controller
 
     // VIEW ALL FASHION
     public function allFashion(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/fashion', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllType('fashion'),
             'message' => '',
             'pageTitle' => 'Fashion'
@@ -266,7 +284,13 @@ class DealController extends Controller
 
     // VIEW ALL AUTO
     public function allAuto(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/auto', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllType('auto'),
             'message' => '',
             'pageTitle' => 'Auto'
@@ -275,7 +299,13 @@ class DealController extends Controller
 
     // VIEW ALL FUN
     public function allFun(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/fun', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllType('fun'),
             'message' => '',
             'pageTitle' => 'Fun'
@@ -284,7 +314,13 @@ class DealController extends Controller
 
     // VIEW ALL HEALTH
     public function allHealth(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/health', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllType('health'),
             'message' => '',
             'pageTitle' => 'Health'
@@ -293,7 +329,13 @@ class DealController extends Controller
 
     // VIEW ALL TECH
     public function allTech(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/tech', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllType('tech'),
             'message' => '',
             'pageTitle' => 'Tech'
@@ -302,7 +344,13 @@ class DealController extends Controller
 
     // VIEW ALL POPULAR
     public function allPopular(){
+        $favorites = Deal::getUserFavorites();
+        $coupons = Deal::getUserCoupons();
+        $redeems = Deal::getUserRedeemedCoupons();
         return view('category_pages/popular', [
+            'favorites' => $favorites,
+            'coupons' => $coupons,
+            'redeems' => $redeems,
             'deals' => Deal::viewAllPopular(),
             'message' => '',
             'pageTitle' => 'Popular'
