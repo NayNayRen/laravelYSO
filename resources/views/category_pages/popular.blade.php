@@ -45,7 +45,7 @@
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/auto/sw-logo3.png') }}"
+                <img class="banner-logo" src="{{ asset('img/auto/sw-logo.png') }}"
                     alt="Sherwin Williams Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-popular-4">
