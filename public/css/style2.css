@@ -106,6 +106,7 @@ a {
 }
 .auth-select {
     background-color: #808080;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     height: 38px;
