@@ -3056,7 +3056,7 @@ html {
     transform: translateX(-50%);
     transition: top 500ms ease;
     width: 400px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .selected-deal-favorite-message a {

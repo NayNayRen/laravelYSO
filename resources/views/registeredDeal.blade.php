@@ -1,7 +1,7 @@
 @include('includes._header_alternate')
 <main class="main">
     {{-- HIDDEN SHARE MESSAGE --}}
-    @include('includes._share_message')
+    {{-- @include('includes._share_message') --}}
     {{-- HIDDEN FAVORITED MESSAGE --}}
     @include('includes._favorite_message')
     <div class="selected-deal-container">
@@ -78,6 +78,8 @@
 <script src="{{ asset('js/registered-deal.js') }}"></script>
 <script>
     $(document).ready(function () {
+        // const favoriteMessage = document.querySelector('.selected-deal-favorite-message');
+        // const removeFavoriteMessage = document.querySelector('.remove-favorite-message');
         var old_email = '{{ $user->email }}';
         var old_phone = '{{ $user->phone }}';
 
@@ -125,6 +127,13 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + parseInt(id)).find('i').addClass('favourite2');
+                        // favoriteMessage.classList.add('show-selected-deal-message');
+                        // windowOverlay.classList.add('window-overlay-dim');
+                        // removeFavoriteMessage.addEventListener('click', () => {
+                        //     favoriteMessage.classList.remove(
+                        //         'show-selected-deal-message');
+                        //     windowOverlay.classList.remove('window-overlay-dim');
+                        // });
                         console.log(r);
                         alert(r);
                     }
