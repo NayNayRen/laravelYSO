@@ -260,34 +260,32 @@
             <a href={{ route('deals.featured') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
-            {{-- PAGE ARROWS --}}
-            {{-- {{ $featuredDeals->appends(['featured' => $featuredDeals->currentPage(),$categoryHeading => $categoryDeals->currentPage(), 'tech' => $techDeals->currentPage(), 'popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
-            --}}
             {{-- CARD BLOCK --}}
             <div class="card-display card-display1 owl-carousel owl-theme">
                 @foreach($featuredDeals as $deal)
                     {{-- CARD COMPONENT --}}
-                    @include('includes._card')
+                    <div class="card">
+                        @include('includes._card')
+                    </div>
                 @endforeach
             </div>
         </div>
     </div>
     {{-- SELECTED CATEGORY CONTAINER --}}
-    <div id='food-container' class="container">
+    <div class="container">
         <div class="container-left">
             <span class="category-heading">{{ $categoryHeading }}</span>
             <a href={{ route('deals.' . $categoryHeading) }} class="view-all-link">View
                 All</a>
         </div>
         <div class="container-right">
-            {{-- PAGE ARROWS --}}
-            {{-- {{ $categoryDeals->appends([$categoryHeading => $categoryDeals->currentPage(), 'featured' => $featuredDeals->currentPage(), 'tech' => $techDeals->currentPage(), 'popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
-            --}}
             {{-- CARD BLOCK --}}
             <div class="card-display owl-carousel owl-theme">
                 @foreach($categoryDeals as $deal)
                     {{-- CARD COMPONENT --}}
-                    @include('includes._card')
+                    <div class="card">
+                        @include('includes._card')
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -299,14 +297,13 @@
             <a href={{ route('deals.tech') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
-            {{-- PAGE ARROWS --}}
-            {{-- {{ $techDeals->appends(['tech' => $techDeals->currentPage(), 'featured' => $featuredDeals->currentPage(), $categoryHeading => $categoryDeals->currentPage(), 'popular' => $popularDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
-            --}}
             {{-- CARD BLOCK --}}
             <div class="card-display owl-carousel owl-theme">
                 @foreach($techDeals as $deal)
                     {{-- CARD COMPONENT --}}
-                    @include('includes._card')
+                    <div class="card">
+                        @include('includes._card')
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -325,14 +322,13 @@
             <a href={{ route('deals.popular') }} class="view-all-link">View All</a>
         </div>
         <div class="container-right">
-            {{-- PAGE ARROWS --}}
-            {{-- {{ $popularDeals->appends(['popular' => $popularDeals->currentPage(),'featured' => $featuredDeals->currentPage(), $categoryHeading => $categoryDeals->currentPage(), 'tech' => $techDeals->currentPage()])->links('vendor.pagination.custom-pagination') }}
-            --}}
             {{-- CARD BLOCK --}}
             <div class="card-display  owl-carousel owl-theme">
                 @foreach($popularDeals as $deal)
                     {{-- CARD COMPONENT --}}
-                    @include('includes._card')
+                    <div class="card">
+                        @include('includes._card')
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -384,11 +380,9 @@
                         console.log(r);
                         alert(r);
                     }
-
                 }
             });
         });
-
     });
 
 </script>

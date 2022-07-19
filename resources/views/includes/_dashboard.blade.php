@@ -36,12 +36,13 @@
                     </li>
                 </ul>
                 <div class="favBox active" id="fav1">
-                    <!-- Favourite Coupons -->
-                    @if($favorites!=null && $favorites->count() > 0)
+                    {{-- USER FAVORITES --}}
+                    @if($favorites != null && $favorites->count() > 0)
                         @if($favorites->count() < 3)
                             <div style="display: flex;">
                                 @foreach($favorites as $deal)
                                     <div class="card card--favourite">
+                                        {{-- @include('includes._card') --}}
                                         <div>
                                             <div class="card-logo-container">
                                                 <img src="{{ $deal->picture_url }}" class="card-logo"
@@ -57,11 +58,10 @@
                                                     <span>Likes:</span>
                                                 </div>
                                                 <div class="views-likes-icons">
-                                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                                    <i class="fa fa-share" aria-label='Share this item.'
+                                                        aria-hidden="false"></i>
                                                     <i class="fa fa-star add-favourite favourite" id="{{ $deal->id }}"
-                                                        aria-hidden="true"></i>
-
-                                                    <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
+                                                        aria-label="Favorite this item." aria-hidden="false"></i>
                                                 </div>
                                             </div>
                                             <a href="/deals/{{ $deal->id }}">
@@ -75,6 +75,7 @@
                             <div class="card-display card-display--favourite owl-carousel owl-theme">
                                 @foreach($favorites as $deal)
                                     <div class="card card--favourite">
+                                        {{-- @include('includes._card') --}}
                                         <div>
                                             <div class="card-logo-container">
                                                 <img src="{{ $deal->picture_url }}" class="card-logo"
@@ -90,11 +91,10 @@
                                                     <span>Likes:</span>
                                                 </div>
                                                 <div class="views-likes-icons">
-                                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                                    <i class="fa fa-share" aria-label="Share this item."
+                                                        aria-hidden="false"></i>
                                                     <i class="fa fa-star add-favourite favourite" id="{{ $deal->id }}"
-                                                        aria-hidden="true"></i>
-
-                                                    <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
+                                                        aria-label="Favorite this item." aria-hidden="false"></i>
                                                 </div>
                                             </div>
                                             <a href="/deals/{{ $deal->id }}">
@@ -107,18 +107,19 @@
                         @endif
                     @else
                         <div class="dashboard-right-container">
-                            <h4 class="mb-3">Favorites</h4>
-                            <h5 class="mb-3">No items in your Favorites list.</h5>
+                            <h4 class="mb-3">My Favorites</h4>
+                            <h5 class="mb-3">No items in my Favorites list.</h5>
                         </div>
                     @endif
                 </div>
-
+                {{-- USER COUPONS --}}
                 <div class="favBox" id="fav2">
-                    @if( $coupons!=null && $coupons->count() > 0)
+                    @if($coupons != null && $coupons->count() > 0)
                         @if($coupons->count() < 3)
                             <div style="display: flex; column-gap: 20px;">
                                 @foreach($coupons as $coupon)
                                     <div class="card card--favourite">
+                                        {{-- @include('includes._card') --}}
                                         <div>
                                             <div class="card-logo-container">
                                                 <img src="{{ $coupon->picture_url }}" class="card-logo"
@@ -134,7 +135,8 @@
                                                     <span>Likes:</span>
                                                 </div>
                                                 <div class="views-likes-icons">
-                                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                                    <i class="fa fa-share" aria-label="Share this item."
+                                                        aria-hidden="false"></i>
                                                     @php
                                                         if(auth()->user())
                                                         {
@@ -146,12 +148,13 @@
                                                         $check = null;
                                                         }
                                                     @endphp
-                                                    @if($check !=null)
+                                                    @if($check != null)
                                                         <i class="fa fa-star add-favourite favourite"
-                                                            id="{{ $coupon->id }}" aria-hidden="true"></i>
+                                                            id="{{ $coupon->id }}" aria-label="Favorite this item."
+                                                            aria-hidden="false"></i>
                                                     @else
                                                         <i class="fa fa-star add-favourite" id="{{ $coupon->id }}"
-                                                            aria-hidden="true"></i>
+                                                            aria-label="Favorite this item." aria-hidden="false"></i>
                                                     @endif
                                                 </div>
                                             </div>
@@ -159,6 +162,7 @@
                                                 <div class="get-deal-button">Get Deal Now!</div>
                                             </a>
                                         </div>
+
                                     </div>
                                 @endforeach
                             </div>
@@ -166,6 +170,7 @@
                             <div class="card-display card-display--favourite owl-carousel owl-theme">
                                 @foreach($coupons as $coupon)
                                     <div class="card card--favourite">
+                                        {{-- @include('includes._card') --}}
                                         <div>
                                             <div class="card-logo-container">
                                                 <img src="{{ $coupon->picture_url }}" class="card-logo"
@@ -181,7 +186,8 @@
                                                     <span>Likes:</span>
                                                 </div>
                                                 <div class="views-likes-icons">
-                                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                                    <i class="fa fa-share" aria-label="Share this item."
+                                                        aria-hidden="false"></i>
                                                     @php
                                                         if(auth()->user())
                                                         {
@@ -193,12 +199,13 @@
                                                         $check = null;
                                                         }
                                                     @endphp
-                                                    @if($check !=null)
+                                                    @if($check != null)
                                                         <i class="fa fa-star add-favourite favourite"
-                                                            id="{{ $coupon->id }}" aria-hidden="true"></i>
+                                                            id="{{ $coupon->id }}" aria-label="Favorite this item."
+                                                            aria-hidden="false"></i>
                                                     @else
                                                         <i class="fa fa-star add-favourite" id="{{ $coupon->id }}"
-                                                            aria-hidden="true"></i>
+                                                            aria-label="Favorite this item." aria-hidden="false"></i>
                                                     @endif
                                                 </div>
                                             </div>
@@ -210,23 +217,21 @@
                                 @endforeach
                             </div>
                         @endif
-
                     @else
                         <div class="dashboard-right-container">
-                            <h4 class="mb-3">All Coupons</h4>
-                            <h5 class="mb-3">No items in your Coupons list.</h5>
+                            <h4 class="mb-3">My Coupons</h4>
+                            <h5 class="mb-3">No items in my Coupons list.</h5>
                         </div>
                     @endif
                 </div>
                 <div class="favBox" id="fav3">
-                    <!-- user Coupons -->
-
-                    <!-- <h4>Redeems Coupons </h4> -->
-                    @if( $redeems!=null &&  $redeems->count() > 0)
+                    {{-- USER REDEEMABLES --}}
+                    @if($redeems != null &&  $redeems->count() > 0)
                         @if($redeems->count() < 3)
                             <div style="display: flex;">
                                 @foreach($redeems as $redeem)
                                     <div class="card card--favourite">
+                                        {{-- @include('includes._card') --}}
                                         <div>
                                             <div class="card-logo-container">
                                                 <img src="{{ $redeem->picture_url }}" class="card-logo"
@@ -243,7 +248,8 @@
                                                     <span>Likes:</span>
                                                 </div>
                                                 <div class="views-likes-icons">
-                                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                                    <i class="fa fa-share" aria-label="Share this item."
+                                                        aria-hidden="false"></i>
                                                     @php
                                                         if(auth()->user())
                                                         {
@@ -255,12 +261,13 @@
                                                         $check = null;
                                                         }
                                                     @endphp
-                                                    @if($check !=null)
+                                                    @if($check != null)
                                                         <i class="fa fa-star add-favourite favourite"
-                                                            id="{{ $redeem->id }}" aria-hidden="true"></i>
+                                                            id="{{ $redeem->id }}" aria-label="Favorite this item."
+                                                            aria-hidden="false"></i>
                                                     @else
                                                         <i class="fa fa-star add-favourite" id="{{ $redeem->id }}"
-                                                            aria-hidden="true"></i>
+                                                            aria-label="Favorite this item." aria-hidden="false"></i>
                                                     @endif
                                                 </div>
                                             </div>
@@ -275,6 +282,7 @@
                             <div class="card-display card-display--favourite owl-carousel owl-theme">
                                 @foreach($redeems as $redeem)
                                     <div class="card card--favourite">
+                                        {{-- @include('includes._card') --}}
                                         <div>
                                             <div class="card-logo-container">
                                                 <img src="{{ $redeem->picture_url }}" class="card-logo"
@@ -290,7 +298,8 @@
                                                     <span>Likes:</span>
                                                 </div>
                                                 <div class="views-likes-icons">
-                                                    <i class="fa fa-share" aria-hidden="true"></i>
+                                                    <i class="fa fa-share" aria-label="Share this item."
+                                                        aria-hidden="false"></i>
                                                     @php
                                                         if(auth()->user())
                                                         {
@@ -302,12 +311,13 @@
                                                         $check = null;
                                                         }
                                                     @endphp
-                                                    @if($check !=null)
+                                                    @if($check != null)
                                                         <i class="fa fa-star add-favourite favourite"
-                                                            id="{{ $redeem->id }}" aria-hidden="true"></i>
+                                                            id="{{ $redeem->id }}" aria-label="Favorite this item."
+                                                            aria-hidden="false"></i>
                                                     @else
                                                         <i class="fa fa-star add-favourite" id="{{ $redeem->id }}"
-                                                            aria-hidden="true"></i>
+                                                            aria-label="Favorite this item." aria-hidden="false"></i>
                                                     @endif
                                                 </div>
                                             </div>
@@ -321,8 +331,8 @@
                         @endif
                     @else
                         <div class="dashboard-right-container">
-                            <h4 class="mb-3">Redeemed Coupons</h4>
-                            <h5 class="mb-3">No items in your Redeemed list.</h5>
+                            <h4 class="mb-3">My Redeemed Coupons</h4>
+                            <h5 class="mb-3">No items in my Redeemed list.</h5>
                         </div>
                     @endif
                 </div>
@@ -347,16 +357,3 @@
         @endauth
     </div>
 </div>
-<!-- <script>
-	$(document).ready(function() {
-
-		$(".c-list__link").click(function() {
-		$(".c-list__link").removeClass('active');
-		$(this).addClass("active");
-		var activeCard = $(this).attr('link');
-		$(activeCard).addClass('active');
-		$(activeCard).nextAll().removeClass('active');
-		$(activeCard).prevAll().removeClass('active');
-		});
-	});
-</script> -->

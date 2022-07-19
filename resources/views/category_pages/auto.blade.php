@@ -89,7 +89,9 @@
             <div class="card-display-view-all">
                 @foreach($deals as $deal)
                     {{-- CARD COMPONENT --}}
-                    @include('includes._card')
+                    <div class="card">
+                        @include('includes._card')
+                    </div>
                 @endforeach
             </div>
         </div>
