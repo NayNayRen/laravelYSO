@@ -34,9 +34,8 @@ class UserController extends Controller
         // return $user->id;
         // auto log in if successfully created
         // auth()->login($user);
-        // return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered.');
-        // return redirect('/verify',$user->id)->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered. kindly Verify');
-        return redirect(route('login.showVerifyForm',$user->id))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered. kindly Verify');
+        // return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have registered and are now logged in.');
+        return redirect(route('login.showVerifyForm',$user->id))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered, kindly verify to continue.');
     }
 
     // show the log in form
@@ -53,81 +52,87 @@ class UserController extends Controller
         return view('user_pages/verify',compact('user'), ['pageTitle' => 'Verify User']);
     }
 
+    // verifies user
+    public function verifyForm(Request $request,$id){
+        $user = User::find($id);
+        $email = str_contains($request->verify_by ,'@');
+        if($email){
+            if($user->email_code !==null && $user->email_code == $request->verification_code){
+                $user->email_verified = 1;
+                $user->save();
+                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email.');
+            }else{
+                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+            }
+        }
+        $phone = str_contains($request->verify_by ,'-');
+        if($phone){
+            if($user->phone_code !==null && $user->phone_code == $request->verification_code){
+                $user->phone_verified = 1;
+                $user->save();
+                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone #.');
+            }else{
+                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+            }
+        }
+        return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+    
+    }
+
     // show the forgot password form
     public function showForgotForm(){
         return view('user_pages/forgot', ['pageTitle' => 'Forgot Password']);
     }
 
     // send reset password code
-    public function forgotForm(Request $request)
-    {
-
+    public function forgotForm(Request $request){
         $user = User::where('email',$request->email)->first();
-        if($user!=null && $user->email_code == $request->verification_code)
-        {
+        if($user!=null && $user->email_code == $request->verification_code){
             $user_id = $user->id;
             return view('user_pages/password',compact('user_id'));
-        }
-        else
-        {
+        }else{
             return redirect()->back()->with('flash-message-user','Hello ' . ucfirst($user->firstName) . ' Verification Code Not matched.');
         }
-        
     }
 
-    public function savePasswrod(Request $request)
-    {
+    // update new password
+    public function savePasswrod(Request $request){
         $user = User::find($request->user_id);
-        if($request->password !=null )
-        {
-            if($request->password == $request->password_confirmation)
-            {
+        if($request->password != null){
+            if($request->password == $request->password_confirmation){
                 // $user = User::find($request->user_id);
                 $user->password = bcrypt($request->password);
                 $user->update();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully Reset Your Password.');
-
+                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
+            }else{
+                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully!.');
             }
-            else
-            {
-                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Passwords Not Matched. Type carefully!.');
-            }
-        }
-        else
-        {
-            return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', kindly Type a new password.');
-            
+        }else{
+            return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', kindly type a new password.');    
         }
         return $request;
     }
 
-    // send verification code
-    public function sendCode(Request $request)
-    {
+    // send verification code to either email or phone
+    public function sendCode(Request $request){
         $code = rand(100000,999999);
         $user = User::find($request->userid);
-
         $email = str_contains($request->id ,'@');
-        if($email)
-        {
+        if($email){
             $user->email_code = $code;
             $user->save();
-
             $data = array(
                 'subject' => 'Email Verifiction Code',
                 'code' => $code
             );
             // $mail = 'shahzadanouman@hotmail.com';
             Mail::to($request->id)->send(new VerifyMail($data));
-
             return response()->json([
                 'success' =>'Verification Code Emailed '.$request->id,
             ]);
         }
-
         $phone = str_contains($request->id ,'-');
-        if($phone)
-        {
+        if($phone){
             $user->phone_code = $code;
             $user->save();
             $recipient = '+1'.str_replace('-','',$request->id);
@@ -135,20 +140,16 @@ class UserController extends Controller
             // $recipient = '+18135012075';
             $message_to_send = "Your Phone Verification Code is : ".$code;
             $this->sendSms($recipient,$message_to_send);
-
             return response()->json([
                 'success' =>'Verification Code Texted '.$recipient,
             ]);
-        }
-        
+        } 
     }
 
     // send forgot password code
-    public function sendResetCode(Request $request)
-    {
+    public function sendResetCode(Request $request){
         $code = rand(100000,999999);
         // $user = User::find($request->userid);
-
         // $email = str_contains($request->id ,'@');
             $user = User::where('email',$request->email)->first();
             // if($user==null)
@@ -158,12 +159,9 @@ class UserController extends Controller
             // return response()->json([
             //     'success' =>'Verification Code Sended on '.$user->count(),
             // ]);
-
-            if($user!=null)
-            {
+            if($user!=null){
                 $user->email_code = $code;
                 $user->update();
-
                 $data = array(
                     'subject' => 'Reset Password Code',
                     'code' => $code
@@ -171,18 +169,14 @@ class UserController extends Controller
                 // $request->id
                 // $mail = 'shahzadanouman@hotmail.com';
                 Mail::to($request->email)->send(new VerifyMail($data));
-
                 return response()->json([
                     'success' =>'Verification Code Emailed To '.$request->email,
                 ]);
-            }
-            else
-            {
+            }else{
                 return response()->json([
                     'error' =>'Email'.$request->value.' Not Found.',
                 ]);
             }
-
         // $phone = str_contains($request->id ,'-');
         // if($phone)
         // {
@@ -198,11 +192,9 @@ class UserController extends Controller
         //         'success' =>'Verification Code Texted on '.$recipient,
         //     ]);
         // }
-        
     }
 
-
-
+    // SEND TO TEXT
     public function sendSms($recipient,$message_to_send)
     {
         //text ams starts here
@@ -252,75 +244,6 @@ class UserController extends Controller
         curl_close($ch);
     }
 
-    public function verifyForm(Request $request,$id)
-    {
-        $user = User::find($id);
-        $email = str_contains($request->verify_by ,'@');
-        if($email)
-        {
-            if($user->email_code!==null && $user->email_code == $request->verification_code)
-            {
-                $user->email_verified = 1;
-                $user->save();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email.');
-            }
-            else
-            {
-                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
-            }
-        }
-
-        $phone = str_contains($request->verify_by ,'-');
-        if($phone)
-        {
-            if($user->phone_code!==null && $user->phone_code == $request->verification_code)
-            {
-                $user->phone_verified = 1;
-                $user->save();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone #.');
-            }
-            else
-            {
-                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
-            }
-        }
-        return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
-
-    }
-
-
-    // log user in
-    // public function loginUser(Request $request, User $user)
-    // {
-    //     $formInputs = $request->validate([
-    //         'email' => ['required', 'email'],
-    //         'password' => ['required']
-    //     ]);
-
-    //     $check = User::where('email',$request->email)->first();
-    //     if($check)
-    //     {
-    //         if($check->email_verified ==1 || $check->phone_verified==1)
-    //         {
-    //             // attempt is the log in method for Laravel
-    //             if(auth()->attempt($formInputs)){
-    //                 // generates a session token
-    //                 $request->session()->regenerate();
-    //                 // redirects home with a message
-    //                 return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
-    //             }
-    //         }
-    //         else
-    //         {
-    //             return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your Email or Phone to log in.');
-    //         }
-    //     }
-    //     // if log in fails stay on same page and show one error
-    //     // don't specify if the email is correct or not for security reasons
-    //     // email states where to put the solo message
-    //     return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
-    // }
-
     // log user in
     public function loginUser(Request $request, User $user)
     {
@@ -328,16 +251,47 @@ class UserController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
-        // attempt is the log in method for Laravel
-        if(auth()->attempt($formInputs)){
-            // generates a session token
-            $request->session()->regenerate();
-            // redirects home with a message
-            return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
-        }else{
-            return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
+
+        $check = User::where('email',$request->email)->first();
+        if($check)
+        {
+            if($check->email_verified ==1 || $check->phone_verified==1)
+            {
+                // attempt is the log in method for Laravel
+                if(auth()->attempt($formInputs)){
+                    // generates a session token
+                    $request->session()->regenerate();
+                    // redirects home with a message
+                    return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
+                }
+            }
+            else
+            {
+                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your email or phone # to log in.');
+            }
         }
+        // if log in fails stay on same page and show one error
+        // don't specify if the email is correct or not for security reasons
+        // email states where to put the solo message
+        return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
     }
+
+    // log user in
+    // public function loginUser(Request $request, User $user){
+    //     $formInputs = $request->validate([
+    //         'email' => ['required', 'email'],
+    //         'password' => ['required']
+    //     ]);
+    //     // attempt is the log in method for Laravel
+    //     if(auth()->attempt($formInputs)){
+    //         // generates a session token
+    //         $request->session()->regenerate();
+    //         // redirects home with a message
+    //         return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
+    //     }else{
+    //         return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
+    //     }
+    // }
 
     // log user out
     public function logoutUser(Request $request){
