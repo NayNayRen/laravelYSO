@@ -1863,6 +1863,154 @@ body {
     padding: 0 20px 5px 0;
 }
 
+.favorite-added-message,
+.favorite-removed-message {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: justify;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    -webkit-box-shadow: 0 0 10px #333333;
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: top 500ms ease;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #333333;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    min-height: 250px;
+    padding: 10px;
+    position: fixed;
+    top: -100%;
+    /* top: 150px; */
+    transform: translateX(-50%);
+    transition: top 500ms ease;
+    width: 400px;
+    z-index: 4;
+}
+
+.favorite-added-message a,
+.favorite-removed-message a {
+    color: #000;
+    margin-top: 10px;
+    transition: color 150ms ease;
+}
+
+.favorite-added-message a:hover,
+.favorite-removed-message a:hover {
+    color: #808080;
+}
+
+.favorite-added-message div,
+.favorite-removed-message div {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    width: 90%;
+}
+
+.favorite-added-message div:nth-of-type(1) span:nth-of-type(1) {
+    background-color: #008000;
+    color: #fff;
+    font-size: 22px;
+    height: 40px;
+}
+
+.favorite-removed-message div:nth-of-type(1) span:nth-of-type(1) {
+    background-color: #e6331f;
+    color: #fff;
+    font-size: 22px;
+    height: 40px;
+}
+
+.favorite-added-message div span:nth-of-type(1),
+.favorite-removed-message div span:nth-of-type(1) {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    align-items: center;
+    border-radius: 50%;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    /* height: 45px; */
+    justify-content: center;
+    margin-right: 10px;
+    outline: solid 1px #000;
+    padding: 2px;
+    width: 65px;
+}
+
+.favorite-added-message div span:nth-of-type(2),
+.favorite-removed-message div span:nth-of-type(2) {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.favorite-added-message div img,
+.favorite-removed-message div img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.favorite-added-message h2,
+.favorite-removed-message h2 {
+    border-bottom: solid 1px #000;
+    color: #000;
+    font-size: 20px;
+    margin: 10px 0 5px 0;
+    padding-bottom: 5px;
+    width: 90%;
+    /* outline: solid 1px blue; */
+}
+
+.selected-deal-logo {
+    border-radius: 8px;
+    height: auto;
+    margin-bottom: 10px;
+    width: 450px;
+    /* outline: solid 1px blue; */
+}
+
+.favorite-message-button {
+    -webkit-transition: background-color 150ms ease;
+    background-color: #e6331f;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 10px 5px;
+    transition: background-color 150ms ease;
+    width: 90%;
+}
+
+.favorite-message-button:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
 .filter-container div {
     margin: 3px 5px;
     position: relative;
@@ -2932,49 +3080,6 @@ html {
     width: 450px;
 }
 
-.selected-deal-favorite-message,
-.selected-deal-share-message {
-    -ms-flex-align: center;
-    -ms-flex-direction: column;
-    -ms-flex-pack: justify;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: justify;
-    -webkit-box-shadow: 0 0 10px #333333;
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: top 500ms ease;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #333333;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    left: 50%;
-    min-height: 250px;
-    padding: 10px;
-    position: fixed;
-    top: -100%;
-    /* top: 150px; */
-    transform: translateX(-50%);
-    transition: top 500ms ease;
-    width: 400px;
-    z-index: 2;
-}
-
-.selected-deal-favorite-message a {
-    color: #000;
-    margin-top: 10px;
-    transition: color 150ms ease;
-}
-
-.selected-deal-favorite-message a:hover {
-    color: #808080;
-}
-
 .search-results-search-container {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -3026,139 +3131,6 @@ html {
     width: 450px;
 }
 
-.selected-deal-favorite-message,
-.selected-deal-share-message {
-    -ms-flex-align: center;
-    -ms-flex-direction: column;
-    -ms-flex-pack: justify;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: justify;
-    -webkit-box-shadow: 0 0 10px #333333;
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: top 500ms ease;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #333333;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    left: 50%;
-    min-height: 250px;
-    padding: 10px;
-    position: fixed;
-    top: -100%;
-    /* top: 150px; */
-    transform: translateX(-50%);
-    transition: top 500ms ease;
-    width: 400px;
-    z-index: 3;
-}
-
-.selected-deal-favorite-message a {
-    color: #000;
-    margin-top: 10px;
-    transition: color 150ms ease;
-}
-
-.selected-deal-favorite-message a:hover {
-    color: #808080;
-}
-
-.selected-deal-favorite-message div {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    align-items: center;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    margin: 10px 0;
-    width: 90%;
-}
-
-.selected-deal-favorite-message div:nth-of-type(1) span:nth-of-type(1) {
-    background-color: #008000;
-    color: #fff;
-    font-size: 22px;
-    height: 40px;
-}
-
-.selected-deal-favorite-message div span:nth-of-type(1) {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
-    align-items: center;
-    border-radius: 50%;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    height: 45px;
-    justify-content: center;
-    margin-right: 10px;
-    outline: solid 1px #000;
-    padding: 2px;
-    width: 65px;
-}
-
-.selected-deal-favorite-message div span:nth-of-type(2) {
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-}
-
-.selected-deal-favorite-message div img {
-    border-radius: 50%;
-    height: 100%;
-    width: 100%;
-}
-
-.selected-deal-favorite-message h2,
-.selected-deal-share-message h2 {
-    color: #000;
-    font-size: 20px;
-    margin: 10px 0 0 0;
-    width: 90%;
-    /* outline: solid 1px blue; */
-}
-
-.selected-deal-logo {
-    border-radius: 8px;
-    height: auto;
-    margin-bottom: 10px;
-    width: 450px;
-    /* outline: solid 1px blue; */
-}
-
-.selected-deal-message-button {
-    -webkit-transition: background-color 150ms ease;
-    background-color: #e6331f;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    margin: 10px 0;
-    padding: 10px 5px;
-    transition: background-color 150ms ease;
-    width: 90%;
-}
-
-.selected-deal-message-button:hover {
-    background-color: #000;
-    cursor: pointer;
-}
-
 .selected-deal-name {
     color: #666666;
     font-size: 20px;
@@ -3192,8 +3164,8 @@ html {
     cursor: pointer;
 }
 
-.selected-deal-favorite-message p,
-.selected-deal-share-message p {
+.favorite-added-message p,
+.favorite-removed-message p {
     border-bottom: solid 1px #000;
     color: #808080;
     font-size: 20px;
@@ -5273,8 +5245,8 @@ html {
         width: 300px;
     }
 
-    .selected-deal-favorite-message p,
-    .selected-deal-share-message p {
+    .favorite-added-message p,
+    .favorite-removed-message p {
         font-size: 18px;
     }
 
@@ -5636,19 +5608,21 @@ html {
         width: 100%;
     }
 
-    .selected-deal-favorite-message,
-    .selected-deal-share-message {
+    .favorite-added-message,
+    .favorite-removed-message {
         border-radius: 0;
         min-height: 225px;
         width: 100%;
     }
 
-    .selected-deal-favorite-message div:nth-of-type(1) span:nth-of-type(1) {
-        height: 40px;
+    .favorite-added-message div span:nth-of-type(1),
+    .favorite-removed-message div span:nth-of-type(1) {
+        height: 42px;
     }
 
-    .selected-deal-favorite-message div span:nth-of-type(1) {
-        height: 42px;
+    .favorite-removed-message div:nth-of-type(1) span:nth-of-type(1) {
+        /* height: 40px; */
+        width: 75px;
     }
 
     .selected-deal-logo {

@@ -1,7 +1,7 @@
-{{-- HIDDEN FAVORITE MESSAGE FOR THE SINGLED DEAL PAGE --}}
-<div class="selected-deal-favorite-message">
+{{-- HIDDEN FAVORITE ADDED MESSAGE --}}
+<div class="favorite-added-message">
     <h2>Saved to your Favorites</h2>
-    <p>{{ $deal->name }}</p>
+    {{-- <p class="favorite-message-added-name"></p> --}}
     <div>
         <span>
             <i class="fa fa-check" aria-hidden="true"></i>
@@ -18,6 +18,6 @@
             You can manage your saved deals in your Dashboard.
         </span>
     </div>
-    <button type="button" class="selected-deal-message-button remove-favorite-message">OK</button>
+    <button type="button" class="favorite-message-button favorite-added-button">OK</button>
     <a href={{ route('deals.index') }}>Show me more deals</a>
 </div>

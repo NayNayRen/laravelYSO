@@ -2,8 +2,10 @@
 <main class="main">
     {{-- HIDDEN SHARE MESSAGE --}}
     {{-- @include('includes._share_message') --}}
-    {{-- HIDDEN FAVORITED MESSAGE --}}
-    @include('includes._favorite_message')
+    {{-- HIDDEN FAVORITED ADDED MESSAGE --}}
+    @include('includes._favorite_added_message')
+    {{-- HIDDEN FAVORITED REMOVED MESSAGE --}}
+    @include('includes._favorite_removed_message')
     <div class="selected-deal-container">
         {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
@@ -78,8 +80,10 @@
 <script src="{{ asset('js/registered-deal.js') }}"></script>
 <script>
     $(document).ready(function () {
-        // const favoriteMessage = document.querySelector('.selected-deal-favorite-message');
-        // const removeFavoriteMessage = document.querySelector('.remove-favorite-message');
+        const favoriteAddedMessage = document.querySelector('.favorite-added-message');
+        const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
+        const favoriteAddedButton = document.querySelector('.favorite-added-button');
+        const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
         var old_email = '{{ $user->email }}';
         var old_phone = '{{ $user->phone }}';
 
@@ -88,7 +92,6 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
 
         $('#registered-text-button ').click(function () {
             $('#registered-deal-email').attr('value', " ");
@@ -108,11 +111,9 @@
             $('#registered-deal-email').attr('value', old_email);
         });
 
-
-
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
-            console.log(id);
+            // console.log(id);
             $.ajax({
                 url: "{{ route('add.favourite') }}",
                 method: "POST",
@@ -127,21 +128,24 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + parseInt(id)).find('i').addClass('favourite2');
-                        // favoriteMessage.classList.add('show-selected-deal-message');
-                        // windowOverlay.classList.add('window-overlay-dim');
-                        // removeFavoriteMessage.addEventListener('click', () => {
-                        //     favoriteMessage.classList.remove(
-                        //         'show-selected-deal-message');
-                        //     windowOverlay.classList.remove('window-overlay-dim');
-                        // });
-                        console.log(r);
-                        alert(r);
+                        favoriteAddedMessage.classList.add('show-selected-deal-message');
+                        favoriteAddedButton.addEventListener('click', () => {
+                            favoriteAddedMessage.classList.remove(
+                                'show-selected-deal-message');
+                        });
+                        // console.log(r);
+                        // alert(r);
                     }
                     if (data['delete']) {
                         var r = (data['delete']);
-                        $('#' + parseInt(id)).find('i').removeClass('favourite2')
-                        console.log(r);
-                        alert(r);
+                        $('#' + parseInt(id)).find('i').removeClass('favourite2');
+                        favoriteRemovedMessage.classList.add('show-selected-deal-message');
+                        favoriteRemovedButton.addEventListener('click', () => {
+                            favoriteRemovedMessage.classList.remove(
+                                'show-selected-deal-message');
+                        });
+                        // console.log(r);
+                        // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
