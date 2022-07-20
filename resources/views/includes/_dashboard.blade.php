@@ -23,9 +23,9 @@
                         <a link="#fav1" class="c-list__link active">
                             <h4>Favorite Coupons</h4>
                             @if($favorites === null)
-                                <span>0</span>
+                                <div>0</div>
                             @else
-                                <span>{{ $favorites->count() }}</span>
+                                <div>{{ $favorites->count() }}</div>
                             @endif
                         </a>
                     </li>
@@ -33,9 +33,9 @@
                         <a link="#fav2" class="c-list__link">
                             <h4>All Coupons</h4>
                             @if($coupons === null)
-                                <span>0</span>
+                                <div>0</div>
                             @else
-                                <span>{{ $coupons->count() }}</span>
+                                <div>{{ $coupons->count() }}</div>
                             @endif
                         </a>
                     </li>
@@ -43,9 +43,9 @@
                         <a link="#fav3" class="c-list__link">
                             <h4>Redeemed Coupons</h4>
                             @if($redeems === null)
-                                <span>0</span>
+                                <div>0</div>
                             @else
-                                <span>{{ $redeems->count() }}</span>
+                                <div>{{ $redeems->count() }}</div>
                             @endif
                         </a>
                     </li>

@@ -83,6 +83,21 @@ a {
 .c-list__link {
     color: #fff;
     font-weight: 500;
+    position: relative;
+}
+
+.c-list__item div {
+    background-color: #e6331f;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    left: 0;
+    min-width: 20px;
+    padding: 0 5px;
+    position: absolute;
+    text-align: center;
+    top: 100%;
 }
 
 .c-list__link h4:hover {
@@ -153,6 +168,13 @@ a {
 @media (max-width: 1000px) {
     .c-list__item {
         margin: 0 0 15px 0;
+    }
+
+    .c-list__item div {
+        font-size: 16px;
+        left: calc(100% + 10px);
+        top: 50%;
+        transform: translateY(-50%);
     }
     .wrapper {
         -ms-flex-direction: column;
