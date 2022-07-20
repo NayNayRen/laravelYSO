@@ -20,7 +20,7 @@ class Deal extends Model
             $favorites =  Deal::query();
             if($favs->count() > 0 ){
                 foreach($favs as $fav){
-                    if($favorites ==null){
+                    if($favorites == null){
                         $favorites->where('id',$fav->deal_id);
                     }else{
                         $favorites->orwhere('id',$fav->deal_id);
@@ -44,7 +44,7 @@ class Deal extends Model
             $coupons =  Deal ::query();
             if($cous->count() > 0 ){
                 foreach($cous as $cou){
-                    if($coupons ==null){
+                    if($coupons == null){
                         $coupons->where('id',$cou->deal_id);
                     }else{
                         $coupons->orwhere('id',$cou->deal_id);
@@ -68,7 +68,7 @@ class Deal extends Model
             $redeems =  Deal ::query();
             if($redms->count() > 0 ){
                 foreach($redms as $redm){
-                    if($redeems ==null){
+                    if($redeems == null){
                         $redeems->where('id',$redm->deal_id);
                     }else{
                         $redeems->orwhere('id',$redm->deal_id);

@@ -22,16 +22,31 @@
                     <li class="c-list__item">
                         <a link="#fav1" class="c-list__link active">
                             <h4>Favorite Coupons</h4>
+                            @if($favorites === null)
+                                <span>0</span>
+                            @else
+                                <span>{{ $favorites->count() }}</span>
+                            @endif
                         </a>
                     </li>
                     <li class="c-list__item">
                         <a link="#fav2" class="c-list__link">
                             <h4>All Coupons</h4>
+                            @if($coupons === null)
+                                <span>0</span>
+                            @else
+                                <span>{{ $coupons->count() }}</span>
+                            @endif
                         </a>
                     </li>
                     <li class="c-list__item">
                         <a link="#fav3" class="c-list__link">
                             <h4>Redeemed Coupons</h4>
+                            @if($redeems === null)
+                                <span>0</span>
+                            @else
+                                <span>{{ $redeems->count() }}</span>
+                            @endif
                         </a>
                     </li>
                 </ul>
