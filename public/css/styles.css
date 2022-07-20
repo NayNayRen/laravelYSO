@@ -1872,13 +1872,13 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: justify;
-    -webkit-box-shadow: 0 0 10px #333333;
+    -webkit-box-shadow: 0 0 15px #000;
     -webkit-transform: translateX(-50%);
     -webkit-transition: top 500ms ease;
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 10px #333333;
+    box-shadow: 0 0 15px #000;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -1929,6 +1929,7 @@ body {
     color: #fff;
     font-size: 22px;
     height: 40px;
+    outline: none;
 }
 
 .favorite-removed-message div:nth-of-type(1) span:nth-of-type(1) {
@@ -1936,6 +1937,7 @@ body {
     color: #fff;
     font-size: 22px;
     height: 40px;
+    outline: none;
 }
 
 .favorite-added-message div span:nth-of-type(1),
@@ -1953,7 +1955,7 @@ body {
     display: -webkit-box;
     display: flex;
     flex-direction: row;
-    /* height: 45px; */
+    height: 45px;
     justify-content: center;
     margin-right: 10px;
     outline: solid 1px #000;
