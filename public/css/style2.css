@@ -90,8 +90,8 @@ a {
     background-color: #e6331f;
     border-radius: 50%;
     color: #fff;
-    font-weight: bold;
     font-size: 18px;
+    font-weight: bold;
     left: 0;
     min-width: 20px;
     padding: 0 5px;
@@ -171,8 +171,9 @@ a {
     }
 
     .c-list__item div {
+        -webkit-transform: translateY(-50%);
         font-size: 16px;
-        left: calc(100% + 10px);
+        left: calc(100% + 5px);
         top: 50%;
         transform: translateY(-50%);
     }
@@ -184,6 +185,6 @@ a {
         display: -webkit-box;
         display: flex;
         flex-direction: column;
-        padding: 0 0 0 10px;
+        padding: 0 0 0 0;
     }
 }
