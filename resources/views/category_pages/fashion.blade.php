@@ -1,5 +1,11 @@
 @include('includes._header')
 <div class="main">
+    {{-- HIDDEN SHARE MESSAGE --}}
+    {{-- @include('includes._share_message') --}}
+    {{-- HIDDEN FAVORITED ADDED MESSAGE --}}
+    @include('includes._favorite_added_message')
+    {{-- HIDDEN FAVORITED REMOVED MESSAGE --}}
+    @include('includes._favorite_removed_message')
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
@@ -107,6 +113,10 @@
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script>
     $(document).ready(function () {
+        const favoriteAddedMessage = document.querySelector('.favorite-added-message');
+        const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
+        const favoriteAddedButton = document.querySelector('.favorite-added-button');
+        const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -114,7 +124,7 @@
         });
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
-            console.log(id);
+            // console.log(id);
             $.ajax({
                 url: "{{ route('add.favourite') }}",
                 method: "POST",
@@ -129,25 +139,33 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + id).addClass('favourite');
-                        console.log(r);
-                        alert(r);
+                        favoriteAddedMessage.classList.add('show-selected-deal-message');
+                        favoriteAddedButton.addEventListener('click', () => {
+                            favoriteAddedMessage.classList.remove(
+                                'show-selected-deal-message');
+                        });
+                        // console.log(r);
+                        // alert(r);
                     }
                     if (data['delete']) {
                         var r = (data['delete']);
-                        $('#' + parseInt(id)).removeClass('favourite')
-                        console.log(r);
-                        alert(r);
+                        $('#' + parseInt(id)).removeClass('favourite');
+                        favoriteRemovedMessage.classList.add('show-selected-deal-message');
+                        favoriteRemovedButton.addEventListener('click', () => {
+                            favoriteRemovedMessage.classList.remove(
+                                'show-selected-deal-message');
+                        });
+                        // console.log(r);
+                        // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
                         console.log(r);
                         alert(r);
                     }
-
                 }
             });
         });
-
     });
 
 </script>
