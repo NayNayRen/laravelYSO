@@ -54,7 +54,7 @@
                     {{-- USER FAVORITES --}}
                     @if($favorites != null && $favorites->count() > 0)
                         @if($favorites->count() < 3)
-                            <div style="display: flex;">
+                            <div style="display: flex; padding-bottom: 10px;">
                                 @foreach($favorites as $deal)
                                     <div class="card card--favourite">
                                         @include('includes._card')
@@ -81,7 +81,7 @@
                 <div class="favBox" id="fav2">
                     @if($coupons != null && $coupons->count() > 0)
                         @if($coupons->count() < 3)
-                            <div style="display: flex; column-gap: 20px;">
+                            <div style="display: flex; padding-bottom: 10px;">
                                 @foreach($coupons as $deal)
                                     <div class="card card--favourite">
                                         @include('includes._card')
@@ -108,7 +108,7 @@
                     {{-- USER REDEEMABLES --}}
                     @if($redeems != null &&  $redeems->count() > 0)
                         @if($redeems->count() < 3)
-                            <div style="display: flex;">
+                            <div style="display: flex; padding-bottom: 10px;">
                                 @foreach($redeems as $deal)
                                     <div class="card card--favourite">
                                         @include('includes._card')

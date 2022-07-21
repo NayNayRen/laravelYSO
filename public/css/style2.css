@@ -15,7 +15,7 @@ a {
     display: flex;
     flex-direction: row;
     margin: 0 0 10px 0;
-    padding: 0 0 15px 10px;
+    padding: 0 0 25px 10px;
     /* outline: solid 1px blue; */
 }
 
@@ -97,7 +97,7 @@ a {
     padding: 0 5px;
     position: absolute;
     text-align: center;
-    top: 100%;
+    top: calc(100% + 5px);
 }
 
 .c-list__link h4:hover {

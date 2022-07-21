@@ -83,10 +83,8 @@ $(document).ready(function () {
         dots: false,
         touchDrag: true,
         navText: [
-            "<div class='container-arrow-left'><i class='fa fa-arrow-left'></i></div>",
-            "<div class='container-arrow-right'><i class='fa fa-arrow-right'></i></div>",
-            // "<div class='arrow-box arrow-box1'><i class='fa fa-arrow-left'></i></div>",
-            // "<div class='arrow-box arrow-box2'><i class='fa fa-arrow-right'></i></div>",
+            "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+            "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
         ],
         responsive: {
             0: {

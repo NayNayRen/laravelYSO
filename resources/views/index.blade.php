@@ -8,6 +8,20 @@
     @include('includes._favorite_removed_message')
     {{-- USER LOG IN OR OUT MESSAGE --}}
     @include('includes._flash_message_user')
+    {{-- GUEST ERROR MESSAGE --}}
+    <div class="guest-error-message">
+        <div class="guest-error-content">
+            <h2>You're visiting as a guest.</h2>
+            <div>
+                <span>Kindly</span>
+                <a href={{ route('user.create') }}>Register</a>
+                <span>and/or</span>
+                <a href={{ route('login.showLoginForm') }}>Log In</a>
+                <span>to continue.</span>
+            </div>
+            <button type="button" class="message-button guest-error-button">OK</button>
+        </div>
+    </div>
     {{-- BANNER BLOCK --}}
     <div class="banner">
         <div class="banner-slide-container">
@@ -178,9 +192,9 @@
                 @else
                     <div class="cashback-card guest">
                         <div class="cashback-card-message">
-                            <a href="/register">Register</a>
+                            <a href={{ route('user.create') }}>Register</a>
                             <span>and/or</span>
-                            <a href="/login">Log In</a>
+                            <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
                         <div class="cashback-logo"><img
@@ -193,9 +207,9 @@
                     </div>
                     <div class="cashback-card guest">
                         <div class="cashback-card-message">
-                            <a href="/register">Register</a>
+                            <a href={{ route('user.create') }}>Register</a>
                             <span>and/or</span>
-                            <a href="/login">Log In</a>
+                            <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
                         <div class="cashback-logo"><img
@@ -208,9 +222,9 @@
                     </div>
                     <div class="cashback-card guest">
                         <div class="cashback-card-message">
-                            <a href="/register">Register</a>
+                            <a href={{ route('user.create') }}>Register</a>
                             <span>and/or</span>
-                            <a href="/login">Log In</a>
+                            <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
                         <div class="cashback-logo"><img
@@ -224,9 +238,9 @@
                     </div>
                     <div class="cashback-card guest">
                         <div class="cashback-card-message">
-                            <a href="/register">Register</a>
+                            <a href={{ route('user.create') }}>Register</a>
                             <span>and/or</span>
-                            <a href="/login">Log In</a>
+                            <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
                         <div class="cashback-logo"><img
@@ -239,9 +253,9 @@
                     </div>
                     <div class="cashback-card guest">
                         <div class="cashback-card-message">
-                            <a href="/register">Register</a>
+                            <a href={{ route('user.create') }}>Register</a>
                             <span>and/or</span>
-                            <a href="/login">Log In</a>
+                            <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
                         <div class="cashback-logo"><img
@@ -352,6 +366,8 @@
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
+        const guestErrorMessage = document.querySelector('.guest-error-message');
+        const guestErrorButton = document.querySelector('.guest-error-button');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -395,8 +411,13 @@
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        console.log(r);
-                        alert(r);
+                        guestErrorMessage.classList.add('show-selected-deal-message');
+                        guestErrorButton.addEventListener('click', () => {
+                            guestErrorMessage.classList.remove(
+                                'show-selected-deal-message');
+                        });
+                        // console.log('error');
+                        // alert(r);
                     }
                 }
             });
