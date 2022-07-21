@@ -1,5 +1,7 @@
 @include('includes._header_alternate')
 <main class="main">
+    {{-- GUEST ERROR MESSAGE --}}
+    @include('includes._guest_error_message')
     <div class="selected-deal-container">
         {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
@@ -38,7 +40,7 @@
             </div>
             {{-- SHARE OR FAVORITE SELECTION --}}
             <div class="unregistered-share-fav-container">
-                <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button"><i
+                <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button share-deal"><i
                         class="fa fa-share" aria-hidden="true"></i>Share</button>
                 <button id="unregistered-favorite-deal-button " class="selected-deal-share-fav-button add-favourite"><i
                         class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
@@ -51,6 +53,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
+        const guestErrorMessage = document.querySelector('.guest-error-message');
+        const guestErrorButton = document.querySelector('.guest-error-button');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -58,8 +62,8 @@
         });
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
-            alert(id);
-            console.log(id);
+            // alert(id);
+            // console.log(id);
             $.ajax({
                 url: "{{ route('add.favourite') }}",
                 method: "POST",
@@ -85,8 +89,13 @@
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        console.log(r);
-                        alert(r);
+                        guestErrorMessage.classList.add('show-selected-deal-message');
+                        guestErrorButton.addEventListener('click', () => {
+                            guestErrorMessage.classList.remove(
+                                'show-selected-deal-message');
+                        });
+                        // console.log(r);
+                        // alert(r);
                     }
 
                 }
@@ -98,7 +107,9 @@
     $('.add-coupon').click(function () {
         var dealid = $('#deal-id').attr('value');
         var email = $('#registered-deal-email').attr('value');
-        console.log(dealid);
+        const guestErrorMessage = document.querySelector('.guest-error-message');
+        const guestErrorButton = document.querySelector('.guest-error-button');
+        // console.log(dealid);
         $.ajax({
             url: "{{ route('add.coupon') }}",
             method: "POST",
@@ -112,7 +123,42 @@
             success: function (data) {
                 if (data['message']) {
                     var r = (data['message']);
-                    alert(r);
+                    guestErrorMessage.classList.add('show-selected-deal-message');
+                    guestErrorButton.addEventListener('click', () => {
+                        guestErrorMessage.classList.remove(
+                            'show-selected-deal-message');
+                    });
+                    // alert(r);
+                }
+            }
+        });
+    });
+
+    $('.share-deal').click(function () {
+        var dealid = $('#deal-id').attr('value');
+        var email = $('#registered-deal-email').attr('value');
+        const guestErrorMessage = document.querySelector('.guest-error-message');
+        const guestErrorButton = document.querySelector('.guest-error-button');
+        // console.log(dealid);
+        $.ajax({
+            url: "{{ route('add.coupon') }}",
+            method: "POST",
+            dataType: "json",
+
+            data: {
+                _token: "{{ csrf_token() }}",
+                dealid: dealid,
+                email: email
+            },
+            success: function (data) {
+                if (data['message']) {
+                    var r = (data['message']);
+                    guestErrorMessage.classList.add('show-selected-deal-message');
+                    guestErrorButton.addEventListener('click', () => {
+                        guestErrorMessage.classList.remove(
+                            'show-selected-deal-message');
+                    });
+                    // alert(r);
                 }
             }
         });
