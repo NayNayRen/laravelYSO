@@ -1,7 +1,7 @@
 @include('includes._header')
 <main class="main">
     {{-- HIDDEN SHARE MESSAGE --}}
-    {{-- @include('includes._share_message') --}}
+    @include('includes._share_message')
     {{-- HIDDEN FAVORITED ADDED MESSAGE --}}
     @include('includes._favorite_added_message')
     {{-- HIDDEN FAVORITED REMOVED MESSAGE --}}
@@ -353,10 +353,12 @@
         const favoriteAddedMessage = document.querySelector('.favorite-added-message');
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
         const guestErrorMessage = document.querySelector('.guest-error-message');
+        const shareMessage = document.querySelector('.share-message');
 
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
         const guestErrorButton = document.querySelector('.guest-error-button');
+        const shareMessageButton = document.querySelector('.share-message-button');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -410,6 +412,23 @@
                     }
                 }
             });
+        });
+
+        $('.share-deal').click(function () {
+            if ($('.share-deal').hasClass('user')) {
+                shareMessage.classList.add('show-selected-deal-message');
+                shareMessageButton.addEventListener('click', () => {
+                    shareMessage.classList.remove(
+                        'show-selected-deal-message');
+                });
+            }
+            if ($('.share-deal').hasClass('guest')) {
+                guestErrorMessage.classList.add('show-selected-deal-message');
+                guestErrorButton.addEventListener('click', () => {
+                    guestErrorMessage.classList.remove(
+                        'show-selected-deal-message');
+                });
+            }
         });
     });
 

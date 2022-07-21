@@ -13,9 +13,15 @@
             <span>Likes:</span>
         </div>
         <div class="views-likes-icons">
-            <span class='share-deal' aria-label="Share this item.">
-                <i class="fa fa-share" id="{{ $deal->id }} aria-hidden=" false"></i>
-            </span>
+            @if(auth()->user())
+                <span class='share-deal user' aria-label="Share this item.">
+                    <i class="fa fa-share" aria-hidden=" false"></i>
+                </span>
+            @else
+                <span class='share-deal guest' aria-label="Share this item.">
+                    <i class="fa fa-share" aria-hidden=" false"></i>
+                </span>
+            @endif
             @php
                 if(auth()->user())
                 {
