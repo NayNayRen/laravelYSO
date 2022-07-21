@@ -16,8 +16,8 @@
         {{-- REGISTERED USER CONTENT --}}
         <div class="registered-user-display">
             <div class="registered-share-fav-container">
-                <button id="registered-share-deal-button" class="selected-deal-share-fav-button"><i class="fa fa-share"
-                        aria-hidden="true"></i>Share</button>
+                <button id="registered-share-deal-button" class="selected-deal-share-fav-button share-deal"><i
+                        class="fa fa-share" aria-hidden="true"></i>Share</button>
                 @php
                     $check = App\Models\Favourite::where('deal_id',(string)$deal['id'])->get()->first();
                 @endphp
@@ -82,6 +82,7 @@
     $(document).ready(function () {
         const favoriteAddedMessage = document.querySelector('.favorite-added-message');
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
+
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
         var old_email = '{{ $user->email }}';
@@ -152,11 +153,9 @@
                         console.log(r);
                         alert(r);
                     }
-
                 }
             });
         });
-
     });
 
     $('.add-coupon').click(function () {

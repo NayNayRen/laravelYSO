@@ -352,9 +352,10 @@
     $(document).ready(function () {
         const favoriteAddedMessage = document.querySelector('.favorite-added-message');
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
+        const guestErrorMessage = document.querySelector('.guest-error-message');
+
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
-        const guestErrorMessage = document.querySelector('.guest-error-message');
         const guestErrorButton = document.querySelector('.guest-error-button');
         $.ajaxSetup({
             headers: {

@@ -1,11 +1,13 @@
 @include('includes._header')
 <div class="main">
     {{-- HIDDEN SHARE MESSAGE --}}
-    {{-- @include('includes._share_message') --}}
+    @include('includes._share_message')
     {{-- HIDDEN FAVORITED ADDED MESSAGE --}}
     @include('includes._favorite_added_message')
     {{-- HIDDEN FAVORITED REMOVED MESSAGE --}}
     @include('includes._favorite_removed_message')
+    {{-- GUEST ERROR MESSAGE --}}
+    @include('includes._guest_error_message')
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
@@ -114,8 +116,11 @@
     $(document).ready(function () {
         const favoriteAddedMessage = document.querySelector('.favorite-added-message');
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
+        const guestErrorMessage = document.querySelector('.guest-error-message');
+
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
+        const guestErrorButton = document.querySelector('.guest-error-button');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -159,10 +164,14 @@
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        console.log(r);
-                        alert(r);
+                        guestErrorMessage.classList.add('show-selected-deal-message');
+                        guestErrorButton.addEventListener('click', () => {
+                            guestErrorMessage.classList.remove(
+                                'show-selected-deal-message');
+                        });
+                        // console.log(r);
+                        // alert(r);
                     }
-
                 }
             });
         });

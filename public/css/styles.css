@@ -2371,7 +2371,8 @@ body {
     margin: 5px;
 }
 
-.guest-error-message {
+.guest-error-message,
+.share-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: justify;

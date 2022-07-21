@@ -1,5 +1,5 @@
 {{-- SHARE MESSAGE WITH SOCIAL LINKS THAT DISPLAYS ON SINGLE DEAL PAGE --}}
-<div class="selected-deal-share-message">
+<div class="share-message">
     <h2>Share this deal</h2>
     <p id="shared-message-name"></p>
     <div class="selected-deal-social-container">
@@ -19,5 +19,5 @@
             <i class="fa fa-linkedin-square" aria-hidden="false"></i>
         </a>
     </div>
-    <button type="button" class="selected-deal-message-button remove-share-message">OK</button>
+    <button type="button" class="message-button share-message-button">OK</button>
 </div>
