@@ -1,7 +1,7 @@
 @include('includes._header_alternate')
 <main class="main">
     {{-- HIDDEN SHARE MESSAGE --}}
-    {{-- @include('includes._share_message') --}}
+    @include('includes._share_message')
     {{-- HIDDEN FAVORITED ADDED MESSAGE --}}
     @include('includes._favorite_added_message')
     {{-- HIDDEN FAVORITED REMOVED MESSAGE --}}
@@ -82,9 +82,12 @@
     $(document).ready(function () {
         const favoriteAddedMessage = document.querySelector('.favorite-added-message');
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
+        const shareMessage = document.querySelector('.share-message');
 
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
+        const shareMessageButton = document.querySelector('.share-message-button');
+
         var old_email = '{{ $user->email }}';
         var old_phone = '{{ $user->phone }}';
 
@@ -154,6 +157,14 @@
                         alert(r);
                     }
                 }
+            });
+        });
+
+        $('.share-deal').click(function () {
+            shareMessage.classList.add('show-selected-deal-message');
+            shareMessageButton.addEventListener('click', () => {
+                shareMessage.classList.remove(
+                    'show-selected-deal-message');
             });
         });
     });

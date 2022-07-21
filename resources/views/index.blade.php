@@ -413,7 +413,7 @@
                 }
             });
         });
-
+        // SHOWS APPROPRIATE SHARE RESPONSE
         $('.share-deal').click(function () {
             if ($('.share-deal').hasClass('user')) {
                 shareMessage.classList.add('show-selected-deal-message');
