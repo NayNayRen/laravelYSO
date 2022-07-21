@@ -75,18 +75,6 @@
                     id: id,
                 },
                 success: function (data) {
-                    if (data['success']) {
-                        var r = (data['success']);
-                        $('#' + parseInt(id)).find('i').addClass('favourite2');
-                        console.log(r);
-                        alert(r);
-                    }
-                    if (data['delete']) {
-                        var r = (data['delete']);
-                        $('#' + parseInt(id)).find('i').removeClass('favourite2')
-                        console.log(r);
-                        alert(r);
-                    }
                     if (data['error']) {
                         var r = (data['error']);
                         guestErrorMessage.classList.add('show-selected-deal-message');
@@ -97,44 +85,20 @@
                         // console.log(r);
                         // alert(r);
                     }
-
                 }
             });
         });
-
-    });
-
-    $('.add-coupon').click(function () {
-        var dealid = $('#deal-id').attr('value');
-        var email = $('#registered-deal-email').attr('value');
-        const guestErrorMessage = document.querySelector('.guest-error-message');
-        const guestErrorButton = document.querySelector('.guest-error-button');
-        // console.log(dealid);
-        $.ajax({
-            url: "{{ route('add.coupon') }}",
-            method: "POST",
-            dataType: "json",
-
-            data: {
-                _token: "{{ csrf_token() }}",
-                dealid: dealid,
-                email: email
-            },
-            success: function (data) {
-                if (data['message']) {
-                    var r = (data['message']);
-                    guestErrorMessage.classList.add('show-selected-deal-message');
-                    guestErrorButton.addEventListener('click', () => {
-                        guestErrorMessage.classList.remove(
-                            'show-selected-deal-message');
-                    });
-                    // alert(r);
-                }
-            }
+        // GUEST SHARE RESPONSE
+        $('.share-deal').click(function () {
+            guestErrorMessage.classList.add('show-selected-deal-message');
+            guestErrorButton.addEventListener('click', () => {
+                guestErrorMessage.classList.remove(
+                    'show-selected-deal-message');
+            });
         });
     });
 
-    $('.share-deal').click(function () {
+    $('.add-coupon').click(function () {
         var dealid = $('#deal-id').attr('value');
         var email = $('#registered-deal-email').attr('value');
         const guestErrorMessage = document.querySelector('.guest-error-message');

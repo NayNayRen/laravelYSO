@@ -159,7 +159,7 @@
                 }
             });
         });
-
+        // SHOWS USER SHARE RESPONSE
         $('.share-deal').click(function () {
             shareMessage.classList.add('show-selected-deal-message');
             shareMessageButton.addEventListener('click', () => {
