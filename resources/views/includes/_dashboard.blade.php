@@ -145,8 +145,9 @@
                 <span>N/A</span>
             </div>
             <div class="dashboard-right-container">
-                <h4 class="mb-3">My Coupons</h4>
-                <h5 class="mb-3">Kindly login to see your Favorites.</h5>
+                <h4 class="mb-3">You're visiting as a guest.</h4>
+                <h5 class="mb-3">Kindly <a href={{ route('user.create') }}>Register</a> and/or <a
+                        href={{ route('login.showLoginForm') }}>Log In</a> to continue.</h5>
             </div>
         @endauth
     </div>
