@@ -1247,6 +1247,82 @@ body {
     text-decoration: none;
 }
 
+.card-discount {
+    font-size: 16px;
+}
+
+.card-display {
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    height: auto;
+    justify-content: space-between;
+    margin: 0 auto 10px auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-top: 10px;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.card-display-view-all {
+    -ms-flex-direction: row;
+    /* -ms-flex-pack: center; */
+    -ms-flex-pack: start;
+    -ms-flex-wrap: wrap;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: start;
+    /* -webkit-box-pack: center; */
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    /* justify-content: center; */
+    justify-content: flex-start;
+    margin: 0 auto 10px auto;
+    width: 100%;
+}
+
+.card-display::after,
+.card-display::before {
+    content: "";
+    display: block;
+    width: 10px;
+}
+
+.card-logo {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.card-logo-container {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
+    border-radius: 5px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    margin-bottom: 5px;
+    overflow: hidden;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.card-name {
+    color: #808080;
+    font-size: 16px;
+}
+
 .cashback-card {
     -webkit-transition: -webkit-transform 150ms ease;
     background-color: #fff;
@@ -1392,82 +1468,6 @@ body {
 .cashback-logo img {
     /* border-radius: 5px; */
     width: 100%;
-}
-
-.card-discount {
-    font-size: 16px;
-}
-
-.card-display {
-    -ms-flex-pack: justify;
-    -webkit-box-pack: justify;
-    display: -ms-grid;
-    display: grid;
-    grid-auto-flow: column;
-    height: auto;
-    justify-content: space-between;
-    margin: 0 auto 10px auto;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 10px;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-
-.card-display-view-all {
-    -ms-flex-direction: row;
-    /* -ms-flex-pack: center; */
-    -ms-flex-pack: start;
-    -ms-flex-wrap: wrap;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: start;
-    /* -webkit-box-pack: center; */
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: auto;
-    /* justify-content: center; */
-    justify-content: flex-start;
-    margin: 0 auto 10px auto;
-    width: 100%;
-}
-
-.card-display::after,
-.card-display::before {
-    content: "";
-    display: block;
-    width: 10px;
-}
-
-.card-logo {
-    border-radius: 5px;
-    width: 100%;
-}
-
-.card-logo-container {
-    -ms-flex-align: center;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    align-items: center;
-    border-radius: 5px;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    height: 150px;
-    justify-content: center;
-    margin-bottom: 5px;
-    overflow: hidden;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-
-.card-name {
-    color: #808080;
-    font-size: 16px;
 }
 
 .category-heading {
@@ -5612,9 +5612,9 @@ html {
     }
 
     .card {
-        height: 250px;
+        height: 275px;
         margin: 2px;
-        width: 175px;
+        width: 200px;
     }
 
     .category-heading {
@@ -5630,21 +5630,21 @@ html {
     .container-arrow-right,
     .view-all-left-arrow,
     .view-all-right-arrow {
-        font-size: 22px;
-        padding: 0 5px;
+        font-size: 24px;
+        padding: 1px 5px;
     }
 
     .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 70px);
-        top: -40px;
+        top: -42px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 5px;
-        top: -40px;
+        top: -42px;
         transform: translateY(0);
     }
 
@@ -5656,7 +5656,7 @@ html {
 
     .dashboard-right-container .container-arrow-right {
         right: 15px;
-        top: 85px;
+        top: 90px;
     }
 
     .favorite-added-message,
