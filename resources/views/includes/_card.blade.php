@@ -14,7 +14,7 @@
         </div>
         <div class="views-likes-icons">
             @if(auth()->user())
-                <span class='share-deal user' aria-label="Share this item.">
+                <span class='share-deal user' aria-label="Share this item." name="{{ $deal->name }}">
                     <i class="fa fa-share" aria-hidden=" false"></i>
                 </span>
             @else
@@ -35,11 +35,13 @@
             @endphp
             @if($check != null)
                 <span class='favorite-button' aria-label="Favorite this item.">
-                    <i class="fa fa-star add-favourite favourite" id="{{ $deal->id }}" aria-hidden="false"></i>
+                    <i class="fa fa-star add-favourite favourite" id="{{ $deal->id }}" name="{{ $deal->name }}"
+                        aria-hidden="false"></i>
                 </span>
             @else
                 <span class='favorite-button' aria-label="Favorite this item.">
-                    <i class="fa fa-star add-favourite" id="{{ $deal->id }}" aria-hidden="false"></i>
+                    <i class="fa fa-star add-favourite" id="{{ $deal->id }}" name="{{ $deal->name }}"
+                        aria-hidden="false"></i>
                 </span>
             @endif
         </div>

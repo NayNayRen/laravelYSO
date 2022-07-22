@@ -1,7 +1,7 @@
 {{-- HIDDEN FAVORITE REMOVED MESSAGE --}}
 <div class="favorite-removed-message">
     <h2>Removed from your Favorites</h2>
-    {{-- <p class="favorite-message-added-name"></p> --}}
+    <p id="favorite-removed-name"></p>
     <div>
         <span>
             <i class="fa fa-times" aria-hidden="true"></i>

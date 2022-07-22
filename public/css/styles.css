@@ -2000,7 +2000,7 @@ body {
 
 .favorite-added-message p,
 .favorite-removed-message p {
-    border-bottom: solid 1px #000;
+    /* border-bottom: solid 1px #000; */
     color: #808080;
     font-size: 20px;
     padding-bottom: 5px;
