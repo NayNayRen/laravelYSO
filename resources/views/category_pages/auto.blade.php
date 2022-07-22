@@ -129,7 +129,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        // USER FAVORITE RESPONSE
+        // FAVORITE RESPONSE
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
             const name = $(this).attr('name');

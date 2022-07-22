@@ -1,7 +1,7 @@
 @include('includes._header')
 <div class="main">
     {{-- HIDDEN SHARE MESSAGE --}}
-    {{-- @include('includes._share_message') --}}
+    @include('includes._share_message')
     {{-- HIDDEN FAVORITED ADDED MESSAGE --}}
     @include('includes._favorite_added_message')
     {{-- HIDDEN FAVORITED REMOVED MESSAGE --}}
@@ -116,18 +116,25 @@
         const favoriteAddedMessage = document.querySelector('.favorite-added-message');
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
         const guestErrorMessage = document.querySelector('.guest-error-message');
+        const shareMessage = document.querySelector('.share-message');
+        const favoriteAddedName = document.querySelector('#favorite-added-name');
+        const favoriteRemovedName = document.querySelector('#favorite-removed-name');
 
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
         const guestErrorButton = document.querySelector('.guest-error-button');
+        const shareMessageButton = document.querySelector('.share-message-button');
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        // FAVORITE RESPONSE
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
-            // console.log(id);
+            const name = $(this).attr('name');
+            // console.log(name);
             $.ajax({
                 url: "{{ route('add.favourite') }}",
                 method: "POST",
@@ -142,6 +149,7 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + id).addClass('favourite');
+                        favoriteAddedName.innerText = name;
                         favoriteAddedMessage.classList.add('show-selected-deal-message');
                         favoriteAddedButton.addEventListener('click', () => {
                             favoriteAddedMessage.classList.remove(
@@ -153,6 +161,7 @@
                     if (data['delete']) {
                         var r = (data['delete']);
                         $('#' + parseInt(id)).removeClass('favourite');
+                        favoriteRemovedName.innerText = name;
                         favoriteRemovedMessage.classList.add('show-selected-deal-message');
                         favoriteRemovedButton.addEventListener('click', () => {
                             favoriteRemovedMessage.classList.remove(
@@ -173,6 +182,27 @@
                     }
                 }
             });
+        });
+        // SHOWS APPROPRIATE SHARE RESPONSE
+        $('.share-deal').click(function () {
+            const name = $(this).attr('name');
+            const sharedMessageName = document.querySelector('#shared-message-name');
+            // console.log(name);
+            if ($('.share-deal').hasClass('user')) {
+                sharedMessageName.innerText = name;
+                shareMessage.classList.add('show-selected-deal-message');
+                shareMessageButton.addEventListener('click', () => {
+                    shareMessage.classList.remove(
+                        'show-selected-deal-message');
+                });
+            }
+            if ($('.share-deal').hasClass('guest')) {
+                guestErrorMessage.classList.add('show-selected-deal-message');
+                guestErrorButton.addEventListener('click', () => {
+                    guestErrorMessage.classList.remove(
+                        'show-selected-deal-message');
+                });
+            }
         });
     });
 
