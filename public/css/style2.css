@@ -88,7 +88,7 @@ a {
 
 .c-list__item div {
     background-color: #e6331f;
-    border-radius: 50%;
+    border-radius: 5px;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -97,7 +97,7 @@ a {
     padding: 0 5px;
     position: absolute;
     text-align: center;
-    top: calc(100% + 5px);
+    top: calc(100% + 8px);
 }
 
 .c-list__link h4:hover {
@@ -105,7 +105,7 @@ a {
     cursor: pointer;
 }
 .c-list__link.active h4 {
-    color: #e6331f;
+    border-bottom: solid 1px #e6331f;
 }
 .favBox {
     display: none;
