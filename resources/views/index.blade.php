@@ -361,11 +361,13 @@
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
         const guestErrorButton = document.querySelector('.guest-error-button');
         const shareMessageButton = document.querySelector('.share-message-button');
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        // USER FAVORITE RESPONSE
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
