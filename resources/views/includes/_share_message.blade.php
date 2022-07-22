@@ -1,6 +1,6 @@
 {{-- SHARE MESSAGE WITH SOCIAL LINKS THAT DISPLAYS ON SINGLE DEAL PAGE --}}
 <div class="share-message">
-    <h2>Share this deal</h2>
+    <h2>Share this Deal</h2>
     <p id="shared-message-name"></p>
     <div class="selected-deal-social-container">
         <a href="#" aria-label="Share with mail.">

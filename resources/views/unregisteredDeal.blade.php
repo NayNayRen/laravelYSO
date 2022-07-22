@@ -60,6 +60,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        // GUEST FAVORITE RESPONSE
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
             // alert(id);
@@ -97,7 +98,7 @@
             });
         });
     });
-
+    // GUEST COUPON RESPONSE
     $('.add-coupon').click(function () {
         var dealid = $('#deal-id').attr('value');
         var email = $('#registered-deal-email').attr('value');

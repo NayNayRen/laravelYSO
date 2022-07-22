@@ -422,7 +422,7 @@
         $('.share-deal').click(function () {
             const name = $(this).attr('name');
             const sharedMessageName = document.querySelector('#shared-message-name');
-            console.log(name);
+            // console.log(name);
             if ($('.share-deal').hasClass('user')) {
                 sharedMessageName.innerText = name;
                 shareMessage.classList.add('show-selected-deal-message');

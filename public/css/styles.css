@@ -1875,7 +1875,9 @@ body {
 }
 
 .favorite-added-message,
-.favorite-removed-message {
+.favorite-removed-message,
+.guest-error-message,
+.share-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: justify;
@@ -1988,7 +1990,8 @@ body {
 }
 
 .favorite-added-message h2,
-.favorite-removed-message h2 {
+.favorite-removed-message h2,
+.share-message h2 {
     border-bottom: solid 1px #000;
     color: #000;
     font-size: 20px;
@@ -1999,11 +2002,13 @@ body {
 }
 
 .favorite-added-message p,
-.favorite-removed-message p {
+.favorite-removed-message p,
+.share-message p {
     /* border-bottom: solid 1px #000; */
     color: #808080;
     font-size: 20px;
     padding-bottom: 5px;
+    text-align: left;
     width: 90%;
     /* outline: solid 1px blue; */
 }
@@ -2371,7 +2376,7 @@ body {
     margin: 5px;
 }
 
-.guest-error-message,
+/* .guest-error-message,
 .share-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -2393,16 +2398,16 @@ body {
     flex-direction: column;
     justify-content: space-between;
     left: 50%;
-    /* min-height: 250px; */
+    min-height: 250px;
     padding: 10px;
     position: fixed;
     top: -100%;
-    /* top: 150px; */
+    top: 150px;
     transform: translateX(-50%);
     transition: top 500ms ease;
     width: 400px;
     z-index: 4;
-}
+} */
 
 .header {
     z-index: 10;
@@ -5128,7 +5133,8 @@ html {
     }
 
     .favorite-added-message p,
-    .favorite-removed-message p {
+    .favorite-removed-message p,
+    .share-message p {
         font-size: 18px;
     }
 

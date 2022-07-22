@@ -16,20 +16,23 @@
         {{-- REGISTERED USER CONTENT --}}
         <div class="registered-user-display">
             <div class="registered-share-fav-container">
-                <button id="registered-share-deal-button" class="selected-deal-share-fav-button share-deal"><i
-                        class="fa fa-share" aria-hidden="true"></i>Share</button>
+                <button class="selected-deal-share-fav-button share-deal"
+                    name="{{ $deal['name'] }}"><i class="fa fa-share"
+                        aria-hidden="true"></i>Share</button>
                 @php
                     $check = App\Models\Favourite::where('deal_id',(string)$deal['id'])->get()->first();
                 @endphp
                 @if($check != null)
                     {{-- id="registered-favorite-deal-button" --}}
                     <button class="selected-deal-share-fav-button add-favourite"
-                        id="{{ $deal['id'] }}"><i class="fa fa-star favourite2"
+                        id="{{ $deal['id'] }}"
+                        name="{{ $deal['name'] }}"><i class="fa fa-star favourite2"
                             aria-hidden="true"></i>Favorite</button>
                 @else
                     {{-- id="registered-favorite-deal-button" --}}
                     <button class="selected-deal-share-fav-button add-favourite"
-                        id="{{ $deal['id'] }}"><i class="fa fa-star"
+                        id="{{ $deal['id'] }}"
+                        name="{{ $deal['name'] }}"><i class="fa fa-star"
                             aria-hidden="true"></i>Favorite</button>
                 @endif
             </div>
@@ -83,6 +86,8 @@
         const favoriteAddedMessage = document.querySelector('.favorite-added-message');
         const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
         const shareMessage = document.querySelector('.share-message');
+        const favoriteAddedName = document.querySelector('#favorite-added-name');
+        const favoriteRemovedName = document.querySelector('#favorite-removed-name');
 
         const favoriteAddedButton = document.querySelector('.favorite-added-button');
         const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
@@ -114,10 +119,11 @@
             $('#registered-deal-phone').attr('value', " ");
             $('#registered-deal-email').attr('value', old_email);
         });
-
+        // USER FAVORITE RESPONSE
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
-            // console.log(id);
+            const name = $(this).attr('name');
+            // console.log(name);
             $.ajax({
                 url: "{{ route('add.favourite') }}",
                 method: "POST",
@@ -132,6 +138,7 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + parseInt(id)).find('i').addClass('favourite2');
+                        favoriteAddedName.innerText = name;
                         favoriteAddedMessage.classList.add('show-selected-deal-message');
                         favoriteAddedButton.addEventListener('click', () => {
                             favoriteAddedMessage.classList.remove(
@@ -143,6 +150,7 @@
                     if (data['delete']) {
                         var r = (data['delete']);
                         $('#' + parseInt(id)).find('i').removeClass('favourite2');
+                        favoriteRemovedName.innerText = name;
                         favoriteRemovedMessage.classList.add('show-selected-deal-message');
                         favoriteRemovedButton.addEventListener('click', () => {
                             favoriteRemovedMessage.classList.remove(
@@ -151,16 +159,15 @@
                         // console.log(r);
                         // alert(r);
                     }
-                    if (data['error']) {
-                        var r = (data['error']);
-                        console.log(r);
-                        alert(r);
-                    }
                 }
             });
         });
         // SHOWS USER SHARE RESPONSE
         $('.share-deal').click(function () {
+            const name = $(this).attr('name');
+            const sharedMessageName = document.querySelector('#shared-message-name');
+            // console.log(name);
+            sharedMessageName.innerText = name;
             shareMessage.classList.add('show-selected-deal-message');
             shareMessageButton.addEventListener('click', () => {
                 shareMessage.classList.remove(
@@ -168,7 +175,7 @@
             });
         });
     });
-
+    // USER COUPON ADDED RESPONSE
     $('.add-coupon').click(function () {
         var dealid = $('#deal-id').attr('value');
         var email = $('#registered-deal-email').attr('value');
