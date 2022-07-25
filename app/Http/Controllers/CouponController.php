@@ -21,9 +21,9 @@ class CouponController extends Controller
             if($request->ajax()){
                 if(isset($request->email)){
                     $check = UserCoupon::where('deal_id',$request->dealid)->where('user_id',$user_id)->first();
-                    if($check !=null && $check->email = $request->email){
+                    if($check != null && $check->email = $request->email){
                         return response()->json([
-                            'message' =>'Coupon Already Emailed.',
+                            'emailed-already' => 'Coupon Already Emailed.',
                         ]);
                     }else{
                         $deal = Deal::where('id',$request->dealid)->first();                    
@@ -50,16 +50,16 @@ class CouponController extends Controller
                         Mail::to($request->email)->send(new CouponMail($data));
 
                         return response()->json([
-                            'message' =>'Coupon Added Successfully!',
+                            'emailed' => 'Emailed to : ' .$request->email,
                             // 'message' =>$request->email,
                         ]);    
                     }    
                 }
                 if(isset($request->phone)){
                     $check = UserCoupon::where('deal_id',$request->dealid)->where('user_id',$user_id)->first();
-                    if($check !=null && $check->phone = $request->phone){
+                    if($check != null && $check->phone = $request->phone){
                         return response()->json([
-                            'message' =>'Coupon Already Texted.',
+                            'texted-already' => 'Coupon Already Texted.',
                         ]);
                     }else{
                         $deal = Deal::where('id',$request->dealid)->first();                    
@@ -125,7 +125,7 @@ class CouponController extends Controller
                         // curl_close($ch);
 
                         return response()->json([
-                            'message' => 'phone is :'.$request->phone,
+                            'texted' => 'Texted to : '.$request->phone,
                             // 'message' => 'phone is :'.$request->phone .$result,
                             // 'message' =>$request->email,
                         ]);
@@ -135,7 +135,7 @@ class CouponController extends Controller
             }
         }else{
             return response()->json([
-                'message' =>'Kindly login first!',
+                'message' => 'Kindly login first!',
             ]);
         }
     }
@@ -156,9 +156,9 @@ class CouponController extends Controller
         
         // Check recipient_phone_numbers for multiple numbers and make it an array.
         if(stristr($recipient_phone_numbers, ',')){
-        $recipient_phone_numbers = explode(',', $recipient_phone_numbers);
+            $recipient_phone_numbers = explode(',', $recipient_phone_numbers);
         }else{
-        $recipient_phone_numbers = [$recipient_phone_numbers];
+            $recipient_phone_numbers = [$recipient_phone_numbers];
         }
 
         // Set necessary fields to be JSON encoded

@@ -6,6 +6,13 @@
     @include('includes._favorite_added_message')
     {{-- HIDDEN FAVORITED REMOVED MESSAGE --}}
     @include('includes._favorite_removed_message')
+    {{-- COUPON MESSAGE --}}
+    <div class="coupon-message">
+        <h2 class="coupon-heading"></h2>
+        <p class="coupon-message-name">{{ $deal['name'] }}</p>
+        <button type="button" class="message-button coupon-button">OK</button>
+        <a href={{ route('deals.index') }}>Show me more deals</a>
+    </div>
     <div class="selected-deal-container">
         {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
@@ -180,7 +187,10 @@
         var dealid = $('#deal-id').attr('value');
         var email = $('#registered-deal-email').attr('value');
         var phone = $('#registered-deal-phone').attr('value');
-        console.log(dealid);
+        const couponMessage = document.querySelector('.coupon-message');
+        const couponHeading = document.querySelector('.coupon-heading');
+        const couponButton = document.querySelector('.coupon-button');
+        // console.log(dealid);
         $.ajax({
             url: "{{ route('add.coupon') }}",
             method: "POST",
@@ -193,9 +203,35 @@
                 phone: phone
             },
             success: function (data) {
-                if (data['message']) {
+                if (data['emailed-already']) {
                     var r = (data['message']);
-                    alert(r);
+                    couponMessage.classList.add('show-selected-deal-message');
+                    couponHeading.innerText = 'Coupon Already Emailed.';
+                    couponButton.addEventListener('click', () => {
+                        couponMessage.classList.remove('show-selected-deal-message');
+                    });
+                    // alert(r);
+                }
+                if (data['emailed']) {
+                    couponMessage.classList.add('show-selected-deal-message');
+                    couponHeading.innerText = 'Coupon Successfully Emailed!';
+                    couponButton.addEventListener('click', () => {
+                        couponMessage.classList.remove('show-selected-deal-message');
+                    });
+                }
+                if (data['texted-already']) {
+                    couponMessage.classList.add('show-selected-deal-message');
+                    couponHeading.innerText = 'Coupon Already Texted.';
+                    couponButton.addEventListener('click', () => {
+                        couponMessage.classList.remove('show-selected-deal-message');
+                    });
+                }
+                if (data['texted']) {
+                    couponMessage.classList.add('show-selected-deal-message');
+                    couponHeading.innerText = 'Coupon Successfully Texted!';
+                    couponButton.addEventListener('click', () => {
+                        couponMessage.classList.remove('show-selected-deal-message');
+                    });
                 }
             }
         });

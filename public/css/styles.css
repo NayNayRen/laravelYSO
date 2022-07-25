@@ -1580,6 +1580,20 @@ body {
     /* outline: solid 1px blue; */
 }
 
+.coupon-message a,
+.favorite-added-message a,
+.favorite-removed-message a {
+    color: #000;
+    margin-top: 10px;
+    transition: color 150ms ease;
+}
+
+.coupon-message a:hover,
+.favorite-added-message a:hover,
+.favorite-removed-message a:hover {
+    color: #808080;
+}
+
 .dashboard {
     -webkit-transition: opacity 250ms ease;
     background-color: #808080;
@@ -1874,6 +1888,26 @@ body {
     padding: 0 20px 5px 0;
 }
 
+.coupon-message {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    min-height: 250px;
+    padding: 10px;
+    position: fixed;
+    top: -100%;
+    /* top: 150px; */
+    transform: translateX(-50%);
+    transition: top 500ms ease;
+    width: 400px;
+    z-index: 4;
+}
+
 .favorite-added-message,
 .favorite-removed-message,
 .guest-error-message,
@@ -1907,18 +1941,6 @@ body {
     transition: top 500ms ease;
     width: 400px;
     z-index: 4;
-}
-
-.favorite-added-message a,
-.favorite-removed-message a {
-    color: #000;
-    margin-top: 10px;
-    transition: color 150ms ease;
-}
-
-.favorite-added-message a:hover,
-.favorite-removed-message a:hover {
-    color: #808080;
 }
 
 .favorite-added-message div,
@@ -1989,6 +2011,7 @@ body {
     width: 100%;
 }
 
+.coupon-message h2,
 .favorite-added-message h2,
 .favorite-removed-message h2,
 .share-message h2 {
@@ -2001,6 +2024,7 @@ body {
     /* outline: solid 1px blue; */
 }
 
+.coupon-message p,
 .favorite-added-message p,
 .favorite-removed-message p,
 .share-message p {
@@ -4990,6 +5014,12 @@ html {
         margin-bottom: 10px;
     }
 
+    .coupon-message a:hover,
+    .favorite-added-message a:hover,
+    .favorite-removed-message a:hover {
+        color: #000;
+    }
+
     .dashboard-close-button:hover,
     .map-close-button:hover {
         color: #fff;
@@ -5659,6 +5689,7 @@ html {
         top: 90px;
     }
 
+    .coupon-message,
     .favorite-added-message,
     .favorite-removed-message {
         border-radius: 0;
