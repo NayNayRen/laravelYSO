@@ -153,6 +153,7 @@
                         favoriteAddedButton.addEventListener('click', () => {
                             favoriteAddedMessage.classList.remove(
                                 'show-selected-deal-message');
+                            // location.reload();
                         });
                         // console.log(r);
                         // alert(r);
@@ -165,6 +166,7 @@
                         favoriteRemovedButton.addEventListener('click', () => {
                             favoriteRemovedMessage.classList.remove(
                                 'show-selected-deal-message');
+                            // location.reload();
                         });
                         // console.log(r);
                         // alert(r);
