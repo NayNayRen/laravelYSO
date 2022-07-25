@@ -56,7 +56,7 @@ class CouponController extends Controller
                         Mail::to($request->email)->send(new CouponMail($data));
 
                         return response()->json([
-                            'message' =>'Coupaon Added Successfully!',
+                            'message' =>'Coupon Added Successfully!',
                             // 'message' =>$request->email,
                         ]);    
                         }

@@ -10,22 +10,18 @@ class FavouriteController extends Controller
     public function favouriteDeal(Request $request)  
     {
         // dd ($request->all());
-        if(auth()->user())
-        {   
+        if(auth()->user()){   
             $user_id = auth()->user()->id;
             
-            if ($request->ajax()) {
+            if ($request->ajax()){
 
                 $check = Favourite::where('deal_id',$request->id)->where('user_id',$user_id)->first();
-                if($check!=null)
-                {
+                if($check!=null){
                     $check->delete();    
                     return response()->json([
-                        'delete' =>'Removed form Favorite list!',
+                        'delete' =>'Removed from Favorites list!',
                     ]);
-                }
-                else
-                {
+                }else{
                     $new  = new Favourite;
                     $new->deal_id = $request->id;
                     $new->user_id = $user_id;
@@ -35,9 +31,7 @@ class FavouriteController extends Controller
                     ]);
                 }
             }
-        }
-        else
-        {
+        }else{
             return response()->json([
                 'error' =>'Kindly login first!',
             ]);

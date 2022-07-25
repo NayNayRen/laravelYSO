@@ -15,23 +15,17 @@ class CouponController extends Controller
     {
         // return $request->all();
 
-        if(auth()->user())
-        {   
+        if(auth()->user()){   
             $user_id = auth()->user()->id;
             
-            if ($request->ajax()) {
-
-                if( isset($request->email))
-                {
+            if($request->ajax()){
+                if(isset($request->email)){
                     $check = UserCoupon::where('deal_id',$request->dealid)->where('user_id',$user_id)->first();
-                    if($check !=null && $check->email = $request->email)
-                    {
+                    if($check !=null && $check->email = $request->email){
                         return response()->json([
                             'message' =>'Coupon Already Sended On Mail.',
                         ]);
-                    }
-                    else
-                    {
+                    }else{
                         $deal = Deal::where('id',$request->dealid)->first();                    
                         $new  = new UserCoupon;
                         $new->deal_id = $request->dealid;
@@ -56,24 +50,18 @@ class CouponController extends Controller
                         Mail::to($request->email)->send(new CouponMail($data));
 
                         return response()->json([
-                            'message' =>'Coupaon Added Successfully!',
+                            'message' =>'Coupon Added Successfully!',
                             // 'message' =>$request->email,
                         ]);    
-                        }
-                        
+                    }    
                 }
-
-                if( isset($request->phone))
-                {
+                if(isset($request->phone)){
                     $check = UserCoupon::where('deal_id',$request->dealid)->where('user_id',$user_id)->first();
-                    if($check !=null && $check->phone = $request->phone)
-                    {
+                    if($check !=null && $check->phone = $request->phone){
                         return response()->json([
                             'message' =>'Coupon Already Texted.',
                         ]);
-                    }
-                    else
-                    {
+                    }else{
                         $deal = Deal::where('id',$request->dealid)->first();                    
                         $new  = new UserCoupon;
                         $new->deal_id = $request->dealid;
@@ -85,7 +73,7 @@ class CouponController extends Controller
                         $nxt =  Carbon::createFromFormat('Y-m-d H:i:s', $new->created_at);
                         $route = route('deals.show',$deal->id);
                         $recipient = '+1    '.str_replace('-','',$request->phone);
-                        $message_to_send = "Coupon Details \n".$deal->name."\n Click the link Bellow to find Dtials \n".$route. "\n Coupon will be Expired After 24 Hours at: ".$nxt;
+                        $message_to_send = "Coupon Details \n".$deal->name."\n Click the link below to find details \n".$route. "\n Coupon will expire after 24 Hours at: ".$nxt;
         
                         $this->sendSms($recipient,$message_to_send);
                         
@@ -137,16 +125,14 @@ class CouponController extends Controller
                         // curl_close($ch);
 
                         return response()->json([
-                            'message' => 'phone is :'.$request->phone.$result,
+                            'message' => 'phone is :'.$request->phone,
                             // 'message' =>$request->email,
                         ]);
                     }
                 // }
                 }
             }
-        }
-        else
-        {
+        }else{
             return response()->json([
                 'message' =>'Kindly login first!',
             ]);
