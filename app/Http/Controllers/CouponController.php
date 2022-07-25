@@ -22,6 +22,7 @@ class CouponController extends Controller
                 if(isset($request->email)){
                     $check = UserCoupon::where('deal_id',$request->dealid)->where('user_id',$user_id)->first();
                     if($check != null && $check->email = $request->email){
+                        // $check->delete();
                         return response()->json([
                             'emailed-already' => 'Coupon Already Emailed.',
                         ]);
@@ -58,6 +59,7 @@ class CouponController extends Controller
                 if(isset($request->phone)){
                     $check = UserCoupon::where('deal_id',$request->dealid)->where('user_id',$user_id)->first();
                     if($check != null && $check->phone = $request->phone){
+                        // $check->delete();
                         return response()->json([
                             'texted-already' => 'Coupon Already Texted.',
                         ]);

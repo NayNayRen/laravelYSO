@@ -16,7 +16,7 @@ class FavouriteController extends Controller
             if ($request->ajax()){
 
                 $check = Favourite::where('deal_id',$request->id)->where('user_id',$user_id)->first();
-                if($check!=null){
+                if($check != null){
                     $check->delete();    
                     return response()->json([
                         'delete' =>'Removed from Favorites list!',
