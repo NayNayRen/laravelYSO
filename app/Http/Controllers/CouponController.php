@@ -23,7 +23,7 @@ class CouponController extends Controller
                     $check = UserCoupon::where('deal_id',$request->dealid)->where('user_id',$user_id)->first();
                     if($check !=null && $check->email = $request->email){
                         return response()->json([
-                            'message' =>'Coupon Already Sended On Mail.',
+                            'message' =>'Coupon Already Emailed.',
                         ]);
                     }else{
                         $deal = Deal::where('id',$request->dealid)->first();                    
@@ -126,6 +126,7 @@ class CouponController extends Controller
 
                         return response()->json([
                             'message' => 'phone is :'.$request->phone,
+                            // 'message' => 'phone is :'.$request->phone .$result,
                             // 'message' =>$request->email,
                         ]);
                     }
