@@ -51,7 +51,7 @@ class CouponController extends Controller
                         Mail::to($request->email)->send(new CouponMail($data));
 
                         return response()->json([
-                            'emailed' => 'Emailed to : ' .$request->email,
+                            'emailed' => 'Email Sent Successfully!',
                             // 'message' =>$request->email,
                         ]);    
                     }    
@@ -127,7 +127,7 @@ class CouponController extends Controller
                         // curl_close($ch);
 
                         return response()->json([
-                            'texted' => 'Texted to : '.$request->phone,
+                            'texted' => 'Text Sent Successfully!',
                             // 'message' => 'phone is :'.$request->phone .$result,
                             // 'message' =>$request->email,
                         ]);
