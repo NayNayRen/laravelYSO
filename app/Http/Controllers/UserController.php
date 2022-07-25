@@ -199,7 +199,7 @@ class UserController extends Controller
             // $t = 'true';
         // }
         // return response()->json([
-        //     'success' =>'Verification Code Sended on '.$user->count(),
+        //     'success' =>'Verification Code Sent On '.$user->count(),
         // ]);
         if($user != null){
             $user->email_code = $code;
@@ -238,7 +238,7 @@ class UserController extends Controller
 
     // send via text message, used in verification
     public function sendSms($recipient,$message_to_send){
-        //text ams starts here
+        //text sms starts here
         $service_plan_id = env('SERVICE_PLAN_ID');
         $bearer_token = env('BEARER_TOCKEN');
         //Any phone number assigned to your API
