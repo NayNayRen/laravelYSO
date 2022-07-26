@@ -2108,7 +2108,7 @@ body {
 }
 
 .flash-message-user {
-    -webkit-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.75);
+    /* -webkit-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.75);
     background-color: #e6331f;
     border-bottom: solid 1px #000;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.75);
@@ -2121,7 +2121,27 @@ body {
     text-shadow: 0 2px 5px #000;
     top: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 5; */
+
+    align-items: center;
+    background-color: #808080;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #000;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    justify-content: center;
+    left: 50%;
+    min-height: 250px;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    /* top: -100%; */
+    top: 150px;
+    transform: translateX(-50%);
+    transition: top 500ms ease;
+    width: 400px;
+    z-index: 4;
 }
 
 .footer {
