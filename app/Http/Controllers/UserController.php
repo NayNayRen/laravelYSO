@@ -11,14 +11,14 @@ use App\Mail\VerifyMail;
 
 class UserController extends Controller
 {
-    // show the registration form
+    // SHOW THE REGISTRATION FORM
     public function showRegistrationForm(){
         return view('user_pages/register', [
             'pageTitle' => 'Register With YSO'
         ]);
     }
 
-    // register a new user 
+    // REGISTER A NEW USER
     public function registerUser(Request $request){
         $formInputs = $request->validate([
             'firstName' => ['required'],
@@ -32,20 +32,17 @@ class UserController extends Controller
         // create new user
         $user = User::create($formInputs);
         // return $user->id;
-        // auto log in if successfully created
-        // auth()->login($user);
-        // return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have registered and are now logged in.');
         return redirect(route('login.showVerifyForm',$user->id))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered, kindly verify to continue.');
     }
 
-    // show the log in form
+    // SHOW THE LOG IN FORM
     public function showLoginForm(){
         return view('user_pages/login', [
             'pageTitle' => 'Log In'
         ]);
     }
 
-    // log user in
+    // LOG A USER IN
     public function loginUser(Request $request, User $user){
         $formInputs = $request->validate([
             'email' => ['required', 'email'],
@@ -71,7 +68,7 @@ class UserController extends Controller
         return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
     }
 
-    // log user in
+    // LOG A USER IN
     // public function loginUser(Request $request, User $user){
     //     $formInputs = $request->validate([
     //         'email' => ['required', 'email'],
@@ -88,16 +85,17 @@ class UserController extends Controller
     //     }
     // }
 
-    // show the verify form
+    // SHOW THE VERIFY FORM
     public function showVerifyForm($id){
         $user = User::find($id);
         // return $user;
         return view('user_pages/verify',compact('user'), ['pageTitle' => 'Verify User']);
     }
 
-    // verifies user via email or phone #
+    // VERIFY USER VIA EMAIL OR PHONE
     public function verifyForm(Request $request,$id){
         $user = User::find($id);
+        // verify by email
         $email = str_contains($request->verify_by ,'@');
         if($email){
             if($user->email_code !==null && $user->email_code == $request->verification_code){
@@ -108,6 +106,7 @@ class UserController extends Controller
                 return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
             }
         }
+        // verify by phone
         $phone = str_contains($request->verify_by ,'-');
         if($phone){
             if($user->phone_code !==null && $user->phone_code == $request->verification_code){
@@ -122,12 +121,47 @@ class UserController extends Controller
     
     }
 
-    // show the forgot password form
+    // SEND VERIFICATION CODE TO EMAIL OR PHONE
+    public function sendCode(Request $request){
+        $code = rand(100000,999999);
+        $user = User::find($request->userid);
+        // via email
+        $email = str_contains($request->id ,'@');
+        if($email){
+            $user->email_code = $code;
+            $user->save();
+            $data = array(
+                'subject' => 'Email Verifiction Code',
+                'code' => $code
+            );
+            // $mail = 'shahzadanouman@hotmail.com';
+            Mail::to($request->id)->send(new VerifyMail($data));
+            return response()->json([
+                'success' => 'Verification Code Emailed '.$request->id,
+            ]);
+        }
+        // via phone
+        $phone = str_contains($request->id ,'-');
+        if($phone){
+            $user->phone_code = $code;
+            $user->save();
+            $recipient = '+1'.str_replace('-','',$request->id);
+            // return $recipient;
+            // $recipient = '+18135012075';
+            $message_to_send = "Your Phone Verification Code is : ".$code;
+            $this->sendSms($recipient,$message_to_send);
+            return response()->json([
+                'success' => 'Verification Code Texted '.$recipient,
+            ]);
+        } 
+    }
+
+    // SHOW THE FOGOT PASSWORD FORM
     public function showForgotForm(){
         return view('user_pages/forgot', ['pageTitle' => 'Forgot Password']);
     }
 
-    // send reset password code
+    // CHECK USER INFO AND PASSWORD RESET CODE
     public function forgotForm(Request $request){
         $user = User::where('email',$request->email)->first();
         if($user != null && $user->email_code == $request->verification_code){
@@ -138,7 +172,7 @@ class UserController extends Controller
         }
     }
 
-    // update new password
+    // UPDATE NEW PASSWORD
     public function savePasswrod(Request $request){
         $user = User::find($request->user_id);
         if($request->password != null){
@@ -156,40 +190,7 @@ class UserController extends Controller
         return $request;
     }
 
-    // send verification code to either email or phone
-    public function sendCode(Request $request){
-        $code = rand(100000,999999);
-        $user = User::find($request->userid);
-        $email = str_contains($request->id ,'@');
-        if($email){
-            $user->email_code = $code;
-            $user->save();
-            $data = array(
-                'subject' => 'Email Verifiction Code',
-                'code' => $code
-            );
-            // $mail = 'shahzadanouman@hotmail.com';
-            Mail::to($request->id)->send(new VerifyMail($data));
-            return response()->json([
-                'success' => 'Verification Code Emailed '.$request->id,
-            ]);
-        }
-        $phone = str_contains($request->id ,'-');
-        if($phone){
-            $user->phone_code = $code;
-            $user->save();
-            $recipient = '+1'.str_replace('-','',$request->id);
-            // return $recipient;
-            // $recipient = '+18135012075';
-            $message_to_send = "Your Phone Verification Code is : ".$code;
-            $this->sendSms($recipient,$message_to_send);
-            return response()->json([
-                'success' => 'Verification Code Texted '.$recipient,
-            ]);
-        } 
-    }
-
-    // send via email to reset password
+    // SEND PASSWORD RESET CODE VIA EMAIL
     public function sendResetCode(Request $request){
         $code = rand(100000,999999);
         // $user = User::find($request->userid);
@@ -236,7 +237,7 @@ class UserController extends Controller
         // }
     }
 
-    // send via text message, used in verification
+    // CONNECTION TO SEND OTP VIA PHONE
     public function sendSms($recipient,$message_to_send){
         //text sms starts here
         $service_plan_id = env('SERVICE_PLAN_ID');
@@ -283,8 +284,8 @@ class UserController extends Controller
         // removes authentication from the users session
         auth()->logout();
         // recomended to invalidate the users session
-        // and regen their @csrf token
         $request->session()->invalidate();
+        // and regen their @csrf token
         $request->session()->regenerateToken();
         return redirect('/')->with('flash-message-user', 'You have now logged out.');
     }
