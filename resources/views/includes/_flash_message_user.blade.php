@@ -25,7 +25,7 @@
             // after displaying for 7000ms(7s) message hides itself
             setTimeout(() => {
                 $('.flash-message-user').css('top', '-100%');
-            }, 6000);
+            }, 5000);
         }, 250);
 
     </script>
