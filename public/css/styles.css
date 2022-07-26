@@ -3730,9 +3730,9 @@ html {
 }
 
 .users-form-group-error {
-    bottom: 0;
+    bottom: 5px;
     color: #e6331f;
-    font-size: 14px;
+    font-size: 12px;
     left: 0;
     padding: 2px 0;
     position: absolute;
@@ -5910,9 +5910,9 @@ html {
         padding: 7px;
     }
 
-    .users-form-group-error {
+    /* .users-form-group-error {
         bottom: 0;
-    }
+    } */
 
     .users-name-register {
         -ms-flex-direction: column;
