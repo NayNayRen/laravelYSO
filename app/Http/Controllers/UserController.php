@@ -59,7 +59,7 @@ class UserController extends Controller
                     return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
                 }
             }else{
-                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your email or phone # to log in.');
+                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your email or phone to log in.');
             }
         }
         // if log in fails stay on same page and show one error
@@ -112,7 +112,7 @@ class UserController extends Controller
             if($user->phone_code !==null && $user->phone_code == $request->verification_code){
                 $user->phone_verified = 1;
                 $user->save();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone #.');
+                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone.');
             }else{
                 return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
             }
@@ -137,7 +137,7 @@ class UserController extends Controller
             // $mail = 'shahzadanouman@hotmail.com';
             Mail::to($request->id)->send(new VerifyMail($data));
             return response()->json([
-                'success' => 'Verification Code Emailed '.$request->id,
+                'success' => 'Verification Code Emailed To '.$request->id,
             ]);
         }
         // via phone
@@ -151,9 +151,14 @@ class UserController extends Controller
             $message_to_send = "Your Phone Verification Code is : ".$code;
             $this->sendSms($recipient,$message_to_send);
             return response()->json([
-                'success' => 'Verification Code Texted '.$recipient,
+                'success' => 'Verification Code Texted To '.$recipient,
             ]);
-        } 
+        }
+        if($email == null || $phone == null){
+            return response()->json([
+                'error' => 'No method was selected.',
+            ]);
+        }
     }
 
     // SHOW THE FOGOT PASSWORD FORM
@@ -168,7 +173,7 @@ class UserController extends Controller
             $user_id = $user->id;
             return view('user_pages/password',compact('user_id'));
         }else{
-            return redirect()->back()->with('flash-message-user','Hello ' . ucfirst($user->firstName) . ' Verification code not matched.');
+            return redirect()->back()->with('flash-message-user','Hello ' . ucfirst($user->firstName) . ', Verification Code Not Matched.');
         }
     }
 

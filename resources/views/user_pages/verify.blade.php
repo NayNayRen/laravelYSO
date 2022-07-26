@@ -17,9 +17,7 @@
                     <option value="{{ $user->email }}">{{ $user->email ?? email }} </option>
                     <option value="{{ $user->phone }}">{{ $user->phone ?? phone }}</option>
                 </select>
-                @error('verify_by')
-                    <span class="users-form-group-error">{{ $message }}</span>
-                @enderror
+                <span class="users-form-group-error"></span>
             </div>
             {{-- OTP BUTTON --}}
             {{-- <div class="users-form-group">
@@ -36,9 +34,6 @@
                 {{-- SHOW/HIDE PASSWORD EYE --}}
                 <i id="hide-password" class="fa fa-eye-slash" aria-hidden="true" onclick="hide()"></i>
                 <i id="show-password" class="fa fa-eye" aria-hidden="true" onclick="show()"></i>
-                @error('verification_code')
-                    <span class="users-form-group-error">{{ $message }}</span>
-                @enderror
             </div>
             {{-- SUBMIT BUTTON --}}
             {{-- <button type="submit" class='verify_btn submit' value="Verify">Verify</button> --}}
@@ -64,7 +59,7 @@
         $('#get_otp').click(function () {
             var id = $('#verify_by').val();
             var userid = '{{ $user->id }}';
-            console.log(id);
+            // console.log(id);
             $.ajax({
                 url: "{{ route('send.code') }}",
                 method: "POST",
@@ -80,13 +75,15 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#get_otp').addClass('d-none');
-                        console.log(r);
-                        alert(r);
+                        $('.users-form-group-error').text(r);
+                        // console.log(r);
+                        // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        console.log(r);
-                        alert(r);
+                        $('.users-form-group-error').text(r);
+                        // console.log('empty');
+                        // alert(r);
                     }
                 }
             });

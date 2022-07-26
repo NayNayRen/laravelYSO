@@ -14,9 +14,7 @@
                 <label for="email">Email</label><br>
                 <span class="gray-text password-message">smith@mail.com</span>
                 <input type="email" name="email" id="email" value="{{ old('email') }}">
-                @error('email')
-                    <span class="users-form-group-error">{{ $message }}</span>
-                @enderror
+                <span class="users-form-group-error"></span>
             </div>
             {{-- OTP BUTTON --}}
             {{-- <div class="users-form-group">
@@ -104,13 +102,15 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#get_otp').addClass('d-none');
-                        console.log(r);
-                        alert(r);
+                        $('.users-form-group-error').text(r);
+                        // console.log(r);
+                        // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        console.log(r);
-                        alert(r);
+                        $('.users-form-group-error').text(r);
+                        // console.log(r);
+                        // alert(r);
                     }
                 }
             });
