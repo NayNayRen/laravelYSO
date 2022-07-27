@@ -166,12 +166,12 @@ class UserController extends Controller
         return view('user_pages/forgot', ['pageTitle' => 'Forgot Password']);
     }
 
-    // CHECK USER INFO AND PASSWORD RESET CODE
+    // CHECK USER INFO AND PASSWORD RESET CODE, USED IN CHANGE
     public function forgotForm(Request $request){
         $user = User::where('email',$request->email)->first();
         if($user != null && $user->email_code == $request->verification_code){
             $user_id = $user->id;
-            return view('user_pages/password',compact('user_id'));
+            return view('user_pages/password',compact('user_id'), ['pageTitle' => 'Change Password']);
             // added to fix empty email submission
         }if($request->email == null){
             return redirect()->back()->with('flash-message-user', 'No Email Was Entered.');
@@ -184,17 +184,17 @@ class UserController extends Controller
     // UPDATE NEW PASSWORD
     public function savePasswrod(Request $request){
         $user = User::find($request->user_id);
+        // dd($request->password);
         if($request->password != null){
             if($request->password == $request->password_confirmation){
-                // $user = User::find($request->user_id);
                 $user->password = bcrypt($request->password);
                 $user->update();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
             }else{
-                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully!.');
+                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
             }
         }else{
-            return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', kindly type a new password.');    
+            return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', please type and confirm a new password.');    
         }
         return $request;
     }

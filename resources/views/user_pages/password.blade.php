@@ -4,13 +4,15 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Create New Password</h1>
+        <span class="users-form-greeting gray-text">Continue by creating a new password below.</span>
+        <span class="users-form-greeting gray-text">Followed by confirming that new password.</span>
         {{-- SAVE PASSWORD FORM --}}
         <form action={{ route('login.savepasswrod') }} method="POST">
             @csrf
             <input type="hidden" name="user_id" value="{{ $user_id }}">
             {{-- INITIAL PASSWORD --}}
             <div class="users-form-group password-register">
-                <label for="password">Password</label><br>
+                <label for="password">New Password</label><br>
                 <span class="gray-text password-message">At least 8 characters long.</span>
                 <input type="password" name="password" id="password">
                 <div class="password-length-icon">
@@ -30,8 +32,8 @@
                     <span class="users-form-group-error">{{ $message }}</span>
                 @enderror
             </div>
-            {{-- SUBMIT BUTTON --}}
-            <button type="submit" class='verify_btn submit' value="Verify">Save</button>
+            {{-- UPDATE PASSWORD BUTTON --}}
+            <input type="submit" class='users-buttons submit' value="Update Password"></input>
         </form>
         {{-- DISCLAIMER --}}
         <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
