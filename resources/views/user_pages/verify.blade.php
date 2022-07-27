@@ -110,7 +110,20 @@
                 }
             });
         });
-
+        // FLASH MESSAGE DISPLAY WITH TIMER TO REMOVE
+        // waits for 250ms then shows message
+        setTimeout(() => {
+            if ($(window).width() > 400) {
+                $('.flash-message-user').css('top', '150px');
+            }
+            if ($(window).width() <= 400) {
+                $('.flash-message-user').css('top', '0');
+            }
+            // after displaying for 7000ms(7s) message hides itself
+            setTimeout(() => {
+                $('.flash-message-user').css('top', '-100%');
+            }, 5000);
+        }, 250);
     });
 
 </script>
