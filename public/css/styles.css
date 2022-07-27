@@ -2107,7 +2107,8 @@ body {
     cursor: pointer;
 }
 
-.flash-message-user {
+.flash-message-user,
+.otp-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: distribute;
@@ -2155,14 +2156,16 @@ body {
     z-index: 5; */
 }
 
-.flash-message-user div {
+.flash-message-user div,
+.otp-message div {
     background-color: #000;
     border-radius: 5px;
     padding: 20px 5px;
     width: 90%;
 }
 
-.flash-message-user p {
+.flash-message-user p,
+.otp-message p {
     width: 90%;
 }
 
@@ -5751,7 +5754,8 @@ html {
         width: 75px;
     }
 
-    .flash-message-user {
+    .flash-message-user,
+    .otp-message {
         border-radius: 0;
         font-size: 18px;
         min-height: 200px;
@@ -5759,12 +5763,14 @@ html {
         width: 100%;
     }
 
-    .flash-message-user div {
+    .flash-message-user div,
+    .otp-message div {
         border-radius: 0;
         width: 100%;
     }
 
-    .flash-message-user p {
+    .flash-message-user p,
+    .otp-message p {
         padding: 5px 10px;
         width: 100%;
     }

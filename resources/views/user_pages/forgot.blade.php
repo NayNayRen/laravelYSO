@@ -1,5 +1,7 @@
 @include('includes._header_alternate')
 <div class="main">
+    {{-- OTP SENT MESSAGE --}}
+    @include('includes._otp_message')
     {{-- USER LOG IN OR OUT MESSAGE --}}
     @include('includes._flash_message_user')
     <div class="users">
@@ -102,13 +104,39 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#get_otp').addClass('d-none');
-                        $('.users-form-group-error').text(r);
+                        $('.otp-method').text(r);
+                        setTimeout(() => {
+                            if ($(window).width() > 400) {
+                                $('.otp-message').css('top', '150px');
+                            }
+                            if ($(window).width() <= 400) {
+                                $('.otp-message').css('top', '0');
+                            }
+                            // after displaying for 7000ms(7s) message hides itself
+                            setTimeout(() => {
+                                $('.otp-message').css('top',
+                                    '-100%');
+                            }, 5000);
+                        }, 50);
                         // console.log(r);
                         // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        $('.users-form-group-error').text(r);
+                        $('.otp-method').text(r);
+                        setTimeout(() => {
+                            if ($(window).width() > 400) {
+                                $('.otp-message').css('top', '150px');
+                            }
+                            if ($(window).width() <= 400) {
+                                $('.otp-message').css('top', '0');
+                            }
+                            // after displaying for 7000ms(7s) message hides itself
+                            setTimeout(() => {
+                                $('.otp-message').css('top',
+                                    '-100%');
+                            }, 5000);
+                        }, 50);
                         // console.log(r);
                         // alert(r);
                     }

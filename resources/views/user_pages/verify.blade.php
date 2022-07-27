@@ -1,17 +1,19 @@
 @include('includes._header_alternate')
 <div class="main">
+    {{-- OTP SENT MESSAGE --}}
+    @include('includes._otp_message')
     {{-- USER LOG IN OR OUT MESSAGE --}}
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Verify Your Account</h1>
         <span class="users-form-greeting gray-text">Continue signing in by choosing a varification method.</span>
-        <span class="users-form-greeting gray-text">Followed by entering the one time password.</span>
+        <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
         {{-- VERIFICATION FORM --}}
         <form action={{ route('login.VerifyForm',$user->id  ) }} method="POST">
             @csrf
             {{-- EMAIL AND PHONE SELECTION --}}
             <div class="users-form-group">
-                <label for="verify_by" class="verify_by">Varification Method</label><br>
+                <label for="verify_by" class="verify_by">Verification Method</label><br>
                 <select name="verify_by" id="verify_by" class="auth-select">
                     <option selected disabled>Select one to get the code</option>
                     <option value="{{ $user->email }}">{{ $user->email ?? email }} </option>
@@ -75,13 +77,39 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#get_otp').addClass('d-none');
-                        $('.users-form-group-error').text(r);
+                        $('.otp-method').text(r);
+                        setTimeout(() => {
+                            if ($(window).width() > 400) {
+                                $('.otp-message').css('top', '150px');
+                            }
+                            if ($(window).width() <= 400) {
+                                $('.otp-message').css('top', '0');
+                            }
+                            // after displaying for 7000ms(7s) message hides itself
+                            setTimeout(() => {
+                                $('.otp-message').css('top',
+                                    '-100%');
+                            }, 5000);
+                        }, 50);
                         // console.log(r);
                         // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        $('.users-form-group-error').text(r);
+                        $('.otp-method').text(r);
+                        setTimeout(() => {
+                            if ($(window).width() > 400) {
+                                $('.otp-message').css('top', '150px');
+                            }
+                            if ($(window).width() <= 400) {
+                                $('.otp-message').css('top', '0');
+                            }
+                            // after displaying for 7000ms(7s) message hides itself
+                            setTimeout(() => {
+                                $('.otp-message').css('top',
+                                    '-100%');
+                            }, 5000);
+                        }, 50);
                         // console.log('empty');
                         // alert(r);
                     }

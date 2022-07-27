@@ -59,7 +59,7 @@ class UserController extends Controller
                     return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
                 }
             }else{
-                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', kindly verify your email or phone to log in.');
+                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', please verify with your Email or Phone to log in.');
             }
         }
         // if log in fails stay on same page and show one error
@@ -103,7 +103,7 @@ class UserController extends Controller
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email.');
             }else{
-                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
             }
         }
         // verify by phone
@@ -114,14 +114,14 @@ class UserController extends Controller
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone.');
             }else{
-                return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
             }
         }
-        return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+        return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
     
     }
 
-    // SEND VERIFICATION CODE TO EMAIL OR PHONE
+    // SEND VERIFICATION CODE TO EMAIL OR PHONE, USED ON THE VERIFY PAGE
     public function sendCode(Request $request){
         $code = rand(100000,999999);
         $user = User::find($request->userid);
@@ -156,7 +156,7 @@ class UserController extends Controller
         }
         if($email == null || $phone == null){
             return response()->json([
-                'error' => 'No method was selected.',
+                'error' => 'No Method Was Selected.',
             ]);
         }
     }
@@ -172,8 +172,12 @@ class UserController extends Controller
         if($user != null && $user->email_code == $request->verification_code){
             $user_id = $user->id;
             return view('user_pages/password',compact('user_id'));
+            // added to fix empty email submission
+        }if($request->email == null){
+            return redirect()->back()->with('flash-message-user', 'No Email Was Entered.');
         }else{
-            return redirect()->back()->with('flash-message-user','Hello ' . ucfirst($user->firstName) . ', Verification Code Not Matched.');
+            // removed user display data to fix breakage
+            return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
         }
     }
 
@@ -195,7 +199,7 @@ class UserController extends Controller
         return $request;
     }
 
-    // SEND PASSWORD RESET CODE VIA EMAIL
+    // SEND PASSWORD RESET CODE VIA EMAIL, USED ON CHANGE PASSWORD PAGE
     public function sendResetCode(Request $request){
         $code = rand(100000,999999);
         // $user = User::find($request->userid);
@@ -222,7 +226,7 @@ class UserController extends Controller
             ]);
         }else{
             return response()->json([
-                'error' => 'Email' .$request->value.' Not Found.',
+                'error' => 'Email ' .$request->email.' Not Found.',
             ]);
         }
         // $phone = str_contains($request->id ,'-');
