@@ -16,7 +16,7 @@
                 <label for="verify_by" class="verify_by">Verification Method</label><br>
                 <select name="verify_by" id="verify_by" class="auth-select">
                     <option selected disabled>Select one to get the code</option>
-                    <option value="{{ $user->email }}">{{ $user->email ?? email }} </option>
+                    <option value="{{ $user->email }}">{{ $user->email ?? email }}</option>
                     <option value="{{ $user->phone }}">{{ $user->phone ?? phone }}</option>
                 </select>
                 <span class="users-form-group-error"></span>

@@ -130,15 +130,11 @@ a {
     padding: 0 10px;
     width: 100%;
 }
-.auth-select option {
-    background-color: #fff;
-    border-radius: 5px;
-    font-size: 16px;
-    height: 38px;
-    margin-bottom: 28px;
-    padding: 10px 10px;
-    width: 100%;
+
+.auth-select:hover {
+    cursor: pointer;
 }
+
 .verify_by {
     margin-bottom: 5px;
 }

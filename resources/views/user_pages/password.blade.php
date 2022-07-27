@@ -4,7 +4,7 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Create New Password</h1>
-        {{-- SIGN IN FORM --}}
+        {{-- SAVE PASSWORD FORM --}}
         <form action={{ route('login.savepasswrod') }} method="POST">
             @csrf
             <input type="hidden" name="user_id" value="{{ $user_id }}">
@@ -34,28 +34,11 @@
             <button type="submit" class='verify_btn submit' value="Verify">Save</button>
         </form>
         {{-- DISCLAIMER --}}
-        <span class="users-form-disclaimer gray-text">By clicking Verify, you agree to our
-            <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-                Statement
-            </a>
-        </span>
+        <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
+            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
+                Statement</a>.</span>
     </div>
 </div>
-
-{{-- var id = $('#verify_by').val();
-        var value = '';
-        if(id=='email')
-        {
-            value = $('#email').val();
-        }
-        if(id=='phone')
-        {
-            value = $('#phone').val();
-        }
-        console.log(id);
-        alert(value); --}}
-
-
 {{-- PAGE SPECIFIC SCRIPT --}}
 <script src="{{ asset('js/show-signin-password.js') }}"></script>
 <script src="{{ asset('js/register-password-length.js') }}"></script>
