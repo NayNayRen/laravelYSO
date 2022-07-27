@@ -19,11 +19,6 @@
                 <span class="users-form-group-error"></span>
             </div>
             {{-- OTP BUTTON --}}
-            {{-- <div class="users-form-group">
-                <a href="#" id="get_otp">
-                    <div class="verify_btn">Get The OTP</div>
-                </a>
-            </div> --}}
             <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
             {{-- VARIFICATION CODE --}}
             <div class="users-form-group password-signin">
@@ -38,7 +33,6 @@
                 @enderror
             </div>
             {{-- CHANGE PASSWORD BUTTON --}}
-            {{-- <button type="submit" class='verify_btn' value="Verify">Change</button> --}}
             <input type="submit" class='users-buttons submit' value="Change Password"></input>
         </form>
         {{-- DISCLAIMER --}}
@@ -47,18 +41,6 @@
                 Statement</a>.</span>
     </div>
 </div>
-{{-- var id = $('#verify_by').val();
-        var value = '';
-        if(id=='email')
-        {
-            value = $('#email').val();
-        }
-        if(id=='phone')
-        {
-            value = $('#phone').val();
-        }
-        console.log(id);
-        alert(value); --}}
 {{-- PAGE SPECIFIC SCRIPT --}}
 <script src="{{ asset('js/show-signin-password.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

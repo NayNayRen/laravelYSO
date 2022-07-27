@@ -22,11 +22,6 @@
                 <span class="users-form-group-error"></span>
             </div>
             {{-- OTP BUTTON --}}
-            {{-- <div class="users-form-group">
-                <a href="#" id="get_otp">
-                    <div class="verify_btn">Get The OTP</div>
-                </a>
-            </div> --}}
             <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
             {{-- VALIDATION CODE --}}
             <div class="users-form-group password-signin">
@@ -38,7 +33,6 @@
                 <i id="show-password" class="fa fa-eye" aria-hidden="true" onclick="show()"></i>
             </div>
             {{-- SUBMIT BUTTON --}}
-            {{-- <button type="submit" class='verify_btn submit' value="Verify">Verify</button> --}}
             <input type="submit" class='users-buttons submit' value="Verify User"></input>
         </form>
         {{-- DISCLAIMER --}}
