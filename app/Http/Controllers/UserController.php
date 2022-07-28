@@ -202,15 +202,7 @@ class UserController extends Controller
     // SEND PASSWORD RESET CODE VIA EMAIL, USED ON CHANGE PASSWORD PAGE
     public function sendResetCode(Request $request){
         $code = rand(100000,999999);
-        // $user = User::find($request->userid);
-        // $email = str_contains($request->id ,'@');
         $user = User::where('email',$request->email)->first();
-        // if($user==null){
-            // $t = 'true';
-        // }
-        // return response()->json([
-        //     'success' =>'Verification Code Sent On '.$user->count(),
-        // ]);
         if($user != null){
             $user->email_code = $code;
             $user->update();
@@ -218,8 +210,6 @@ class UserController extends Controller
                 'subject' => 'Reset Password Code',
                 'code' => $code
             );
-            // $request->id
-            // $mail = 'shahzadanouman@hotmail.com';
             Mail::to($request->email)->send(new VerifyMail($data));
             return response()->json([
                 'success' => 'Verification Code Emailed To '.$request->email,
@@ -229,21 +219,6 @@ class UserController extends Controller
                 'error' => 'Email ' .$request->email.' Not Found.',
             ]);
         }
-        // $phone = str_contains($request->id ,'-');
-        // if($phone)
-        // {
-        //     $user->phone_code = $code;
-        //     $user->save();
-        //     $recipient = '+1'.str_replace('-','',$request->id);
-        //     // return $recipient;
-        //     // $recipient = '+18135012075';
-        //     $message_to_send = "Your Phone Verification Code is : ".$code;
-        //     $this->sendSms($recipient,$message_to_send);
-
-        //     return response()->json([
-        //         'success' =>'Verification Code Texted on '.$recipient,
-        //     ]);
-        // }
     }
 
     // CONNECTION TO SEND OTP VIA PHONE
