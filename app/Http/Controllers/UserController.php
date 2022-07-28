@@ -200,6 +200,7 @@ class UserController extends Controller
 
     // UPDATE NEW PASSWORD
     public function savePassword(Request $request){
+        // dd($request->password);
         $user = User::find($request->user_id);
         // dd($request->password);
         if($request->password != null){
