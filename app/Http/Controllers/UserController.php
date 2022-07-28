@@ -37,9 +37,7 @@ class UserController extends Controller
 
     // SHOW THE LOG IN FORM
     public function showLoginForm(){
-        return view('user_pages/login', [
-            'pageTitle' => 'Log In'
-        ]);
+        return view('user_pages/login', ['pageTitle' => 'Log In']);
     }
 
     // LOG A USER IN
@@ -92,6 +90,43 @@ class UserController extends Controller
         return view('user_pages/verify',compact('user'), ['pageTitle' => 'Verify User']);
     }
 
+    // SEND VERIFICATION CODE TO EMAIL OR PHONE, USED ON THE VERIFY PAGE
+    public function sendVerifyCode(Request $request){
+        $code = rand(100000,999999);
+        $user = User::find($request->userid);
+        // via email
+        $email = str_contains($request->id ,'@');
+        if($email){
+            $user->email_code = $code;
+            $user->save();
+            $data = array(
+                'subject' => 'Email Verifiction Code',
+                'code' => $code
+            );
+            Mail::to($request->id)->send(new VerifyMail($data));
+            return response()->json([
+                'success' => 'Verification Code Emailed To '.$request->id,
+            ]);
+        }
+        // via phone
+        $phone = str_contains($request->id ,'-');
+        if($phone){
+            $user->phone_code = $code;
+            $user->save();
+            $recipient = '+1'.str_replace('-','',$request->id);
+            $message_to_send = "Your Phone Verification Code is : ".$code;
+            $this->sendSms($recipient,$message_to_send);
+            return response()->json([
+                'success' => 'Verification Code Texted To '.$recipient,
+            ]);
+        }
+        if($email == null || $phone == null){
+            return response()->json([
+                'error' => 'No Method Was Selected.',
+            ]);
+        }
+    }
+
     // VERIFY USER VIA EMAIL OR PHONE
     public function verifyUser(Request $request,$id){
         $user = User::find($id);
@@ -121,46 +156,6 @@ class UserController extends Controller
     
     }
 
-    // SEND VERIFICATION CODE TO EMAIL OR PHONE, USED ON THE VERIFY PAGE
-    public function sendVerifyCode(Request $request){
-        $code = rand(100000,999999);
-        $user = User::find($request->userid);
-        // via email
-        $email = str_contains($request->id ,'@');
-        if($email){
-            $user->email_code = $code;
-            $user->save();
-            $data = array(
-                'subject' => 'Email Verifiction Code',
-                'code' => $code
-            );
-            // $mail = 'shahzadanouman@hotmail.com';
-            Mail::to($request->id)->send(new VerifyMail($data));
-            return response()->json([
-                'success' => 'Verification Code Emailed To '.$request->id,
-            ]);
-        }
-        // via phone
-        $phone = str_contains($request->id ,'-');
-        if($phone){
-            $user->phone_code = $code;
-            $user->save();
-            $recipient = '+1'.str_replace('-','',$request->id);
-            // return $recipient;
-            // $recipient = '+18135012075';
-            $message_to_send = "Your Phone Verification Code is : ".$code;
-            $this->sendSms($recipient,$message_to_send);
-            return response()->json([
-                'success' => 'Verification Code Texted To '.$recipient,
-            ]);
-        }
-        if($email == null || $phone == null){
-            return response()->json([
-                'error' => 'No Method Was Selected.',
-            ]);
-        }
-    }
-
     // SHOW THE FOGOT PASSWORD FORM
     public function showForgotForm(){
         return view('user_pages/forgot', ['pageTitle' => 'Forgot Password']);
@@ -179,24 +174,6 @@ class UserController extends Controller
             // removed user display data to fix breakage
             return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
         }
-    }
-
-    // UPDATE NEW PASSWORD
-    public function savePassword(Request $request){
-        $user = User::find($request->user_id);
-        // dd($request->password);
-        if($request->password != null){
-            if($request->password == $request->password_confirmation){
-                $user->password = bcrypt($request->password);
-                $user->update();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
-            }else{
-                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
-            }
-        }else{
-            return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', please type and confirm a new password.');    
-        }
-        return $request;
     }
 
     // SEND PASSWORD RESET CODE VIA EMAIL, USED ON CHANGE PASSWORD PAGE
@@ -219,6 +196,24 @@ class UserController extends Controller
                 'error' => 'Email ' .$request->email.' Not Found.',
             ]);
         }
+    }
+
+    // UPDATE NEW PASSWORD
+    public function savePassword(Request $request){
+        $user = User::find($request->user_id);
+        // dd($request->password);
+        if($request->password != null){
+            if($request->password == $request->password_confirmation){
+                $user->password = bcrypt($request->password);
+                $user->update();
+                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
+            }else{
+                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
+            }
+        }else{
+            return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', please type and confirm a new password.');    
+        }
+        return $request;
     }
 
     // CONNECTION TO SEND OTP VIA PHONE
