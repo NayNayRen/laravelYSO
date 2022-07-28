@@ -32,12 +32,12 @@ Route::get('/navigation_pages/support', [NavigationPageController::class, 'suppo
 Route::get('/navigation_pages/about', [NavigationPageController::class, 'about'])->name('about');
 
 // FAVOURITE ROUTES
+// add to favorites
 Route::post('/favourite', [FavouriteController::class,'favouriteDeal'])->name('add.favourite');
+// add to coupons
 Route::post('/coupon', [CouponController::class,'userCoupons'])->name('add.coupon');
-Route::post('/code', [UserController::class,'sendCode'])->name('send.code');
-Route::post('/resetcode', [UserController::class,'sendResetCode'])->name('send.reset_code');
 
-// REGISTER, LOG IN, AND LOGOUT ROUTES
+// REGISTER AND LOG IN ROUTES
 // shows register form
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('user.create');
 // registers user
@@ -50,16 +50,20 @@ Route::post('/user_pages/authenticate', [UserController::class, 'loginUser'])->n
 // VERIFY USER ROUTES
 // show verify form
 Route::get('/verify/{id}', [UserController::class, 'showVerifyForm'])->name('login.showVerifyForm');
+// send verify code
+Route::post('/code', [UserController::class,'sendVerifyCode'])->name('send.code');
 // verify user
 Route::post('/verify/code/{id}', [UserController::class, 'verifyUser'])->name('login.verifyUser');
 
 // FORGOT/UPDATE PASSWORD ROUTES
 // show change password otp form
 Route::get('/forgotpassword', [UserController::class, 'showForgotForm'])->name('login.showForgotForm');
+// send reset code
+Route::post('/resetcode', [UserController::class,'sendResetCode'])->name('send.reset_code');
 // sends password otp, redirects to change password
-Route::post('/resetpassword', [UserController::class, 'sendForgotCode'])->name('login.sendForgotCode');
+Route::post('/resetpassword', [UserController::class, 'showResetForm'])->name('login.showResetForm');
 // updates new password
 Route::post('/savepassword', [UserController::class, 'savePassword'])->name('login.savePassword');
 
-// LOG USER OUT
+// LOG USER OUT ROUTE
 Route::post('/logout', [UserController::class, 'logoutUser'])->name('logout');

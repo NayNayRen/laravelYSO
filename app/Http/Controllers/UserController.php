@@ -122,7 +122,7 @@ class UserController extends Controller
     }
 
     // SEND VERIFICATION CODE TO EMAIL OR PHONE, USED ON THE VERIFY PAGE
-    public function sendCode(Request $request){
+    public function sendVerifyCode(Request $request){
         $code = rand(100000,999999);
         $user = User::find($request->userid);
         // via email
@@ -167,7 +167,7 @@ class UserController extends Controller
     }
 
     // CHECK USER INFO AND SEND PASSWORD OTP CODE
-    public function sendForgotCode(Request $request){
+    public function showResetForm(Request $request){
         $user = User::where('email',$request->email)->first();
         if($user != null && $user->email_code == $request->verification_code){
             $user_id = $user->id;
