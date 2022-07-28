@@ -93,7 +93,7 @@ class UserController extends Controller
     }
 
     // VERIFY USER VIA EMAIL OR PHONE
-    public function verifyForm(Request $request,$id){
+    public function verifyUser(Request $request,$id){
         $user = User::find($id);
         // verify by email
         $email = str_contains($request->verify_by ,'@');
@@ -167,7 +167,7 @@ class UserController extends Controller
     }
 
     // CHECK USER INFO AND PASSWORD RESET CODE, USED IN CHANGE
-    public function forgotForm(Request $request){
+    public function sendForgotCode(Request $request){
         $user = User::where('email',$request->email)->first();
         if($user != null && $user->email_code == $request->verification_code){
             $user_id = $user->id;
@@ -182,7 +182,7 @@ class UserController extends Controller
     }
 
     // UPDATE NEW PASSWORD
-    public function savePasswrod(Request $request){
+    public function savePassword(Request $request){
         $user = User::find($request->user_id);
         // dd($request->password);
         if($request->password != null){

@@ -7,7 +7,7 @@
         <span class="users-form-greeting gray-text">Continue by creating a new password below.</span>
         <span class="users-form-greeting gray-text">Followed by confirming that new password.</span>
         {{-- SAVE PASSWORD FORM --}}
-        <form action={{ route('login.savepasswrod') }} method="POST">
+        <form action={{ route('login.savePassword') }} method="POST">
             @csrf
             <input type="hidden" name="user_id" value="{{ $user_id }}">
             {{-- INITIAL PASSWORD --}}

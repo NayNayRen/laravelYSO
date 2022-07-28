@@ -9,7 +9,7 @@
         <span class="users-form-greeting gray-text">Continue signing in by choosing a varification method.</span>
         <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
         {{-- VERIFICATION FORM --}}
-        <form action={{ route('login.VerifyForm',$user->id  ) }} method="POST">
+        <form action={{ route('login.verifyUser',$user->id  ) }} method="POST">
             @csrf
             {{-- EMAIL AND PHONE SELECTION --}}
             <div class="users-form-group">

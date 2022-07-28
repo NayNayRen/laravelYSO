@@ -9,7 +9,7 @@
         <span class="users-form-greeting gray-text">Continue by using an email below.</span>
         <span class="users-form-greeting gray-text">Followed by entering the one time password.</span>
         {{-- SIGN IN FORM --}}
-        <form action={{ route('login.resetpasswrod') }} method="POST">
+        <form action={{ route('login.sendForgotCode') }} method="POST">
             @csrf
             {{-- EMAIL --}}
             <div class="users-form-group input-type-email">

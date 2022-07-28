@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-
-    <script src="//unpkg.com/alpinejs" defer></script>
+    {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
     <title>YourSocialOffers.com || {{ $pageTitle }}</title>
     <link rel="icon" href="{{ asset('img/yso-clipped-rw.png') }}" type="image/x-icon">
 </head>
