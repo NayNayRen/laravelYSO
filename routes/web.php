@@ -55,11 +55,11 @@ Route::post('/verify/code/{id}', [UserController::class, 'verifyUser'])->name('l
 
 // FORGOT/UPDATE PASSWORD ROUTES
 // show change password otp form
-Route::get('/forgotpassword/', [UserController::class, 'showForgotForm'])->name('login.showForgotForm');
+Route::get('/forgotpassword', [UserController::class, 'showForgotForm'])->name('login.showForgotForm');
 // sends password otp, redirects to change password
-Route::post('/resetpassword/', [UserController::class, 'sendForgotCode'])->name('login.sendForgotCode');
+Route::post('/resetpassword', [UserController::class, 'sendForgotCode'])->name('login.sendForgotCode');
 // updates new password
-Route::post('/savepassword/', [UserController::class, 'savePassword'])->name('login.savePassword');
+Route::post('/savepassword', [UserController::class, 'savePassword'])->name('login.savePassword');
 
 // LOG USER OUT
 Route::post('/logout', [UserController::class, 'logoutUser'])->name('logout');

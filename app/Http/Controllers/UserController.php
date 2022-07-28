@@ -166,12 +166,12 @@ class UserController extends Controller
         return view('user_pages/forgot', ['pageTitle' => 'Forgot Password']);
     }
 
-    // CHECK USER INFO AND PASSWORD RESET CODE, USED IN CHANGE
+    // CHECK USER INFO AND SEND PASSWORD OTP CODE
     public function sendForgotCode(Request $request){
         $user = User::where('email',$request->email)->first();
         if($user != null && $user->email_code == $request->verification_code){
             $user_id = $user->id;
-            return view('user_pages/password',compact('user_id'), ['pageTitle' => 'Change Password']);
+            return view('user_pages/password', compact('user_id'), ['pageTitle' => 'Change Password']);
             // added to fix empty email submission
         }if($request->email == null){
             return redirect()->back()->with('flash-message-user', 'No Email Was Entered.');
