@@ -3,7 +3,7 @@
     <div class="guest-error-content">
         <h2>You're Visiting As A Guest</h2>
         <div>
-            <span>Kindly</span>
+            <span>Please head over to</span>
             <a href={{ route('user.create') }}>Register</a>
             <span>and/or</span>
             <a href={{ route('login.showLoginForm') }}>Log In</a>

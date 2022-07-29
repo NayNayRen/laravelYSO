@@ -41,9 +41,9 @@
                         password?</span></a>
                 <input type="password" name="password" id="password">
                 {{-- SHOW/HIDE PASSWORD EYE --}}
-                <i id="hide-password" class="fa fa-eye-slash" aria-hidden="false" aria-label="Show password."
+                <i id="hide-password" class="fa fa-eye-slash" aria-hidden="false" aria-label="Show Password."
                     onclick="hide()"></i>
-                <i id="show-password" class="fa fa-eye" aria-hidden="false" aria-label="Hide password."
+                <i id="show-password" class="fa fa-eye" aria-hidden="false" aria-label="Hide Password."
                     onclick="show()"></i>
                 @error('password')
                     <span class="users-form-group-error">{{ $message }}</span>
