@@ -53,8 +53,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        const guestErrorMessage = document.querySelector('.guest-error-message');
-        const guestErrorButton = document.querySelector('.guest-error-button');
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -78,54 +76,50 @@
                 success: function (data) {
                     if (data['error']) {
                         var r = (data['error']);
-                        guestErrorMessage.classList.add('show-selected-deal-message');
-                        guestErrorButton.addEventListener('click', () => {
-                            guestErrorMessage.classList.remove(
+                        $('.guest-error-message').addClass('show-selected-deal-message');
+                        $('.guest-error-button').click(() => {
+                            $('.guest-error-message').removeClass(
                                 'show-selected-deal-message');
                         });
-                        // console.log(r);
-                        // alert(r);
                     }
                 }
             });
         });
         // GUEST SHARE RESPONSE
         $('.share-deal').click(function () {
-            guestErrorMessage.classList.add('show-selected-deal-message');
-            guestErrorButton.addEventListener('click', () => {
-                guestErrorMessage.classList.remove(
+            $('.guest-error-message').addClass('show-selected-deal-message');
+            $('.guest-error-button').click(() => {
+                $('.guest-error-message').removeClass(
                     'show-selected-deal-message');
             });
         });
-    });
-    // GUEST COUPON RESPONSE
-    $('.add-coupon').click(function () {
-        var dealid = $('#deal-id').attr('value');
-        var email = $('#registered-deal-email').attr('value');
-        const guestErrorMessage = document.querySelector('.guest-error-message');
-        const guestErrorButton = document.querySelector('.guest-error-button');
-        // console.log(dealid);
-        $.ajax({
-            url: "{{ route('add.coupon') }}",
-            method: "POST",
-            dataType: "json",
+        // GUEST COUPON RESPONSE
+        $('.add-coupon').click(function () {
+            var dealid = $('#deal-id').attr('value');
+            var email = $('#registered-deal-email').attr('value');
+            // console.log(dealid);
+            $.ajax({
+                url: "{{ route('add.coupon') }}",
+                method: "POST",
+                dataType: "json",
 
-            data: {
-                _token: "{{ csrf_token() }}",
-                dealid: dealid,
-                email: email
-            },
-            success: function (data) {
-                if (data['message']) {
-                    var r = (data['message']);
-                    guestErrorMessage.classList.add('show-selected-deal-message');
-                    guestErrorButton.addEventListener('click', () => {
-                        guestErrorMessage.classList.remove(
-                            'show-selected-deal-message');
-                    });
-                    // alert(r);
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    dealid: dealid,
+                    email: email
+                },
+                success: function (data) {
+                    if (data['message']) {
+                        var r = (data['message']);
+                        $('.guest-error-message').addClass('show-selected-deal-message');
+                        $('.guest-error-button').click(() => {
+                            $('.guest-error-message').removeClass(
+                                'show-selected-deal-message');
+                        });
+                        // alert(r);
+                    }
                 }
-            }
+            });
         });
     });
 
