@@ -161,22 +161,7 @@ class UserController extends Controller
         return view('user_pages/forgot', ['pageTitle' => 'Forgot Password']);
     }
 
-    // CHECK USER INFO AND SEND PASSWORD OTP CODE
-    public function showResetForm(Request $request){
-        $user = User::where('email',$request->email)->first();
-        if($user != null && $user->email_code == $request->verification_code){
-            $user_id = $user->id;
-            return view('user_pages/password', compact('user_id'), ['pageTitle' => 'Change Password']);
-            // added to fix empty email submission
-        }if($request->email == null){
-            return redirect()->back()->with('flash-message-user', 'No Email Was Entered.');
-        }else{
-            // removed user display data to fix breakage
-            return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
-        }
-    }
-
-    // SEND PASSWORD RESET CODE VIA EMAIL, USED ON CHANGE PASSWORD PAGE
+    // SEND PASSWORD RESET CODE VIA EMAIL
     public function sendResetCode(Request $request){
         $code = rand(100000,999999);
         $user = User::where('email',$request->email)->first();
@@ -198,11 +183,25 @@ class UserController extends Controller
         }
     }
 
+    // CHECK OTP CODE AND REDIRECT TO CHANGE PASSWORD
+    public function showResetForm(Request $request){
+        $user = User::where('email',$request->email)->first();
+        if($user != null && $user->email_code == $request->verification_code){
+            $user_id = $user->id;
+            return view('user_pages/password', compact('user_id'), ['pageTitle' => 'Change Password']);
+            // added to fix empty email submission
+        }if($request->email == null){
+            return redirect()->back()->with('flash-message-user', 'No Email Was Entered.');
+        }else{
+            // removed user display data to fix breakage
+            return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
+        }
+    }
+
     // UPDATE NEW PASSWORD
     public function savePassword(Request $request){
         // dd($request->password);
         $user = User::find($request->user_id);
-        // dd($request->password);
         if($request->password != null){
             if($request->password == $request->password_confirmation){
                 $user->password = bcrypt($request->password);

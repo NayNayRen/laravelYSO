@@ -26,11 +26,11 @@
                 <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
                     placeholder="Enter 6 digit code">
                 {{-- SHOW/HIDE PASSWORD EYE --}}
-                <i id="hide-password" class="fa fa-eye-slash" aria-hidden="true" onclick="hide()"></i>
+                {{-- <i id="hide-password" class="fa fa-eye-slash" aria-hidden="true" onclick="hide()"></i>
                 <i id="show-password" class="fa fa-eye" aria-hidden="true" onclick="show()"></i>
-                @error('verification_code')
+@error('verification_code')
                     <span class="users-form-group-error">{{ $message }}</span>
-                @enderror
+                @enderror--}}
             </div>
             {{-- CHANGE PASSWORD BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Change Password"></input>

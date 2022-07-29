@@ -29,8 +29,8 @@
                 <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
                     placeholder="Enter 6 digit Code">
                 {{-- SHOW/HIDE PASSWORD EYE --}}
-                <i id="hide-password" class="fa fa-eye-slash" aria-hidden="true" onclick="hide()"></i>
-                <i id="show-password" class="fa fa-eye" aria-hidden="true" onclick="show()"></i>
+                {{-- <i id="hide-password" class="fa fa-eye-slash" aria-hidden="true" onclick="hide()"></i>
+                <i id="show-password" class="fa fa-eye" aria-hidden="true" onclick="show()"></i> --}}
             </div>
             {{-- SUBMIT BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Verify User"></input>
