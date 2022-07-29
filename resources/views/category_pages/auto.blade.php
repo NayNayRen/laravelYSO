@@ -112,18 +112,6 @@
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script>
     $(document).ready(function () {
-        const favoriteAddedMessage = document.querySelector('.favorite-added-message');
-        const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
-        const guestErrorMessage = document.querySelector('.guest-error-message');
-        const shareMessage = document.querySelector('.share-message');
-        const favoriteAddedName = document.querySelector('#favorite-added-name');
-        const favoriteRemovedName = document.querySelector('#favorite-removed-name');
-
-        const favoriteAddedButton = document.querySelector('.favorite-added-button');
-        const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
-        const guestErrorButton = document.querySelector('.guest-error-button');
-        const shareMessageButton = document.querySelector('.share-message-button');
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -148,38 +136,33 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + id).addClass('favourite');
-                        favoriteAddedName.innerText = name;
-                        favoriteAddedMessage.classList.add('show-selected-deal-message');
-                        favoriteAddedButton.addEventListener('click', () => {
-                            favoriteAddedMessage.classList.remove(
+                        $('#favorite-added-name').text(name);
+                        $('.favorite-added-message').addClass('show-selected-deal-message');
+                        $('.favorite-added-button').click(() => {
+                            $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             // location.reload();
                         });
-                        // console.log(r);
-                        // alert(r);
                     }
                     if (data['delete']) {
                         var r = (data['delete']);
                         $('#' + parseInt(id)).removeClass('favourite');
-                        favoriteRemovedName.innerText = name;
-                        favoriteRemovedMessage.classList.add('show-selected-deal-message');
-                        favoriteRemovedButton.addEventListener('click', () => {
-                            favoriteRemovedMessage.classList.remove(
+                        $('#favorite-removed-name').text(name);
+                        $('.favorite-removed-message').addClass(
+                            'show-selected-deal-message');
+                        $('.favorite-removed-button').click(() => {
+                            $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             // location.reload();
                         });
-                        // console.log(r);
-                        // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        guestErrorMessage.classList.add('show-selected-deal-message');
-                        guestErrorButton.addEventListener('click', () => {
-                            guestErrorMessage.classList.remove(
+                        $('.guest-error-message').addClass('show-selected-deal-message');
+                        $('.guest-error-button').click(() => {
+                            $('.guest-error-message').removeClass(
                                 'show-selected-deal-message');
                         });
-                        // console.log(r);
-                        // alert(r);
                     }
                 }
             });
@@ -187,20 +170,18 @@
         // SHOWS APPROPRIATE SHARE RESPONSE
         $('.share-deal').click(function () {
             const name = $(this).attr('name');
-            const sharedMessageName = document.querySelector('#shared-message-name');
-            // console.log(name);
             if ($('.share-deal').hasClass('user')) {
-                sharedMessageName.innerText = name;
-                shareMessage.classList.add('show-selected-deal-message');
-                shareMessageButton.addEventListener('click', () => {
-                    shareMessage.classList.remove(
+                $('#shared-message-name').text(name);
+                $('.share-message').addClass('show-selected-deal-message');
+                $('.share-message-button').click(() => {
+                    $('.share-message').removeClass(
                         'show-selected-deal-message');
                 });
             }
             if ($('.share-deal').hasClass('guest')) {
-                guestErrorMessage.classList.add('show-selected-deal-message');
-                guestErrorButton.addEventListener('click', () => {
-                    guestErrorMessage.classList.remove(
+                $('.guest-error-message').addClass('show-selected-deal-message');
+                $('.guest-error-button').click(() => {
+                    $('.guest-error-message').removeClass(
                         'show-selected-deal-message');
                 });
             }
