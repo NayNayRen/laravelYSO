@@ -51,11 +51,10 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
+        // SHOW MESSAGES FOR OTP RESPONSE
         $('#get_otp').click(function () {
             var id = $('#verify_by').val();
             var userid = '{{ $user->id }}';
-            // console.log(id);
             $.ajax({
                 url: "{{ route('send.code') }}",
                 method: "POST",
@@ -85,8 +84,6 @@
                                     '-100%');
                             }, 5000);
                         }, 50);
-                        // console.log(r);
-                        // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
@@ -104,8 +101,6 @@
                                     '-100%');
                             }, 5000);
                         }, 50);
-                        // console.log('empty');
-                        // alert(r);
                     }
                 }
             });

@@ -51,7 +51,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
+        // CHOOSE VERIFY METHOD
         $('#verify_by').change(function () {
             var id = $(this).val();
             if (id == 'phone') {
@@ -69,7 +69,7 @@
                 }
             }
         });
-
+        // SHOW MESSAGES FOR OTP RESPONSE
         $('#get_otp').click(function () {
             var email = $('#email').val();
             $.ajax({
@@ -100,8 +100,6 @@
                                     '-100%');
                             }, 5000);
                         }, 50);
-                        // console.log(r);
-                        // alert(r);
                     }
                     if (data['error']) {
                         var r = (data['error']);
@@ -119,8 +117,6 @@
                                     '-100%');
                             }, 5000);
                         }, 50);
-                        // console.log(r);
-                        // alert(r);
                     }
                 }
             });
