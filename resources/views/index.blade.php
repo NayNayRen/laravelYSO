@@ -359,7 +359,6 @@
         $('.add-favourite').click(function () {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
-            // console.log(name);
             $.ajax({
                 url: "{{ route('add.favourite') }}",
                 method: "POST",
