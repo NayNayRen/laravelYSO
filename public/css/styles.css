@@ -456,13 +456,13 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("..img/fashion/puma-banner.png");
+        url("..img/fashion/puma-banner.jpg");
     background-image: linear-gradient(
             to left,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/fashion/puma-banner.png");
+        url("../img/fashion/puma-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -519,13 +519,13 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("../img/fashion/puma-banner.png");
+        url("../img/fashion/puma-banner.jpg");
     background-image: linear-gradient(
             to right,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/fashion/puma-banner.png");
+        url("../img/fashion/puma-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -603,13 +603,13 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("..img/food/pizza-hut-banner.png");
+        url("..img/food/pizza-hut-banner.jpg");
     background-image: linear-gradient(
             to right,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/food/pizza-hut-banner.png");
+        url("../img/food/pizza-hut-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -834,13 +834,13 @@
             from(rgba(255, 255, 255, 1)),
             color-stop(40%, rgba(255, 255, 255, 0))
         ),
-        url("../img/health/natures-banner.png");
+        url("../img/health/natures-banner.jpg");
     background-image: linear-gradient(
             to left,
             rgba(255, 255, 255, 1) 0%,
             rgba(255, 255, 255, 0) 40%
         ),
-        url("../img/health/natures-banner.png");
+        url("../img/health/natures-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -4713,7 +4713,7 @@ html {
     }
 
     .banner-image-fashion-2 {
-        background-image: url("../img/fashion/puma-banner-mobile.png");
+        background-image: url("../img/fashion/puma-banner-mobile.jpg");
     }
 
     .banner-image-fashion-3 {
@@ -4721,11 +4721,11 @@ html {
     }
 
     .banner-image-fashion-4 {
-        background-image: url("../img/fashion/fantastic-sams-banner-mobile.png");
+        background-image: url("../img/fashion/fantastic-sams-banner-mobile.jpg");
     }
 
     .banner-image-featured-1 {
-        background-image: url("../img/fashion/puma-banner-mobile.png");
+        background-image: url("../img/fashion/puma-banner-mobile.jpg");
     }
 
     .banner-image-featured-2 {
@@ -4741,7 +4741,7 @@ html {
     }
 
     .banner-image-food-1 {
-        background-image: url("../img/food/pizza-hut-banner-mobile.png");
+        background-image: url("../img/food/pizza-hut-banner-mobile.jpg");
     }
 
     .banner-image-food-2 {
@@ -4785,11 +4785,11 @@ html {
     }
 
     .banner-image-health-4 {
-        background-image: url("../img/health/natures-banner-mobile.png");
+        background-image: url("../img/health/natures-banner-mobile.jpg");
     }
 
     .banner-image-main-1 {
-        background-image: url("../img/fashion/fantastic-sams-banner-mobile.png");
+        background-image: url("../img/fashion/fantastic-sams-banner-mobile.jpg");
     }
 
     .banner-image-main-2 {
