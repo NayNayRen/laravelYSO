@@ -90,19 +90,8 @@
 <script src="{{ asset('js/registered-deal.js') }}"></script>
 <script>
     $(document).ready(function () {
-        const favoriteAddedMessage = document.querySelector('.favorite-added-message');
-        const favoriteRemovedMessage = document.querySelector('.favorite-removed-message');
-        const shareMessage = document.querySelector('.share-message');
-        const favoriteAddedName = document.querySelector('#favorite-added-name');
-        const favoriteRemovedName = document.querySelector('#favorite-removed-name');
-
-        const favoriteAddedButton = document.querySelector('.favorite-added-button');
-        const favoriteRemovedButton = document.querySelector('.favorite-removed-button');
-        const shareMessageButton = document.querySelector('.share-message-button');
-
         var old_email = '{{ $user->email }}';
         var old_phone = '{{ $user->phone }}';
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -145,28 +134,25 @@
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + parseInt(id)).find('i').addClass('favourite2');
-                        favoriteAddedName.innerText = name;
-                        favoriteAddedMessage.classList.add('show-selected-deal-message');
-                        favoriteAddedButton.addEventListener('click', () => {
-                            favoriteAddedMessage.classList.remove(
+                        $('#favorite-added-name').text(name);
+                        $('.favorite-added-message').addClass('show-selected-deal-message');
+                        $('.favorite-added-button').click(() => {
+                            $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             // location.reload();
                         });
-                        // console.log(r);
-                        // alert(r);
                     }
                     if (data['delete']) {
                         var r = (data['delete']);
                         $('#' + parseInt(id)).find('i').removeClass('favourite2');
-                        favoriteRemovedName.innerText = name;
-                        favoriteRemovedMessage.classList.add('show-selected-deal-message');
-                        favoriteRemovedButton.addEventListener('click', () => {
-                            favoriteRemovedMessage.classList.remove(
+                        $('#favorite-removed-name').text(name);
+                        $('.favorite-removed-message').addClass(
+                            'show-selected-deal-message');
+                        $('.favorite-removed-button').click(() => {
+                            $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             // location.reload();
                         });
-                        // console.log(r);
-                        // alert(r);
                     }
                 }
             });
@@ -174,68 +160,66 @@
         // SHOWS USER SHARE RESPONSE
         $('.share-deal').click(function () {
             const name = $(this).attr('name');
-            const sharedMessageName = document.querySelector('#shared-message-name');
-            // console.log(name);
-            sharedMessageName.innerText = name;
-            shareMessage.classList.add('show-selected-deal-message');
-            shareMessageButton.addEventListener('click', () => {
-                shareMessage.classList.remove(
+            $('#shared-message-name').text(name);
+            $('.share-message').addClass('show-selected-deal-message');
+            $('.share-message-button').click(() => {
+                $('.share-message').removeClass(
                     'show-selected-deal-message');
             });
         });
-    });
-    // USER COUPON ADDED RESPONSE
-    $('.add-coupon').click(function () {
-        var dealid = $('#deal-id').attr('value');
-        var email = $('#registered-deal-email').attr('value');
-        var phone = $('#registered-deal-phone').attr('value');
-        const couponMessage = document.querySelector('.coupon-message');
-        const couponHeading = document.querySelector('.coupon-heading');
-        const couponButton = document.querySelector('.coupon-button');
-        // console.log(dealid);
-        $.ajax({
-            url: "{{ route('add.coupon') }}",
-            method: "POST",
-            dataType: "json",
+        // USER COUPON ADDED RESPONSE
+        $('.add-coupon').click(() => {
+            var dealid = $('#deal-id').attr('value');
+            var email = $('#registered-deal-email').attr('value');
+            var phone = $('#registered-deal-phone').attr('value');
+            // console.log(dealid);
+            $.ajax({
+                url: "{{ route('add.coupon') }}",
+                method: "POST",
+                dataType: "json",
 
-            data: {
-                _token: "{{ csrf_token() }}",
-                dealid: dealid,
-                email: email,
-                phone: phone
-            },
-            success: function (data) {
-                if (data['emailed-already']) {
-                    var r = (data['message']);
-                    couponMessage.classList.add('show-selected-deal-message');
-                    couponHeading.innerText = 'Coupon Already Emailed.';
-                    couponButton.addEventListener('click', () => {
-                        couponMessage.classList.remove('show-selected-deal-message');
-                    });
-                    // alert(r);
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    dealid: dealid,
+                    email: email,
+                    phone: phone
+                },
+                success: function (data) {
+                    if (data['emailed-already']) {
+                        var r = (data['message']);
+                        $('.coupon-message').addClass('show-selected-deal-message');
+                        $('.coupon-heading').text('Coupon Already Emailed');
+                        $('.coupon-button').click(() => {
+                            $('.coupon-message').removeClass(
+                                'show-selected-deal-message');
+                        });
+                    }
+                    if (data['emailed']) {
+                        $('.coupon-message').addClass('show-selected-deal-message');
+                        $('.coupon-heading').text('Coupon Successfully Emailed');
+                        $('.coupon-button').click(() => {
+                            $('.coupon-message').removeClass(
+                                'show-selected-deal-message');
+                        });
+                    }
+                    if (data['texted-already']) {
+                        $('.coupon-message').addClass('show-selected-deal-message');
+                        $('.coupon-heading').text('Coupon Already Texted');
+                        $('.coupon-button').click(() => {
+                            $('.coupon-message').removeClass(
+                                'show-selected-deal-message');
+                        });
+                    }
+                    if (data['texted']) {
+                        $('.coupon-message').addClass('show-selected-deal-message');
+                        $('.coupon-heading').text('Coupon Successfully Texted');
+                        $('.coupon-button').click(() => {
+                            $('.coupon-message').removeClass(
+                                'show-selected-deal-message');
+                        });
+                    }
                 }
-                if (data['emailed']) {
-                    couponMessage.classList.add('show-selected-deal-message');
-                    couponHeading.innerText = 'Coupon Successfully Emailed!';
-                    couponButton.addEventListener('click', () => {
-                        couponMessage.classList.remove('show-selected-deal-message');
-                    });
-                }
-                if (data['texted-already']) {
-                    couponMessage.classList.add('show-selected-deal-message');
-                    couponHeading.innerText = 'Coupon Already Texted.';
-                    couponButton.addEventListener('click', () => {
-                        couponMessage.classList.remove('show-selected-deal-message');
-                    });
-                }
-                if (data['texted']) {
-                    couponMessage.classList.add('show-selected-deal-message');
-                    couponHeading.innerText = 'Coupon Successfully Texted!';
-                    couponButton.addEventListener('click', () => {
-                        couponMessage.classList.remove('show-selected-deal-message');
-                    });
-                }
-            }
+            });
         });
     });
 
