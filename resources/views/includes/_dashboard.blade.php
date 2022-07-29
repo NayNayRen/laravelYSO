@@ -7,15 +7,22 @@
         </span>
         @auth
             <div class="dashboard-user-container">
-                <span>User Preferences</span>
-                <div class="registered-user-profile">
-                    <img src="{{ asset('img/male-profile.png') }}"
-                        class="registered-user-profile-picture" alt="Profile Picture">
+                <div class="dashboard-user-container-sections">
+
+                    <h3>User Preferences</h3>
+                    <div class="registered-user-profile">
+                        <img src="{{ asset('img/male-profile.png') }}"
+                            class="registered-user-profile-picture" alt="Profile Picture">
+                    </div>
+                    <div>Logged in as:</div>
+                    <span>{{ ucfirst(auth()->user()->firstName) }}</span>
+                    <div>Location:</div>
+                    <span>{{ auth()->user()->email }}</span>
                 </div>
-                <div>Logged in as:</div>
-                <span>{{ ucfirst(auth()->user()->firstName) }}</span>
-                <div>Location:</div>
-                <span>{{ auth()->user()->email }}</span>
+                <div class="dashboard-user-container-sections">
+                    <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
+                        alt="Your Social Offers Logo">
+                </div>
             </div>
             <div class="dashboard-right-container">
                 <ul class="c-list wrapper al-center">
@@ -134,15 +141,21 @@
             </div>
         @else
             <div class="dashboard-user-container">
-                <span>User Preferences</span>
-                <div class="registered-user-profile">
-                    <img src="{{ asset('img/male-profile.png') }}"
-                        class="registered-user-profile-picture" alt="Profile Picture">
+                <div class="dashboard-user-container-sections">
+                    <h3>User Preferences</h3>
+                    <div class="registered-user-profile">
+                        <img src="{{ asset('img/male-profile.png') }}"
+                            class="registered-user-profile-picture" alt="Profile Picture">
+                    </div>
+                    <div>Logged in as:</div>
+                    <span>Guest</span>
+                    <div>Location:</div>
+                    <span>N/A</span>
                 </div>
-                <div>Logged in as:</div>
-                <span>Guest</span>
-                <div>Location:</div>
-                <span>N/A</span>
+                <div class="dashboard-user-container-sections">
+                    <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
+                        alt="Your Social Offers Logo">
+                </div>
             </div>
             <div class="dashboard-right-container">
                 <h4 class="mb-3">You're visiting as a guest.</h4>

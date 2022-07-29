@@ -7,7 +7,7 @@
     <div class="users">
         <h1>Change Your Password</h1>
         <span class="users-form-greeting gray-text">Continue by using an email below.</span>
-        <span class="users-form-greeting gray-text">Followed by entering the one time password.</span>
+        <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
         {{-- SIGN IN FORM --}}
         <form action={{ route('login.showResetForm') }} method="POST">
             @csrf

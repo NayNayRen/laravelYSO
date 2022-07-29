@@ -6,7 +6,7 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Verify Your Account</h1>
-        <span class="users-form-greeting gray-text">Continue signing in by choosing a varification method.</span>
+        <span class="users-form-greeting gray-text">Continue signing in by choosing a verification method.</span>
         <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
         {{-- VERIFICATION FORM --}}
         <form action={{ route('login.verifyUser', $user->id) }} method="POST">
