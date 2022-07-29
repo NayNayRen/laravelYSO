@@ -1,7 +1,7 @@
 {{-- HIDDEN GUEST ERROR MESSAGE --}}
 <div class="guest-error-message">
     <div class="guest-error-content">
-        <h2>You're visiting as a Guest.</h2>
+        <h2>You're Visiting As A Guest</h2>
         <div>
             <span>Kindly</span>
             <a href={{ route('user.create') }}>Register</a>

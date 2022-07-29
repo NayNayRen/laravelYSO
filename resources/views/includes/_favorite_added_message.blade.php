@@ -1,6 +1,6 @@
 {{-- HIDDEN FAVORITE ADDED MESSAGE --}}
 <div class="favorite-added-message">
-    <h2>Saved to your Favorites</h2>
+    <h2>Saved To Your Favorites</h2>
     <p id="favorite-added-name"></p>
     <div>
         <span>

@@ -1,6 +1,6 @@
 {{-- HIDDEN FAVORITE REMOVED MESSAGE --}}
 <div class="favorite-removed-message">
-    <h2>Removed from your Favorites</h2>
+    <h2>Removed From Your Favorites</h2>
     <p id="favorite-removed-name"></p>
     <div>
         <span>
