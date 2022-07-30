@@ -1,5 +1,5 @@
 // shows cashback card message if not logged in
-function loadScript() {
+function loadCashbackMessageScript() {
     const cashbackCard = document.querySelectorAll(".cashback-card.guest");
     cashbackCard.forEach((card) => {
         card.addEventListener("click", () => {
@@ -10,4 +10,4 @@ function loadScript() {
         });
     });
 }
-window.onload = loadScript;
+window.onload = loadCashbackMessageScript();

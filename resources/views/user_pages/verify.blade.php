@@ -14,20 +14,36 @@
             {{-- EMAIL AND PHONE SELECTION --}}
             <div class="users-form-group">
                 <label for="verify_by" class="verify_by">Verification Method</label><br>
-                <select name="verify_by" id="verify_by" class="auth-select">
+
+                {{-- <select name="verify_by" id="verify_by" class="auth-select">
                     <option selected disabled>Select one to get the code</option>
                     <option value="{{ $user->email }}">{{ $user->email ?? email }}</option>
-                    <option value="{{ $user->phone }}">{{ $user->phone ?? phone }}</option>
-                </select>
+                <option value="{{ $user->phone }}">{{ $user->phone ?? phone }}</option>
+                </select> --}}
+
+                <div class="verification-list-container">
+                    <input type="button" name="verify_by" id="verify_by" value="Select A Method To Verify By">
+                    </input>
+                    <span class="verify-button-arrow">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    </span>
+                    <ul class="verification-dropdown">
+                        <li class="verification-selection" value="{{ $user->email }}">
+                            {{ $user->email ?? email }}</li>
+                        <li class="verification-selection" value="{{ $user->phone }}">
+                            {{ $user->phone ?? phone }}</li>
+                    </ul>
+                </div>
+
                 <span class="users-form-group-error"></span>
             </div>
             {{-- OTP BUTTON --}}
             <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
             {{-- VALIDATION CODE --}}
             <div class="users-form-group password-signin">
-                <label for="verification_code">Verification code</label>
+                <label for="verification_code">Verification Code</label>
                 <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
-                    placeholder="Enter 6 digit Code">
+                    placeholder="Enter 6 Digit Code">
             </div>
             {{-- SUBMIT BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Verify User"></input>
@@ -39,6 +55,7 @@
     </div>
 </div>
 {{-- PAGE SPECIFIC SCRIPT --}}
+<script src="{{ asset('js/show-verify-dropdown.js') }}"></script>
 <script src="{{ asset('js/show-signin-password.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -48,6 +65,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
         // SHOW MESSAGES FOR OTP RESPONSE
         $('#get_otp').click(function () {
             var id = $('#verify_by').val();
