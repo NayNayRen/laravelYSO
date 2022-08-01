@@ -22,6 +22,10 @@ function loadAllButtonDropdownScript() {
     categoryItem.forEach((item) => {
         item.addEventListener("click", (e) => {
             searchField.value = e.target.innerText;
+            allButtonDropdown.classList.remove("all-button-dropdown-toggle");
+            allButtonArrow.classList.remove("all-button-arrow-rotate");
+            allButtonArrow.classList.remove("all-button-toggle");
+            allButton.classList.remove("all-button-toggle");
         });
     });
 }
