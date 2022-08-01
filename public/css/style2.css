@@ -119,7 +119,7 @@ a {
 .white {
     color: #fff;
 }
-/* .auth-select {
+.auth-select {
     background-color: #808080;
     border: none;
     border-radius: 5px;
@@ -133,7 +133,7 @@ a {
 
 .auth-select:hover {
     cursor: pointer;
-} */
+}
 
 .verify-button-arrow {
     -webkit-transition: -webkit-transform 150ms ease;

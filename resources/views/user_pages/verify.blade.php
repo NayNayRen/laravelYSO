@@ -15,13 +15,13 @@
             <div class="users-form-group">
                 <label for="verify_by" class="verify_by">Verification Method</label><br>
 
-                {{-- <select name="verify_by" id="verify_by" class="auth-select">
+                <select name="verify_by" id="verify_by" class="auth-select">
                     <option selected disabled>Select one to get the code</option>
                     <option value="{{ $user->email }}">{{ $user->email ?? email }}</option>
-                <option value="{{ $user->phone }}">{{ $user->phone ?? phone }}</option>
-                </select> --}}
+                    <option value="{{ $user->phone }}">{{ $user->phone ?? phone }}</option>
+                </select>
 
-                <div class="verification-list-container">
+                {{-- <div class="verification-list-container">
                     <input type="button" name="verify_by" id="verify_by" value="Select A Method To Verify By">
                     </input>
                     <span class="verify-button-arrow">
@@ -29,30 +29,29 @@
                     </span>
                     <ul class="verification-dropdown">
                         <li class="verification-selection" value="{{ $user->email }}">
-                            {{ $user->email ?? email }}</li>
-                        <li class="verification-selection" value="{{ $user->phone }}">
-                            {{ $user->phone ?? phone }}</li>
-                    </ul>
-                </div>
+                {{ $user->email ?? email }}</li>
+                <li class="verification-selection" value="{{ $user->phone }}">
+                    {{ $user->phone ?? phone }}</li>
+                </ul>
+            </div> --}}
 
-                <span class="users-form-group-error"></span>
-            </div>
-            {{-- OTP BUTTON --}}
-            <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
-            {{-- VALIDATION CODE --}}
-            <div class="users-form-group password-signin">
-                <label for="verification_code">Verification Code</label>
-                <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
-                    placeholder="Enter 6 Digit Code">
-            </div>
-            {{-- SUBMIT BUTTON --}}
-            <input type="submit" class='users-buttons submit' value="Verify User"></input>
-        </form>
-        {{-- DISCLAIMER --}}
-        <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
-            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-                Statement</a>.</span>
+            <span class="users-form-group-error"></span>
     </div>
+    {{-- OTP BUTTON --}}
+    <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
+    {{-- VALIDATION CODE --}}
+    <div class="users-form-group password-signin">
+        <label for="verification_code">Verification Code</label>
+        <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}" placeholder="Enter 6 Digit Code">
+    </div>
+    {{-- SUBMIT BUTTON --}}
+    <input type="submit" class='users-buttons submit' value="Verify User"></input>
+    </form>
+    {{-- DISCLAIMER --}}
+    <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
+        or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
+            Statement</a>.</span>
+</div>
 </div>
 {{-- PAGE SPECIFIC SCRIPT --}}
 <script src="{{ asset('js/show-verify-dropdown.js') }}"></script>
