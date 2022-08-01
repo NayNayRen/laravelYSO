@@ -4,7 +4,7 @@
     <div class="page-hero support-background">
         <h1>Our Business Support</h1>
         <h2>1-866-633-8231</h2>
-        <p>If you are having difficulty with our system trying to register for or redeem a reward, please give us a call
+        <p>If you're having difficulty with our system trying to register for or redeem a reward, please, give us a call
             or contact us via email.</p>
         <div class="page-hero-button-container">
             <a href={{ route('user.create') }} class="page-hero-button">Sign Up</a>

@@ -10,7 +10,7 @@
                     Y<span class="gray-text">our</span>S<span class="gray-text">ocial</span>O<span
                         class="gray-text">ffers</span><span class="red-background">.com</span>
                 </span>
-            </a> re-defines the way social media can be used to creat growth potential and capitalize on the social
+            </a> re-defines the way social media can be used to create growth potential and capitalize on the social
             media billion-dollar marketplace.
         </p>
         <div class="page-hero-button-container">

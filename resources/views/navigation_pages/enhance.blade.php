@@ -35,7 +35,7 @@
             <div class="enhance-text">
                 <h1>Enhance your gains with new customers.</h1>
                 <div>
-                    <p>Reaching into Social media with a YSO campaign to find new customers brings a depth of people you
+                    <p>Reaching into social media with a YSO campaign to find new customers brings a depth of people you
                         can not find otherwise. The time and budget it would take to reach the masses with a
                         conventional campaign is out of reach for most.</p>
                     <a href={{ route('support') }} class="page-hero-button">Learn

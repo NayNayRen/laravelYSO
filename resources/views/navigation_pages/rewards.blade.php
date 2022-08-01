@@ -26,7 +26,7 @@
                 <h1>We think of it as crowd sourcing deals.</h1>
                 <div>
                     <p>Crowd sourced takes the "I got You!!" approach a whole lot farther. Deals come to you by
-                        automated DealSeek. It also comes to those who are a part of your circle, and share based on
+                        automated DealSeek. It also comes to those who are a part of your circle, and shared based on
                         like minded interests.</p>
                     <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
@@ -46,7 +46,7 @@
             <div class="rewards-text">
                 <h1>Nothing beats a qualified referral.</h1>
                 <div>
-                    <p>We have all heard that before and it's still true. Crowd sourced opportunities mimic this intent
+                    <p>We've all heard that before and it's still true. Crowd sourced opportunities mimic this intent
                         with the speed of remote communications. I share a deal with you that I JUST USED!!! How could
                         it be more qualified than that?</p>
                     <a href={{ route('support') }} class="page-hero-button">Learn

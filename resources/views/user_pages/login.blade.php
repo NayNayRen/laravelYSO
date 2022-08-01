@@ -21,7 +21,7 @@
                 Continue with Apple
             </a>
         </div>
-        <span class="gray-text">Continue signing in using email below.</span>
+        <span class="gray-text">Continue signing in using your email below.</span>
         {{-- SIGN IN FORM --}}
         <form action={{ route('login') }} method="POST">
             @csrf

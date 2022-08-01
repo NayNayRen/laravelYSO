@@ -20,7 +20,7 @@
                 Continue with Apple
             </a>
         </div>
-        <span class="gray-text">Continue signing up using email below.</span>
+        <span class="gray-text">Continue signing up using your email below.</span>
         {{-- REGISTER FORM --}}
         <form action={{ route('user.store') }} method="POST">
             @csrf
