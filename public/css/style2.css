@@ -188,9 +188,9 @@ a {
     box-shadow: 0 10px 10px #333333;
 }
 
-/* .verification-list-container input:focus {
+.verification-list-container input:focus {
     outline: none;
-} */
+}
 
 .verification-list-container input:hover {
     cursor: pointer;

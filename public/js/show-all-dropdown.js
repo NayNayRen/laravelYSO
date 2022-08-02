@@ -8,7 +8,7 @@ function loadAllButtonDropdownScript() {
     allButton.addEventListener("click", () => {
         allButtonDropdown.classList.toggle("all-button-dropdown-toggle");
         allButtonArrow.classList.toggle("all-button-arrow-rotate");
-        allButtonArrow.classList.toggle("all-button-toggle");
+        // allButtonArrow.classList.toggle("all-button-toggle");
         allButton.classList.toggle("all-button-toggle");
     });
 
@@ -24,7 +24,7 @@ function loadAllButtonDropdownScript() {
             searchField.value = e.target.innerText;
             allButtonDropdown.classList.remove("all-button-dropdown-toggle");
             allButtonArrow.classList.remove("all-button-arrow-rotate");
-            allButtonArrow.classList.remove("all-button-toggle");
+            // allButtonArrow.classList.remove("all-button-toggle");
             allButton.classList.remove("all-button-toggle");
         });
     });

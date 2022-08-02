@@ -175,18 +175,19 @@
 }
 
 .all-button-dropdown li {
-    color: #fff;
+    color: #000;
     font-size: 16px;
     font-weight: bold;
     list-style-type: none;
     padding: 15px 10px;
-    text-shadow: 0 1px 1px #000;
+    /* text-shadow: 0 1px 1px #000; */
     text-transform: capitalize;
     width: 100%;
 }
 
 .all-button-dropdown li:hover {
     background-color: #000;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -203,6 +204,8 @@
 }
 
 .all-button-toggle {
+    -webkit-box-shadow: 0 10px 10px #333333;
+    box-shadow: 0 10px 10px #333333;
     background-color: #808080;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
