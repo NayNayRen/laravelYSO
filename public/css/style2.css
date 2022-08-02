@@ -175,7 +175,7 @@ a {
     height: 38px;
     margin-bottom: 28px;
     margin-top: 5px;
-    outline: none;
+    /* outline: none; */
     padding: 0 10px;
     text-align: left;
     transition: all 250ms ease;
@@ -188,9 +188,9 @@ a {
     box-shadow: 0 10px 10px #333333;
 }
 
-.verification-list-container input:focus {
+/* .verification-list-container input:focus {
     outline: none;
-}
+} */
 
 .verification-list-container input:hover {
     cursor: pointer;

@@ -131,9 +131,10 @@ class UserController extends Controller
     public function verifyUser(Request $request,$id){
         $user = User::find($id);
         // verify by email
+        // dd($request->verify_by);
         $email = str_contains($request->verify_by ,'@');
         if($email){
-            if($user->email_code !==null && $user->email_code == $request->verification_code){
+            if($user->email_code != null && $user->email_code == $request->verification_code){
                 $user->email_verified = 1;
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email.');
@@ -144,7 +145,7 @@ class UserController extends Controller
         // verify by phone
         $phone = str_contains($request->verify_by ,'-');
         if($phone){
-            if($user->phone_code !==null && $user->phone_code == $request->verification_code){
+            if($user->phone_code != null && $user->phone_code == $request->verification_code){
                 $user->phone_verified = 1;
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone.');
