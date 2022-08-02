@@ -56,7 +56,7 @@
 </div>
 {{-- PAGE SPECIFIC SCRIPT --}}
 <script src="{{ asset('js/show-verify-dropdown.js') }}"></script>
-<script src="{{ asset('js/show-signin-password.js') }}"></script>
+{{-- <script src="{{ asset('js/show-signin-password.js') }}"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {

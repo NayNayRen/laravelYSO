@@ -25,9 +25,14 @@
                 @enderror
             </div>
             {{-- CONFIRM PASSWORD --}}
-            <div class="users-form-group">
+            <div class="users-form-group password-signin">
                 <label for="password_confirmation">Confirm Password</label><br>
                 <input type="password" name="password_confirmation" id="confirm-password">
+                {{-- SHOW/HIDE PASSWORD EYE --}}
+                <i id="hide-password" class="fa fa-eye-slash" aria-hidden="false" aria-label="Show Password."
+                    onclick="hideConfirm()"></i>
+                <i id="show-password" class="fa fa-eye" aria-hidden="false" aria-label="Hide Password."
+                    onclick="showConfirm()"></i>
                 @error('password_confirmation')
                     <span class="users-form-group-error">{{ $message }}</span>
                 @enderror

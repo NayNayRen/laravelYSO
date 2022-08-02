@@ -2199,6 +2199,9 @@ body {
 
 .flash-message-user p,
 .otp-message p {
+    /* color: red; */
+    font-weight: bold;
+    line-height: 30px;
     width: 90%;
 }
 

@@ -159,8 +159,8 @@
             </div>
             <div class="dashboard-right-container">
                 <h4 class="mb-3">You're visiting as a guest.</h4>
-                <h5 class="mb-3">Kindly <a href={{ route('user.create') }}>Register</a> and/or <a
-                        href={{ route('login.showLoginForm') }}>Log In</a> to continue.</h5>
+                <h5 class="mb-3">Please head over to <a href={{ route('user.create') }}>Register</a>
+                    and/or <a href={{ route('login.showLoginForm') }}>Log In</a> to continue.</h5>
             </div>
         @endauth
     </div>
