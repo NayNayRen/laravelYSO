@@ -66,23 +66,6 @@ class UserController extends Controller
         return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
     }
 
-    // LOG A USER IN
-    // public function loginUser(Request $request, User $user){
-    //     $formInputs = $request->validate([
-    //         'email' => ['required', 'email'],
-    //         'password' => ['required']
-    //     ]);
-    //     // attempt is the log in method for Laravel
-    //     if(auth()->attempt($formInputs)){
-    //         // generates a session token
-    //         $request->session()->regenerate();
-    //         // redirects home with a message
-    //         return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
-    //     }else{
-    //         return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
-    //     }
-    // }
-
     // SHOW THE VERIFY FORM
     public function showVerifyForm($id){
         $user = User::find($id);
@@ -201,7 +184,6 @@ class UserController extends Controller
 
     // UPDATE NEW PASSWORD
     public function savePassword(Request $request){
-        // dd($request->password);
         $user = User::find($request->user_id);
         if($request->password != null){
             if($request->password == $request->password_confirmation){
