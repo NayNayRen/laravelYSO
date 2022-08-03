@@ -378,7 +378,8 @@
                         $('.favorite-added-button').click(() => {
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
-                            // location.reload();
+                            // false reloads from browser cache
+                            // location.reload(false);
                         });
                     }
                     if (data['delete']) {
@@ -390,7 +391,8 @@
                         $('.favorite-removed-button').click(() => {
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
-                            // location.reload();
+                            // false reloads from browser cache
+                            // location.reload(false);
                         });
                     }
                     if (data['error']) {
