@@ -185,6 +185,7 @@ class UserController extends Controller
     // UPDATE NEW PASSWORD
     public function savePassword(Request $request){
         $user = User::find($request->user_id);
+        // dd($user);
         if($request->password != null){
             if($request->password == $request->password_confirmation){
                 $user->password = bcrypt($request->password);
@@ -194,7 +195,7 @@ class UserController extends Controller
                 return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
             }
         }else{
-            return redirect()->back()->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', please type and confirm a new password.');    
+            return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', one of the password inputs is empty.');    
         }
         return $request;
     }

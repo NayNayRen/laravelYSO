@@ -52,6 +52,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(() => {
+        // console.log('loaded');
         // FLASH MESSAGE DISPLAY WITH TIMER TO REMOVE
         // waits for 250ms then shows message
         setTimeout(() => {
