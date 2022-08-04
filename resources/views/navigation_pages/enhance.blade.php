@@ -35,9 +35,10 @@
             <div class="enhance-text">
                 <h1>Enhance your gains with new customers.</h1>
                 <div>
-                    <p>Reaching into social media with a YSO campaign to find new customers brings a depth of people you
-                        can not find otherwise. The time and budget it would take to reach the masses with a
-                        conventional campaign is out of reach for most.</p>
+                    <p>Reaching into social media with a YSO campaign to find new customers brings a wealth of people
+                        you
+                        cannot find otherwise. The time and budget it would take to reach the masses with a
+                        conventional campaign is out of bounds for most.</p>
                     <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
                 </div>
@@ -57,7 +58,7 @@
             <div class="enhance-text">
                 <h1>Reach your audience with a touch of value.</h1>
                 <div>
-                    <p>Customers benefit while being rewarded when shopping in-store or online. Sharing their
+                    <p>Customers benefit while being rewarded when shopping in store or online. Sharing their
                         experiences also benefits the merchant. We help these merchants by offering complete flexibility
                         to easily create and share all of their offers and services.</p>
                     <a href={{ route('support') }} class="page-hero-button">Learn
@@ -101,7 +102,7 @@
                 <h1>Track campaigns and know what works.</h1>
                 <div>
                     <p>Creating a unique rewards program allows you to customize incentives tailored to your customers.
-                        In turn you can update, and track each incentive you create, knowing which incentive hits home
+                        In turn, you can update and track each incentive you create, knowing which incentive hits home
                         with your customers.</p>
                     <a href={{ route('support') }} class="page-hero-button">Learn
                         More</a>
