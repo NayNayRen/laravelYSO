@@ -8,6 +8,7 @@
         <h1>Verify Your Account</h1>
         <span class="users-form-greeting gray-text">Continue signing in by choosing a verification method.</span>
         <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
+        <span class="users-form-greeting gray-text">You'll then be redirected to log in.</span>
         {{-- VERIFICATION FORM --}}
         <form action={{ route('login.verifyUser', $user->id) }} method="POST">
             @csrf
@@ -56,7 +57,6 @@
 </div>
 {{-- PAGE SPECIFIC SCRIPT --}}
 <script src="{{ asset('js/show-verify-dropdown.js') }}"></script>
-{{-- <script src="{{ asset('js/show-signin-password.js') }}"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {

@@ -8,8 +8,11 @@
         <h1>Change Your Password</h1>
         <span class="users-form-greeting gray-text">Continue by using an email below.</span>
         <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
+        <span class="users-form-greeting gray-text">You'll then create and confirm that new password.</span>
         {{-- SIGN IN FORM --}}
-        <form action={{ route('login.showResetForm') }} method="POST">
+        {{-- HAD TO CHANGE FROM POST TO GET --}}
+        {{-- <form action={{ route('login.showResetForm') }} method="POST"> --}}
+        <form action={{ route('login.showResetForm') }} method="GET">
             @csrf
             {{-- EMAIL --}}
             <div class="users-form-group input-type-email">

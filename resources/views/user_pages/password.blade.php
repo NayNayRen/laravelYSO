@@ -6,6 +6,7 @@
         <h1>Create New Password</h1>
         <span class="users-form-greeting gray-text">Continue by creating a new password below.</span>
         <span class="users-form-greeting gray-text">Followed by confirming that new password.</span>
+        <span class="users-form-greeting gray-text">You'll then be redirected to log in.</span>
         {{-- SAVE PASSWORD FORM --}}
         <form action={{ route('login.savePassword') }} method="POST">
             @csrf
