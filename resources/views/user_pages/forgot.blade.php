@@ -24,7 +24,7 @@
             <div class="users-form-group password-signin">
                 <label for="verification_code">Verification Code</label>
                 <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
-                    placeholder="Enter 6 digit code">
+                    placeholder="Enter 6 Digit Code">
             </div>
             {{-- CHANGE PASSWORD BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Change Password"></input>
@@ -36,31 +36,12 @@
     </div>
 </div>
 {{-- PAGE SPECIFIC SCRIPT --}}
-<script src="{{ asset('js/show-signin-password.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        // CHOOSE VERIFY METHOD
-        $('#verify_by').change(function () {
-            var id = $(this).val();
-            if (id == 'phone') {
-                alert('phone');
-                $('.input-type-phone').removeClass('d-none');
-                if (!$('.input-type-email').hasClass('d-none')) {
-                    $('.input-type-email').addClass('d-none');
-                }
-            }
-            if (id == 'email') {
-                alert('email')
-                $('.input-type-email').removeClass('d-none');
-                if (!$('.input-type-phone').hasClass('d-none')) {
-                    $('.input-type-phone').addClass('d-none');
-                }
             }
         });
         // SHOW MESSAGES FOR OTP RESPONSE

@@ -1,17 +1,17 @@
 // password container, icon that changes, and reset button
 // numbers 0-9 and letters a-z
 const keyPressedList = /^[0-9a-zA-Z]+$/;
-const registerPassword = document.getElementById("password");
+const newUserPassword = document.getElementById("password");
 const registerPasswordContainer = document.querySelector(".password-register");
 const passwordIcon = document.querySelector(".password-length-icon");
 
 // checks password length and changes icon accordingly
 function checkPasswordLength() {
-    if (registerPassword.value.length >= 8) {
+    if (newUserPassword.value.length >= 8) {
         // 8 or more
         validPassword();
     }
-    if (registerPassword.value.length < 8) {
+    if (newUserPassword.value.length < 8) {
         // less than 8
         invalidPassword();
     }
