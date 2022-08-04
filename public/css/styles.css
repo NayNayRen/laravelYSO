@@ -5007,13 +5007,15 @@ html {
 
     .category-heading {
         font-size: 25px;
-        margin-left: 5px;
+        /* margin-left: 5px; */
         min-height: 35px;
         padding: 0 5px;
-        width: 50%;
+        /* width: 50%; */
+        width: 100%;
     }
 
     .category-heading::after {
+        display: none;
         font-size: 40px;
         right: -16px;
     }
@@ -5025,11 +5027,11 @@ html {
 
     .container {
         grid-template-columns: 100%;
-        padding: 10px 0 0 5px;
+        padding: 10px 5px 0 5px;
     }
 
     .container ~ .container {
-        padding: 10px 0 0 5px;
+        padding: 10px 5px 0 5px;
     }
 
     .container-arrow-left,
@@ -5049,14 +5051,14 @@ html {
     .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 90px);
-        top: -43px;
+        top: -45px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 10px;
-        top: -43px;
+        top: -45px;
         transform: translateY(0);
     }
 
@@ -5590,6 +5592,7 @@ html {
         border-radius: 20px;
         color: #fff;
         font-size: 14px;
+        font-weight: bold;
         padding: 5px 10px;
         position: absolute;
         right: 105px;
@@ -5708,16 +5711,22 @@ html {
     .card {
         height: 275px;
         margin: 2px;
-        width: 200px;
+        width: 215px;
     }
 
     .category-heading {
+        border-radius: 0;
         font-size: 22px;
-        min-height: 35px;
+        min-height: 40px;
     }
 
     .container {
-        padding: 10px 0 0 5px;
+        /* padding: 10px 0 0 0; */
+        padding: 0 0 10px 0;
+    }
+    /* remove if switching back */
+    .container ~ .container {
+        padding: 0 0 0 0;
     }
 
     .container-arrow-left,
@@ -5731,14 +5740,14 @@ html {
     .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 70px);
-        top: -42px;
+        top: -47px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 5px;
-        top: -42px;
+        top: -47px;
         transform: translateY(0);
     }
 
@@ -5788,7 +5797,7 @@ html {
 
     .flash-message-user p,
     .otp-message p {
-        padding: 5px 10px;
+        padding: 35px 10px 5px 10px;
         width: 100%;
     }
 
@@ -5952,7 +5961,8 @@ html {
     }
 
     .view-all .category-heading {
-        width: 60%;
+        /* width: 60%; */
+        width: 100%;
     }
 
     .view-all-arrow-container {
@@ -5974,6 +5984,7 @@ html {
     }
 
     .view-all-item-counter {
+        bottom: -25px;
         padding-right: 15px;
     }
 
