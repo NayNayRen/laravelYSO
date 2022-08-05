@@ -2534,10 +2534,17 @@ html {
     width: 100%;
 }
 
-.input-error {
-    bottom: -20px;
+.input-error-forgot {
+    bottom: 7px;
     color: #e6331f;
-    font-size: 14px;
+    font-size: 12px;
+    left: 0;
+    position: absolute;
+}
+.input-error-verify {
+    bottom: -17px;
+    color: #e6331f;
+    font-size: 12px;
     left: 0;
     position: absolute;
 }

@@ -13,9 +13,7 @@ class UserController extends Controller
 {
     // SHOW THE REGISTRATION FORM
     public function showRegistrationForm(){
-        return view('user_pages/register', [
-            'pageTitle' => 'Register With YSO'
-        ]);
+        return view('user_pages/register', ['pageTitle' => 'Register With YSO']);
     }
 
     // REGISTER A NEW USER
@@ -32,7 +30,7 @@ class UserController extends Controller
         // create new user
         $user = User::create($formInputs);
         // return $user->id;
-        return redirect(route('login.showVerifyForm',$user->id))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered. Choose a verification method to continue.');
+        return redirect(route('login.showVerifyForm', $user->id))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered. Choose a verification method to continue.');
     }
 
     // SHOW THE LOG IN FORM
@@ -46,9 +44,9 @@ class UserController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
-        $check = User::where('email',$request->email)->first();
+        $check = User::where('email', $request->email)->first();
         if($check){
-            if($check->email_verified ==1 || $check->phone_verified==1){
+            if($check->email_verified == 1 || $check->phone_verified== 1){
                 // attempt is the log in method for Laravel
                 if(auth()->attempt($formInputs)){
                     // generates a session token
@@ -57,7 +55,7 @@ class UserController extends Controller
                     return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
                 }
             }else{
-                return redirect(route('login.showVerifyForm',$check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', please verify with your Email or Phone to log in.');
+                return redirect(route('login.showVerifyForm', $check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', please verify with your Email or Phone to log in.');
             }
         }
         // if log in fails stay on same page and show one error
@@ -69,8 +67,7 @@ class UserController extends Controller
     // SHOW THE VERIFY FORM
     public function showVerifyForm($id){
         $user = User::find($id);
-        // return $user;
-        return view('user_pages/verify',compact('user'), ['pageTitle' => 'Verify User']);
+        return view('user_pages/verify', compact('user'), ['pageTitle' => 'Verify User']);
     }
 
     // SEND VERIFICATION CODE TO EMAIL OR PHONE, USED ON THE VERIFY PAGE
@@ -97,7 +94,7 @@ class UserController extends Controller
             $user->phone_code = $code;
             $user->save();
             $recipient = '+1'.str_replace('-','',$request->id);
-            $message_to_send = "Your Phone Verification Code is : ".$code;
+            $message_to_send = "Your Phone Verification Code Is : ".$code;
             $this->sendSms($recipient,$message_to_send);
             return response()->json([
                 'success' => 'Verification Code Texted To '.$recipient,
@@ -114,7 +111,6 @@ class UserController extends Controller
     public function verifyUser(Request $request,$id){
         $user = User::find($id);
         // verify by email
-        // dd($request->verify_by);
         $email = str_contains($request->verify_by ,'@');
         if($email){
             if($user->email_code != null && $user->email_code == $request->verification_code){
@@ -122,7 +118,8 @@ class UserController extends Controller
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email. Log in to continue.');
             }else{
-                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+                // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+                return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
         }
         // verify by phone
@@ -133,10 +130,12 @@ class UserController extends Controller
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone. Log in to continue.');
             }else{
-                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+                // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
+                return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
         }
-        return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
+        // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
+        return back()->withErrors(['verification_code' => 'One Of The Inputs Was Left Empty.']);
     
     }
 
@@ -175,17 +174,18 @@ class UserController extends Controller
             return view('user_pages/password', compact('user_id'), ['pageTitle' => 'Change Password']);
             // added to fix empty email submission
         }if($request->email == null){
-            return redirect()->back()->with('flash-message-user', 'No Email Was Provided.');
+            // return redirect()->back()->with('flash-message-user', 'No Email Was Provided.');
+            return back()->withErrors(['email' => 'No Email Was Provided.']);
         }else{
             // removed user display data to fix breakage
-            return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
+            // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
+            return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
         }
     }
 
     // UPDATE NEW PASSWORD
     public function savePassword(Request $request){
         $user = User::find($request->user_id);
-        // dd(strlen($request->password));
         if($request->password != null){
             if(strlen($request->password) > 7){
                 if($request->password == $request->password_confirmation){
@@ -193,13 +193,16 @@ class UserController extends Controller
                     $user->update();
                     return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
                 }else{
-                    return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
+                    // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
+                    return back()->withErrors(['password' => 'Passwords Do Not Match.']);
                 }
             }else{
-                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', password must be at least 8 characters long.');
+                // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', password must be at least 8 characters long.');
+                return back()->withErrors(['password' => 'Must Be At Least 8 Characters Long.']);
             }
         }else{
-            return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', one of the password inputs was left empty.');    
+            // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', one of the password inputs was left empty.'); 
+            return back()->withErrors(['password_confirmation' => 'One Of The Inputs Was Left Empty.']);   
         }
         return $request;
     }

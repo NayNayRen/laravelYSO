@@ -35,8 +35,7 @@
                             {{ $user->phone ?? phone }}</li>
                     </ul>
                 </div>
-
-                <span class="users-form-group-error"></span>
+                <span class="input-error-verify"></span>
             </div>
             {{-- OTP BUTTON --}}
             <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
@@ -45,6 +44,9 @@
                 <label for="verification_code">Verification Code</label>
                 <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
                     placeholder="Enter 6 Digit Code">
+                @error('verification_code')
+                    <span class="users-form-group-error">{{ $message }}</span>
+                @enderror
             </div>
             {{-- SUBMIT BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Verify User"></input>
@@ -84,6 +86,8 @@
                 success: function (data) {
                     if (data['success']) {
                         var r = (data['success']);
+                        $('.verify-input-error').text('');
+                        $('.users-form-group-error').css('display', 'none');
                         $('#get_otp').addClass('d-none');
                         $('.otp-method').text(r);
                         setTimeout(() => {
@@ -102,20 +106,22 @@
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        $('.otp-method').text(r);
-                        setTimeout(() => {
-                            if ($(window).width() > 400) {
-                                $('.otp-message').css('top', '150px');
-                            }
-                            if ($(window).width() <= 400) {
-                                $('.otp-message').css('top', '0');
-                            }
-                            // after displaying for 7000ms(7s) message hides itself
-                            setTimeout(() => {
-                                $('.otp-message').css('top',
-                                    '-100%');
-                            }, 5000);
-                        }, 50);
+                        // $('.otp-method').text(r);
+                        $('.input-error-verify').text(r);
+                        $('.users-form-group-error').css('display', 'none');
+                        // setTimeout(() => {
+                        //     if ($(window).width() > 400) {
+                        //         $('.otp-message').css('top', '150px');
+                        //     }
+                        //     if ($(window).width() <= 400) {
+                        //         $('.otp-message').css('top', '0');
+                        //     }
+                        //     // after displaying for 7000ms(7s) message hides itself
+                        //     setTimeout(() => {
+                        //         $('.otp-message').css('top',
+                        //             '-100%');
+                        //     }, 5000);
+                        // }, 50);
                     }
                 }
             });

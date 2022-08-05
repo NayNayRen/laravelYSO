@@ -19,7 +19,10 @@
                 <label for="email">Email</label><br>
                 <span class="gray-text password-message">smith@mail.com</span>
                 <input type="email" name="email" id="email" value="{{ old('email') }}">
-                <span class="users-form-group-error"></span>
+                @error('email')
+                    <span class="users-form-group-error">{{ $message }}</span>
+                @enderror
+                <span class="input-error-forgot"></span>
             </div>
             {{-- OTP BUTTON --}}
             <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
@@ -28,6 +31,9 @@
                 <label for="verification_code">Verification Code</label>
                 <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
                     placeholder="Enter 6 Digit Code">
+                @error('verification_code')
+                    <span class="users-form-group-error">{{ $message }}</span>
+                @enderror
             </div>
             {{-- CHANGE PASSWORD BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Change Password"></input>
@@ -63,6 +69,8 @@
                 success: function (data) {
                     if (data['success']) {
                         var r = (data['success']);
+                        $('.input-error').text('');
+                        $('.users-form-group-error').css('display', 'none');
                         $('#get_otp').addClass('d-none');
                         $('.otp-method').text(r);
                         setTimeout(() => {
@@ -81,20 +89,22 @@
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        $('.otp-method').text(r);
-                        setTimeout(() => {
-                            if ($(window).width() > 400) {
-                                $('.otp-message').css('top', '150px');
-                            }
-                            if ($(window).width() <= 400) {
-                                $('.otp-message').css('top', '0');
-                            }
-                            // after displaying for 7000ms(7s) message hides itself
-                            setTimeout(() => {
-                                $('.otp-message').css('top',
-                                    '-100%');
-                            }, 5000);
-                        }, 50);
+                        // $('.otp-method').text(r);
+                        $('.input-error-forgot').text(r);
+                        $('.users-form-group-error').css('display', 'none');
+                        // setTimeout(() => {
+                        //     if ($(window).width() > 400) {
+                        //         $('.otp-message').css('top', '150px');
+                        //     }
+                        //     if ($(window).width() <= 400) {
+                        //         $('.otp-message').css('top', '0');
+                        //     }
+                        //     // after displaying for 7000ms(7s) message hides itself
+                        //     setTimeout(() => {
+                        //         $('.otp-message').css('top',
+                        //             '-100%');
+                        //     }, 5000);
+                        // }, 50);
                     }
                 }
             });

@@ -3,7 +3,7 @@
     {{-- USER LOG IN OR OUT MESSAGE --}}
     @include('includes._flash_message_user')
     <div class="users">
-        <h1>Create New Password</h1>
+        <h1>Create A New Password</h1>
         <span class="users-form-greeting gray-text">Continue by creating a new password below.</span>
         <span class="users-form-greeting gray-text">Followed by confirming that new password.</span>
         <span class="users-form-greeting gray-text">You'll then be redirected to log in.</span>
