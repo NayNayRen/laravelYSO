@@ -63,7 +63,7 @@ class UserController extends Controller
         // if log in fails stay on same page and show one error
         // don't specify if the email is correct or not for security reasons
         // email states where to put the solo message
-        return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
+        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
 
     // SHOW THE VERIFY FORM
