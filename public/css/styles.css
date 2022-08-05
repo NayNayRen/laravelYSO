@@ -2534,6 +2534,14 @@ html {
     width: 100%;
 }
 
+.input-error {
+    bottom: -20px;
+    color: #e6331f;
+    font-size: 14px;
+    left: 0;
+    position: absolute;
+}
+
 .links-container {
     -ms-flex-direction: row;
     -ms-flex-pack: distribute;

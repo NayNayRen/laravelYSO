@@ -110,7 +110,7 @@ class UserController extends Controller
         }
     }
 
-    // VERIFY USER VIA EMAIL OR PHONE
+    // VERIFY USER VIA EMAIL OR PHONE, CLICKING THE VERIFY USER
     public function verifyUser(Request $request,$id){
         $user = User::find($id);
         // verify by email
@@ -185,13 +185,18 @@ class UserController extends Controller
     // UPDATE NEW PASSWORD
     public function savePassword(Request $request){
         $user = User::find($request->user_id);
+        // dd(strlen($request->password));
         if($request->password != null){
-            if($request->password == $request->password_confirmation){
-                $user->password = bcrypt($request->password);
-                $user->update();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
+            if(strlen($request->password) > 7){
+                if($request->password == $request->password_confirmation){
+                    $user->password = bcrypt($request->password);
+                    $user->update();
+                    return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
+                }else{
+                    return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
+                }
             }else{
-                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
+                return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', password must be at least 8 characters long.');
             }
         }else{
             return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', one of the password inputs was left empty.');    
