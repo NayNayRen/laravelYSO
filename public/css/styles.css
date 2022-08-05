@@ -3751,12 +3751,13 @@ html {
 }
 
 .users-form-group-error {
-    bottom: 5px;
+    bottom: 7px;
     color: #e6331f;
     font-size: 12px;
     left: 0;
-    padding: 2px 0;
+    /* padding: 2px 0; */
     position: absolute;
+    text-transform: capitalize;
     /* outline: solid 1px blue; */
 }
 
@@ -5849,19 +5850,19 @@ html {
     }
 
     .password-length-correct-icon {
-        -webkit-transform: translateY(-50%);
+        /* -webkit-transform: translateY(-50%); */
         font-size: 22px;
         padding: 2px 3px;
-        top: calc(50% + 5px);
-        transform: translateY(-50%);
+        /* top: calc(50% + 5px);
+        transform: translateY(-50%); */
     }
 
     .password-length-incorrect-icon {
-        -webkit-transform: translateY(-50%);
+        /* -webkit-transform: translateY(-50%); */
         font-size: 22px;
         padding: 2px 5px;
-        top: calc(50% + 5px);
-        transform: translateY(-50%);
+        /* top: calc(50% + 5px);
+        transform: translateY(-50%); */
     }
 
     .password-signin i {
@@ -5944,7 +5945,7 @@ html {
     }
 
     .users form {
-        margin: 10px 0 15px 0;
+        margin: 25px 0 15px 0;
     }
 
     .users-form-greeting a:hover,
@@ -5956,10 +5957,6 @@ html {
         margin: 5px 0 25px 0;
         padding: 7px;
     }
-
-    /* .users-form-group-error {
-        bottom: 0;
-    } */
 
     .users-name-register {
         -ms-flex-direction: column;

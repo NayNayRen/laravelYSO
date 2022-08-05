@@ -14,7 +14,7 @@
             {{-- INITIAL PASSWORD --}}
             <div class="users-form-group password-register">
                 <label for="password">New Password</label><br>
-                <span class="gray-text password-message">At least 8 characters long.</span>
+                <span class="gray-text password-message">At Least 8 Characters Long</span>
                 <input type="password" name="password" id="password">
                 <div class="password-length-icon">
                     <span class="password-length-incorrect-icon">
@@ -53,7 +53,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(() => {
-        // console.log('loaded');
         // FLASH MESSAGE DISPLAY WITH TIMER TO REMOVE
         // waits for 250ms then shows message
         setTimeout(() => {

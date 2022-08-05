@@ -64,7 +64,7 @@
             {{-- INITIAL PASSWORD --}}
             <div class="users-form-group password-register">
                 <label for="password">Password</label><br>
-                <span class="gray-text password-message">At least 8 characters long.</span>
+                <span class="gray-text password-message">At Least 8 Characters Long</span>
                 <input type="password" name="password" id="password">
                 <div class="password-length-icon">
                     <span class="password-length-incorrect-icon">

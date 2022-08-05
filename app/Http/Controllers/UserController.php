@@ -58,10 +58,9 @@ class UserController extends Controller
                 return redirect(route('login.showVerifyForm', $check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', please verify with your Email or Phone to log in.');
             }
         }
-        // if log in fails stay on same page and show one error
         // don't specify if the email is correct or not for security reasons
         // email states where to put the solo message
-        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+        return back()->withErrors(['email' => 'Incorrect Credentials'])->onlyInput('email');
     }
 
     // SHOW THE VERIFY FORM
@@ -70,11 +69,11 @@ class UserController extends Controller
         return view('user_pages/verify', compact('user'), ['pageTitle' => 'Verify User']);
     }
 
-    // SEND VERIFICATION CODE TO EMAIL OR PHONE, USED ON THE VERIFY PAGE
+    // SEND VERIFICATION CODE TO EMAIL OR PHONE, SENT BY OTP BUTTON
     public function sendVerifyCode(Request $request){
         $code = rand(100000,999999);
         $user = User::find($request->userid);
-        // via email
+        // sent to email
         $email = str_contains($request->id ,'@');
         if($email){
             $user->email_code = $code;
@@ -88,7 +87,7 @@ class UserController extends Controller
                 'success' => 'Verification Code Emailed To '.$request->id,
             ]);
         }
-        // via phone
+        // sent to phone
         $phone = str_contains($request->id ,'-');
         if($phone){
             $user->phone_code = $code;
@@ -107,7 +106,7 @@ class UserController extends Controller
         }
     }
 
-    // VERIFY USER VIA EMAIL OR PHONE, CLICKING THE VERIFY USER
+    // VERIFY USER VIA EMAIL OR PHONE, CLICKING THE VERIFY USER BUTTON
     public function verifyUser(Request $request,$id){
         $user = User::find($id);
         // verify by email
@@ -136,7 +135,6 @@ class UserController extends Controller
         }
         // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
         return back()->withErrors(['verification_code' => 'One Of The Inputs Was Left Empty.']);
-    
     }
 
     // SHOW THE FOGOT PASSWORD FORM
@@ -172,12 +170,10 @@ class UserController extends Controller
         if($user != null && $user->email_code == $request->verification_code){
             $user_id = $user->id;
             return view('user_pages/password', compact('user_id'), ['pageTitle' => 'Change Password']);
-            // added to fix empty email submission
         }if($request->email == null){
             // return redirect()->back()->with('flash-message-user', 'No Email Was Provided.');
             return back()->withErrors(['email' => 'No Email Was Provided.']);
         }else{
-            // removed user display data to fix breakage
             // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
             return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
         }
