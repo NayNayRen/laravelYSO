@@ -134,7 +134,10 @@ class UserController extends Controller
             }
         }
         // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
-        return back()->withErrors(['verification_code' => 'One Of The Inputs Was Left Empty.']);
+        return back()->withErrors([
+            'verify_by' => 'No Method Was Selected.',
+            'verification_code' => 'Verification Code Was Left Empty.'
+        ]);
     }
 
     // SHOW THE FOGOT PASSWORD FORM
@@ -172,7 +175,7 @@ class UserController extends Controller
             return view('user_pages/password', compact('user_id'), ['pageTitle' => 'Change Password']);
         }if($request->email == null){
             // return redirect()->back()->with('flash-message-user', 'No Email Was Provided.');
-            return back()->withErrors(['email' => 'No Email Was Provided.']);
+            return back()->withErrors(['email' => 'Email Not Provided.']);
         }else{
             // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
             return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
@@ -182,7 +185,7 @@ class UserController extends Controller
     // UPDATE NEW PASSWORD
     public function savePassword(Request $request){
         $user = User::find($request->user_id);
-        if($request->password != null){
+        if($request->password != null && $request->password_confirmation != null){
             if(strlen($request->password) > 7){
                 if($request->password == $request->password_confirmation){
                     $user->password = bcrypt($request->password);
@@ -190,7 +193,10 @@ class UserController extends Controller
                     return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
                 }else{
                     // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
-                    return back()->withErrors(['password' => 'Passwords Do Not Match.']);
+                    return back()->withErrors([
+                        'password' => 'Passwords Do Not Match.',
+                        'password_confirmation' => 'Passwords Do Not Match.'
+                    ]);
                 }
             }else{
                 // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', password must be at least 8 characters long.');
@@ -198,7 +204,10 @@ class UserController extends Controller
             }
         }else{
             // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', one of the password inputs was left empty.'); 
-            return back()->withErrors(['password_confirmation' => 'One Of The Inputs Was Left Empty.']);   
+            return back()->withErrors([
+                'password' => 'Input Was Left Empty.',
+                'password_confirmation' => 'Input Was Left Empty.'
+            ]);   
         }
         return $request;
     }

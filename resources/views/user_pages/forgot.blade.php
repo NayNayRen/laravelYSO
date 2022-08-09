@@ -69,7 +69,7 @@
                 success: function (data) {
                     if (data['success']) {
                         var r = (data['success']);
-                        $('.input-error').text('');
+                        $('.input-error-forgot').text('');
                         $('.users-form-group-error').css('display', 'none');
                         $('#get_otp').addClass('d-none');
                         $('.otp-method').text(r);

@@ -35,6 +35,9 @@
                             {{ $user->phone ?? phone }}</li>
                     </ul>
                 </div>
+                @error('verify_by')
+                    <span class="input-error-verify verify-by">{{ $message }}</span>
+                @enderror
                 <span class="input-error-verify"></span>
             </div>
             {{-- OTP BUTTON --}}
@@ -86,7 +89,7 @@
                 success: function (data) {
                     if (data['success']) {
                         var r = (data['success']);
-                        $('.verify-input-error').text('');
+                        $('.input-error-verify').text('');
                         $('.users-form-group-error').css('display', 'none');
                         $('#get_otp').addClass('d-none');
                         $('.otp-method').text(r);
@@ -108,6 +111,7 @@
                         var r = (data['error']);
                         // $('.otp-method').text(r);
                         $('.input-error-verify').text(r);
+                        $('.verify-by').css('display', 'none');
                         $('.users-form-group-error').css('display', 'none');
                         // setTimeout(() => {
                         //     if ($(window).width() > 400) {
