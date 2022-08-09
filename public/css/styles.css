@@ -1583,11 +1583,48 @@ body {
     /* outline: solid 1px blue; */
 }
 
+.coupon-message,
+.favorite-added-message,
+.favorite-removed-message,
+.guest-error-message,
+.share-message {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: justify;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    -webkit-box-shadow: 0 0 15px #000;
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: top 500ms ease;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    min-height: 250px;
+    padding: 10px 10px 20px 10px;
+    position: fixed;
+    top: -100%;
+    /* top: 150px; */
+    transform: translateX(-50%);
+    transition: top 500ms ease;
+    width: 400px;
+    z-index: 4;
+}
+
 .coupon-message a,
 .favorite-added-message a,
 .favorite-removed-message a {
     color: #000;
     margin-top: 10px;
+    text-decoration: underline;
     transition: color 150ms ease;
 }
 
@@ -1945,61 +1982,6 @@ body {
     border-bottom: solid 1px #808080;
     font-size: 18px;
     padding: 0 20px 5px 0;
-}
-
-.coupon-message {
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 15px #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    left: 50%;
-    min-height: 250px;
-    padding: 10px;
-    position: fixed;
-    top: -100%;
-    /* top: 150px; */
-    transform: translateX(-50%);
-    transition: top 500ms ease;
-    width: 400px;
-    z-index: 4;
-}
-
-.favorite-added-message,
-.favorite-removed-message,
-.guest-error-message,
-.share-message {
-    -ms-flex-align: center;
-    -ms-flex-direction: column;
-    -ms-flex-pack: justify;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: justify;
-    -webkit-box-shadow: 0 0 15px #000;
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: top 500ms ease;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 15px #000;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    left: 50%;
-    min-height: 250px;
-    padding: 10px;
-    position: fixed;
-    top: -100%;
-    /* top: 150px; */
-    transform: translateX(-50%);
-    transition: top 500ms ease;
-    width: 400px;
-    z-index: 4;
 }
 
 .favorite-added-message div,

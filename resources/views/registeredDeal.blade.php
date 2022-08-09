@@ -11,7 +11,7 @@
         <h2 class="coupon-heading"></h2>
         <p class="coupon-message-name">{{ $deal['name'] }}</p>
         <button type="button" class="message-button coupon-button">OK</button>
-        <a href={{ route('deals.index') }}>Show me more deals</a>
+        <a href={{ route('deals.index') }}>Show Me More Deals</a>
     </div>
     <div class="selected-deal-container">
         {{-- SELECTED DEAL USING DEALS DATA --}}
