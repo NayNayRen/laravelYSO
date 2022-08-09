@@ -8,6 +8,7 @@ function loadFavoritedMessage() {
     const selectedDealFavoriteMessage = document.querySelector(
         ".selected-deal-favorite-message"
     );
+
     favoriteButton.addEventListener("click", () => {
         selectedDealFavoriteMessage.classList.add("show-selected-deal-message");
         windowOverlay.classList.add("window-overlay-dim");

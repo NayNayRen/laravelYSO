@@ -3,7 +3,7 @@
     <h2>Share This Deal</h2>
     <p id="shared-message-name"></p>
     <div class="selected-deal-social-container">
-        <a href="#" aria-label="Share with mail.">
+        <a href="#" aria-label="Share with Email.">
             <i class="fa fa-envelope-o" aria-hidden="false"></i>
         </a>
         <a href="#" aria-label="Share with Facebook.">

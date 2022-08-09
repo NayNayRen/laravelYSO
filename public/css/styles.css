@@ -5749,6 +5749,25 @@ html {
         transform: translateY(0);
     }
 
+    .coupon-message,
+    .favorite-added-message,
+    .favorite-removed-message,
+    .guest-error-message,
+    .share-message {
+        border-radius: 0;
+        min-height: 225px;
+        padding: 10px 5px 20px 5px;
+        width: 100%;
+    }
+
+    .coupon-message h2,
+    .favorite-added-message h2,
+    .favorite-removed-message h2,
+    .guest-error-message h2,
+    .share-message h2 {
+        font-size: 18px;
+    }
+
     .dashboard-right-container .container-arrow-left {
         left: calc(100% - 15px);
         top: 55px;
@@ -5758,14 +5777,6 @@ html {
     .dashboard-right-container .container-arrow-right {
         right: 15px;
         top: 90px;
-    }
-
-    .coupon-message,
-    .favorite-added-message,
-    .favorite-removed-message {
-        border-radius: 0;
-        min-height: 225px;
-        width: 100%;
     }
 
     .favorite-added-message div span:nth-of-type(1),
@@ -5808,10 +5819,10 @@ html {
         min-height: 225px;
     }
 
-    .guest-error-message {
+    /* .guest-error-message {
         border-radius: 0;
         width: 100%;
-    }
+    } */
 
     .page-hero {
         height: 400px;
@@ -5906,6 +5917,10 @@ html {
 
     .selected-deal-social-container a:hover {
         color: #000;
+    }
+
+    .show-selected-deal-message {
+        top: 100px;
     }
 
     .user-icon {
