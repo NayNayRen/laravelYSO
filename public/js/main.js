@@ -68,9 +68,6 @@ upArrow.addEventListener("mouseout", () => {
     upArrowMessage.style.left = "-80px";
 });
 $(document).ready(function () {
-    // $('.views-likes-icons .fa-star').click(function(){
-    //     $(this).toggleClass('favourite');
-    // });
     var owl = $(".card-display");
     owl.owlCarousel({
         loop: true,
@@ -99,21 +96,7 @@ $(document).ready(function () {
             },
         },
     });
-    // added to stop mobile horizontal auto scroll {
-    // disable scroll
-    owl.on("drag.owl.carousel", function (event) {
-        document.ontouchmove = function (e) {
-            e.preventDefault();
-        };
-    });
 
-    // enable scroll
-    owl.on("dragged.owl.carousel", function (event) {
-        document.ontouchmove = function (e) {
-            return true;
-        };
-    });
-    //  }
     $(".c-list__link").click(function () {
         $(".c-list__link").removeClass("active");
         $(this).addClass("active");

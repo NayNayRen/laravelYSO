@@ -4382,10 +4382,11 @@ html {
     }
 
     .card {
-        height: 275px;
+        /* height: 275px; */
+        height: 300px;
         margin: 2px 5px;
-        /* padding: 2px; */
-        width: 200px;
+        /* width: 200px; */
+        width: 215px;
     }
 
     .card-logo-container {
@@ -5731,21 +5732,21 @@ html {
     .container-arrow-right,
     .view-all-left-arrow,
     .view-all-right-arrow {
-        font-size: 24px;
+        /* font-size: 24px; */
         padding: 1px 5px;
     }
 
     .container-arrow-left {
         -webkit-transform: translateY(0);
-        left: calc(100% - 70px);
-        top: -47px;
+        left: calc(100% - 75px);
+        top: -49px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 5px;
-        top: -47px;
+        top: -49px;
         transform: translateY(0);
     }
 
@@ -5812,17 +5813,12 @@ html {
 
     .get-deal-button {
         font-size: 14px;
-        padding: 3px 0;
+        /* padding: 3px 0; */
     }
 
     .guest-error-content {
         min-height: 225px;
     }
-
-    /* .guest-error-message {
-        border-radius: 0;
-        width: 100%;
-    } */
 
     .page-hero {
         height: 400px;
@@ -5975,7 +5971,7 @@ html {
     }
 
     .view-all-arrow-container {
-        top: 5px;
+        top: 3px;
     }
 
     .view-all-container-heading {
