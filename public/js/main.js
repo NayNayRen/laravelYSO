@@ -37,6 +37,47 @@ function makeItStick() {
 // sticks navigation to the top of the page
 window.addEventListener("load", () => {
     makeItStick();
+    [].forEach.call(document.querySelectorAll(".glider"), function (ele) {
+        new Glider(ele, {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            scrollLock: true,
+            draggable: true,
+            rewind: true,
+            // dots: ele.parentNode.querySelector(".dots"),
+            arrows: {
+                prev: ele.parentNode.querySelector(".container-arrow-left"),
+                next: ele.parentNode.querySelector(".container-arrow-right"),
+            },
+            responsive: [
+                {
+                    // screens greater than >= 400px
+                    breakpoint: 400,
+                    settings: {
+                        // Set to `auto` and provide item width to adjust to viewport
+                        slidesToShow: 2,
+                        duration: 0.25,
+                    },
+                },
+                {
+                    // screens greater than >= 1000px
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 2,
+                        duration: 0.25,
+                    },
+                },
+                {
+                    // screens greater than >= 1300px
+                    breakpoint: 1300,
+                    settings: {
+                        slidesToShow: 3,
+                        duration: 0.25,
+                    },
+                },
+            ],
+        });
+    });
 });
 window.addEventListener("scroll", () => {
     makeItStick();

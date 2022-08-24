@@ -267,14 +267,30 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            <div class="card-display card-display1 owl-carousel owl-theme">
-                @foreach($featuredDeals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
+            <div class="glider-contain">
+                <div class="glider">
+                    @foreach($featuredDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left'
+                        aria-hidden='false'></i></div>
+                <div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right'
+                        aria-hidden='false'></i></div>
             </div>
+            {{-- CARD BLOCK --}}
+            {{-- <div class="card-display card-display1 owl-carousel owl-theme">
+@foreach($featuredDeals as $deal)
+                    CARD COMPONENT
+                    <div class="card">
+@include('includes._card')
+                    </div>
+@endforeach
+            </div> --}}
         </div>
     </div>
     {{-- SELECTED CATEGORY CONTAINER --}}
@@ -348,6 +364,7 @@
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
+<script src="{{ asset('js/glider.min.js') }}"></script>
 <script>
     $(document).ready(function () {
         $.ajaxSetup({
