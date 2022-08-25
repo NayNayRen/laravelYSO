@@ -15,7 +15,7 @@
                             class="registered-user-profile-picture" alt="Profile Picture">
                     </div>
                     <div>Logged in as:</div>
-                    <span>{{ ucfirst(auth()->user()->firstName) }}</span>
+                    <span>{{ ucfirst(auth()->user()->firstName) }} {{ ucfirst(auth()->user()->lastName) }}</span>
                     <div>Location:</div>
                     <span>{{ auth()->user()->email }}</span>
                 </div>

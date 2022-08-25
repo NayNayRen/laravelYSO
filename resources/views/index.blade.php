@@ -329,7 +329,7 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            <div class="card-display  owl-carousel owl-theme">
+            <div class="card-display owl-carousel owl-theme">
                 @foreach($popularDeals as $deal)
                     {{-- CARD COMPONENT --}}
                     <div class="card">
