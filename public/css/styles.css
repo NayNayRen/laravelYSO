@@ -5007,7 +5007,7 @@ html {
     .category-heading {
         font-size: 25px;
         /* margin-left: 5px; */
-        min-height: 35px;
+        min-height: 40px;
         padding: 0 5px;
         /* width: 50%; */
         width: 100%;
@@ -5050,14 +5050,14 @@ html {
     .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 90px);
-        top: -45px;
+        top: -49px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 10px;
-        top: -45px;
+        top: -49px;
         transform: translateY(0);
     }
 
@@ -5739,14 +5739,14 @@ html {
     .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 75px);
-        top: -49px;
+        top: -50px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 5px;
-        top: -49px;
+        top: -50px;
         transform: translateY(0);
     }
 
