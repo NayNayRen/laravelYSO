@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Mail\VerifyMail;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 use App\Models\SocialLoginProvider;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
@@ -302,7 +303,7 @@ class UserController extends Controller
                 'password' => 'SSO_PASSWORD_NULL',
 				]
 			);
-			$user_id = User::where('email', $user->getEmail())->first()->id;
+			$user_id = DB::table('users')->where('email', $user->getEmail())->first()->id;
 			// $social_login_provider = SocialLoginProvider::firstOrCreate(
 			// 	['provider_name' => 'facebook',
 			// 	'provider_id' => $user->getId()
@@ -343,7 +344,7 @@ class UserController extends Controller
                 'password' => 'SSO_PASSWORD_NULL',
 				]
 			);
-			$user_id = User::where('email', $user->getEmail())->first()->id;
+			$user_id = DB::table('users')->where('email', $user->getEmail())->first()->id;
 			// $social_login_provider = SocialLoginProvider::firstOrCreate(
 			// 	['provider_name' => 'google',
 			// 		'provider_id' => $user->getId()
@@ -380,7 +381,7 @@ class UserController extends Controller
     //             'password' => 'SSO_PASSWORD_NULL',
 	// 			]
 	// 		);
-	// 		$user_id = User::where('email', $socialUser->getEmail())->first()->id;
+	// 		$user_id = DB::table('users')->where('email', $socialUser->getEmail())->first()->id;
 	// 		// $social_login_provider = SocialLoginProvider::firstOrCreate(
 	// 		// 	['provider_name' => 'apple',
 	// 		// 	'provider_id' => $socialUser->getId()
