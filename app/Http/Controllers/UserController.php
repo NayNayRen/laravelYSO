@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
 use App\Mail\VerifyMail;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Models\SocialLoginProvider;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -277,6 +281,121 @@ class UserController extends Controller
 
 	// public function appleRedirect() {
 	// 	return Socialite::driver('apple')->stateless()->scopes(["name", "email"])->redirect();
+	// }
+
+    public function facebookCallback() {
+		try {
+			$user = Socialite::driver('facebook')->user();
+			$check = User::where('email', $user->getEmail())->first();
+
+			$names = explode(' ', $user->getName());
+			$firstName = $names[0];
+			$lastName = $names[count($names) - 1];
+
+			$dbUser = User::where('email', $user->getEmail())->first();
+			$persistedUser = User::firstOrCreate(
+				['email' => $user->getEmail()],
+				['firstName' => $firstName,
+                'lastName' => $lastName,
+				'email' => $user->getEmail(),
+                'phone' => 'SSO_PHONE_NULL',
+                'password' => 'SSO_PASSWORD_NULL',
+				]
+			);
+			$user_id = User::where('email', $user->getEmail())->first()->id;
+			// $social_login_provider = SocialLoginProvider::firstOrCreate(
+			// 	['provider_name' => 'facebook',
+			// 	'provider_id' => $user->getId()
+			// 	],
+			// 	['provider_name' => 'facebook',
+			// 	'provider_id' => $user->getId(),
+			// 	'user_id' => $user_id
+			// 	]
+			// );
+            Log::info($user_id);
+            Auth::loginUsingId($user_id);
+            // if(!($dbUser->phone_verified || $dbUser->email_verified))
+            //   return redirect(route('deals.index'));
+            // else
+            //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
+			return redirect("/");
+		} catch(Exception $e) {
+			dd($e->getMessage());
+		}
+	}
+
+    public function googleCallback() {
+		try {
+			$user = Socialite::driver('google')->user();
+			$check = User::where('email', $user->getEmail())->first();
+
+			$names = explode(' ', $user->getName());
+			$firstName = $user->user['given_name'];
+			$lastName = $user->user['family_name'];
+
+			$dbUser = User::where('email', $user->getEmail())->first();
+            $persistedUser = User::firstOrCreate(
+				['email' => $user->getEmail()],
+				['firstName' => $firstName,
+                'lastName' => $lastName,
+				'email' => $user->getEmail(),
+                'phone' => 'SSO_PHONE_NULL',
+                'password' => 'SSO_PASSWORD_NULL',
+				]
+			);
+			$user_id = User::where('email', $user->getEmail())->first()->id;
+			// $social_login_provider = SocialLoginProvider::firstOrCreate(
+			// 	['provider_name' => 'google',
+			// 		'provider_id' => $user->getId()
+			// 	],
+			// 	['provider_name' => 'google',
+			// 		'provider_id' => $user->getId(),
+			// 		'user_id' => $user_id
+			// 	]
+			// );
+			Log::info($user_id);
+			Auth::loginUsingId($user_id);
+	        // if(!($dbUser->phone_verified || $dbUser->email_verified))
+	        //   return redirect(route('deals.index'));
+	        // else
+	        //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
+			return redirect("/");
+		} catch(Exception $e) {
+			Log::error($e->getMessage());
+			return redirect("/");
+		}
+	}
+
+    // public function appleCallback(AppleToken $appleToken) {
+	// 	config()->set('services.apple.client_secret', $appleToken->generate());
+	// 	$socialUser = Socialite::driver('apple')->stateless()->user();
+	// 	$dbUser = User::where('email', $socialUser->getEmail())->first();
+	// 	try {
+    //         $persistedUser = User::firstOrCreate(
+	// 			['email' => $socialUser->getEmail()],
+	// 			['firstName' => 'SSO_NAME_NULL',
+    //             'lastName' => 'SSO_NAME_NULL',
+	// 			'email' => $socialUser->getEmail(),
+    //             'phone' => 'SSO_PHONE_NULL',
+    //             'password' => 'SSO_PASSWORD_NULL',
+	// 			]
+	// 		);
+	// 		$user_id = User::where('email', $socialUser->getEmail())->first()->id;
+	// 		// $social_login_provider = SocialLoginProvider::firstOrCreate(
+	// 		// 	['provider_name' => 'apple',
+	// 		// 	'provider_id' => $socialUser->getId()
+	// 		// 	],
+	// 		// 	['provider_name' => 'apple',
+	// 		// 	'provider_id' => $socialUser->getId(),
+	// 		// 	'user_id' => User::where('email', $socialUser->getEmail())->first()->id
+	// 		// 	]
+	// 		// );
+	// 		Log::info($user_id);
+	// 		Auth::loginUsingId($user_id);
+	// 		return redirect("/");
+	// 	} catch(Exception $e) {
+	// 		dd($e->getMessage());
+	// 	}
 	// }
 
 }
