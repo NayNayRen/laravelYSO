@@ -271,12 +271,12 @@ class UserController extends Controller
     }
 
     // SOCIAL MEDIA LOG INS
+    public function facebookRedirect() {
+		return Socialite::driver('facebook')->redirect();
+	}
+    
     public function googleRedirect() {
 		return Socialite::driver('google')->redirect();
-	}
-
-	public function facebookRedirect() {
-		return Socialite::driver('facebook')->redirect();
 	}
 
 	// public function appleRedirect() {
