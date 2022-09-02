@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Mail\VerifyMail;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\VerifyMail;
+use Laravel\Socialite\Facades\Socialite;
 
 
 class UserController extends Controller
@@ -264,5 +265,18 @@ class UserController extends Controller
         $request->session()->regenerateToken();
         return redirect('/')->with('flash-message-user', 'You have now logged out.');
     }
+
+    // SOCIAL MEDIA LOG INS
+    public function googleRedirect() {
+		return Socialite::driver('google')->redirect();
+	}
+
+	public function facebookRedirect() {
+		return Socialite::driver('facebook')->redirect();
+	}
+
+	// public function appleRedirect() {
+	// 	return Socialite::driver('apple')->stateless()->scopes(["name", "email"])->redirect();
+	// }
 
 }

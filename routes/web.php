@@ -47,6 +47,16 @@ Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.show
 // logs user in
 Route::post('/user_pages/authenticate', [UserController::class, 'loginUser'])->name('login');
 
+// SOCIAL MEDIA LOG IN ROUTES
+// methods used when media button is clicked
+Route::get('/auth/facebook/redirect', [UserController::class, 'facebookRedirect']);
+Route::get('/auth/google/redirect', [UserController::class, 'googleRedirect']);
+Route::get('/auth/apple/redirect', [UserController::class, 'appleRedirect']);
+// methods used for the look up and entry of user data
+Route::get('/auth/facebook/callback', [UserController::class, 'facebookCallback']);
+Route::get('/auth/google/callback', [UserController::class, 'googleCallback']);
+Route::post('/auth/apple/callback', [UserController::class, 'appleCallback']);
+
 // VERIFY USER ROUTES
 // show verify form
 Route::get('/verify/{id}', [UserController::class, 'showVerifyForm'])->name('login.showVerifyForm');
