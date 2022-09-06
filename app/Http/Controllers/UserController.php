@@ -280,6 +280,10 @@ class UserController extends Controller
 		return Socialite::driver('google')->redirect();
 	}
 
+    public function appleRedirect() {
+		return Socialite::driver('apple')->redirect();
+	}
+
 	// public function appleRedirect() {
 	// 	return Socialite::driver('apple')->stateless()->scopes(["name", "email"])->redirect();
 	// }

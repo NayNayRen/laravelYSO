@@ -184,7 +184,9 @@ return [
 
         /*
          * Package Service Providers...
+         * ADDED TO TEST APPLE PROVIDER
          */
+        \SocialiteProviders\Manager\ServiceProvider::class,
 
         /*
          * Application Service Providers...
