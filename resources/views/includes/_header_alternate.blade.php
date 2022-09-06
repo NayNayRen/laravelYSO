@@ -27,8 +27,9 @@
         </div>
         {{-- BACK BUTTON --}}
         <div class="header-navigation">
-            <a href={{ url()->previous() }} class="back-button" aria-label='Previous Page'><i class="fa fa-chevron-left"
-                    aria-hidden="false" title="Back to previous page."></i><span>Back</span></a>
+            <a href="{{ url()->previous() }}" class="back-button" aria-label='Previous Page'><i
+                    class="fa fa-chevron-left" aria-hidden="false"
+                    title="Back to previous page."></i><span>Back</span></a>
             <a href={{ route('deals.index') }}>
                 <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-header-link-alternate"
                     alt="Your Social Offers Logo">
