@@ -321,7 +321,8 @@ class UserController extends Controller
             //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
 			return redirect("/");
 		} catch(Exception $e) {
-			dd($e->getMessage());
+			// dd($e->getMessage());
+            return redirect("/");
 		}
 	}
 
@@ -362,7 +363,7 @@ class UserController extends Controller
 	        //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
 			return redirect("/");
 		} catch(Exception $e) {
-			Log::error($e->getMessage());
+			// Log::error($e->getMessage());
 			return redirect("/");
 		}
 	}
