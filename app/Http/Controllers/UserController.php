@@ -119,7 +119,7 @@ class UserController extends Controller
             if($user->email_code != null && $user->email_code == $request->verification_code){
                 $user->email_verified = 1;
                 $user->save();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email. Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email. Log in to continue.');
             }else{
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
@@ -130,7 +130,7 @@ class UserController extends Controller
             if($user->phone_code != null && $user->phone_code == $request->verification_code){
                 $user->phone_verified = 1;
                 $user->save();
-                return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone. Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone. Log in to continue.');
             }else{
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
@@ -189,7 +189,7 @@ class UserController extends Controller
                 if($request->password == $request->password_confirmation){
                     $user->password = bcrypt($request->password);
                     $user->update();
-                    return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
+                    return redirect(route('login.showLoginForm'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
                 }else{
                     return back()->withErrors([
                         'password' => 'Passwords Do Not Match.',
