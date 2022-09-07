@@ -35,7 +35,6 @@ class UserController extends Controller
         $formInputs['password'] = bcrypt($formInputs['password']);
         // create new user
         $user = User::create($formInputs);
-        // return $user->id;
         return redirect(route('login.showVerifyForm', $user->id))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered. Choose a verification method to continue.');
     }
 
@@ -57,7 +56,6 @@ class UserController extends Controller
                 if(auth()->attempt($formInputs)){
                     // generates a session token
                     $request->session()->regenerate();
-                    // redirects home with a message
                     return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
                 }
             }else{
@@ -123,7 +121,6 @@ class UserController extends Controller
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email. Log in to continue.');
             }else{
-                // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
         }
@@ -135,11 +132,9 @@ class UserController extends Controller
                 $user->save();
                 return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone. Log in to continue.');
             }else{
-                // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', Incorrect Verification Code.');
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
         }
-        // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
         return back()->withErrors([
             'verify_by' => 'No Method Was Selected.',
             'verification_code' => 'Verification Code Was Left Empty.'
@@ -180,10 +175,8 @@ class UserController extends Controller
             $user_id = $user->id;
             return view('user_pages/password', compact('user_id'), ['pageTitle' => 'Change Password']);
         }if($request->email == null){
-            // return redirect()->back()->with('flash-message-user', 'No Email Was Provided.');
             return back()->withErrors(['email' => 'Email Not Provided.']);
         }else{
-            // return redirect()->back()->with('flash-message-user', 'Incorrect Or Empty Verification Code.');
             return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
         }
     }
@@ -198,18 +191,15 @@ class UserController extends Controller
                     $user->update();
                     return redirect('/login')->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
                 }else{
-                    // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', passwords do not match. Type carefully.');
                     return back()->withErrors([
                         'password' => 'Passwords Do Not Match.',
                         'password_confirmation' => 'Passwords Do Not Match.'
                     ]);
                 }
             }else{
-                // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', password must be at least 8 characters long.');
                 return back()->withErrors(['password' => 'Must Be At Least 8 Characters Long.']);
             }
         }else{
-            // return redirect()->back()->with('flash-message-user', 'Sorry ' . ucfirst($user->firstName) . ', one of the password inputs was left empty.'); 
             return back()->withErrors([
                 'password' => 'Input Was Left Empty.',
                 'password_confirmation' => 'Input Was Left Empty.'
@@ -220,23 +210,22 @@ class UserController extends Controller
 
     // CONNECTION TO SEND OTP VIA PHONE
     public function sendSms($recipient,$message_to_send){
-        //text sms starts here
+        // text sms starts here
         $service_plan_id = env('SERVICE_PLAN_ID');
         $bearer_token = env('BEARER_TOCKEN');
-        //Any phone number assigned to your API
+        // any phone number assigned to your API
         $send_from = env('SEND_FROM');
-        //May be several, separate with a comma ,
+        // may be several, separate with a comma ,
         // +18135012075 
         $recipient_phone_numbers = $recipient;
-        // $message = "Click on the link bellow to Find You Coupon Details  {$recipient_phone_numbers} from {$send_from}";
         $message = $message_to_send;
-        // Check recipient_phone_numbers for multiple numbers and make it an array.
+        // check recipient_phone_numbers for multiple numbers and make it an array.
         if(stristr($recipient_phone_numbers, ',')){
         $recipient_phone_numbers = explode(',', $recipient_phone_numbers);
         }else{
         $recipient_phone_numbers = [$recipient_phone_numbers];
         }
-        // Set necessary fields to be JSON encoded
+        // set necessary fields to be JSON encoded
         $content = [
         'to' => array_values($recipient_phone_numbers),
         'from' => $send_from,
@@ -252,11 +241,6 @@ class UserController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
-        // if(curl_errno($ch)) {
-        //     echo 'Curl error: ' . curl_error($ch);
-        // } else {
-        //     echo $result;
-        // }
         curl_close($ch);
     }
 

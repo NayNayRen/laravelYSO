@@ -52,6 +52,7 @@ return [
 	// 	'key_id' => env('APPLE_KEY_ID'),
 	// ],
 
+    // USED FOR SOCIALITE PROVIDER TESTING
     'apple' => [
 		'client_id' => env('APPLE_CLIENT_ID'),
 		'client_secret' => env('APPLE_CLIENT_SECRET'),
