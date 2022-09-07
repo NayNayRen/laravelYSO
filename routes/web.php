@@ -52,7 +52,7 @@ Route::post('/user_pages/authenticate', [UserController::class, 'loginUser'])->n
 Route::get('/auth/facebook/redirect', [UserController::class, 'facebookRedirect']);
 Route::get('/auth/google/redirect', [UserController::class, 'googleRedirect']);
 Route::get('/auth/apple/redirect', [UserController::class, 'appleRedirect']);
-// methods used for the look up and entry of user data
+// methods used for the look up and return of user data
 Route::get('/auth/facebook/callback', [UserController::class, 'facebookCallback']);
 Route::get('/auth/google/callback', [UserController::class, 'googleCallback']);
 Route::post('/auth/apple/callback', [UserController::class, 'appleCallback']);
