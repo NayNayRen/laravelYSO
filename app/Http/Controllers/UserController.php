@@ -268,6 +268,49 @@ class UserController extends Controller
 		return Socialite::driver('apple')->redirect();
 	}
 
+    public function facebookCallback(){
+        try{
+            $facebookUser = Socialite::driver('facebook')->user();
+            // dd($facebookUser);
+            $names = explode(' ', $facebookUser->name);
+            $firstName = $names[0];
+            $lastName = $names[count($names) - 1];
+            $user = User::firstOrCreate([
+                'email' => $facebookUser->email
+            ], [
+                'firstName' => $firstName,
+                'lastName' => $lastName,
+                'phone' => 'SSO_PHONE_NULL',
+                'password' => 'SSO_PASSWORD_NULL'
+            ]);
+            Auth::login($user);
+            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
+        }catch(Exception $e){
+            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+        }
+    }
+
+    public function googleCallback(){
+        try{
+            $googleUser = Socialite::driver('google')->user();
+            // dd($googleUser);
+            $firstName = $googleUser->user['given_name'];
+            $lastName = $googleUser->user['family_name'];
+            $user = User::firstOrCreate([
+                'email' => $googleUser->email
+            ], [
+                'firstName' => $firstName,
+                'lastName' => $lastName,
+                'phone' => 'SSO_PHONE_NULL',
+                'password' => 'SSO_PASSWORD_NULL'
+            ]);
+            Auth::login($user);
+            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
+        }catch(Exception $e){
+            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+        }
+    }
+
 	// public function appleRedirect() {
 	// 	return Socialite::driver('apple')->stateless()->scopes(["name", "email"])->redirect();
 	// }
@@ -313,49 +356,6 @@ class UserController extends Controller
     //         return redirect("/");
 	// 	}
 	// }
-
-    public function facebookCallback(){
-        try{
-            $facebookUser = Socialite::driver('facebook')->user();
-            // dd($facebookUser);
-            $names = explode(' ', $facebookUser->name);
-            $firstName = $names[0];
-            $lastName = $names[1];
-            $user = User::firstOrCreate([
-                'email' => $facebookUser->email
-            ], [
-                'firstName' => $firstName,
-                'lastName' => $lastName,
-                'phone' => 'SSO_PHONE_NULL',
-                'password' => 'SSO_PASSWORD_NULL'
-            ]);
-            Auth::login($user);
-            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
-        }catch(Exception $e){
-            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
-        }
-    }
-
-    public function googleCallback(){
-        try{
-            $googleUser = Socialite::driver('google')->user();
-            // dd($googleUser);
-            $firstName = $googleUser->user['given_name'];
-            $lastName = $googleUser->user['family_name'];
-            $user = User::firstOrCreate([
-                'email' => $googleUser->email
-            ], [
-                'firstName' => $firstName,
-                'lastName' => $lastName,
-                'phone' => 'SSO_PHONE_NULL',
-                'password' => 'SSO_PASSWORD_NULL'
-            ]);
-            Auth::login($user);
-            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
-        }catch(Exception $e){
-            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
-        }
-    }
 
     // public function googleCallback() {
 	// 	try {
