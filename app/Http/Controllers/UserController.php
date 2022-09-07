@@ -272,89 +272,133 @@ class UserController extends Controller
 	// 	return Socialite::driver('apple')->stateless()->scopes(["name", "email"])->redirect();
 	// }
 
-    public function facebookCallback() {
-		try {
-			$user = Socialite::driver('facebook')->user();
-			$check = User::where('email', $user->getEmail())->first();
+    // public function facebookCallback() {
+	// 	try {
+	// 		$user = Socialite::driver('facebook')->user();
+	// 		$check = User::where('email', $user->getEmail())->first();
 
-			$names = explode(' ', $user->getName());
-			$firstName = $names[0];
-			$lastName = $names[count($names) - 1];
+	// 		$names = explode(' ', $user->getName());
+	// 		$firstName = $names[0];
+	// 		$lastName = $names[count($names) - 1];
 
-			$dbUser = User::where('email', $user->getEmail())->first();
-			$persistedUser = User::firstOrCreate(
-				['email' => $user->getEmail()],
-				['firstName' => $firstName,
+	// 		$dbUser = User::where('email', $user->getEmail())->first();
+	// 		$persistedUser = User::firstOrCreate(
+	// 			['email' => $user->getEmail()],
+	// 			['firstName' => $firstName,
+    //             'lastName' => $lastName,
+	// 			'email' => $user->getEmail(),
+    //             'phone' => 'SSO_PHONE_NULL',
+    //             'password' => 'SSO_PASSWORD_NULL',
+	// 			]
+	// 		);
+	// 		$user_id = DB::table('users')->where('email', $user->getEmail())->first()->id;
+	// 		// $social_login_provider = SocialLoginProvider::firstOrCreate(
+	// 		// 	['provider_name' => 'facebook',
+	// 		// 	'provider_id' => $user->getId()
+	// 		// 	],
+	// 		// 	['provider_name' => 'facebook',
+	// 		// 	'provider_id' => $user->getId(),
+	// 		// 	'user_id' => $user_id
+	// 		// 	]
+	// 		// );
+    //         Log::info($user_id);
+    //         Auth::loginUsingId($user_id);
+    //         // if(!($dbUser->phone_verified || $dbUser->email_verified))
+    //         //   return redirect(route('deals.index'));
+    //         // else
+    //         //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
+	// 		return redirect("/");
+	// 	} catch(Exception $e) {
+	// 		// dd($e->getMessage());
+    //         return redirect("/");
+	// 	}
+	// }
+
+    public function facebookCallback(){
+        try{
+            $facebookUser = Socialite::driver('facebook')->user();
+            // dd($facebookUser);
+            $names = explode(' ', $facebookUser->name);
+            $firstName = $names[0];
+            $lastName = $names[1];
+            $user = User::firstOrCreate([
+                'email' => $facebookUser->email
+            ], [
+                'firstName' => $firstName,
                 'lastName' => $lastName,
-				'email' => $user->getEmail(),
                 'phone' => 'SSO_PHONE_NULL',
-                'password' => 'SSO_PASSWORD_NULL',
-				]
-			);
-			$user_id = DB::table('users')->where('email', $user->getEmail())->first()->id;
-			// $social_login_provider = SocialLoginProvider::firstOrCreate(
-			// 	['provider_name' => 'facebook',
-			// 	'provider_id' => $user->getId()
-			// 	],
-			// 	['provider_name' => 'facebook',
-			// 	'provider_id' => $user->getId(),
-			// 	'user_id' => $user_id
-			// 	]
-			// );
-            Log::info($user_id);
-            Auth::loginUsingId($user_id);
-            // if(!($dbUser->phone_verified || $dbUser->email_verified))
-            //   return redirect(route('deals.index'));
-            // else
-            //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
-			return redirect("/");
-		} catch(Exception $e) {
-			// dd($e->getMessage());
-            return redirect("/");
-		}
-	}
+                'password' => 'SSO_PASSWORD_NULL'
+            ]);
+            Auth::login($user);
+            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
+        }catch(Exception $e){
+            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+        }
+    }
 
-    public function googleCallback() {
-		try {
-			$user = Socialite::driver('google')->user();
-			$check = User::where('email', $user->getEmail())->first();
-
-			$names = explode(' ', $user->getName());
-			$firstName = $user->user['given_name'];
-			$lastName = $user->user['family_name'];
-
-			$dbUser = User::where('email', $user->getEmail())->first();
-            $persistedUser = User::firstOrCreate(
-				['email' => $user->getEmail()],
-				['firstName' => $firstName,
+    public function googleCallback(){
+        try{
+            $googleUser = Socialite::driver('google')->user();
+            // dd($googleUser);
+            $firstName = $googleUser->user['given_name'];
+            $lastName = $googleUser->user['family_name'];
+            $user = User::firstOrCreate([
+                'email' => $googleUser->email
+            ], [
+                'firstName' => $firstName,
                 'lastName' => $lastName,
-				'email' => $user->getEmail(),
                 'phone' => 'SSO_PHONE_NULL',
-                'password' => 'SSO_PASSWORD_NULL',
-				]
-			);
-			$user_id = DB::table('users')->where('email', $user->getEmail())->first()->id;
-			// $social_login_provider = SocialLoginProvider::firstOrCreate(
-			// 	['provider_name' => 'google',
-			// 		'provider_id' => $user->getId()
-			// 	],
-			// 	['provider_name' => 'google',
-			// 		'provider_id' => $user->getId(),
-			// 		'user_id' => $user_id
-			// 	]
-			// );
-			Log::info($user_id);
-			Auth::loginUsingId($user_id);
-	        // if(!($dbUser->phone_verified || $dbUser->email_verified))
-	        //   return redirect(route('deals.index'));
-	        // else
-	        //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
-			return redirect("/");
-		} catch(Exception $e) {
-			// Log::error($e->getMessage());
-			return redirect("/");
-		}
-	}
+                'password' => 'SSO_PASSWORD_NULL'
+            ]);
+            Auth::login($user);
+            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
+        }catch(Exception $e){
+            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+        }
+    }
+
+    // public function googleCallback() {
+	// 	try {
+	// 		$user = Socialite::driver('google')->user();
+    //         dd($user);
+	// 		$check = User::where('email', $user->getEmail())->first();
+
+	// 		$names = explode(' ', $user->getName());
+	// 		$firstName = $user->user['given_name'];
+	// 		$lastName = $user->user['family_name'];
+
+	// 		$dbUser = User::where('email', $user->getEmail())->first();
+    //         $persistedUser = User::firstOrCreate(
+	// 			['email' => $user->getEmail()],
+	// 			['firstName' => $firstName,
+    //             'lastName' => $lastName,
+	// 			'email' => $user->getEmail(),
+    //             'phone' => 'SSO_PHONE_NULL',
+    //             'password' => 'SSO_PASSWORD_NULL',
+	// 			]
+	// 		);
+	// 		$user_id = DB::table('users')->where('email', $user->getEmail())->first()->id;
+	// 		// $social_login_provider = SocialLoginProvider::firstOrCreate(
+	// 		// 	['provider_name' => 'google',
+	// 		// 		'provider_id' => $user->getId()
+	// 		// 	],
+	// 		// 	['provider_name' => 'google',
+	// 		// 		'provider_id' => $user->getId(),
+	// 		// 		'user_id' => $user_id
+	// 		// 	]
+	// 		// );
+	// 		Log::info($user_id);
+	// 		Auth::loginUsingId($user_id);
+	//         // if(!($dbUser->phone_verified || $dbUser->email_verified))
+	//         //   return redirect(route('deals.index'));
+	//         // else
+	//         //   return redirect(route('login.showVerifyForm',['id' => $persistedUser->id]));
+	// 		return redirect("/");
+	// 	} catch(Exception $e) {
+	// 		// Log::error($e->getMessage());
+	// 		return redirect("/");
+	// 	}
+	// }
 
     // public function appleCallback(AppleToken $appleToken) {
 	// 	config()->set('services.apple.client_secret', $appleToken->generate());
