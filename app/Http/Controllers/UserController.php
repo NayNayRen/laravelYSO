@@ -289,7 +289,7 @@ class UserController extends Controller
             if(($user->phone_verified || $user->email_verified)){
                 return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
               }else{
-                  return redirect(route('login.showVerifyForm',['id' => $user->id]))->with('flash-message-user', 'Please verify your account to continue.');
+                  return redirect(route('login.showVerifyForm',['id' => $user->id]))->with('flash-message-user', 'Please verify your account once to continue.');
               }
         }catch(Exception $e){
             return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
