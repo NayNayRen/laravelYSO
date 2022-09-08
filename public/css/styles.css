@@ -2123,7 +2123,8 @@ body {
 }
 
 .flash-message-user,
-.otp-message {
+.otp-message,
+.update-password-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: distribute;
@@ -2154,25 +2155,11 @@ body {
     transition: top 500ms ease;
     width: 400px;
     z-index: 4;
-
-    /* -webkit-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.75);
-    background-color: #e6331f;
-    border-bottom: solid 1px #000;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.75);
-    color: #fff;
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    padding: 0 20px;
-    position: absolute;
-    text-align: center;
-    text-shadow: 0 2px 5px #000;
-    top: 0;
-    width: 100%;
-    z-index: 5; */
 }
 
 .flash-message-user div,
-.otp-message div {
+.otp-message div,
+.update-password-message div {
     background-color: #000;
     border-radius: 5px;
     padding: 20px 5px;
@@ -2180,10 +2167,11 @@ body {
 }
 
 .flash-message-user p,
-.otp-message p {
-    /* color: red; */
+.otp-message p,
+.update-password-message p {
     font-weight: bold;
-    line-height: 30px;
+    line-height: 25px;
+    margin: 10px 0;
     width: 90%;
 }
 
@@ -3473,6 +3461,14 @@ html {
     position: fixed;
     transition: all 100ms ease;
     z-index: 1;
+}
+
+.update-password-disclaimer {
+    color: #808080;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 90%;
 }
 
 .user-icon {
@@ -5791,7 +5787,8 @@ html {
     }
 
     .flash-message-user,
-    .otp-message {
+    .otp-message,
+    .update-password-message {
         border-radius: 0;
         font-size: 18px;
         min-height: 200px;
@@ -5800,15 +5797,17 @@ html {
     }
 
     .flash-message-user div,
-    .otp-message div {
+    .otp-message div,
+    .update-password-message div {
         border-radius: 0;
         width: 100%;
     }
 
     .flash-message-user p,
-    .otp-message p {
+    .otp-message p,
+    .update-password-message p {
         padding: 35px 10px 5px 10px;
-        width: 100%;
+        /* width: 100%; */
     }
 
     .get-deal-button {

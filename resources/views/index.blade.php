@@ -1,5 +1,7 @@
 @include('includes._header')
 <main class="main">
+    {{-- UPDATE PASSWORD MESSAGE --}}
+    @include('includes._update_password_message')
     {{-- HIDDEN SHARE MESSAGE --}}
     @include('includes._share_message')
     {{-- HIDDEN FAVORITED ADDED MESSAGE --}}
@@ -426,6 +428,17 @@
                 });
             }
         });
+        // UPDATE PASSWORD MESSAGE WHEN MEDIA IS USED TO LOG IN
+        if ($(window).width() > 400) {
+            $('.update-password-message').css('top', '150px');
+        }
+        if ($(window).width() <= 400) {
+            $('.update-password-message').css('top', '0');
+        }
+        $('.update-password-button').click(() => {
+            $('.update-password-message').css('top', '-100%');
+        });
+
         // FLASH MESSAGE DISPLAY WITH TIMER TO REMOVE
         // waits for 250ms then shows message
         setTimeout(() => {

@@ -280,11 +280,11 @@ class UserController extends Controller
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                'phone' => 'SSO_PHONE_NULL',
+                'phone' => 'None Provided',
                 'password' => 'SSO_PASSWORD_NULL'
             ]);
             Auth::login($user);
-            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
+            return redirect('/')->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
         }catch(Exception $e){
             return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
         }
@@ -301,11 +301,11 @@ class UserController extends Controller
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                'phone' => 'SSO_PHONE_NULL',
+                'phone' => 'None Provided',
                 'password' => 'SSO_PASSWORD_NULL'
             ]);
             Auth::login($user);
-            return redirect('/')->with('flash-message-user', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
+            return redirect('/')->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
         }catch(Exception $e){
             return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
         }

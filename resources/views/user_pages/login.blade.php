@@ -1,6 +1,6 @@
 @include('includes._header_alternate')
 <div class="main">
-    {{-- USER LOG IN OR OUT MESSAGE --}}
+    {{-- USER LOG IN ERROR MESSAGE --}}
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Sign In</h1>
