@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\User;
 use App\Mail\VerifyMail;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 use App\Models\SocialLoginProvider;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -281,10 +283,14 @@ class UserController extends Controller
                 'firstName' => $firstName,
                 'lastName' => $lastName,
                 'phone' => 'None Provided',
-                'password' => 'SSO_PASSWORD_NULL'
+                'password' => Hash::make(Str::random(20))
             ]);
             Auth::login($user);
-            return redirect('/')->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
+            if(($user->phone_verified || $user->email_verified)){
+                return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
+              }else{
+                  return redirect(route('login.showVerifyForm',['id' => $user->id]))->with('flash-message-user', 'Please verify your account to continue.');
+              }
         }catch(Exception $e){
             return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
         }
@@ -302,10 +308,14 @@ class UserController extends Controller
                 'firstName' => $firstName,
                 'lastName' => $lastName,
                 'phone' => 'None Provided',
-                'password' => 'SSO_PASSWORD_NULL'
+                'password' => Hash::make(Str::random(20))
             ]);
             Auth::login($user);
-            return redirect('/')->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
+            if(($user->phone_verified || $user->email_verified)){
+              return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
+            }else{
+                return redirect(route('login.showVerifyForm',['id' => $user->id]))->with('flash-message-user', 'Please verify your account to continue.');
+            }
         }catch(Exception $e){
             return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
         }

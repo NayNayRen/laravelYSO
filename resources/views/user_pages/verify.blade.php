@@ -15,13 +15,6 @@
             {{-- EMAIL AND PHONE SELECTION --}}
             <div class="users-form-group">
                 <label for="verify_by" class="verify_by">Verification Method</label><br>
-
-                {{-- <select name="verify_by" id="verify_by" class="auth-select">
-                    <option selected disabled>Select one to get the code</option>
-                    <option value="{{ $user->email }}">{{ $user->email ?? email }}</option>
-                <option value="{{ $user->phone }}">{{ $user->phone ?? phone }}</option>
-                </select> --}}
-
                 <div class="verification-list-container">
                     <input type='text' name="verify_by" id="verify_by" value="Select A Method To Verify By" readonly>
                     </input>
@@ -109,23 +102,9 @@
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        // $('.otp-method').text(r);
                         $('.input-error-verify').text(r);
                         $('.verify-by').css('display', 'none');
                         $('.users-form-group-error').css('display', 'none');
-                        // setTimeout(() => {
-                        //     if ($(window).width() > 400) {
-                        //         $('.otp-message').css('top', '150px');
-                        //     }
-                        //     if ($(window).width() <= 400) {
-                        //         $('.otp-message').css('top', '0');
-                        //     }
-                        //     // after displaying for 7000ms(7s) message hides itself
-                        //     setTimeout(() => {
-                        //         $('.otp-message').css('top',
-                        //             '-100%');
-                        //     }, 5000);
-                        // }, 50);
                     }
                 }
             });
