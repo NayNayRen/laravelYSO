@@ -258,6 +258,7 @@ class UserController extends Controller
     }
 
     // SOCIAL MEDIA LOG INS
+    // redirects go to medias auth page
     public function facebookRedirect() {
 		return Socialite::driver('facebook')->redirect();
 	}
@@ -270,6 +271,7 @@ class UserController extends Controller
 		return Socialite::driver('apple')->redirect();
 	}
 
+    // callbacks come back from the auth page with user data
     public function facebookCallback(){
         try{
             $facebookUser = Socialite::driver('facebook')->user();
@@ -287,7 +289,7 @@ class UserController extends Controller
             ]);
             Auth::login($user);
             if(($user->phone_verified || $user->email_verified)){
-                return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.');
+                return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Facebook to log in.')->with('mediaName', 'facebook');
               }else{
                   return redirect(route('login.showVerifyForm',['id' => $user->id]))->with('flash-message-user', 'Please verify your account once to continue.');
               }
@@ -312,7 +314,7 @@ class UserController extends Controller
             ]);
             Auth::login($user);
             if(($user->phone_verified || $user->email_verified)){
-              return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.');
+              return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Google to log in.')->with('mediaName', 'google');
             }else{
                 return redirect(route('login.showVerifyForm',['id' => $user->id]))->with('flash-message-user', 'Please verify your account once to continue.');
             }

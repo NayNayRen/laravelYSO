@@ -3467,8 +3467,13 @@ html {
     color: #808080;
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 10px auto;
     width: 90%;
+}
+
+.update-password-message i {
+    color: #000;
+    font-size: 28px;
 }
 
 .user-icon {
