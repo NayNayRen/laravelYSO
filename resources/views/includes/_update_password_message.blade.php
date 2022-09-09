@@ -6,8 +6,8 @@
                 alt="Your Social Offers Logo">
         </div>
         <p>{{ session('update-password-message') }}</p>
-        <span aria-label="Social Media Icon"><i class="fa fa-{{ session('mediaName') }}"
-                aria-hidden="true"></i>
+        <span class='update-password-media-icon' aria-label="Social Media Icon"><i
+                class="fa fa-{{ session('mediaName') }}" aria-hidden="true"></i>
         </span>
         <span class="update-password-disclaimer">Note:<br>If this is the first time using a media to log in, we
             recommend you log

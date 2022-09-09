@@ -3471,9 +3471,24 @@ html {
     width: 90%;
 }
 
-.update-password-message i {
+.update-password-media-icon {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-shadow: 0 0 5px #808080;
+    align-items: center;
+    border-radius: 50%;
+    border: solid 1px #000;
+    box-shadow: 0 0 5px #808080;
     color: #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
     font-size: 28px;
+    height: 45px;
+    justify-content: center;
+    width: 45px;
 }
 
 .user-icon {
