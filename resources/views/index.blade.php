@@ -350,6 +350,8 @@
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA&callback=loadMap" async
+    defer></script> --}}
 <script>
     $(document).ready(function () {
         $.ajaxSetup({
