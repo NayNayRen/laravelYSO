@@ -323,6 +323,31 @@ class UserController extends Controller
         }
     }
 
+    public function appleCallback(){
+        try{
+            $appleUser = Socialite::driver('apple')->user();
+            // dd($appleUser);
+            $firstName = $appleUser->user['given_name'];
+            $lastName = $appleUser->user['family_name'];
+            $user = User::firstOrCreate([
+                'email' => $appleUser->email
+            ], [
+                'firstName' => $firstName,
+                'lastName' => $lastName,
+                'phone' => 'None Provided',
+                'password' => Hash::make(Str::random(20))
+            ]);
+            Auth::login($user);
+            if(($user->phone_verified || $user->email_verified)){
+              return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) .', you have used Apple to log in.')->with('mediaName', 'apple');
+            }else{
+                return redirect(route('login.showVerifyForm',['id' => $user->id]))->with('flash-message-user', 'Please verify your account once to continue.');
+            }
+        }catch(Exception $e){
+            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+        }
+    }
+
 	// public function appleRedirect() {
 	// 	return Socialite::driver('apple')->stateless()->scopes(["name", "email"])->redirect();
 	// }
