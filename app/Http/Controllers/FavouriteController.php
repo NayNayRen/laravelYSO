@@ -33,7 +33,7 @@ class FavouriteController extends Controller
             }
         }else{
             return response()->json([
-                'error' =>'Kindly login first!',
+                'error' =>'Please login first!',
             ]);
         }
         

@@ -16,7 +16,7 @@
             <div class="users-form-group">
                 <label for="verify_by" class="verify_by">Verification Method</label><br>
                 <div class="verification-list-container">
-                    <input type='text' name="verify_by" id="verify_by" value="Select A Method To Verify By" readonly>
+                    <input type='text' name="verify_by" id="verify_by" value="Select A Method To Verify By">
                     </input>
                     <span class="verify-button-arrow">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>

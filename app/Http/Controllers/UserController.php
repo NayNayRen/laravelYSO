@@ -326,7 +326,7 @@ class UserController extends Controller
     public function appleCallback(){
         try{
             $appleUser = Socialite::driver('apple')->user();
-            dd($appleUser);
+            // dd($appleUser);
             $names = explode(' ', $appleUser->name);
             $firstName = $names[0];
             $lastName = $names[count($names) - 1];
