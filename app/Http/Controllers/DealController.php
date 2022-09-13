@@ -27,59 +27,6 @@ class DealController extends Controller
         $coupons = Deal::getUserCoupons();
         $redeems = Deal::getUserRedeemedCoupons();
         // views based on selection
-        // if ((auth()->user())){
-            // dd($deals);
-            // $user_id = (auth()->user()->id);               
-            // favourite deals
-            // $favs = Favourite::where('user_id',$user_id)->get();
-            // $deals =  Deal::query();
-            // if($favs->count() > 0 ){
-            //     foreach($favs as $fav){
-            //         if($deals ==null){
-            //             $deals->where('id',$fav->deal_id);
-            //         }else{
-            //             $deals->orwhere('id',$fav->deal_id);
-            //         }
-            //     }
-            //         $deals = $deals->get();
-            //     }else{
-            //         $deals = null;
-            //     }
-                // user coupons
-                // $cous = UserCoupon::where('user_id',$user_id)->get();
-                // $coupons =  Deal ::query();
-                // if($cous->count() > 0 ){
-                //     foreach($cous as $cou){
-                //         if($coupons ==null){
-                //             $coupons->where('id',$cou->deal_id);
-                //         }else{
-                //             $coupons->orwhere('id',$cou->deal_id);
-                //         }
-                //     }
-                //     $coupons = $coupons->get();
-                // }else{
-                //     $coupons = null;
-                // }
-                // redeemed coupons
-            //     $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
-            //     $redeems =  Deal ::query();
-            //     if($redms->count() > 0 ){
-            //         foreach($redms as $redm){
-            //             if($redeems ==null){
-            //                 $redeems->where('id',$redm->deal_id);
-            //             }else{
-            //                 $redeems->orwhere('id',$redm->deal_id);
-            //             }
-            //         }
-            //         $redeems = $redeems->get();
-            //     }else{
-            //         $redeems = null;
-            //     }
-            // }else{
-            //     $deals = null;
-            //     $coupons = null;
-            //     $redeems = null;
-            // }
             if($food){
                 return view('index', [
                     'favorites' => $favorites,
@@ -151,7 +98,6 @@ class DealController extends Controller
                     'pageTitle' => 'Home'
                 ]);
             }else{
-            // return $user;
                 return view('index', [
                     'favorites' => $favorites,
                     'coupons' => $coupons,
