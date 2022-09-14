@@ -52,7 +52,7 @@ function loadScript() {
         {
             lat: myLocation.lat,
             lng: myLocation.lng,
-            name: "You Are Here.",
+            name: "You Are Here",
             city: "Clearwater, FL",
             address: "33764",
         },
