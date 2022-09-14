@@ -28,12 +28,12 @@ function loadScript() {
         ".hidden-map-location-button"
     );
     const hiddenMapHeader = document.querySelector(".hidden-map-header");
-    const hiddenMapLocationContainer = document.querySelector(
-        ".hidden-map-location-button-container"
-    );
-    const hiddenMapCloseContainer = document.querySelector(
-        ".hidden-map-close-button-container"
-    );
+    // const hiddenMapLocationContainer = document.querySelector(
+    //     ".hidden-map-location-button-container"
+    // );
+    // const hiddenMapCloseContainer = document.querySelector(
+    //     ".hidden-map-close-button-container"
+    // );
     const markerGroup = [];
 
     // center of U.S.
