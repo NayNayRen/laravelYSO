@@ -1,0 +1,119 @@
+.hidden-map-close-button,
+.hidden-map-location-button {
+    -webkit-transition: color 250ms ease;
+    color: #fff;
+    position: relative;
+    transition: color 250ms ease;
+}
+.hidden-map-close-button:hover,
+.hidden-map-location-button:hover {
+    color: #e6331f;
+    cursor: pointer;
+}
+.hidden-map-close-button:hover.hidden-map-close-button::before,
+.hidden-map-location-button:hover.hidden-map-location-button::after {
+    bottom: 0;
+}
+.hidden-map-close-button-container {
+    /* display: inline; */
+    font-weight: bold;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    text-align: right;
+    top: 5px;
+    width: 150px;
+    /* z-index: 1; */
+}
+.hidden-map {
+    background-color: #333333;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+    height: 0;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    transition: all 500ms ease;
+    width: 100%;
+    z-index: -1;
+}
+
+.hidden-map-close-button::before {
+    -webkit-transition: bottom 150ms ease;
+    bottom: -20px;
+    color: #fff;
+    content: "Map";
+    font-size: 14px;
+    left: -35px;
+    position: absolute;
+    text-shadow: none;
+    transition: bottom 150ms ease;
+}
+
+.hidden-map-header {
+    -webkit-transform: translateX(-50%);
+    color: #fff;
+    /* display: inline; */
+    font-size: 14px;
+    left: 50%;
+    position: absolute;
+    top: 5px;
+    transform: translateX(-50%);
+}
+
+.hidden-map-location-button-container {
+    /* display: inline; */
+    font-weight: bold;
+    overflow: hidden;
+    position: absolute;
+    left: 10px;
+    text-align: left;
+    top: 5px;
+    width: 150px;
+    /* z-index: 1; */
+}
+
+.hidden-map-location-button::after {
+    -webkit-transition: bottom 150ms ease;
+    bottom: -20px;
+    color: #fff;
+    content: "Location";
+    font-size: 14px;
+    left: 50px;
+    position: absolute;
+    text-shadow: none;
+    transition: bottom 150ms ease;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.map-content-address {
+    color: #000;
+}
+
+.map-content-heading {
+    color: #e6331f;
+}
+
+.map-content span {
+    display: block;
+}
+
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 700px) {
+    .hidden-map {
+        border-left: none;
+        border-right: none;
+        /* width: 100%; */
+    }
+    .hidden-map-close-button::before,
+    .hidden-map-location-button::after,
+    .hidden-map-header {
+        display: none;
+    }
+}
