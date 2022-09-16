@@ -29,8 +29,8 @@ function loadScript() {
         lat: myLocation.lat,
         lng: myLocation.lng,
         name: "You Are Here.",
-        city: "Clearwater, FL",
         address: "33764",
+        city: "Clearwater, FL",
     };
     const marker2 = {
         lat: 27.960969999438248,
@@ -59,19 +59,28 @@ function loadScript() {
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
             },
         });
-        let marker = new google.maps.Marker({
-            position: new google.maps.LatLng(marker1.lat, marker1.lng),
-            optimized: false,
-            animation: google.maps.Animation.DROP,
+        markerGroup = [];
+        markerGroup.push(marker1);
+        markerGroup.map((marker) => {
+            buildMarker(marker);
         });
-        const markerInfo = new google.maps.InfoWindow({
+    }
+
+    // makes each marker, adds event to open info when clicked
+    function buildMarker(marker) {
+        let markerInfo = new google.maps.InfoWindow({
             content: `
-                <span class='map-content-heading'>${marker1.name}</span>
+                <span class='map-content-heading'>${marker.name}</span>
                 <div class='map-content-address'>
-                    <span class='map-content-city'>${marker1.city}</span>
-                    <span class='map-content-street'>${marker1.address}</span>
+                    <span class='map-content-city'>${marker.city}</span>
+                    <span class='map-content-street'>${marker.address}</span>
                 </div>
             `,
+        });
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(marker.lat, marker.lng),
+            optimized: false,
+            animation: google.maps.Animation.DROP,
         });
         setTimeout(() => {
             markerInfo.open({
@@ -81,44 +90,21 @@ function loadScript() {
             });
         }, 1000);
         marker.setMap(map);
+        marker.addListener("click", () => {
+            markerInfo.open({
+                anchor: marker,
+                map: map,
+                shouldFocus: false,
+            });
+        });
     }
 
-    // creates markers with info
+    // shows alternate markers
     hiddenMapLocationButton.addEventListener("click", () => {
         markerGroup = [];
         markerGroup.push(marker2, marker3);
-        // icon using YSO logo
-        const ysoIcon = {
-            url: "../img/yso-clipped-rw.png",
-            // Size in terms of pixels
-            size: new google.maps.Size(35, 35),
-            scaledSize: new google.maps.Size(35, 35),
-            origin: new google.maps.Point(0, 0),
-        };
         markerGroup.map((marker) => {
-            let markerInfo = new google.maps.InfoWindow({
-                content: `
-                    <span class='map-content-heading'>${marker.name}</span>
-                    <div class='map-content-address'>
-                        <span class='map-content-city'>${marker.city}</span>
-                        <span class='map-content-street'>${marker.address}</span>
-                    </div>
-                `,
-            });
-            marker = new google.maps.Marker({
-                // icon: ysoIcon,
-                position: new google.maps.LatLng(marker.lat, marker.lng),
-                optimized: false,
-                animation: google.maps.Animation.DROP,
-            });
-            setTimeout(() => {
-                markerInfo.open({
-                    anchor: marker,
-                    map: map,
-                    shouldFocus: false,
-                });
-            }, 1000);
-            marker.setMap(map);
+            buildMarker(marker);
         });
     });
 
