@@ -16,18 +16,11 @@ class Location extends Model
     }
 
     public static function getSearchedLocations(Request $request){
-        // $locationsLatitude = Location::pluck('lat');
-        // $locationsLongitude = Location::pluck('lon');
         $locations = Location::orderBy('id', 'asc')->get();
-        $words = explode(' ', $request->search);
-        $results = Deal::where(function ($q) use ($words) {
-            foreach ($words as $word) {
-                $q->orWhere('name', 'like', '%' . $word . '%')
-                ->orWhere('location', 'like', '%' . $word . '%')
-                ->orWhere('category', 'like', '%' . $word . '%');
-            }
-        })->get();
-        // $locationsResults = Deal::where('id', $locations->id)->get();
-        return $results;
+        $searchResults = Deal::search($request);
+        // $locationsResults = Location::where('id', '=', $searchResults->items['id'])->get();
+        // dd($searchResults->items()[0]->attributes['id']);
+        // dd($searchResults);
+        return $searchResults;
     }
 }
