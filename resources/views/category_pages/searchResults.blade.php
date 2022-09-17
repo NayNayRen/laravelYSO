@@ -80,6 +80,11 @@
         {{-- HIDDEN MAP --}}
         @include('includes._map')
     </div>
+    {{-- <span>{{ count($locations) }}</span> --}}
+        @foreach($searchedLocations as $location)
+            <span>{{ $location->id }}</span><br>
+            <span>Latitude: {{ $location->lat }} Longitude: {{ $location->lon }}</span><br>
+        @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."

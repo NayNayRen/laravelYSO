@@ -27,8 +27,6 @@ class DealController extends Controller
         $favorites = Deal::getUserFavorites();
         $coupons = Deal::getUserCoupons();
         $redeems = Deal::getUserRedeemedCoupons();
-        $locations = Location::getAllLocations();
-
         // views based on selection
             if($food){
                 return view('index', [
@@ -110,7 +108,6 @@ class DealController extends Controller
                     'techDeals' => Deal::getType('tech'),
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
-                    'locations' => $locations,
                     'categoryHeading' => 'food',
                     'message' => '',
                     'pageTitle' => 'Home'
@@ -142,6 +139,8 @@ class DealController extends Controller
         $favorites = Deal::getUserFavorites();
         $coupons = Deal::getUserCoupons();
         $redeems = Deal::getUserRedeemedCoupons();
+        $searchedLocations = Location::getSearchedLocations($request);
+        // $searchedLocations = Location::getAllLocations();
         // limits search to 3 words or less
         if(count($words) > 3){
             $results = 0;
@@ -151,6 +150,7 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
+                'searchedLocations' => $searchedLocations,
                 'searchedWords' => $words,
                 'message' => 'Limit your search to 3 words or less.',
                 'pageTitle' => 'Search Results'
@@ -165,6 +165,7 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
+                'searchedLocations' => $searchedLocations,
                 'searchedWords' => ['no results'],
                 'message' => 'Type something to search for.',
                 'pageTitle' => 'Search Results'
@@ -178,6 +179,7 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
+                'searchedLocations' => $searchedLocations,
                 'searchedWords' => $words,
                 'message' => '',
                 'pageTitle' => 'Search Results'
