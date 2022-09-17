@@ -261,6 +261,12 @@
             </div>
         </div>
     </div>
+    <div>
+        {{-- @foreach($locations as $location)
+            <span>{{ $location->location }}</span><br>
+            <span>Latitude: {{ $location->lat }} Longitude: {{ $location->lon }}</span><br>
+        @endforeach --}}
+    </div>
     {{-- FEATURED CONTAINER USING DEALS DATA --}}
     <div class="container">
         <div class="container-left">

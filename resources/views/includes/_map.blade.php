@@ -1,10 +1,4 @@
 {{-- HIDDEN DUMMY MAP --}}
-{{-- <div class="map">
-    <div class="map-content">
-        <span class="map-close-button">Close</span>
-        <h1>Hidden Map</h1>
-    </div>
-</div> --}}
 <div class="hidden-map">
     <!-- SHOW LOCATION -->
     <div class="hidden-map-location-button-container">

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Deal;
 use App\Models\User;
+use App\Models\Location;
 use App\Models\Favourite;
 use App\Models\UserCoupon;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use function PHPUnit\Framework\isEmpty;
 
 class DealController extends Controller
@@ -26,6 +27,8 @@ class DealController extends Controller
         $favorites = Deal::getUserFavorites();
         $coupons = Deal::getUserCoupons();
         $redeems = Deal::getUserRedeemedCoupons();
+        $locations = Location::getAllLocations();
+
         // views based on selection
             if($food){
                 return view('index', [
@@ -107,6 +110,7 @@ class DealController extends Controller
                     'techDeals' => Deal::getType('tech'),
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
+                    'locations' => $locations,
                     'categoryHeading' => 'food',
                     'message' => '',
                     'pageTitle' => 'Home'
