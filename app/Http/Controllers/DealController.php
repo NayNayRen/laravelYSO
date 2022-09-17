@@ -150,7 +150,7 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
-                'searchedLocations' => $searchedLocations,
+                'searchedLocations' => [],
                 'searchedWords' => $words,
                 'message' => 'Limit your search to 3 words or less.',
                 'pageTitle' => 'Search Results'
@@ -165,7 +165,7 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
-                'searchedLocations' => $searchedLocations,
+                'searchedLocations' => [],
                 'searchedWords' => ['no results'],
                 'message' => 'Type something to search for.',
                 'pageTitle' => 'Search Results'
