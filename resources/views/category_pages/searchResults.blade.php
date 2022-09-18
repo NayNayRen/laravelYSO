@@ -82,8 +82,8 @@
     </div>
     {{-- <span>{{ count($locations) }}</span> --}}
         @foreach($searchedLocations as $location)
-            <span>{{ $location->id }}</span><br>
-            <span>Latitude: {{ $location->lat }} Longitude: {{ $location->lon }}</span><br>
+            <span>{{ $location }}</span><br>
+            {{-- <span>Latitude: {{ $location->lat }} Longitude: {{ $location->lon }}</span><br> --}}
         @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">

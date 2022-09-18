@@ -72,7 +72,6 @@ Route::get('/forgotpassword', [UserController::class, 'showForgotForm'])->name('
 Route::post('/resetcode', [UserController::class,'sendResetCode'])->name('send.reset_code');
 // sends password otp, redirects to change password
 // HAD TO CHANGE FROM POST TO GET
-// Route::post('/resetpassword', [UserController::class, 'showResetForm'])->name('login.showResetForm');
 Route::get('/resetpassword', [UserController::class, 'showResetForm'])->name('login.showResetForm');
 // updates new password
 Route::post('/savepassword', [UserController::class, 'savePassword'])->name('login.savePassword');
