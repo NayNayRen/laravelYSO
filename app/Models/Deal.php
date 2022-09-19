@@ -162,9 +162,9 @@ class Deal extends Model
     public function users(){
         return $this->belongsToMany(User::class);
     }
-    // deal relationship i think
+
     public function location(){
-        return $this->hasMany(Location::class);
+        return $this->belongsToMany(Location::class);
     }
 
 }

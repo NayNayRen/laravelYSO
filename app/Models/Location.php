@@ -16,7 +16,7 @@ class Location extends Model
     }
 
     public static function getSearchedLocations(Request $request){
-        // $locations = Location::orderBy('id', 'asc')->get();
+        $locations = Location::orderBy('id', 'asc')->get();
         $words = explode(' ', $request->search);
         $searchResults =  Deal::where(function ($q) use ($words) {
             foreach ($words as $word) {
@@ -24,13 +24,16 @@ class Location extends Model
                 ->orWhere('location', 'like', '%' . $word . '%')
                 ->orWhere('category', 'like', '%' . $word . '%');
             }
-        })->get()->pluck('id');
+        })->get();
+        // dd($locations);
         // dd($searchResults);
-        // $locationResults = Location::where('id', '=', $searchResults)->get();
-        return $searchResults;
+        $locationResults = Location::where('name', '=', 'test')->get();
+        // dd($locationResults);
+        return $locationResults;
+        
     }
-    // location relationship i think
+
     public function deal(){
-        return $this->hasMany(Deal::class);
+        return $this->belongsToMany(Deal::class);
     }
 }

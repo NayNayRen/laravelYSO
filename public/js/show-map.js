@@ -101,6 +101,16 @@ function loadScript() {
 
     // shows alternate markers
     hiddenMapLocationButton.addEventListener("click", () => {
+        // let lat = document.querySelector(".lat").innerText;
+        // let lng = document.querySelector(".lng").innerText;
+        // console.log(lat, lng);
+        // let marker = {
+        //     lat: lat,
+        //     lng: lng,
+        //     name: "test name",
+        //     city: "test city",
+        //     address: "test address",
+        // };
         markerGroup = [];
         markerGroup.push(marker2, marker3);
         markerGroup.map((marker) => {
