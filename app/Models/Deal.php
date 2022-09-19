@@ -164,7 +164,7 @@ class Deal extends Model
     }
 
     public function location(){
-        return $this->belongsToMany(Location::class);
+        return $this->hasMany(Location::class, 'id');
     }
 
 }
