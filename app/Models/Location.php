@@ -23,9 +23,9 @@ class Location extends Model
                 ->orWhere('location', 'like', '%' . $word . '%')
                 ->orWhere('category', 'like', '%' . $word . '%');
             }
-        })->pluck('id');
+        })->get();
         // dd($searchResults);
-        $locationResults = Location::where('id', '=', $searchResults)->get();
+        // $locationResults = Location::where('id', '=', $searchResults)->get();
         return $searchResults;
         
     }
