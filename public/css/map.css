@@ -15,7 +15,6 @@
     bottom: 0;
 }
 .hidden-map-close-button-container {
-    /* display: inline; */
     font-weight: bold;
     overflow: hidden;
     position: absolute;
@@ -23,9 +22,13 @@
     text-align: right;
     top: 5px;
     width: 150px;
-    /* z-index: 1; */
 }
 .hidden-map {
+    -ms-transform: translateX(-50%);
+    -o-transition: all 500ms ease;
+    -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: all 500ms ease;
     background-color: #333333;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
     height: 0;
@@ -55,7 +58,6 @@
 .hidden-map-header {
     -webkit-transform: translateX(-50%);
     color: #fff;
-    /* display: inline; */
     font-size: 14px;
     left: 50%;
     position: absolute;
@@ -64,7 +66,6 @@
 }
 
 .hidden-map-location-button-container {
-    /* display: inline; */
     font-weight: bold;
     overflow: hidden;
     position: absolute;
@@ -72,14 +73,13 @@
     text-align: left;
     top: 5px;
     width: 150px;
-    /* z-index: 1; */
 }
 
 .hidden-map-location-button::after {
     -webkit-transition: bottom 150ms ease;
     bottom: -20px;
     color: #fff;
-    content: "Location";
+    content: "Locations";
     font-size: 14px;
     left: 50px;
     position: absolute;
@@ -107,10 +107,24 @@
 }
 
 .map-message {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: justify;
+    -ms-transform: translate(-50%, -50%);
+    -o-transition: all 750ms ease;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    -webkit-box-shadow: 0 0 15px #000;
+    -webkit-transform: translate(-50%, -50%);
+    -webkit-transition: all 750ms ease;
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 15px #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     flex-direction: column;
     height: auto;
@@ -120,7 +134,6 @@
     padding: 5px;
     position: absolute;
     top: -100%;
-    /* top: 50%; */
     transform: translate(-50%, -50%);
     transition: all 750ms ease;
     width: 350px;
@@ -141,13 +154,15 @@
 }
 
 .map-message-close {
-    border: solid 1px #000;
+    -o-transition: color 150ms ease;
+    -webkit-transition: color 150ms ease;
     border-radius: 5px;
+    border: solid 1px #000;
     font-weight: bold;
     padding: 5px 10px;
     position: absolute;
-    transition: color 150ms ease;
     right: 0;
+    transition: color 150ms ease;
 }
 
 .map-message-close:hover {
@@ -156,9 +171,18 @@
 }
 
 .map-message-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
     align-items: center;
     background-color: #000;
     border-radius: 5px;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -180,7 +204,6 @@
     .hidden-map {
         border-left: none;
         border-right: none;
-        /* width: 100%; */
     }
     .hidden-map-close-button::before,
     .hidden-map-location-button::after,
