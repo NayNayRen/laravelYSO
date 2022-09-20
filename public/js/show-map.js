@@ -29,22 +29,19 @@ function loadScript() {
         lat: myLocation.lat,
         lng: myLocation.lng,
         name: "You Are Here.",
-        address: "33764",
-        city: "Clearwater, FL",
+        address: "Clearwater, FL 33764",
     };
     const marker2 = {
         lat: 27.960969999438248,
         lng: -82.76100309725183,
         name: "Tropical Smoothie Cafe",
-        address: "1840 Gulf to Bay Blvd.",
-        city: "Clearwater, FL",
+        address: "1840 Gulf to Bay Blvd. Clearwater, FL",
     };
     const marker3 = {
         lat: 27.892476851843572,
         lng: -82.78553762444348,
         name: "Largo Mall",
-        address: "10500 Ulmerton Rd",
-        city: "Largo, FL",
+        address: "10500 Ulmerton Rd Largo, FL",
     };
 
     // // BUILDS AND ADDS MAP ON CLICKING MAP ICON
@@ -72,8 +69,7 @@ function loadScript() {
             content: `
                 <span class='map-content-heading'>${marker.name}</span>
                 <div class='map-content-address'>
-                    <span class='map-content-city'>${marker.city}</span>
-                    <span class='map-content-street'>${marker.address}</span>
+                    <span class='map-content-city'>${marker.address}</span>
                 </div>
             `,
         });
@@ -101,21 +97,31 @@ function loadScript() {
 
     // shows alternate markers
     hiddenMapLocationButton.addEventListener("click", () => {
-        // let lat = document.querySelector(".lat").innerText;
-        // let lng = document.querySelector(".lng").innerText;
-        // console.log(lat, lng);
-        // let marker = {
-        //     lat: lat,
-        //     lng: lng,
-        //     name: "test name",
-        //     city: "test city",
-        //     address: "test address",
-        // };
+        const latitudes = document.querySelectorAll(".location-lat");
+        // latitudes.forEach((latitude) => {
+        //     console.log(latitude.innerText);
+        // });
+        const longitudes = document.querySelectorAll(".location-lng");
+        // longitudes.forEach((longitude) => {
+        //     console.log(longitude.innerText);
+        // });
+        const name = document.querySelectorAll(".location-name");
+        const address = document.querySelectorAll(".location-address");
+        let markersAmount = (latitudes.length + longitudes.length) / 2;
+        // console.log(markersAmount);
         markerGroup = [];
-        markerGroup.push(marker2, marker3);
-        markerGroup.map((marker) => {
-            buildMarker(marker);
-        });
+        let markers = {};
+        for (let x = 0; x < markersAmount; x++) {
+            markers[x] = {
+                lat: latitudes[x].innerText,
+                lng: longitudes[x].innerText,
+                name: name[x].innerText,
+                address: address[x].innerText,
+            };
+            markerGroup.push(markers[x]);
+            buildMarker(markers[x]);
+        }
+        // console.log(markers);
     });
 
     // EVENT LISTENERS
