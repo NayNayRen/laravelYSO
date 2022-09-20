@@ -86,6 +86,11 @@
     text-shadow: none;
     transition: bottom 150ms ease;
 }
+
+.location-results {
+    font-size: 10px;
+}
+
 #map {
     height: 100%;
     position: relative;
@@ -111,22 +116,23 @@
     height: auto;
     justify-content: space-between;
     left: 50%;
+    opacity: 0;
     padding: 5px;
     position: absolute;
     top: -100%;
     /* top: 50%; */
     transform: translate(-50%, -50%);
-    transition: top 500ms ease;
-    width: 300px;
+    transition: all 750ms ease;
+    width: 350px;
     z-index: 1;
 }
 
 .map-message p {
     font-weight: bold;
     margin: 5px 0;
+    padding: 0 5px;
     text-align: center;
     width: 100%;
-    /* outline: solid 1px blue; */
 }
 
 .map-message-button-container {
@@ -156,11 +162,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 10px;
     padding: 15px 5px;
     width: 100%;
 }
 
-@media (max-width: 1000px) {
+.map-message-header {
+    border-bottom: solid 1px #000;
+    color: #e6331f;
+    font-size: 20px;
+    margin: 15px 0;
+    text-align: center;
+    width: 150px;
 }
 
 @media (max-width: 700px) {
@@ -173,5 +186,13 @@
     .hidden-map-location-button::after,
     .hidden-map-header {
         display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .map-message {
+        border-radius: 0;
+        padding: 10px;
+        width: 100%;
     }
 }
