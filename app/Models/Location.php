@@ -17,20 +17,20 @@ class Location extends Model
 
     public static function getSearchedLocations(Request $request){
         $words = explode(' ', $request->search);
-        $searchResults =  Deal::where(function ($q) use ($words) {
+        $searchResultsId =  Deal::where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
                 ->orWhere('location', 'like', '%' . $word . '%')
                 ->orWhere('category', 'like', '%' . $word . '%');
             }
+        })->pluck('id');
+        // dd($locations->id);
+        $locationResults = Location::where(function ($q) use ($searchResultsId){
+            foreach($searchResultsId as $resultId){
+                $q->orWhere('id', '=', [$resultId]);
+            }
         })->get();
-        // dd($searchResults);
-        // $locationResults = Location::where('id', '=', $searchResults)->get();
-        return $searchResults;
+        return $locationResults;
         
-    }
-
-    public function deal(){
-        return $this->hasMany(Deal::class, 'id');
     }
 }
