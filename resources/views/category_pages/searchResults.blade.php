@@ -80,7 +80,6 @@
         {{-- HIDDEN MAP --}}
         @include('includes._map')
     </div>
-    {{-- <span>{{ count($locations) }}</span> --}}
     @foreach($searchedLocations as $location)
         <span class="location-name">{{ $location->name }}</span><br>
         <span>Latitude: <span class="location-lat">{{ $location->lat }}</span>

@@ -95,7 +95,8 @@ function loadScript() {
         });
     }
 
-    // shows alternate markers
+    // EVENT LISTENERS
+    // shows search results markers
     hiddenMapLocationButton.addEventListener("click", () => {
         const latitudes = document.querySelectorAll(".location-lat");
         // latitudes.forEach((latitude) => {
@@ -124,7 +125,6 @@ function loadScript() {
         // console.log(markers);
     });
 
-    // EVENT LISTENERS
     // opens map from map icon next to search entry
     hiddenMapOpenButton.addEventListener("click", () => {
         windowOverlay.classList.add("window-overlay-dim");
