@@ -68,6 +68,7 @@ function loadScript() {
     // makes each marker, adds event to open info when clicked
     function buildMarker(marker) {
         let markerInfo = new google.maps.InfoWindow({
+            maxWidth: 200,
             content: `
                 <span class='map-bubble-heading'>${marker.name}</span>
                 <div class='map-bubble-address'>
