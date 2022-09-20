@@ -127,10 +127,8 @@ function loadScript() {
         }
         if (markersAmount === 0) {
             mapMessage.style.top = "50%";
-            mapMessage.style.opacity = "1";
             mapMessageClose.addEventListener("click", () => {
                 mapMessage.style.top = "-100%";
-                mapMessage.style.opacity = "0";
             });
         }
         // console.log(markers);
@@ -166,7 +164,6 @@ function loadScript() {
         hiddenMap.style.zIndex = "-1";
         hiddenMap.style.opacity = "0";
         mapMessage.style.top = "-100%";
-        mapMessage.style.opacity = "0";
     });
 }
 

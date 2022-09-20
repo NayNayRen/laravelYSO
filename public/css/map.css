@@ -116,7 +116,7 @@
     -webkit-box-pack: justify;
     -webkit-box-shadow: 0 0 15px #000;
     -webkit-transform: translate(-50%, -50%);
-    -webkit-transition: all 750ms ease;
+    -webkit-transition: top 750ms ease;
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
@@ -128,12 +128,11 @@
     height: auto;
     justify-content: space-between;
     left: 50%;
-    opacity: 0;
     padding: 5px;
     position: absolute;
     top: -100%;
     transform: translate(-50%, -50%);
-    transition: all 750ms ease;
+    transition: top 750ms ease;
     width: 350px;
     z-index: 1;
 }
