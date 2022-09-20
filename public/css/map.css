@@ -140,10 +140,12 @@
     font-weight: bold;
     padding: 5px 10px;
     position: absolute;
+    transition: color 150ms ease;
     right: 0;
 }
 
 .map-message-close:hover {
+    color: #e6331f;
     cursor: pointer;
 }
 
