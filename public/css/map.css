@@ -25,12 +25,11 @@
 }
 .hidden-map {
     -ms-transform: translateX(-50%);
-    -o-transition: all 500ms ease;
-    -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0 5px 30px #000;
     -webkit-transform: translateX(-50%);
     -webkit-transition: all 500ms ease;
     background-color: #333333;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+    box-shadow: 0 5px 30px #000;
     height: 0;
     left: 50%;
     opacity: 0;
@@ -111,7 +110,6 @@
     -ms-flex-direction: column;
     -ms-flex-pack: justify;
     -ms-transform: translate(-50%, -50%);
-    -o-transition: all 750ms ease;
     -webkit-box-align: center;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
@@ -154,7 +152,6 @@
 }
 
 .map-message-close {
-    -o-transition: color 150ms ease;
     -webkit-transition: color 150ms ease;
     border-radius: 5px;
     border: solid 1px #000;
