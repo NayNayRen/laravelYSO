@@ -31,6 +31,7 @@
     height: 0;
     left: 50%;
     opacity: 0;
+    overflow: hidden;
     position: absolute;
     top: 0;
     transform: translateX(-50%);
@@ -87,20 +88,74 @@
 }
 #map {
     height: 100%;
+    position: relative;
     width: 100%;
 }
 
-.map-content-address {
+.map-bubble-address {
     color: #000;
 }
 
-.map-content-heading {
+.map-bubble-heading {
     color: #e6331f;
     font-weight: bold;
 }
 
-.map-content span {
-    display: block;
+.map-message {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #000;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    left: 50%;
+    padding: 5px;
+    position: absolute;
+    top: -100%;
+    /* top: 50%; */
+    transform: translate(-50%, -50%);
+    transition: top 500ms ease;
+    width: 300px;
+    z-index: 1;
+}
+
+.map-message p {
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.map-message-button-container {
+    position: relative;
+    width: 100%;
+}
+
+.map-message-close {
+    border: solid 1px #000;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+}
+
+.map-message-close:hover {
+    cursor: pointer;
+}
+
+.map-message-container {
+    align-items: center;
+    background-color: #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px 5px;
+    width: 100%;
 }
 
 @media (max-width: 1000px) {

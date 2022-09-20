@@ -9,6 +9,8 @@ function loadScript() {
         ".hidden-map-location-button"
     );
     const hiddenMapHeader = document.querySelector(".hidden-map-header");
+    const mapMessage = document.querySelector(".map-message");
+    const mapMessageClose = document.querySelector(".map-message-close");
     let markerGroup = [];
     let map;
 
@@ -67,9 +69,9 @@ function loadScript() {
     function buildMarker(marker) {
         let markerInfo = new google.maps.InfoWindow({
             content: `
-                <span class='map-content-heading'>${marker.name}</span>
-                <div class='map-content-address'>
-                    <span class='map-content-city'>${marker.address}</span>
+                <span class='map-bubble-heading'>${marker.name}</span>
+                <div class='map-bubble-address'>
+                    <span>${marker.address}</span>
                 </div>
             `,
         });
@@ -121,6 +123,12 @@ function loadScript() {
             };
             markerGroup.push(markers[x]);
             buildMarker(markers[x]);
+        }
+        if (markersAmount === 0) {
+            mapMessage.style.top = "50%";
+            mapMessageClose.addEventListener("click", () => {
+                mapMessage.style.top = "-100%";
+            });
         }
         // console.log(markers);
     });

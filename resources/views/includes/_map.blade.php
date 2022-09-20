@@ -9,5 +9,7 @@
     <div class="hidden-map-close-button-container">
         <span class="hidden-map-close-button">Close</span>
     </div>
-    <div id="map"></div>
+    @include('includes._map_message')
+    <div id="map">
+    </div>
 </div>
