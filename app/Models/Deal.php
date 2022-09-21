@@ -97,7 +97,7 @@ class Deal extends Model
     // $words is hoisted into the foreach scope
     public static function search(Request $request){
         $words = explode(' ', $request->search);
-        $results = Deal::where(function ($q) use ($words) {
+        $results = Deal::orderBy('id', 'asc')->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
                 ->orWhere('location', 'like', '%' . $word . '%')
