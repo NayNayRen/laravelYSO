@@ -87,7 +87,7 @@
 }
 
 .location-results {
-    font-size: 16px;
+    font-size: 10px;
 }
 
 #map {
@@ -98,10 +98,12 @@
 
 .map-bubble-address {
     color: #000;
+    font-size: 12px;
 }
 
 .map-bubble-heading {
     color: #e6331f;
+    font-size: 14px;
     font-weight: bold;
 }
 

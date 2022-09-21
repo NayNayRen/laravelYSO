@@ -61,7 +61,36 @@ function loadScript() {
         markerGroup = [];
         markerGroup.push(marker1);
         markerGroup.map((marker) => {
-            buildMarker(marker);
+            // buildMarker(marker);
+            let markerInfo = new google.maps.InfoWindow({
+                maxWidth: 200,
+                content: `
+                    <span class='map-bubble-heading'>${marker.name}</span>
+                    <div class='map-bubble-address'>
+                        <span>${marker.address}</span>
+                    </div>
+                `,
+            });
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(marker.lat, marker.lng),
+                optimized: false,
+                animation: google.maps.Animation.DROP,
+            });
+            setTimeout(() => {
+                markerInfo.open({
+                    anchor: marker,
+                    map: map,
+                    shouldFocus: false,
+                });
+            }, 1000);
+            marker.setMap(map);
+            marker.addListener("click", () => {
+                markerInfo.open({
+                    anchor: marker,
+                    map: map,
+                    shouldFocus: false,
+                });
+            });
         });
     }
 
@@ -81,13 +110,6 @@ function loadScript() {
             optimized: false,
             animation: google.maps.Animation.DROP,
         });
-        setTimeout(() => {
-            markerInfo.open({
-                anchor: marker,
-                map: map,
-                shouldFocus: false,
-            });
-        }, 1000);
         marker.setMap(map);
         marker.addListener("click", () => {
             markerInfo.open({
@@ -148,10 +170,10 @@ function loadScript() {
         } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
             hiddenMap.style.height = "400px";
         } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-            hiddenMap.style.height = "300px";
+            hiddenMap.style.height = "350px";
             hiddenMapHeader.style.display = "none";
         } else if (window.innerWidth < 400) {
-            hiddenMap.style.height = "300px";
+            hiddenMap.style.height = "350px";
             hiddenMapHeader.style.display = "none";
         }
     });

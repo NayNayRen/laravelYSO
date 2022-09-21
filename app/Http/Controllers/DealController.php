@@ -139,8 +139,9 @@ class DealController extends Controller
         $favorites = Deal::getUserFavorites();
         $coupons = Deal::getUserCoupons();
         $redeems = Deal::getUserRedeemedCoupons();
+        $allLocations = Location::getAllLocations();
         $searchedLocations = Location::getSearchedLocations($request);
-        $allSearchedLocations = Location::getAllLocations();
+        $matchingLocations = Location::getMatchingLocations($request);
         // limits search to 3 words or less
         if(count($words) > 3){
             $results = 0;

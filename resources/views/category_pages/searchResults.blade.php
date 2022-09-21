@@ -82,12 +82,15 @@
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     @foreach($searchedLocations as $location)
-        <div class="location-results" hidden>
-            <span class="location-name">{{ $location->name }}</span><br>
-            <span>Lat: <span class="location-lat">{{ $location->lat }}</span></span><br>
-            <span>Lng: <span class="location-lng">{{ $location->lon }}</span></span><br>
-            <span class="location-address">{{ $location->location }}</span><br>
-        </div>
+        @if(!empty($location->lat) && !empty($location->lon))
+            <div class="location-results" hidden>
+                <span>{{ count($searchedLocations) }}</span><br>
+                <span class="location-name">{{ $location->name }}</span><br>
+                <span>Lat: <span class="location-lat">{{ $location->lat }}</span></span><br>
+                <span>Lng: <span class="location-lng">{{ $location->lon }}</span></span><br>
+                <span class="location-address">{{ $location->location }}</span><br>
+            </div>
+        @endif
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">

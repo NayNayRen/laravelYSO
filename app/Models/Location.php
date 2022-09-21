@@ -17,22 +17,6 @@ class Location extends Model
     // uses the search method from Deal model, plucks the id
     public static function getSearchedLocations(Request $request){
         $words = explode(' ', $request->search);
-        // $searchResultsId =  Deal::where(function ($q) use ($words) {
-        //     foreach ($words as $word) {
-        //         $q->orWhere('name', 'like', '%' . $word . '%')
-        //         ->orWhere('location', 'like', '%' . $word . '%')
-        //         ->orWhere('category', 'like', '%' . $word . '%');
-        //     }
-        // })->pluck('id');
-        // matches plucked id to locations id for locations data
-        // results have to be looped through
-        // returned as an array
-        // $locationResults = Location::where(function ($q) use ($searchResultsId){
-        //     foreach($searchResultsId as $resultId){
-        //         $q->orWhere('id', '=', [$resultId]);
-        //     }
-        // })->get();
-        // return $locationResults;
         $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
@@ -40,6 +24,24 @@ class Location extends Model
             }
         })->get();
         return $locationResults;
-        
+    }
+
+    public static function getMatchingLocations(Request $request){
+        $words = explode(' ', $request->search);
+        $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
+            foreach ($words as $word) {
+                $q->orWhere('name', 'like', '%' . $word . '%')
+                ->orWhere('location', 'like', '%' . $word . '%');
+            }
+        })->get();
+        $dealResults =  Deal::orderBy('id', 'asc')->where(function ($q) use ($words) {
+            foreach ($words as $word) {
+                $q->orWhere('name', 'like', '%' . $word . '%')
+                ->orWhere('location', 'like', '%' . $word . '%')
+                ->orWhere('category', 'like', '%' . $word . '%');
+            }
+        })->get();
+        $matchingDeals = $locationResults->diffKeys([$dealResults])->sort()->all();
+        return $matchingDeals;
     }
 }
