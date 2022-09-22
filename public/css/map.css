@@ -198,15 +198,32 @@
     width: 150px;
 }
 
+.map-use-disclaimer {
+    border-bottom: solid 1px #fff;
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 500px;
+    /* outline: solid 1px blue; */
+}
+
 @media (max-width: 700px) {
     .hidden-map {
         border-left: none;
         border-right: none;
     }
+
     .hidden-map-close-button::before,
     .hidden-map-location-button::after,
     .hidden-map-header {
         display: none;
+    }
+
+    .map-use-disclaimer {
+        font-size: 14px;
+        width: 350px;
     }
 }
 
@@ -215,5 +232,10 @@
         border-radius: 0;
         padding: 10px;
         width: 100%;
+    }
+
+    .map-use-disclaimer {
+        margin: 0 10px 10px 10px;
+        width: 95%;
     }
 }

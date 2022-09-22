@@ -3810,7 +3810,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 0 0 0;
+    padding: 0;
     position: relative;
 }
 
