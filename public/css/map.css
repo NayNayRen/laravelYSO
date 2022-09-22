@@ -5,15 +5,18 @@
     position: relative;
     transition: color 250ms ease;
 }
+
 .hidden-map-close-button:hover,
 .hidden-map-location-button:hover {
     color: #e6331f;
     cursor: pointer;
 }
+
 .hidden-map-close-button:hover.hidden-map-close-button::before,
 .hidden-map-location-button:hover.hidden-map-location-button::after {
     bottom: 0;
 }
+
 .hidden-map-close-button-container {
     font-weight: bold;
     overflow: hidden;
@@ -23,6 +26,7 @@
     top: 5px;
     width: 150px;
 }
+
 .hidden-map {
     -ms-transform: translateX(-50%);
     -webkit-box-shadow: 0 5px 30px #000;
@@ -48,8 +52,9 @@
     color: #fff;
     content: "Map";
     font-size: 14px;
-    left: -35px;
+    padding-right: 5px;
     position: absolute;
+    right: 100%;
     text-shadow: none;
     transition: bottom 150ms ease;
 }
