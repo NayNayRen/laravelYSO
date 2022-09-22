@@ -88,7 +88,9 @@ class Deal extends Model
     // lists categories in dropdown menu
     // distinct is no duplicates, order by is alphabetical, plucked pulls the data
     public static function getCategories(){
-        $categories = Deal::distinct()->orderBy('category')->pluck('category');
+        $categories = Deal::distinct()->orderBy('category')
+        ->where('category', '!=', '')
+        ->whereNotNull('category')->pluck('category');
         return $categories;
     }
 
