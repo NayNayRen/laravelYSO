@@ -94,9 +94,11 @@
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
-        <span class="map-use-disclaimer">Use the map button above to see if your search returned any locations of
+        <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i> above
+            to
+            see if your search returned any locations of
             interest. If no locations came back, have no fear, it just means a merchant hasn't registered one. Check to
-            see if came back below.</span>
+            see if any came back below.</span>
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
         <h1>The choices you want.</h1>

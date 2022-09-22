@@ -3022,7 +3022,7 @@ html {
     -webkit-transition: color 150ms ease;
     align-items: center;
     background-color: #fff;
-    color: #808080;
+    color: #000;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -3033,7 +3033,7 @@ html {
 }
 
 .search-button:hover {
-    color: #000;
+    color: #808080;
     cursor: pointer;
 }
 
