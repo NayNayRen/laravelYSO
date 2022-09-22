@@ -118,6 +118,7 @@ function loadScript() {
                 shouldFocus: false,
             });
         });
+        // console.log(markerGroup);
     }
 
     // EVENT LISTENERS
