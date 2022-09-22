@@ -97,7 +97,8 @@
         <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i> above
             to
             see if your search returned any locations of
-            interest. If no locations came back, have no fear, it just means a merchant hasn't registered one. Check to
+            interest. If no locations came back, have no fear, it could just be a merchant hasn't registered one. Check
+            to
             see if any came back below.</span>
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>

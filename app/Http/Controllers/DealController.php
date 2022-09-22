@@ -173,8 +173,8 @@ class DealController extends Controller
                 'searchedDeals' => $results,
                 'request' => $request,
                 'searchedLocations' => [],
-                'searchedWords' => ['no results'],
-                'message' => 'Type something to search for.',
+                'searchedWords' => ['no results found'],
+                'message' => 'Enter something to search for.',
                 'pageTitle' => 'Search Results'
             ]);
         // if all goes well

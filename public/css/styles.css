@@ -3093,7 +3093,7 @@ html {
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
-    font-weight: bold;
+    /* font-weight: bold; */
     left: 50%;
     opacity: 0;
     padding: 0;
@@ -3164,6 +3164,10 @@ html {
     justify-content: center;
     padding: 15px 5px 30px 5px;
     position: relative;
+}
+
+.searched-words {
+    font-weight: normal;
 }
 
 .selected-deal-container {
@@ -3844,7 +3848,7 @@ html {
 
 .view-all-container-heading p span {
     color: #e6331f;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-transform: capitalize;
 }
 
@@ -5540,9 +5544,9 @@ html {
 
     .view-all-item-counter {
         -webkit-transform: translateX(-100%);
-        bottom: -17px;
+        bottom: -22px;
         left: 100%;
-        padding-right: 20px;
+        padding-right: 23px;
         text-align: right;
         transform: translateX(-100%);
     }
@@ -5931,7 +5935,6 @@ html {
     }
 
     .view-all .category-heading {
-        /* width: 60%; */
         width: 100%;
     }
 
@@ -5949,10 +5952,10 @@ html {
         font-size: 18px;
     }
 
-    .view-all-item-counter {
+    /* .view-all-item-counter {
         bottom: -25px;
-        padding-right: 15px;
-    }
+        padding-right: 20px;
+    } */
 
     .view-all-link {
         right: 80px;
