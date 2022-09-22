@@ -130,18 +130,21 @@
     height: auto;
     justify-content: space-between;
     left: 50%;
+    opacity: 0;
     padding: 5px;
     position: absolute;
     top: -100%;
+    /* top: 100px; */
     transform: translate(-50%, -50%);
-    transition: top 750ms ease;
+    transition: top 1000ms ease, opacity 500ms ease;
     width: 350px;
     z-index: 1;
 }
 
 .map-message p {
-    font-weight: bold;
-    margin: 5px 0;
+    font-size: 16px;
+    /* font-weight: bold; */
+    margin: 0 0 5px 0;
     padding: 0 5px;
     text-align: center;
     width: 100%;
@@ -219,6 +222,10 @@
     .hidden-map-location-button::after,
     .hidden-map-header {
         display: none;
+    }
+
+    .map-message p {
+        font-size: 14px;
     }
 
     .map-use-disclaimer {
