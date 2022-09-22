@@ -61,7 +61,6 @@ function loadScript() {
         markerGroup = [];
         markerGroup.push(myLocationMarker);
         markerGroup.map((marker) => {
-            // buildMarker(marker);
             let markerInfo = new google.maps.InfoWindow({
                 maxWidth: 200,
                 content: `
@@ -122,7 +121,7 @@ function loadScript() {
     }
 
     // EVENT LISTENERS
-    // shows search results markers
+    // shows search results markers on click
     hiddenMapLocationButton.addEventListener("click", () => {
         const latitudes = document.querySelectorAll(".location-lat");
         const longitudes = document.querySelectorAll(".location-lng");
