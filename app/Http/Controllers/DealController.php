@@ -39,6 +39,7 @@ class DealController extends Controller
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
                     'categoryHeading' => 'food',
+                    'searchedLocations' => [],
                     'message' => '',
                     'pageTitle' => 'Home'
                 ]);
@@ -53,6 +54,7 @@ class DealController extends Controller
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
                     'categoryHeading' => 'fashion',
+                    'searchedLocations' => [],
                     'message' => '',
                     'pageTitle' => 'Home'
                 ]);
@@ -67,6 +69,7 @@ class DealController extends Controller
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
                     'categoryHeading' => 'auto',
+                    'searchedLocations' => [],
                     'message' => '',
                     'pageTitle' => 'Home'
                 ]);
@@ -81,6 +84,7 @@ class DealController extends Controller
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
                     'categoryHeading' => 'fun',
+                    'searchedLocations' => [],
                     'message' => '',
                     'pageTitle' => 'Home'
                 ]);
@@ -95,6 +99,7 @@ class DealController extends Controller
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
                     'categoryHeading' => 'health',
+                    'searchedLocations' => [],
                     'message' => '',
                     'pageTitle' => 'Home'
                 ]);
@@ -109,6 +114,7 @@ class DealController extends Controller
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,
                     'categoryHeading' => 'food',
+                    'searchedLocations' => [],
                     'message' => '',
                     'pageTitle' => 'Home'
                 ]);
@@ -198,6 +204,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllFeatured(),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Featured'
          ]);
@@ -213,6 +220,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllType('food'),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Food'
          ]);
@@ -228,6 +236,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllType('fashion'),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Fashion'
          ]);
@@ -243,6 +252,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllType('auto'),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Auto'
          ]);
@@ -258,6 +268,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllType('fun'),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Fun'
          ]);
@@ -273,6 +284,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllType('health'),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Health'
          ]);
@@ -288,6 +300,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllType('tech'),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Tech'
         ]);
@@ -303,6 +316,7 @@ class DealController extends Controller
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllPopular(),
+            'searchedLocations' => [],
             'message' => '',
             'pageTitle' => 'Popular'
         ]);
