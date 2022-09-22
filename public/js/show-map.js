@@ -90,6 +90,7 @@ function loadScript() {
                     map: map,
                     shouldFocus: false,
                 });
+                // marker.setMap(null);
             });
         });
     }
