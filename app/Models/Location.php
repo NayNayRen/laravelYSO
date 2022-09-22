@@ -14,26 +14,34 @@ class Location extends Model
         $locations = Location::orderBy('id', 'asc')->get();
         return $locations;
     }
+
     // uses the search method from Deal model, plucks the id
     public static function getSearchedLocations(Request $request){
         $words = explode(' ', $request->search);
         $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
-                ->orWhere('location', 'like', '%' . $word . '%');
+                ->orWhere('location', 'like', '%' . $word . '%')
+                ->orWhere('type', 'like', '%' . $word . '%');
             }
-        })->get();
+        })
+        ->whereNotNull('lat')
+        ->WhereNotNull('lon')->get();
         return $locationResults;
     }
 
+    // matches location and search results, returns the location group
     public static function getMatchingLocations(Request $request){
         $words = explode(' ', $request->search);
         $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
-                ->orWhere('location', 'like', '%' . $word . '%');
+                ->orWhere('location', 'like', '%' . $word . '%')
+                ->orWhere('type', 'like', '%' . $word . '%');
             }
-        })->get();
+        })
+        ->whereNotNull('lat')
+        ->WhereNotNull('lon')->get();
         $dealResults =  Deal::orderBy('id', 'asc')->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')

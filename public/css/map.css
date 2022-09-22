@@ -74,13 +74,17 @@
     width: 150px;
 }
 
+.hidden-map-location-count {
+    padding: 0 5px;
+}
+
 .hidden-map-location-button::after {
     -webkit-transition: bottom 150ms ease;
     bottom: -20px;
     color: #fff;
     content: "Locations";
     font-size: 14px;
-    left: 50px;
+    left: 100%;
     position: absolute;
     text-shadow: none;
     transition: bottom 150ms ease;

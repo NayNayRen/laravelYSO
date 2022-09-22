@@ -155,7 +155,7 @@ function loadScript() {
                 mapMessage.style.top = "-100%";
             });
         }
-        // console.log(markers);
+        // console.log(markerGroup.length);
     });
 
     // opens map from map icon next to search entry
