@@ -94,6 +94,9 @@
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
+        <span class="map-use-disclaimer">Use the map button above to see if your search returns any locations of
+            interest.</span>
+        <span class="map-use-disclaimer">If no locations come back, then be sure to see what results are below.</span>
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
         <h1>The choices you want.</h1>
