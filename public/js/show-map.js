@@ -27,7 +27,7 @@ function loadScript() {
     };
 
     // marker data
-    const marker1 = {
+    const myLocationMarker = {
         lat: myLocation.lat,
         lng: myLocation.lng,
         name: "You Are Here.",
@@ -59,7 +59,7 @@ function loadScript() {
             },
         });
         markerGroup = [];
-        markerGroup.push(marker1);
+        markerGroup.push(myLocationMarker);
         markerGroup.map((marker) => {
             // buildMarker(marker);
             let markerInfo = new google.maps.InfoWindow({
@@ -96,7 +96,7 @@ function loadScript() {
     }
 
     // makes each marker, adds event to open info when clicked
-    function buildMarker(marker) {
+    function buildAdditionalMarkers(marker) {
         let markerInfo = new google.maps.InfoWindow({
             maxWidth: 200,
             content: `
@@ -125,13 +125,7 @@ function loadScript() {
     // shows search results markers
     hiddenMapLocationButton.addEventListener("click", () => {
         const latitudes = document.querySelectorAll(".location-lat");
-        // latitudes.forEach((latitude) => {
-        //     console.log(latitude.innerText);
-        // });
         const longitudes = document.querySelectorAll(".location-lng");
-        // longitudes.forEach((longitude) => {
-        //     console.log(longitude.innerText);
-        // });
         const name = document.querySelectorAll(".location-name");
         const address = document.querySelectorAll(".location-address");
         let markersAmount = (latitudes.length + longitudes.length) / 2;
@@ -146,7 +140,7 @@ function loadScript() {
                 address: address[x].innerText,
             };
             markerGroup.push(markers[x]);
-            buildMarker(markers[x]);
+            buildAdditionalMarkers(markers[x]);
         }
         if (markersAmount === 0) {
             mapMessage.style.opacity = "1";
