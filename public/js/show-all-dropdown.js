@@ -14,7 +14,7 @@ function loadAllButtonDropdownScript() {
     allButtonArrow.addEventListener("click", () => {
         allButtonDropdown.classList.toggle("all-button-dropdown-toggle");
         allButtonArrow.classList.toggle("all-button-arrow-rotate");
-        allButtonArrow.classList.toggle("all-button-toggle");
+        // allButtonArrow.classList.toggle("all-button-toggle");
         allButton.classList.toggle("all-button-toggle");
     });
 
