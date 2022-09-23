@@ -11,7 +11,9 @@ class Location extends Model
     use HasFactory;
     // gets all locations
     public static function getAllLocations(){
-        $locations = Location::orderBy('id', 'asc')->get();
+        $locations = Location::orderBy('id', 'asc')->whereNotNull('lat')
+        ->WhereNotNull('lon')->get();
+        // dd($locations);
         return $locations;
     }
 
@@ -27,6 +29,7 @@ class Location extends Model
         })
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
+        // dd($locationResults);
         return $locationResults;
     }
 
@@ -42,6 +45,7 @@ class Location extends Model
         })
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
+        // dd($locationResults);
         $dealResults =  Deal::orderBy('id', 'asc')->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
@@ -49,7 +53,9 @@ class Location extends Model
                 ->orWhere('category', 'like', '%' . $word . '%');
             }
         })->get();
+        // dd($dealResults);
         $matchingDeals = $locationResults->diffKeys([$dealResults])->sort()->all();
+        // dd($matchingDeals);
         return $matchingDeals;
     }
 }
