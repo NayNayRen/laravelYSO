@@ -87,28 +87,29 @@ class Deal extends Model
     // CATEGORY METHOD
     // lists categories in dropdown menu
     // distinct is no duplicates, order by is alphabetical, plucked pulls the data
-    public static function getCategories(){
-        $categories = Deal::distinct()->orderBy('category')
-        ->where('category', '!=', '')
-        ->whereNotNull('category')->pluck('category');
-        $formattedCategories = preg_split('/("\s*,*\s*)*,+\s*(\s*,*\s*")*/', $categories);
-        // dd($formattedCategories);
-        return $formattedCategories;
-    }
-
-    // public static function getCategories(): array {
-    //     $categories = Deal::distinct()
-    //         ->orderBy('category')
-    //         ->where('category', '!=', '')
-    //         ->whereNotNull('category')
-    //         ->pluck('category')
-    //         ->flatMap(fn (string $categories) => explode(',', $categories)) // For every comma delimited category list we explode on ','
-    //         ->map(fn (string $category) => trim($category)) // Do some additional cleanup if necessary (optional)
-    //         ->unique() // Ensure no duplicates exist (optional)
-    //         ->sort() // Sort alphabetically (optional)
-    //         ->all(); // Cast the collection to an array (optional)
-    //     return $categories;
+    // public static function getCategories(){
+    //     $categories = Deal::distinct()->orderBy('category')
+    //     ->where('category', '!=', '')
+    //     ->whereNotNull('category')->pluck('category');
+    //     $formattedCategories = preg_split('/("\s*,*\s*)*,+\s*(\s*,*\s*")*/', $categories);
+    //     // dd($formattedCategories);
+    //     return $formattedCategories;
     // }
+
+    public static function getCategories(){
+        $categories = Deal::distinct()
+            ->orderBy('category')
+            ->where('category', '!=', '')
+            ->whereNotNull('category')
+            ->pluck('category')
+            ->flatMap(fn (string $categories) => explode(',', $categories)) // For every comma delimited category list we explode on ','
+            ->map(fn (string $category) => trim(strtoupper($category))) // Do some additional cleanup if necessary (optional)
+            ->unique() // Ensure no duplicates exist (optional)
+            ->sort() // Sort alphabetically (optional)
+            ->all(); // Cast the collection to an array (optional)
+            // dd($categories);
+            return $categories;
+    }
 
     // SEARCH METHOD
     // $q is used as a closure function to group queries together
