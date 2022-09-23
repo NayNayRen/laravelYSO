@@ -91,6 +91,8 @@ class Deal extends Model
         $categories = Deal::distinct()->orderBy('category')
         ->where('category', '!=', '')
         ->whereNotNull('category')->pluck('category');
+        $formattedCategories = preg_split('/[^A-Za-z0-9]+/', $categories);
+        // dd($formattedCategories);
         return $categories;
     }
 

@@ -97,7 +97,7 @@
         @if(count($searchedLocations) === 0)
             <span class="map-use-disclaimer">No location results came back to show on the map <i
                     class="fa fa-map-marker" aria-hidden="true"></i> , it
-                could just be a merchant hasn't registered one yet. Check
+                could just be a merchant hasn't registered any yet. Check
                 to
                 see if any came back below.</span>
         @else
@@ -111,7 +111,7 @@
                     location
                 @endif
                 returned from your search. If no locations came back, have
-                no fear, it could just be a merchant hasn't registered one yet. Check
+                no fear, it could just be a merchant hasn't registered any yet. Check
                 to
                 see if any came back below.
             </span>
