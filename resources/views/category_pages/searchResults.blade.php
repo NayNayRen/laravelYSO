@@ -94,12 +94,28 @@
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
-        <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i> above
-            to
-            see if your search returned any locations of
-            interest. If no locations came back, have no fear, it could just be a merchant hasn't registered one. Check
-            to
-            see if any came back below.</span>
+        @if(count($searchedLocations) === 0)
+            <span class="map-use-disclaimer">No location results came back to show on the map <i
+                    class="fa fa-map-marker" aria-hidden="true"></i> , it
+                could just be a merchant hasn't registered one yet. Check
+                to
+                see if any came back below.</span>
+        @else
+            <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i>
+                above
+                to
+                see the <span>{{ count($searchedLocations) }}</span>
+                @if(count($searchedLocations) > 1)
+                    locations
+                @else
+                    location
+                @endif
+                returned from your search. If no locations came back, have
+                no fear, it could just be a merchant hasn't registered one yet. Check
+                to
+                see if any came back below.
+            </span>
+        @endif
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
         <h1>The choices you want.</h1>
