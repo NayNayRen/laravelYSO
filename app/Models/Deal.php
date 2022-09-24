@@ -85,28 +85,17 @@ class Deal extends Model
     }
 
     // CATEGORY METHOD
-    // lists categories in dropdown menu
-    // distinct is no duplicates, order by is alphabetical, plucked pulls the data
-    // public static function getCategories(){
-    //     $categories = Deal::distinct()->orderBy('category')
-    //     ->where('category', '!=', '')
-    //     ->whereNotNull('category')->pluck('category');
-    //     $formattedCategories = preg_split('/("\s*,*\s*)*,+\s*(\s*,*\s*")*/', $categories);
-    //     // dd($formattedCategories);
-    //     return $formattedCategories;
-    // }
-
     public static function getCategories(){
         $categories = Deal::distinct()
             ->orderBy('category')
             ->where('category', '!=', '')
             ->whereNotNull('category')
             ->pluck('category')
-            ->flatMap(fn (string $categories) => explode(',', $categories)) // For every comma delimited category list we explode on ','
-            ->map(fn (string $category) => trim(strtoupper($category))) // Do some additional cleanup if necessary (optional)
-            ->unique() // Ensure no duplicates exist (optional)
-            ->sort() // Sort alphabetically (optional)
-            ->all(); // Cast the collection to an array (optional)
+            ->flatMap(fn (string $categories) => explode(',', $categories)) // split at every coma to make the list
+            ->map(fn (string $category) => ucfirst(trim($category))) // cleanup and format the data with ucfirst
+            ->unique() // ensure no duplicates exist
+            ->sort() // sort alphabetically
+            ->all(); // cast the collection to an array
             // dd($categories);
             return $categories;
     }
