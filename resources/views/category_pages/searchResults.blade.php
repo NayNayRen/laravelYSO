@@ -110,7 +110,9 @@
                 @else
                     location
                 @endif
-                returned from your search. If no locations came back, have
+                returned from your search.
+            </span>
+            <span class="map-use-disclaimer"> If no locations had come back, have
                 no fear, it could just be a merchant hasn't registered any yet. Check
                 to
                 see if any came back below.
