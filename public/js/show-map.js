@@ -48,6 +48,13 @@ function loadScript() {
 
     // // BUILDS AND ADDS MAP ON CLICKING MAP ICON
     function loadMap() {
+        const ysoIcon = {
+            url: "../img/yso-clipped-rw.png",
+            //state your size parameters in terms of pixels
+            size: new google.maps.Size(35, 35),
+            scaledSize: new google.maps.Size(35, 35),
+            origin: new google.maps.Point(0, 0),
+        };
         // generates map
         map = new google.maps.Map(document.getElementById("map"), {
             center: usCenter,
@@ -74,6 +81,8 @@ function loadScript() {
                 position: new google.maps.LatLng(marker.lat, marker.lng),
                 optimized: false,
                 animation: google.maps.Animation.DROP,
+                // icon: ysoIcon,
+                zIndex: 2,
             });
             setTimeout(() => {
                 markerInfo.open({
@@ -109,6 +118,7 @@ function loadScript() {
             position: new google.maps.LatLng(marker.lat, marker.lng),
             optimized: false,
             animation: google.maps.Animation.DROP,
+            zIndex: 1,
         });
         marker.setMap(map);
         marker.addListener("click", () => {
