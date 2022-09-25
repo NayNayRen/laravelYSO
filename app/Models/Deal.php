@@ -119,16 +119,16 @@ class Deal extends Model
     public static function getFeatured(){
         $take = 30;
         $featured = Deal::query()
-        ->whereIn('id', Deal::select('id')->orderByDesc('id')->take($take)->get()->modelKeys())
+        ->whereIn('id', Deal::select('id')->orderBy('id', 'asc')->take($take)->get()->modelKeys())
         ->paginate($take, ['*'], 'featured');
         return $featured;
     }
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllFeatured(){
-        // $take = 30;
+        $take = 60;
         $allFeatured = Deal::query()
-        ->whereIn('id', Deal::select('id')->orderByDesc('id')->take(30)->get()->modelKeys())
+        ->whereIn('id', Deal::select('id')->orderBy('id', 'asc')->take($take)->get()->modelKeys())
         ->paginate(10);
         return $allFeatured;
     }
