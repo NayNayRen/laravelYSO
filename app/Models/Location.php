@@ -33,29 +33,40 @@ class Location extends Model
         return $locationResults;
     }
 
-    // matches location and search results, returns the location group
-    public static function getMatchingLocations(Request $request){
-        $words = explode(' ', $request->search);
-        $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
-            foreach ($words as $word) {
-                $q->orWhere('name', 'like', '%' . $word . '%')
-                ->orWhere('location', 'like', '%' . $word . '%')
-                ->orWhere('type', 'like', '%' . $word . '%');
-            }
-        })
+    public static function getMatchingLocations($type){
+        $locationResults =  Location::orderBy('id', 'asc')
+        ->where('name', 'like', '%' . $type . '%')
+        ->orWhere('location', 'like', '%' . $type . '%')
+        ->orWhere('type', 'like', '%' . $type . '%')
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locationResults);
-        $dealResults =  Deal::orderBy('id', 'asc')->where(function ($q) use ($words) {
-            foreach ($words as $word) {
-                $q->orWhere('name', 'like', '%' . $word . '%')
-                ->orWhere('location', 'like', '%' . $word . '%')
-                ->orWhere('category', 'like', '%' . $word . '%');
-            }
-        })->get();
-        // dd($dealResults);
-        $matchingDeals = $locationResults->diffKeys([$dealResults])->sort()->all();
-        // dd($matchingDeals);
-        return $matchingDeals;
+        return $locationResults;
     }
+
+    // matches location and search results, returns the location group
+    // public static function getMatchingLocations(Request $request){
+    //     $words = explode(' ', $request->search);
+    //     $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
+    //         foreach ($words as $word) {
+    //             $q->orWhere('name', 'like', '%' . $word . '%')
+    //             ->orWhere('location', 'like', '%' . $word . '%')
+    //             ->orWhere('type', 'like', '%' . $word . '%');
+    //         }
+    //     })
+    //     ->whereNotNull('lat')
+    //     ->WhereNotNull('lon')->get();
+    //     // dd($locationResults);
+    //     $dealResults =  Deal::orderBy('id', 'asc')->where(function ($q) use ($words) {
+    //         foreach ($words as $word) {
+    //             $q->orWhere('name', 'like', '%' . $word . '%')
+    //             ->orWhere('location', 'like', '%' . $word . '%')
+    //             ->orWhere('category', 'like', '%' . $word . '%');
+    //         }
+    //     })->get();
+    //     // dd($dealResults);
+    //     $matchingDeals = $locationResults->diffKeys([$dealResults])->sort()->all();
+    //     // dd($matchingDeals);
+    //     return $matchingDeals;
+    // }
 }
