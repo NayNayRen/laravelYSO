@@ -59,6 +59,7 @@ class UserCoupon extends Model
         return $redeems;
     }
 
+    // ASSOCIATES USER TO COUPON
     public function Users()
     {
         return $this->belongsTo(User::class);
