@@ -80,7 +80,7 @@ class CouponController extends Controller
             }
         }else{
             return response()->json([
-                'message' => 'Kindly login first!',
+                'message' => 'Please login first!',
             ]);
         }
     }
