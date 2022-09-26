@@ -25,8 +25,8 @@ class DealController extends Controller
         $health = $request->input('health');
         $categories = Deal::getCategories();
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         // views based on selection
             if($food){
                 return view('index', [
@@ -143,8 +143,8 @@ class DealController extends Controller
     public function searchDeal(Request $request){
         $words = explode(' ', $request->search);
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         $allLocations = Location::getAllLocations();
         $searchedLocations = Location::getSearchedLocations($request);
         $matchingLocations = Location::getMatchingLocations($request);
@@ -197,8 +197,8 @@ class DealController extends Controller
     // VIEW ALL FEATURED
     public function allFeatured(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/featured', [
             'favorites' => $favorites,
             'coupons' => $coupons,
@@ -213,8 +213,8 @@ class DealController extends Controller
     // VIEW ALL FOOD
     public function allFood(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/food', [
             'favorites' => $favorites,
             'coupons' => $coupons,
@@ -229,8 +229,8 @@ class DealController extends Controller
     // VIEW ALL FASHION
     public function allFashion(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/fashion', [
             'favorites' => $favorites,
             'coupons' => $coupons,
@@ -245,8 +245,8 @@ class DealController extends Controller
     // VIEW ALL AUTO
     public function allAuto(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/auto', [
             'favorites' => $favorites,
             'coupons' => $coupons,
@@ -261,8 +261,8 @@ class DealController extends Controller
     // VIEW ALL FUN
     public function allFun(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/fun', [
             'favorites' => $favorites,
             'coupons' => $coupons,
@@ -277,8 +277,8 @@ class DealController extends Controller
     // VIEW ALL HEALTH
     public function allHealth(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/health', [
             'favorites' => $favorites,
             'coupons' => $coupons,
@@ -293,8 +293,8 @@ class DealController extends Controller
     // VIEW ALL TECH
     public function allTech(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/tech', [
             'favorites' => $favorites,
             'coupons' => $coupons,
@@ -309,8 +309,8 @@ class DealController extends Controller
     // VIEW ALL POPULAR
     public function allPopular(){
         $favorites = Deal::getUserFavorites();
-        $coupons = Deal::getUserCoupons();
-        $redeems = Deal::getUserRedeemedCoupons();
+        $coupons = UserCoupon::getUserCoupons();
+        $redeems = UserCoupon::getUserRedeemedCoupons();
         return view('category_pages/popular', [
             'favorites' => $favorites,
             'coupons' => $coupons,

@@ -37,52 +37,52 @@ class Deal extends Model
     }
 
     // GET USERS COUPONS
-    public static function getUserCoupons(){
-        if ((auth()->user())){
-            $user_id = (auth()->user()->id);               
-            $cous = UserCoupon::where('user_id',$user_id)->get();
-            $coupons =  Deal ::query();
-            if($cous->count() > 0 ){
-                foreach($cous as $cou){
-                    if($coupons == null){
-                        $coupons->where('id',$cou->deal_id);
-                    }else{
-                        $coupons->orwhere('id',$cou->deal_id);
-                    }
-                }
-                $coupons = $coupons->get();
-            }else{
-                $coupons = null;
-            }
-        }else{
-            $coupons = null;
-        }
-        return $coupons;
-    }
+    // public static function getUserCoupons(){
+    //     if ((auth()->user())){
+    //         $user_id = (auth()->user()->id);               
+    //         $cous = UserCoupon::where('user_id',$user_id)->get();
+    //         $coupons =  Deal ::query();
+    //         if($cous->count() > 0 ){
+    //             foreach($cous as $cou){
+    //                 if($coupons == null){
+    //                     $coupons->where('id',$cou->deal_id);
+    //                 }else{
+    //                     $coupons->orwhere('id',$cou->deal_id);
+    //                 }
+    //             }
+    //             $coupons = $coupons->get();
+    //         }else{
+    //             $coupons = null;
+    //         }
+    //     }else{
+    //         $coupons = null;
+    //     }
+    //     return $coupons;
+    // }
 
     // GET USERS REDEEMED COUPONS
-    public static function getUserRedeemedCoupons(){
-        if ((auth()->user())){
-            $user_id = (auth()->user()->id);               
-            $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
-            $redeems =  Deal ::query();
-            if($redms->count() > 0 ){
-                foreach($redms as $redm){
-                    if($redeems == null){
-                        $redeems->where('id',$redm->deal_id);
-                    }else{
-                        $redeems->orwhere('id',$redm->deal_id);
-                    }
-                }
-                $redeems = $redeems->get();
-            }else{
-                $redeems = null;
-            }
-        }else{
-            $redeems = null;
-        }
-        return $redeems;
-    }
+    // public static function getUserRedeemedCoupons(){
+    //     if ((auth()->user())){
+    //         $user_id = (auth()->user()->id);               
+    //         $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
+    //         $redeems =  Deal ::query();
+    //         if($redms->count() > 0 ){
+    //             foreach($redms as $redm){
+    //                 if($redeems == null){
+    //                     $redeems->where('id',$redm->deal_id);
+    //                 }else{
+    //                     $redeems->orwhere('id',$redm->deal_id);
+    //                 }
+    //             }
+    //             $redeems = $redeems->get();
+    //         }else{
+    //             $redeems = null;
+    //         }
+    //     }else{
+    //         $redeems = null;
+    //     }
+    //     return $redeems;
+    // }
 
     // CATEGORY METHOD
     public static function getCategories(){
