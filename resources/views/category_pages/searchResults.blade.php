@@ -177,12 +177,12 @@
             }
         });
         // FAVORITE RESPONSE
-        $('.add-favourite').click(function () {
+        $('.add-favorite').click(function () {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             // console.log(name);
             $.ajax({
-                url: "{{ route('add.favourite') }}",
+                url: "{{ route('add.favorite') }}",
                 method: "POST",
                 dataType: "json",
 
@@ -194,7 +194,7 @@
                 success: function (data) {
                     if (data['success']) {
                         var r = (data['success']);
-                        $('#' + id).addClass('favourite');
+                        $('#' + id).addClass('favorite');
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
                         $('.favorite-added-button').click(() => {
@@ -205,7 +205,7 @@
                     }
                     if (data['delete']) {
                         var r = (data['delete']);
-                        $('#' + parseInt(id)).removeClass('favourite');
+                        $('#' + parseInt(id)).removeClass('favorite');
                         $('#favorite-removed-name').text(name);
                         $('.favorite-removed-message').addClass(
                             'show-selected-deal-message');

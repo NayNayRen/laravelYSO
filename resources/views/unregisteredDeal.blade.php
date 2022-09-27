@@ -42,7 +42,7 @@
             <div class="unregistered-share-fav-container">
                 <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button share-deal"><i
                         class="fa fa-share" aria-hidden="true"></i>Share</button>
-                <button id="unregistered-favorite-deal-button " class="selected-deal-share-fav-button add-favourite"><i
+                <button id="unregistered-favorite-deal-button " class="selected-deal-share-fav-button add-favorite"><i
                         class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
             </div>
         </div>
@@ -59,12 +59,12 @@
             }
         });
         // GUEST FAVORITE RESPONSE
-        $('.add-favourite').click(function () {
+        $('.add-favorite').click(function () {
             var id = $(this).attr('id');
             // alert(id);
             // console.log(id);
             $.ajax({
-                url: "{{ route('add.favourite') }}",
+                url: "{{ route('add.favorite') }}",
                 method: "POST",
                 dataType: "json",
 

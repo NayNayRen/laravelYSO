@@ -63,15 +63,15 @@
                         @if($favorites->count() < 3)
                             <div style="display: flex; padding-bottom: 10px;">
                                 @foreach($favorites as $deal)
-                                    <div class="card card--favourite">
+                                    <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
                                 @endforeach
                             </div>
                         @else
-                            <div class="card-display card-display--favourite owl-carousel owl-theme">
+                            <div class="card-display card-display--favorite owl-carousel owl-theme">
                                 @foreach($favorites as $deal)
-                                    <div class="card card--favourite">
+                                    <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
                                 @endforeach
@@ -90,15 +90,15 @@
                         @if($coupons->count() < 3)
                             <div style="display: flex; padding-bottom: 10px;">
                                 @foreach($coupons as $deal)
-                                    <div class="card card--favourite">
+                                    <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
                                 @endforeach
                             </div>
                         @else
-                            <div class="card-display card-display--favourite owl-carousel owl-theme">
+                            <div class="card-display card-display--favorite owl-carousel owl-theme">
                                 @foreach($coupons as $deal)
-                                    <div class="card card--favourite">
+                                    <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
                                 @endforeach
@@ -117,15 +117,15 @@
                         @if($redeems->count() < 3)
                             <div style="display: flex; padding-bottom: 10px;">
                                 @foreach($redeems as $deal)
-                                    <div class="card card--favourite">
+                                    <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
                                 @endforeach
                             </div>
                         @else
-                            <div class="card-display card-display--favourite owl-carousel owl-theme">
+                            <div class="card-display card-display--favorite owl-carousel owl-theme">
                                 @foreach($redeems as $deal)
-                                    <div class="card card--favourite">
+                                    <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
                                 @endforeach

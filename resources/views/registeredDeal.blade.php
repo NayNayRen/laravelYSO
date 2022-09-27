@@ -31,13 +31,13 @@
                 @endphp
                 @if($check != null)
                     {{-- id="registered-favorite-deal-button" --}}
-                    <button class="selected-deal-share-fav-button add-favourite"
+                    <button class="selected-deal-share-fav-button add-favorite"
                         id="{{ $deal['id'] }}"
-                        name="{{ $deal['name'] }}"><i class="fa fa-star favourite2"
+                        name="{{ $deal['name'] }}"><i class="fa fa-star favorite2"
                             aria-hidden="true"></i>Favorite</button>
                 @else
                     {{-- id="registered-favorite-deal-button" --}}
-                    <button class="selected-deal-share-fav-button add-favourite"
+                    <button class="selected-deal-share-fav-button add-favorite"
                         id="{{ $deal['id'] }}"
                         name="{{ $deal['name'] }}"><i class="fa fa-star"
                             aria-hidden="true"></i>Favorite</button>
@@ -116,12 +116,12 @@
             $('#registered-deal-email').attr('value', old_email);
         });
         // USER FAVORITE RESPONSE
-        $('.add-favourite').click(function () {
+        $('.add-favorite').click(function () {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             // console.log(name);
             $.ajax({
-                url: "{{ route('add.favourite') }}",
+                url: "{{ route('add.favorite') }}",
                 method: "POST",
                 dataType: "json",
 
@@ -133,7 +133,7 @@
                 success: function (data) {
                     if (data['success']) {
                         var r = (data['success']);
-                        $('#' + parseInt(id)).find('i').addClass('favourite2');
+                        $('#' + parseInt(id)).find('i').addClass('favorite2');
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
                         $('.favorite-added-button').click(() => {
@@ -144,7 +144,7 @@
                     }
                     if (data['delete']) {
                         var r = (data['delete']);
-                        $('#' + parseInt(id)).find('i').removeClass('favourite2');
+                        $('#' + parseInt(id)).find('i').removeClass('favorite2');
                         $('#favorite-removed-name').text(name);
                         $('.favorite-removed-message').addClass(
                             'show-selected-deal-message');
