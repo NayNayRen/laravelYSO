@@ -1252,6 +1252,11 @@ body {
 
 .card-discount {
     font-size: 16px;
+    margin-bottom: 5px;
+    max-height: 75px;
+    min-height: 50px;
+    overflow-y: scroll;
+    /* outline: solid 1px blue; */
 }
 
 .card-display {
@@ -3756,25 +3761,27 @@ html {
 }
 
 .view-all {
-    /* background-color: #808080; */
-    /* background-color: #fff; */
     background-color: #d3d3d3;
-    /* grid-template-columns: 100%; */
 }
 
 .view-all .card {
     background-color: #333333;
     color: #fff;
-    height: 300px;
+    height: 325px;
     width: 225px;
 }
 
 .view-all .card-discount {
     font-size: 14px;
+    max-height: 60px;
 }
 
 .view-all .card-logo-container {
     max-height: 100px;
+}
+
+.view-all .card-name {
+    color: #c0c0c0;
 }
 
 .view-all .get-deal-button {
@@ -3884,14 +3891,6 @@ html {
 .view-all-link:hover {
     opacity: 0.5;
 }
-
-/* .view-all-user-icon {
-    -webkit-transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    top: 15px;
-    transform: translateX(-50%);
-} */
 
 .view-all-user-icon:hover {
     background-color: #333333;
@@ -4352,7 +4351,7 @@ html {
         height: 300px;
         margin: 2px 5px;
         /* width: 200px; */
-        width: 215px;
+        width: 225px;
     }
 
     .card-logo-container {
@@ -4524,8 +4523,8 @@ html {
     }
 
     .view-all .card {
-        height: 275px;
-        width: 185px;
+        height: 300px;
+        width: 200px;
     }
 
     .view-all-arrow-container {
@@ -4978,7 +4977,7 @@ html {
     .category-heading {
         font-size: 25px;
         /* margin-left: 5px; */
-        min-height: 40px;
+        min-height: 45px;
         padding: 0 5px;
         /* width: 50%; */
         width: 100%;
@@ -4986,8 +4985,8 @@ html {
 
     .category-heading::after {
         display: none;
-        font-size: 40px;
-        right: -16px;
+        /* font-size: 40px;
+        right: -16px; */
     }
 
     .confirmation-message {
@@ -5008,6 +5007,7 @@ html {
     .container-arrow-right,
     .view-all-left-arrow,
     .view-all-right-arrow {
+        background-color: none;
         font-size: 28px;
     }
 
@@ -5526,8 +5526,8 @@ html {
         -webkit-transform: translateX(-100%);
         justify-content: flex-end;
         left: 100%;
-        top: 0;
-        transform: translateX(-100%);
+        top: 50%;
+        transform: translate(-100%, -50%);
         width: 100%;
         /* outline: solid 1px blue; */
     }
@@ -5573,10 +5573,6 @@ html {
     .view-all-link:hover {
         opacity: 1;
     }
-
-    /* .view-all-user-icon {
-        top: 10px;
-    } */
 
     .views-likes-container {
         padding: 5px 0 0 0;
@@ -5681,13 +5677,13 @@ html {
     .card {
         height: 300px;
         margin: 2px;
-        width: 215px;
+        /* width: 215px; */
     }
 
     .category-heading {
         border-radius: 0;
         font-size: 22px;
-        min-height: 40px;
+        /* min-height: 40px; */
     }
 
     .container {
@@ -5943,9 +5939,9 @@ html {
         width: 100%;
     }
 
-    .view-all-arrow-container {
+    /* .view-all-arrow-container {
         top: 3px;
-    }
+    } */
 
     .view-all-container-heading h1 {
         font-size: 24px;

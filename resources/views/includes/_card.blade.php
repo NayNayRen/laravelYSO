@@ -3,7 +3,7 @@
     <div class="card-logo-container">
         <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
     </div>
-    <span class="card-discount">{{ $deal->location }}</span><br>
+    <div class="card-discount">{{ $deal->location }}</div>
     <span class="card-name">{{ $deal->name }}</span><br>
 </div>
 <div>
