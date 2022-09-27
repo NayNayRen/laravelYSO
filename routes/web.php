@@ -4,7 +4,7 @@ use App\Models\Deal;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DealController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\FavouriteController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\NavigationPageController;
 
@@ -31,9 +31,9 @@ Route::get('/navigation_pages/enhance', [NavigationPageController::class, 'enhan
 Route::get('/navigation_pages/support', [NavigationPageController::class, 'support'])->name('support');
 Route::get('/navigation_pages/about', [NavigationPageController::class, 'about'])->name('about');
 
-// FAVOURITE ROUTES
+// FAVORITE ROUTES
 // add to favorites
-Route::post('/favourite', [FavouriteController::class,'favouriteDeal'])->name('add.favourite');
+Route::post('/favorite', [FavoriteController::class,'favoriteDeal'])->name('add.favorite');
 // add to coupons
 Route::post('/coupon', [CouponController::class,'userCoupons'])->name('add.coupon');
 

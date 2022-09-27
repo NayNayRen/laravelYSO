@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Favorite;
 
-class FavouriteController extends Controller
+class FavoriteController extends Controller
 {
-    public function favouriteDeal(Request $request)  
+    public function favoriteDeal(Request $request)  
     {
         // dd ($request->all());
         if(auth()->user()){   
