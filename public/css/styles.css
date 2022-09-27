@@ -3286,9 +3286,9 @@ html {
     transition: background-color 250ms ease;
 }
 
-.selected-deal-share-fav-button .fa-star {
+/* .selected-deal-share-fav-button .fa-star {
     color: #000;
-}
+} */
 .selected-deal-share-fav-button:hover .fa-star {
     color: #fff;
 }
@@ -3928,7 +3928,6 @@ html {
 
 .views-likes-icons .fa-star.favorite {
     color: #e6331f;
-    /* cursor: pointer; */
 }
 
 .yso-header-link {
