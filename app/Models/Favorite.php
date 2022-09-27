@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
 
-class Favourite extends Model
+class Favorite extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,7 @@ class Favourite extends Model
     public static function getUserFavorites(){
         if ((auth()->user())){
             $user_id = (auth()->user()->id);               
-            $favs = Favourite::where('user_id',$user_id)->get();
+            $favs = Favorite::where('user_id',$user_id)->get();
             $favorites =  Deal::query();
             if($favs->count() > 0 ){
                 foreach($favs as $fav){

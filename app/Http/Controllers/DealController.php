@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use App\Models\Deal;
 use App\Models\User;
 use App\Models\Location;
-use App\Models\Favourite;
+use App\Models\Favorite;
 use App\Models\UserCoupon;
 use Illuminate\Http\Request;
 
@@ -24,7 +24,7 @@ class DealController extends Controller
         $fun = $request->input('fun');
         $health = $request->input('health');
         $categories = Deal::getCategories();
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         // views based on selection
@@ -142,7 +142,7 @@ class DealController extends Controller
     // SEARCHED DEALS RESULTS PAGE
     public function searchDeal(Request $request){
         $words = explode(' ', $request->search);
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $allLocations = Location::getAllLocations();
@@ -195,7 +195,7 @@ class DealController extends Controller
 
     // VIEW ALL FEATURED
     public function allFeatured(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('featured');
@@ -212,7 +212,7 @@ class DealController extends Controller
 
     // VIEW ALL FOOD
     public function allFood(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('food');
@@ -229,7 +229,7 @@ class DealController extends Controller
 
     // VIEW ALL FASHION
     public function allFashion(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('fashion');
@@ -246,7 +246,7 @@ class DealController extends Controller
 
     // VIEW ALL AUTO
     public function allAuto(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('auto');
@@ -263,7 +263,7 @@ class DealController extends Controller
 
     // VIEW ALL FUN
     public function allFun(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('fun');
@@ -280,7 +280,7 @@ class DealController extends Controller
 
     // VIEW ALL HEALTH
     public function allHealth(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('health');
@@ -297,7 +297,7 @@ class DealController extends Controller
 
     // VIEW ALL TECH
     public function allTech(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('tech');
@@ -314,7 +314,7 @@ class DealController extends Controller
 
     // VIEW ALL POPULAR
     public function allPopular(){
-        $favorites = Favourite::getUserFavorites();
+        $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('popular');

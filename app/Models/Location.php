@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Location extends Model
 {
     use HasFactory;
-    // gets all locations
+
+    // GETS ALL LOCATIONS
     public static function getAllLocations(){
         $locations = Location::orderBy('id', 'asc')->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
@@ -17,7 +18,7 @@ class Location extends Model
         return $locations;
     }
 
-    // uses the search method from Deal model, plucks the id
+    // USES A SIMILAR SEARCH LIKE THE INPUT ONE
     public static function getSearchedLocations(Request $request){
         $words = explode(' ', $request->search);
         $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
@@ -33,6 +34,7 @@ class Location extends Model
         return $locationResults;
     }
 
+    // LOCATIONS FOR VIEW ALL CATEGORY MAP
     public static function getMatchingLocations($type){
         $locationResults =  Location::orderBy('id', 'asc')
         ->where('name', 'like', '%' . $type . '%')

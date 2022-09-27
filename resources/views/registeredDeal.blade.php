@@ -27,7 +27,7 @@
                     name="{{ $deal['name'] }}"><i class="fa fa-share"
                         aria-hidden="true"></i>Share</button>
                 @php
-                    $check = App\Models\Favourite::where('deal_id',(string)$deal['id'])->get()->first();
+                    $check = App\Models\Favorite::where('deal_id',(string)$deal['id'])->get()->first();
                 @endphp
                 @if($check != null)
                     {{-- id="registered-favorite-deal-button" --}}

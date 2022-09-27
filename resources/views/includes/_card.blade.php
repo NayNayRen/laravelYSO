@@ -25,7 +25,7 @@
             @php
                 if(auth()->user()){
                 $check =
-                App\Models\Favourite::where('deal_id',$deal->id)->where('user_id',auth()->user()->id)->first();
+                App\Models\Favorite::where('deal_id',$deal->id)->where('user_id',auth()->user()->id)->first();
                 }else{
                 $check = null;
                 }
