@@ -1,6 +1,8 @@
 <div class="map-message">
     <div class="map-message-button-container">
-        <span class="map-message-close">X</span>
+        <span class="map-message-close" aria-label="Close Message Window"><i class="fa fa-times"
+                aria-hidden="false"></i>
+        </span>
     </div>
     <h4 class="map-message-header">Oh no...</h4>
     <p>Looks like there's no locations associated with your search.</p>
