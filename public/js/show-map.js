@@ -47,7 +47,7 @@ function loadScript() {
     };
 
     // // BUILDS AND ADDS MAP ON CLICKING MAP ICON
-    function loadMap() {
+    function loadMap(zoomLevel) {
         const ysoIcon = {
             url: "../img/yso-clipped-rw.png",
             //state your size parameters in terms of pixels
@@ -59,7 +59,7 @@ function loadScript() {
         map = new google.maps.Map(document.getElementById("map"), {
             center: usCenter,
             // mapId: "d9a66ad64499fde1",
-            zoom: 4,
+            zoom: zoomLevel,
             zoomControl: false,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -169,17 +169,22 @@ function loadScript() {
         hiddenMap.style.zIndex = "3";
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
-        loadMap();
+
         if (window.innerWidth > 1300) {
+            loadMap(4);
             hiddenMap.style.height = "600px";
         } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+            loadMap(4);
             hiddenMap.style.height = "500px";
         } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
+            loadMap(4);
             hiddenMap.style.height = "400px";
         } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-            hiddenMap.style.height = "350px";
+            loadMap(3);
+            hiddenMap.style.height = "400px";
             hiddenMapHeader.style.display = "none";
         } else if (window.innerWidth < 400) {
+            loadMap(3);
             hiddenMap.style.height = "350px";
             hiddenMapHeader.style.display = "none";
         }
