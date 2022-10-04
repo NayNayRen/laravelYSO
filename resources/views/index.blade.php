@@ -80,6 +80,10 @@
     </div>
     {{-- SEARCH BLOCK --}}
     <div class="filter-search-container">
+        {{-- HIDDEN DASHBOARD --}}
+        @include('includes._dashboard')
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
         {{-- FILTER BLOCK --}}
@@ -110,9 +114,9 @@
     {{-- CASHBACK CONTAINER --}}
     <div class="container">
         {{-- HIDDEN DASHBOARD --}}
-        @include('includes._dashboard')
+        {{-- @include('includes._dashboard') --}}
         {{-- HIDDEN MAP --}}
-        @include('includes._map')
+        {{-- @include('includes._map') --}}
         <div class="container-left">
             <span class="category-heading">Cashback</span>
         </div>
