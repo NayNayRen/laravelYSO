@@ -1676,7 +1676,8 @@ body {
     /* opacity: 1; */
     padding: 5px;
     position: absolute;
-    top: 0;
+    /* top: 0; */
+    top: 100%;
     transition: opacity 250ms ease;
     width: 100%;
     z-index: -1;
@@ -3169,7 +3170,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 15px 5px 30px 5px;
+    padding: 10px 5px;
     position: relative;
 }
 
@@ -5023,6 +5024,10 @@ html {
     .favorite-added-message a:hover,
     .favorite-removed-message a:hover {
         color: #000;
+    }
+
+    .dashboard {
+        top: 0;
     }
 
     .dashboard-close-button:hover,

@@ -1,3 +1,22 @@
+.hidden-map {
+    -ms-transform: translateX(-50%);
+    -webkit-box-shadow: 0 0 30px #000;
+    -webkit-transform: translateX(-50%);
+    -webkit-transition: all 500ms ease;
+    background-color: #333333;
+    box-shadow: 0 0 30px #000;
+    height: 0;
+    left: 50%;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    transform: translateX(-50%);
+    transition: all 500ms ease;
+    width: 100%;
+    z-index: -1;
+}
+
 .hidden-map-close-button,
 .hidden-map-location-button {
     -webkit-transition: color 250ms ease;
@@ -25,25 +44,6 @@
     text-align: right;
     top: 5px;
     width: 150px;
-}
-
-.hidden-map {
-    -ms-transform: translateX(-50%);
-    -webkit-box-shadow: 0 0 30px #000;
-    -webkit-transform: translateX(-50%);
-    -webkit-transition: all 500ms ease;
-    background-color: #333333;
-    box-shadow: 0 0 30px #000;
-    height: 0;
-    left: 50%;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    transform: translateX(-50%);
-    transition: all 500ms ease;
-    width: 100%;
-    z-index: -1;
 }
 
 .hidden-map-close-button::before {
@@ -234,6 +234,7 @@
     .hidden-map {
         border-left: none;
         border-right: none;
+        top: 0;
     }
 
     .hidden-map-close-button::before,
