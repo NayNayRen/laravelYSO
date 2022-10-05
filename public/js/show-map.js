@@ -26,18 +26,18 @@ function loadScript() {
         lng: -82.727766,
     };
 
-    // current location marker data
-    let myLocationMarker = {
+    // marker data
+    const myLocationMarker = {
         lat: myLocation.lat,
         lng: myLocation.lng,
         name: "You Are Here.",
         address: "Clearwater, FL 33764",
     };
 
-    // BUILDS AND ADDS MAP ON CLICKING MAP ICON
+    // // BUILDS AND ADDS MAP ON CLICKING MAP ICON
     function loadMap(zoomLevel) {
         const ysoIcon = {
-            url: "../img/yso-clipped-rw-outlined.png",
+            url: "../img/yso-clipped-rw-shadowed.png",
             //state your size parameters in terms of pixels
             size: new google.maps.Size(35, 35),
             scaledSize: new google.maps.Size(35, 35),
@@ -53,48 +53,45 @@ function loadScript() {
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
             },
         });
-        // sets marker bubble info
-        let markerInfo = new google.maps.InfoWindow({
-            maxWidth: 200,
-            content: `
-                    <span class='map-bubble-heading'>${myLocationMarker.name}</span>
+        markerGroup = [];
+        markerGroup.push(myLocationMarker);
+        markerGroup.map((marker) => {
+            let markerInfo = new google.maps.InfoWindow({
+                maxWidth: 200,
+                content: `
+                    <span class='map-bubble-heading'>${marker.name}</span>
                     <div class='map-bubble-address'>
-                        <span>${myLocationMarker.address}</span>
+                        <span>${marker.address}</span>
                     </div>
                 `,
-        });
-        // sets marker location
-        myLocationMarker = new google.maps.Marker({
-            position: new google.maps.LatLng(
-                myLocationMarker.lat,
-                myLocationMarker.lng
-            ),
-            optimized: false,
-            animation: google.maps.Animation.DROP,
-            icon: ysoIcon,
-            zIndex: 2,
-        });
-        // delay for the marker bubble auto open
-        setTimeout(() => {
-            markerInfo.open({
-                anchor: myLocationMarker,
-                map: map,
-                shouldFocus: false,
             });
-        }, 1000);
-        // places marker on map with click event
-        myLocationMarker.setMap(map);
-        myLocationMarker.addListener("click", () => {
-            markerInfo.open({
-                anchor: myLocationMarker,
-                map: map,
-                shouldFocus: false,
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(marker.lat, marker.lng),
+                optimized: false,
+                animation: google.maps.Animation.DROP,
+                icon: ysoIcon,
+                zIndex: 2,
             });
-            // myLocationMarker.setMap(null);
+            setTimeout(() => {
+                markerInfo.open({
+                    anchor: marker,
+                    map: map,
+                    shouldFocus: false,
+                });
+            }, 1000);
+            marker.setMap(map);
+            marker.addListener("click", () => {
+                markerInfo.open({
+                    anchor: marker,
+                    map: map,
+                    shouldFocus: false,
+                });
+                // marker.setMap(null);
+            });
         });
     }
 
-    // MAKES EACH MARKER, ADDS CLICK EVENT FOR MARKER BUBBLE
+    // makes each marker, adds event to open info when clicked
     function buildAdditionalMarkers(marker) {
         let markerInfo = new google.maps.InfoWindow({
             maxWidth: 200,
