@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
     <title>YourSocialOffers.com || {{ $pageTitle }}</title>
-    <link rel="icon" href="{{ asset('img/yso-clipped-rw.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/yso-clipped-rw-outlined.png') }}" type="image/x-icon">
 </head>
 
 <body>

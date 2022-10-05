@@ -26,30 +26,18 @@ function loadScript() {
         lng: -82.727766,
     };
 
-    // marker data
-    const myLocationMarker = {
+    // current location marker data
+    let myLocationMarker = {
         lat: myLocation.lat,
         lng: myLocation.lng,
         name: "You Are Here.",
         address: "Clearwater, FL 33764",
     };
-    const marker2 = {
-        lat: 27.960969999438248,
-        lng: -82.76100309725183,
-        name: "Tropical Smoothie Cafe",
-        address: "1840 Gulf to Bay Blvd. Clearwater, FL",
-    };
-    const marker3 = {
-        lat: 27.892476851843572,
-        lng: -82.78553762444348,
-        name: "Largo Mall",
-        address: "10500 Ulmerton Rd Largo, FL",
-    };
 
-    // // BUILDS AND ADDS MAP ON CLICKING MAP ICON
+    // BUILDS AND ADDS MAP ON CLICKING MAP ICON
     function loadMap(zoomLevel) {
         const ysoIcon = {
-            url: "../img/yso-clipped-rw.png",
+            url: "../img/yso-clipped-rw-outlined.png",
             //state your size parameters in terms of pixels
             size: new google.maps.Size(35, 35),
             scaledSize: new google.maps.Size(35, 35),
@@ -65,45 +53,48 @@ function loadScript() {
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
             },
         });
-        markerGroup = [];
-        markerGroup.push(myLocationMarker);
-        markerGroup.map((marker) => {
-            let markerInfo = new google.maps.InfoWindow({
-                maxWidth: 200,
-                content: `
-                    <span class='map-bubble-heading'>${marker.name}</span>
+        // sets marker bubble info
+        let markerInfo = new google.maps.InfoWindow({
+            maxWidth: 200,
+            content: `
+                    <span class='map-bubble-heading'>${myLocationMarker.name}</span>
                     <div class='map-bubble-address'>
-                        <span>${marker.address}</span>
+                        <span>${myLocationMarker.address}</span>
                     </div>
                 `,
+        });
+        // sets marker location
+        myLocationMarker = new google.maps.Marker({
+            position: new google.maps.LatLng(
+                myLocationMarker.lat,
+                myLocationMarker.lng
+            ),
+            optimized: false,
+            animation: google.maps.Animation.DROP,
+            icon: ysoIcon,
+            zIndex: 2,
+        });
+        // delay for the marker bubble auto open
+        setTimeout(() => {
+            markerInfo.open({
+                anchor: myLocationMarker,
+                map: map,
+                shouldFocus: false,
             });
-            marker = new google.maps.Marker({
-                position: new google.maps.LatLng(marker.lat, marker.lng),
-                optimized: false,
-                animation: google.maps.Animation.DROP,
-                // icon: ysoIcon,
-                zIndex: 2,
+        }, 1000);
+        // places marker on map with click event
+        myLocationMarker.setMap(map);
+        myLocationMarker.addListener("click", () => {
+            markerInfo.open({
+                anchor: myLocationMarker,
+                map: map,
+                shouldFocus: false,
             });
-            setTimeout(() => {
-                markerInfo.open({
-                    anchor: marker,
-                    map: map,
-                    shouldFocus: false,
-                });
-            }, 1000);
-            marker.setMap(map);
-            marker.addListener("click", () => {
-                markerInfo.open({
-                    anchor: marker,
-                    map: map,
-                    shouldFocus: false,
-                });
-                // marker.setMap(null);
-            });
+            // myLocationMarker.setMap(null);
         });
     }
 
-    // makes each marker, adds event to open info when clicked
+    // MAKES EACH MARKER, ADDS CLICK EVENT FOR MARKER BUBBLE
     function buildAdditionalMarkers(marker) {
         let markerInfo = new google.maps.InfoWindow({
             maxWidth: 200,
