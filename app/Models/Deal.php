@@ -33,13 +33,15 @@ class Deal extends Model
     // $words is hoisted into the foreach scope
     public static function search(Request $request){
         $words = explode(' ', $request->search);
-        $results = Deal::orderBy('id', 'asc')->where(function ($q) use ($words) {
+        $results = Deal::orderBy('id', 'asc')
+        ->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
                 ->orWhere('location', 'like', '%' . $word . '%')
                 ->orWhere('category', 'like', '%' . $word . '%');
             }
-        })->paginate(10);
+        })
+        ->paginate(10);
         return $results;
     }
 
@@ -47,7 +49,9 @@ class Deal extends Model
     public static function getFeatured(){
         $take = 30;
         $featured = Deal::query()
-        ->whereIn('id', Deal::select('id')->orderBy('id', 'asc')->take($take)->get()->modelKeys())
+        ->whereIn('id', Deal::select('id')
+        ->orderBy('id', 'asc')
+        ->take($take)->get()->modelKeys())
         ->paginate($take, ['*'], 'featured');
         return $featured;
     }
@@ -56,7 +60,9 @@ class Deal extends Model
     public static function viewAllFeatured(){
         $take = 60;
         $allFeatured = Deal::query()
-        ->whereIn('id', Deal::select('id')->orderBy('id', 'asc')->take($take)->get()->modelKeys())
+        ->whereIn('id', Deal::select('id')
+        ->orderBy('id', 'asc')->take($take)
+        ->get()->modelKeys())
         ->paginate(10);
         return $allFeatured;
     }
@@ -85,13 +91,17 @@ class Deal extends Model
 
     // INDEX POPULAR GROUPING, PULLS DEALS WITH VIEWS GRETAER THAN 200
     public static function getPopular(){
-        $popular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(30, ['*'], 'popular');
+        $popular = Deal::orderBy('views', 'asc')
+        ->where('views', '>', 200)
+        ->paginate(30, ['*'], 'popular');
         return $popular;
     }
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllPopular(){
-        $allPopular = Deal::orderBy('views', 'asc')->where('views', '>', 200)->paginate(10);
+        $allPopular = Deal::orderBy('views', 'asc')
+        ->where('views', '>', 200)
+        ->paginate(10);
         return $allPopular;
     }
 

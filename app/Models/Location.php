@@ -12,7 +12,8 @@ class Location extends Model
 
     // GETS ALL LOCATIONS
     public static function getAllLocations(){
-        $locations = Location::orderBy('id', 'asc')->whereNotNull('lat')
+        $locations = Location::orderBy('id', 'asc')
+        ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locations);
         return $locations;
@@ -21,7 +22,8 @@ class Location extends Model
     // USES A SIMILAR SEARCH LIKE THE INPUT ONE
     public static function getSearchedLocations(Request $request){
         $words = explode(' ', $request->search);
-        $locationResults =  Location::orderBy('id', 'asc')->where(function ($q) use ($words) {
+        $locationResults =  Location::orderBy('id', 'asc')
+        ->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
                 ->orWhere('location', 'like', '%' . $word . '%')
