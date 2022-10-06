@@ -57,10 +57,10 @@ function loadScript() {
             center: usCenter,
             zoom: zoomLevel,
             zoomControl: false,
-            mapTypeControl: false,
-            // mapTypeControlOptions: {
-            //     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-            // },
+            // mapTypeControl: false,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            },
         });
         // ensures only 1 current marker
         markerGroup = [];
@@ -79,6 +79,7 @@ function loadScript() {
             // current location markers location
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(marker.lat, marker.lng),
+                title: marker.heading,
                 optimized: false,
                 animation: google.maps.Animation.DROP,
                 icon: ysoIcon,
@@ -148,6 +149,7 @@ function loadScript() {
                 // each markers position
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(marker.lat, marker.lng),
+                    title: marker.name,
                     optimized: false,
                     animation: google.maps.Animation.DROP,
                     zIndex: 1,
