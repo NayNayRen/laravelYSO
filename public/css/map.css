@@ -1,10 +1,32 @@
+.clear-map-button {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
+    top: 40px;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    /* left: 85px; */
+    left: 10px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.clear-map-button:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+
 .hidden-map {
     -ms-transform: translateX(-50%);
     -webkit-box-shadow: 0 0 30px #000;
+    -webkit-box-sizing: initial;
     -webkit-transform: translateX(-50%);
     -webkit-transition: all 500ms ease;
     background-color: #333333;
     box-shadow: 0 0 30px #000;
+    box-sizing: initial;
     height: 0;
     left: 50%;
     opacity: 0;
@@ -254,6 +276,10 @@
 }
 
 @media (max-width: 400px) {
+    /* .clear-map-button {
+        left: 95px;
+    } */
+
     .map-message {
         border-radius: 0;
         padding: 10px;

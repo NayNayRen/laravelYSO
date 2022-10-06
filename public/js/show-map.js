@@ -11,6 +11,7 @@ function loadScript() {
     const hiddenMapHeader = document.querySelector(".hidden-map-header");
     const mapMessage = document.querySelector(".map-message");
     const mapMessageClose = document.querySelector(".map-message-close");
+    const clearMapButton = document.querySelector(".clear-map-button");
     let markerGroup = [];
     let map;
 
@@ -45,13 +46,14 @@ function loadScript() {
         };
         // generates map
         map = new google.maps.Map(document.getElementById("map"), {
-            center: usCenter,
             // mapId: "d9a66ad64499fde1",
+            center: usCenter,
             zoom: zoomLevel,
             zoomControl: false,
-            mapTypeControlOptions: {
-                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-            },
+            mapTypeControl: false,
+            // mapTypeControlOptions: {
+            //     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            // },
         });
         markerGroup = [];
         markerGroup.push(myLocationMarker);
@@ -177,6 +179,13 @@ function loadScript() {
             hiddenMap.style.height = "350px";
             hiddenMapHeader.style.display = "none";
         }
+        clearMapButton.addEventListener("click", () => {
+            if (window.innerWidth > 700) {
+                loadMap(4);
+            } else if (window.innerWidth < 700) {
+                loadMap(3);
+            }
+        });
     });
 
     // closes map, top right of container
