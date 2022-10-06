@@ -4003,13 +4003,6 @@ html {
     }
 }
 
-/* @media (max-width: 1400px) {
-    .card {
-        width: 280px;
-        margin: 0;
-    }
-} */
-
 @media (max-width: 1300px) {
     .about-us-personal-info p {
         width: 85%;
@@ -4415,11 +4408,6 @@ html {
     .footer-social-media-container a:hover {
         color: #fff;
     }
-
-    /* .footer-social-media-links {
-        height: 35px;
-        width: 35px;
-    } */
 
     .get-deal-button {
         font-size: 16px;
@@ -5005,14 +4993,14 @@ html {
     .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 90px);
-        top: -49px;
+        top: -50px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 10px;
-        top: -49px;
+        top: -50px;
         transform: translateY(0);
     }
 
@@ -5694,14 +5682,14 @@ html {
     .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 75px);
-        top: -50px;
+        top: -52px;
         transform: translateY(0);
     }
 
     .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 5px;
-        top: -50px;
+        top: -52px;
         transform: translateY(0);
     }
 
