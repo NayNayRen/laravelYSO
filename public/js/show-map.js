@@ -40,8 +40,8 @@ function loadScript() {
         const ysoIcon = {
             url: "../img/yso-clipped-rw-shadowed.png",
             //state your size parameters in terms of pixels
-            size: new google.maps.Size(35, 35),
-            scaledSize: new google.maps.Size(35, 35),
+            size: new google.maps.Size(40, 40),
+            scaledSize: new google.maps.Size(40, 40),
             origin: new google.maps.Point(0, 0),
         };
         // generates map

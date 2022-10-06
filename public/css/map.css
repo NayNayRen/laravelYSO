@@ -1,15 +1,16 @@
 .clear-map-button {
+    -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
     background-color: #fff;
     border-radius: 2px;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
-    top: 40px;
     color: #000;
     font-size: 14px;
     font-weight: bold;
-    /* left: 85px; */
     left: 10px;
+    /* left: 85px; */
     padding: 5px 10px;
     position: absolute;
+    top: 40px;
     z-index: 1;
 }
 
