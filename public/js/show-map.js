@@ -127,19 +127,9 @@ function loadScript() {
         const name = document.querySelectorAll(".location-name");
         const address = document.querySelectorAll(".location-address");
         let markersAmount = (latitudes.length + longitudes.length) / 2;
+        let markers = {};
         // console.log(markersAmount);
         markerGroup = [];
-        let markers = {};
-        for (let x = 0; x < markersAmount; x++) {
-            markers[x] = {
-                lat: latitudes[x].innerText,
-                lng: longitudes[x].innerText,
-                name: name[x].innerText,
-                address: address[x].innerText,
-            };
-            markerGroup.push(markers[x]);
-            buildAdditionalMarkers(markers[x]);
-        }
         if (markersAmount === 0) {
             mapMessage.style.opacity = "1";
             mapMessage.style.top = "50%";
@@ -147,7 +137,19 @@ function loadScript() {
                 mapMessage.style.opacity = "0";
                 mapMessage.style.top = "-100%";
             });
+        } else {
+            for (let x = 0; x < markersAmount; x++) {
+                markers[x] = {
+                    lat: latitudes[x].innerText,
+                    lng: longitudes[x].innerText,
+                    name: name[x].innerText,
+                    address: address[x].innerText,
+                };
+                markerGroup.push(markers[x]);
+                buildAdditionalMarkers(markers[x]);
+            }
         }
+        // if breakage, put if block back here, remove else block
         // console.log(markerGroup.length);
     });
 
@@ -157,7 +159,6 @@ function loadScript() {
         hiddenMap.style.zIndex = "3";
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
-
         if (window.innerWidth > 1300) {
             loadMap(4);
             hiddenMap.style.height = "600px";

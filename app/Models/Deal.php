@@ -19,7 +19,7 @@ class Deal extends Model
             ->where('category', '!=', '')
             ->whereNotNull('category')
             ->pluck('category')
-            ->flatMap(fn (string $categories) => explode(',', $categories)) // split at every coma to make the list
+            ->flatMap(fn (string $categories) => explode(',', $categories)) // split at every comma to make the list
             ->map(fn (string $category) => ucfirst(trim($category))) // cleanup and format the data with ucfirst
             ->unique() // ensure no duplicates exist
             ->sort() // sort alphabetically
