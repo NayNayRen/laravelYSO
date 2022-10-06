@@ -6,7 +6,7 @@
                 class="hidden-map-location-count">{{ count($searchedLocations) }}</span>
         </span>
     </div>
-    <span class='hidden-map-header'>Click the 'Show' button to pin search results.</span>
+    <span class='hidden-map-header'>Click 'Show' to pin search results, 'Clear' to remove.</span>
     <!-- CLOSE HIDDEN MAP -->
     <div class="hidden-map-close-button-container">
         <span class="hidden-map-close-button">Close</span>

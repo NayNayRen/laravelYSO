@@ -15,31 +15,39 @@ function loadScript() {
     let markerGroup = [];
     let map;
 
-    // center of U.S.
+    // center of U.S. lat and lng
     const usCenter = {
         lat: 39.5,
         lng: -98.35,
     };
 
+    // new york lat and lng
+    const newYork = {
+        lat: 40.73061,
+        lng: -73.935242,
+        address: "New York City, New York",
+    };
+
     // pinellas county lat and lng
-    const myLocation = {
+    const pinellas = {
         lat: 27.889647,
         lng: -82.727766,
+        address: "Clearwater, FL",
     };
 
-    // marker data
-    const myLocationMarker = {
-        lat: myLocation.lat,
-        lng: myLocation.lng,
-        name: "You Are Here.",
-        address: "Clearwater, FL 33764",
+    // current location marker data
+    const currentLocationMarker = {
+        lat: pinellas.lat,
+        lng: pinellas.lng,
+        heading: "You Are Here.",
+        address: pinellas.address,
     };
 
-    // // BUILDS AND ADDS MAP ON CLICKING MAP ICON
+    // BUILDS AND ADDS MAP ON CLICKING MAP ICON
     function loadMap(zoomLevel) {
         const ysoIcon = {
             url: "../img/yso-clipped-rw-shadowed.png",
-            //state your size parameters in terms of pixels
+            // icon Size in terms of pixels
             size: new google.maps.Size(40, 40),
             scaledSize: new google.maps.Size(40, 40),
             origin: new google.maps.Point(0, 0),
@@ -54,13 +62,14 @@ function loadScript() {
             //     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
             // },
         });
+        // ensures only 1 current marker
         markerGroup = [];
-        markerGroup.push(myLocationMarker);
+        markerGroup.push(currentLocationMarker);
         markerGroup.map((marker) => {
             let markerInfo = new google.maps.InfoWindow({
                 maxWidth: 200,
                 content: `
-                    <span class='map-bubble-heading'>${marker.name}</span>
+                    <span class='map-bubble-heading'>${marker.heading}</span>
                     <div class='map-bubble-address'>
                         <span>${marker.address}</span>
                     </div>
@@ -92,7 +101,7 @@ function loadScript() {
     }
 
     // EVENT LISTENERS
-    // shows search results markers on click
+    // SHOWS SEARCH RESULTS MARKERS ON CLICK
     hiddenMapLocationButton.addEventListener("click", () => {
         const latitudes = document.querySelectorAll(".location-lat");
         const longitudes = document.querySelectorAll(".location-lng");
@@ -101,6 +110,7 @@ function loadScript() {
         let markersAmount = (latitudes.length + longitudes.length) / 2;
         let markers = {};
         // console.log(markersAmount);
+        // ensures empty group on each display
         markerGroup = [];
         if (markersAmount === 0) {
             mapMessage.style.opacity = "1";
@@ -110,6 +120,7 @@ function loadScript() {
                 mapMessage.style.top = "-100%";
             });
         } else {
+            // sets data for each marker
             for (let x = 0; x < markersAmount; x++) {
                 markers[x] = {
                     lat: latitudes[x].innerText,
@@ -120,6 +131,7 @@ function loadScript() {
                 markerGroup.push(markers[x]);
             }
             // console.log(markerGroup.length);
+            // builds and adds each marker
             markerGroup.map((marker) => {
                 let markerInfo = new google.maps.InfoWindow({
                     maxWidth: 200,
@@ -144,6 +156,7 @@ function loadScript() {
                         shouldFocus: false,
                     });
                 });
+                // clears all markers from the map
                 clearMapButton.addEventListener("click", () => {
                     marker.setMap(null);
                 });
@@ -151,7 +164,7 @@ function loadScript() {
         }
     });
 
-    // opens map from map icon next to search entry
+    // OPENS MAP FROM MAP ICON
     hiddenMapOpenButton.addEventListener("click", () => {
         windowOverlay.classList.add("window-overlay-dim");
         hiddenMap.style.zIndex = "3";
@@ -177,7 +190,7 @@ function loadScript() {
         }
     });
 
-    // closes map, top right of container
+    // CLOSES MAP
     hiddenMapCloseButton.addEventListener("click", () => {
         windowOverlay.classList.remove("window-overlay-dim");
         hiddenMap.style.height = "0";
