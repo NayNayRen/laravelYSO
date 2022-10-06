@@ -47,7 +47,7 @@ function loadScript() {
     function loadMap(zoomLevel) {
         const ysoIcon = {
             url: "../img/yso-clipped-rw-shadowed.png",
-            // icon Size in terms of pixels
+            // icon Size in terms of pixels, Point relative to icon
             size: new google.maps.Size(40, 40),
             scaledSize: new google.maps.Size(40, 40),
             origin: new google.maps.Point(0, 0),
@@ -66,6 +66,7 @@ function loadScript() {
         markerGroup = [];
         markerGroup.push(currentLocationMarker);
         markerGroup.map((marker) => {
+            // current location markers data
             let markerInfo = new google.maps.InfoWindow({
                 maxWidth: 200,
                 content: `
@@ -75,6 +76,7 @@ function loadScript() {
                     </div>
                 `,
             });
+            // current location markers location
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(marker.lat, marker.lng),
                 optimized: false,
@@ -82,6 +84,7 @@ function loadScript() {
                 icon: ysoIcon,
                 zIndex: 2,
             });
+            // delays the info bubble
             setTimeout(() => {
                 markerInfo.open({
                     anchor: marker,
@@ -131,8 +134,8 @@ function loadScript() {
                 markerGroup.push(markers[x]);
             }
             // console.log(markerGroup.length);
-            // builds and adds each marker
             markerGroup.map((marker) => {
+                // each markers data
                 let markerInfo = new google.maps.InfoWindow({
                     maxWidth: 200,
                     content: `
@@ -142,6 +145,7 @@ function loadScript() {
                         </div>
                     `,
                 });
+                // each markers position
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(marker.lat, marker.lng),
                     optimized: false,
