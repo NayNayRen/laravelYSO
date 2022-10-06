@@ -46,7 +46,6 @@ function loadScript() {
         };
         // generates map
         map = new google.maps.Map(document.getElementById("map"), {
-            // mapId: "d9a66ad64499fde1",
             center: usCenter,
             zoom: zoomLevel,
             zoomControl: false,
@@ -88,37 +87,8 @@ function loadScript() {
                     map: map,
                     shouldFocus: false,
                 });
-                // marker.setMap(null);
             });
         });
-    }
-
-    // makes each marker, adds event to open info when clicked
-    function buildAdditionalMarkers(marker) {
-        let markerInfo = new google.maps.InfoWindow({
-            maxWidth: 200,
-            content: `
-                <span class='map-bubble-heading'>${marker.name}</span>
-                <div class='map-bubble-address'>
-                    <span>${marker.address}</span>
-                </div>
-            `,
-        });
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(marker.lat, marker.lng),
-            optimized: false,
-            animation: google.maps.Animation.DROP,
-            zIndex: 1,
-        });
-        marker.setMap(map);
-        marker.addListener("click", () => {
-            markerInfo.open({
-                anchor: marker,
-                map: map,
-                shouldFocus: false,
-            });
-        });
-        // console.log(markerGroup);
     }
 
     // EVENT LISTENERS
@@ -148,11 +118,37 @@ function loadScript() {
                     address: address[x].innerText,
                 };
                 markerGroup.push(markers[x]);
-                buildAdditionalMarkers(markers[x]);
             }
+            // console.log(markerGroup.length);
+            markerGroup.map((marker) => {
+                let markerInfo = new google.maps.InfoWindow({
+                    maxWidth: 200,
+                    content: `
+                        <span class='map-bubble-heading'>${marker.name}</span>
+                        <div class='map-bubble-address'>
+                            <span>${marker.address}</span>
+                        </div>
+                    `,
+                });
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(marker.lat, marker.lng),
+                    optimized: false,
+                    animation: google.maps.Animation.DROP,
+                    zIndex: 1,
+                });
+                marker.setMap(map);
+                marker.addListener("click", () => {
+                    markerInfo.open({
+                        anchor: marker,
+                        map: map,
+                        shouldFocus: false,
+                    });
+                });
+                clearMapButton.addEventListener("click", () => {
+                    marker.setMap(null);
+                });
+            });
         }
-        // if breakage, put if block back here, remove else block
-        // console.log(markerGroup.length);
     });
 
     // opens map from map icon next to search entry
@@ -179,13 +175,6 @@ function loadScript() {
             hiddenMap.style.height = "350px";
             hiddenMapHeader.style.display = "none";
         }
-        clearMapButton.addEventListener("click", () => {
-            if (window.innerWidth > 700) {
-                loadMap(4);
-            } else if (window.innerWidth < 700) {
-                loadMap(3);
-            }
-        });
     });
 
     // closes map, top right of container
