@@ -2130,6 +2130,11 @@ body {
     cursor: pointer;
 }
 
+#firstName,
+#lastName {
+    text-transform: capitalize;
+}
+
 .flash-message-user,
 .otp-message,
 .update-password-message {
