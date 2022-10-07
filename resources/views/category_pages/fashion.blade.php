@@ -149,7 +149,7 @@
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_API') }}" async defer>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA" async defer>
 </script>
 <script>
     $(document).ready(function () {

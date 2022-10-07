@@ -36,8 +36,7 @@ class Favorite extends Model
     }
 
     // ASSOCIATE USERS AND THEIR FAVORITES
-    public function Users()
-    {
+    public function Users(){
         return $this->belongsTo(User::class);
     }
 
