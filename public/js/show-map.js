@@ -129,7 +129,7 @@ function loadScript() {
             // formats
             return "(" + match[1] + ") " + match[2] + "-" + match[3];
         }
-        return null;
+        return "No Number Provided";
     }
 
     // EVENT LISTENERS
