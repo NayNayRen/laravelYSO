@@ -126,6 +126,8 @@ function loadScript() {
         const longitudes = document.querySelectorAll(".location-lng");
         const name = document.querySelectorAll(".location-name");
         const address = document.querySelectorAll(".location-address");
+        const phone = document.querySelectorAll(".location-phone");
+        const email = document.querySelectorAll(".location-email");
         let markersAmount = (latitudes.length + longitudes.length) / 2;
         let markers = {};
         // console.log(markersAmount);
@@ -146,6 +148,8 @@ function loadScript() {
                     lng: longitudes[x].innerText,
                     name: name[x].innerText,
                     address: address[x].innerText,
+                    phone: phone[x].innerText,
+                    email: email[x].innerText,
                 };
                 markerGroup.push(markers[x]);
             }
@@ -153,11 +157,13 @@ function loadScript() {
             markerGroup.map((marker) => {
                 // each markers data
                 let markerInfo = new google.maps.InfoWindow({
-                    maxWidth: 200,
+                    maxWidth: 225,
                     content: `
                         <span class='map-bubble-heading'>${marker.name}</span>
-                        <div class='map-bubble-address'>
-                            <span>${marker.address}</span>
+                        <div class='map-bubble-details'>
+                            <span class='map-bubble-address'>${marker.address}</span><br>
+                            <span class='map-bubble-phone'>${marker.phone}</span><br>
+                            <span class='map-bubble-email'>${marker.email}</span>
                         </div>
                     `,
                 });
