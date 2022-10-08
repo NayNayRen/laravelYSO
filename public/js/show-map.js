@@ -157,13 +157,13 @@ function loadScript() {
             markerGroup.map((marker) => {
                 // each markers data
                 let markerInfo = new google.maps.InfoWindow({
-                    maxWidth: 225,
+                    maxWidth: 250,
                     content: `
                         <span class='map-bubble-heading'>${marker.name}</span>
                         <div class='map-bubble-details'>
                             <span class='map-bubble-address'>${marker.address}</span><br>
-                            <span class='map-bubble-phone'>${marker.phone}</span><br>
-                            <span class='map-bubble-email'>${marker.email}</span>
+                            <a href='mailto: ${marker.email}' class='map-bubble-email'>${marker.email}</a>
+                            <span class='map-bubble-phone'>${marker.phone}</span>
                         </div>
                     `,
                 });

@@ -71,7 +71,6 @@
             <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
-    {{-- SEARCH CONTAINER --}}
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
@@ -90,7 +89,7 @@
                 <span>Lng: <span class="location-lng">{{ $location->lon }}</span></span><br>
                 <span class="location-address">{{ $location->location }}</span><br>
                 <span class="location-phone">{{ $location->Phone }}</span><br>
-                <span class="location-email">{{ $location->email }}</span><br>
+                <span class="location-email">{{ $location->email }}</span>
             </div>
         @endif
     @endforeach

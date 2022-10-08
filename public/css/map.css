@@ -130,12 +130,23 @@
 
 .map-bubble-details {
     color: #000;
-    font-size: 12px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.map-bubble-email {
+    display: block;
+    margin: 5px 0;
 }
 
 .map-bubble-heading {
     color: #e6331f;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.map-bubble-phone {
+    font-style: italic;
     font-weight: bold;
 }
 
@@ -264,6 +275,14 @@
     .hidden-map-location-button::after,
     .hidden-map-header {
         display: none;
+    }
+
+    .map-bubble-details {
+        font-size: 12px;
+    }
+
+    .map-bubble-heading {
+        font-size: 14px;
     }
 
     .map-message p {

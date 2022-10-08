@@ -81,14 +81,16 @@
         @include('includes._map')
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
+    <span hidden>{{ count($searchedLocations) }}</span>
     @foreach($searchedLocations as $location)
         @if(!empty($location->lat) && !empty($location->lon))
             <div class="location-results" hidden>
-                <span>{{ count($searchedLocations) }}</span><br>
                 <span class="location-name">{{ $location->name }}</span><br>
                 <span>Lat: <span class="location-lat">{{ $location->lat }}</span></span><br>
                 <span>Lng: <span class="location-lng">{{ $location->lon }}</span></span><br>
                 <span class="location-address">{{ $location->location }}</span><br>
+                <span class="location-phone">{{ $location->Phone }}</span><br>
+                <span class="location-email">{{ $location->email }}</span>
             </div>
         @endif
     @endforeach
