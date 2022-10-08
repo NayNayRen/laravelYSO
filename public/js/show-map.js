@@ -119,6 +119,19 @@ function loadScript() {
         infoWindow.open(map);
     }
 
+    // FORMATS LOCATION PHONE NUMBER, formatted to (123) 456-7890
+    function formatPhoneNumber(phoneNumberString) {
+        // strips non digit characters
+        const cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+        // returns 3 substrings
+        const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (match) {
+            // formats
+            return "(" + match[1] + ") " + match[2] + "-" + match[3];
+        }
+        return null;
+    }
+
     // EVENT LISTENERS
     // SHOWS SEARCH RESULTS MARKERS ON CLICK
     hiddenMapLocationButton.addEventListener("click", () => {
@@ -148,7 +161,7 @@ function loadScript() {
                     lng: longitudes[x].innerText,
                     name: name[x].innerText,
                     address: address[x].innerText,
-                    phone: phone[x].innerText,
+                    phone: formatPhoneNumber(phone[x].innerText),
                     email: email[x].innerText,
                 };
                 markerGroup.push(markers[x]);
