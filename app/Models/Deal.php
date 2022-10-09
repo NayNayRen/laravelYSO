@@ -92,7 +92,7 @@ class Deal extends Model
     // INDEX POPULAR GROUPING, PULLS DEALS WITH VIEWS GRETAER THAN 200
     public static function getPopular(){
         $popular = Deal::orderBy('views', 'asc')
-        ->where('views', '>', 200)
+        ->where('views', '>', 75)
         ->paginate(30, ['*'], 'popular');
         return $popular;
     }
@@ -100,7 +100,7 @@ class Deal extends Model
     // VIEW ALL FEATURED GROUPING
     public static function viewAllPopular(){
         $allPopular = Deal::orderBy('views', 'asc')
-        ->where('views', '>', 200)
+        ->where('views', '>', 75)
         ->paginate(10);
         return $allPopular;
     }
