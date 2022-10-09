@@ -20,14 +20,37 @@ class Location extends Model
     }
 
     // USES A SIMILAR SEARCH LIKE THE INPUT ONE
+    // public static function getSearchedLocations(Request $request){
+    //     $words = explode(' ', $request->search);
+    //     $locationResults =  Location::orderBy('id', 'asc')
+    //     ->where(function ($q) use ($words) {
+    //         foreach ($words as $word) {
+    //             $q->orWhere('name', 'like', '%' . $word . '%')
+    //             ->orWhere('location', 'like', '%' . $word . '%')
+    //             ->orWhere('type', 'like', '%' . $word . '%');
+    //         }
+    //     })
+    //     ->whereNotNull('lat')
+    //     ->WhereNotNull('lon')->get();
+    //     // dd($locationResults);
+    //     return $locationResults;
+    // }
+
     public static function getSearchedLocations(Request $request){
         $words = explode(' ', $request->search);
-        $locationResults =  Location::orderBy('id', 'asc')
+        $dealResults = Deal::orderBy('id', 'asc')
         ->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
                 ->orWhere('location', 'like', '%' . $word . '%')
-                ->orWhere('type', 'like', '%' . $word . '%');
+                ->orWhere('category', 'like', '%' . $word . '%');
+            }
+        })->get();
+
+        $locationResults = Location::orderBy('id', 'asc')
+        ->where(function ($q) use ($dealResults) {
+            foreach ($dealResults as $dealResult) {
+                $q->orWhere('id', $dealResult->location_id);
             }
         })
         ->whereNotNull('lat')
@@ -46,5 +69,9 @@ class Location extends Model
         ->WhereNotNull('lon')->get();
         // dd($locationResults);
         return $locationResults;
-    }    
+    }
+    
+    public function deals(){
+        return $this->hasMany(Deal::class);
+    }
 }

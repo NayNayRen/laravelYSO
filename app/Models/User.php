@@ -48,14 +48,11 @@ class User extends Authenticatable
     ];
 
 
-    public function deals()
-    {
-        // return $this->belongsToMany(Deal::class);
+    public function deals(){
         return $this->hasMany(Deal::class);
     }
 
-    public function user_coupons()
-    {
+    public function user_coupons(){
         return $this->hasMany(UserCoupon::class);
     }
 }
