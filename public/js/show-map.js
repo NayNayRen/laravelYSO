@@ -206,13 +206,14 @@ function loadScript() {
 
     // OPENS MAP FROM MAP ICON
     hiddenMapOpenButton.addEventListener("click", () => {
-        windowOverlay.classList.add("window-overlay-dim");
-        hiddenMap.style.zIndex = "3";
+        // windowOverlay.classList.add("window-overlay-dim");
+        // hiddenMap.style.zIndex = "3";
+        hiddenMap.style.zIndex = "1";
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
         if (window.innerWidth > 1300) {
             loadMap(4);
-            hiddenMap.style.height = "600px";
+            hiddenMap.style.height = "500px";
         } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
             loadMap(4);
             hiddenMap.style.height = "500px";
@@ -221,18 +222,18 @@ function loadScript() {
             hiddenMap.style.height = "400px";
         } else if (window.innerWidth < 700 && window.innerWidth > 400) {
             loadMap(3);
-            hiddenMap.style.height = "400px";
+            hiddenMap.style.height = "450px";
             hiddenMapHeader.style.display = "none";
         } else if (window.innerWidth < 400) {
             loadMap(3);
-            hiddenMap.style.height = "350px";
+            hiddenMap.style.height = "325px";
             hiddenMapHeader.style.display = "none";
         }
     });
 
     // CLOSES MAP
     hiddenMapCloseButton.addEventListener("click", () => {
-        windowOverlay.classList.remove("window-overlay-dim");
+        // windowOverlay.classList.remove("window-overlay-dim");
         hiddenMap.style.height = "0";
         hiddenMap.style.paddingTop = "0";
         hiddenMap.style.zIndex = "-1";
@@ -243,6 +244,14 @@ function loadScript() {
 }
 
 window.onload = loadScript();
+// window.addEventListener("load", () => {
+//     loadScript();
+//     loadMap(4);
+//     hiddenMap.style.height = "600px";
+//     hiddenMap.style.zIndex = "3";
+//     hiddenMap.style.opacity = "1";
+//     hiddenMap.style.paddingTop = "30px";
+// });
 
 // new york lat and lng
 // const newYork = {

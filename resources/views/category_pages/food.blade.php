@@ -69,13 +69,15 @@
             <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
+    {{-- HIDDEN MAP --}}
+    @include('includes._map')
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         {{-- HIDDEN MAP --}}
-        @include('includes._map')
+        {{-- @include('includes._map') --}}
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     <span hidden>{{ count($locations) }}</span>
@@ -111,16 +113,16 @@
                 @endif
                 returned from your search.
             </span>
-            <span class="map-use-disclaimer"> If no locations had come back, have
+            {{-- <span class="map-use-disclaimer"> If no locations had come back, have
                 no fear, it could just be a merchant hasn't registered any yet. Check
                 to
                 see if any came back below.
-            </span>
+            </span> --}}
         @endif
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
                 aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
-        <h1>All of your Food choices.</h1>
-        <h3>For when that hunger arrives.</h3>
+        {{-- <h1>All of your Food choices.</h1> --}}
+        {{-- <h3>For when that hunger arrives.</h3> --}}
     </div>
     <div class="container view-all">
         <div class="container-left">
@@ -177,7 +179,8 @@
                         var r = (data['success']);
                         $('#' + id).addClass('favorite');
                         $('#favorite-added-name').text(name);
-                        $('.favorite-added-message').addClass('show-selected-deal-message');
+                        $('.favorite-added-message').addClass(
+                            'show-selected-deal-message');
                         $('.favorite-added-button').click(() => {
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
@@ -202,7 +205,8 @@
                     }
                     if (data['error']) {
                         var r = (data['error']);
-                        $('.guest-error-message').addClass('show-selected-deal-message');
+                        $('.guest-error-message').addClass(
+                            'show-selected-deal-message');
                         $('.guest-error-button').click(() => {
                             $('.guest-error-message').removeClass(
                                 'show-selected-deal-message');

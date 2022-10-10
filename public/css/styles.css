@@ -3810,7 +3810,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0;
+    padding: 0 0 10px 0;
     position: relative;
 }
 
@@ -3830,19 +3830,19 @@ html {
     text-align: center;
 }
 
-.view-all-container-heading p {
+.searched-words {
     background-color: #000;
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 22px;
-    margin: 10px auto 0 auto;
+    margin: 0 auto;
     padding: 15px 5px;
     text-align: center;
     width: 100%;
     /* outline: solid 1px blue; */
 }
 
-.view-all-container-heading p span {
+.searched-words span {
     color: #e6331f;
     /* font-weight: bold; */
     text-transform: capitalize;
@@ -5397,6 +5397,11 @@ html {
         font-size: 18px;
     }
 
+    .searched-words {
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+
     .selected-deal-container {
         width: 100%;
     }
@@ -5520,12 +5525,6 @@ html {
 
     .view-all-container-heading h3 {
         font-size: 20px;
-    }
-
-    .view-all-container-heading p {
-        font-size: 18px;
-        margin: 5px auto 0 auto;
-        padding: 15px 20px;
     }
 
     .view-all-item-counter {

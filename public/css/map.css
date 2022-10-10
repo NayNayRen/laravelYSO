@@ -33,7 +33,8 @@
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    top: 100%;
+    /* top: 100%; */
+    top: 0;
     transform: translateX(-50%);
     transition: all 500ms ease;
     width: 100%;
@@ -268,7 +269,7 @@
     .hidden-map {
         border-left: none;
         border-right: none;
-        top: 0;
+        /* top: 0; */
     }
 
     .hidden-map-close-button::before,

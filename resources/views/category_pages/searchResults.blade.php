@@ -71,13 +71,15 @@
             <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
+    {{-- HIDDEN MAP --}}
+    @include('includes._map')
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         {{-- HIDDEN MAP --}}
-        @include('includes._map')
+        {{-- @include('includes._map') --}}
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     <span hidden>{{ count($locations) }}</span>
@@ -113,22 +115,22 @@
                 @endif
                 returned from your search.
             </span>
-            <span class="map-use-disclaimer"> If no locations had come back, have
+            {{-- <span class="map-use-disclaimer"> If no locations had come back, have
                 no fear, it could just be a merchant hasn't registered any yet. Check
                 to
                 see if any came back below.
-            </span>
+            </span> --}}
         @endif
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
-        <h1>The choices you want.</h1>
-        <h3>That's why you searched for them.</h3>
-        <p>You searched for :
-            @foreach($searchedWords as $searchedWord)
-                <span>{{ $searchedWord }}</span>
-            @endforeach
-        </p>
+        {{-- <h1>The choices you want.</h1>
+        <h3>That's why you searched for them.</h3> --}}
     </div>
+    <p class="searched-words">You searched for :
+        @foreach($searchedWords as $searchedWord)
+            <span>{{ $searchedWord }}</span>
+        @endforeach
+    </p>
     {{-- IF SEARCH DOESN'T RETURN ANY RESULTS OR LEFT EMPTY --}}
     @if($searchedDeals === 0 || $searchedDeals->count() === 0)
         <div class="search-results-message-container">
