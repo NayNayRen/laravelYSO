@@ -109,7 +109,7 @@ class Deal extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function locations(){
-        return $this->belongsTo(Location::class);
-    }
+    // public function locations(){
+    //     return $this->belongsTo(Location::class);
+    // }
 }

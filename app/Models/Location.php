@@ -53,6 +53,12 @@ class Location extends Model
                 $q->orWhere('id', $dealResult->location_id);
             }
         })
+        ->orWhere(function ($q) use ($words) {
+            foreach ($words as $word) {
+                $q->orWhere('name', 'like', '%' . $word . '%')
+                ->orWhere('type', 'like', '%' . $word . '%');
+            }
+        })
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locationResults);
@@ -61,17 +67,32 @@ class Location extends Model
 
     // LOCATIONS FOR VIEW ALL CATEGORY MAP
     public static function getMatchingLocations($type){
-        $locationResults =  Location::orderBy('id', 'asc')
+        $dealResults = Deal::orderBy('id', 'asc')
         ->where('name', 'like', '%' . $type . '%')
-        ->orWhere('location', 'like', '%' . $type . '%')
+                ->orWhere('location', 'like', '%' . $type . '%')
+                ->orWhere('category', 'like', '%' . $type . '%')->get();
+
+        $locationResults = Location::orderBy('id', 'asc')
+        ->where(function ($q) use ($dealResults) {
+            foreach ($dealResults as $dealResult) {
+                $q->orWhere('id', $dealResult->location_id);
+            }
+        })
+        ->orWhere('name', 'like', '%' . $type . '%')
         ->orWhere('type', 'like', '%' . $type . '%')
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
+        // $locationResults =  Location::orderBy('id', 'asc')
+        // ->where('name', 'like', '%' . $type . '%')
+        // ->orWhere('location', 'like', '%' . $type . '%')
+        // ->orWhere('type', 'like', '%' . $type . '%')
+        // ->whereNotNull('lat')
+        // ->WhereNotNull('lon')->get();
         // dd($locationResults);
         return $locationResults;
     }
     
-    public function deals(){
-        return $this->hasMany(Deal::class);
-    }
+    // public function deals(){
+    //     return $this->hasMany(Deal::class);
+    // }
 }
