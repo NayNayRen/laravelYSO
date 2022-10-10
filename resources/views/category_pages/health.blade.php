@@ -79,8 +79,8 @@
         @include('includes._map')
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
-    <span hidden>{{ count($searchedLocations) }}</span>
-    @foreach($searchedLocations as $location)
+    <span hidden>{{ count($locations) }}</span>
+    @foreach($locations as $location)
         @if(!empty($location->lat) && !empty($location->lon))
             <div class="location-results" hidden>
                 <span class="location-name">{{ $location->name }}</span><br>
@@ -94,7 +94,7 @@
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="view-all-container-heading">
-        @if(count($searchedLocations) === 0)
+        @if(count($locations) === 0)
             <span class="map-use-disclaimer">No location results came back to show on the map <i
                     class="fa fa-map-marker" aria-hidden="true"></i> , it
                 could just be a merchant hasn't registered any yet. Check
@@ -104,8 +104,8 @@
             <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i>
                 above
                 to
-                see the <span>{{ count($searchedLocations) }}</span>
-                @if(count($searchedLocations) > 1)
+                see the <span>{{ count($locations) }}</span>
+                @if(count($locations) > 1)
                     locations
                 @else
                     location

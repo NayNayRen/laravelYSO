@@ -3,7 +3,7 @@
     <!-- SHOW SEARCHED LOCATION RESULTS -->
     <div class="hidden-map-location-button-container">
         <span class="hidden-map-location-button">Show<span
-                class="hidden-map-location-count">{{ count($searchedLocations) }}</span>
+                class="hidden-map-location-count">{{ count($locations) }}</span>
         </span>
     </div>
     <span class='hidden-map-header'>Click 'Show' to pin search results, 'Clear' to remove.</span>
