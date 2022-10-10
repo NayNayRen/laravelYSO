@@ -33,7 +33,7 @@ class Deal extends Model
     // $words is hoisted into the foreach scope
     public static function search(Request $request){
         $words = explode(' ', $request->search);
-        $results = Deal::orderBy('id', 'asc')
+        $results = Deal::orderBy('name')
         ->where(function ($q) use ($words) {
             foreach ($words as $word) {
                 $q->orWhere('name', 'like', '%' . $word . '%')
@@ -49,6 +49,7 @@ class Deal extends Model
     public static function getFeatured(){
         $take = 30;
         $featured = Deal::query()
+        ->orderBy('name')
         ->whereIn('id', Deal::select('id')
         ->orderBy('id', 'asc')
         ->take($take)->get()->modelKeys())
@@ -60,6 +61,7 @@ class Deal extends Model
     public static function viewAllFeatured(){
         $take = 30;
         $allFeatured = Deal::query()
+        ->orderBy('name')
         ->whereIn('id', Deal::select('id')
         ->orderBy('id', 'asc')->take($take)
         ->get()->modelKeys())
@@ -73,7 +75,8 @@ class Deal extends Model
         ->orWhere('location', 'like', '%' . $type . '%')
         ->orWhere('category', 'like', '%' . $type . '%')->count();
 
-        $category = Deal::where('name', 'like', '%' . $type . '%')
+        $category = Deal::orderBy('name')
+        ->where('name', 'like', '%' . $type . '%')
         ->orWhere('location', 'like', '%' . $type . '%')
         ->orWhere('category', 'like', '%' . $type . '%')
         ->paginate($take, ['*'], $type);
@@ -82,7 +85,8 @@ class Deal extends Model
 
     // VIEW ALL CATEGORY GROUPING
     public static function viewAllType($type){
-        $allCategory = Deal::where('name', 'like', '%' . $type . '%')
+        $allCategory = Deal::orderBy('name')
+        ->where('name', 'like', '%' . $type . '%')
         ->orWhere('location', 'like', '%' . $type . '%')
         ->orWhere('category', 'like', '%' . $type . '%')
         ->paginate(10);

@@ -64,7 +64,7 @@ class DealController extends Controller
                     'coupons' => $coupons,
                     'redeems' => $redeems,
                     'featuredDeals' => Deal::getFeatured(),
-                    'categoryDeals' => Deal::getType('auto'),
+                    'categoryDeals' => Deal::getType('automotive'),
                     'techDeals' => Deal::getType('tech'),
                     'popularDeals' => Deal::getPopular(),
                     'categories' => $categories,

@@ -12,7 +12,7 @@ class Location extends Model
 
     // GETS ALL LOCATIONS
     public static function getAllLocations(){
-        $locations = Location::orderBy('id', 'asc')
+        $locations = Location::orderBy('name')
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locations);
@@ -21,28 +21,28 @@ class Location extends Model
 
     // USES LOCATION ID FROM DEALS TO GET LOCATIONS
     public static function getSearchedLocations(Request $request){
-        $words = explode(' ', $request->search);
-        $dealResults = Deal::orderBy('id', 'asc')
-        ->where(function ($q) use ($words) {
-            foreach ($words as $word) {
-                $q->orWhere('name', 'like', '%' . $word . '%')
-                ->orWhere('location', 'like', '%' . $word . '%')
-                ->orWhere('category', 'like', '%' . $word . '%');
-            }
-        })->get();
-
-        $locationResults = Location::orderBy('id', 'asc')
+        // $words = explode(' ', $request->search);
+        // $dealResults = Deal::orderBy('name')
+        // ->where(function ($q) use ($words) {
+        //     foreach ($words as $word) {
+        //         $q->orWhere('name', 'like', '%' . $word . '%')
+        //         ->orWhere('location', 'like', '%' . $word . '%')
+        //         ->orWhere('category', 'like', '%' . $word . '%');
+        //     }
+        // })->get();
+        $dealResults = Deal::search($request);
+        $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($dealResults) {
             foreach ($dealResults as $dealResult) {
                 $q->orWhere('id', $dealResult->location_id);
             }
         })
-        ->orWhere(function ($q) use ($words) {
-            foreach ($words as $word) {
-                $q->orWhere('name', 'like', '%' . $word . '%')
-                ->orWhere('type', 'like', '%' . $word . '%');
-            }
-        })
+        // ->orWhere(function ($q) use ($words) {
+        //     foreach ($words as $word) {
+        //         $q->orWhere('name', 'like', '%' . $word . '%')
+        //         ->orWhere('type', 'like', '%' . $word . '%');
+        //     }
+        // })
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locationResults);
@@ -51,19 +51,19 @@ class Location extends Model
 
     // LOCATIONS FOR THE VIEW ALL MAPS
     public static function getMatchingLocations($type){
-        $dealResults = Deal::orderBy('id', 'asc')
-        ->where('name', 'like', '%' . $type . '%')
-        ->orWhere('location', 'like', '%' . $type . '%')
-        ->orWhere('category', 'like', '%' . $type . '%')->get();
-
-        $locationResults = Location::orderBy('id', 'asc')
+        // $dealResults = Deal::orderBy('name')
+        // ->where('name', 'like', '%' . $type . '%')
+        // ->orWhere('location', 'like', '%' . $type . '%')
+        // ->orWhere('category', 'like', '%' . $type . '%')->get();
+        $dealResults = Deal::viewAllType($type);
+        $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($dealResults) {
             foreach ($dealResults as $dealResult) {
                 $q->orWhere('id', $dealResult->location_id);
             }
         })
-        ->orWhere('name', 'like', '%' . $type . '%')
-        ->orWhere('type', 'like', '%' . $type . '%')
+        // ->orWhere('name', 'like', '%' . $type . '%')
+        // ->orWhere('type', 'like', '%' . $type . '%')
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locationResults);
@@ -76,7 +76,7 @@ class Location extends Model
         // $featuredDeals = Deal::orderBy('id', 'asc')
         // ->take($take)->get();
         $featuredDeals = Deal::viewAllFeatured();
-        $locationResults = Location::orderBy('id', 'asc')
+        $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($featuredDeals) {
             foreach ($featuredDeals as $featuredDeal) {
                 $q->orWhere('id', $featuredDeal->location_id);
@@ -92,7 +92,7 @@ class Location extends Model
         // $popularDeals = Deal::orderBy('views', 'asc')
         // ->where('views', '>', 75)->get();
         $popularDeals = Deal::viewAllPopular();
-        $locationResults = Location::orderBy('id', 'asc')
+        $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($popularDeals) {
             foreach ($popularDeals as $popularDeal) {
                 $q->orWhere('id', $popularDeal->location_id);
