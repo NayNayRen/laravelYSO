@@ -19,23 +19,7 @@ class Location extends Model
         return $locations;
     }
 
-    // USES A SIMILAR SEARCH LIKE THE INPUT ONE
-    // public static function getSearchedLocations(Request $request){
-    //     $words = explode(' ', $request->search);
-    //     $locationResults =  Location::orderBy('id', 'asc')
-    //     ->where(function ($q) use ($words) {
-    //         foreach ($words as $word) {
-    //             $q->orWhere('name', 'like', '%' . $word . '%')
-    //             ->orWhere('location', 'like', '%' . $word . '%')
-    //             ->orWhere('type', 'like', '%' . $word . '%');
-    //         }
-    //     })
-    //     ->whereNotNull('lat')
-    //     ->WhereNotNull('lon')->get();
-    //     // dd($locationResults);
-    //     return $locationResults;
-    // }
-
+    // USES LOCATION ID FROM DEALS TO GET LOCATIONS
     public static function getSearchedLocations(Request $request){
         $words = explode(' ', $request->search);
         $dealResults = Deal::orderBy('id', 'asc')
@@ -65,12 +49,12 @@ class Location extends Model
         return $locationResults;
     }
 
-    // LOCATIONS FOR VIEW ALL CATEGORY MAP
+    // LOCATIONS FOR THE VIEW ALL MAPS
     public static function getMatchingLocations($type){
         $dealResults = Deal::orderBy('id', 'asc')
         ->where('name', 'like', '%' . $type . '%')
-                ->orWhere('location', 'like', '%' . $type . '%')
-                ->orWhere('category', 'like', '%' . $type . '%')->get();
+        ->orWhere('location', 'like', '%' . $type . '%')
+        ->orWhere('category', 'like', '%' . $type . '%')->get();
 
         $locationResults = Location::orderBy('id', 'asc')
         ->where(function ($q) use ($dealResults) {
@@ -82,13 +66,40 @@ class Location extends Model
         ->orWhere('type', 'like', '%' . $type . '%')
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
-        // $locationResults =  Location::orderBy('id', 'asc')
-        // ->where('name', 'like', '%' . $type . '%')
-        // ->orWhere('location', 'like', '%' . $type . '%')
-        // ->orWhere('type', 'like', '%' . $type . '%')
-        // ->whereNotNull('lat')
-        // ->WhereNotNull('lon')->get();
         // dd($locationResults);
+        return $locationResults;
+    }
+
+    // GETS FEATURED DEALS LOCATIONS
+    public static function getFeaturedLocations(){
+        // $take = 30;
+        // $featuredDeals = Deal::orderBy('id', 'asc')
+        // ->take($take)->get();
+        $featuredDeals = Deal::viewAllFeatured();
+        $locationResults = Location::orderBy('id', 'asc')
+        ->where(function ($q) use ($featuredDeals) {
+            foreach ($featuredDeals as $featuredDeal) {
+                $q->orWhere('id', $featuredDeal->location_id);
+            }
+        })
+        ->whereNotNull('lat')
+        ->WhereNotNull('lon')->get();
+        return $locationResults;
+    }
+
+    // GETS POPULAR DEALS LOCATIONS
+    public static function getPopularLocations(){
+        // $popularDeals = Deal::orderBy('views', 'asc')
+        // ->where('views', '>', 75)->get();
+        $popularDeals = Deal::viewAllPopular();
+        $locationResults = Location::orderBy('id', 'asc')
+        ->where(function ($q) use ($popularDeals) {
+            foreach ($popularDeals as $popularDeal) {
+                $q->orWhere('id', $popularDeal->location_id);
+            }
+        })
+        ->whereNotNull('lat')
+        ->WhereNotNull('lon')->get();
         return $locationResults;
     }
     

@@ -145,7 +145,6 @@ class DealController extends Controller
         $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
-        $allLocations = Location::getAllLocations();
         $searchedLocations = Location::getSearchedLocations($request);
         // limits search to 3 words or less
         if(count($words) > 3){
@@ -198,13 +197,13 @@ class DealController extends Controller
         $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
-        $matchingLocations = Location::getMatchingLocations('featured');
+        $featuredLocations = Location::getFeaturedLocations();
         return view('category_pages/featured', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllFeatured(),
-            'searchedLocations' => $matchingLocations,
+            'searchedLocations' => $featuredLocations,
             'message' => '',
             'pageTitle' => 'Featured'
          ]);
@@ -249,12 +248,12 @@ class DealController extends Controller
         $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
-        $matchingLocations = Location::getMatchingLocations('auto');
+        $matchingLocations = Location::getMatchingLocations('automotive');
         return view('category_pages/auto', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllType('auto'),
+            'deals' => Deal::viewAllType('automotive'),
             'searchedLocations' => $matchingLocations,
             'message' => '',
             'pageTitle' => 'Auto'
@@ -317,13 +316,13 @@ class DealController extends Controller
         $favorites = Favorite::getUserFavorites();
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
-        $matchingLocations = Location::getMatchingLocations('popular');
+        $popularLocations = Location::getPopularLocations();
         return view('category_pages/popular', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
             'deals' => Deal::viewAllPopular(),
-            'searchedLocations' => $matchingLocations,
+            'searchedLocations' => $popularLocations,
             'message' => '',
             'pageTitle' => 'Popular'
         ]);

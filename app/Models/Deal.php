@@ -58,7 +58,7 @@ class Deal extends Model
 
     // VIEW ALL FEATURED GROUPING
     public static function viewAllFeatured(){
-        $take = 60;
+        $take = 30;
         $allFeatured = Deal::query()
         ->whereIn('id', Deal::select('id')
         ->orderBy('id', 'asc')->take($take)
