@@ -135,6 +135,10 @@
     margin-top: 5px;
 }
 
+.map-bubble-details i {
+    color: #808080;
+}
+
 .map-bubble-email {
     display: block;
     margin: 5px 0;

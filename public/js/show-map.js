@@ -168,15 +168,24 @@ function loadScript() {
             }
             // console.log(markerGroup.length);
             markerGroup.map((marker) => {
+                if (marker.email === "") {
+                    marker.email = "No Email Provided";
+                }
                 // each markers data
                 let markerInfo = new google.maps.InfoWindow({
-                    maxWidth: 250,
+                    maxWidth: 275,
                     content: `
                         <span class='map-bubble-heading'>${marker.name}</span>
                         <div class='map-bubble-details'>
-                            <span class='map-bubble-address'>${marker.address}</span><br>
-                            <a href='mailto: ${marker.email}' class='map-bubble-email'>${marker.email}</a>
-                            <span class='map-bubble-phone'>${marker.phone}</span>
+                            <span class='map-bubble-address'>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> 
+                             ${marker.address}</span><br>
+                            <a href='mailto: ${marker.email}' class='map-bubble-email'>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                             ${marker.email}</a>
+                            <span class='map-bubble-phone'>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                             ${marker.phone}</span>
                         </div>
                     `,
                 });
