@@ -71,6 +71,38 @@
     </div>
     {{-- HIDDEN MAP --}}
     @include('includes._map')
+    {{-- HEADING AND MAP DISCLAIMER --}}
+    <div class="view-all-container-heading">
+        <h1>All the Entertainment you need.</h1>
+        @if(count($locations) === 0)
+            <span class="map-use-disclaimer">No location results came back to show on the map <i
+                    class="fa fa-map-marker" aria-hidden="true"></i> , it
+                could just be a merchant hasn't registered any yet. Check
+                to
+                see if any came back below.</span>
+        @else
+            <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i>
+                below
+                to
+                see the <span>{{ count($locations) }}</span>
+                @if(count($locations) > 1)
+                    locations
+                @else
+                    location
+                @endif
+                returned from your search.
+            </span>
+            {{-- <span class="map-use-disclaimer"> If no locations had come back, have
+                no fear, it could just be a merchant hasn't registered any yet. Check
+                to
+                see if any came back below.
+            </span> --}}
+        @endif
+        {{-- <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
+            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button> --}}
+        {{-- <h1>All the fun & entertainment you need.</h1>
+        <h3>For when life gets in the way.</h3> --}}
+    </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
@@ -97,36 +129,7 @@
         @endif
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
-    <div class="view-all-container-heading">
-        @if(count($locations) === 0)
-            <span class="map-use-disclaimer">No location results came back to show on the map <i
-                    class="fa fa-map-marker" aria-hidden="true"></i> , it
-                could just be a merchant hasn't registered any yet. Check
-                to
-                see if any came back below.</span>
-        @else
-            <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i>
-                above
-                to
-                see the <span>{{ count($locations) }}</span>
-                @if(count($locations) > 1)
-                    locations
-                @else
-                    location
-                @endif
-                returned from your search.
-            </span>
-            {{-- <span class="map-use-disclaimer"> If no locations had come back, have
-                no fear, it could just be a merchant hasn't registered any yet. Check
-                to
-                see if any came back below.
-            </span> --}}
-        @endif
-        {{-- <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
-            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button> --}}
-        {{-- <h1>All the fun & entertainment you need.</h1>
-        <h3>For when life gets in the way.</h3> --}}
-    </div>
+
     <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Fun Deals</span>
