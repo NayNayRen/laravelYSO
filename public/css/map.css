@@ -24,7 +24,7 @@
     -webkit-box-shadow: 0 0 30px #000;
     -webkit-box-sizing: initial;
     -webkit-transform: translateX(-50%);
-    -webkit-transition: all 750ms ease;
+    -webkit-transition: all 500ms ease;
     background-color: #333333;
     box-shadow: 0 0 30px #000;
     box-sizing: initial;
@@ -36,9 +36,10 @@
     /* top: 100%; */
     top: 0;
     transform: translateX(-50%);
-    transition: all 750ms ease;
+    transition: all 500ms ease;
     width: 100%;
-    z-index: -1;
+    /* z-index: -1; */
+    z-index: 1;
 }
 
 .hidden-map-close-button,

@@ -241,7 +241,7 @@ function loadScript() {
     hiddenMapOpenButton.addEventListener("click", () => {
         // windowOverlay.classList.add("window-overlay-dim");
         // hiddenMap.style.zIndex = "3";
-        hiddenMap.style.zIndex = "1";
+        // hiddenMap.style.zIndex = "1";
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
         if (window.innerWidth > 1300) {
@@ -269,7 +269,7 @@ function loadScript() {
         // windowOverlay.classList.remove("window-overlay-dim");
         hiddenMap.style.height = "0";
         hiddenMap.style.paddingTop = "0";
-        hiddenMap.style.zIndex = "-1";
+        // hiddenMap.style.zIndex = "-1";
         hiddenMap.style.opacity = "0";
         mapMessage.style.opacity = "0";
         mapMessage.style.top = "-100%";
