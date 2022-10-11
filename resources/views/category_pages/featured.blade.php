@@ -76,6 +76,9 @@
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
+        {{-- USER DASHBOARD BUTTON --}}
+        <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
+                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         {{-- HIDDEN MAP --}}
@@ -121,8 +124,8 @@
                 see if any came back below.
             </span> --}}
         @endif
-        <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
-                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
+        {{-- <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
+                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button> --}}
         {{-- <h1>All of your Featured choices.</h1>
         <h3>In one location, for easy picking.</h3> --}}
     </div>

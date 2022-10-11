@@ -3162,18 +3162,20 @@ html {
 
 .search-results-search-container {
     -ms-flex-align: center;
-    -ms-flex-direction: column;
+    -ms-flex-direction: row;
     -ms-flex-pack: center;
+    -ms-flex-wrap: wrap;
     -webkit-box-align: center;
     -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
     align-items: center;
     background-color: #808080;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 10px 5px;
     position: relative;
@@ -3879,6 +3881,10 @@ html {
 
 .view-all-link:hover {
     opacity: 0.5;
+}
+
+.view-all-user-icon {
+    margin: 0 0 0 10px;
 }
 
 .view-all-user-icon:hover {
@@ -5834,6 +5840,13 @@ html {
         font-size: 22px;
     }
 
+    .search-results-search-container {
+        -ms-flex-direction: column;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+    }
+
     .selected-deal-discount,
     .selected-deal-name {
         font-size: 16px;
@@ -5940,6 +5953,10 @@ html {
 
     .view-all-link {
         right: 80px;
+    }
+
+    .view-all-user-icon {
+        margin: 10px 0 0 0;
     }
 
     .yso-header-link,

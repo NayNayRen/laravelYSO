@@ -75,6 +75,9 @@
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
+        {{-- USER DASHBOARD BUTTON --}}
+        <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
+                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         {{-- HIDDEN MAP --}}
@@ -120,8 +123,8 @@
                 see if any came back below.
             </span> --}}
         @endif
-        <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
-            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
+        {{-- <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
+            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button> --}}
         {{-- <h1>Healthy choices, & healthy discounts.</h1> --}}
         {{-- <h3>For the healthy you.</h3> --}}
     </div>
