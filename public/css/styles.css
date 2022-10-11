@@ -3910,7 +3910,8 @@ html {
 }
 
 .view-all-user-icon:hover {
-    background-color: #333333;
+    background-color: #fff;
+    color: #808080;
 }
 
 .views-likes-container {
