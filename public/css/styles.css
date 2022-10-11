@@ -1676,8 +1676,8 @@ body {
     /* opacity: 1; */
     padding: 5px;
     position: absolute;
-    /* top: 0; */
-    top: 100%;
+    top: 0;
+    /* top: 100%; */
     transition: opacity 250ms ease;
     width: 100%;
     z-index: -1;
@@ -5025,9 +5025,9 @@ html {
         color: #000;
     }
 
-    .dashboard {
+    /* .dashboard {
         top: 0;
-    }
+    } */
 
     .dashboard-close-button:hover,
     .map-close-button:hover {

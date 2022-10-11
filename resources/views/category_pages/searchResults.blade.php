@@ -104,6 +104,8 @@
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button> --}}
         {{-- <h1>The choices you want.</h1> --}}
         {{-- <h3>That's why you searched for them.</h3> --}}
+        {{-- HIDDEN DASHBOARD --}}
+        @include('includes._dashboard')
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
@@ -112,7 +114,7 @@
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
         {{-- HIDDEN DASHBOARD --}}
-        @include('includes._dashboard')
+        {{-- @include('includes._dashboard') --}}
         {{-- HIDDEN MAP --}}
         {{-- @include('includes._map') --}}
     </div>
