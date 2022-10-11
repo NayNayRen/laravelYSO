@@ -143,6 +143,7 @@ function loadScript() {
         const email = document.querySelectorAll(".location-email");
         let markersAmount = (latitudes.length + longitudes.length) / 2;
         let markers = {};
+        let content = "";
         // console.log(markersAmount);
         // ensures empty group on each display
         markerGroup = [];
@@ -169,25 +170,48 @@ function loadScript() {
             // console.log(markerGroup.length);
             markerGroup.map((marker) => {
                 if (marker.email === "") {
-                    marker.email = "No Email Provided";
-                }
-                // each markers data
-                let markerInfo = new google.maps.InfoWindow({
-                    maxWidth: 275,
-                    content: `
+                    content = `
                         <span class='map-bubble-heading'>${marker.name}</span>
                         <div class='map-bubble-details'>
                             <span class='map-bubble-address'>
                             <i class="fa fa-map-marker" aria-hidden="true"></i> 
-                             ${marker.address}</span><br>
-                            <a href='mailto: ${marker.email}' class='map-bubble-email'>
+                            ${marker.address}</span>
+                            <span class='map-bubble-email'>
                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                             ${marker.email}</a>
+                            No Email Provided</span>
                             <span class='map-bubble-phone'>
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                             ${marker.phone}</span>
+                            ${marker.phone}</span>
+                            <div class='map-bubble-deals'>
+                            <a href="../category_pages/searchResults">
+                            - View Deals -</a>
+                            </div>
                         </div>
-                    `,
+                    `;
+                } else {
+                    content = `
+                        <span class='map-bubble-heading'>${marker.name}</span>
+                        <div class='map-bubble-details'>
+                            <span class='map-bubble-address'>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> 
+                            ${marker.address}</span>
+                            <a href='mailto: ${marker.email}' class='map-bubble-email'>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            ${marker.email}</a>
+                            <span class='map-bubble-phone'>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            ${marker.phone}</span>
+                            <div class='map-bubble-deals'>
+                            <a href="../category_pages/searchResults">
+                            - View Deals -</a>
+                            </div>
+                        </div>
+                    `;
+                }
+                // each markers data
+                let markerInfo = new google.maps.InfoWindow({
+                    maxWidth: 275,
+                    content: content,
                 });
                 // each markers position
                 marker = new google.maps.Marker({
@@ -261,142 +285,3 @@ window.onload = loadScript();
 //     hiddenMap.style.opacity = "1";
 //     hiddenMap.style.paddingTop = "30px";
 // });
-
-// new york lat and lng
-// const newYork = {
-//     lat: 40.73061,
-//     lng: -73.935242,
-//     address: "New York City, New York",
-// };
-
-// pinellas county lat and lng
-// const pinellas = {
-//     lat: 27.889647,
-//     lng: -82.727766,
-//     address: "Clearwater, FL",
-// };
-
-// current location marker data
-// const currentLocationMarker = {
-//     lat: pinellas.lat,
-//     lng: pinellas.lng,
-//     heading: "You Are Here.",
-//     address: pinellas.address,
-// };
-
-// BUILDS AND ADDS MAP ON CLICKING MAP ICON
-// function loadMap(zoomLevel) {
-//     const ysoIcon = {
-//         url: "../img/yso-clipped-rw-shadowed.png",
-//         // icon Size in terms of pixels, Point relative to icon
-//         size: new google.maps.Size(40, 40),
-//         scaledSize: new google.maps.Size(40, 40),
-//         origin: new google.maps.Point(0, 0),
-//     };
-//     // generates map
-//     map = new google.maps.Map(document.getElementById("map"), {
-//         center: usCenter,
-//         zoom: zoomLevel,
-//         zoomControl: false,
-//         // mapTypeControl: false,
-//         mapTypeControlOptions: {
-//             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-//         },
-//     });
-//     // ensures only 1 current marker
-//     markerGroup = [];
-//     markerGroup.push(currentLocationMarker);
-//     markerGroup.map((marker) => {
-//         // current location markers data
-//         let markerInfo = new google.maps.InfoWindow({
-//             maxWidth: 200,
-//             content: `
-//                 <span class='map-bubble-heading'>${marker.heading}</span>
-//                 <div class='map-bubble-address'>
-//                     <span>${marker.address}</span>
-//                 </div>
-//             `,
-//         });
-//         // current location markers location
-//         marker = new google.maps.Marker({
-//             position: new google.maps.LatLng(marker.lat, marker.lng),
-//             title: marker.heading,
-//             optimized: false,
-//             animation: google.maps.Animation.DROP,
-//             icon: ysoIcon,
-//             zIndex: 2,
-//         });
-//         // delays the info bubble
-//         setTimeout(() => {
-//             markerInfo.open({
-//                 anchor: marker,
-//                 map: map,
-//                 shouldFocus: false,
-//             });
-//         }, 1000);
-//         marker.setMap(map);
-//         marker.addListener("click", () => {
-//             markerInfo.open({
-//                 anchor: marker,
-//                 map: map,
-//                 shouldFocus: false,
-//             });
-//         });
-//     });
-// }
-
-// ADDS USERS CURRENT LOCATION
-// let infoWindow;
-// function initMap() {
-//     map = new google.maps.Map(document.getElementById("map"), {
-//         center: usCenter,
-//         zoom: 5,
-//     });
-//     const locationButton = document.querySelector(
-//         ".hidden-map-location-button"
-//     );
-//     infoWindow = new google.maps.InfoWindow();
-//     locationButton.textContent = "Show";
-//     locationButton.addEventListener("click", () => {
-//         // Try HTML5 geolocation.
-//         if (navigator.geolocation) {
-//             navigator.geolocation.getCurrentPosition(
-//                 (position) => {
-//                     const pos = {
-//                         lat: position.coords.latitude,
-//                         lng: position.coords.longitude,
-//                     };
-
-//                     infoWindow.setPosition(pos);
-//                     infoWindow.setContent("You are here.");
-//                     infoWindow.open(map);
-//                     map.setCenter(pos);
-//                 },
-//                 () => {
-//                     handleLocationError(true, infoWindow, map.getCenter());
-//                 }
-//             );
-//         } else {
-//             // Browser doesn't support Geolocation
-//             handleLocationError(false, infoWindow, map.getCenter());
-//         }
-//     });
-// }
-
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//     infoWindow.setPosition(pos);
-//     infoWindow.setContent(
-//         browserHasGeolocation
-//             ? `<span class='map-bubble-heading'>Error:</span>
-//                 <div class='map-bubble-address'>
-//                     <span>Looks like you said no to pinning your location.</span>
-//                 </div>`
-//             : `<span class='map-bubble-heading'>Error:</span>
-//                 <div class='map-bubble-address'>
-//                     <span>Your browser doesn't support geolocation.</span>
-//                 </div>`
-//     );
-//     infoWindow.open(map);
-// }
-
-// window.initMap = initMap;
