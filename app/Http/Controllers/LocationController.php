@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
-    public function showLocationDeals($location){
+    public function showLocationDeals($locationId){
         // dd($request);
         return view('locationDeals', [
-            'locations' => Location::getLocation($location),
-            'locationDeals' => Location::getLocationDeals($location),
+            'locations' => Location::getLocation($locationId),
+            'locationDeals' => Location::getLocationDeals($locationId),
             'message' => '',
             'pageTitle' => 'Location Deals'
         ]);

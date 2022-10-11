@@ -106,23 +106,23 @@
         <div class="container-left">
             <span class="category-heading">Location Deals</span>
             {{-- CUSTOM PAGE ARROWS --}}
-            <div class="view-all-arrow-container">
-                {{-- {{ $locationDeals
-              ->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }} --}}
-            </div>
-        </div>
-        <div class="container-right">
-            {{-- CARD BLOCK --}}
-            <div class="card-display-view-all">
-                @foreach($locationDeals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
+            {{-- <div class="view-all-arrow-container">
+                {{ $locationDeals
+              ->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
+        </div> --}}
+    </div>
+    <div class="container-right">
+        {{-- CARD BLOCK --}}
+        <div class="card-display-view-all">
+            @foreach($locationDeals as $deal)
+                {{-- CARD COMPONENT --}}
+                <div class="card">
+                    @include('includes._card')
+                </div>
+            @endforeach
         </div>
     </div>
+</div>
 
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
