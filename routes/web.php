@@ -6,6 +6,7 @@ use App\Http\Controllers\DealController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\NavigationPageController;
 
 // MAIN/LANDING PAGE ROUTE
@@ -13,6 +14,9 @@ Route::get('/', [DealController::class, 'index'])->name('deals.index');
 
 // SINGLE DEAL SELECTED ROUTE
 Route::get('/deals/{deal}', [DealController::class, 'showDeal'])->name('deals.show');
+
+// LOCATION DEALS ROUTE
+Route::get('/locations/{location}', [LocationController::class, 'showLocationDeals']);
 
 // CATEGORY ROUTES
 Route::get('/category_pages/searchResults', [DealController::class, 'searchDeal'])->name('deals.search');

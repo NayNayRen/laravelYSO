@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+
 .clear-map-button {
     -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
     background-color: #fff;
@@ -28,6 +30,7 @@
     background-color: #333333;
     box-shadow: 0 0 30px #000;
     box-sizing: initial;
+    font-family: "Montserrat", sans-serif;
     height: 0;
     left: 50%;
     opacity: 0;
@@ -139,12 +142,17 @@
     width: 100%;
 }
 
-.map-bubble-deals a {
+.map-bubble-deals button {
+    background: none;
+    border: none;
     color: #e6331f;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .map-bubble-details {
     color: #000;
+    font-family: "Roboto", sans-serif;
     font-size: 14px;
     margin-top: 5px;
 }

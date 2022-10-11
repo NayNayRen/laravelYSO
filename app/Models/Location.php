@@ -102,6 +102,18 @@ class Location extends Model
         ->WhereNotNull('lon')->get();
         return $locationResults;
     }
+
+    public static function getLocation($locationId){
+        $location = Location::where('id', $locationId)->get();
+        // dd($locationDeals);
+        return $location;
+    }
+
+    public static function getLocationDeals($locationId){
+        $locationDeals = Deal::where('location_id', $locationId)->get();
+        // dd($locationDeals);
+        return $locationDeals;
+    }
     
     // public function deals(){
     //     return $this->hasMany(Deal::class);

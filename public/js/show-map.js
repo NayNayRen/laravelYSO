@@ -184,10 +184,9 @@ function loadScript() {
                             <span class='map-bubble-phone'>
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             ${marker.phone}</span>
-                            <div class='map-bubble-deals'>
-                            <a href="#">
-                            - View Deals -</a>
-                            </div>
+                            <form action='/locations/${marker.id}' method='GET' class='map-bubble-deals'>
+                                <button type='submit'>- View Deals -</button>
+                            </form>
                         </div>
                     `;
                 } else {
@@ -203,10 +202,9 @@ function loadScript() {
                             <span class='map-bubble-phone'>
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             ${marker.phone}</span>
-                            <div class='map-bubble-deals'>
-                            <a href="#">
-                            - View Deals -</a>
-                            </div>
+                            <form action='/locations/${marker.id}' method='GET' class='map-bubble-deals'>
+                                <button type='submit'>- View Deals -</button>
+                            </form>
                         </div>
                     `;
                 }
