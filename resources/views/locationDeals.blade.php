@@ -105,6 +105,15 @@
     <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Location Deals</span>
+            <div class="view-all-arrow-container">
+                <span>{{ count($locationDeals) }}
+                    @if(count($locationDeals) > 1)
+                        deals
+                    @else
+                        deal
+                    @endif
+                    at this location.</span>
+            </div>
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}

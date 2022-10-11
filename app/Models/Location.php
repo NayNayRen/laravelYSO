@@ -110,7 +110,8 @@ class Location extends Model
     }
 
     public static function getLocationDeals($locationId){
-        $locationDeals = Deal::where('location_id', $locationId)->get();
+        $locationDeals = Deal::orderBy('name')
+        ->where('location_id', $locationId)->get();
         // dd($locationDeals);
         return $locationDeals;
     }
