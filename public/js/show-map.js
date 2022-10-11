@@ -185,7 +185,7 @@ function loadScript() {
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             ${marker.phone}</span>
                             <div class='map-bubble-deals'>
-                            <a href="../category_pages/searchResults">
+                            <a href="#">
                             - View Deals -</a>
                             </div>
                         </div>
@@ -204,13 +204,13 @@ function loadScript() {
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             ${marker.phone}</span>
                             <div class='map-bubble-deals'>
-                            <a href="../category_pages/searchResults">
+                            <a href="#">
                             - View Deals -</a>
                             </div>
                         </div>
                     `;
                 }
-                console.log(marker.id);
+                // console.log(marker.id);
                 // each markers data
                 let markerInfo = new google.maps.InfoWindow({
                     maxWidth: 275,
