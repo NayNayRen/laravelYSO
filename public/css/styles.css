@@ -3045,7 +3045,8 @@ html {
     width: 40px;
 }
 
-.search-button:hover {
+.search-button:hover,
+.search-form a:hover {
     color: #808080;
     cursor: pointer;
 }
@@ -3081,6 +3082,27 @@ html {
     /* outline: solid 1px blue; */
 }
 
+.search-form a {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-transition: color 150ms ease;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    font-size: 28px;
+    height: 40px;
+    justify-content: center;
+    transition: color 150ms ease;
+    width: 40px;
+}
+
 .search-field {
     background-color: #fff;
     border-bottom-left-radius: 5px;
@@ -3097,12 +3119,12 @@ html {
 }
 
 .search-form-error {
-    -webkit-box-shadow: 0 2px 5px #333333;
+    -webkit-box-shadow: 0 5px 5px #000;
     -webkit-transform: translateX(-50%);
     -webkit-transition: all 500ms ease;
     background-color: #e6331f;
     border-radius: 5px;
-    box-shadow: 0 2px 5px #333333;
+    box-shadow: 0 5px 5px #000;
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -3884,7 +3906,7 @@ html {
 }
 
 .view-all-user-icon {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 8px;
 }
 
 .view-all-user-icon:hover {
@@ -4222,6 +4244,13 @@ html {
     .search-field {
         height: auto;
         width: 250px;
+    }
+
+    .search-form a {
+        font-size: 20px;
+        height: auto;
+        padding: 5px 12px;
+        width: auto;
     }
 
     .selected-deal-container h3 {

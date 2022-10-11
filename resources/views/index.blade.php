@@ -83,9 +83,24 @@
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         {{-- HIDDEN MAP --}}
-        @include('includes._map')
+        {{-- @include('includes._map') --}}
         {{-- SEARCH CONTAINER --}}
-        @include('includes._search_container')
+        {{-- @include('includes._search_container') --}}
+        {{-- SEARCH CONTAINER --}}
+        <div class="search-container">
+            <form action={{ route('deals.search') }} class="search-form" name="searchForm"
+                method="GET">
+                <input type="text" name="search" id="search-field" class="search-field"
+                    placeholder="Search by type, city, or zip...">
+                {{-- <span class="search-form-error">{{ $message }}</span> --}}
+                <button type="submit" id="search-button" class="search-button" aria-label="Search"
+                    title="Search for a deal."><i class="fa fa-search" aria-hidden="false"></i></button>
+                <a href={{ route('deals.search') }} aria-label="Use your map."
+                    title="Use your map."><i class="fa fa-map-marker" aria-hidden="false"></i></a>
+                {{-- <button type="button" id="map-open-button" class="search-button" aria-label="Open map."
+                    title="Open your map."><i class="fa fa-map-marker" aria-hidden="false"></i></button> --}}
+            </form>
+        </div>
         {{-- FILTER BLOCK --}}
         <div class="filter-container">
             <form action={{ route('deals.index') }} method="GET">
@@ -354,9 +369,9 @@
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
-<script src="{{ asset('js/show-map.js') }}"></script>
+{{-- <script src="{{ asset('js/show-map.js') }}"></script> --}}
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA" async defer>
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA" async defer> --}}
 </script>
 <script>
     $(document).ready(function () {
