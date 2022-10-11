@@ -105,25 +105,19 @@
     <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Location Deals</span>
-            {{-- CUSTOM PAGE ARROWS --}}
-            {{-- <div class="view-all-arrow-container">
-                {{ $locationDeals
-              ->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
-        </div> --}}
-    </div>
-    <div class="container-right">
-        {{-- CARD BLOCK --}}
-        <div class="card-display-view-all">
-            @foreach($locationDeals as $deal)
-                {{-- CARD COMPONENT --}}
-                <div class="card">
-                    @include('includes._card')
-                </div>
-            @endforeach
+        </div>
+        <div class="container-right">
+            {{-- CARD BLOCK --}}
+            <div class="card-display-view-all owl-carousel owl-theme">
+                @foreach($locationDeals as $deal)
+                    {{-- CARD COMPONENT --}}
+                    <div class="card">
+                        @include('includes._card')
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
-</div>
-
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -139,6 +133,36 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
+        });
+        // smooth card carousel
+        var owl = $(".card-display-view-all");
+        owl.owlCarousel({
+            loop: true,
+            nav: true,
+            items: 3,
+            autoplay: false,
+            autoplayTimeout: 3000,
+            smartSpeed: 500, // length of time to scroll in ms
+            // autoplayHoverPause: true, set to true causes autoplay on mobile
+            autoplayHoverPause: false,
+            dots: false,
+            touchDrag: true,
+            navText: [
+                "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+                "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
+            ],
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: false,
+                },
+                540: {
+                    items: 2,
+                },
+                1300: {
+                    items: 3,
+                },
+            },
         });
         // FAVORITE RESPONSE
         $('.add-favorite').click(function () {
