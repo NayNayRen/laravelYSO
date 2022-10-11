@@ -124,6 +124,7 @@
     @foreach($locations as $location)
         @if(!empty($location->lat) && !empty($location->lon))
             <div class="location-results" hidden>
+                <span class="location-id">{{ $location->id }}</span><br>
                 <span class="location-name">{{ $location->name }}</span><br>
                 <span>Lat: <span class="location-lat">{{ $location->lat }}</span></span><br>
                 <span>Lng: <span class="location-lng">{{ $location->lon }}</span></span><br>

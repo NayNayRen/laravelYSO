@@ -135,6 +135,7 @@ function loadScript() {
     // EVENT LISTENERS
     // SHOWS SEARCH RESULTS MARKERS ON CLICK
     hiddenMapLocationButton.addEventListener("click", () => {
+        const ids = document.querySelectorAll(".location-id");
         const latitudes = document.querySelectorAll(".location-lat");
         const longitudes = document.querySelectorAll(".location-lng");
         const name = document.querySelectorAll(".location-name");
@@ -158,6 +159,7 @@ function loadScript() {
             // sets data for each marker
             for (let x = 0; x < markersAmount; x++) {
                 markers[x] = {
+                    id: ids[x].innerText,
                     lat: latitudes[x].innerText,
                     lng: longitudes[x].innerText,
                     name: name[x].innerText,
@@ -208,6 +210,7 @@ function loadScript() {
                         </div>
                     `;
                 }
+                console.log(marker.id);
                 // each markers data
                 let markerInfo = new google.maps.InfoWindow({
                     maxWidth: 275,
