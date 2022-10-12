@@ -3011,6 +3011,64 @@ html {
     width: 125px;
 }
 
+.registered-user-wallet-buttons,
+.unregistered-user-wallet-buttons {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: distribute;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    align-items: center;
+    background-color: #333333;
+    color: #fff;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: space-around;
+    margin: 5px 0;
+    padding: 7px 25px;
+    width: auto;
+}
+
+.registered-user-wallet-buttons:nth-of-type(1),
+.unregistered-user-wallet-buttons:nth-of-type(1) {
+    border-radius: 5px;
+}
+
+.registered-user-wallet-buttons:nth-of-type(2),
+.unregistered-user-wallet-buttons:nth-of-type(2) {
+    border-radius: 20px;
+}
+
+.registered-user-wallet-buttons img,
+.unregistered-user-wallet-buttons img {
+    margin-right: 5px;
+    width: 30px;
+}
+
+.registered-user-wallet-container,
+.unregistered-user-wallet-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: distribute;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: space-around;
+    padding: 5px 0;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
 .rewards-background {
     background-attachment: fixed;
     background-image: -webkit-gradient(
@@ -4510,6 +4568,11 @@ html {
         width: 100px;
     }
 
+    .registered-user-wallet-buttons,
+    .unregistered-user-wallet-buttons {
+        padding: 7px 15px;
+    }
+
     .search-button {
         font-size: 14px;
         padding: 3px 8px;
@@ -5419,12 +5482,17 @@ html {
     .registered-text-email-container,
     .unregistered-text-email-container {
         padding: 10px 5px;
-        width: 350px;
+        width: 100%;
         /* outline: solid 1px blue; */
     }
 
     .registered-user-profile {
         padding: 10px 5px;
+    }
+
+    .registered-user-wallet-buttons,
+    .unregistered-user-wallet-buttons {
+        padding: 7px 10px;
     }
 
     .rewards-top-banner h2 {
@@ -5886,6 +5954,19 @@ html {
     .unregistered-text-email-container {
         margin: auto;
         width: 90%;
+    }
+
+    .registered-user-wallet-buttons,
+    .unregistered-user-wallet-buttons {
+        padding: 7px 30px;
+    }
+
+    .registered-user-wallet-container,
+    .unregistered-user-wallet-container {
+        -ms-flex-direction: column;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
     }
 
     .search-results-message-container h1 {

@@ -30,6 +30,14 @@
                 <button id="unregistered-send-button" class="unregistered-send-button add-coupon">Send me the
                     deal</button>
             </div>
+            <div class="unregistered-user-wallet-container">
+                <a href="#" class="unregistered-user-wallet-buttons">
+                    <img src="{{ asset('img/apple-wallet.png') }}" alt="Apple Wallet"> Add to Apple
+                    Wallet</a>
+                <a href="#" class="unregistered-user-wallet-buttons"><img
+                        src="{{ asset('img/google-wallet.png') }}" alt="Google Wallet">Add to Google
+                    Wallet</a>
+            </div>
             {{-- DISCLAIMER --}}
             <div class="unregistered-disclaimer">
                 <span>This is not the actual coupon. Your coupon will be sent to you at the location of your choice,

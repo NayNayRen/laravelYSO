@@ -82,6 +82,14 @@
                 <button id="registered-send-button" class="registered-send-button add-coupon">Send me the deal</button>
             </div>
             {{-- </form> --}}
+            <div class="registered-user-wallet-container">
+                <a href="#" class="registered-user-wallet-buttons">
+                    <img src="{{ asset('img/apple-wallet.png') }}" alt="Apple Wallet"> Add to Apple
+                    Wallet</a>
+                <a href="#" class="registered-user-wallet-buttons"><img
+                        src="{{ asset('img/google-wallet.png') }}" alt="Google Wallet">Add to Google
+                    Wallet</a>
+            </div>
         </div>
     </div>
 </main>
