@@ -69,8 +69,6 @@
             <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
         </div>
     </div>
-    {{-- HIDDEN MAP --}}
-    @include('includes._map')
     {{-- HEADING AND MAP DISCLAIMER --}}
     <div class="view-all-container-heading">
         <h1>All the Entertainment you need.</h1>
@@ -111,10 +109,8 @@
         {{-- USER DASHBOARD BUTTON --}}
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
                 aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
-        {{-- HIDDEN DASHBOARD --}}
-        {{-- @include('includes._dashboard') --}}
         {{-- HIDDEN MAP --}}
-        {{-- @include('includes._map') --}}
+        @include('includes._map')
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     <span hidden>{{ count($locations) }}</span>
@@ -132,7 +128,6 @@
         @endif
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
-
     <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Fun Deals</span>
