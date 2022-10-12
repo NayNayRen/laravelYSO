@@ -95,10 +95,10 @@
                 {{-- <span class="search-form-error">{{ $message }}</span> --}}
                 <button type="submit" id="search-button" class="search-button" aria-label="Search"
                     title="Search for a deal."><i class="fa fa-search" aria-hidden="false"></i></button>
-                <a href={{ route('deals.search') }} aria-label="Use your map."
-                    title="Use your map."><i class="fa fa-map-marker" aria-hidden="false"></i></a>
-                {{-- <button type="button" id="map-open-button" class="search-button" aria-label="Open map."
-                    title="Open your map."><i class="fa fa-map-marker" aria-hidden="false"></i></button> --}}
+                {{-- <a href={{ route('deals.search') }} aria-label="Use your map."
+                title="Use your map."><i class="fa fa-map-marker" aria-hidden="false"></i></a> --}}
+                <button type="submit" class="search-button" aria-label="Open map." title="Search for a deal."><i
+                        class="fa fa-map-marker" aria-hidden="false"></i></button>
             </form>
         </div>
         {{-- FILTER BLOCK --}}

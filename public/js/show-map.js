@@ -132,9 +132,7 @@ function loadScript() {
         return "No Number Provided";
     }
 
-    // EVENT LISTENERS
-    // SHOWS SEARCH RESULTS MARKERS ON CLICK
-    hiddenMapLocationButton.addEventListener("click", () => {
+    function buildMarkers() {
         const ids = document.querySelectorAll(".location-id");
         const latitudes = document.querySelectorAll(".location-lat");
         const longitudes = document.querySelectorAll(".location-lng");
@@ -236,6 +234,113 @@ function loadScript() {
                 });
             });
         }
+    }
+
+    // EVENT LISTENERS
+    // SHOWS SEARCH RESULTS MARKERS ON CLICK
+    hiddenMapLocationButton.addEventListener("click", () => {
+        buildMarkers();
+        // const ids = document.querySelectorAll(".location-id");
+        // const latitudes = document.querySelectorAll(".location-lat");
+        // const longitudes = document.querySelectorAll(".location-lng");
+        // const name = document.querySelectorAll(".location-name");
+        // const address = document.querySelectorAll(".location-address");
+        // const phone = document.querySelectorAll(".location-phone");
+        // const email = document.querySelectorAll(".location-email");
+        // let markersAmount = (latitudes.length + longitudes.length) / 2;
+        // let markers = {};
+        // let content = "";
+        // // console.log(markersAmount);
+        // // ensures empty group on each display
+        // markerGroup = [];
+        // if (markersAmount === 0) {
+        //     mapMessage.style.opacity = "1";
+        //     mapMessage.style.top = "50%";
+        //     mapMessageClose.addEventListener("click", () => {
+        //         mapMessage.style.opacity = "0";
+        //         mapMessage.style.top = "-100%";
+        //     });
+        // } else {
+        //     // sets data for each marker
+        //     for (let x = 0; x < markersAmount; x++) {
+        //         markers[x] = {
+        //             id: ids[x].innerText,
+        //             lat: latitudes[x].innerText,
+        //             lng: longitudes[x].innerText,
+        //             name: name[x].innerText,
+        //             address: address[x].innerText,
+        //             phone: formatPhoneNumber(phone[x].innerText),
+        //             email: email[x].innerText,
+        //         };
+        //         markerGroup.push(markers[x]);
+        //     }
+        //     // console.log(markerGroup.length);
+        //     markerGroup.map((marker) => {
+        //         if (marker.email === "") {
+        //             content = `
+        //                 <span class='map-bubble-heading'>${marker.name}</span>
+        //                 <div class='map-bubble-details'>
+        //                     <span class='map-bubble-address'>
+        //                     <i class="fa fa-map-marker" aria-hidden="true"></i>
+        //                     ${marker.address}</span>
+        //                     <span class='map-bubble-email'>
+        //                     <i class="fa fa-envelope" aria-hidden="true"></i>
+        //                     No Email Provided</span>
+        //                     <span class='map-bubble-phone'>
+        //                     <i class="fa fa-phone" aria-hidden="true"></i>
+        //                     ${marker.phone}</span>
+        //                     <form action='/locations/${marker.id}' method='GET' class='map-bubble-deals'>
+        //                         <button type='submit'>- View Deals -</button>
+        //                     </form>
+        //                 </div>
+        //             `;
+        //         } else {
+        //             content = `
+        //                 <span class='map-bubble-heading'>${marker.name}</span>
+        //                 <div class='map-bubble-details'>
+        //                     <span class='map-bubble-address'>
+        //                     <i class="fa fa-map-marker" aria-hidden="true"></i>
+        //                     ${marker.address}</span>
+        //                     <a href='mailto: ${marker.email}' class='map-bubble-email'>
+        //                     <i class="fa fa-envelope" aria-hidden="true"></i>
+        //                     ${marker.email}</a>
+        //                     <span class='map-bubble-phone'>
+        //                     <i class="fa fa-phone" aria-hidden="true"></i>
+        //                     ${marker.phone}</span>
+        //                     <form action='/locations/${marker.id}' method='GET' class='map-bubble-deals'>
+        //                         <button type='submit'>- View Deals -</button>
+        //                     </form>
+        //                 </div>
+        //             `;
+        //         }
+        //         // console.log(marker.id);
+        //         // each markers data
+        //         let markerInfo = new google.maps.InfoWindow({
+        //             maxWidth: 275,
+        //             content: content,
+        //         });
+        //         // each markers position
+        //         marker = new google.maps.Marker({
+        //             position: new google.maps.LatLng(marker.lat, marker.lng),
+        //             title: marker.name,
+        //             optimized: false,
+        //             animation: google.maps.Animation.DROP,
+        //             zIndex: 1,
+        //         });
+        //         marker.setMap(map);
+        //         marker.addListener("click", () => {
+        //             markerInfo.open({
+        //                 anchor: marker,
+        //                 map: map,
+        //                 shouldFocus: false,
+        //             });
+        //         });
+        //         // clears all location markers from the map
+        //         clearMapButton.addEventListener("click", () => {
+        //             marker.setMap(null);
+        //         });
+        //     });
+        // }
     });
 
     // OPENS MAP FROM MAP ICON
@@ -263,6 +368,9 @@ function loadScript() {
             hiddenMap.style.height = "325px";
             hiddenMapHeader.style.display = "none";
         }
+        setTimeout(() => {
+            buildMarkers();
+        }, 2000);
     });
 
     // CLOSES MAP
