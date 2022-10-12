@@ -28,7 +28,7 @@
                 <ul class="c-list wrapper al-center">
                     <li class="c-list__item">
                         <a link="#fav1" class="c-list__link active">
-                            <h4>Favorite Coupons</h4>
+                            <h4>Favorites</h4>
                             @if($favorites === null)
                                 <div>0</div>
                             @else
@@ -48,7 +48,7 @@
                     </li>
                     <li class="c-list__item">
                         <a link="#fav3" class="c-list__link">
-                            <h4>Redeemed Coupons</h4>
+                            <h4>Redeemed</h4>
                             @if($redeems === null)
                                 <div>0</div>
                             @else
@@ -60,9 +60,20 @@
                 <div class="favBox active" id="fav1">
                     {{-- USER FAVORITES --}}
                     @if($favorites != null && $favorites->count() > 0)
-                        @if($favorites->count() < 3)
-                            <div style="display: flex; padding-bottom: 10px;">
+                        {{-- CARD BLOCK --}}
+                        @if($favorites->count() === 1)
+                            <div class="card-display-limited-amount">
                                 @foreach($favorites as $deal)
+                                    {{-- CARD COMPONENT --}}
+                                    <div class="card card--favorite">
+                                        @include('includes._card')
+                                    </div>
+                                @endforeach
+                            </div>
+                        @elseif($favorites->count() === 2)
+                            <div class="card-display-limited-amount">
+                                @foreach($favorites as $deal)
+                                    {{-- CARD COMPONENT --}}
                                     <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
@@ -87,9 +98,20 @@
                 {{-- USER COUPONS --}}
                 <div class="favBox" id="fav2">
                     @if($coupons != null && $coupons->count() > 0)
-                        @if($coupons->count() < 3)
-                            <div style="display: flex; padding-bottom: 10px;">
+                        {{-- CARD BLOCK --}}
+                        @if($coupons->count() === 1)
+                            <div class="card-display-limited-amount">
                                 @foreach($coupons as $deal)
+                                    {{-- CARD COMPONENT --}}
+                                    <div class="card card--favorite">
+                                        @include('includes._card')
+                                    </div>
+                                @endforeach
+                            </div>
+                        @elseif($coupons->count() === 2)
+                            <div class="card-display-limited-amount">
+                                @foreach($coupons as $deal)
+                                    {{-- CARD COMPONENT --}}
                                     <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>
@@ -114,9 +136,20 @@
                 <div class="favBox" id="fav3">
                     {{-- USER REDEEMABLES --}}
                     @if($redeems != null &&  $redeems->count() > 0)
-                        @if($redeems->count() < 3)
-                            <div style="display: flex; padding-bottom: 10px;">
+                        {{-- CARD BLOCK --}}
+                        @if($redeems->count() === 1)
+                            <div class="card-display-limited-amount">
                                 @foreach($redeems as $deal)
+                                    {{-- CARD COMPONENT --}}
+                                    <div class="card card--favorite">
+                                        @include('includes._card')
+                                    </div>
+                                @endforeach
+                            </div>
+                        @elseif($redeems->count() === 2)
+                            <div class="card-display-limited-amount">
+                                @foreach($redeems as $deal)
+                                    {{-- CARD COMPONENT --}}
                                     <div class="card card--favorite">
                                         @include('includes._card')
                                     </div>

@@ -1244,6 +1244,7 @@ body {
     margin: 5px 10px;
     padding: 5px;
     width: 325px;
+    /* outline: solid 1px blue; */
 }
 
 .card a {
@@ -1267,7 +1268,7 @@ body {
     grid-auto-flow: column;
     height: auto;
     justify-content: space-between;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 0 auto;
     overflow-x: auto;
     overflow-y: hidden;
     padding-top: 10px;
@@ -1275,32 +1276,51 @@ body {
     /* outline: solid 1px blue; */
 }
 
+.card-display::after,
+.card-display::before {
+    content: "";
+    display: block;
+    width: 10px;
+}
+
+.card-display-limited-amount {
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    height: auto;
+    justify-content: space-between;
+    margin: 0 auto 0 auto;
+    overflow-x: auto;
+    padding: 10px;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.card-display-limited-amount::after,
+.card-display-limited-amount::before {
+    content: "";
+    display: block;
+    width: 5px;
+}
+
 .card-display-view-all {
     -ms-flex-direction: row;
-    /* -ms-flex-pack: center; */
     -ms-flex-pack: start;
     -ms-flex-wrap: wrap;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: start;
-    /* -webkit-box-pack: center; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: auto;
-    /* justify-content: center; */
     justify-content: flex-start;
     margin: 0 auto 10px auto;
     width: 100%;
-}
-
-.card-display::after,
-.card-display::before {
-    content: "";
-    display: block;
-    width: 10px;
 }
 
 .card-logo {
@@ -4107,8 +4127,8 @@ html {
     }
 
     .card {
-        height: 325px;
-        width: 250px;
+        height: 375px;
+        width: 275px;
     }
 
     .card-discount,
@@ -4365,11 +4385,9 @@ html {
     }
 
     .card {
-        /* height: 275px; */
-        height: 300px;
+        height: 350px;
         margin: 2px 5px;
-        /* width: 200px; */
-        width: 225px;
+        width: 250px;
     }
 
     .card-logo-container {
@@ -5695,9 +5713,9 @@ html {
     }
 
     .card {
-        height: 300px;
+        height: 350px;
         margin: 2px;
-        /* width: 215px; */
+        /* width: 250px; */
     }
 
     .category-heading {

@@ -290,14 +290,34 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            <div class="card-display card-display1 owl-carousel owl-theme">
-                @foreach($featuredDeals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
+            @if($featuredDeals->count() === 1)
+                <div class="card-display-limited-amount">
+                    @foreach($featuredDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @elseif($featuredDeals->count() === 2)
+                <div class="card-display-limited-amount">
+                    @foreach($featuredDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="card-display card-display1 owl-carousel owl-theme">
+                    @foreach($featuredDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
     {{-- SELECTED CATEGORY CONTAINER --}}
@@ -309,14 +329,34 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            <div class="card-display owl-carousel owl-theme">
-                @foreach($categoryDeals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
+            @if($categoryDeals->count() === 1)
+                <div class="card-display-limited-amount">
+                    @foreach($categoryDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @elseif($categoryDeals->count() === 2)
+                <div class="card-display-limited-amount">
+                    @foreach($categoryDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="card-display owl-carousel owl-theme">
+                    @foreach($categoryDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
     {{-- TECH CONTAINER --}}
@@ -327,14 +367,34 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            <div class="card-display owl-carousel owl-theme">
-                @foreach($techDeals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
+            @if($techDeals->count() === 1)
+                <div class="card-display-limited-amount">
+                    @foreach($techDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @elseif($techDeals->count() === 2)
+                <div class="card-display-limited-amount">
+                    @foreach($techDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="card-display owl-carousel owl-theme">
+                    @foreach($techDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
     {{-- FADING AD BLOCK --}}
@@ -352,14 +412,34 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            <div class="card-display owl-carousel owl-theme">
-                @foreach($popularDeals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
+            @if($popularDeals->count() === 1)
+                <div class="card-display-limited-amount">
+                    @foreach($popularDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @elseif($popularDeals->count() === 2)
+                <div class="card-display-limited-amount">
+                    @foreach($popularDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="card-display owl-carousel owl-theme">
+                    @foreach($popularDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 </main>

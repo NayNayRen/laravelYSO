@@ -84,13 +84,13 @@ function loadScript() {
                         });
                     });
                     // delays the info bubble
-                    setTimeout(() => {
-                        infoWindow.open({
-                            anchor: marker,
-                            map: map,
-                            shouldFocus: false,
-                        });
-                    }, 750);
+                    // setTimeout(() => {
+                    //     infoWindow.open({
+                    //         anchor: marker,
+                    //         map: map,
+                    //         shouldFocus: false,
+                    //     });
+                    // }, 750);
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());

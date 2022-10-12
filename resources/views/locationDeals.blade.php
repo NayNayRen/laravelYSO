@@ -72,10 +72,9 @@
         </div>
     </div>
     {{-- HIDDEN MAP --}}
-    @include('includes._map')
+    {{-- @include('includes._map') --}}
     {{-- HEADING AND MAP DISCLAIMER --}}
     <div class="view-all-container-heading">
-
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
     </div>
@@ -103,6 +102,8 @@
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="container view-all">
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
         <div class="container-left">
             <span class="category-heading">Location Deals</span>
             <div class="view-all-arrow-container">
@@ -112,19 +113,39 @@
                     @else
                         deal
                     @endif
-                    at this location.</span>
+                    at {{ $location->name }}.</span>
             </div>
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            <div class="card-display-view-all owl-carousel owl-theme">
-                @foreach($locationDeals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
+            @if($locationDeals->count() === 1)
+                <div class="card-display-limited-amount">
+                    @foreach($locationDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @elseif($locationDeals->count() === 2)
+                <div class="card-display-limited-amount">
+                    @foreach($locationDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="card-display-view-all owl-carousel owl-theme">
+                    @foreach($locationDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 </div>
