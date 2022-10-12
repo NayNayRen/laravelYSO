@@ -102,6 +102,8 @@
         {{-- <h3>Used most, because they save you the most.</h3> --}}
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
@@ -109,8 +111,7 @@
         {{-- USER DASHBOARD BUTTON --}}
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
                 aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
-        {{-- HIDDEN MAP --}}
-        @include('includes._map')
+
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     <span hidden>{{ count($locations) }}</span>

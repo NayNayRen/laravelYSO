@@ -75,6 +75,8 @@
     <div class="view-all-container-heading">
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
+        {{-- HIDDEN MAP --}}
+        @include('includes._map')
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
@@ -82,8 +84,7 @@
         {{-- USER DASHBOARD BUTTON --}}
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
-        {{-- HIDDEN MAP --}}
-        @include('includes._map')
+
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     <span hidden>{{ count($locations) }}</span>
@@ -101,11 +102,11 @@
         @endif
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
-    <div class="container view-all">
+    <div class="alternate-container view-all">
         <div class="container-left">
-            <span class="category-heading">Location Deals</span>
-            <div class="view-all-arrow-container">
-                <span>{{ count($locationDeals) }}
+            <div class="alternate-container-heading">
+                Location Deals
+                <span class="alternate-container-count">{{ count($locationDeals) }}
                     @if(count($locationDeals) > 1)
                         deals
                     @else
