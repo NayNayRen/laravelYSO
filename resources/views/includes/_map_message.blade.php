@@ -5,9 +5,9 @@
         </span>
     </div>
     <h4 class="map-message-header">Oh no...</h4>
-    <p>Looks like there's no locations associated with your search.</p>
+    <p>Looks like there's no locations to show.</p>
     <p>That doesn't mean there's none available though.</p>
-    <p>Close the map and try again.</p>
+    <p>Close the map and keep looking.</p>
     <div class="map-message-container">
         <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
     </div>
