@@ -212,10 +212,16 @@
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
+    background-color: #d3d3d3;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: column;
+}
+
+.alternate-container .card {
+    box-shadow: 0 0 5px #000;
+    width: 400px;
 }
 
 .alternate-container .container-arrow-left {
@@ -232,11 +238,8 @@
     color: #000;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    /* left: 0; */
     padding: 5px 5px;
-    /* position: absolute; */
     text-align: center;
-    /* top: 100%; */
     width: 100%;
     /* outline: solid 1px blue; */
 }
@@ -252,7 +255,6 @@
     display: flex;
     font-family: "Roboto", sans-serif;
     font-size: 28px;
-    /* margin-bottom: 25px; */
     min-height: 45px;
     padding: 0 5px;
     position: relative;
@@ -3331,7 +3333,22 @@ html {
 }
 
 .searched-words {
+    background-color: #000;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
     font-weight: normal;
+    margin: 0 auto;
+    padding: 15px 5px;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.searched-words span {
+    color: #e6331f;
+    /* font-weight: bold; */
+    text-transform: capitalize;
 }
 
 .selected-deal-container {
@@ -3981,24 +3998,6 @@ html {
     text-align: center;
 } */
 
-.searched-words {
-    background-color: #000;
-    color: #fff;
-    font-family: "Roboto", sans-serif;
-    font-size: 22px;
-    margin: 0 auto;
-    padding: 15px 5px;
-    text-align: center;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-
-.searched-words span {
-    color: #e6331f;
-    /* font-weight: bold; */
-    text-transform: capitalize;
-}
-
 .view-all-item-counter {
     -webkit-transform: translateX(-50%);
     bottom: -20px;
@@ -4103,7 +4102,7 @@ html {
 }
 
 .window-overlay {
-    -webkit-transition: opacity 250ms ease;
+    -webkit-transition: opacity 500ms ease;
     background-color: #000;
     bottom: 0;
     left: 0;
@@ -4111,14 +4110,14 @@ html {
     position: fixed;
     right: 0;
     top: 0;
-    transition: opacity 250ms ease;
+    transition: opacity 500ms ease;
     z-index: -1;
 }
 
 .window-overlay-dim {
     opacity: 0.85;
-    /* z-index: 3; */
-    z-index: 2;
+    z-index: 3;
+    /* z-index: 2; */
 }
 
 @media (max-width: 1920px) {
@@ -4454,6 +4453,10 @@ html {
         height: 175px;
     }
 
+    .alternate-container .card {
+        width: 300px;
+    }
+
     .alternate-container-heading {
         font-size: 22px;
         /* min-height: 35px; */
@@ -4730,12 +4733,14 @@ html {
     }
 
     .alternate-container .container-arrow-left {
+        -webkit-transform: translateY(0);
         left: calc(100% - 90px);
         top: -70px;
         transform: translateY(0);
     }
 
     .alternate-container .container-arrow-right {
+        -webkit-transform: translateY(0);
         right: 10px;
         top: -70px;
         transform: translateY(0);
@@ -5121,7 +5126,8 @@ html {
         width: 0;
     }
 
-    .card-display-view-all {
+    .card-display-view-all,
+    .card-display-limited-amount {
         -ms-flex-pack: justify;
         -webkit-box-pack: justify;
         display: -ms-grid;
@@ -5813,6 +5819,12 @@ html {
     .ad-container {
         height: 90px;
     }
+
+    /* IF I SET A WIDTH IT MESSES UP THE LIMITED DISPLAY */
+    /* .alternate-container .card {
+        border-radius: 0;
+        width: 95%;
+    } */
 
     .alternate-container .container-arrow-left {
         top: -90px;
