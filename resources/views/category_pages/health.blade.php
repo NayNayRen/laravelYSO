@@ -115,6 +115,7 @@
 
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
+    <span class="submit-method">{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
     @foreach($locations as $location)
         @if(!empty($location->lat) && !empty($location->lon))

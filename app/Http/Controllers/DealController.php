@@ -146,6 +146,8 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $searchedLocations = Location::getSearchedLocations($request);
+        $submitMethod = $request->submit;
+        // dd($submitMethod);
         // limits search to 3 words or less
         if(count($words) > 3){
             $results = 0;
@@ -158,7 +160,8 @@ class DealController extends Controller
                 'locations' => [],
                 'searchedWords' => $words,
                 'message' => 'Limit your search to 3 words or less.',
-                'pageTitle' => 'Search Results'
+                'pageTitle' => 'Search Results',
+                'submitMethod' => ''
             ]);
         }
         // if nothing is typed, sets results to 0, essentially empty
@@ -173,7 +176,8 @@ class DealController extends Controller
                 'locations' => [],
                 'searchedWords' => ['no results found'],
                 'message' => 'Enter a topic to search for.',
-                'pageTitle' => 'Search Results'
+                'pageTitle' => 'Search Results',
+                'submitMethod' => ''
             ]);
         // if all goes well
         }else{
@@ -187,7 +191,8 @@ class DealController extends Controller
                 'locations' => $searchedLocations,
                 'searchedWords' => $words,
                 'message' => '',
-                'pageTitle' => 'Search Results'
+                'pageTitle' => 'Search Results',
+                'submitMethod' => $submitMethod
             ]);
         }
     }
@@ -205,7 +210,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllFeatured(),
             'locations' => $featuredLocations,
             'message' => '',
-            'pageTitle' => 'Featured'
+            'pageTitle' => 'Featured',
+            'submitMethod' => ''
          ]);
     }
 
@@ -222,7 +228,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllType('food'),
             'locations' => $matchingLocations,
             'message' => '',
-            'pageTitle' => 'Food'
+            'pageTitle' => 'Food',
+            'submitMethod' => ''
          ]);
     }
 
@@ -239,7 +246,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllType('fashion'),
             'locations' => $matchingLocations,
             'message' => '',
-            'pageTitle' => 'Fashion'
+            'pageTitle' => 'Fashion',
+            'submitMethod' => ''
          ]);
     }
 
@@ -256,7 +264,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllType('automotive'),
             'locations' => $matchingLocations,
             'message' => '',
-            'pageTitle' => 'Auto'
+            'pageTitle' => 'Auto',
+            'submitMethod' => ''
          ]);
     }
 
@@ -273,7 +282,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllType('fun'),
             'locations' => $matchingLocations,
             'message' => '',
-            'pageTitle' => 'Fun'
+            'pageTitle' => 'Fun',
+            'submitMethod' => ''
          ]);
     }
 
@@ -290,7 +300,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllType('health'),
             'locations' => $matchingLocations,
             'message' => '',
-            'pageTitle' => 'Health'
+            'pageTitle' => 'Health',
+            'submitMethod' => ''
          ]);
     }
 
@@ -307,7 +318,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllType('tech'),
             'locations' => $matchingLocations,
             'message' => '',
-            'pageTitle' => 'Tech'
+            'pageTitle' => 'Tech',
+            'submitMethod' => ''
         ]);
     }
 
@@ -324,7 +336,8 @@ class DealController extends Controller
             'deals' => Deal::viewAllPopular(),
             'locations' => $popularLocations,
             'message' => '',
-            'pageTitle' => 'Popular'
+            'pageTitle' => 'Popular',
+            'submitMethod' => ''
         ]);
     }
 }

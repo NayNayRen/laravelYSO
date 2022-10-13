@@ -115,6 +115,7 @@
             title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
+    <span class="submit-method" hidden>{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
     @foreach($locations as $location)
         @if(!empty($location->lat) && !empty($location->lon))

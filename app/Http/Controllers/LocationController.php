@@ -19,7 +19,8 @@ class LocationController extends Controller
             'locations' => Location::getLocation($locationId),
             'locationDeals' => Location::getLocationDeals($locationId),
             'message' => '',
-            'pageTitle' => 'Location Deals'
+            'pageTitle' => 'Location Deals',
+            'submitMethod' => ''
         ]);
     }
 }

@@ -93,10 +93,10 @@
                 <input type="text" name="search" id="search-field" class="search-field"
                     placeholder="Search by type, city, or zip...">
                 {{-- <span class="search-form-error">{{ $message }}</span> --}}
-                <button type="submit" class="search-button" aria-label="Search" title="Search for a deal."><i
-                        class="fa fa-search" aria-hidden="false"></i></button>
-                <button type="submit" class="search-button" aria-label="Open map." title="Search for a deal."><i
-                        class="fa fa-map-marker" aria-hidden="false"></i></button>
+                <button type="submit" class="search-button" value="text" name="submit" aria-label="Search"
+                    title="Search for a deal."><i class="fa fa-search" aria-hidden="false"></i></button>
+                <button type="submit" class="search-button" value="map" name="submit" aria-label="Open map."
+                    title="Search for a deal."><i class="fa fa-map-marker" aria-hidden="false"></i></button>
                 {{-- <a href={{ route('deals.search') }} aria-label="Use your map."
                 title="Use your map."><i class="fa fa-map-marker" aria-hidden="false"></i></a> --}}
             </form>
