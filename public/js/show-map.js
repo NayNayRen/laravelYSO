@@ -74,7 +74,8 @@ function loadScript() {
                         optimized: false,
                         animation: google.maps.Animation.DROP,
                         icon: ysoIcon,
-                        zIndex: 2,
+                        // zIndex: 2,
+                        zIndex: 1,
                     });
                     marker.setMap(map);
                     marker.addListener("click", () => {
