@@ -104,18 +104,18 @@
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="alternate-container view-all">
-        <div class="container-left">
-            <div class="alternate-container-heading">
-                Location Deals
-                <span class="alternate-container-count">{{ count($locationDeals) }}
-                    @if(count($locationDeals) > 1)
-                        deals
-                    @else
-                        deal
-                    @endif
-                    at {{ $location->name }}.</span>
-            </div>
+        {{-- <div class="container-left"> --}}
+        <div class="alternate-container-heading">
+            Location Deals
         </div>
+        <span class="alternate-container-count">{{ count($locationDeals) }}
+            @if(count($locationDeals) > 1)
+                deals
+            @else
+                deal
+            @endif
+            from {{ ucwords($location->name) }} located at {{ $location->location }}.</span>
+        {{-- </div> --}}
         <div class="container-right">
             {{-- CARD BLOCK --}}
             @if($locationDeals->count() === 1)

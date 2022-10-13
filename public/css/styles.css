@@ -191,10 +191,6 @@
     cursor: pointer;
 }
 
-/* .all-button-dropdown li:last-child {
-    border-bottom: none;
-} */
-
 .all-button-dropdown-toggle {
     -webkit-box-shadow: 0 10px 10px #333333;
     box-shadow: 0 10px 10px #333333;
@@ -222,11 +218,27 @@
     flex-direction: column;
 }
 
+.alternate-container .container-arrow-left {
+    left: 20px;
+    top: calc(50% - 10px);
+}
+
+.alternate-container .container-arrow-right {
+    right: 20px;
+    top: calc(50% - 10px);
+}
+
 .alternate-container-count {
     color: #000;
+    font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    position: absolute;
-    top: 100%;
+    /* left: 0; */
+    padding: 5px 5px;
+    /* position: absolute; */
+    text-align: center;
+    /* top: 100%; */
+    width: 100%;
+    /* outline: solid 1px blue; */
 }
 
 .alternate-container-heading {
@@ -238,8 +250,9 @@
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
+    font-family: "Roboto", sans-serif;
     font-size: 28px;
-    margin-bottom: 15px;
+    /* margin-bottom: 25px; */
     min-height: 45px;
     padding: 0 5px;
     position: relative;
@@ -3252,7 +3265,7 @@ html {
     transform: translateX(-50%);
     transition: all 500ms ease;
     width: 100%;
-    z-index: 1;
+    /* z-index: 1; */
     /* outline: solid 1px blue; */
 }
 
@@ -4716,9 +4729,26 @@ html {
         padding: 10px 10px 10px 15px;
     }
 
+    .alternate-container .container-arrow-left {
+        left: calc(100% - 90px);
+        top: -70px;
+        transform: translateY(0);
+    }
+
+    .alternate-container .container-arrow-right {
+        right: 10px;
+        top: -70px;
+        transform: translateY(0);
+    }
+
+    .alternate-container-count {
+        font-size: 14px;
+        text-align: left;
+    }
+
     .alternate-container-heading {
         /* font-size: 25px; */
-        margin-bottom: 0;
+        /* margin-bottom: 10px; */
         min-height: 45px;
     }
 
@@ -5782,6 +5812,14 @@ html {
 
     .ad-container {
         height: 90px;
+    }
+
+    .alternate-container .container-arrow-left {
+        top: -90px;
+    }
+
+    .alternate-container .container-arrow-right {
+        top: -90px;
     }
 
     .alternate-container-heading {
