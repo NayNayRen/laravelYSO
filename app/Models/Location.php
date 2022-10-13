@@ -30,11 +30,11 @@ class Location extends Model
             }
         })
         // remove if doesnt work right
-        ->orWhere(function ($q) use ($words) {
-            foreach ($words as $word) {
-                $q->orWhere('name', 'like', '%' . $word . '%');
-            }
-        })
+        // ->orWhere(function ($q) use ($words) {
+        //     foreach ($words as $word) {
+        //         $q->orWhere('name', 'like', '%' . $word . '%');
+        //     }
+        // })
         // 
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
