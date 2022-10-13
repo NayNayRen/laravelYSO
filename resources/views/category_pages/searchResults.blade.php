@@ -8,6 +8,8 @@
     @include('includes._favorite_removed_message')
     {{-- GUEST ERROR MESSAGE --}}
     @include('includes._guest_error_message')
+    {{-- HIDDEN MAP --}}
+    @include('includes._map')
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
@@ -105,7 +107,7 @@
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         {{-- HIDDEN MAP --}}
-        @include('includes._map')
+        {{-- @include('includes._map') --}}
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
