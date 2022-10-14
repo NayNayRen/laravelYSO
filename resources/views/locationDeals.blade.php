@@ -113,7 +113,8 @@
             @else
                 deal
             @endif
-            from {{ ucwords($location->name) }} located at {{ $location->location }}.</span>
+            from {{ ucwords($location->name) }} located at {{ $location->location }}.
+        </span>
         <div class="container-right">
             {{-- CARD BLOCK --}}
             @if($locationDeals->count() === 1)
