@@ -120,7 +120,7 @@
                 <div class="card-display-limited-amount">
                     @foreach($locationDeals as $deal)
                         {{-- CARD COMPONENT --}}
-                        <div class="card">
+                        <div class="limited-amount-card">
                             @include('includes._card')
                         </div>
                     @endforeach
@@ -129,7 +129,7 @@
                 <div class="card-display-limited-amount">
                     @foreach($locationDeals as $deal)
                         {{-- CARD COMPONENT --}}
-                        <div class="card">
+                        <div class="limited-amount-card">
                             @include('includes._card')
                         </div>
                     @endforeach
@@ -138,7 +138,7 @@
                 <div class="card-display-view-all owl-carousel owl-theme">
                     @foreach($locationDeals as $deal)
                         {{-- CARD COMPONENT --}}
-                        <div class="card">
+                        <div class="alternate-card">
                             @include('includes._card')
                         </div>
                     @endforeach

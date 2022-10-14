@@ -1,5 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
 
+/* REGISTER AND LOG IN MEDIA BUTTONS */
+.apple {
+    -webkit-transition: opacity 150ms ease;
+    background-color: #000;
+    transition: opacity 150ms ease;
+}
+.facebook {
+    -webkit-transition: opacity 150ms ease;
+    background-color: #3b5a98;
+    transition: opacity 150ms ease;
+}
+.google {
+    -webkit-transition: opacity 150ms ease;
+    background-color: #4285f6;
+    transition: opacity 150ms ease;
+}
+.apple:hover,
+.facebook:hover,
+.google:hover {
+    opacity: 0.75;
+}
+.submit {
+    -webkit-transition: opacity 150ms ease;
+    background-color: #e6331f;
+    transition: color 150ms ease;
+}
+.submit:hover {
+    color: #000;
+    cursor: pointer;
+}
+/*  */
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -208,6 +240,29 @@
     color: #fff;
 }
 
+.alternate-card,
+.limited-amount-card {
+    -ms-flex-direction: column;
+    -ms-flex-pack: justify;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    height: 400px;
+    justify-content: space-between;
+    margin: 5px 10px;
+    padding: 5px;
+    width: 400px;
+    /* outline: solid 1px blue; */
+}
+
 .alternate-container {
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
@@ -217,11 +272,6 @@
     display: -webkit-box;
     display: flex;
     flex-direction: column;
-}
-
-.alternate-container .card {
-    box-shadow: 0 0 5px #000;
-    width: 400px;
 }
 
 .alternate-container .container-arrow-left {
@@ -3070,6 +3120,7 @@ html {
     -webkit-box-align: center;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
+    -webkit-transition: opacity 250ms ease;
     align-items: center;
     background-color: #333333;
     color: #fff;
@@ -3081,7 +3132,13 @@ html {
     justify-content: space-around;
     margin: 5px 0;
     padding: 7px 25px;
+    transition: opacity 250ms ease;
     width: auto;
+}
+
+.registered-user-wallet-buttons:hover,
+.unregistered-user-wallet-buttons:hover {
+    opacity: 0.75;
 }
 
 .registered-user-wallet-buttons:nth-of-type(1),
@@ -3887,36 +3944,6 @@ html {
     margin-right: 10px;
 }
 
-.apple {
-    -webkit-transition: opacity 150ms ease;
-    background-color: #000;
-    transition: opacity 150ms ease;
-}
-.facebook {
-    -webkit-transition: opacity 150ms ease;
-    background-color: #3b5a98;
-    transition: opacity 150ms ease;
-}
-.google {
-    -webkit-transition: opacity 150ms ease;
-    background-color: #4285f6;
-    transition: opacity 150ms ease;
-}
-.apple:hover,
-.facebook:hover,
-.google:hover {
-    opacity: 0.75;
-}
-.submit {
-    -webkit-transition: opacity 150ms ease;
-    background-color: #e6331f;
-    transition: color 150ms ease;
-}
-.submit:hover {
-    color: #000;
-    cursor: pointer;
-}
-
 .view-all {
     background-color: #d3d3d3;
 }
@@ -4453,7 +4480,8 @@ html {
         height: 175px;
     }
 
-    .alternate-container .card {
+    .alternate-card,
+    .limited-amount-card {
         width: 300px;
     }
 
@@ -5582,6 +5610,11 @@ html {
         padding: 7px 10px;
     }
 
+    .registered-user-wallet-buttons:hover,
+    .unregistered-user-wallet-buttons:hover {
+        opacity: 1;
+    }
+
     .rewards-top-banner h2 {
         font-size: 20px;
     }
@@ -5820,11 +5853,9 @@ html {
         height: 90px;
     }
 
-    /* IF I SET A WIDTH IT MESSES UP THE LIMITED DISPLAY */
-    /* .alternate-container .card {
-        border-radius: 0;
-        width: 95%;
-    } */
+    .alternate-card {
+        width: 90%;
+    }
 
     .alternate-container .container-arrow-left {
         top: -90px;
@@ -6000,6 +6031,10 @@ html {
 
     .guest-error-content {
         min-height: 225px;
+    }
+
+    .limited-amount-card {
+        width: 275px;
     }
 
     .page-hero {
