@@ -132,44 +132,44 @@
         @endif
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
-    <div class="container view-all">
+    {{-- <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Featured Deals</span>
-            {{-- CUSTOM PAGE ARROWS --}}
+            CUSTOM PAGE ARROWS
             <div class="view-all-arrow-container">
                 {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
-            </div>
-        </div>
-        <div class="container-right">
-            {{-- CARD BLOCK --}}
-            <div class="card-display-view-all">
-                @foreach($deals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    {{-- <div class="alternate-container">
-    <div class="alternate-container-heading">Featured Deals</div>
-    CUSTOM PAGE ARROWS
-    <div class="alternate-container-count">
-        {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
+</div>
 </div>
 <div class="container-right">
     CARD BLOCK
     <div class="card-display-view-all">
         @foreach($deals as $deal)
             CARD COMPONENT
-            <div class="limited-amount-card">
+            <div class="card">
                 @include('includes._card')
             </div>
         @endforeach
     </div>
 </div>
 </div> --}}
+<div class="alternate-container">
+    <div class="alternate-container-heading">Featured Deals</div>
+    {{-- CUSTOM PAGE ARROWS --}}
+    <div class="alternate-container-count">
+        {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
+    </div>
+    <div class="container-right">
+        {{-- CARD BLOCK --}}
+        <div class="card-display-view-all">
+            @foreach($deals as $deal)
+                {{-- CARD COMPONENT --}}
+                <div class="limited-amount-card">
+                    @include('includes._card')
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
