@@ -294,6 +294,17 @@
     /* outline: solid 1px blue; */
 }
 
+.alternate-container-count .view-all-left-arrow {
+    -webkit-transition: color 150ms ease;
+    background-color: #e6331f;
+    border-radius: 50%;
+    color: blue;
+    /* color: #fff; */
+    font-size: 30px;
+    padding: 0 5px;
+    transition: color 150ms ease;
+}
+
 .alternate-container-heading {
     -ms-flex-align: center;
     -webkit-box-align: center;
@@ -5980,14 +5991,14 @@ html {
     }
 
     .dashboard-right-container .container-arrow-left {
-        left: calc(100% - 15px);
-        top: 55px;
+        left: calc(100% - 65px);
+        top: 75px;
         transform: translateX(-100%);
     }
 
     .dashboard-right-container .container-arrow-right {
         right: 15px;
-        top: 90px;
+        top: 75px;
     }
 
     .favorite-added-message div span:nth-of-type(1),
