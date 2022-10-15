@@ -74,7 +74,6 @@ function loadScript() {
                         optimized: false,
                         animation: google.maps.Animation.DROP,
                         icon: ysoIcon,
-                        // zIndex: 2,
                         zIndex: 1,
                     });
                     marker.setMap(map);
@@ -220,7 +219,7 @@ function loadScript() {
                     title: marker.name,
                     optimized: false,
                     animation: google.maps.Animation.DROP,
-                    zIndex: 1,
+                    zIndex: 2,
                 });
                 marker.setMap(map);
                 marker.addListener("click", () => {

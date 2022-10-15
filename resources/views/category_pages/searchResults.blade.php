@@ -139,6 +139,7 @@
         @endforeach
     </p>
     {{-- IF SEARCH DOESN'T RETURN ANY RESULTS OR LEFT EMPTY --}}
+
     @if($searchedDeals === 0 || $searchedDeals->count() === 0)
         <div class="search-results-message-container">
             <h1>Your search didn't return any results.</h1>
@@ -146,31 +147,85 @@
             <span>or...</span>
             <p>Continue your search above.</p>
         </div>
-        {{-- IF A SEARCH TERM WAS TYPED --}}
     @else
-        <div class="container view-all">
+        <div class="alternate-container">
+            <div class="alternate-container-heading">
+                Your Searched Deals
+            </div>
+            <span class="alternate-container-count">
+                {{ $searchedDeals->links('vendor.pagination.custom-view-all-pagination') }}
+            </span>
+            <div class="container-right">
+                @if($searchedDeals->count() === 1)
+                    <span class="alternate-container-count">
+                        {{ count($searchedDeals) }} Deal
+                    </span>
+                    <div class="card-display-limited-amount">
+                        @foreach($searchedDeals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="limited-amount-card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
+                @elseif($searchedDeals->count() === 2)
+                    <span class="alternate-container-count">
+                        {{ count($searchedDeals) }} Deals
+                    </span>
+                    <div class="card-display-limited-amount">
+                        @foreach($searchedDeals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="limited-amount-card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    @if($searchedDeals->count() < 10)
+                        <span class="alternate-container-count">
+                            {{ count($searchedDeals) }} Deals
+                        </span>
+                    @endif
+                    <div class="card-display-view-all">
+                        @foreach($searchedDeals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="limited-amount-card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+        </div>
+    @endif
 
+    {{-- @if($searchedDeals === 0 || $searchedDeals->count() === 0)
+        <div class="search-results-message-container">
+            <h1>Your search didn't return any results.</h1>
+            <p>Return back home to browse...</p>
+            <span>or...</span>
+            <p>Continue your search above.</p>
+        </div>
+@else
+        <div class="container view-all">
             <div class="container-left">
                 <span class="category-heading">Search Results</span>
-                {{-- CUSTOM PAGE ARROWS --}}
                 <div class="view-all-arrow-container">
                     {{ $searchedDeals
                     ->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
-                </div>
-            </div>
-            <div class="container-right">
-                {{-- CARD BLOCK --}}
-                <div class="card-display-view-all">
-                    @foreach($searchedDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-    @endif
 </div>
+</div>
+<div class="container-right">
+    <div class="card-display-view-all">
+        @foreach($searchedDeals as $deal)
+            <div class="card">
+                @include('includes._card')
+            </div>
+        @endforeach
+    </div>
+</div>
+</div>
+@endif--}}
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

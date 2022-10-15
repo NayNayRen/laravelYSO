@@ -8,6 +8,8 @@
     @include('includes._favorite_removed_message')
     {{-- GUEST ERROR MESSAGE --}}
     @include('includes._guest_error_message')
+    {{-- HIDDEN MAP --}}
+    @include('includes._map')
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
@@ -103,7 +105,7 @@
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
         {{-- HIDDEN MAP --}}
-        @include('includes._map')
+        {{-- @include('includes._map') --}}
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
@@ -130,26 +132,81 @@
         @endif
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
-    <div class="container view-all">
+
+    <div class="alternate-container">
+        @if(count($deals) === 0 || $deals === null)
+            <div class="card-display-limited-amount">
+                <h1>No deals available.</h1>
+            </div>
+        @else
+            <div class="alternate-container-heading">
+                Fun Deals
+            </div>
+            <span class="alternate-container-count">
+                {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
+            </span>
+            <div class="container-right">
+                {{-- CARD BLOCK --}}
+                @if($deals->count() === 1)
+                    <span class="alternate-container-count">
+                        {{ count($deals) }} Deal
+                    </span>
+                    <div class="card-display-limited-amount">
+                        @foreach($deals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="limited-amount-card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
+                @elseif($deals->count() === 2)
+                    <span class="alternate-container-count">
+                        {{ count($deals) }} Deals
+                    </span>
+                    <div class="card-display-limited-amount">
+                        @foreach($deals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="limited-amount-card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
+                @else
+                    @if($deals->count() < 10)
+                        <span class="alternate-container-count">
+                            {{ count($deals) }} Deals
+                        </span>
+                    @endif
+                    <div class="card-display-view-all">
+                        @foreach($deals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="limited-amount-card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
+        @endif
+    </div>
+
+    {{-- <div class="container view-all">
         <div class="container-left">
             <span class="category-heading">Fun Deals</span>
-            {{-- CUSTOM PAGE ARROWS --}}
             <div class="view-all-arrow-container">
                 {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
+</div>
+</div>
+<div class="container-right">
+    <div class="card-display-view-all">
+        @foreach($deals as $deal)
+            <div class="card">
+                @include('includes._card')
             </div>
-        </div>
-        <div class="container-right">
-            {{-- CARD BLOCK --}}
-            <div class="card-display-view-all">
-                @foreach($deals as $deal)
-                    {{-- CARD COMPONENT --}}
-                    <div class="card">
-                        @include('includes._card')
-                    </div>
-                @endforeach
-            </div>
-        </div>
+        @endforeach
     </div>
+</div>
+</div> --}}
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

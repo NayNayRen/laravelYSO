@@ -345,6 +345,13 @@
     width: 100%;
 }
 
+/* .alternate-container-heading span {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+} */
+
 .back-button {
     -ms-flex-align: center;
     -ms-flex-direction: row;
