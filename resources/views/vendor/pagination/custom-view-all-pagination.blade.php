@@ -13,37 +13,39 @@
 
     {{-- item count --}}
     <div class="view-all-item-counter">
-        @if($paginator->firstItem())
+        {{-- @if($paginator->firstItem())
             <span>{{ $paginator->firstItem() }}</span>
-            to
-            <span>{{ $paginator->lastItem() }}</span>
-        @else
-            {{ $paginator->count() }}
-        @endif
-        of
-        <span>{{ $paginator->total() }}</span>
-    </div>
-
-    {{-- next button (right arrow) --}}
-    @if($paginator->hasMorePages())
-        <a href="{{ $paginator->nextPageUrl() }}" class="view-all-right-arrow" aria-label="Next Deal"><i
-                class="fa fa-arrow-right" aria-hidden="false"></i>
-        </a>
+        to
+        <span>{{ $paginator->lastItem() }}</span>
     @else
-        <span class="view-all-right-arrow" aria-label="Next Deal"><i class="fa fa-arrow-right" aria-hidden="false"></i>
-        </span>
-    @endif
-
-    {{-- item count --}}
-    {{-- <div class="view-all-item-counter">
-@if($paginator->firstItem())
-            <span>{{ $paginator->firstItem() }}</span>
-    to
-    <span>{{ $paginator->lastItem() }}</span>
-@else
-    {{ $paginator->count() }}
+        {{ $paginator->count() }}
 @endif
 of
-<span>{{ $paginator->total() }}</span>
-</div> --}}
+<span>{{ $paginator->total() }}</span> --}}
+
+@foreach($elements as $element)
+
+    {{-- Array Of Links --}}
+    @if(is_array($element))
+        @foreach($element as $page => $url)
+            @if($page == $paginator->currentPage())
+                <a class="item active" href="{{ $url }}" aria-current="page">{{ $page }}</a>
+            @else
+                <a class="item" href="{{ $url }}">{{ $page }}</a>
+            @endif
+        @endforeach
+    @endif
+@endforeach
+</div>
+
+{{-- next button (right arrow) --}}
+@if($paginator->hasMorePages())
+    <a href="{{ $paginator->nextPageUrl() }}" class="view-all-right-arrow" aria-label="Next Deal"><i
+            class="fa fa-arrow-right" aria-hidden="false"></i>
+    </a>
+@else
+    <span class="view-all-right-arrow" aria-label="Next Deal"><i class="fa fa-arrow-right" aria-hidden="false"></i>
+    </span>
+@endif
+
 @endif

@@ -153,7 +153,7 @@
                 Your Searched Deals
             </div>
             <span class="alternate-container-count">
-                {{ $searchedDeals->links('vendor.pagination.custom-view-all-pagination') }}
+                {{ $searchedDeals->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
             </span>
             <div class="container-right">
                 @if($searchedDeals->count() === 1)
