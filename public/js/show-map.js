@@ -292,6 +292,7 @@ function loadScript() {
         // windowOverlay.classList.add("window-overlay-dim");
         // hiddenMap.style.zIndex = "3";
         // hiddenMap.style.zIndex = "1";
+        window.scroll(0, 0);
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
         if (window.innerWidth > 1300) {

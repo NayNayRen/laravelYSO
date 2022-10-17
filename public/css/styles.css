@@ -4813,7 +4813,10 @@ html {
     }
 
     .alternate-container-count {
+        -ms-flex-pack: start;
+        -webkit-box-pack: start;
         font-size: 14px;
+        justify-content: flex-start;
         text-align: left;
     }
 
