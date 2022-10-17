@@ -23,6 +23,43 @@ function loadScript() {
         lng: -98.35,
     };
 
+    // SHOWS LOCATION ERROR OR DENIAL
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(
+            browserHasGeolocation
+                ? `<span class='map-bubble-heading'>Uh oh...</span>
+                    <div class='map-bubble-address'>
+                        <span>Looks like you said no to pinning your location.</span>
+                    </div>`
+                : `<span class='map-bubble-heading'>Error :</span>
+                    <div class='map-bubble-address'>
+                        <span>Your browser doesn't support geolocation.</span>
+                    </div>`
+        );
+        infoWindow.open(map);
+    }
+
+    // FORMATS LOCATION PHONE NUMBER, formatted to (123) 456-7890
+    function formatPhoneNumber(phoneNumberString) {
+        // strips non digit characters
+        const cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+        // returns 3 substrings
+        const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (match) {
+            // formats
+            return "(" + match[1] + ") " + match[2] + "-" + match[3];
+        }
+        return "No Number Provided";
+    }
+
+    // FORMAT MARKER TITLE TO CAPITALIZED WORDS
+    function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+    }
+
     // BUILDS AND ADDS MAP ON CLICKING MAP ICON
     function loadMap(zoomLevel) {
         // ensures an empty marker group
@@ -70,7 +107,7 @@ function loadScript() {
                             currentLocationMarker.lat,
                             currentLocationMarker.lng
                         ),
-                        title: "Your current location.",
+                        title: "Your Current Location.",
                         optimized: false,
                         animation: google.maps.Animation.DROP,
                         icon: ysoIcon,
@@ -101,36 +138,6 @@ function loadScript() {
             // browser doesn't support geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
-    }
-
-    // SHOWS LOCATION ERROR OR DENIAL
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(
-            browserHasGeolocation
-                ? `<span class='map-bubble-heading'>Uh oh...</span>
-                    <div class='map-bubble-address'>
-                        <span>Looks like you said no to pinning your location.</span>
-                    </div>`
-                : `<span class='map-bubble-heading'>Error :</span>
-                    <div class='map-bubble-address'>
-                        <span>Your browser doesn't support geolocation.</span>
-                    </div>`
-        );
-        infoWindow.open(map);
-    }
-
-    // FORMATS LOCATION PHONE NUMBER, formatted to (123) 456-7890
-    function formatPhoneNumber(phoneNumberString) {
-        // strips non digit characters
-        const cleaned = ("" + phoneNumberString).replace(/\D/g, "");
-        // returns 3 substrings
-        const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-        if (match) {
-            // formats
-            return "(" + match[1] + ") " + match[2] + "-" + match[3];
-        }
-        return "No Number Provided";
     }
 
     function buildMarkers() {
@@ -216,7 +223,15 @@ function loadScript() {
                 // each markers position
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(marker.lat, marker.lng),
-                    title: marker.name,
+                    // title: marker.name
+                    //     .toLowerCase()
+                    //     .split(" ")
+                    //     .map(
+                    //         (name) =>
+                    //             name.charAt(0).toUpperCase() + name.substring(1)
+                    //     )
+                    //     .join(" "),
+                    title: toTitleCase(marker.name),
                     optimized: false,
                     animation: google.maps.Animation.DROP,
                     zIndex: 2,
