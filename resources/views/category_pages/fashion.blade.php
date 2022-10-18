@@ -158,7 +158,7 @@
                         @foreach($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
-                                @include('includes._card')
+                                @include('includes._alternate_card')
                             </div>
                         @endforeach
                     </div>
@@ -170,7 +170,7 @@
                         @foreach($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
-                                @include('includes._card')
+                                @include('includes._alternate_card')
                             </div>
                         @endforeach
                     </div>
@@ -182,7 +182,7 @@
                         @foreach($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
-                                @include('includes._card')
+                                @include('includes._alternate_card')
                             </div>
                         @endforeach
                     </div>

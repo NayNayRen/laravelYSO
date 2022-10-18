@@ -6,10 +6,15 @@
     <span class="card-name">{{ $deal->name }}</span><br>
 </div>
 <div>
+    <div class="card-rules">
+        <span>Limitations <i class="fa fa-exclamation" aria-hidden="true"></i> : </span><br>
+        <span>Expiration <i class="fa fa-hourglass" aria-hidden="true"></i> : </span><br>
+    </div>
     <div class="views-likes-container">
         <div>
             <span>Views: {{ $deal->views }}</span><br>
-            <span>Likes:</span>
+            <span>Likes:</span><br>
+            <span>Location <i class="fa fa-map-marker" aria-hidden="true"></i></span>
         </div>
         <div class="views-likes-icons">
             @if(auth()->user())
