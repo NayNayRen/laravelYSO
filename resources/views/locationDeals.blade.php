@@ -109,13 +109,14 @@
         <div class="alternate-container-heading">
             Location Deals
         </div>
-        <span class="alternate-container-count">{{ count($locationDeals) }}
+        <span class="alternate-container-location-info">{{ count($locationDeals) }}
             @if(count($locationDeals) > 1)
                 deals
             @else
                 deal
             @endif
-            from {{ ucwords($location->name) }} located at {{ $location->location }}.
+            from {{ ucwords($location->name) }}.<br>
+            Located at {{ $location->location }}.
         </span>
         <div class="container-right">
             {{-- CARD BLOCK --}}

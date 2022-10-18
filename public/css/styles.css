@@ -292,7 +292,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     justify-content: center;
-    padding: 5px 5px;
+    padding: 5px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -371,19 +371,35 @@
     display: flex;
     font-family: "Roboto", sans-serif;
     font-size: 28px;
-    min-height: 45px;
+    height: 45px;
     padding: 0 5px;
     position: relative;
     text-transform: capitalize;
     width: 100%;
 }
 
-/* .alternate-container-heading span {
-    color: #000;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 5px 0;
-} */
+.alternate-container-location-info {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    font-size: 16px;
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    /* outline: solid 1px blue; */
+}
+
+.alternate-count {
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
 
 .back-button {
     -ms-flex-align: center;
@@ -4834,23 +4850,19 @@ html {
     .alternate-container .container-arrow-left {
         -webkit-transform: translateY(0);
         left: calc(100% - 90px);
-        top: -70px;
+        top: -90px;
         transform: translateY(0);
     }
 
     .alternate-container .container-arrow-right {
         -webkit-transform: translateY(0);
         right: 10px;
-        top: -70px;
+        top: -90px;
         transform: translateY(0);
     }
 
     .alternate-container-count {
-        /* -ms-flex-pack: start; */
-        /* -webkit-box-pack: start; */
         font-size: 14px;
-        /* justify-content: flex-start; */
-        text-align: left;
     }
 
     .alternate-container-count .view-all-item-counter .item {
@@ -4862,8 +4874,12 @@ html {
         box-shadow: none;
     }
 
-    .alternate-container-heading {
-        min-height: 45px;
+    .alternate-count {
+        padding-bottom: 0;
+    }
+
+    .alternate-container-location-info {
+        font-size: 14px;
     }
 
     .back-button {
@@ -5939,13 +5955,13 @@ html {
         width: 90%;
     }
 
-    .alternate-container .container-arrow-left {
+    /* .alternate-container .container-arrow-left {
         top: -90px;
     }
 
     .alternate-container .container-arrow-right {
         top: -90px;
-    }
+    } */
 
     .alternate-container-count .view-all-item-counter .item {
         padding: 5px 8px;

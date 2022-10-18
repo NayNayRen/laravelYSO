@@ -173,9 +173,9 @@
                         @endforeach
                     </div>
                 @else
-                    <span class="alternate-container-count">
+                    <div class="alternate-count">
                         {{ count($deals) }} Deals
-                    </span>
+                    </div>
                     <div class="card-display-view-all">
                         @foreach($deals as $deal)
                             {{-- CARD COMPONENT --}}
