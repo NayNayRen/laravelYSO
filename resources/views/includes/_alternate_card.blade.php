@@ -30,7 +30,13 @@
         <div>
             <span>Views: {{ $deal->views }}</span><br>
             <span>Likes:</span><br>
-            <span>Location <i class="fa fa-map-marker" aria-hidden="true"></i></span>
+            @if($deal->location_id === null)
+                <span>Location <i class="fa fa-map-marker" aria-hidden="true"></i></span>
+            @elseif($deal->location_id === '')
+                <span>Location <i class="fa fa-map-marker" aria-hidden="true"></i></span>
+            @else
+                <a href="#">Location <i class="fa fa-map-marker" aria-hidden="true"></i></a>
+            @endif
         </div>
         <div class="views-likes-icons">
             @if(auth()->user())
