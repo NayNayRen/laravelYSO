@@ -16,7 +16,7 @@ Route::get('/', [DealController::class, 'index'])->name('deals.index');
 Route::get('/deals/{deal}', [DealController::class, 'showDeal'])->name('deals.show');
 
 // LOCATION DEALS ROUTE
-Route::get('/locations/{location}', [LocationController::class, 'showLocationDeals']);
+Route::get('/locations/{location}', [LocationController::class, 'showLocationDeals'])->name('locations.show');
 
 // CATEGORY ROUTES
 Route::get('/category_pages/searchResults', [DealController::class, 'searchDeal'])->name('deals.search');

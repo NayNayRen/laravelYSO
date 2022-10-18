@@ -7,7 +7,7 @@
 </div>
 <div>
     <div class="card-rules">
-        <span>Expiration <i class="fa fa-clock-o" aria-hidden="true"></i> :
+        <span aria-label="Deal expiration date.">Expiration <i class="fa fa-clock-o" aria-hidden="true"></i> :
             @if($deal->expiration === null)
                 None
             @elseif($deal->expiration === '')
@@ -16,7 +16,7 @@
                 {{ ucwords($deal->expiration) }}
             @endif
         </span><br>
-        <span>Limitations <i class="fa fa-exclamation" aria-hidden="true"></i> :
+        <span aria-label="Deal limitations.">Limitations <i class="fa fa-exclamation" aria-hidden="true"></i> :
             @if($deal->limitations === null)
                 None
             @elseif($deal->limitations === '')
@@ -31,11 +31,19 @@
             <span>Views: {{ $deal->views }}</span><br>
             <span>Likes:</span><br>
             @if($deal->location_id === null)
-                <span>Location <i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                        class="fa fa-map-marker" aria-hidden="true"></i></span>
             @elseif($deal->location_id === '')
-                <span>Location <i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                        class="fa fa-map-marker" aria-hidden="true"></i></span>
             @else
-                <a href="#">Location <i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                @php
+                    $location = App\Models\Location::where('id', $deal->location_id)->first();
+                @endphp
+                <a href={{ route('locations.show', $deal->location_id) }}
+                    class="card-location" title="{{ $location->location }}"
+                    aria-label="View this deal's location.">Location <i class=" fa fa-map-marker"
+                        aria-hidden="true"></i></a>
             @endif
         </div>
         <div class="views-likes-icons">

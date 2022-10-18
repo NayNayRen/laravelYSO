@@ -1515,6 +1515,15 @@ body {
     width: 100%;
 }
 
+.card-location {
+    color: #4169e1;
+}
+
+.card-location.inactive {
+    color: #808080;
+    text-decoration: line-through;
+}
+
 .card-logo {
     border-radius: 5px;
     width: 100%;

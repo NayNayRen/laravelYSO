@@ -162,9 +162,14 @@
 }
 
 .map-bubble-email {
+    color: #4169e1;
     display: block;
     font-style: italic;
     margin: 5px 0;
+}
+
+.map-bubble-email.inactive {
+    color: #000;
 }
 
 .map-bubble-heading {

@@ -184,7 +184,7 @@ function loadScript() {
                             <span class='map-bubble-address'>
                             <i class="fa fa-map-marker" aria-hidden="true"></i> 
                             ${marker.address}</span>
-                            <span class='map-bubble-email'>
+                            <span class='map-bubble-email inactive'>
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             No Email Provided</span>
                             <span class='map-bubble-phone'>
