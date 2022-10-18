@@ -7,8 +7,24 @@
 </div>
 <div>
     <div class="card-rules">
-        <span>Limitations <i class="fa fa-exclamation" aria-hidden="true"></i> : </span><br>
-        <span>Expiration <i class="fa fa-hourglass" aria-hidden="true"></i> : </span><br>
+        <span>Expiration <i class="fa fa-clock-o" aria-hidden="true"></i> :
+            @if($deal->expiration === null)
+                None
+            @elseif($deal->expiration === '')
+                None
+            @else
+                {{ ucwords($deal->expiration) }}
+            @endif
+        </span><br>
+        <span>Limitations <i class="fa fa-exclamation" aria-hidden="true"></i> :
+            @if($deal->limitations === null)
+                None
+            @elseif($deal->limitations === '')
+                None
+            @else
+                {{ ucwords($deal->limitations) }}
+            @endif
+        </span>
     </div>
     <div class="views-likes-container">
         <div>

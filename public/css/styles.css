@@ -255,7 +255,7 @@
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
-    height: 400px;
+    height: 425px;
     justify-content: space-between;
     margin: 5px 10px;
     padding: 5px;
@@ -1539,6 +1539,14 @@ body {
 .card-name {
     color: #808080;
     font-size: 16px;
+}
+
+.card-rules {
+    color: #e6331f;
+    font-size: 14px;
+    font-style: italic;
+    padding: 5px 0;
+    /* outline: solid 1px blue; */
 }
 
 .cashback-card {
@@ -4170,7 +4178,7 @@ html {
     display: -webkit-box;
     display: flex;
     flex-direction: row;
-    font-size: 14px;
+    font-size: 16px;
     justify-content: space-between;
     padding: 5px 0;
     /* outline: solid 1px blue; */
@@ -4356,11 +4364,6 @@ html {
     .card {
         height: 375px;
         width: 275px;
-    }
-
-    .card-discount,
-    .card-name {
-        font-size: 14px;
     }
 
     .card-logo-container {
@@ -5243,6 +5246,11 @@ html {
         top: -130px;
     }
 
+    .card-discount,
+    .card-name {
+        font-size: 14px;
+    }
+
     .card-display::after {
         width: 5px;
     }
@@ -5899,11 +5907,11 @@ html {
     }
 
     .views-likes-container {
-        padding: 5px 0 0 0;
+        padding: 5px 0;
     }
 
     .views-likes-icons i {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .views-likes-icons i:hover {
