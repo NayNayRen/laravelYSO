@@ -239,7 +239,7 @@
     border-bottom-right-radius: 0;
     color: #fff;
 }
-
+/* VIEW ALL & LOCATION CARDS */
 .alternate-card,
 .limited-amount-card {
     -ms-flex-direction: column;
@@ -262,7 +262,7 @@
     width: 400px;
     /* outline: solid 1px blue; */
 }
-
+/* VIEW ALL & LOCATION DEALS CONTAINER */
 .alternate-container {
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
@@ -274,11 +274,12 @@
     flex-direction: column;
 }
 
+/* OWL CAROUSEL BUTTONS */
 .alternate-container .container-arrow-left {
     left: 20px;
     top: calc(50% - 10px);
 }
-
+/* OWL CAROUSEL BUTTONS */
 .alternate-container .container-arrow-right {
     right: 20px;
     top: calc(50% - 10px);
@@ -299,6 +300,7 @@
     /* outline: solid 1px blue; */
 }
 
+/* VIEW ALL PAGINATION ARROWS */
 .alternate-container-count .view-all-left-arrow,
 .alternate-container-count .view-all-right-arrow {
     -webkit-transition: color 150ms ease;
@@ -309,15 +311,15 @@
     padding: 0 5px;
     transition: color 150ms ease;
 }
-
+/* VIEW ALL PAGINATION PREVIOUS ARROW */
 .alternate-container-count .view-all-left-arrow {
     margin: 0 10px 0 0;
 }
-
+/* VIEW ALL PAGINATION NEXT ARROW */
 .alternate-container-count .view-all-right-arrow {
     margin: 0 0 0 10px;
 }
-
+/* VIEW ALL PAGINATION COUNT */
 .alternate-container-count .view-all-item-counter {
     color: #000;
     font-family: "Roboto", sans-serif;
@@ -326,7 +328,7 @@
     width: auto;
     /* outline: solid 1px blue; */
 }
-
+/* VIEW ALL PAGINATION BUTTONS */
 .alternate-container-count .view-all-item-counter .item {
     -webkit-transition: -webkit-box-shadow 250ms ease;
     background-color: #fff;
@@ -5971,9 +5973,9 @@ html {
         top: -90px;
     } */
 
-    .alternate-container-count .view-all-item-counter .item {
+    /* .alternate-container-count .view-all-item-counter .item {
         padding: 5px 8px;
-    }
+    } */
 
     .alternate-container-heading {
         font-size: 20px;
