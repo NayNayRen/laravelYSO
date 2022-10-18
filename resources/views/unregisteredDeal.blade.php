@@ -31,12 +31,12 @@
                     deal</button>
             </div>
             <div class="unregistered-user-wallet-container">
-                <a href="#" class="unregistered-user-wallet-buttons">
+                <div class="unregistered-user-wallet-buttons">
                     <img src="{{ asset('img/apple-wallet.png') }}" alt="Apple Wallet"> Add to Apple
-                    Wallet</a>
-                <a href="#" class="unregistered-user-wallet-buttons"><img
+                    Wallet</div>
+                <div class="unregistered-user-wallet-buttons"><img
                         src="{{ asset('img/google-wallet.png') }}" alt="Google Wallet">Add to Google
-                    Wallet</a>
+                    Wallet</div>
             </div>
             {{-- DISCLAIMER --}}
             <div class="unregistered-disclaimer">
@@ -127,6 +127,14 @@
                         // alert(r);
                     }
                 }
+            });
+        });
+        // GOOGLE & APPLE WALLET BUTTONS RESPONSE
+        $('.unregistered-user-wallet-buttons').click(function () {
+            $('.guest-error-message').addClass('show-selected-deal-message');
+            $('.guest-error-button').click(() => {
+                $('.guest-error-message').removeClass(
+                    'show-selected-deal-message');
             });
         });
     });

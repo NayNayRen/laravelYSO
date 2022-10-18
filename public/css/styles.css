@@ -3224,6 +3224,7 @@ html {
     align-items: center;
     background-color: #333333;
     color: #fff;
+    cursor: pointer;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
