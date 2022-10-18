@@ -328,12 +328,21 @@
 }
 
 .alternate-container-count .view-all-item-counter .item {
+    -webkit-transition: -webkit-box-shadow 250ms ease;
     background-color: #fff;
     color: #000;
     font-weight: bold;
     margin: 0;
     padding: 5px 15px;
+    transition: -webkit-box-shadow 250ms ease;
+    transition: box-shadow 250ms ease, -webkit-box-shadow 250ms ease;
+    transition: box-shadow 250ms ease;
     /* outline: solid 1px blue; */
+}
+
+.alternate-container-count .view-all-item-counter .item:hover {
+    -webkit-box-shadow: 0 0 2px #333333;
+    box-shadow: 0 0 2px #333333;
 }
 
 .alternate-container-count .view-all-item-counter .item.active {
@@ -4846,6 +4855,11 @@ html {
 
     .alternate-container-count .view-all-item-counter .item {
         padding: 5px 10px;
+    }
+
+    .alternate-container-count .view-all-item-counter .item:hover {
+        -webkit-box-shadow: none;
+        box-shadow: none;
     }
 
     .alternate-container-heading {

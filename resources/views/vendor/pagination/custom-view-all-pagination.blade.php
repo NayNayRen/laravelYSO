@@ -24,8 +24,7 @@ of
 <span>{{ $paginator->total() }}</span> --}}
 
 @foreach($elements as $element)
-
-    {{-- Array Of Links --}}
+    {{-- ARRAY OF PAGE COUNTERS --}}
     @if(is_array($element))
         @foreach($element as $page => $url)
             @if($page == $paginator->currentPage())

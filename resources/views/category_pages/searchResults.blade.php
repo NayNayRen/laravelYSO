@@ -181,11 +181,9 @@
                         @endforeach
                     </div>
                 @else
-                    @if($searchedDeals->count() < 10)
-                        <span class="alternate-container-count">
-                            {{ count($searchedDeals) }} Deals
-                        </span>
-                    @endif
+                    <span class="alternate-container-count">
+                        {{ count($searchedDeals) }} Deals
+                    </span>
                     <div class="card-display-view-all">
                         @foreach($searchedDeals as $deal)
                             {{-- CARD COMPONENT --}}
