@@ -77,15 +77,13 @@
     <div class="view-all-container-heading">
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
-        {{-- HIDDEN MAP --}}
-        {{-- @include('includes._map') --}}
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
         @include('includes._search_container')
         {{-- USER DASHBOARD BUTTON --}}
         <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
-            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
+            title="Open the dashboard."><i class="fa fa-user" aria-hidden="false"></i></button>
 
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}

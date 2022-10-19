@@ -104,7 +104,7 @@
         @include('includes._search_container')
         {{-- USER DASHBOARD BUTTON --}}
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
-                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
+                aria-label="Open dashboard." title="Open the dashboard." aria-hidden="false"></i></button>
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     <span class="submit-method">{{ $submitMethod }}</span>
