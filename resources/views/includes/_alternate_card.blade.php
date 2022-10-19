@@ -41,7 +41,7 @@
                     $location = App\Models\Location::where('id', $deal->location_id)->first();
                 @endphp
                 <a href={{ route('locations.show', $deal->location_id) }}
-                    class="card-location" title="{{ $location->location }}"
+                    class="card-location active" title="{{ $location->location }}"
                     aria-label="View this deal's location.">Location <i class=" fa fa-map-marker"
                         aria-hidden="true"></i></a>
             @endif

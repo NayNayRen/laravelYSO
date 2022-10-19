@@ -1516,7 +1516,15 @@ body {
 }
 
 .card-location {
+    -webkit-transition: color 250ms ease;
+    color: #0000ff;
+    font-size: 18px;
+    transition: color 250ms ease;
+}
+
+.card-location.active:hover {
     color: #4169e1;
+    cursor: pointer;
 }
 
 .card-location.inactive {
@@ -4178,14 +4186,15 @@ html {
 }
 
 .views-likes-container {
-    -ms-flex-align: center;
+    -ms-flex-align: end;
     -ms-flex-direction: row;
     -ms-flex-pack: justify;
-    -webkit-box-align: center;
+    -webkit-box-align: end;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: justify;
-    align-items: center;
+    /* align-items: center; */
+    align-items: flex-end;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -5258,8 +5267,7 @@ html {
         top: -130px;
     }
 
-    .card-discount,
-    .card-name {
+    .card-discount {
         font-size: 14px;
     }
 
@@ -5291,6 +5299,14 @@ html {
         justify-content: flex-start;
     }
     /*  */
+
+    .card-location {
+        font-size: 16px;
+    }
+
+    .card-location.active:hover {
+        color: #0000ff;
+    }
 
     .cashback-card:hover {
         -webkit-transform: scale(1);
@@ -5916,10 +5932,6 @@ html {
 
     .view-all-link:hover {
         opacity: 1;
-    }
-
-    .views-likes-container {
-        padding: 5px 0;
     }
 
     .views-likes-icons i {
