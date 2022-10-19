@@ -95,20 +95,9 @@
                 @endif
                 returned from your search.
             </span>
-            {{-- <span class="map-use-disclaimer"> If no locations had come back, have
-                no fear, it could just be a merchant hasn't registered any yet. Check
-                to
-                see if any came back below.
-            </span> --}}
         @endif
-        {{-- <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
-                aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button> --}}
-        {{-- <h1>The latest fashion trends.</h1>
-        <h3>All season long.</h3> --}}
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
-        {{-- HIDDEN MAP --}}
-        {{-- @include('includes._map') --}}
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
@@ -116,7 +105,6 @@
         {{-- USER DASHBOARD BUTTON --}}
         <button id="dashboard-open-button" class="user-icon view-all-user-icon"><i class="fa fa-user"
                 aria-label="Open dashboard." title="Open your dashboard." aria-hidden="false"></i></button>
-
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
     <span class="submit-method">{{ $submitMethod }}</span>
@@ -191,23 +179,6 @@
         @endif
     </div>
 
-    {{-- <div class="container view-all">
-        <div class="container-left">
-            <span class="category-heading">Fashion Deals</span>
-            <div class="view-all-arrow-container">
-                {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
-</div>
-</div>
-<div class="container-right">
-    <div class="card-display-view-all">
-        @foreach($deals as $deal)
-            <div class="card">
-                @include('includes._card')
-            </div>
-        @endforeach
-    </div>
-</div>
-</div> --}}
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

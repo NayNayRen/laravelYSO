@@ -82,10 +82,6 @@
     <div class="filter-search-container">
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
-        {{-- HIDDEN MAP --}}
-        {{-- @include('includes._map') --}}
-        {{-- SEARCH CONTAINER --}}
-        {{-- @include('includes._search_container') --}}
         {{-- SEARCH CONTAINER --}}
         <div class="search-container">
             <form action={{ route('deals.search') }} class="search-form" name="searchForm"
@@ -97,8 +93,6 @@
                     title="Search for a deal."><i class="fa fa-search" aria-hidden="false"></i></button>
                 <button type="submit" class="search-button" value="map" name="submit" aria-label="Open map."
                     title="Search for a deal."><i class="fa fa-map-marker" aria-hidden="false"></i></button>
-                {{-- <a href={{ route('deals.search') }} aria-label="Use your map."
-                title="Use your map."><i class="fa fa-map-marker" aria-hidden="false"></i></a> --}}
             </form>
         </div>
         {{-- FILTER BLOCK --}}
@@ -128,10 +122,6 @@
     </div>
     {{-- CASHBACK CONTAINER --}}
     <div class="container">
-        {{-- HIDDEN DASHBOARD --}}
-        {{-- @include('includes._dashboard') --}}
-        {{-- HIDDEN MAP --}}
-        {{-- @include('includes._map') --}}
         <div class="container-left">
             <span class="category-heading">Cashback</span>
         </div>
@@ -309,7 +299,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display card-display1 owl-carousel owl-theme">
+                <div class="card-display card-display1 owl-carousel owl-theme homepage-carousel">
                     @foreach($featuredDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
@@ -348,7 +338,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display owl-carousel owl-theme">
+                <div class="card-display owl-carousel owl-theme homepage-carousel">
                     @foreach($categoryDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
@@ -386,7 +376,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display owl-carousel owl-theme">
+                <div class="card-display owl-carousel owl-theme homepage-carousel">
                     @foreach($techDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
@@ -431,7 +421,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display owl-carousel owl-theme">
+                <div class="card-display owl-carousel owl-theme homepage-carousel">
                     @foreach($popularDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
@@ -449,9 +439,7 @@
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
-{{-- <script src="{{ asset('js/show-map.js') }}"></script> --}}
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
-{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA" async defer> --}}
 </script>
 <script>
     $(document).ready(function () {
@@ -459,6 +447,36 @@
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
+        });
+        // HOMEPAGE CAROUSEL
+        var owl = $(".homepage-carousel");
+        owl.owlCarousel({
+            loop: true,
+            nav: true,
+            items: 3,
+            autoplay: false,
+            autoplayTimeout: 3000,
+            smartSpeed: 500, // length of time to scroll in ms
+            // autoplayHoverPause: true, set to true causes autoplay on mobile
+            autoplayHoverPause: false,
+            dots: false,
+            touchDrag: true,
+            navText: [
+                "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+                "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
+            ],
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: false,
+                },
+                540: {
+                    items: 2,
+                },
+                1300: {
+                    items: 3,
+                },
+            },
         });
         // FAVORITE RESPONSE
         $('.add-favorite').click(function () {

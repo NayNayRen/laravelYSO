@@ -1517,13 +1517,13 @@ body {
 
 .card-location {
     -webkit-transition: color 250ms ease;
-    color: #0000ff;
+    color: #4169e1;
     font-size: 18px;
     transition: color 250ms ease;
 }
 
 .card-location.active:hover {
-    color: #4169e1;
+    color: #0000ff;
     cursor: pointer;
 }
 
@@ -3719,7 +3719,7 @@ html {
     left: -40px;
     position: fixed;
     text-shadow: -1px 0 0 #000, 0 -1px 0 #000, 1px 0 0 #000, 0 1px 0 #000,
-        0 5px 5px rgba(0, 0, 0, 0.75);
+        0 2px 5px rgba(0, 0, 0, 0.75);
     transition: all 150ms ease;
     z-index: 10;
 }
@@ -3730,7 +3730,7 @@ html {
 
 .up-arrow-message {
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
-    -webkit-transition: all 100ms ease;
+    -webkit-transition: all 150ms ease;
     background-color: #000;
     border-bottom-right-radius: 15px;
     border-bottom: solid 1px #e6331f;
@@ -3744,7 +3744,7 @@ html {
     left: -80px;
     padding: 5px 10px 5px 5px;
     position: fixed;
-    transition: all 100ms ease;
+    transition: all 150ms ease;
     z-index: 1;
 }
 
@@ -3761,11 +3761,9 @@ html {
     -ms-flex-pack: center;
     -webkit-box-align: center;
     -webkit-box-pack: center;
-    /* -webkit-box-shadow: 0 0 5px #808080; */
     align-items: center;
     border-radius: 5px;
     border: solid 1px #000;
-    /* box-shadow: 0 0 5px #808080; */
     color: #000;
     display: -ms-flexbox;
     display: -webkit-box;

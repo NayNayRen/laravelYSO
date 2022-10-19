@@ -111,15 +111,15 @@
         </div>
         <div class="alternate-container-location-info">
             <div>
-                <span>{{ count($locationDeals) }}</span>
+                - <span>{{ count($locationDeals) }}</span>
                 @if(count($locationDeals) > 1)
                     deals
                 @else
                     deal
                 @endif
                 from
-                <span>{{ ucwords($location->name) }}</span>.<br>
-                Located at {{ $location->location }}.
+                <span>{{ ucwords($location->name) }}</span> -<br>
+                {{ $location->location }}
             </div>
         </div>
         <div class="container-right">
@@ -143,7 +143,7 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display-view-all owl-carousel owl-theme">
+                <div class="card-display-view-all owl-carousel owl-theme location-carousel">
                     @foreach($locationDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="alternate-card">
@@ -170,8 +170,8 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        // smooth card carousel
-        var owl = $(".card-display-view-all");
+        // LOCATION PAGE CAROUSEL
+        var owl = $(".location-carousel");
         owl.owlCarousel({
             loop: true,
             nav: true,

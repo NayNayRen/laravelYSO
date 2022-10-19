@@ -67,8 +67,9 @@ upArrow.addEventListener("mouseout", () => {
     upArrowMessage.style.opacity = "0";
     upArrowMessage.style.left = "-80px";
 });
+// DASHBOARD CAROUSEL
 $(document).ready(function () {
-    var owl = $(".card-display");
+    var owl = $(".dashboard-carousel");
     owl.owlCarousel({
         loop: true,
         nav: true,
@@ -86,14 +87,17 @@ $(document).ready(function () {
         ],
         responsive: {
             0: {
+                // < 540
                 items: 1,
                 dots: false,
             },
             540: {
-                items: 2,
+                // 540 - 1100
+                items: 1,
             },
-            1300: {
-                items: 3,
+            1100: {
+                // > 1100
+                items: 2,
             },
         },
     });

@@ -94,20 +94,9 @@
                 @endif
                 returned from your search.
             </span>
-            {{-- <span class="map-use-disclaimer"> If no locations had come back, have
-                no fear, it could just be a merchant hasn't registered any yet. Check
-                to
-                see if any came back below.
-            </span> --}}
         @endif
-        {{-- <button id="dashboard-open-button" class="user-icon view-all-user-icon" aria-label="Open dashboard."
-            title="Open your dashboard."><i class="fa fa-user" aria-hidden="false"></i></button> --}}
-        {{-- <h1>The choices you want.</h1> --}}
-        {{-- <h3>That's why you searched for them.</h3> --}}
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
-        {{-- HIDDEN MAP --}}
-        {{-- @include('includes._map') --}}
     </div>
     <div class="search-results-search-container">
         {{-- SEARCH CONTAINER --}}
@@ -139,7 +128,6 @@
         @endforeach
     </p>
     {{-- IF SEARCH DOESN'T RETURN ANY RESULTS OR LEFT EMPTY --}}
-
     @if($searchedDeals === 0 || $searchedDeals->count() === 0)
         <div class="search-results-message-container">
             <h1>Your search didn't return any results.</h1>
@@ -197,33 +185,6 @@
         </div>
     @endif
 
-    {{-- @if($searchedDeals === 0 || $searchedDeals->count() === 0)
-        <div class="search-results-message-container">
-            <h1>Your search didn't return any results.</h1>
-            <p>Return back home to browse...</p>
-            <span>or...</span>
-            <p>Continue your search above.</p>
-        </div>
-@else
-        <div class="container view-all">
-            <div class="container-left">
-                <span class="category-heading">Search Results</span>
-                <div class="view-all-arrow-container">
-                    {{ $searchedDeals
-                    ->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
-</div>
-</div>
-<div class="container-right">
-    <div class="card-display-view-all">
-        @foreach($searchedDeals as $deal)
-            <div class="card">
-                @include('includes._card')
-            </div>
-        @endforeach
-    </div>
-</div>
-</div>
-@endif--}}
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

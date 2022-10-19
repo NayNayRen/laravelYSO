@@ -57,16 +57,16 @@
                         </a>
                     </li>
                 </ul>
+                {{-- USER FAVORITES --}}
                 <div class="favBox active" id="fav1">
-                    {{-- USER FAVORITES --}}
                     @if($favorites != null && $favorites->count() > 0)
                         {{-- CARD BLOCK --}}
                         @if($favorites->count() === 1)
                             <div class="card-display-limited-amount">
                                 @foreach($favorites as $deal)
                                     {{-- CARD COMPONENT --}}
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    <div class="limited-amount-card limited-amount-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
@@ -74,16 +74,18 @@
                             <div class="card-display-limited-amount">
                                 @foreach($favorites as $deal)
                                     {{-- CARD COMPONENT --}}
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    <div class="limited-amount-card limited-amount-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
                         @else
-                            <div class="card-display card-display--favorite owl-carousel owl-theme">
+                            <div
+                                class="card-display-view-all card-display-view-all--favorite owl-carousel owl-theme dashboard-carousel">
                                 @foreach($favorites as $deal)
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    {{-- CARD COMPONENT --}}
+                                    <div class="alternate-card alternate-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
@@ -103,8 +105,8 @@
                             <div class="card-display-limited-amount">
                                 @foreach($coupons as $deal)
                                     {{-- CARD COMPONENT --}}
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    <div class="limited-amount-card limited-amount-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
@@ -112,16 +114,18 @@
                             <div class="card-display-limited-amount">
                                 @foreach($coupons as $deal)
                                     {{-- CARD COMPONENT --}}
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    <div class="limited-amount-card limited-amount-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
                         @else
-                            <div class="card-display card-display--favorite owl-carousel owl-theme">
+                            <div
+                                class="card-display-view-all card-display-view-all--favorite owl-carousel owl-theme dashboard-carousel">
                                 @foreach($coupons as $deal)
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    {{-- CARD COMPONENT --}}
+                                    <div class="alternate-card alternate-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
@@ -133,16 +137,16 @@
                         </div>
                     @endif
                 </div>
+                {{-- USER REDEEMABLES --}}
                 <div class="favBox" id="fav3">
-                    {{-- USER REDEEMABLES --}}
                     @if($redeems != null &&  $redeems->count() > 0)
                         {{-- CARD BLOCK --}}
                         @if($redeems->count() === 1)
                             <div class="card-display-limited-amount">
                                 @foreach($redeems as $deal)
                                     {{-- CARD COMPONENT --}}
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    <div class="limited-amount-card limited-amount-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
@@ -150,16 +154,18 @@
                             <div class="card-display-limited-amount">
                                 @foreach($redeems as $deal)
                                     {{-- CARD COMPONENT --}}
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    <div class="limited-amount-card limited-amount-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
                         @else
-                            <div class="card-display card-display--favorite owl-carousel owl-theme">
+                            <div
+                                class="card-display-view-all card-display-view-all--favorite owl-carousel owl-theme dashboard-carousel">
                                 @foreach($redeems as $deal)
-                                    <div class="card card--favorite">
-                                        @include('includes._card')
+                                    {{-- CARD COMPONENT --}}
+                                    <div class="alternate-card alternate-card--favorite">
+                                        @include('includes._alternate_card')
                                     </div>
                                 @endforeach
                             </div>
