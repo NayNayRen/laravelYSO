@@ -40,10 +40,12 @@
                 @php
                     $location = App\Models\Location::where('id', $deal->location_id)->first();
                 @endphp
-                <a href={{ route('locations.show', $deal->location_id) }}
-                    class="card-location active" title="{{ $location->location }}"
-                    aria-label="View this deal's location.">Location <i class=" fa fa-map-marker"
-                        aria-hidden="true"></i></a>
+                <form action={{ route('locations.show', $deal->location_id) }} method="GET">
+                    <button type="submit" class="card-location active" title="{{ $location->location }}"
+                        aria-label="View this deal's location." value="map" name="submit">Location <i
+                            class=" fa fa-map-marker" aria-hidden="true"></i>
+                    </button>
+                </form>
             @endif
         </div>
         <div class="views-likes-icons">

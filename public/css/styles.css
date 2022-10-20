@@ -1517,8 +1517,12 @@ body {
 
 .card-location {
     -webkit-transition: color 250ms ease;
+    background: none;
+    border: none;
     color: #4169e1;
     font-size: 18px;
+    margin: 0;
+    padding: 0;
     transition: color 250ms ease;
 }
 
