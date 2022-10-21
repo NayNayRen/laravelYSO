@@ -21,7 +21,6 @@ class Location extends Model
 
     // USES LOCATION ID FROM DEALS TO GET LOCATIONS
     public static function getSearchedLocations(Request $request){
-        $words = explode(' ', $request->search);
         $dealResults = Deal::search($request);
         $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($dealResults) {
@@ -29,13 +28,6 @@ class Location extends Model
                 $q->orWhere('id', $dealResult->location_id);
             }
         })
-        // remove if doesnt work right
-        // ->orWhere(function ($q) use ($words) {
-        //     foreach ($words as $word) {
-        //         $q->orWhere('name', 'like', '%' . $word . '%');
-        //     }
-        // })
-        // 
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locationResults);
