@@ -5920,12 +5920,12 @@ html {
 
     .view-all-link {
         -webkit-transform: translateY(-50%);
-        background-color: #e6331f;
-        border-radius: 20px;
+        background-color: none;
+        border-radius: 0;
         color: #fff;
         font-size: 14px;
         font-weight: bold;
-        padding: 5px 10px;
+        padding: 0;
         position: absolute;
         right: 105px;
         top: 50%;
@@ -6080,7 +6080,7 @@ html {
 
     .container-arrow-left {
         -webkit-transform: translateY(0);
-        left: calc(100% - 75px);
+        left: calc(100% - 80px);
         top: -52px;
         transform: translateY(0);
     }
@@ -6350,7 +6350,7 @@ html {
     } */
 
     .view-all-link {
-        right: 80px;
+        right: 90px;
     }
 
     .view-all-user-icon {
