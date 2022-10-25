@@ -25,7 +25,7 @@ class Location extends Model
         $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($dealResults) {
             foreach ($dealResults as $dealResult) {
-                $q->orWhere('id', $dealResult->location_id);
+                $q->orWhere('id', $dealResult->listing_id);
             }
         })
         ->whereNotNull('lat')
@@ -40,7 +40,7 @@ class Location extends Model
         $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($dealResults) {
             foreach ($dealResults as $dealResult) {
-                $q->orWhere('id', $dealResult->location_id);
+                $q->orWhere('id', $dealResult->listing_id);
             }
         })
         ->whereNotNull('lat')
@@ -55,7 +55,7 @@ class Location extends Model
         $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($featuredDeals) {
             foreach ($featuredDeals as $featuredDeal) {
-                $q->orWhere('id', $featuredDeal->location_id);
+                $q->orWhere('id', $featuredDeal->listing_id);
             }
         })
         ->whereNotNull('lat')
@@ -69,7 +69,7 @@ class Location extends Model
         $locationResults = Location::orderBy('name')
         ->where(function ($q) use ($popularDeals) {
             foreach ($popularDeals as $popularDeal) {
-                $q->orWhere('id', $popularDeal->location_id);
+                $q->orWhere('id', $popularDeal->listing_id);
             }
         })
         ->whereNotNull('lat')
@@ -85,7 +85,7 @@ class Location extends Model
 
     public static function getLocationDeals($locationId){
         $locationDeals = Deal::orderBy('name')
-        ->where('location_id', $locationId)->get();
+        ->where('listing_id', $locationId)->get();
         // dd($locationDeals);
         return $locationDeals;
     }

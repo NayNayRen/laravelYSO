@@ -30,17 +30,17 @@
         <div>
             <span>Views: {{ $deal->views }}</span><br>
             <span>Likes:</span><br>
-            @if($deal->location_id === null)
+            @php
+                $location = App\Models\Location::where('id', $deal->listing_id)->first();
+            @endphp
+            @if($location === null)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
-            @elseif($deal->location_id === '')
+            @elseif($deal->listing_id != $location->id)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
             @else
-                @php
-                    $location = App\Models\Location::where('id', $deal->location_id)->first();
-                @endphp
-                <form action={{ route('locations.show', $deal->location_id) }} method="GET">
+                <form action={{ route('locations.show', $deal->listing_id) }} method="GET">
                     <button type="submit" class="card-location active" title="{{ $location->location }}"
                         aria-label="View this deal's location." value="map" name="submit">Location <i
                             class=" fa fa-map-marker" aria-hidden="true"></i>
