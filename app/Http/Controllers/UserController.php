@@ -385,4 +385,23 @@ class UserController extends Controller
 	// 	}
 	// }
 
+    public function showUpdateForm(){
+        return view('user_pages/update', ['pageTitle' => 'Update']);
+    }
+
+    public function updateUser(Request $request, User $user){
+        $formInputs = $request->validate([
+            'firstName' => ['required'],
+            'lastName' => ['required'],
+            'email' => ['required', 'email'],
+            'phone' => ['required'],
+            'password' => ['required', 'confirmed', 'min:8']
+        ]);
+        // hash password
+        $formInputs['password'] = bcrypt($formInputs['password']);
+        // update user
+        $user->update($formInputs);
+        return redirect(route('deals.index'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully updated your information.');
+    }
+
 }

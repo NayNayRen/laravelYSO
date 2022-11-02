@@ -50,6 +50,10 @@ Route::post('/user_pages', [UserController::class, 'registerUser'])->name('user.
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.showLoginForm');
 // logs user in
 Route::post('/user_pages/authenticate', [UserController::class, 'loginUser'])->name('login');
+// show update user info form
+Route::get('/user_pages/update', [UserController::class, 'showUpdateForm'])->name('user.showUpdateForm');
+// update user info
+Route::put('/user_pages/update/{user}', [UserController::class, 'updateUser'])->name('user.update');
 
 // SOCIAL MEDIA LOG IN ROUTES
 // methods used when media button is clicked

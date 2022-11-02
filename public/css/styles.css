@@ -2069,6 +2069,20 @@ body {
     cursor: pointer;
 }
 
+.dashboard-user-update-button {
+    -webkit-transition: color 250ms ease;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 25px;
+    transition: color 250ms ease;
+}
+
+.dashboard-user-update-button:hover {
+    color: #000;
+    cursor: pointer;
+}
+
 .enhance-background {
     background-attachment: fixed;
     background-image: -webkit-gradient(
@@ -5482,6 +5496,10 @@ html {
         -webkit-transform: rotate(180deg);
         color: #e6331f;
         transform: rotate(180deg);
+    }
+
+    .dashboard-user-update-button:hover {
+        color: #fff;
     }
 
     .enhance-info,

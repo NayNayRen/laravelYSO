@@ -2,8 +2,8 @@
     <div class="dashboard-content">
         <span id="dashboard-close-button" class="dashboard-close-button">Close
         </span>
-        <span id="dashboard-user-preferences-button" class="dashboard-user-preferences-button"
-            aria-label="User details." title="User details."><i class="fa fa-ellipsis-h" aria-hidden="false"></i>
+        <span id="dashboard-user-preferences-button" class="dashboard-user-preferences-button" aria-label="User Details"
+            title="User Details"><i class="fa fa-ellipsis-h" aria-hidden="false"></i>
         </span>
         @auth
             <div class="dashboard-user-container">
@@ -18,6 +18,12 @@
                     <span>{{ ucfirst(auth()->user()->firstName) }} {{ ucfirst(auth()->user()->lastName) }}</span>
                     <div>Location:</div>
                     <span>{{ auth()->user()->email }}</span>
+                    <form action={{ route('user.showUpdateForm', auth()->user()->id) }}
+                        method="GET">
+                        <button type="submit" class="dashboard-user-update-button" title="Update User Info"
+                            aria-label="Update User Info"><i class=" fa fa-cog" aria-hidden="false"></i>
+                        </button>
+                    </form>
                 </div>
                 <div class="dashboard-user-container-sections">
                     <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
