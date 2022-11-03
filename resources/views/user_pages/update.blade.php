@@ -3,12 +3,12 @@
     <div class="users">
         <h1>Update User Info</h1>
 
-        <span class="users-form-greeting gray-text">Supply your current password, or a new one, along with password
-            confirmation, and
+        <span class="users-form-greeting gray-text">Supply your current password, or a new one, along with the password
+            confirmation, then
             update to continue.</span>
         <p></p>
-        <span class="users-form-greeting gray-text">Account Created : {{ auth()->user()->created_at }}</span><br>
-        <span class="users-form-greeting gray-text">Last Updated : {{ auth()->user()->updated_at }}</span>
+        <span class="users-form-greeting">Account Created : {{ auth()->user()->created_at }}</span><br>
+        <span class="users-form-greeting">Last Updated : {{ auth()->user()->updated_at }}</span>
         {{-- REGISTER FORM --}}
         <form action={{ route('user.update', auth()->user()->id) }} method="POST">
             @csrf
@@ -44,8 +44,7 @@
             <div class="users-form-group">
                 <label for="phone">Mobile Phone</label><br>
                 <span class="gray-text password-message">123-456-7890</span>
-                <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    value="{{ auth()->user()->phone }}">
+                <input type="tel" name="phone" id="phone" value="{{ auth()->user()->phone }}">
                 @error('phone')
                     <span class="users-form-group-error">{{ $message }}</span>
                 @enderror
