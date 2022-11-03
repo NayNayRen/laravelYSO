@@ -385,10 +385,12 @@ class UserController extends Controller
 	// 	}
 	// }
 
+    // show update form
     public function showUpdateForm(){
         return view('user_pages/update', ['pageTitle' => 'Update']);
     }
 
+    // update user details
     public function updateUser(Request $request, User $user){
         $formInputs = $request->validate([
             'firstName' => ['required'],
@@ -402,6 +404,17 @@ class UserController extends Controller
         // update user
         $user->update($formInputs);
         return redirect(route('deals.index'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully updated your information.');
+    }
+
+    // delete user
+    public function deleteUser(User $user){
+        // make sure logged in user is owner
+        if($user->id != auth()->id()){
+            abort(403, 'Unauthorized Action');
+        }
+        // delete user
+        $user->delete();
+        return redirect(route('deals.index'))->with('flash-message-user', 'User deleted successfully.');
     }
 
 }

@@ -1,7 +1,7 @@
 @include('includes._header_alternate')
 <div class="main">
     <div class="users">
-        <h1>Update User Info</h1>
+        <h1>Update Details</h1>
 
         <span class="users-form-greeting gray-text">Supply your current password, or a new one, along with the password
             confirmation, then
@@ -79,6 +79,23 @@
             {{-- SUBMIT BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Update">
         </form>
+        {{-- DELETE FORM --}}
+        <form action={{ route('user.delete', auth()->user()->id) }} method="POST">
+            @csrf
+            @method('DELETE')
+            <div class="user-form-group">
+                <span aria-label="Delete Account Warning">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                </span>
+                <span>DANGER</span>
+                <span aria-label="Delete Account Warning">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                </span>
+                {{-- DELETE BUTTON --}}
+                <input type="submit" class='users-buttons submit' value="Delete">
+            </div>
+        </form>
+
         <span class="users-form-disclaimer gray-text">By clicking Update to continue, you agree to our <a href="#">Terms
                 and
                 Conditions</a> and <a href="#">Privacy

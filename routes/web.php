@@ -41,7 +41,7 @@ Route::post('/favorite', [FavoriteController::class,'favoriteDeal'])->name('add.
 // add to coupons
 Route::post('/coupon', [CouponController::class,'userCoupons'])->name('add.coupon');
 
-// REGISTER AND LOG IN ROUTES
+// REGISTER, LOG IN, UPDATE & DELETE ROUTES
 // shows register form
 Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('user.create');
 // registers user
@@ -54,6 +54,8 @@ Route::post('/user_pages/authenticate', [UserController::class, 'loginUser'])->n
 Route::get('/user_pages/update', [UserController::class, 'showUpdateForm'])->name('user.showUpdateForm');
 // update user info
 Route::put('/user_pages/update/{user}', [UserController::class, 'updateUser'])->name('user.update');
+// delete user
+Route::delete('/user_pages/update/{user}', [UserController::class, 'deleteUser'])->name('user.delete');
 
 // SOCIAL MEDIA LOG IN ROUTES
 // methods used when media button is clicked

@@ -14,16 +14,22 @@
                         <img src="{{ asset('img/male-profile.png') }}"
                             class="registered-user-profile-picture" alt="Profile Picture">
                     </div>
-                    <div>Logged in as:</div>
-                    <span>{{ ucfirst(auth()->user()->firstName) }} {{ ucfirst(auth()->user()->lastName) }}</span>
-                    <div>Location:</div>
-                    <span>{{ auth()->user()->email }}</span>
+                    <div>
+                        <span>Logged in as:</span>
+                        <span>{{ ucfirst(auth()->user()->firstName) }}
+                            {{ ucfirst(auth()->user()->lastName) }}</span>
+                    </div>
+                    <div>
+                        <span>Location:</span>
+                        <span>{{ auth()->user()->email }}</span>
+                    </div>
                     <form action={{ route('user.showUpdateForm', auth()->user()->id) }}
                         method="GET">
                         <button type="submit" class="dashboard-user-update-button" title="Update User Info"
                             aria-label="Update User Info"><i class=" fa fa-cog" aria-hidden="false"></i>
                         </button>
                     </form>
+                    <span>Use the cog to update your details.</span>
                 </div>
                 <div class="dashboard-user-container-sections">
                     <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
@@ -192,10 +198,14 @@
                         <img src="{{ asset('img/male-profile.png') }}"
                             class="registered-user-profile-picture" alt="Profile Picture">
                     </div>
-                    <div>Logged in as:</div>
-                    <span>Guest</span>
-                    <div>Location:</div>
-                    <span>N/A</span>
+                    <div>
+                        <span>Logged in as:</span>
+                        <span>Guest</span>
+                    </div>
+                    <div>
+                        <span>Location:</span>
+                        <span>N/A</span>
+                    </div>
                 </div>
                 <div class="dashboard-user-container-sections">
                     <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
