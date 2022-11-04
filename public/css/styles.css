@@ -4013,6 +4013,44 @@ html {
     text-decoration: none;
 }
 
+.users-deletion-warning {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: distribute;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.users-deletion-warning div:first-of-type {
+    -ms-flex-align: center;
+    -ms-flex-pack: distribute;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.users-deletion-warning div:first-of-type i {
+    color: #ff8c00;
+    font-size: 20px;
+    text-shadow: 0 0 1px #000;
+}
+
 .users-form-greeting {
     font-size: 14px;
     text-align: center;
@@ -4618,6 +4656,7 @@ html {
 
     .alternate-card,
     .limited-amount-card {
+        height: 400px;
         width: 300px;
     }
 
@@ -5432,6 +5471,7 @@ html {
         -webkit-transition: left 250ms ease;
         align-items: flex-start;
         left: -100%;
+        max-width: 90%;
         position: absolute;
         top: 0;
         transition: left 250ms ease;

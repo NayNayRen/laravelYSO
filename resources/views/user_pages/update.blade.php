@@ -3,9 +3,10 @@
     <div class="users">
         <h1>Update Details</h1>
 
-        <span class="users-form-greeting gray-text">Supply your current password, or a new one, along with the password
-            confirmation, then
-            update to continue.</span>
+        <span class="users-form-greeting gray-text">You can change or update any of your details. Supply your
+            current password, or a new one, along with the password
+            confirmation, then click
+            Update to continue.</span>
         <p></p>
         <span class="users-form-greeting">Account Created : {{ auth()->user()->created_at }}</span><br>
         <span class="users-form-greeting">Last Updated : {{ auth()->user()->updated_at }}</span>
@@ -83,25 +84,40 @@
         <form action={{ route('user.delete', auth()->user()->id) }} method="POST">
             @csrf
             @method('DELETE')
-            <div class="user-form-group">
-                <span aria-label="Delete Account Warning">
-                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                </span>
-                <span>DANGER</span>
-                <span aria-label="Delete Account Warning">
-                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                </span>
-                {{-- DELETE BUTTON --}}
-                <input type="submit" class='users-buttons submit' value="Delete">
+            <div class="users-form-group">
+                <div class="users-deletion-warning">
+                    <h1>Delete Account</h1>
+                    <div>
+                        <span aria-label="Delete Account Warning">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        </span>
+                        <span>DANGER</span>
+                        <span aria-label="Delete Account Warning">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="users-form-disclaimer gray-text">By continuing below, you will deleting your
+                            account. All user details will be removed.
+                            To do
+                            so, provide your current email as confirmation of intent, then click Delete.</span>
+                    </div>
+                </div>
+                <label for="email">Delete Using Email</label><br>
+                <input type="email" name="deletion_email">
+                @error('deletion_email')
+                    <span class="users-form-group-error">{{ $message }}</span>
+                @enderror
             </div>
+            {{-- DELETE BUTTON --}}
+            <input type="submit" class='users-buttons submit' value="Delete">
         </form>
-
-        <span class="users-form-disclaimer gray-text">By clicking Update to continue, you agree to our <a href="#">Terms
+        <span class="users-form-disclaimer gray-text">By clicking Update or Delete to continue, you agree to our <a
+                href="#">Terms
                 and
                 Conditions</a> and <a href="#">Privacy
                 Statement</a>.</span>
     </div>
-
 </div>
 {{-- PAGE SPECIFIC SCRIPT --}}
 <script src="{{ asset('js/show-signin-password.js') }}"></script>

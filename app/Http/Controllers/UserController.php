@@ -407,14 +407,15 @@ class UserController extends Controller
     }
 
     // delete user
-    public function deleteUser(User $user){
-        // make sure logged in user is owner
-        if($user->id != auth()->id()){
-            abort(403, 'Unauthorized Action');
+    public function deleteUser(Request $request, User $user){
+        $deletionEmail = $request->deletion_email;
+        if($deletionEmail === auth()->user()->email){
+            // delete user
+            $user->delete();
+            return redirect(route('deals.index'))->with('flash-message-user', 'User was deleted successfully.');
+        }else{
+            return back()->withErrors(['deletion_email' => 'Incorrect Email Provided']);
         }
-        // delete user
-        $user->delete();
-        return redirect(route('deals.index'))->with('flash-message-user', 'User deleted successfully.');
     }
 
 }
