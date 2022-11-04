@@ -3818,7 +3818,7 @@ html {
     display: -webkit-box;
     display: flex;
     flex-direction: row;
-    font-size: 30px;
+    font-size: 28px;
     height: 40px;
     justify-content: center;
     transition: all 150ms ease;
@@ -4393,7 +4393,7 @@ html {
 
     .all-button-arrow {
         font-size: 16px;
-        right: 5px;
+        /* right: 8px; */
         top: calc(50% - 2px);
     }
 
@@ -4600,9 +4600,9 @@ html {
     }
 
     .user-icon {
-        font-size: 26px;
-        height: 38px;
-        width: 38px;
+        font-size: 22px;
+        height: 37px;
+        width: 37px;
     }
 
     .user-initials-container,
@@ -4838,12 +4838,12 @@ html {
 
     .search-button {
         font-size: 14px;
-        padding: 3px 8px;
+        padding: 2px 8px;
     }
 
-    .search-button:nth-child(odd) {
+    /* .search-button:nth-child(odd) {
         padding: 3px 10px;
-    }
+    } */
 
     .selected-deal-discount {
         font-size: 20px;
@@ -5902,6 +5902,11 @@ html {
         font-size: 14px;
     }
 
+    .user-icon {
+        height: 35px;
+        width: 35px;
+    }
+
     .user-initials {
         margin: 0 10px 0 10px;
     }
@@ -6347,12 +6352,6 @@ html {
 
     .show-selected-deal-message {
         top: 100px;
-    }
-
-    .user-icon {
-        font-size: 24px;
-        height: 34px;
-        width: 34px;
     }
 
     .user-login-button,
