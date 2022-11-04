@@ -33,6 +33,9 @@ class UserController extends Controller
             'phone' => ['required'],
             'password' => ['required', 'confirmed', 'min:8']
         ]);
+        // capitalize first and last name
+        $formInputs['firstName'] = ucfirst($formInputs['firstName']);
+        $formInputs['lastName'] = ucfirst($formInputs['lastName']);
         // hash password
         $formInputs['password'] = bcrypt($formInputs['password']);
         // create new user
@@ -385,12 +388,12 @@ class UserController extends Controller
 	// 	}
 	// }
 
-    // show update form
+    // SHOW UPDATE FORM
     public function showUpdateForm(){
         return view('user_pages/update', ['pageTitle' => 'Update']);
     }
 
-    // update user details
+    // UPDATE USER DETAILS
     public function updateUser(Request $request, User $user){
         $formInputs = $request->validate([
             'firstName' => ['required'],
@@ -399,6 +402,9 @@ class UserController extends Controller
             'phone' => ['required'],
             'password' => ['required', 'confirmed', 'min:8']
         ]);
+        // capitalize first and last name
+        $formInputs['firstName'] = ucfirst($formInputs['firstName']);
+        $formInputs['lastName'] = ucfirst($formInputs['lastName']);
         // hash password
         $formInputs['password'] = bcrypt($formInputs['password']);
         // update user
@@ -406,11 +412,11 @@ class UserController extends Controller
         return redirect(route('deals.index'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully updated your information.');
     }
 
-    // delete user
+    // DELETE USER
     public function deleteUser(Request $request, User $user){
         $deletionEmail = $request->deletion_email;
         if($deletionEmail === auth()->user()->email){
-            // delete user
+            // delete user after correct email supplied
             $user->delete();
             return redirect(route('deals.index'))->with('flash-message-user', 'User was deleted successfully.');
         }else{
