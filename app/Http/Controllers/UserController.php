@@ -249,7 +249,43 @@ class UserController extends Controller
         curl_close($ch);
     }
 
-    // log user out
+    // SHOW UPDATE FORM
+    public function showUpdateForm(){
+        return view('user_pages/update', ['pageTitle' => 'Update']);
+    }
+
+    // UPDATE USER DETAILS
+    public function updateUser(Request $request, User $user){
+        $formInputs = $request->validate([
+            'firstName' => ['required'],
+            'lastName' => ['required'],
+            'email' => ['required', 'email'],
+            'phone' => ['required'],
+            'password' => ['required', 'confirmed', 'min:8']
+        ]);
+        // capitalize first and last name
+        $formInputs['firstName'] = ucfirst($formInputs['firstName']);
+        $formInputs['lastName'] = ucfirst($formInputs['lastName']);
+        // hash password
+        $formInputs['password'] = bcrypt($formInputs['password']);
+        // update user
+        $user->update($formInputs);
+        return redirect(route('deals.index'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully updated your information.');
+    }
+
+    // DELETE USER
+    public function deleteUser(Request $request, User $user){
+        $deletionEmail = $request->deletion_email;
+        if($deletionEmail === auth()->user()->email){
+            // delete user after correct email supplied
+            $user->delete();
+            return redirect(route('deals.index'))->with('flash-message-user', 'User was deleted successfully.');
+        }else{
+            return back()->withErrors(['deletion_email' => 'Incorrect Email Provided']);
+        }
+    }
+
+    // LOG USER OUT
     public function logoutUser(Request $request){
         // removes authentication from the users session
         auth()->logout();
@@ -259,6 +295,8 @@ class UserController extends Controller
         $request->session()->regenerateToken();
         return redirect('/')->with('flash-message-user', 'You have now logged out.');
     }
+
+
 
     // SOCIAL MEDIA LOG INS
     // redirects go to medias auth page
@@ -387,41 +425,5 @@ class UserController extends Controller
 	// 		dd($e->getMessage());
 	// 	}
 	// }
-
-    // SHOW UPDATE FORM
-    public function showUpdateForm(){
-        return view('user_pages/update', ['pageTitle' => 'Update']);
-    }
-
-    // UPDATE USER DETAILS
-    public function updateUser(Request $request, User $user){
-        $formInputs = $request->validate([
-            'firstName' => ['required'],
-            'lastName' => ['required'],
-            'email' => ['required', 'email'],
-            'phone' => ['required'],
-            'password' => ['required', 'confirmed', 'min:8']
-        ]);
-        // capitalize first and last name
-        $formInputs['firstName'] = ucfirst($formInputs['firstName']);
-        $formInputs['lastName'] = ucfirst($formInputs['lastName']);
-        // hash password
-        $formInputs['password'] = bcrypt($formInputs['password']);
-        // update user
-        $user->update($formInputs);
-        return redirect(route('deals.index'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully updated your information.');
-    }
-
-    // DELETE USER
-    public function deleteUser(Request $request, User $user){
-        $deletionEmail = $request->deletion_email;
-        if($deletionEmail === auth()->user()->email){
-            // delete user after correct email supplied
-            $user->delete();
-            return redirect(route('deals.index'))->with('flash-message-user', 'User was deleted successfully.');
-        }else{
-            return back()->withErrors(['deletion_email' => 'Incorrect Email Provided']);
-        }
-    }
 
 }
