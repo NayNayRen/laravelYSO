@@ -73,7 +73,7 @@
             if ($(window).width() <= 400) {
                 $('.flash-message-user').css('top', '0');
             }
-            // after displaying for 7000ms(7s) message hides itself
+            // after displaying for 5000ms(5s) message hides itself
             setTimeout(() => {
                 $('.flash-message-user').css('top', '-100%');
             }, 5000);
