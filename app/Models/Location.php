@@ -90,4 +90,8 @@ class Location extends Model
         return $locationDeals;
     }
 
+    public function deals(){
+        return $this->belongsToMany(Deal::class, 'CouponLocations');
+    }
+
 }
