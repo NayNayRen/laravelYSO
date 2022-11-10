@@ -22,10 +22,16 @@ class Location extends Model
     // USES LOCATION ID FROM DEALS TO GET LOCATIONS
     public static function getSearchedLocations(Request $request){
         $dealResults = Deal::search($request);
+        $locationIds = CouponLocation::orderBy('id')
+        ->where(function($q) use ($dealResults) {
+            foreach($dealResults as $dealResult) {
+                $q->orWhere('cid', $dealResult->id);
+            }
+        })->get();
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($dealResults) {
-            foreach ($dealResults as $dealResult) {
-                $q->orWhere('id', $dealResult->listing_id);
+        ->where(function ($q) use ($locationIds) {
+            foreach ($locationIds as $locationId) {
+                $q->orWhere('id', $locationId->lid);
             }
         })
         ->whereNotNull('lat')
@@ -37,10 +43,17 @@ class Location extends Model
     // LOCATIONS FOR THE VIEW ALL MAPS
     public static function getMatchingLocations($type){
         $dealResults = Deal::viewAllType($type);
+        $locationIds = CouponLocation::orderBy('id')
+        ->where(function($q) use ($dealResults) {
+            foreach($dealResults as $dealResult) {
+                $q->orWhere('cid', $dealResult->id);
+            }
+        })->get();
+
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($dealResults) {
-            foreach ($dealResults as $dealResult) {
-                $q->orWhere('id', $dealResult->listing_id);
+        ->where(function ($q) use ($locationIds) {
+            foreach ($locationIds as $locationId) {
+                $q->orWhere('id', $locationId->lid);
             }
         })
         ->whereNotNull('lat')
@@ -52,10 +65,20 @@ class Location extends Model
     // GETS FEATURED DEALS LOCATIONS
     public static function getFeaturedLocations(){
         $featuredDeals = Deal::viewAllFeatured();
+        // remove if not working correctly
+        // 
+        $locationIds = CouponLocation::orderBy('id')
+        ->where(function($q) use ($featuredDeals) {
+            foreach($featuredDeals as $featuredDeal) {
+                $q->orWhere('cid', $featuredDeal->id);
+            }
+        })->get();
+        // 
+        // dd($locationIds);
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($featuredDeals) {
-            foreach ($featuredDeals as $featuredDeal) {
-                $q->orWhere('id', $featuredDeal->listing_id);
+        ->where(function ($q) use ($locationIds) {
+            foreach ($locationIds as $locationId) {
+                $q->orWhere('id', $locationId->lid);
             }
         })
         ->whereNotNull('lat')
@@ -66,10 +89,16 @@ class Location extends Model
     // GETS POPULAR DEALS LOCATIONS
     public static function getPopularLocations(){
         $popularDeals = Deal::viewAllPopular();
+        $locationIds = CouponLocation::orderBy('id')
+        ->where(function($q) use ($popularDeals) {
+            foreach($popularDeals as $popularDeal) {
+                $q->orWhere('cid', $popularDeal->id);
+            }
+        })->get();
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($popularDeals) {
-            foreach ($popularDeals as $popularDeal) {
-                $q->orWhere('id', $popularDeal->listing_id);
+        ->where(function ($q) use ($locationIds) {
+            foreach ($locationIds as $locationId) {
+                $q->orWhere('id', $locationId->lid);
             }
         })
         ->whereNotNull('lat')
@@ -85,8 +114,15 @@ class Location extends Model
     }
 
     public static function getLocationDeals($locationId){
-        $locationDeals = Deal::orderBy('name')
-        ->where('listing_id', $locationId)->get();
+        $locationIds = CouponLocation::orderBy('id')
+        ->where('lid', $locationId)->get();
+        // dd($location);
+        $locationDeals= Deal::orderBy('name')
+        ->where(function($q) use ($locationIds) {
+            foreach ($locationIds as $locationId) {
+                $q->orWhere('id', $locationId->cid);
+            }
+        })->get();
         // dd($locationDeals);
         return $locationDeals;
     }

@@ -106,6 +106,9 @@
                 aria-label="Open dashboard." title="Open the dashboard." aria-hidden="false"></i></button>
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
+    {{-- @foreach($locationIds as $locationId)
+        <span>{{ $locationId->lid }}</span><br>
+    @endforeach--}}
     <span class="submit-method">{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
     @foreach($locations as $location)
