@@ -15,14 +15,14 @@ class UserCoupon extends Model
     public static function getUserCoupons(){
         if ((auth()->user())){
             $user_id = (auth()->user()->id);               
-            $cous = UserCoupon::where('user_id',$user_id)->get();
-            $coupons =  Deal ::query();
-            if($cous->count() > 0 ){
+            $cous = UserCoupon::where('user_id', $user_id)->get();
+            $coupons =  Deal::query();
+            if($cous->count() > 0){
                 foreach($cous as $cou){
                     if($coupons == null){
-                        $coupons->where('id',$cou->deal_id);
+                        $coupons->where('id', $cou->deal_id);
                     }else{
-                        $coupons->orwhere('id',$cou->deal_id);
+                        $coupons->orwhere('id', $cou->deal_id);
                     }
                 }
                 $coupons = $coupons->get();
@@ -39,14 +39,14 @@ class UserCoupon extends Model
     public static function getUserRedeemedCoupons(){
         if ((auth()->user())){
             $user_id = (auth()->user()->id);               
-            $redms = UserCoupon::where('user_id',$user_id)->where('status',1)->get();
-            $redeems =  Deal ::query();
-            if($redms->count() > 0 ){
+            $redms = UserCoupon::where('user_id', $user_id)->where('status', 1)->get();
+            $redeems =  Deal::query();
+            if($redms->count() > 0){
                 foreach($redms as $redm){
                     if($redeems == null){
-                        $redeems->where('id',$redm->deal_id);
+                        $redeems->where('id', $redm->deal_id);
                     }else{
-                        $redeems->orwhere('id',$redm->deal_id);
+                        $redeems->orwhere('id', $redm->deal_id);
                     }
                 }
                 $redeems = $redeems->get();
@@ -60,8 +60,7 @@ class UserCoupon extends Model
     }
 
     // ASSOCIATES USER TO COUPON
-    public function Users()
-    {
+    public function Users(){
         return $this->belongsTo(User::class);
     }
 }

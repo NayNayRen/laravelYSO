@@ -77,6 +77,7 @@ class Location extends Model
         return $locationResults;
     }
 
+    // LAST 2 QUERY METHODS ARE USED IN THE SEPERATE LOCATIONS PAGE
     public static function getLocation($locationId){
         $location = Location::where('id', $locationId)->get();
         // dd($location);
@@ -90,7 +91,7 @@ class Location extends Model
         return $locationDeals;
     }
 
-    public function deals(){
+    public function joinedDeals(){
         return $this->belongsToMany(Deal::class, 'CouponLocations');
     }
 

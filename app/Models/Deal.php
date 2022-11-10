@@ -113,7 +113,7 @@ class Deal extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function locations(){
+    public function joinedLocations(){
         return $this->belongsToMany(Location::class, 'CouponLocations');
     }
 }

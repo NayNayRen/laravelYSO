@@ -15,14 +15,14 @@ class Favorite extends Model
     public static function getUserFavorites(){
         if ((auth()->user())){
             $user_id = (auth()->user()->id);               
-            $favs = Favorite::where('user_id',$user_id)->get();
+            $favs = Favorite::where('user_id', $user_id)->get();
             $favorites =  Deal::query();
-            if($favs->count() > 0 ){
+            if($favs->count() > 0){
                 foreach($favs as $fav){
                     if($favorites == null){
-                        $favorites->where('id',$fav->deal_id);
+                        $favorites->where('id', $fav->deal_id);
                     }else{
-                        $favorites->orwhere('id',$fav->deal_id);
+                        $favorites->orwhere('id', $fav->deal_id);
                     }
                 }
                     $favorites = $favorites->get();
