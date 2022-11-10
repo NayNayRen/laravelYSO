@@ -31,17 +31,20 @@
             <span>Views: {{ $deal->views }}</span><br>
             <span>Likes:</span><br>
             @php
-                $location = App\Models\CouponLocation::where('cid', $deal->id)->first();
+                $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
             @endphp
-            @if($location === null)
+            @if($dealLocation === null)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
-            @elseif($deal->id != $location->cid)
+            @elseif($deal->id != $dealLocation->cid)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
             @else
-                <form action={{ route('locations.show', $location->lid) }} method="GET">
-                    <button type="submit" class="card-location active" title="{{ $deal->name }}"
+                @php
+                    $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
+                @endphp
+                <form action={{ route('locations.show', $dealLocation->lid) }} method="GET">
+                    <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
                         aria-label="View this deal's location." value="map" name="submit">Location <i
                             class=" fa fa-map-marker" aria-hidden="true"></i>
                     </button>
