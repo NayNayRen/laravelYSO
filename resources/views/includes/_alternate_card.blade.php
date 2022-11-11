@@ -32,6 +32,7 @@
             <span>Likes:</span><br>
             @php
                 $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
+                $locationPoints = App\Models\Location::orderBy('id')->get();
             @endphp
             @if($dealLocation === null)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
@@ -43,12 +44,21 @@
                 @php
                     $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
                 @endphp
-                <form action={{ route('locations.show', $dealLocation->lid) }} method="GET">
-                    <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
-                        aria-label="View this deal's location." value="map" name="submit">Location <i
-                            class=" fa fa-map-marker" aria-hidden="true"></i>
-                    </button>
-                </form>
+                @if($locationAddress->lat === null)
+                    <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                            class="fa fa-map-marker" aria-hidden="true"></i></span>
+                @elseif($locationAddress->lon === null)
+                    <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                            class="fa fa-map-marker" aria-hidden="true"></i></span>
+                @else
+                    <form action={{ route('locations.show', $dealLocation->lid) }}
+                        method="GET">
+                        <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
+                            aria-label="View this deal's location." value="map" name="submit">Location <i
+                                class=" fa fa-map-marker" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                @endif
             @endif
         </div>
         <div class="views-likes-icons">
