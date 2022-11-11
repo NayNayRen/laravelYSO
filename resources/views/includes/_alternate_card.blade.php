@@ -32,7 +32,6 @@
             <span>Likes:</span><br>
             @php
                 $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
-                $locationPoints = App\Models\Location::orderBy('id')->get();
             @endphp
             @if($dealLocation === null)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
