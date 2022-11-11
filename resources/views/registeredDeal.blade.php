@@ -22,6 +22,31 @@
         <span id='card-name' class="selected-deal-name">{{ $deal['name'] }}</span>
         {{-- REGISTERED USER CONTENT --}}
         <div class="registered-user-display">
+
+            <div>
+                @php
+                    $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
+                @endphp
+                @if($dealLocation === null)
+                    <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                            class="fa fa-map-marker" aria-hidden="true"></i></span>
+                @elseif($deal->id != $dealLocation->cid)
+                    <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                            class="fa fa-map-marker" aria-hidden="true"></i></span>
+                @else
+                    @php
+                        $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
+                    @endphp
+                    <form action={{ route('locations.show', $dealLocation->lid) }}
+                        method="GET">
+                        <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
+                            aria-label="View this deal's location." value="map" name="submit">Location <i
+                                class=" fa fa-map-marker" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                @endif
+            </div>
+
             <div class="registered-share-fav-container">
                 <button class="selected-deal-share-fav-button share-deal"
                     name="{{ $deal['name'] }}"><i class="fa fa-share"

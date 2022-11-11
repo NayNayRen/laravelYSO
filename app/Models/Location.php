@@ -113,9 +113,7 @@ class Location extends Model
             foreach ($locationIds as $locationId) {
                 $q->orWhere('id', $locationId->lid);
             }
-        })
-        ->whereNotNull('lat')
-        ->WhereNotNull('lon')->get();
+        })->get();
         // dd($locations);
         return $locations;
     }
