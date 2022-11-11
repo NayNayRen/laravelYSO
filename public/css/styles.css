@@ -3092,6 +3092,13 @@ html {
     text-decoration: underline;
 }
 
+.registered-location-container,
+.unregistered-location-container {
+    margin-top: 10px;
+    text-align: center;
+    /* outline: solid 1px blue; */
+}
+
 .registered-send-method,
 .unregistered-send-method {
     -webkit-transition: all 450ms ease;

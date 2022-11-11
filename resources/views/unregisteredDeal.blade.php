@@ -12,32 +12,33 @@
         {{-- UNREGISTERED USER CONTENT --}}
         <div class="unregistered-user-display">
 
-            <div>
+            <div class="unregistered-location-container">
                 @php
                     $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
                 @endphp
                 @if($dealLocation === null)
-                    <span class="card-location inactive" aria-label="No location for this deal.">Location <i
-                            class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                            class="fa fa-map-marker" aria-hidden="true"></i></span> -
                 @elseif($deal->id != $dealLocation->cid)
-                    <span class="card-location inactive" aria-label="No location for this deal.">Location <i
-                            class="fa fa-map-marker" aria-hidden="true"></i></span>
+                    - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                            class="fa fa-map-marker" aria-hidden="true"></i></span> -
                 @else
                     @php
                         $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
                     @endphp
                     @if($locationAddress->lat === null)
-                        <span class="card-location inactive" aria-label="No location for this deal.">Location <i
-                                class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                                class="fa fa-map-marker" aria-hidden="true"></i></span> -
                     @elseif($locationAddress->lon === null)
-                        <span class="card-location inactive" aria-label="No location for this deal.">Location <i
-                                class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
+                                class="fa fa-map-marker" aria-hidden="true"></i></span> -
                     @else
                         <form action={{ route('locations.show', $dealLocation->lid) }}
                             method="GET">
                             <button type="submit" class="card-location active"
                                 title="{{ $locationAddress->location }}" aria-label="View this deal's location."
-                                value="map" name="submit">Location <i class=" fa fa-map-marker" aria-hidden="true"></i>
+                                value="map" name="submit">- Location <i class=" fa fa-map-marker"
+                                    aria-hidden="true"></i> -
                             </button>
                         </form>
                     @endif
