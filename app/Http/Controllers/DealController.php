@@ -203,11 +203,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $featuredLocations = Location::getFeaturedLocations();
+        $deals = Deal::viewAllFeatured();
         return view('category_pages/featured', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllFeatured(),
+            'deals' => $deals,
             'locations' => $featuredLocations,
             'message' => '',
             'pageTitle' => 'Featured',
@@ -221,11 +222,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('food');
+        $deals = Deal::viewAllType('food');
         return view('category_pages/food', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllType('food'),
+            'deals' => $deals,
             'locations' => $matchingLocations,
             'message' => '',
             'pageTitle' => 'Food',
@@ -239,11 +241,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('fashion');
+        $deals = Deal::viewAllType('fashion');
         return view('category_pages/fashion', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllType('fashion'),
+            'deals' => $deals,
             'locations' => $matchingLocations,
             'message' => '',
             'pageTitle' => 'Fashion',
@@ -257,11 +260,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('automotive');
+        $deals = Deal::viewAllType('automotive');
         return view('category_pages/auto', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllType('automotive'),
+            'deals' => $deals,
             'locations' => $matchingLocations,
             'message' => '',
             'pageTitle' => 'Auto',
@@ -275,11 +279,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('fun');
+        $deals = Deal::viewAllType('fun');
         return view('category_pages/fun', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllType('fun'),
+            'deals' => $deals,
             'locations' => $matchingLocations,
             'message' => '',
             'pageTitle' => 'Fun',
@@ -293,11 +298,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('health');
+        $deals = Deal::viewAllType('health');
         return view('category_pages/health', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllType('health'),
+            'deals' => $deals,
             'locations' => $matchingLocations,
             'message' => '',
             'pageTitle' => 'Health',
@@ -311,11 +317,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $matchingLocations = Location::getMatchingLocations('tech');
+        $deals = Deal::viewAllType('tech');
         return view('category_pages/tech', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllType('tech'),
+            'deals' => $deals,
             'locations' => $matchingLocations,
             'message' => '',
             'pageTitle' => 'Tech',
@@ -329,11 +336,12 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $popularLocations = Location::getPopularLocations();
+        $deals = Deal::viewAllPopular();
         return view('category_pages/popular', [
             'favorites' => $favorites,
             'coupons' => $coupons,
             'redeems' => $redeems,
-            'deals' => Deal::viewAllPopular(),
+            'deals' => $deals,
             'locations' => $popularLocations,
             'message' => '',
             'pageTitle' => 'Popular',
