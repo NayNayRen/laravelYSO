@@ -21,7 +21,16 @@ class Location extends Model
 
     // USES LOCATION ID FROM DEALS TO GET LOCATIONS
     public static function getSearchedLocations(Request $request){
-        $dealResults = Deal::search($request);
+        // $dealResults = Deal::search($request);
+        $words = explode(' ', $request->search);
+        $dealResults = Deal::orderBy('name')
+        ->where(function ($q) use ($words) {
+            foreach ($words as $word) {
+                $q->orWhere('name', 'like', '%' . $word . '%')
+                ->orWhere('location', 'like', '%' . $word . '%')
+                ->orWhere('category', 'like', '%' . $word . '%');
+            }
+        })->get();
         $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
         ->whereIn('id', $locationIds->pluck('lid'))
@@ -34,7 +43,11 @@ class Location extends Model
 
     // LOCATIONS FOR THE VIEW ALL MAPS
     public static function getMatchingLocations($type){
-        $dealResults = Deal::viewAllType($type);
+        // $dealResults = Deal::viewAllType($type);
+        $dealResults = Deal::orderBy('name')
+        ->where('name', 'like', '%' . $type . '%')
+        ->orWhere('location', 'like', '%' . $type . '%')
+        ->orWhere('category', 'like', '%' . $type . '%')->get();
         $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
         ->whereIn('id', $locationIds->pluck('lid'))
@@ -47,8 +60,13 @@ class Location extends Model
 
     // GETS FEATURED DEALS LOCATIONS
     public static function getFeaturedLocations(){
-        $dealResults = Deal::viewAllFeatured();
-        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
+        // $dealResults = Deal::viewAllFeatured();
+        $allFeatured = Deal::query()
+        ->orderBy('name')
+        ->whereIn('id', Deal::select('id')
+        ->orderBy('id', 'asc')->take(30)
+        ->get()->modelKeys());
+        $locationIds = CouponLocation::whereIn('cid', $allFeatured->pluck('id'));
         $locationResults = Location::orderBy('name')
         ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
@@ -60,7 +78,9 @@ class Location extends Model
 
     // GETS POPULAR DEALS LOCATIONS
     public static function getPopularLocations(){
-        $dealResults = Deal::viewAllPopular();
+        // $dealResults = Deal::viewAllPopular();
+        $dealResults = Deal::orderBy('views', 'asc')
+        ->where('views', '>', 75)->get();
         $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
         ->whereIn('id', $locationIds->pluck('lid'))
