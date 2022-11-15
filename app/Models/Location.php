@@ -22,20 +22,12 @@ class Location extends Model
     // USES LOCATION ID FROM DEALS TO GET LOCATIONS
     public static function getSearchedLocations(Request $request){
         $dealResults = Deal::search($request);
-        $locationIds = CouponLocation::orderBy('id')
-        ->where(function($q) use ($dealResults) {
-            foreach($dealResults as $dealResult) {
-                $q->orWhere('cid', $dealResult->id);
-            }
-        })->get();
+        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($locationIds) {
-            foreach ($locationIds as $locationId) {
-                $q->orWhere('id', $locationId->lid);
-            }
-        })
+        ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
-        ->WhereNotNull('lon')->get();
+        ->whereNotNull('lon')
+        ->get();
         // dd($locationResults);
         return $locationResults;
     }
@@ -55,56 +47,45 @@ class Location extends Model
 
     // GETS FEATURED DEALS LOCATIONS
     public static function getFeaturedLocations(){
-        $featuredDeals = Deal::viewAllFeatured();
-        $locationIds = CouponLocation::orderBy('id')
-        ->where(function($q) use ($featuredDeals) {
-            foreach($featuredDeals as $featuredDeal) {
-                $q->orWhere('cid', $featuredDeal->id);
-            }
-        })->get();
-        // dd($locationIds);
+        $dealResults = Deal::viewAllFeatured();
+        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($locationIds) {
-            foreach ($locationIds as $locationId) {
-                $q->orWhere('id', $locationId->lid);
-            }
-        })
+        ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
-        ->WhereNotNull('lon')->get();
+        ->whereNotNull('lon')
+        ->get();
+        // dd($locationResults);
         return $locationResults;
     }
 
     // GETS POPULAR DEALS LOCATIONS
     public static function getPopularLocations(){
-        $popularDeals = Deal::viewAllPopular();
-        $locationIds = CouponLocation::orderBy('id')
-        ->where(function($q) use ($popularDeals) {
-            foreach($popularDeals as $popularDeal) {
-                $q->orWhere('cid', $popularDeal->id);
-            }
-        })->get();
+        $dealResults = Deal::viewAllPopular();
+        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($locationIds) {
-            foreach ($locationIds as $locationId) {
-                $q->orWhere('id', $locationId->lid);
-            }
-        })
+        ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
-        ->WhereNotNull('lon')->get();
+        ->whereNotNull('lon')
+        ->get();
+        // dd($locationResults);
         return $locationResults;
     }
 
-    // LAST 2 QUERY METHODS ARE USED IN THE SEPERATE LOCATIONS PAGE
+    // LAST 2 QUERY METHODS ARE USED IN THE SEPERATE/SOLO LOCATIONS PAGE
     public static function getLocation($locationId){
         $locationIds = CouponLocation::orderBy('id')
         ->where('lid', $locationId)->get();
         // dd($locationIds);
+        // $locations= Location::orderBy('name')
+        // ->where(function($q) use ($locationIds) {
+        //     foreach ($locationIds as $locationId) {
+        //         $q->orWhere('id', $locationId->lid);
+        //     }
+        // })
+        // ->whereNotNull('lat')
+        // ->WhereNotNull('lon')->get();
         $locations= Location::orderBy('name')
-        ->where(function($q) use ($locationIds) {
-            foreach ($locationIds as $locationId) {
-                $q->orWhere('id', $locationId->lid);
-            }
-        })
+        ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locations);
@@ -114,13 +95,15 @@ class Location extends Model
     public static function getLocationDeals($locationId){
         $locationIds = CouponLocation::orderBy('id')
         ->where('lid', $locationId)->get();
-        // dd($location);
+        // dd($locationIds);
+        // $locationDeals= Deal::orderBy('name')
+        // ->where(function($q) use ($locationIds) {
+        //     foreach ($locationIds as $locationId) {
+        //         $q->orWhere('id', $locationId->cid);
+        //     }
+        // })->get();
         $locationDeals= Deal::orderBy('name')
-        ->where(function($q) use ($locationIds) {
-            foreach ($locationIds as $locationId) {
-                $q->orWhere('id', $locationId->cid);
-            }
-        })->get();
+        ->whereIn('id', $locationIds->pluck('cid'))->get();
         // dd($locationDeals);
         return $locationDeals;
     }
