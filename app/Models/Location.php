@@ -43,21 +43,12 @@ class Location extends Model
     // LOCATIONS FOR THE VIEW ALL MAPS
     public static function getMatchingLocations($type){
         $dealResults = Deal::viewAllType($type);
-        $locationIds = CouponLocation::orderBy('id')
-        ->where(function($q) use ($dealResults) {
-            foreach($dealResults as $dealResult) {
-                $q->orWhere('cid', $dealResult->id);
-            }
-        })->get();
-        // dd($locationIds);
+        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
-        ->where(function ($q) use ($locationIds) {
-            foreach ($locationIds as $locationId) {
-                $q->orWhere('id', $locationId->lid);
-            }
-        })
+        ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
-        ->WhereNotNull('lon')->get();
+        ->whereNotNull('lon')
+        ->get();
         // dd($locationResults);
         return $locationResults;
     }
