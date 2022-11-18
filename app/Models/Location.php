@@ -12,7 +12,10 @@ class Location extends Model
 
     // GETS ALL LOCATIONS
     public static function getAllLocations(){
-        $locations = Location::orderBy('name')
+        $dealResults = Deal::orderBy('id')->get();
+        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
+        $locations = Location::orderBy('id')
+        ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locations);
