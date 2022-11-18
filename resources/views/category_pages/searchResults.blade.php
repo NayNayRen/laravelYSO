@@ -127,14 +127,24 @@
             <span>{{ $searchedWord }}</span>
         @endforeach
     </p>
-    {{-- IF SEARCH DOESN'T RETURN ANY RESULTS OR LEFT EMPTY --}}
-    @if($searchedDeals === 0 || $searchedDeals->count() === 0)
+    {{-- SEARCH RESULTS RESPONSE MESSAGES --}}
+    {{-- if search was left empty --}}
+    @if($searchedDeals === 0)
         <div class="search-results-message-container">
-            <h1>Your search didn't return any results.</h1>
-            <p>Return back home to browse...</p>
+            <h1>You didn't use a term to search by, so we brought back all locations to view.</h1>
+            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>
         </div>
+        {{-- if search has no results --}}
+    @elseif($searchedDeals->count() === 0)
+        <div class="search-results-message-container">
+            <h1>Your search didn't return any results.</h1>
+            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
+            <span>or...</span>
+            <p>Continue your search above.</p>
+        </div>
+        {{-- if search was successful --}}
     @else
         <div class="alternate-container">
             <div class="alternate-container-heading">

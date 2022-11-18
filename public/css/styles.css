@@ -3498,10 +3498,21 @@ html {
     /* outline: solid 1px blue; */
 }
 
+.search-results-message-container a {
+    -webkit-transition: color 150ms ease;
+    color: #e6331f;
+    transition: color 150ms ease;
+}
+
+.search-results-message-container a:hover {
+    color: #808080;
+}
+
 .search-results-message-container h1 {
     font-size: 35px;
+    margin-bottom: 5px;
     text-align: center;
-    width: 100%;
+    width: 60%;
 }
 
 .search-results-message-container p {
@@ -3513,7 +3524,7 @@ html {
 
 .search-results-message-container span {
     border-bottom: solid 1px #000;
-    color: #e6331f;
+    color: #808080;
     padding-bottom: 5px;
     text-align: center;
     width: 100px;
@@ -4203,6 +4214,7 @@ html {
     margin: 10px auto;
     padding: 0 5px 10px 5px;
     text-align: center;
+    text-transform: capitalize;
     width: 800px;
 }
 
@@ -4599,7 +4611,8 @@ html {
     }
 
     .search-results-message-container h1 {
-        font-size: 30px;
+        font-size: 28px;
+        width: 75%;
     }
 
     .search-results-message-container p {
@@ -5845,7 +5858,8 @@ html {
     }
 
     .search-results-message-container h1 {
-        font-size: 25px;
+        font-size: 24px;
+        width: 90%;
     }
 
     .search-results-message-container p {
@@ -6316,7 +6330,8 @@ html {
     }
 
     .search-results-message-container h1 {
-        font-size: 22px;
+        font-size: 20px;
+        width: 95%;
     }
 
     .search-results-search-container {
@@ -6410,10 +6425,10 @@ html {
     } */
 
     .view-all-container-heading h1 {
-        display: none;
-        /* font-size: 24px;
+        /* display: none; */
+        font-size: 20px;
         padding: 0 5px 10px 5px;
-        width: 95%; */
+        width: 95%;
     }
 
     /* .view-all-container-heading h3 {

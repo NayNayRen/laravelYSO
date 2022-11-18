@@ -146,6 +146,7 @@ class DealController extends Controller
         $coupons = UserCoupon::getUserCoupons();
         $redeems = UserCoupon::getUserRedeemedCoupons();
         $searchedLocations = Location::getSearchedLocations($request);
+        $allLocations = Location::getAllLocations();
         $submitMethod = $request->submit;
         // dd($submitMethod);
         // limits search to 3 words or less
@@ -164,7 +165,7 @@ class DealController extends Controller
                 'submitMethod' => ''
             ]);
         }
-        // if nothing is typed, sets results to 0, essentially empty
+        // if nothing is typed, sets results to nothing, returns all locations
         elseif($request->search === null){
             $results = 0;
             return view('category_pages/searchResults', [
@@ -173,8 +174,8 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
-                'locations' => [],
-                'searchedWords' => ['no results found'],
+                'locations' => $allLocations,
+                'searchedWords' => ['no results'],
                 'message' => 'Enter a topic to search for.',
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''

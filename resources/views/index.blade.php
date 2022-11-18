@@ -389,7 +389,7 @@
     </div>
     {{-- FADING AD BLOCK --}}
     <div class="ad-container">
-        <a id="ad-link" class="ad">
+        <a href="#" id="ad-link" class="ad">
             <img id="ad" name='slide'>
             {{-- BANNER IS INJECTED DYNAMICALLY --}}
         </a>

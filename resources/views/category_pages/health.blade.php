@@ -74,7 +74,7 @@
     </div>
     {{-- HEADING AND MAP DISCLAIMER --}}
     <div class="view-all-container-heading">
-        <h1>Healthy choices, & healthy discounts.</h1>
+        <h1>Healthy choices & healthy discounts.</h1>
         @if(count($locations) === 0)
             <span class="map-use-disclaimer">No location results came back to show on the map <i
                     class="fa fa-map-marker" aria-hidden="true"></i> , it
