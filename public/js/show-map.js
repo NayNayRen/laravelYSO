@@ -15,6 +15,7 @@ function loadScript() {
     const submitMethod = document.querySelector(".submit-method");
     let markerGroup = [];
     let infoWindow;
+    let circle;
     let map;
 
     // center of U.S. lat and lng
@@ -93,6 +94,9 @@ function loadScript() {
                     const currentLocationMarker = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
+                        // New York City
+                        // lat: 40.73061,
+                        // lng: -73.935242,
                         heading: "You Are Here.",
                     };
                     // console.log(position);
@@ -129,7 +133,7 @@ function loadScript() {
                     //         shouldFocus: false,
                     //     });
                     // }, 750);
-                    const circle = new google.maps.Circle({
+                    circle = new google.maps.Circle({
                         strokeColor: "#FF0000",
                         strokeOpacity: 0.8,
                         strokeWeight: 1,
@@ -141,6 +145,7 @@ function loadScript() {
                         radius: 75000,
                     });
                     circle.setMap(map);
+                    // console.log(circle.center);
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());
