@@ -137,7 +137,7 @@ function loadScript() {
                         fillOpacity: 0.25,
                         map,
                         center: currentLocationMarker,
-                        radius: 100000,
+                        radius: Math.sqrt(100000) * 100,
                     });
                     circle.setMap(map);
                 },
@@ -307,7 +307,7 @@ function loadScript() {
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
         if (window.innerWidth > 1300) {
-            loadMap(5);
+            loadMap(4);
             hiddenMap.style.height = "500px";
         } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
             loadMap(4);
