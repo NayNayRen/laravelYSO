@@ -129,6 +129,17 @@ function loadScript() {
                     //         shouldFocus: false,
                     //     });
                     // }, 750);
+                    const circle = new google.maps.Circle({
+                        strokeColor: "#FF0000",
+                        strokeOpacity: 0.8,
+                        strokeWeight: 1,
+                        fillColor: "#FF0000",
+                        fillOpacity: 0.25,
+                        map,
+                        center: currentLocationMarker,
+                        radius: 100000,
+                    });
+                    circle.setMap(map);
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());
@@ -296,7 +307,7 @@ function loadScript() {
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
         if (window.innerWidth > 1300) {
-            loadMap(4);
+            loadMap(5);
             hiddenMap.style.height = "500px";
         } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
             loadMap(4);
