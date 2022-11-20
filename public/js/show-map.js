@@ -137,7 +137,8 @@ function loadScript() {
                         fillOpacity: 0.25,
                         map,
                         center: currentLocationMarker,
-                        radius: Math.sqrt(100000) * 100,
+                        // radius: Math.sqrt(100000) * 100,
+                        radius: 75000,
                     });
                     circle.setMap(map);
                 },
