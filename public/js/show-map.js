@@ -13,6 +13,24 @@ function loadScript() {
     const mapMessageClose = document.querySelector(".map-message-close");
     const clearMapButton = document.querySelector(".clear-map-button");
     const submitMethod = document.querySelector(".submit-method");
+    const mapSearchDistanceContainer = document.querySelector(
+        ".map-search-distance-container"
+    );
+    const mapDistanceGoButton = document.querySelector(
+        ".map-distance-go-button"
+    );
+    const mapSearchDistanceButton = document.querySelector(
+        ".map-search-distance-button"
+    );
+    const mapSearchDistanceArrow = document.querySelector(
+        ".map-search-distance-arrow"
+    );
+    const mapSearchDistanceDropdown = document.querySelector(
+        ".map-search-distance-dropdown"
+    );
+    const mapSearchDistanceSelection = document.querySelectorAll(
+        ".map-search-distance-selection"
+    );
     let markerGroup = [];
     let infoWindow;
     let circle;
@@ -344,6 +362,41 @@ function loadScript() {
         hiddenMap.style.opacity = "0";
         mapMessage.style.opacity = "0";
         mapMessage.style.top = "-100%";
+    });
+
+    // TOGGLES DISTANCE SEARCH DROPDOWN
+    mapSearchDistanceButton.addEventListener("click", () => {
+        mapSearchDistanceContainer.classList.toggle(
+            "map-search-distance-container-toggle"
+        );
+        mapSearchDistanceArrow.classList.toggle(
+            "map-search-distance-arrow-rotate"
+        );
+        mapSearchDistanceDropdown.classList.toggle(
+            "map-search-distance-dropdown-toggle"
+        );
+        mapSearchDistanceArrow.style.display = "inline";
+        mapDistanceGoButton.style.display = "none";
+    });
+
+    mapSearchDistanceSelection.forEach((selection) => {
+        selection.addEventListener("click", (e) => {
+            mapSearchDistanceButton.innerText = e.target.innerText;
+            mapSearchDistanceContainer.classList.remove(
+                "map-search-distance-container-toggle"
+            );
+            mapSearchDistanceArrow.classList.remove(
+                "map-search-distance-arrow-rotate"
+            );
+            mapSearchDistanceDropdown.classList.remove(
+                "map-search-distance-dropdown-toggle"
+            );
+            mapSearchDistanceArrow.style.display = "none";
+            mapDistanceGoButton.style.display = "inline";
+            // mapDistanceGoButton.addEventListener("click", () => {
+            //     loadMap(5);
+            // });
+        });
     });
 
     // autoloads map if map button is used on homepage

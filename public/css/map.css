@@ -185,6 +185,26 @@
     margin-bottom: 5px;
 }
 
+.map-distance-go-button {
+    background-color: #fff;
+    border: none;
+    border-left: solid 1px #000;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    display: none;
+    font-size: 16px;
+    height: 100%;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.map-distance-go-button:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
 .map-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -216,7 +236,7 @@
     transform: translate(-50%, -50%);
     transition: top 800ms ease, opacity 500ms ease;
     width: 375px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .map-message p {
@@ -274,6 +294,101 @@
     margin: 15px 0;
     text-align: center;
     width: 150px;
+}
+
+.map-search-distance-arrow {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    transition: -webkit-transform 150ms ease;
+    transition: transform 150ms ease, -webkit-transform 150ms ease;
+    transition: transform 150ms ease;
+}
+
+.map-search-distance-arrow-rotate {
+    -webkit-transform: rotate(180deg);
+    top: 6px;
+    transform: rotate(180deg);
+}
+
+.map-search-distance-button {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    /* -webkit-transition: all 250ms ease; */
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    border: none;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+    outline: none;
+    padding: 5px 10px;
+    text-align: left;
+    /* transition: all 250ms ease; */
+    width: 100%;
+}
+
+.map-search-distance-button:hover,
+.map-search-distance-selection:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+
+.map-search-distance-container {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    left: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    /* transform: translateY(-50%); */
+    width: 115px;
+    z-index: 1;
+    /* outline: solid 1px blue; */
+}
+
+.map-search-distance-container-toggle {
+    overflow: visible;
+}
+
+.map-search-distance-container div {
+    position: relative;
+}
+
+.map-search-distance-selection {
+    background-color: #fff;
+    font-size: 14px;
+    margin: 0;
+    padding: 3px 10px;
+}
+
+.map-search-distance-selection:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.map-search-distance-dropdown {
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+.map-search-distance-dropdown-toggle {
+    -webkit-box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.15);
+    opacity: 1;
+    top: calc(100% - 1px);
 }
 
 .map-use-disclaimer {
@@ -339,6 +454,10 @@
         border-radius: 0;
         padding: 10px;
         width: 100%;
+    }
+
+    .map-search-distance-container {
+        left: 165px;
     }
 
     .map-use-disclaimer {
