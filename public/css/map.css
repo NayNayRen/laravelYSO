@@ -9,7 +9,7 @@
     font-size: 14px;
     font-weight: bold;
     /* left: 10px; */
-    left: 85px;
+    left: 86px;
     padding: 5px 10px;
     position: absolute;
     top: 40px;
@@ -188,7 +188,7 @@
 .map-distance-go-button {
     background-color: #fff;
     border: none;
-    border-left: solid 1px #000;
+    border-left: solid 1px #808080;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     display: none;
@@ -343,12 +343,12 @@
 }
 
 .map-search-distance-container {
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
     left: 150px;
     overflow: hidden;
     position: absolute;
     top: 40px;
-    /* transform: translateY(-50%); */
     width: 115px;
     z-index: 1;
     /* outline: solid 1px blue; */
