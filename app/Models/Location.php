@@ -99,14 +99,6 @@ class Location extends Model
         $locationIds = CouponLocation::orderBy('id')
         ->where('lid', $locationId)->get();
         // dd($locationIds);
-        // $locations= Location::orderBy('name')
-        // ->where(function($q) use ($locationIds) {
-        //     foreach ($locationIds as $locationId) {
-        //         $q->orWhere('id', $locationId->lid);
-        //     }
-        // })
-        // ->whereNotNull('lat')
-        // ->WhereNotNull('lon')->get();
         $locations= Location::orderBy('name')
         ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
@@ -119,12 +111,6 @@ class Location extends Model
         $locationIds = CouponLocation::orderBy('id')
         ->where('lid', $locationId)->get();
         // dd($locationIds);
-        // $locationDeals= Deal::orderBy('name')
-        // ->where(function($q) use ($locationIds) {
-        //     foreach ($locationIds as $locationId) {
-        //         $q->orWhere('id', $locationId->cid);
-        //     }
-        // })->get();
         $locationDeals= Deal::orderBy('name')
         ->whereIn('id', $locationIds->pluck('cid'))->get();
         // dd($locationDeals);
