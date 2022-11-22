@@ -15,7 +15,7 @@ class Location extends Model
         // $dealResults = Deal::orderBy('id')->get();
         $locationIds = CouponLocation::get()->pluck('lid')->unique();
         $locations = Location::orderBy('id')
-        ->whereIn('id', $locationIds)
+        // ->whereIn('id', $locationIds)
         ->whereNotNull('lat')
         ->WhereNotNull('lon')->get();
         // dd($locations);
