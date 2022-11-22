@@ -165,22 +165,6 @@ class DealController extends Controller
                 'submitMethod' => ''
             ]);
         }
-        // if no results
-        // elseif(count($searchedLocations) === 0){
-        //     $results = 0;
-        //     return view('category_pages/searchResults', [
-        //         'favorites' => $favorites,
-        //         'coupons' => $coupons,
-        //         'redeems' => $redeems,
-        //         'searchedDeals' => $results,
-        //         'request' => $request,
-        //         'locations' => [],
-        //         'searchedWords' => $words,
-        //         'message' => 'No results found.',
-        //         'pageTitle' => 'Search Results',
-        //         'submitMethod' => ''
-        //     ]);
-        // }
         // if any an empty submission occurred
         elseif($request->search === null){
             $results = null;
