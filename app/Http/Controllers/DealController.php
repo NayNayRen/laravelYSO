@@ -165,6 +165,7 @@ class DealController extends Controller
                 'submitMethod' => ''
             ]);
         }
+        // checks for an empty search submission
         elseif(empty($request->input('search'))){
             $results = '';
             return view('category_pages/searchResults', [
@@ -179,9 +180,8 @@ class DealController extends Controller
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''
             ]);
-        // if all goes well
         }
-        // if nothing is typed, sets results to nothing, returns all locations
+        // if there's no search results
         elseif($request->search === null){
             $results = 0;
             return view('category_pages/searchResults', [
