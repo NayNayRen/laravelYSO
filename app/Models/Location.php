@@ -15,10 +15,11 @@ class Location extends Model
         $dealResults = Deal::orderBy('id')->get();
         $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locations = Location::orderBy('id')
-        ->whereIn('id', $locationIds->pluck('lid'))
+        // ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
-        ->WhereNotNull('lon')->get();
-        // dd($locations);
+        ->WhereNotNull('lon')
+        ->get();
+        // dd($locationIds);
         return $locations;
     }
 
@@ -102,7 +103,8 @@ class Location extends Model
         $locations= Location::orderBy('name')
         ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
-        ->WhereNotNull('lon')->get();
+        ->WhereNotNull('lon')
+        ->get();
         // dd($locations);
         return $locations;
     }

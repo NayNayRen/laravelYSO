@@ -16,7 +16,7 @@
     @include('includes._map_message')
     <div class="map-search-distance-container">
         <div>
-            <span type='button' class="map-search-distance-button" value="Distance">
+            <span type='button' class="map-search-distance-button">
                 Distance</span>
             <input type='button' class="map-distance-go-button" value="Go">
             </input>
@@ -24,16 +24,18 @@
                 <i class="fa fa-chevron-up" aria-hidden="true"></i>
             </span>
             <ul class="map-search-distance-dropdown">
-                <li class="map-search-distance-selection" value="25">
+                <li class="map-search-distance-selection">
                     25</li>
-                <li class="map-search-distance-selection" value="50">
+                <li class="map-search-distance-selection">
                     50</li>
-                <li class="map-search-distance-selection" value="75">
+                <li class="map-search-distance-selection">
                     75</li>
-                <li class="map-search-distance-selection" value="100">
+                <li class="map-search-distance-selection">
                     100</li>
-                <li class="map-search-distance-selection" value="No Limit">
+                <li class="map-search-distance-selection">
                     No Limit</li>
+                <li class="map-search-distance-selection">
+                    Reset</li>
             </ul>
         </div>
     </div>

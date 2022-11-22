@@ -108,17 +108,21 @@
             Location Deals
         </div>
         <div class="alternate-container-location-info">
-            <div>
-                - <span>{{ count($locationDeals) }}</span>
-                @if(count($locationDeals) > 1)
-                    deals
-                @else
-                    deal
-                @endif
-                from
-                <span>{{ ucwords($location->name) }}</span> -<br>
-                {{ $location->location }}
-            </div>
+            @if(count($locationDeals) === 0)
+                <div>No deals available for this location yet.</div>
+            @else
+                <div>
+                    - <span>{{ count($locationDeals) }}</span>
+                    @if(count($locationDeals) > 1)
+                        deals
+                    @else
+                        deal
+                    @endif
+                    from
+                    <span>{{ ucwords($location->name) }}</span> -<br>
+                    {{ $location->location }}
+                </div>
+            @endif
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}

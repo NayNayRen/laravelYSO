@@ -94,7 +94,7 @@ function loadScript() {
         map = new google.maps.Map(document.getElementById("map"), {
             center: usCenter,
             zoom: zoomLevel,
-            zoomControl: false,
+            zoomControl: true,
             // mapTypeControl: false,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -135,22 +135,7 @@ function loadScript() {
                         icon: ysoIcon,
                         zIndex: 1,
                     });
-                    marker.setMap(map);
-                    marker.addListener("click", () => {
-                        infoWindow.open({
-                            anchor: marker,
-                            map: map,
-                            shouldFocus: false,
-                        });
-                    });
-                    // delays the info bubble
-                    // setTimeout(() => {
-                    //     infoWindow.open({
-                    //         anchor: marker,
-                    //         map: map,
-                    //         shouldFocus: false,
-                    //     });
-                    // }, 750);
+                    // current location circle
                     circle = new google.maps.Circle({
                         strokeColor: "#FF0000",
                         strokeOpacity: 0.8,
@@ -160,10 +145,51 @@ function loadScript() {
                         map,
                         center: currentLocationMarker,
                         // radius: Math.sqrt(100000) * 100,
-                        radius: 75000,
+                        radius: 15000,
                     });
+                    map.setCenter(currentLocationMarker);
+                    map.setZoom(11);
+                    marker.setMap(map);
                     circle.setMap(map);
+                    marker.addListener("click", () => {
+                        infoWindow.open({
+                            anchor: marker,
+                            map: map,
+                            shouldFocus: false,
+                        });
+                    });
                     // console.log(circle.center);
+                    mapDistanceGoButton.addEventListener("click", () => {
+                        // console.log(mapSearchDistanceButton.innerText);
+                        if (
+                            mapSearchDistanceButton.innerText === "25" ||
+                            mapSearchDistanceButton.innerText === "Reset"
+                        ) {
+                            map.setZoom(11);
+                            map.setCenter(currentLocationMarker);
+                            circle.setRadius(15000);
+                        }
+                        if (mapSearchDistanceButton.innerText === "50") {
+                            map.setZoom(10);
+                            map.setCenter(currentLocationMarker);
+                            circle.setRadius(25000);
+                        }
+                        if (mapSearchDistanceButton.innerText === "75") {
+                            map.setZoom(9);
+                            map.setCenter(currentLocationMarker);
+                            circle.setRadius(35000);
+                        }
+                        if (mapSearchDistanceButton.innerText === "100") {
+                            map.setZoom(7);
+                            map.setCenter(currentLocationMarker);
+                            circle.setRadius(45000);
+                        }
+                        if (mapSearchDistanceButton.innerText === "No Limit") {
+                            map.setZoom(4);
+                            map.setCenter(usCenter);
+                            circle.setRadius(0);
+                        }
+                    });
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());
@@ -393,9 +419,6 @@ function loadScript() {
             );
             mapSearchDistanceArrow.style.display = "none";
             mapDistanceGoButton.style.display = "inline";
-            // mapDistanceGoButton.addEventListener("click", () => {
-            //     loadMap(5);
-            // });
         });
     });
 
