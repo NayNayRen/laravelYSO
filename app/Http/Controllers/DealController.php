@@ -183,7 +183,7 @@ class DealController extends Controller
         }
         // if any an empty submission occurred
         elseif($request->search === null){
-            $results = null;
+            $results = 0;
             return view('category_pages/searchResults', [
                 'favorites' => $favorites,
                 'coupons' => $coupons,
