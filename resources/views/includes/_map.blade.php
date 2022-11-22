@@ -32,8 +32,8 @@
                     75</li>
                 <li class="map-search-distance-selection" value="100">
                     100</li>
-                <li class="map-search-distance-selection" value="All Pins">
-                    All Pins</li>
+                <li class="map-search-distance-selection" value="No Limit">
+                    No Limit</li>
             </ul>
         </div>
     </div>
