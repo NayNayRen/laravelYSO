@@ -166,21 +166,21 @@ class DealController extends Controller
             ]);
         }
         // checks for an empty search submission
-        elseif(empty($request->input('search'))){
-            $results = '';
-            return view('category_pages/searchResults', [
-                'favorites' => $favorites,
-                'coupons' => $coupons,
-                'redeems' => $redeems,
-                'searchedDeals' => $results,
-                'request' => $request,
-                'locations' => $allLocations,
-                'searchedWords' => ['no terms used'],
-                'message' => 'Enter a term to search for.',
-                'pageTitle' => 'Search Results',
-                'submitMethod' => ''
-            ]);
-        }
+        // elseif(empty($request->input('search'))){
+        //     $results = '';
+        //     return view('category_pages/searchResults', [
+        //         'favorites' => $favorites,
+        //         'coupons' => $coupons,
+        //         'redeems' => $redeems,
+        //         'searchedDeals' => $results,
+        //         'request' => $request,
+        //         'locations' => $allLocations,
+        //         'searchedWords' => ['no terms used'],
+        //         'message' => 'Enter a term to search for.',
+        //         'pageTitle' => 'Search Results',
+        //         'submitMethod' => ''
+        //     ]);
+        // }
         // if there's no search results
         elseif($request->search === null){
             $results = 0;
@@ -190,8 +190,8 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
-                'locations' => [],
-                'searchedWords' => ['no results'],
+                'locations' => $allLocations,
+                'searchedWords' => ['no terms used'],
                 'message' => '',
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''

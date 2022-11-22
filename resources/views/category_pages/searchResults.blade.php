@@ -127,71 +127,71 @@
     </p>
     {{-- SEARCH RESULTS RESPONSE MESSAGES --}}
     {{-- if search was left empty --}}
-    @if($searchedDeals === '')
-        <div class="search-results-message-container">
-            <h1>You didn't use a term to search by, so we brought back all locations to view.</h1>
-            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
-            <span>or...</span>
-            <p>Continue your search above.</p>
-        </div>
-        {{-- if search has no results --}}
-    @elseif(count($searchedDeals) === 0)
+    @if($searchedDeals === 0 || $searchedDeals->count() === 0)
         <div class="search-results-message-container">
             <h1>Your search didn't return any results.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>
         </div>
-        {{-- if search was successful --}}
-    @else
-        <div class="alternate-container">
-            <div class="alternate-container-heading">
-                Your Searched Deals
-            </div>
+        {{-- if search has no results --}}
+        {{-- @elseif(count($locations) === 0)
+        <div class="search-results-message-container">
+            <h1>Your search didn't return any results.</h1>
+            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
+        <span>or...</span>
+        <p>Continue your search above.</p>
+</div> --}}
+{{-- if search was successful --}}
+@else
+<div class="alternate-container">
+    <div class="alternate-container-heading">
+        Your Searched Deals
+    </div>
+    <span class="alternate-container-count">
+        {{ $searchedDeals->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
+    </span>
+    <div class="container-right">
+        @if($searchedDeals->count() === 1)
             <span class="alternate-container-count">
-                {{ $searchedDeals->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
+                {{ count($searchedDeals) }} Deal
             </span>
-            <div class="container-right">
-                @if($searchedDeals->count() === 1)
-                    <span class="alternate-container-count">
-                        {{ count($searchedDeals) }} Deal
-                    </span>
-                    <div class="card-display-limited-amount">
-                        @foreach($searchedDeals as $deal)
-                            {{-- CARD COMPONENT --}}
-                            <div class="limited-amount-card">
-                                @include('includes._alternate_card')
-                            </div>
-                        @endforeach
+            <div class="card-display-limited-amount">
+                @foreach($searchedDeals as $deal)
+                    {{-- CARD COMPONENT --}}
+                    <div class="limited-amount-card">
+                        @include('includes._alternate_card')
                     </div>
-                @elseif($searchedDeals->count() === 2)
-                    <span class="alternate-container-count">
-                        {{ count($searchedDeals) }} Deals
-                    </span>
-                    <div class="card-display-limited-amount">
-                        @foreach($searchedDeals as $deal)
-                            {{-- CARD COMPONENT --}}
-                            <div class="limited-amount-card">
-                                @include('includes._alternate_card')
-                            </div>
-                        @endforeach
-                    </div>
-                @else
-                    <div class="alternate-count">
-                        {{ count($searchedDeals) }} Deals
-                    </div>
-                    <div class="card-display-view-all">
-                        @foreach($searchedDeals as $deal)
-                            {{-- CARD COMPONENT --}}
-                            <div class="limited-amount-card">
-                                @include('includes._alternate_card')
-                            </div>
-                        @endforeach
-                    </div>
-                @endif
+                @endforeach
             </div>
-        </div>
-    @endif
+        @elseif($searchedDeals->count() === 2)
+            <span class="alternate-container-count">
+                {{ count($searchedDeals) }} Deals
+            </span>
+            <div class="card-display-limited-amount">
+                @foreach($searchedDeals as $deal)
+                    {{-- CARD COMPONENT --}}
+                    <div class="limited-amount-card">
+                        @include('includes._alternate_card')
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <div class="alternate-count">
+                {{ count($searchedDeals) }} Deals
+            </div>
+            <div class="card-display-view-all">
+                @foreach($searchedDeals as $deal)
+                    {{-- CARD COMPONENT --}}
+                    <div class="limited-amount-card">
+                        @include('includes._alternate_card')
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    </div>
+</div>
+@endif
 
 </div>
 {{-- PAGE SPECIFIC SCRIPTS --}}
