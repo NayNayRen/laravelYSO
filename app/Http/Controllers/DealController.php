@@ -160,14 +160,30 @@ class DealController extends Controller
                 'request' => $request,
                 'locations' => [],
                 'searchedWords' => $words,
-                'message' => 'Limit your search to 3 words or less.',
+                'message' => '3 words or less please.',
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''
             ]);
         }
-        // if there's no search results
-        elseif($request->search === null){
+        // if no results
+        elseif(count($searchedLocations) === 0){
             $results = 0;
+            return view('category_pages/searchResults', [
+                'favorites' => $favorites,
+                'coupons' => $coupons,
+                'redeems' => $redeems,
+                'searchedDeals' => $results,
+                'request' => $request,
+                'locations' => [],
+                'searchedWords' => $words,
+                'message' => 'No results found.',
+                'pageTitle' => 'Search Results',
+                'submitMethod' => ''
+            ]);
+        }
+        // if any an empty submission occurred
+        elseif($request->search === null){
+            $results = null;
             return view('category_pages/searchResults', [
                 'favorites' => $favorites,
                 'coupons' => $coupons,
@@ -176,7 +192,7 @@ class DealController extends Controller
                 'request' => $request,
                 'locations' => $allLocations,
                 'searchedWords' => ['no terms used'],
-                'message' => '',
+                'message' => 'The input was empty.',
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''
             ]);
