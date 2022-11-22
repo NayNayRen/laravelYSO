@@ -165,6 +165,22 @@ class DealController extends Controller
                 'submitMethod' => ''
             ]);
         }
+        elseif(empty($request->input('search'))){
+            $results = '';
+            return view('category_pages/searchResults', [
+                'favorites' => $favorites,
+                'coupons' => $coupons,
+                'redeems' => $redeems,
+                'searchedDeals' => $results,
+                'request' => $request,
+                'locations' => $allLocations,
+                'searchedWords' => ['no terms used'],
+                'message' => 'Enter a topic to search for.',
+                'pageTitle' => 'Search Results',
+                'submitMethod' => ''
+            ]);
+        // if all goes well
+        }
         // if nothing is typed, sets results to nothing, returns all locations
         elseif($request->search === null){
             $results = 0;
@@ -174,7 +190,7 @@ class DealController extends Controller
                 'redeems' => $redeems,
                 'searchedDeals' => $results,
                 'request' => $request,
-                'locations' => $allLocations,
+                'locations' => [],
                 'searchedWords' => ['no results'],
                 'message' => 'Enter a topic to search for.',
                 'pageTitle' => 'Search Results',

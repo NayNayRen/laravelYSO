@@ -79,9 +79,7 @@
         @if(count($locations) === 0)
             <span class="map-use-disclaimer">No location results came back to show on the map <i
                     class="fa fa-map-marker" aria-hidden="true"></i> , it
-                could just be a merchant hasn't registered any yet. Check
-                to
-                see if any came back below.</span>
+                could just be a merchant hasn't registered any yet.</span>
         @else
             <span class="map-use-disclaimer">Use the map button <i class="fa fa-map-marker" aria-hidden="true"></i>
                 below
@@ -92,7 +90,7 @@
                 @else
                     location
                 @endif
-                returned from your search.
+                returned.
             </span>
         @endif
         {{-- HIDDEN DASHBOARD --}}
@@ -129,7 +127,7 @@
     </p>
     {{-- SEARCH RESULTS RESPONSE MESSAGES --}}
     {{-- if search was left empty --}}
-    @if($searchedDeals === 0 || $searchedDeals === null)
+    @if($searchedDeals === '')
         <div class="search-results-message-container">
             <h1>You didn't use a term to search by, so we brought back all locations to view.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
@@ -137,7 +135,7 @@
             <p>Continue your search above.</p>
         </div>
         {{-- if search has no results --}}
-    @elseif($searchedDeals->count() === 0)
+    @elseif(count($searchedDeals) === 0)
         <div class="search-results-message-container">
             <h1>Your search didn't return any results.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
