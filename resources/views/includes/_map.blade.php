@@ -18,7 +18,7 @@
         <div>
             <span type='button' class="map-search-distance-button" value="Distance">
                 Distance</span>
-            <input type='button' class="map-distance-go-button" value="Go!">
+            <input type='button' class="map-distance-go-button" value="Go">
             </input>
             <span class="map-search-distance-arrow">
                 <i class="fa fa-chevron-up" aria-hidden="true"></i>
@@ -32,6 +32,8 @@
                     75</li>
                 <li class="map-search-distance-selection" value="100">
                     100</li>
+                <li class="map-search-distance-selection" value="All Pins">
+                    All Pins</li>
             </ul>
         </div>
     </div>
