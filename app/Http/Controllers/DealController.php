@@ -166,18 +166,16 @@ class DealController extends Controller
             ]);
         }
         // if nothing is typed, sets results to nothing, returns all locations
-        elseif($request->search === '' || $request->search === null){
-            // dd($request->search);
+        elseif($request->search === null){
             $results = 0;
             return view('category_pages/searchResults', [
                 'favorites' => $favorites,
                 'coupons' => $coupons,
                 'redeems' => $redeems,
-                // 'searchedDeals' => $results,
-                'searchedDeals' => '',
+                'searchedDeals' => $results,
                 'request' => $request,
                 'locations' => $allLocations,
-                'searchedWords' => ['no terms used'],
+                'searchedWords' => ['no results'],
                 'message' => 'Enter a topic to search for.',
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''

@@ -129,7 +129,7 @@
     </p>
     {{-- SEARCH RESULTS RESPONSE MESSAGES --}}
     {{-- if search was left empty --}}
-    @if($searchedDeals === '' || $searchedDeals === null)
+    @if($searchedDeals === 0 || $searchedDeals === null)
         <div class="search-results-message-container">
             <h1>You didn't use a term to search by, so we brought back all locations to view.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
@@ -137,7 +137,7 @@
             <p>Continue your search above.</p>
         </div>
         {{-- if search has no results --}}
-    @elseif(count($searchedDeals) === 0)
+    @elseif($searchedDeals->count() === 0)
         <div class="search-results-message-container">
             <h1>Your search didn't return any results.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
