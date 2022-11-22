@@ -176,7 +176,7 @@ class DealController extends Controller
                 'request' => $request,
                 'locations' => $allLocations,
                 'searchedWords' => ['no terms used'],
-                'message' => 'Enter a topic to search for.',
+                'message' => 'Enter a term to search for.',
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''
             ]);
@@ -192,7 +192,7 @@ class DealController extends Controller
                 'request' => $request,
                 'locations' => [],
                 'searchedWords' => ['no results'],
-                'message' => 'Enter a topic to search for.',
+                'message' => '',
                 'pageTitle' => 'Search Results',
                 'submitMethod' => ''
             ]);
