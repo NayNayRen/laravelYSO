@@ -381,7 +381,7 @@ function loadScript() {
 
     mapSearchDistanceSelection.forEach((selection) => {
         selection.addEventListener("click", (e) => {
-            mapSearchDistanceButton.innerText = e.target.innerText;
+            mapSearchDistanceButton.innerText = e.target.innerText + " miles";
             mapSearchDistanceContainer.classList.remove(
                 "map-search-distance-container-toggle"
             );
