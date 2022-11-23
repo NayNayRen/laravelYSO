@@ -24,13 +24,13 @@
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </span>
             <ul class="map-search-distance-dropdown">
-                <li class="map-search-distance-selection">
+                <li class="map-search-distance-selection" value="25">
                     25</li>
-                <li class="map-search-distance-selection">
+                <li class="map-search-distance-selection" value="50">
                     50</li>
-                <li class="map-search-distance-selection">
+                <li class="map-search-distance-selection" value="75">
                     75</li>
-                <li class="map-search-distance-selection">
+                <li class="map-search-distance-selection" value="100">
                     100</li>
                 <li class="map-search-distance-selection">
                     No Limit</li>
