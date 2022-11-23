@@ -109,6 +109,7 @@
     {{-- @foreach($locationIds as $locationId)
         <span>{{ $locationId->lid }}</span><br>
     @endforeach--}}
+    <span class="current-page" hidden>featured</span>
     <span class="submit-method">{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
     @foreach($locations as $location)

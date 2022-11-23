@@ -5,14 +5,15 @@ function loadScript() {
     const hiddenMapCloseButton = document.querySelector(
         ".hidden-map-close-button"
     );
-    const hiddenMapLocationButton = document.querySelector(
-        ".hidden-map-location-button"
-    );
     const hiddenMapHeader = document.querySelector(".hidden-map-header");
     const mapMessage = document.querySelector(".map-message");
     const mapMessageClose = document.querySelector(".map-message-close");
     const clearMapButton = document.querySelector(".clear-map-button");
     const submitMethod = document.querySelector(".submit-method");
+    const currentPage = document.querySelector(".current-page");
+    const hiddenMapLocationButton = document.querySelector(
+        ".hidden-map-location-button"
+    );
     const mapSearchDistanceContainer = document.querySelector(
         ".map-search-distance-container"
     );
@@ -49,7 +50,7 @@ function loadScript() {
             browserHasGeolocation
                 ? `<span class='map-bubble-heading'>Uh oh...</span>
                     <div class='map-bubble-address'>
-                        <span>Looks like you said no to pinning your location.</span>
+                        <span>Looks like you said no to pinning your location. Radial search is not available unless otherwise.</span>
                     </div>`
                 : `<span class='map-bubble-heading'>Error :</span>
                     <div class='map-bubble-address'>
@@ -148,7 +149,7 @@ function loadScript() {
                         radius: 15000,
                     });
                     map.setCenter(currentLocationMarker);
-                    map.setZoom(11);
+                    map.setZoom(10);
                     marker.setMap(map);
                     circle.setMap(map);
                     marker.addListener("click", () => {
@@ -165,17 +166,17 @@ function loadScript() {
                             mapSearchDistanceButton.innerText === "25" ||
                             mapSearchDistanceButton.innerText === "Reset"
                         ) {
-                            map.setZoom(11);
+                            map.setZoom(10);
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(15000);
                         }
                         if (mapSearchDistanceButton.innerText === "50") {
-                            map.setZoom(10);
+                            map.setZoom(9);
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(25000);
                         }
                         if (mapSearchDistanceButton.innerText === "75") {
-                            map.setZoom(9);
+                            map.setZoom(8);
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(35000);
                         }
@@ -201,6 +202,7 @@ function loadScript() {
         }
     }
 
+    // BUILDS EACH MARKER
     function buildMarkers() {
         const ids = document.querySelectorAll(".location-id");
         const latitudes = document.querySelectorAll(".location-lat");
@@ -305,6 +307,18 @@ function loadScript() {
                         shouldFocus: false,
                     });
                 });
+                // focuses on single location page's marker
+                if (currentPage.innerText === "single location") {
+                    setTimeout(() => {
+                        map.setZoom(7);
+                        map.setCenter(marker.position);
+                        markerInfo.open({
+                            anchor: marker,
+                            map: map,
+                            shouldFocus: false,
+                        });
+                    }, 1000);
+                }
                 // clears all location markers from the map
                 clearMapButton.addEventListener("click", () => {
                     marker.setMap(null);
@@ -405,6 +419,7 @@ function loadScript() {
         mapDistanceGoButton.style.display = "none";
     });
 
+    // USED IF CURRENT LOCATION IS DENIED, DOESNT ALLOW RADIAL SEARCH
     mapSearchDistanceSelection.forEach((selection) => {
         selection.addEventListener("click", (e) => {
             mapSearchDistanceButton.innerText = e.target.innerText;
@@ -422,7 +437,7 @@ function loadScript() {
         });
     });
 
-    // autoloads map if map button is used on homepage
+    // autoloads map if map button is used from homepage
     autoLoadMap();
 }
 

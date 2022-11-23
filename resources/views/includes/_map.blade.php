@@ -21,7 +21,7 @@
             <input type='button' class="map-distance-go-button" value="Go">
             </input>
             <span class="map-search-distance-arrow">
-                <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </span>
             <ul class="map-search-distance-dropdown">
                 <li class="map-search-distance-selection">

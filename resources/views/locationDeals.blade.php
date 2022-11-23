@@ -87,6 +87,7 @@
 
     </div>
     {{-- USED TO PULL LOCATION SEARCH DATA FOR GOOGLE MAP PINS --}}
+    <span class="current-page" hidden>single location</span>
     <span class="submit-method" hidden>{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
     @foreach($locations as $location)
