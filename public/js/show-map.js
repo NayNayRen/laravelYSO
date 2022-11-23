@@ -2,15 +2,16 @@
 function loadScript() {
     const hiddenMap = document.querySelector(".hidden-map");
     const hiddenMapOpenButton = document.getElementById("map-open-button");
-    const hiddenMapCloseButton = document.querySelector(
-        ".hidden-map-close-button"
-    );
     const hiddenMapHeader = document.querySelector(".hidden-map-header");
     const mapMessage = document.querySelector(".map-message");
     const mapMessageClose = document.querySelector(".map-message-close");
     const clearMapButton = document.querySelector(".clear-map-button");
     const submitMethod = document.querySelector(".submit-method");
     const currentPage = document.querySelector(".current-page");
+    const focusSinglePin = document.querySelector(".focus-single-pin");
+    const hiddenMapCloseButton = document.querySelector(
+        ".hidden-map-close-button"
+    );
     const hiddenMapLocationButton = document.querySelector(
         ".hidden-map-location-button"
     );
@@ -161,26 +162,25 @@ function loadScript() {
                     });
                     // console.log(circle.center);
                     mapDistanceGoButton.addEventListener("click", () => {
-                        // console.log(mapSearchDistanceButton.innerText);
                         if (
-                            mapSearchDistanceButton.innerText === "25" ||
-                            mapSearchDistanceButton.innerText === "Reset"
+                            mapSearchDistanceButton.innerText === "25 miles" ||
+                            mapSearchDistanceButton.innerText === "My Locale"
                         ) {
                             map.setZoom(10);
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(15000);
                         }
-                        if (mapSearchDistanceButton.innerText === "50") {
+                        if (mapSearchDistanceButton.innerText === "50 miles") {
                             map.setZoom(9);
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(25000);
                         }
-                        if (mapSearchDistanceButton.innerText === "75") {
+                        if (mapSearchDistanceButton.innerText === "75 miles") {
                             map.setZoom(8);
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(35000);
                         }
-                        if (mapSearchDistanceButton.innerText === "100") {
+                        if (mapSearchDistanceButton.innerText === "100 miles") {
                             map.setZoom(7);
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(45000);
@@ -309,6 +309,7 @@ function loadScript() {
                 });
                 // focuses on single location page's marker
                 if (currentPage.innerText === "single location") {
+                    focusSinglePin.style.display = "block";
                     setTimeout(() => {
                         map.setZoom(7);
                         map.setCenter(marker.position);
@@ -318,6 +319,17 @@ function loadScript() {
                             shouldFocus: false,
                         });
                     }, 1000);
+                    mapDistanceGoButton.addEventListener("click", () => {
+                        if (mapSearchDistanceButton.innerText === "Go To Pin") {
+                            map.setZoom(7);
+                            map.setCenter(marker.position);
+                            markerInfo.open({
+                                anchor: marker,
+                                map: map,
+                                shouldFocus: false,
+                            });
+                        }
+                    });
                 }
                 // clears all location markers from the map
                 clearMapButton.addEventListener("click", () => {

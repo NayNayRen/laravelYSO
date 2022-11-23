@@ -25,17 +25,19 @@
             </span>
             <ul class="map-search-distance-dropdown">
                 <li class="map-search-distance-selection" value="25">
-                    25</li>
+                    25 miles</li>
                 <li class="map-search-distance-selection" value="50">
-                    50</li>
+                    50 miles</li>
                 <li class="map-search-distance-selection" value="75">
-                    75</li>
+                    75 miles</li>
                 <li class="map-search-distance-selection" value="100">
-                    100</li>
+                    100 miles</li>
                 <li class="map-search-distance-selection">
                     No Limit</li>
                 <li class="map-search-distance-selection">
-                    Reset</li>
+                    My Locale</li>
+                <li class="map-search-distance-selection focus-single-pin">
+                    Go To Pin</li>
             </ul>
         </div>
     </div>

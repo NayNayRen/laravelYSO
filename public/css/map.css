@@ -21,6 +21,10 @@
     cursor: pointer;
 }
 
+.focus-single-pin {
+    display: none;
+}
+
 .hidden-map {
     -ms-transform: translateX(-50%);
     -webkit-box-shadow: 0 0 30px #000;
@@ -99,12 +103,14 @@
 
 .hidden-map-location-button-container {
     font-weight: bold;
+    left: 0;
     overflow: hidden;
+    padding-left: 10px;
     position: absolute;
-    left: 10px;
     text-align: left;
     top: 5px;
     width: 150px;
+    /* outline: solid 1px blue; */
 }
 
 .hidden-map-location-count {
@@ -349,7 +355,7 @@
     overflow: hidden;
     position: absolute;
     top: 40px;
-    width: 120px;
+    width: 125px;
     z-index: 1;
     /* outline: solid 1px blue; */
 }
