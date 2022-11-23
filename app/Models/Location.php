@@ -13,13 +13,19 @@ class Location extends Model
     // GETS ALL LOCATIONS
     public static function getAllLocations(){
         $dealResults = Deal::orderBy('id')->get();
-        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
+        // $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
+        $locationIds = CouponLocation::orderBy('id')
+        ->where(function ($q) use ($dealResults) {
+            foreach ($dealResults as $dealResult) {
+                $q->orWhere('cid', $dealResult->id);
+            }
+        })->get();
         $locations = Location::orderBy('id')
-        // ->whereIn('id', $locationIds->pluck('lid'))
+        ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
         ->WhereNotNull('lon')
         ->get();
-        // dd($locationIds);
+        // dd($locations);
         return $locations;
     }
 
