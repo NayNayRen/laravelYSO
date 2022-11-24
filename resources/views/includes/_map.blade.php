@@ -17,7 +17,7 @@
     <div class="map-search-distance-container">
         <div>
             <span type='button' class="map-search-distance-button">
-                Distance</span>
+                15 miles</span>
             <input type='button' class="map-distance-go-button" value="Go">
             </input>
             <span class="map-search-distance-arrow">

@@ -355,7 +355,7 @@
     overflow: hidden;
     position: absolute;
     top: 40px;
-    width: 125px;
+    width: 130px;
     z-index: 1;
     /* outline: solid 1px blue; */
 }
@@ -391,8 +391,8 @@
 }
 
 .map-search-distance-dropdown-toggle {
-    -webkit-box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.15);
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.15);
     opacity: 1;
     top: calc(100% - 1px);
 }

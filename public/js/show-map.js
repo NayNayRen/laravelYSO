@@ -81,6 +81,13 @@ function loadScript() {
         });
     }
 
+    // CONVERTS MILES PASSED TO METERS
+    function milesToMeters(miles) {
+        const circleRadiusInMeters = Math.floor(miles * 1609.34);
+        // console.log(circleRadiusInMeters);
+        return circleRadiusInMeters;
+    }
+
     // BUILDS AND ADDS MAP ON CLICKING MAP ICON
     function loadMap(zoomLevel) {
         // ensures an empty marker group
@@ -146,8 +153,8 @@ function loadScript() {
                         fillOpacity: 0.25,
                         map,
                         center: currentLocationMarker,
-                        // radius: Math.sqrt(100000) * 100,
-                        radius: 15000,
+                        // default radius is in meters, pass miles to convert
+                        radius: milesToMeters(15),
                     });
                     map.setCenter(currentLocationMarker);
                     map.setZoom(10);
@@ -160,35 +167,44 @@ function loadScript() {
                             shouldFocus: false,
                         });
                     });
-                    // console.log(circle.center);
+                    if (window.innerWidth <= 400) {
+                        map.setZoom(9);
+                    }
+                    // console.log(circle.radius);
                     mapDistanceGoButton.addEventListener("click", () => {
-                        if (
-                            mapSearchDistanceButton.innerText === "25 miles" ||
-                            mapSearchDistanceButton.innerText === "My Locale"
-                        ) {
-                            map.setZoom(10);
-                            map.setCenter(currentLocationMarker);
-                            circle.setRadius(15000);
-                        }
-                        if (mapSearchDistanceButton.innerText === "50 miles") {
+                        if (mapSearchDistanceButton.innerText === "25 miles") {
                             map.setZoom(9);
                             map.setCenter(currentLocationMarker);
-                            circle.setRadius(25000);
+                            circle.setRadius(milesToMeters(25));
                         }
-                        if (mapSearchDistanceButton.innerText === "75 miles") {
+                        if (mapSearchDistanceButton.innerText === "50 miles") {
                             map.setZoom(8);
                             map.setCenter(currentLocationMarker);
-                            circle.setRadius(35000);
+                            circle.setRadius(milesToMeters(50));
                         }
-                        if (mapSearchDistanceButton.innerText === "100 miles") {
+                        if (mapSearchDistanceButton.innerText === "75 miles") {
                             map.setZoom(7);
                             map.setCenter(currentLocationMarker);
-                            circle.setRadius(45000);
+                            circle.setRadius(milesToMeters(75));
+                        }
+                        if (mapSearchDistanceButton.innerText === "100 miles") {
+                            map.setZoom(6);
+                            map.setCenter(currentLocationMarker);
+                            circle.setRadius(milesToMeters(100));
                         }
                         if (mapSearchDistanceButton.innerText === "No Limit") {
                             map.setZoom(4);
                             map.setCenter(usCenter);
                             circle.setRadius(0);
+                        }
+                        if (mapSearchDistanceButton.innerText === "My Locale") {
+                            if (window.innerWidth <= 400) {
+                                map.setZoom(9);
+                            } else {
+                                map.setZoom(10);
+                            }
+                            map.setCenter(currentLocationMarker);
+                            circle.setRadius(milesToMeters(15));
                         }
                     });
                 },
@@ -238,7 +254,7 @@ function loadScript() {
                 };
                 markerGroup.push(markers[x]);
             }
-            // console.log(markerGroup.length);
+            // console.log(markerGroup);
             markerGroup.map((marker) => {
                 if (marker.email === "") {
                     content = `
@@ -310,24 +326,27 @@ function loadScript() {
                 // focuses on single location page's marker
                 if (currentPage.innerText === "single location") {
                     focusSinglePin.style.display = "block";
+                    map.setZoom(8);
                     setTimeout(() => {
-                        map.setZoom(7);
                         map.setCenter(marker.position);
-                        markerInfo.open({
-                            anchor: marker,
-                            map: map,
-                            shouldFocus: false,
-                        });
+                        // markerInfo.open({
+                        //     anchor: marker,
+                        //     map: map,
+                        //     shouldFocus: false,
+                        // });
                     }, 1000);
+                    // only shows go to pin button on single locxation page
                     mapDistanceGoButton.addEventListener("click", () => {
                         if (mapSearchDistanceButton.innerText === "Go To Pin") {
-                            map.setZoom(7);
-                            map.setCenter(marker.position);
-                            markerInfo.open({
-                                anchor: marker,
-                                map: map,
-                                shouldFocus: false,
-                            });
+                            map.setZoom(8);
+                            setTimeout(() => {
+                                map.setCenter(marker.position);
+                                // markerInfo.open({
+                                //     anchor: marker,
+                                //     map: map,
+                                //     shouldFocus: false,
+                                // });
+                            }, 1000);
                         }
                     });
                 }
