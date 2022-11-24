@@ -193,7 +193,11 @@ function loadScript() {
                             circle.setRadius(milesToMeters(100));
                         }
                         if (mapSearchDistanceButton.innerText === "No Limit") {
-                            map.setZoom(4);
+                            if (window.innerWidth <= 400) {
+                                map.setZoom(3);
+                            } else {
+                                map.setZoom(4);
+                            }
                             map.setCenter(usCenter);
                             circle.setRadius(0);
                         }
