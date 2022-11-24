@@ -200,8 +200,6 @@ function loadScript() {
                         if (mapSearchDistanceButton.innerText === "My Locale") {
                             if (window.innerWidth <= 400) {
                                 map.setZoom(9);
-                            } else {
-                                map.setZoom(10);
                             }
                             map.setCenter(currentLocationMarker);
                             circle.setRadius(milesToMeters(15));
