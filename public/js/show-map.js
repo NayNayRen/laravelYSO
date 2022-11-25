@@ -338,16 +338,16 @@ function loadScript() {
                 // focuses on single location page's marker
                 if (currentPage.innerText === "single location") {
                     focusSinglePin.style.display = "block";
-                    map.setZoom(8);
+                    map.setCenter(marker.position);
                     setTimeout(() => {
-                        map.setCenter(marker.position);
+                        map.setZoom(8);
                     }, 1000);
                     // only shows Go To Pin button on single location page
                     mapDistanceGoButton.addEventListener("click", () => {
                         if (mapSearchDistanceButton.innerText === "Go To Pin") {
-                            map.setZoom(8);
+                            map.setCenter(marker.position);
                             setTimeout(() => {
-                                map.setCenter(marker.position);
+                                map.setZoom(8);
                             }, 1000);
                         }
                     });
