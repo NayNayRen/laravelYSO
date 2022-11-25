@@ -172,12 +172,13 @@ function loadScript() {
                             shouldFocus: false,
                         });
                     });
+                    // adjusts zoom level for mobile
                     if (window.innerWidth <= 400) {
                         map.setZoom(9);
                     } else {
                         map.setZoom(10);
                     }
-                    // console.log(circle.radius);
+                    // button to perfom distance search
                     mapDistanceGoButton.addEventListener("click", () => {
                         if (mapSearchDistanceButton.innerText === "25 miles") {
                             map.setZoom(9);
