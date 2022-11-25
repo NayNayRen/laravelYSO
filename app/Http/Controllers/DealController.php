@@ -151,7 +151,7 @@ class DealController extends Controller
         // dd($submitMethod);
         // limits search to 3 words or less
         if(count($words) > 3){
-            $results = 0;
+            $results = null;
             return view('category_pages/searchResults', [
                 'favorites' => $favorites,
                 'coupons' => $coupons,

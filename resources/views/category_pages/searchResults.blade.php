@@ -127,8 +127,16 @@
         @endforeach
     </p>
     {{-- SEARCH RESULTS RESPONSE MESSAGES --}}
-    {{-- if search was left empty --}}
-    @if($searchedDeals === null)
+    {{-- if more than 3 words were used to search --}}
+    @if(count($searchedWords) > 3)
+        <div class="search-results-message-container">
+            <h1>Too many terms were used. Limit your search to 3 words or less please.</h1>
+            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
+            <span>or...</span>
+            <p>Continue your search above.</p>
+        </div>
+        {{-- if search was left empty --}}
+    @elseif($searchedDeals === null)
         <div class="search-results-message-container">
             <h1>You didn't use any terms, so we brought back all our locations.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
@@ -138,7 +146,7 @@
         {{-- if search has no results --}}
     @elseif(count($searchedDeals) === 0)
         <div class="search-results-message-container">
-            <h1>Your search didn't return any results.</h1>
+            <h1>Your search didn't return any results. You should keep looking though.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>

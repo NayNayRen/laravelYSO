@@ -92,13 +92,6 @@ function loadScript() {
     function loadMap(zoomLevel) {
         // ensures an empty marker group
         markerGroup = [];
-        // icon Size in terms of pixels, Point relative to icon
-        const ysoIcon = {
-            url: "../img/yso-clipped-rw-shadowed.png",
-            size: new google.maps.Size(40, 40),
-            scaledSize: new google.maps.Size(40, 40),
-            origin: new google.maps.Point(0, 0),
-        };
         // generates map
         map = new google.maps.Map(document.getElementById("map"), {
             center: usCenter,
@@ -114,6 +107,18 @@ function loadScript() {
             maxWidth: 200,
             content: "",
         });
+        currentPosition();
+    }
+
+    // GET USERS CURRENT POSITION
+    function currentPosition() {
+        // icon Size in terms of pixels, Point centers on location position
+        const ysoIcon = {
+            url: "../img/yso-clipped-rw-shadowed.png",
+            size: new google.maps.Size(40, 40),
+            scaledSize: new google.maps.Size(40, 40),
+            origin: new google.maps.Point(0, 0),
+        };
         // if location is allowed
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -138,7 +143,7 @@ function loadScript() {
                             currentLocationMarker.lat,
                             currentLocationMarker.lng
                         ),
-                        title: "Your Current Location.",
+                        title: "You Are Here.",
                         optimized: false,
                         animation: google.maps.Animation.DROP,
                         icon: ysoIcon,
@@ -169,6 +174,8 @@ function loadScript() {
                     });
                     if (window.innerWidth <= 400) {
                         map.setZoom(9);
+                    } else {
+                        map.setZoom(10);
                     }
                     // console.log(circle.radius);
                     mapDistanceGoButton.addEventListener("click", () => {
@@ -260,6 +267,7 @@ function loadScript() {
             }
             // console.log(markerGroup);
             markerGroup.map((marker) => {
+                // if no email, link is replaced with plain text
                 if (marker.email === "") {
                     content = `
                         <span class='map-bubble-heading'>${marker.name}</span>
@@ -278,6 +286,7 @@ function loadScript() {
                             </form>
                         </div>
                     `;
+                    // if there is an email, a link is provided
                 } else {
                     content = `
                         <span class='map-bubble-heading'>${marker.name}</span>
@@ -297,7 +306,6 @@ function loadScript() {
                         </div>
                     `;
                 }
-                // console.log(marker.id);
                 // each markers data
                 let markerInfo = new google.maps.InfoWindow({
                     maxWidth: 275,
@@ -333,23 +341,13 @@ function loadScript() {
                     map.setZoom(8);
                     setTimeout(() => {
                         map.setCenter(marker.position);
-                        // markerInfo.open({
-                        //     anchor: marker,
-                        //     map: map,
-                        //     shouldFocus: false,
-                        // });
                     }, 1000);
-                    // only shows go to pin button on single locxation page
+                    // only shows Go To Pin button on single location page
                     mapDistanceGoButton.addEventListener("click", () => {
                         if (mapSearchDistanceButton.innerText === "Go To Pin") {
                             map.setZoom(8);
                             setTimeout(() => {
                                 map.setCenter(marker.position);
-                                // markerInfo.open({
-                                //     anchor: marker,
-                                //     map: map,
-                                //     shouldFocus: false,
-                                // });
                             }, 1000);
                         }
                     });
@@ -358,37 +356,40 @@ function loadScript() {
                 clearMapButton.addEventListener("click", () => {
                     marker.setMap(null);
                 });
+                // clears markers from map before re-dropping
+                hiddenMapLocationButton.addEventListener("click", () => {
+                    marker.setMap(null);
+                });
+                // console.log(markerGroup.length);
             });
         }
     }
 
     // AUTOLOADS MAP IF SUBMIT METHOD IS THE HOMEPAGE MAP BUTTON
     function autoLoadMap() {
-        if (submitMethod.innerText === "map") {
-            hiddenMap.style.opacity = "1";
-            hiddenMap.style.paddingTop = "30px";
-            if (window.innerWidth > 1300) {
-                loadMap(4);
-                hiddenMap.style.height = "500px";
-            } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-                loadMap(4);
-                hiddenMap.style.height = "450px";
-            } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
-                loadMap(4);
-                hiddenMap.style.height = "400px";
-            } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-                loadMap(4);
-                hiddenMap.style.height = "500px";
-                hiddenMapHeader.style.display = "none";
-            } else if (window.innerWidth < 400) {
-                loadMap(3);
-                hiddenMap.style.height = "325px";
-                hiddenMapHeader.style.display = "none";
-            }
-            setTimeout(() => {
-                buildMarkers();
-            }, 2000);
+        hiddenMap.style.opacity = "1";
+        hiddenMap.style.paddingTop = "30px";
+        if (window.innerWidth > 1300) {
+            loadMap(4);
+            hiddenMap.style.height = "500px";
+        } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+            loadMap(4);
+            hiddenMap.style.height = "450px";
+        } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
+            loadMap(4);
+            hiddenMap.style.height = "400px";
+        } else if (window.innerWidth < 700 && window.innerWidth > 400) {
+            loadMap(4);
+            hiddenMap.style.height = "500px";
+            hiddenMapHeader.style.display = "none";
+        } else if (window.innerWidth < 400) {
+            loadMap(3);
+            hiddenMap.style.height = "325px";
+            hiddenMapHeader.style.display = "none";
         }
+        setTimeout(() => {
+            buildMarkers();
+        }, 2000);
     }
 
     // EVENT LISTENERS
@@ -399,9 +400,6 @@ function loadScript() {
 
     // OPENS MAP FROM MAP ICON
     hiddenMapOpenButton.addEventListener("click", () => {
-        // windowOverlay.classList.add("window-overlay-dim");
-        // hiddenMap.style.zIndex = "3";
-        // hiddenMap.style.zIndex = "1";
         window.scroll(0, 0);
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "30px";
@@ -430,10 +428,8 @@ function loadScript() {
 
     // CLOSES MAP
     hiddenMapCloseButton.addEventListener("click", () => {
-        // windowOverlay.classList.remove("window-overlay-dim");
         hiddenMap.style.height = "0";
         hiddenMap.style.paddingTop = "0";
-        // hiddenMap.style.zIndex = "-1";
         hiddenMap.style.opacity = "0";
         mapMessage.style.opacity = "0";
         mapMessage.style.top = "-100%";
@@ -473,7 +469,9 @@ function loadScript() {
     });
 
     // autoloads map if map button is used from homepage
-    autoLoadMap();
+    if (submitMethod.innerText === "map") {
+        autoLoadMap();
+    }
 }
 
 // window.onload = loadScript();
