@@ -123,7 +123,7 @@ function loadScript() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    const currentLocationMarker = {
+                    const currentLocation = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
                         // New York City
@@ -134,14 +134,15 @@ function loadScript() {
                     // console.log(position);
                     infoWindow.setContent(`
                     <span class='map-bubble-heading'>
-                    ${currentLocationMarker.heading}
+                    ${currentLocation.heading}
                     </span>
                     `);
                     // current location marker
-                    marker = new google.maps.Marker({
+                    // IF BREAKAGE CHANGE THIS BACK TO marker
+                    let currentLocationMarker = new google.maps.Marker({
                         position: new google.maps.LatLng(
-                            currentLocationMarker.lat,
-                            currentLocationMarker.lng
+                            currentLocation.lat,
+                            currentLocation.lng
                         ),
                         title: "You Are Here.",
                         optimized: false,
@@ -157,17 +158,17 @@ function loadScript() {
                         fillColor: "#FF0000",
                         fillOpacity: 0.25,
                         map,
-                        center: currentLocationMarker,
+                        center: currentLocation,
                         // default radius is in meters, pass miles to convert
                         radius: milesToMeters(15),
                     });
-                    map.setCenter(currentLocationMarker);
+                    map.setCenter(currentLocation);
                     map.setZoom(10);
-                    marker.setMap(map);
+                    currentLocationMarker.setMap(map);
                     circle.setMap(map);
-                    marker.addListener("click", () => {
+                    currentLocationMarker.addListener("click", () => {
                         infoWindow.open({
-                            anchor: marker,
+                            anchor: currentLocationMarker,
                             map: map,
                             shouldFocus: false,
                         });
@@ -182,22 +183,22 @@ function loadScript() {
                     mapDistanceGoButton.addEventListener("click", () => {
                         if (mapSearchDistanceButton.innerText === "25 miles") {
                             map.setZoom(9);
-                            map.setCenter(currentLocationMarker);
+                            map.setCenter(currentLocation);
                             circle.setRadius(milesToMeters(25));
                         }
                         if (mapSearchDistanceButton.innerText === "50 miles") {
                             map.setZoom(8);
-                            map.setCenter(currentLocationMarker);
+                            map.setCenter(currentLocation);
                             circle.setRadius(milesToMeters(50));
                         }
                         if (mapSearchDistanceButton.innerText === "75 miles") {
                             map.setZoom(7);
-                            map.setCenter(currentLocationMarker);
+                            map.setCenter(currentLocation);
                             circle.setRadius(milesToMeters(75));
                         }
                         if (mapSearchDistanceButton.innerText === "100 miles") {
                             map.setZoom(6);
-                            map.setCenter(currentLocationMarker);
+                            map.setCenter(currentLocation);
                             circle.setRadius(milesToMeters(100));
                         }
                         if (mapSearchDistanceButton.innerText === "No Limit") {
@@ -215,7 +216,7 @@ function loadScript() {
                             } else {
                                 map.setZoom(10);
                             }
-                            map.setCenter(currentLocationMarker);
+                            map.setCenter(currentLocation);
                             circle.setRadius(milesToMeters(15));
                         }
                     });
