@@ -181,45 +181,98 @@ function loadScript() {
                     }
                     // button to perfom distance search
                     mapDistanceGoButton.addEventListener("click", () => {
-                        if (mapSearchDistanceButton.innerText === "25 miles") {
-                            map.setZoom(9);
-                            map.setCenter(currentLocation);
-                            circle.setRadius(milesToMeters(25));
-                        }
-                        if (mapSearchDistanceButton.innerText === "50 miles") {
-                            map.setZoom(8);
-                            map.setCenter(currentLocation);
-                            circle.setRadius(milesToMeters(50));
-                        }
-                        if (mapSearchDistanceButton.innerText === "75 miles") {
-                            map.setZoom(7);
-                            map.setCenter(currentLocation);
-                            circle.setRadius(milesToMeters(75));
-                        }
-                        if (mapSearchDistanceButton.innerText === "100 miles") {
-                            map.setZoom(6);
-                            map.setCenter(currentLocation);
-                            circle.setRadius(milesToMeters(100));
-                        }
-                        if (mapSearchDistanceButton.innerText === "No Limit") {
-                            if (window.innerWidth <= 400) {
-                                map.setZoom(3);
-                            } else {
-                                map.setZoom(4);
-                            }
-                            map.setCenter(usCenter);
-                            circle.setRadius(0);
-                        }
-                        if (mapSearchDistanceButton.innerText === "My Locale") {
-                            if (window.innerWidth <= 400) {
+                        // remove if breaks
+                        markerGroup.map((marker) => {
+                            const distanceFromLocation =
+                                google.maps.geometry.spherical.computeDistanceBetween(
+                                    new google.maps.LatLng(
+                                        parseFloat(marker.lat),
+                                        parseFloat(marker.lng)
+                                    ),
+                                    new google.maps.LatLng(
+                                        parseFloat(currentLocation.lat),
+                                        parseFloat(currentLocation.lng)
+                                    )
+                                );
+                            // remove if breaks
+                            if (
+                                mapSearchDistanceButton.innerText === "25 miles"
+                            ) {
+                                // console.log(distanceFromLocation);
                                 map.setZoom(9);
-                            } else {
-                                map.setZoom(10);
+                                map.setCenter(currentLocation);
+                                circle.setRadius(milesToMeters(25));
+                                if (distanceFromLocation < milesToMeters(25)) {
+                                    console.log(marker.name);
+                                    // marker.setMap(map);
+                                } else {
+                                    // console.log("outside");
+                                }
                             }
-                            map.setCenter(currentLocation);
-                            circle.setRadius(milesToMeters(15));
-                        }
+                            if (
+                                mapSearchDistanceButton.innerText === "50 miles"
+                            ) {
+                                map.setZoom(8);
+                                map.setCenter(currentLocation);
+                                circle.setRadius(milesToMeters(50));
+                                if (distanceFromLocation < milesToMeters(50)) {
+                                    console.log(marker.name);
+                                } else {
+                                    // console.log("outside");
+                                }
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText === "75 miles"
+                            ) {
+                                map.setZoom(7);
+                                map.setCenter(currentLocation);
+                                circle.setRadius(milesToMeters(75));
+                                if (distanceFromLocation < milesToMeters(75)) {
+                                    console.log(marker.name);
+                                } else {
+                                    // console.log("outside");
+                                }
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText ===
+                                "100 miles"
+                            ) {
+                                map.setZoom(6);
+                                map.setCenter(currentLocation);
+                                circle.setRadius(milesToMeters(100));
+                                if (distanceFromLocation < milesToMeters(100)) {
+                                    console.log(marker.name);
+                                } else {
+                                    // console.log("outside");
+                                }
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText === "No Limit"
+                            ) {
+                                if (window.innerWidth <= 400) {
+                                    map.setZoom(3);
+                                } else {
+                                    map.setZoom(4);
+                                }
+                                map.setCenter(usCenter);
+                                circle.setRadius(0);
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText ===
+                                "My Locale"
+                            ) {
+                                if (window.innerWidth <= 400) {
+                                    map.setZoom(9);
+                                } else {
+                                    map.setZoom(10);
+                                }
+                                map.setCenter(currentLocation);
+                                circle.setRadius(milesToMeters(15));
+                            }
+                        });
+                        // remove if breaks
                     });
+                    // remove if breaks
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());
