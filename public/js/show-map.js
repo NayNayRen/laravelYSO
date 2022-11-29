@@ -198,7 +198,6 @@ function loadScript() {
                             if (
                                 mapSearchDistanceButton.innerText === "25 miles"
                             ) {
-                                // console.log(distanceFromLocation);
                                 map.setZoom(9);
                                 map.setCenter(currentLocation);
                                 circle.setRadius(milesToMeters(25));
@@ -269,10 +268,10 @@ function loadScript() {
                                 map.setCenter(currentLocation);
                                 circle.setRadius(milesToMeters(15));
                             }
+                            // remove if breaks
                         });
                         // remove if breaks
                     });
-                    // remove if breaks
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());
@@ -395,18 +394,18 @@ function loadScript() {
                     focusSinglePin.style.display = "block";
                     map.setCenter(marker.position);
                     setTimeout(() => {
-                        map.setZoom(8);
+                        map.setZoom(7);
                     }, 1000);
-                    // only shows Go To Pin button on single location page
-                    mapDistanceGoButton.addEventListener("click", () => {
-                        if (mapSearchDistanceButton.innerText === "Go To Pin") {
-                            map.setCenter(marker.position);
-                            setTimeout(() => {
-                                map.setZoom(8);
-                            }, 1000);
-                        }
-                    });
                 }
+                // only shows Go To Pin button on single location page
+                mapDistanceGoButton.addEventListener("click", () => {
+                    if (mapSearchDistanceButton.innerText === "Go To Pin") {
+                        map.setCenter(marker.position);
+                        setTimeout(() => {
+                            map.setZoom(7);
+                        }, 1000);
+                    }
+                });
                 // clears all location markers from the map
                 clearMapButton.addEventListener("click", () => {
                     marker.setMap(null);
