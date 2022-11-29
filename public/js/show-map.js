@@ -88,6 +88,12 @@ function loadScript() {
         return circleRadiusInMeters;
     }
 
+    function metersToMiles(meter) {
+        const distanceInMiles = Math.ceil(meter / 1609.34);
+        // console.log(distanceInMiles);
+        return distanceInMiles;
+    }
+
     // BUILDS AND ADDS MAP ON CLICKING MAP ICON
     function loadMap(zoomLevel) {
         // ensures an empty marker group
@@ -319,6 +325,7 @@ function loadScript() {
                 };
                 markerGroup.push(markers[x]);
             }
+            // console.log(markers);
             // console.log(markerGroup);
             markerGroup.map((marker) => {
                 // if no email, link is replaced with plain text
