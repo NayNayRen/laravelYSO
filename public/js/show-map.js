@@ -179,7 +179,7 @@ function loadScript() {
                     } else {
                         map.setZoom(10);
                     }
-                    // button to perfom distance search
+                    // button to perfom current location adjustments
                     mapDistanceGoButton.addEventListener("click", () => {
                         if (mapSearchDistanceButton.innerText === "25 miles") {
                             map.setZoom(9);
@@ -353,7 +353,71 @@ function loadScript() {
                             map.setZoom(7);
                         }, 1000);
                     }
-                    markersWithSearchRadius(marker);
+                    // if location is allowed adds and removes markers for radius
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition((position) => {
+                            const currentLocation = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude,
+                            };
+                            const distanceFromLocation =
+                                google.maps.geometry.spherical.computeDistanceBetween(
+                                    new google.maps.LatLng(marker.position),
+                                    new google.maps.LatLng(
+                                        parseFloat(currentLocation.lat),
+                                        parseFloat(currentLocation.lng)
+                                    )
+                                );
+                            if (
+                                mapSearchDistanceButton.innerText === "25 miles"
+                            ) {
+                                if (distanceFromLocation < milesToMeters(25)) {
+                                    marker.setMap(map);
+                                } else {
+                                    marker.setMap(null);
+                                }
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText === "50 miles"
+                            ) {
+                                if (distanceFromLocation < milesToMeters(50)) {
+                                    marker.setMap(map);
+                                } else {
+                                    marker.setMap(null);
+                                }
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText === "75 miles"
+                            ) {
+                                if (distanceFromLocation < milesToMeters(75)) {
+                                    marker.setMap(map);
+                                } else {
+                                    marker.setMap(null);
+                                }
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText ===
+                                "100 miles"
+                            ) {
+                                if (distanceFromLocation < milesToMeters(100)) {
+                                    marker.setMap(map);
+                                } else {
+                                    marker.setMap(null);
+                                }
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText === "No Limit"
+                            ) {
+                                marker.setMap(map);
+                            }
+                            if (
+                                mapSearchDistanceButton.innerText ===
+                                "My Locale"
+                            ) {
+                                marker.setMap(map);
+                            }
+                        });
+                    }
                 });
                 // clears all location markers from the map
                 clearMapButton.addEventListener("click", () => {
@@ -364,46 +428,6 @@ function loadScript() {
                     marker.setMap(null);
                 });
                 // console.log(markerGroup.length);
-            });
-        }
-    }
-
-    // ADDS AND REMOVES MARKERS ACCORDING TO DISTANCE RADIUS
-    function markersWithSearchRadius(marker) {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
-                const currentLocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                };
-                const distanceFromLocation =
-                    google.maps.geometry.spherical.computeDistanceBetween(
-                        new google.maps.LatLng(marker.position),
-                        new google.maps.LatLng(
-                            parseFloat(currentLocation.lat),
-                            parseFloat(currentLocation.lng)
-                        )
-                    );
-                if (distanceFromLocation < milesToMeters(25)) {
-                    marker.setMap(map);
-                } else {
-                    marker.setMap(null);
-                }
-                if (distanceFromLocation < milesToMeters(50)) {
-                    marker.setMap(map);
-                } else {
-                    marker.setMap(null);
-                }
-                if (distanceFromLocation < milesToMeters(75)) {
-                    marker.setMap(map);
-                } else {
-                    marker.setMap(null);
-                }
-                if (distanceFromLocation < milesToMeters(100)) {
-                    marker.setMap(map);
-                } else {
-                    marker.setMap(null);
-                }
             });
         }
     }
