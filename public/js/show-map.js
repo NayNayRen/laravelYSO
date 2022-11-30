@@ -348,6 +348,7 @@ function loadScript() {
                 // only shows Go To Pin button on single location page
                 mapDistanceGoButton.addEventListener("click", () => {
                     if (mapSearchDistanceButton.innerText === "Go To Pin") {
+                        marker.setMap(map);
                         map.setCenter(marker.position);
                         setTimeout(() => {
                             map.setZoom(7);
