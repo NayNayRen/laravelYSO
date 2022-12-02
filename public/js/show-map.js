@@ -325,6 +325,7 @@ function loadScript() {
                     //             name.charAt(0).toUpperCase() + name.substring(1)
                     //     )
                     //     .join(" "),
+                    address: marker.address,
                     title: toTitleCase(marker.name),
                     optimized: false,
                     animation: google.maps.Animation.DROP,
@@ -423,8 +424,12 @@ function loadScript() {
                 });
                 // goes to each location in the list when clicked
                 mapLocationName.forEach((name) => {
-                    name.addEventListener("click", (e) => {
-                        if (e.target.innerText === marker.title) {
+                    name.addEventListener("click", () => {
+                        // console.log(marker.address);
+                        // console.log(name.lastElementChild.innerText);
+                        if (
+                            name.lastElementChild.innerText === marker.address
+                        ) {
                             map.setCenter(marker.position);
                             marker.setMap(map);
                             setTimeout(() => {

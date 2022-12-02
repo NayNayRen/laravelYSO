@@ -242,6 +242,12 @@
     cursor: pointer;
 }
 
+.map-location-address {
+    color: #e6331f;
+    display: block;
+    font-size: 12px;
+}
+
 .map-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
