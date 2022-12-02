@@ -33,6 +33,7 @@ function loadScript() {
     const mapSearchDistanceSelection = document.querySelectorAll(
         ".map-search-distance-selection"
     );
+    const mapLocationName = document.querySelectorAll(".map-location-name");
     let markerGroup = [];
     let infoWindow;
     let circle;
@@ -338,22 +339,22 @@ function loadScript() {
                     });
                 });
                 // focuses on single location page's marker
-                if (currentPage.innerText === "single location") {
-                    focusSinglePin.style.display = "block";
-                    map.setCenter(marker.position);
-                    setTimeout(() => {
-                        map.setZoom(7);
-                    }, 1000);
-                }
+                // if (currentPage.innerText === "single location") {
+                //     focusSinglePin.style.display = "block";
+                //     map.setCenter(marker.position);
+                //     setTimeout(() => {
+                //         map.setZoom(7);
+                //     }, 1000);
+                // }
                 // only shows Go To Pin button on single location page
                 mapDistanceGoButton.addEventListener("click", () => {
-                    if (mapSearchDistanceButton.innerText === "Go To Pin") {
-                        marker.setMap(map);
-                        map.setCenter(marker.position);
-                        setTimeout(() => {
-                            map.setZoom(7);
-                        }, 1000);
-                    }
+                    // if (mapSearchDistanceButton.innerText === "Go To Pin") {
+                    //     marker.setMap(map);
+                    //     map.setCenter(marker.position);
+                    //     setTimeout(() => {
+                    //         map.setZoom(7);
+                    //     }, 1000);
+                    // }
                     // if location is allowed adds and removes markers for radius
                     if (navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition((position) => {
@@ -419,6 +420,25 @@ function loadScript() {
                             }
                         });
                     }
+                });
+                // goes to each location in the list when clicked
+                mapLocationName.forEach((name) => {
+                    name.addEventListener("click", (e) => {
+                        if (e.target.innerText === marker.title) {
+                            map.setCenter(marker.position);
+                            marker.setMap(map);
+                            setTimeout(() => {
+                                map.setZoom(8);
+                                markerInfo.open({
+                                    anchor: marker,
+                                    map: map,
+                                    shouldFocus: false,
+                                });
+                            }, 1000);
+                        } else {
+                            markerInfo.close();
+                        }
+                    });
                 });
                 // clears all location markers from the map
                 clearMapButton.addEventListener("click", () => {

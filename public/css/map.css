@@ -36,16 +36,16 @@
     box-sizing: initial;
     font-family: "Montserrat", sans-serif;
     height: 0;
+    /* height: 450px; */
     left: 50%;
     opacity: 0;
+    /* opacity: 1; */
     overflow: hidden;
     position: absolute;
-    /* top: 100%; */
     top: 0;
     transform: translateX(-50%);
     transition: all 500ms ease;
     width: 100%;
-    /* z-index: -1; */
     z-index: 2;
 }
 
@@ -209,6 +209,37 @@
 .map-distance-go-button:hover {
     cursor: pointer;
     opacity: 0.75;
+}
+
+.map-location-list-container {
+    background-color: #fff;
+    border-top-right-radius: 2px;
+    bottom: 0;
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.15);
+    color: #000;
+    left: 0;
+    max-height: 175px;
+    max-width: 205px;
+    min-width: 175px;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 1;
+}
+
+.map-location-list {
+    margin: 0;
+    padding: 0;
+}
+
+.map-location-name {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 5px 5px 10px;
+}
+
+.map-location-name:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
 }
 
 .map-message {

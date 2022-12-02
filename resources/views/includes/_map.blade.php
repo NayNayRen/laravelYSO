@@ -41,6 +41,13 @@
             </ul>
         </div>
     </div>
+    <div class="map-location-list-container">
+        <ul class="map-location-list">
+            @foreach($locations as $location)
+                <li class="map-location-name">{{ $location->name }}</li>
+            @endforeach
+        </ul>
+    </div>
     <div id="map">
     </div>
 </div>
