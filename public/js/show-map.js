@@ -97,7 +97,14 @@ function loadScript() {
         return circleRadiusInMeters;
     }
 
-    // BUILDS AND ADDS MAP ON CLICKING MAP ICON
+    // CONVERTS METERS TO MILES
+    function metersToMiles(meters) {
+        const distanceInMiles = Math.ceil(meters / 1609.344);
+        console.log(distanceInMiles);
+        return distanceInMiles;
+    }
+
+    // BUILDS MAP AND ADDS CURRENT LOCATION
     function loadMap(zoomLevel) {
         // ensures an empty marker group
         markerGroup = [];
@@ -114,7 +121,7 @@ function loadScript() {
         });
         // marker info bubble
         infoWindow = new google.maps.InfoWindow({
-            maxWidth: 200,
+            // maxWidth: 200,
             content: "",
         });
         currentPosition();
@@ -320,7 +327,7 @@ function loadScript() {
                 }
                 // each markers data bubble
                 let markerInfo = new google.maps.InfoWindow({
-                    maxWidth: 275,
+                    // maxWidth: 275,
                     content: content,
                 });
                 // each markers position

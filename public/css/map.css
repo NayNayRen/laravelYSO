@@ -25,6 +25,11 @@
     display: none;
 }
 
+/* google map info window */
+.gm-style-iw {
+    width: 250px;
+}
+
 .hidden-map {
     -ms-transform: translateX(-50%);
     -webkit-box-shadow: 0 0 30px #000;
@@ -36,7 +41,7 @@
     box-sizing: initial;
     font-family: "Montserrat", sans-serif;
     height: 0;
-    /* height: 450px; */
+    /* height: 475px; */
     left: 50%;
     opacity: 0;
     /* opacity: 1; */
@@ -263,7 +268,7 @@
     color: #000;
     left: 0;
     max-height: 175px;
-    width: 400px;
+    width: 375px;
     position: absolute;
     transition: left 250ms ease;
     z-index: 1;
