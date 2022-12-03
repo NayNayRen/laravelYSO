@@ -33,7 +33,15 @@ function loadScript() {
     const mapSearchDistanceSelection = document.querySelectorAll(
         ".map-search-distance-selection"
     );
-    const mapLocationName = document.querySelectorAll(".map-location-name");
+    const mapLocationsList = document.querySelectorAll(
+        ".map-location-list-item"
+    );
+    const mapLocationListButton = document.querySelector(
+        ".map-location-list-button"
+    );
+    const mapLocationListContainer = document.querySelector(
+        ".map-location-list-container"
+    );
     let markerGroup = [];
     let infoWindow;
     let circle;
@@ -98,6 +106,7 @@ function loadScript() {
             center: usCenter,
             zoom: zoomLevel,
             zoomControl: true,
+            streetViewControl: false,
             // mapTypeControl: false,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -340,13 +349,18 @@ function loadScript() {
                     });
                 });
                 // focuses on single location page's marker
-                // if (currentPage.innerText === "single location") {
-                //     focusSinglePin.style.display = "block";
-                //     map.setCenter(marker.position);
-                //     setTimeout(() => {
-                //         map.setZoom(7);
-                //     }, 1000);
-                // }
+                if (currentPage.innerText === "single location") {
+                    // focusSinglePin.style.display = "block";
+                    map.setCenter(marker.position);
+                    setTimeout(() => {
+                        map.setZoom(8);
+                        markerInfo.open({
+                            anchor: marker,
+                            map: map,
+                            shouldFocus: false,
+                        });
+                    }, 1000);
+                }
                 // only shows Go To Pin button on single location page
                 mapDistanceGoButton.addEventListener("click", () => {
                     // if (mapSearchDistanceButton.innerText === "Go To Pin") {
@@ -417,18 +431,21 @@ function loadScript() {
                                 mapSearchDistanceButton.innerText ===
                                 "My Locale"
                             ) {
+                                markerInfo.close();
                                 marker.setMap(map);
                             }
                         });
                     }
                 });
                 // goes to each location in the list when clicked
-                mapLocationName.forEach((name) => {
-                    name.addEventListener("click", () => {
+                mapLocationsList.forEach((location) => {
+                    location.addEventListener("click", () => {
                         // console.log(marker.address);
-                        // console.log(name.lastElementChild.innerText);
+                        // console.log(location.lastElementChild.firstChild.data);
+                        markerInfo.close();
                         if (
-                            name.lastElementChild.innerText === marker.address
+                            location.lastElementChild.firstChild.data ===
+                            marker.address
                         ) {
                             map.setCenter(marker.position);
                             marker.setMap(map);
@@ -440,8 +457,6 @@ function loadScript() {
                                     shouldFocus: false,
                                 });
                             }, 1000);
-                        } else {
-                            markerInfo.close();
                         }
                     });
                 });
@@ -541,6 +556,10 @@ function loadScript() {
         );
         mapSearchDistanceArrow.style.display = "inline";
         mapDistanceGoButton.style.display = "none";
+    });
+
+    mapLocationListButton.addEventListener("click", () => {
+        mapLocationListContainer.classList.toggle("map-location-list-toggle");
     });
 
     // USED IF CURRENT LOCATION IS DENIED, DOESNT ALLOW RADIAL SEARCH

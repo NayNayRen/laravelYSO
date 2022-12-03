@@ -42,14 +42,22 @@
         </div>
     </div>
     <div class="map-location-list-container">
-        <ul class="map-location-list">
-            @foreach($locations as $location)
-                <li class="map-location-name">
-                    <span>{{ $location->name }}</span>
-                    <span class="map-location-address">{{ $location->location }}</span>
-                </li>
-            @endforeach
-        </ul>
+        <div>
+            <span class="map-location-list-button" aria-label="Show locations list."><i class="fa fa-list-ul"
+                    aria-hidden="true"></i>
+            </span>
+        </div>
+        <div>
+            <ul class="map-location-list">
+                @foreach($locations as $location)
+                    <li class="map-location-list-item">
+                        <span class="map-location-name">{{ $location->name }}</span>
+                        <span class="map-location-address">{{ $location->location }}<i class="fa fa-map-marker"
+                                aria-hidden="true"></i></span>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
     </div>
     <div id="map">
     </div>
