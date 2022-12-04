@@ -42,6 +42,9 @@ function loadScript() {
     const mapLocationListContainer = document.querySelector(
         ".map-location-list-container"
     );
+    let mapLocationDistances = document.querySelectorAll(
+        ".map-location-distance"
+    );
     let markerGroup = [];
     let infoWindow;
     let circle;
@@ -100,7 +103,7 @@ function loadScript() {
     // CONVERTS METERS TO MILES
     function metersToMiles(meters) {
         const distanceInMiles = Math.ceil(meters / 1609.344);
-        console.log(distanceInMiles);
+        // console.log(distanceInMiles);
         return distanceInMiles;
     }
 
@@ -121,7 +124,7 @@ function loadScript() {
         });
         // marker info bubble
         infoWindow = new google.maps.InfoWindow({
-            // maxWidth: 200,
+            maxWidth: 250,
             content: "",
         });
         currentPosition();
@@ -327,7 +330,7 @@ function loadScript() {
                 }
                 // each markers data bubble
                 let markerInfo = new google.maps.InfoWindow({
-                    // maxWidth: 275,
+                    maxWidth: 275,
                     content: content,
                 });
                 // each markers position
@@ -368,30 +371,23 @@ function loadScript() {
                         });
                     }, 1000);
                 }
-                // only shows Go To Pin button on single location page
-                mapDistanceGoButton.addEventListener("click", () => {
-                    // if (mapSearchDistanceButton.innerText === "Go To Pin") {
-                    //     marker.setMap(map);
-                    //     map.setCenter(marker.position);
-                    //     setTimeout(() => {
-                    //         map.setZoom(7);
-                    //     }, 1000);
-                    // }
+                // if location is allowed
+                if (navigator.geolocation) {
                     // if location is allowed adds and removes markers for radius
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition((position) => {
-                            const currentLocation = {
-                                lat: position.coords.latitude,
-                                lng: position.coords.longitude,
-                            };
-                            const distanceFromLocation =
-                                google.maps.geometry.spherical.computeDistanceBetween(
-                                    new google.maps.LatLng(marker.position),
-                                    new google.maps.LatLng(
-                                        parseFloat(currentLocation.lat),
-                                        parseFloat(currentLocation.lng)
-                                    )
-                                );
+                    navigator.geolocation.getCurrentPosition((position) => {
+                        const currentLocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+                        const distanceFromLocation =
+                            google.maps.geometry.spherical.computeDistanceBetween(
+                                new google.maps.LatLng(marker.position),
+                                new google.maps.LatLng(
+                                    parseFloat(currentLocation.lat),
+                                    parseFloat(currentLocation.lng)
+                                )
+                            );
+                        mapDistanceGoButton.addEventListener("click", () => {
                             if (
                                 mapSearchDistanceButton.innerText === "25 miles"
                             ) {
@@ -432,6 +428,7 @@ function loadScript() {
                             if (
                                 mapSearchDistanceButton.innerText === "No Limit"
                             ) {
+                                markerInfo.close();
                                 marker.setMap(map);
                             }
                             if (
@@ -442,8 +439,9 @@ function loadScript() {
                                 marker.setMap(map);
                             }
                         });
-                    }
-                });
+                        // console.log(distanceFromLocation);
+                    });
+                }
                 // goes to each location in the list when clicked
                 mapLocationsList.forEach((location) => {
                     location.addEventListener("click", () => {
@@ -565,8 +563,18 @@ function loadScript() {
         mapDistanceGoButton.style.display = "none";
     });
 
+    // TOGGLES MAPS LOCATION LIST, HIDES ON FULLSCREEN, SHOWS ON MOBILE
     mapLocationListButton.addEventListener("click", () => {
-        mapLocationListContainer.classList.toggle("map-location-list-toggle");
+        if (window.innerWidth > 700) {
+            mapLocationListContainer.classList.toggle(
+                "map-location-list-toggle-fullscreen"
+            );
+        }
+        if (window.innerWidth <= 700) {
+            mapLocationListContainer.classList.toggle(
+                "map-location-list-toggle-mobile"
+            );
+        }
     });
 
     // USED IF CURRENT LOCATION IS DENIED, DOESNT ALLOW RADIAL SEARCH

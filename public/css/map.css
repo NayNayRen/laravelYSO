@@ -26,9 +26,9 @@
 }
 
 /* google map info window */
-.gm-style-iw {
+/* .gm-style-iw {
     width: 250px;
-}
+} */
 
 .hidden-map {
     -ms-transform: translateX(-50%);
@@ -226,6 +226,13 @@
     margin-left: 10px;
 }
 
+.map-location-distance {
+    color: #808080;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: normal;
+}
+
 .map-location-list {
     margin: 0;
     padding: 0;
@@ -246,8 +253,8 @@
     background-color: #fff;
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
-    box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.15);
-    display: none;
+    box-shadow: 4px -2px 5px rgba(0, 0, 0, 0.15);
+    /* display: none; */
     padding: 8px;
     position: absolute;
     left: 100%;
@@ -262,7 +269,7 @@
     -webkit-transition: left 250ms ease;
     -webkit-box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.15);
     background-color: #fff;
-    border-top-right-radius: 2px;
+    /* border-top-right-radius: 2px; */
     bottom: 0;
     box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.15);
     color: #000;
@@ -283,6 +290,10 @@
     max-height: 175px;
     overflow-y: scroll;
     width: 100%;
+}
+
+.map-location-list-toggle-fullscreen {
+    left: -375px;
 }
 
 .map-location-name {
@@ -533,7 +544,7 @@
         width: 325px;
     }
 
-    .map-location-list-toggle {
+    .map-location-list-toggle-mobile {
         left: 0;
     }
 
@@ -558,7 +569,7 @@
         width: 250px;
     }
 
-    .map-location-list-toggle {
+    .map-location-list-toggle-mobile {
         left: 0;
     }
 

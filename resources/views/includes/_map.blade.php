@@ -51,7 +51,9 @@
             <ul class="map-location-list">
                 @foreach($locations as $location)
                     <li class="map-location-list-item">
-                        <span class="map-location-name">{{ $location->name }}</span>
+                        <span class="map-location-name">{{ $location->name }}
+                            <span class="map-location-distance"></span>
+                        </span>
                         <span class="map-location-address">{{ $location->location }}<i class="fa fa-map-marker"
                                 aria-hidden="true"></i></span>
                     </li>
