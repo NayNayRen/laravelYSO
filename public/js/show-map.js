@@ -440,17 +440,13 @@ function loadScript() {
                                 marker.setMap(map);
                             }
                         });
+                        // console.log(marker.title + " : " + marker.distance);
                         marker.distance = metersToMiles(distanceFromLocation);
-                        console.log(marker.title + " : " + marker.distance);
-                        mapLocationDistances.forEach((distance) => {
-                            distance.innerText = "(" + marker.distance + " mi)";
-                        });
                     });
                 }
                 // goes to each location in the list when clicked
                 mapLocationsList.forEach((location) => {
                     location.addEventListener("click", () => {
-                        // console.log(marker.address);
                         // console.log(location.lastElementChild.firstChild.data);
                         markerInfo.close();
                         if (
