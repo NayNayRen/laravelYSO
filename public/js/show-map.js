@@ -344,6 +344,7 @@ function loadScript() {
                     //             name.charAt(0).toUpperCase() + name.substring(1)
                     //     )
                     //     .join(" "),
+                    distance: "",
                     address: marker.address,
                     title: toTitleCase(marker.name),
                     optimized: false,
@@ -439,7 +440,11 @@ function loadScript() {
                                 marker.setMap(map);
                             }
                         });
-                        // console.log(distanceFromLocation);
+                        marker.distance = metersToMiles(distanceFromLocation);
+                        console.log(marker.title + " : " + marker.distance);
+                        mapLocationDistances.forEach((distance) => {
+                            distance.innerText = "(" + marker.distance + " mi)";
+                        });
                     });
                 }
                 // goes to each location in the list when clicked
