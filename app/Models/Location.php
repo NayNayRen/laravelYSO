@@ -20,7 +20,7 @@ class Location extends Model
                 $q->orWhere('cid', $dealResult->id);
             }
         })->get();
-        $locations = Location::orderBy('id')
+        $locations = Location::orderBy('name')
         ->whereIn('id', $locationIds->pluck('lid'))
         ->whereNotNull('lat')
         ->WhereNotNull('lon')
