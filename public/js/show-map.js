@@ -109,7 +109,7 @@ function loadScript() {
 
     // CONVERTS METERS TO MILES
     function metersToMiles(meters) {
-        const distanceInMiles = Math.ceil(meters / 1609.344);
+        const distanceInMiles = Math.round((meters / 1609.344) * 10) / 10;
         // console.log(distanceInMiles);
         return distanceInMiles;
     }
