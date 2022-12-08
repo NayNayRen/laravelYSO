@@ -229,7 +229,7 @@
 .map-location-distance {
     color: #0000ff;
     font-size: 12px;
-    font-style: italic;
+    /* font-style: italic; */
     font-weight: normal;
 }
 

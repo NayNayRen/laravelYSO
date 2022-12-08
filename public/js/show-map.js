@@ -8,7 +8,6 @@ function loadScript() {
     const clearMapButton = document.querySelector(".clear-map-button");
     const submitMethod = document.querySelector(".submit-method");
     const currentPage = document.querySelector(".current-page");
-    const focusSinglePin = document.querySelector(".focus-single-pin");
     const hiddenMapCloseButton = document.querySelector(
         ".hidden-map-close-button"
     );
@@ -58,6 +57,7 @@ function loadScript() {
 
     // SHOWS LOCATION ERROR OR DENIAL
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        let currentLocation = 0;
         infoWindow.setPosition(pos);
         infoWindow.setContent(
             browserHasGeolocation
@@ -71,6 +71,13 @@ function loadScript() {
                     </div>`
         );
         infoWindow.open(map);
+        setTimeout(() => {
+            buildMarkers(currentLocation);
+        }, 1000);
+        // SHOWS SEARCH RESULTS MARKERS ON CLICK
+        hiddenMapLocationButton.addEventListener("click", () => {
+            buildMarkers(currentLocation);
+        });
     }
 
     // FORMATS LOCATION PHONE NUMBER, formatted to (123) 456-7890
@@ -240,6 +247,13 @@ function loadScript() {
                             circle.setRadius(milesToMeters(15));
                         }
                     });
+                    setTimeout(() => {
+                        buildMarkers(currentLocation);
+                    }, 1000);
+                    // shows current pins after being cleared
+                    hiddenMapLocationButton.addEventListener("click", () => {
+                        buildMarkers(currentLocation);
+                    });
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());
@@ -252,7 +266,7 @@ function loadScript() {
     }
 
     // BUILDS EACH MARKER
-    function buildMarkers() {
+    function buildMarkers(currentLocation) {
         const ids = document.querySelectorAll(".location-id");
         const latitudes = document.querySelectorAll(".location-lat");
         const longitudes = document.querySelectorAll(".location-lng");
@@ -361,7 +375,6 @@ function loadScript() {
                 });
                 // focuses on single location page's marker
                 if (currentPage.innerText === "single location") {
-                    // focusSinglePin.style.display = "block";
                     map.setCenter(marker.position);
                     setTimeout(() => {
                         map.setZoom(8);
@@ -373,85 +386,85 @@ function loadScript() {
                     }, 1000);
                 }
                 // if location is allowed
-                if (navigator.geolocation) {
-                    // if location is allowed adds and removes markers for radius
-                    navigator.geolocation.getCurrentPosition((position) => {
-                        const currentLocation = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude,
-                        };
-                        const distanceFromLocation =
-                            google.maps.geometry.spherical.computeDistanceBetween(
-                                new google.maps.LatLng(marker.position),
-                                new google.maps.LatLng(
-                                    parseFloat(currentLocation.lat),
-                                    parseFloat(currentLocation.lng)
-                                )
+                if (currentLocation != 0) {
+                    const distanceFromLocation =
+                        google.maps.geometry.spherical.computeDistanceBetween(
+                            new google.maps.LatLng(marker.position),
+                            new google.maps.LatLng(
+                                parseFloat(currentLocation.lat),
+                                parseFloat(currentLocation.lng)
+                            )
+                        );
+                    mapDistanceGoButton.addEventListener("click", () => {
+                        if (mapSearchDistanceButton.innerText === "25 miles") {
+                            if (distanceFromLocation < milesToMeters(25)) {
+                                marker.setMap(map);
+                            } else {
+                                marker.setMap(null);
+                            }
+                        }
+                        if (mapSearchDistanceButton.innerText === "50 miles") {
+                            if (distanceFromLocation < milesToMeters(50)) {
+                                marker.setMap(map);
+                            } else {
+                                marker.setMap(null);
+                            }
+                        }
+                        if (mapSearchDistanceButton.innerText === "75 miles") {
+                            if (distanceFromLocation < milesToMeters(75)) {
+                                marker.setMap(map);
+                            } else {
+                                marker.setMap(null);
+                            }
+                        }
+                        if (mapSearchDistanceButton.innerText === "100 miles") {
+                            if (distanceFromLocation < milesToMeters(100)) {
+                                marker.setMap(map);
+                            } else {
+                                marker.setMap(null);
+                            }
+                        }
+                        if (mapSearchDistanceButton.innerText === "No Limit") {
+                            markerInfo.close();
+                            marker.setMap(map);
+                        }
+                        if (mapSearchDistanceButton.innerText === "My Locale") {
+                            markerInfo.close();
+                            marker.setMap(map);
+                        }
+                    });
+                    // sets distance for each location in the list
+                    mapLocationsList.forEach((location) => {
+                        marker.distance = metersToMiles(distanceFromLocation);
+                        if (
+                            location.lastElementChild.firstChild.data ===
+                            marker.address
+                        ) {
+                            location.firstElementChild.firstElementChild.innerText = `${marker.distance} mi`;
+                        }
+                    });
+                    // if location is not allowed, no distance display or zoom
+                } else {
+                    mapLocationsList.forEach((location) => {
+                        location.firstElementChild.firstElementChild.innerText =
+                            "N/A";
+                    });
+                    mapSearchDistanceSelection.forEach((selection) => {
+                        selection.addEventListener("click", (e) => {
+                            mapSearchDistanceButton.innerText =
+                                e.target.innerText;
+                            mapSearchDistanceContainer.classList.remove(
+                                "map-search-distance-container-toggle"
                             );
-                        mapDistanceGoButton.addEventListener("click", () => {
-                            if (
-                                mapSearchDistanceButton.innerText === "25 miles"
-                            ) {
-                                if (distanceFromLocation < milesToMeters(25)) {
-                                    marker.setMap(map);
-                                } else {
-                                    marker.setMap(null);
-                                }
-                            }
-                            if (
-                                mapSearchDistanceButton.innerText === "50 miles"
-                            ) {
-                                if (distanceFromLocation < milesToMeters(50)) {
-                                    marker.setMap(map);
-                                } else {
-                                    marker.setMap(null);
-                                }
-                            }
-                            if (
-                                mapSearchDistanceButton.innerText === "75 miles"
-                            ) {
-                                if (distanceFromLocation < milesToMeters(75)) {
-                                    marker.setMap(map);
-                                } else {
-                                    marker.setMap(null);
-                                }
-                            }
-                            if (
-                                mapSearchDistanceButton.innerText ===
-                                "100 miles"
-                            ) {
-                                if (distanceFromLocation < milesToMeters(100)) {
-                                    marker.setMap(map);
-                                } else {
-                                    marker.setMap(null);
-                                }
-                            }
-                            if (
-                                mapSearchDistanceButton.innerText === "No Limit"
-                            ) {
-                                markerInfo.close();
-                                marker.setMap(map);
-                            }
-                            if (
-                                mapSearchDistanceButton.innerText ===
-                                "My Locale"
-                            ) {
-                                markerInfo.close();
-                                marker.setMap(map);
-                            }
+                            mapSearchDistanceArrow.classList.remove(
+                                "map-search-distance-arrow-rotate"
+                            );
+                            mapSearchDistanceDropdown.classList.remove(
+                                "map-search-distance-dropdown-toggle"
+                            );
+                            mapSearchDistanceArrow.style.display = "none";
+                            mapDistanceGoButton.style.display = "inline";
                         });
-                        // NEW ADDS DISTANCE FROM CURRENT LOCATION
-                        mapLocationsList.forEach((location) => {
-                            marker.distance =
-                                metersToMiles(distanceFromLocation);
-                            if (
-                                location.lastElementChild.firstChild.data ===
-                                marker.address
-                            ) {
-                                location.firstElementChild.firstElementChild.innerText = `${marker.distance} mi`;
-                            }
-                        });
-                        //
                     });
                 }
                 // goes to each location in the list when clicked
@@ -484,7 +497,6 @@ function loadScript() {
                 hiddenMapLocationButton.addEventListener("click", () => {
                     marker.setMap(null);
                 });
-                // console.log(markerGroup.length);
             });
         }
     }
@@ -511,17 +523,12 @@ function loadScript() {
             hiddenMap.style.height = "325px";
             hiddenMapHeader.style.display = "none";
         }
-        setTimeout(() => {
-            buildMarkers();
-        }, 2000);
+        // setTimeout(() => {
+        //     buildMarkers();
+        // }, 2000);
     }
 
     // EVENT LISTENERS
-    // SHOWS SEARCH RESULTS MARKERS ON CLICK
-    hiddenMapLocationButton.addEventListener("click", () => {
-        buildMarkers();
-    });
-
     // OPENS MAP FROM MAP ICON
     hiddenMapOpenButton.addEventListener("click", () => {
         window.scroll(0, 0);
@@ -545,9 +552,9 @@ function loadScript() {
             hiddenMap.style.height = "325px";
             hiddenMapHeader.style.display = "none";
         }
-        setTimeout(() => {
-            buildMarkers();
-        }, 2000);
+        // setTimeout(() => {
+        //     buildMarkers();
+        // }, 2000);
     });
 
     // CLOSES MAP
