@@ -497,11 +497,11 @@ function loadScript() {
             });
         }
         // hides and shows list toggle buttons
-        if (markerGroup.length < 1) {
-            mapLocationListButton.style.display = "none";
-        } else {
-            mapLocationListButton.style.display = "block";
-        }
+        // if (markerGroup.length < 1) {
+        //     mapLocationListButton.style.display = "none";
+        // } else {
+        //     mapLocationListButton.style.display = "block";
+        // }
     }
 
     // AUTOLOADS MAP IF SUBMIT METHOD IS THE HOMEPAGE MAP BUTTON
