@@ -41,9 +41,6 @@ function loadScript() {
     const mapLocationListContainer = document.querySelector(
         ".map-location-list-container"
     );
-    let mapLocationDistances = document.querySelectorAll(
-        ".map-location-distance"
-    );
     let markerGroup = [];
     let infoWindow;
     let circle;
@@ -124,10 +121,10 @@ function loadScript() {
             zoom: zoomLevel,
             zoomControl: true,
             streetViewControl: false,
-            // mapTypeControl: false,
-            mapTypeControlOptions: {
-                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-            },
+            mapTypeControl: false,
+            // mapTypeControlOptions: {
+            //     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            // },
         });
         // marker info bubble
         infoWindow = new google.maps.InfoWindow({
@@ -447,7 +444,7 @@ function loadScript() {
                 } else {
                     mapLocationsList.forEach((location) => {
                         location.firstElementChild.firstElementChild.innerText =
-                            "N/A";
+                            "n/a";
                     });
                     mapSearchDistanceSelection.forEach((selection) => {
                         selection.addEventListener("click", (e) => {
@@ -499,6 +496,12 @@ function loadScript() {
                 });
             });
         }
+        // hides and shows list toggle buttons
+        if (markerGroup.length < 1) {
+            mapLocationListButton.style.display = "none";
+        } else {
+            mapLocationListButton.style.display = "block";
+        }
     }
 
     // AUTOLOADS MAP IF SUBMIT METHOD IS THE HOMEPAGE MAP BUTTON
@@ -520,7 +523,7 @@ function loadScript() {
             hiddenMapHeader.style.display = "none";
         } else if (window.innerWidth < 400) {
             loadMap(3);
-            hiddenMap.style.height = "325px";
+            hiddenMap.style.height = "360px";
             hiddenMapHeader.style.display = "none";
         }
         // setTimeout(() => {
@@ -549,7 +552,7 @@ function loadScript() {
             hiddenMapHeader.style.display = "none";
         } else if (window.innerWidth < 400) {
             loadMap(3);
-            hiddenMap.style.height = "325px";
+            hiddenMap.style.height = "360px";
             hiddenMapHeader.style.display = "none";
         }
         // setTimeout(() => {

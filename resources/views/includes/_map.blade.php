@@ -36,17 +36,10 @@
                     No Limit</li>
                 <li class="map-search-distance-selection">
                     My Locale</li>
-                <li class="map-search-distance-selection focus-single-pin">
-                    Go To Pin</li>
             </ul>
         </div>
     </div>
     <div class="map-location-list-container">
-        <div>
-            <span class="map-location-list-button" aria-label="Show locations list."><i class="fa fa-list-ul"
-                    aria-hidden="true"></i>
-            </span>
-        </div>
         <div>
             <ul class="map-location-list">
                 @foreach($locations as $location)
@@ -59,6 +52,11 @@
                     </li>
                 @endforeach
             </ul>
+        </div>
+        <div>
+            <span class="map-location-list-button" aria-label="Show locations list."><i class="fa fa-list-ul"
+                    aria-hidden="true"></i>
+            </span>
         </div>
     </div>
     <div id="map">
