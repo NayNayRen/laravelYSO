@@ -297,7 +297,7 @@
 }
 
 .map-location-list-container div:nth-child(2) {
-    height: 0;
+    height: auto;
     position: relative;
     width: 0;
     /* outline: solid 1px blue; */

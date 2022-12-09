@@ -39,26 +39,45 @@
             </ul>
         </div>
     </div>
-    <div class="map-location-list-container">
-        <div>
-            <ul class="map-location-list">
-                @foreach($locations as $location)
+    @if($locations->count() < 1)
+        <div class="map-location-list-container">
+            <div>
+                <ul class="map-location-list">
                     <li class="map-location-list-item">
-                        <span class="map-location-name">{{ $location->name }}
-                            <span class="map-location-distance"></span>
+                        <span class="map-location-name">No Location
                         </span>
-                        <span class="map-location-address">{{ $location->location }}<i class="fa fa-map-marker"
-                                aria-hidden="true"></i></span>
+                        <span class="map-location-address">No Address</span>
                     </li>
-                @endforeach
-            </ul>
+                </ul>
+            </div>
+            <div>
+                <span class="map-location-list-button" aria-label="Show locations list."><i class="fa fa-list-ul"
+                        aria-hidden="true"></i>
+                </span>
+            </div>
         </div>
-        <div>
-            <span class="map-location-list-button" aria-label="Show locations list."><i class="fa fa-list-ul"
-                    aria-hidden="true"></i>
-            </span>
+    @else
+        <div class="map-location-list-container">
+            <div>
+                <ul class="map-location-list">
+                    @foreach($locations as $location)
+                        <li class="map-location-list-item">
+                            <span class="map-location-name">{{ $location->name }}
+                                <span class="map-location-distance"></span>
+                            </span>
+                            <span class="map-location-address">{{ $location->location }}<i class="fa fa-map-marker"
+                                    aria-hidden="true"></i></span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div>
+                <span class="map-location-list-button" aria-label="Show locations list."><i class="fa fa-list-ul"
+                        aria-hidden="true"></i>
+                </span>
+            </div>
         </div>
-    </div>
+    @endif
     <div id="map">
     </div>
 </div>
