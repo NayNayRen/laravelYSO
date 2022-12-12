@@ -6,7 +6,7 @@
                 class="hidden-map-location-count">{{ count($locations) }}</span>
         </span>
     </div>
-    <span class='hidden-map-header'>Click 'Show' to pin search results, 'Clear' to remove.</span>
+    <span class='hidden-map-header'>Click 'Show' to drop pins, 'Clear' to remove them.</span>
     <!-- CLOSE HIDDEN MAP -->
     <div class="hidden-map-close-button-container">
         <span class="hidden-map-close-button">Close</span>
@@ -44,9 +44,9 @@
             <div>
                 <ul class="map-location-list">
                     <li class="map-location-list-item">
-                        <span class="map-location-name">No Location
+                        <span class="map-location-name">No Location...
                         </span>
-                        <span class="map-location-address">No Address</span>
+                        <span class="map-location-address">No Address...</span>
                     </li>
                 </ul>
             </div>

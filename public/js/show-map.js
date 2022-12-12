@@ -536,23 +536,23 @@ function loadScript() {
     hiddenMapOpenButton.addEventListener("click", () => {
         window.scroll(0, 0);
         hiddenMap.style.opacity = "1";
-        hiddenMap.style.paddingTop = "30px";
+        hiddenMap.style.paddingTop = "40px";
         if (window.innerWidth > 1300) {
             loadMap(4);
-            hiddenMap.style.height = "500px";
+            hiddenMap.style.height = "510px";
         } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
             loadMap(4);
-            hiddenMap.style.height = "450px";
+            hiddenMap.style.height = "460px";
         } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
             loadMap(4);
-            hiddenMap.style.height = "400px";
+            hiddenMap.style.height = "410px";
         } else if (window.innerWidth < 700 && window.innerWidth > 400) {
             loadMap(4);
-            hiddenMap.style.height = "500px";
+            hiddenMap.style.height = "510px";
             hiddenMapHeader.style.display = "none";
         } else if (window.innerWidth < 400) {
             loadMap(3);
-            hiddenMap.style.height = "360px";
+            hiddenMap.style.height = "370px";
             hiddenMapHeader.style.display = "none";
         }
         // setTimeout(() => {

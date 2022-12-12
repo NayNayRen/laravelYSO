@@ -13,7 +13,7 @@
     left: 170px;
     padding: 5px 10px;
     position: absolute;
-    top: 40px;
+    top: 45px;
     z-index: 1;
 }
 
@@ -80,7 +80,7 @@
     position: absolute;
     right: 10px;
     text-align: right;
-    top: 5px;
+    top: 10px;
     width: 150px;
 }
 
@@ -103,8 +103,9 @@
     font-size: 14px;
     left: 50%;
     position: absolute;
-    top: 5px;
+    top: 10px;
     transform: translateX(-50%);
+    /* outline: solid 1px blue; */
 }
 
 .hidden-map-location-button-container {
@@ -114,7 +115,7 @@
     padding-left: 10px;
     position: absolute;
     text-align: left;
-    top: 5px;
+    top: 10px;
     width: 150px;
     /* outline: solid 1px blue; */
 }
@@ -459,7 +460,7 @@
     left: 10px;
     overflow: hidden;
     position: absolute;
-    top: 40px;
+    top: 45px;
     width: 150px;
     z-index: 1;
     /* outline: solid 1px blue; */
@@ -590,8 +591,8 @@
 
     .map-location-list-container {
         border-top-right-radius: 2px;
-        left: -275px;
-        width: 275px;
+        left: -270px;
+        width: 270px;
     }
 
     .map-location-list-container div:nth-child(1):first-child {
