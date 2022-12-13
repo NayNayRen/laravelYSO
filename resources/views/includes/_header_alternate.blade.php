@@ -47,12 +47,12 @@
                 {{-- LOGGED IN USER INITIALS --}}
                 @auth
                     <div class="user-initials-container">
-                        <span>Logged in as:</span>
+                        <span>Logged In As</span>
                         <div class="user-initials">
                             {{ auth()->user()->firstName[0] . auth()->user()->lastName[0] }}</div>
                         <form action={{ route('logout') }} method="POST">
                             @csrf
-                            <button type="submit" class="user-logout-button" aria-label="Logout">Logout <i
+                            <button type="submit" class="user-logout-button" aria-label="Logout" title="Logout"><i
                                     class="fa fa-sign-out" aria-hidden="true"></i></button>
                         </form>
                     </div>

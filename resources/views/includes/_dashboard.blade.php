@@ -15,13 +15,17 @@
                             class="registered-user-profile-picture" alt="Profile Picture">
                     </div>
                     <div>
-                        <span>Logged in as:</span>
+                        <span>- Logged In As -</span>
                         <span>{{ ucfirst(auth()->user()->firstName) }}
                             {{ ucfirst(auth()->user()->lastName) }}</span>
                     </div>
                     <div>
-                        <span>Location:</span>
+                        <span>- Email -</span>
                         <span>{{ auth()->user()->email }}</span>
+                    </div>
+                    <div>
+                        <span>- Phone -</span>
+                        <span>{{ auth()->user()->phone }}</span>
                     </div>
                     <form action={{ route('user.showUpdateForm', auth()->user()->id) }}
                         method="GET">
@@ -29,7 +33,7 @@
                             aria-label="Update User Info"><i class=" fa fa-cog" aria-hidden="false"></i>
                         </button>
                     </form>
-                    <span>Use the cog to update your details.</span>
+                    {{-- <span>Use the cog to update your details.</span> --}}
                 </div>
                 <div class="dashboard-user-container-sections">
                     <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
@@ -199,11 +203,15 @@
                             class="registered-user-profile-picture" alt="Profile Picture">
                     </div>
                     <div>
-                        <span>Logged in as:</span>
+                        <span>- Logged In As -</span>
                         <span>Guest</span>
                     </div>
                     <div>
-                        <span>Location:</span>
+                        <span>- Email -</span>
+                        <span>N/A</span>
+                    </div>
+                    <div>
+                        <span>- Phone -</span>
                         <span>N/A</span>
                     </div>
                 </div>
