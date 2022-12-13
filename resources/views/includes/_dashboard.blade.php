@@ -15,16 +15,16 @@
                             class="registered-user-profile-picture" alt="Profile Picture">
                     </div>
                     <div>
-                        <span>- Logged In As -</span>
+                        <span>Logged In As</span>
                         <span>{{ ucfirst(auth()->user()->firstName) }}
                             {{ ucfirst(auth()->user()->lastName) }}</span>
                     </div>
                     <div>
-                        <span>- Email -</span>
+                        <span>Email</span>
                         <span>{{ auth()->user()->email }}</span>
                     </div>
                     <div>
-                        <span>- Phone -</span>
+                        <span>Phone</span>
                         <span>{{ auth()->user()->phone }}</span>
                     </div>
                     <form action={{ route('user.showUpdateForm', auth()->user()->id) }}
@@ -203,15 +203,15 @@
                             class="registered-user-profile-picture" alt="Profile Picture">
                     </div>
                     <div>
-                        <span>- Logged In As -</span>
+                        <span>Logged In As</span>
                         <span>Guest</span>
                     </div>
                     <div>
-                        <span>- Email -</span>
+                        <span>Email</span>
                         <span>N/A</span>
                     </div>
                     <div>
-                        <span>- Phone -</span>
+                        <span>Phone</span>
                         <span>N/A</span>
                     </div>
                 </div>
