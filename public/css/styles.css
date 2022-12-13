@@ -3222,7 +3222,7 @@ html {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     align-items: center;
-    color: #666666;
+    color: #000;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
