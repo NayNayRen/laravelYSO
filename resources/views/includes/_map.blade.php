@@ -18,8 +18,8 @@
         <div>
             <span type='button' class="map-search-distance-button">
                 15 miles</span>
-            <input type='button' class="map-distance-go-button" value="Go">
-            </input>
+            <span type='button' class="map-distance-go-button">Go
+            </span>
             <span class="map-search-distance-arrow">
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </span>

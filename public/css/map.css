@@ -188,7 +188,7 @@
 .map-bubble-heading {
     color: #e6331f;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400;
     text-transform: capitalize;
 }
 
@@ -200,21 +200,29 @@
 
 .map-distance-go-button {
     background-color: #fff;
-    border: none;
-    border-left: solid 1px #808080;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     display: none;
-    font-size: 16px;
-    height: 100%;
-    padding: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.map-distance-go-button:before {
+    -webkit-transform: translateY(-50%);
+    background-color: #d3d3d3;
+    content: "";
+    height: 75%;
+    left: -1px;
     position: absolute;
-    right: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
 }
 
 .map-distance-go-button:hover {
-    background-color: #d3d3d3;
+    color: #d3d3d3;
     cursor: pointer;
 }
 
@@ -257,7 +265,6 @@
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
     box-shadow: 4px -2px 5px rgba(0, 0, 0, 0.15);
-    /* display: none; */
     left: 100%;
     padding: 8px;
     position: absolute;
@@ -265,7 +272,7 @@
 }
 
 .map-location-list-button:hover {
-    background-color: #d3d3d3;
+    color: #d3d3d3;
     cursor: pointer;
 }
 
@@ -304,6 +311,16 @@
     /* outline: solid 1px blue; */
 }
 
+.map-location-list-container div:nth-child(2):after {
+    background-color: #d3d3d3;
+    content: "";
+    height: 25px;
+    left: -1px;
+    position: absolute;
+    top: 5px;
+    width: 1px;
+}
+
 .map-location-list-toggle-fullscreen {
     left: -375px;
 }
@@ -313,6 +330,7 @@
     display: block;
     font-size: 14px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .map-message {
@@ -430,8 +448,8 @@
     /* -webkit-transition: all 250ms ease; */
     align-items: center;
     background-color: #fff;
-    border-radius: 2px;
     border: none;
+    border-top-left-radius: 2px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -454,6 +472,7 @@
 
 .map-search-distance-container {
     -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
     /* left: 150px; */
     /* left: 90px; */
@@ -471,6 +490,16 @@
 }
 
 .map-search-distance-container div {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
     position: relative;
 }
 
@@ -490,7 +519,6 @@
 .map-search-distance-dropdown {
     left: 0;
     margin: 0;
-    /* opacity: 0; */
     padding: 0;
     position: absolute;
     top: 100%;
@@ -500,12 +528,10 @@
 .map-search-distance-dropdown-toggle {
     -webkit-box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.15);
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.15);
-    /* opacity: 1; */
     top: calc(100% - 1px);
 }
 
 .map-use-disclaimer {
-    /* border-bottom: solid 1px #fff; */
     color: #000;
     font-size: 18px;
     margin-bottom: 5px;
@@ -572,7 +598,7 @@
         left: 100px;
     } */
     .map-distance-go-button:hover {
-        background-color: #fff;
+        color: #000;
     }
 
     .map-location-list li {
@@ -586,7 +612,13 @@
     }
 
     .map-location-list-button:hover {
-        background-color: #fff;
+        color: #000;
+    }
+
+    .map-location-list-container div:nth-child(2):after {
+        -webkit-transform: translateY(-50%);
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .map-location-list-container {

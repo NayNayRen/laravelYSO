@@ -571,6 +571,7 @@ function loadScript() {
 
     // TOGGLES DISTANCE SEARCH DROPDOWN
     mapSearchDistanceButton.addEventListener("click", () => {
+        mapSearchDistanceButton.style.borderTopRightRadius = "2px";
         mapSearchDistanceContainer.classList.toggle(
             "map-search-distance-container-toggle"
         );
@@ -602,6 +603,7 @@ function loadScript() {
     mapSearchDistanceSelection.forEach((selection) => {
         selection.addEventListener("click", (e) => {
             mapSearchDistanceButton.innerText = e.target.innerText;
+            mapSearchDistanceButton.style.borderTopRightRadius = "0";
             mapSearchDistanceContainer.classList.remove(
                 "map-search-distance-container-toggle"
             );
