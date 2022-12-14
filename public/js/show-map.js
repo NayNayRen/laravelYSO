@@ -496,45 +496,10 @@ function loadScript() {
                 });
             });
         }
-        // hides and shows list toggle buttons
-        // if (markerGroup.length < 1) {
-        //     mapLocationListButton.style.display = "none";
-        // } else {
-        //     mapLocationListButton.style.display = "block";
-        // }
     }
 
     // AUTOLOADS MAP IF SUBMIT METHOD IS THE HOMEPAGE MAP BUTTON
     function autoLoadMap() {
-        hiddenMap.style.opacity = "1";
-        hiddenMap.style.paddingTop = "30px";
-        if (window.innerWidth > 1300) {
-            loadMap(4);
-            hiddenMap.style.height = "500px";
-        } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-            loadMap(4);
-            hiddenMap.style.height = "450px";
-        } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
-            loadMap(4);
-            hiddenMap.style.height = "400px";
-        } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-            loadMap(4);
-            hiddenMap.style.height = "500px";
-            hiddenMapHeader.style.display = "none";
-        } else if (window.innerWidth < 400) {
-            loadMap(3);
-            hiddenMap.style.height = "360px";
-            hiddenMapHeader.style.display = "none";
-        }
-        // setTimeout(() => {
-        //     buildMarkers();
-        // }, 2000);
-    }
-
-    // EVENT LISTENERS
-    // OPENS MAP FROM MAP ICON
-    hiddenMapOpenButton.addEventListener("click", () => {
-        window.scroll(0, 0);
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "40px";
         if (window.innerWidth > 1300) {
@@ -555,9 +520,33 @@ function loadScript() {
             hiddenMap.style.height = "370px";
             hiddenMapHeader.style.display = "none";
         }
-        // setTimeout(() => {
-        //     buildMarkers();
-        // }, 2000);
+    }
+
+    // EVENT LISTENERS
+    // OPENS MAP FROM MAP ICON
+    hiddenMapOpenButton.addEventListener("click", () => {
+        window.scroll(0, 0);
+        autoLoadMap();
+        // hiddenMap.style.opacity = "1";
+        // hiddenMap.style.paddingTop = "40px";
+        // if (window.innerWidth > 1300) {
+        //     loadMap(4);
+        //     hiddenMap.style.height = "510px";
+        // } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
+        //     loadMap(4);
+        //     hiddenMap.style.height = "460px";
+        // } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
+        //     loadMap(4);
+        //     hiddenMap.style.height = "410px";
+        // } else if (window.innerWidth < 700 && window.innerWidth > 400) {
+        //     loadMap(4);
+        //     hiddenMap.style.height = "510px";
+        //     hiddenMapHeader.style.display = "none";
+        // } else if (window.innerWidth < 400) {
+        //     loadMap(3);
+        //     hiddenMap.style.height = "370px";
+        //     hiddenMapHeader.style.display = "none";
+        // }
     });
 
     // CLOSES MAP
