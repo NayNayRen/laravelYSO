@@ -352,6 +352,14 @@
     text-decoration: underline;
 }
 
+.alternate-container-count .view-all-item-counter .disabled {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 15px;
+}
+
 .alternate-container-count .view-all-item-counter .item:first-of-type {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
@@ -4977,6 +4985,10 @@ html {
 
     .alternate-container-count {
         font-size: 14px;
+    }
+
+    .alternate-container-count .view-all-item-counter .disabled {
+        padding: 5px 8px;
     }
 
     .alternate-container-count .view-all-item-counter .item {
