@@ -5,7 +5,7 @@
     background-color: #fff;
     border-radius: 2px;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.15);
-    color: #000;
+    color: rgba(0, 0, 0, 0.75);
     font-size: 14px;
     font-weight: bold;
     /* left: 86px; */
@@ -18,7 +18,7 @@
 }
 
 .clear-map-button:hover {
-    background-color: #d3d3d3;
+    color: #000;
     cursor: pointer;
 }
 
@@ -202,6 +202,7 @@
     background-color: #fff;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
+    color: rgba(0, 0, 0, 0.75);
     display: none;
     font-size: 14px;
     font-weight: bold;
@@ -222,7 +223,7 @@
 }
 
 .map-distance-go-button:hover {
-    color: #d3d3d3;
+    color: #000;
     cursor: pointer;
 }
 
@@ -265,6 +266,7 @@
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
     box-shadow: 4px -2px 5px rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.75);
     left: 100%;
     padding: 8px;
     position: absolute;
@@ -272,7 +274,7 @@
 }
 
 .map-location-list-button:hover {
-    color: #d3d3d3;
+    color: #000;
     cursor: pointer;
 }
 
@@ -369,7 +371,6 @@
 
 .map-message p {
     font-size: 16px;
-    /* font-weight: bold; */
     margin: 0 0 5px 0;
     padding: 0 5px;
     text-align: center;
@@ -597,8 +598,10 @@
     /* .clear-map-button {
         left: 100px;
     } */
-    .map-distance-go-button:hover {
-        color: #000;
+    .clear-map-button:hover,
+    .map-distance-go-button:hover,
+    .map-location-list-button:hover {
+        color: rgba(0, 0, 0, 0.75);
     }
 
     .map-location-list li {
@@ -606,16 +609,6 @@
     }
 
     .map-location-list-button {
-        -webkit-transform: translateY(-50%);
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .map-location-list-button:hover {
-        color: #000;
-    }
-
-    .map-location-list-container div:nth-child(2):after {
         -webkit-transform: translateY(-50%);
         top: 50%;
         transform: translateY(-50%);
@@ -629,6 +622,12 @@
 
     .map-location-list-container div:nth-child(1):first-child {
         border-top-right-radius: 2px;
+    }
+
+    .map-location-list-container div:nth-child(2):after {
+        -webkit-transform: translateY(-50%);
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .map-location-list-toggle-mobile {
