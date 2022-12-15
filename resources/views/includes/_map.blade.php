@@ -39,7 +39,7 @@
             </ul>
         </div>
     </div>
-    @if($locations->count() < 1)
+    @if ($locations->count() < 1)
         <div class="map-location-list-container">
             <div>
                 <ul class="map-location-list">
@@ -60,7 +60,7 @@
         <div class="map-location-list-container">
             <div>
                 <ul class="map-location-list">
-                    @foreach($locations as $location)
+                    @foreach ($locations as $location)
                         <li class="map-location-list-item">
                             <span class="map-location-name">{{ $location->name }}
                                 <span class="map-location-distance"></span>
