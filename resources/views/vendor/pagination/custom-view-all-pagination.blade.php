@@ -17,7 +17,7 @@
             {{-- ARRAY OF PAGE COUNTERS --}}
             @if (is_array($element))
                 @foreach ($element as $page => $url)
-                    @if ($paginator->currentPage() > 4 && $page === 2)
+                    @if ($paginator->currentPage() > 3 && $page === 2)
                         <span class="disabled">...</span>
                     @endif
 
@@ -30,7 +30,12 @@
                     {{-- REMOVE IF NOT LIKED --}}
                     @if ($page == $paginator->currentPage())
                         <a class="item active" href="{{ $url }}" aria-current="page">{{ $page }}</a>
-                        {{-- @elseif ($page === $paginator->currentPage() + 1 || $page === $paginator->currentPage() + 2 || $page === $paginator->currentPage() - 1 || $page === $paginator->currentPage() - 2 || $page === $paginator->lastPage() || $page === 1) --}}
+                        {{-- @elseif ($page === $paginator->currentPage() + 1 ||
+                        $page === $paginator->currentPage() + 2 ||
+                        $page === $paginator->currentPage() - 1 ||
+                        $page === $paginator->currentPage() - 2 ||
+                        $page === $paginator->lastPage() ||
+                        $page === 1) --}}
                     @elseif ($page === $paginator->currentPage() + 1 ||
                         $page === $paginator->currentPage() - 1 ||
                         $page === $paginator->lastPage() ||
@@ -38,7 +43,7 @@
                         <a class="item" href="{{ $url }}">{{ $page }}</a>
                     @endif
 
-                    @if ($paginator->currentPage() < $paginator->lastPage() - 3 && $page === $paginator->lastPage() - 1)
+                    @if ($paginator->currentPage() < $paginator->lastPage() - 2 && $page === $paginator->lastPage() - 1)
                         <span class="disabled">...</span>
                     @endif
                     {{-- REMOVE IF NOT LIKED --}}
