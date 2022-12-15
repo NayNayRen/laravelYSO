@@ -180,7 +180,7 @@ function loadScript() {
                         strokeOpacity: 0.8,
                         strokeWeight: 1,
                         fillColor: "#FF0000",
-                        fillOpacity: 0.25,
+                        fillOpacity: 0.15,
                         map,
                         center: currentLocation,
                         // default radius is in meters, pass miles to convert
@@ -527,26 +527,6 @@ function loadScript() {
     hiddenMapOpenButton.addEventListener("click", () => {
         window.scroll(0, 0);
         autoLoadMap();
-        // hiddenMap.style.opacity = "1";
-        // hiddenMap.style.paddingTop = "40px";
-        // if (window.innerWidth > 1300) {
-        //     loadMap(4);
-        //     hiddenMap.style.height = "510px";
-        // } else if (window.innerWidth < 1300 && window.innerWidth > 1000) {
-        //     loadMap(4);
-        //     hiddenMap.style.height = "460px";
-        // } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
-        //     loadMap(4);
-        //     hiddenMap.style.height = "410px";
-        // } else if (window.innerWidth < 700 && window.innerWidth > 400) {
-        //     loadMap(4);
-        //     hiddenMap.style.height = "510px";
-        //     hiddenMapHeader.style.display = "none";
-        // } else if (window.innerWidth < 400) {
-        //     loadMap(3);
-        //     hiddenMap.style.height = "370px";
-        //     hiddenMapHeader.style.display = "none";
-        // }
     });
 
     // CLOSES MAP

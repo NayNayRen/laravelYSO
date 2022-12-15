@@ -240,9 +240,10 @@
 .map-location-distance {
     color: #0000ff;
     font-size: 12px;
-    /* font-style: italic; */
+    font-style: italic;
     font-weight: normal;
     margin-left: 5px;
+    text-transform: lowercase;
 }
 
 .map-location-list {
@@ -266,9 +267,10 @@
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
     box-shadow: 4px -2px 5px rgba(0, 0, 0, 0.15);
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 20px;
     left: 100%;
-    padding: 8px;
+    padding: 8px 8px 6px 6px;
     position: absolute;
     top: 0;
 }
@@ -319,7 +321,7 @@
     height: 25px;
     left: -1px;
     position: absolute;
-    top: 5px;
+    top: 7px;
     width: 1px;
 }
 
