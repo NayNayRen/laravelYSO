@@ -4795,6 +4795,18 @@ html {
         min-height: 400px;
     }
 
+    .dashboard-right-container .container-arrow-left {
+        -webkit-transform: translateX(-100%);
+        left: calc(100% - 65px);
+        top: 75px;
+        transform: translateX(-100%);
+    }
+
+    .dashboard-right-container .container-arrow-right {
+        right: 15px;
+        top: 75px;
+    }
+
     .enhance-image,
     .rewards-image {
         margin-top: 15px;
@@ -6231,7 +6243,7 @@ html {
         min-height: 375px;
     }
 
-    .dashboard-right-container .container-arrow-left {
+    /* .dashboard-right-container .container-arrow-left {
         left: calc(100% - 65px);
         top: 75px;
         transform: translateX(-100%);
@@ -6240,7 +6252,7 @@ html {
     .dashboard-right-container .container-arrow-right {
         right: 15px;
         top: 75px;
-    }
+    } */
 
     .favorite-added-message div span:nth-of-type(1),
     .favorite-removed-message div span:nth-of-type(1) {
