@@ -49,14 +49,14 @@ function stickContainer() {
         enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "45px";
     } else if (
-        document.documentElement.scrollTop > 380 &&
+        document.documentElement.scrollTop > 375 &&
         window.innerWidth < 500
     ) {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "109px";
         enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "55px";
+        enhanceNavigationScrollPoint.style.paddingTop = "45px";
     } else {
         enhanceNavigationContainer.style.position = "relative";
         enhanceNavigationContainer.style.width = "100%";
