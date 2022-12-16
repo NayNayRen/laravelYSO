@@ -295,7 +295,7 @@
     display: flex;
     flex-direction: row;
     left: 0;
-    max-height: 175px;
+    max-height: 225px;
     position: absolute;
     transition: left 250ms ease;
     width: 375px;
@@ -303,7 +303,7 @@
 }
 
 .map-location-list-container div:nth-child(1) {
-    max-height: 175px;
+    max-height: 225px;
     overflow-y: scroll;
     width: 100%;
 }
@@ -554,6 +554,16 @@
 .map-use-disclaimer span {
     color: #fff;
     font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+    .map-location-list-container {
+        max-height: 175px;
+    }
+
+    .map-location-list-container div:nth-child(1) {
+        max-height: 175px;
+    }
 }
 
 @media (max-width: 700px) {
