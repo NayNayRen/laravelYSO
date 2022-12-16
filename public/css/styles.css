@@ -43,11 +43,11 @@
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
+            from(rgba(0, 0, 0, 0.6)),
             to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/about-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/about-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -96,7 +96,7 @@
     background-color: #fff;
     border-radius: 50%;
     border: solid 1px #000;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     height: 150px;
     padding: 5px;
     position: absolute;
@@ -2108,11 +2108,11 @@ body {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
+            from(rgba(0, 0, 0, 0.6)),
             to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/enhance-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/enhance-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -2255,7 +2255,8 @@ body {
 .support-text h3 {
     font-size: 20px;
     color: #e6331f;
-    margin: 0;
+    margin: 5px 0;
+    width: 95%;
 }
 
 .enhance-text p,
@@ -2263,7 +2264,7 @@ body {
 .support-text p {
     border-bottom: solid 1px #808080;
     font-size: 18px;
-    padding: 0 20px 5px 0;
+    padding: 0 0 5px 0;
 }
 
 .favorite-added-message div,
@@ -2989,7 +2990,7 @@ html {
     display: flex;
     font-size: 25px;
     justify-content: center;
-    padding: 2px 3px;
+    padding: 4px;
     position: absolute;
     right: 0;
     top: 50%;
@@ -3011,7 +3012,7 @@ html {
     display: flex;
     font-size: 25px;
     justify-content: center;
-    padding: 2px 5px;
+    padding: 4px 6px;
     position: absolute;
     right: 0;
     top: 50%;
@@ -3346,18 +3347,18 @@ html {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
+            from(rgba(0, 0, 0, 0.6)),
             to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/rewards-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/rewards-banner.jpg");
     background-position: center;
     background-size: cover;
 }
 
 .rewards-top-banner h2 {
-    color: #333333;
+    color: #d3d3d3;
     font-size: 30px;
 }
 
@@ -3747,18 +3748,18 @@ html {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
+            from(rgba(0, 0, 0, 0.6)),
             to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/support-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/support-banner.jpg");
     background-position: center;
     background-size: cover;
 }
 
 .support-text a {
-    color: #808080;
+    color: #333333;
     font-size: 20px;
     transition: color 150ms ease;
 }
@@ -4116,10 +4117,10 @@ html {
     border-radius: 5px;
     border: none;
     color: #000;
-    font-size: 16px;
+    font-size: 18px;
     margin: 5px 0 25px 0;
     outline: solid 1px #808080;
-    padding: 9px;
+    padding: 8px 8px 8px 10px;
     width: 100%;
 }
 
@@ -5878,6 +5879,7 @@ html {
 
     .rewards-top-banner h3 {
         font-size: 18px;
+        width: 90%;
     }
 
     .rewards-top-banner p {
@@ -6088,11 +6090,13 @@ html {
 
 @media (max-width: 400px) {
     .about-us-personal-info h2 {
+        font-size: 16px;
         width: 90%;
     }
 
     .about-us-profile-pic {
         right: 5px;
+        top: 5px;
     }
 
     .apple:hover,
@@ -6254,6 +6258,18 @@ html {
         top: 75px;
     } */
 
+    .enhance-text h1,
+    .rewards-text h1,
+    .support-text h1 {
+        font-size: 20px;
+    }
+
+    .enhance-text h3,
+    .rewards-text h3,
+    .support-text h3 {
+        font-size: 16px;
+    }
+
     .favorite-added-message div span:nth-of-type(1),
     .favorite-removed-message div span:nth-of-type(1) {
         height: 42px;
@@ -6299,17 +6315,21 @@ html {
     }
 
     .page-hero {
-        height: 400px;
+        -ms-flex-pack: space-evenly;
+        -webkit-box-pack: space-evenly;
+        height: 375px;
+        justify-content: space-evenly;
     }
 
     .page-hero h1 {
-        font-size: 35px;
+        font-size: 32px;
         margin-bottom: 0;
+        margin-top: 0;
     }
 
     .page-hero h2 {
-        font-size: 28px;
-        margin: 15px 0;
+        font-size: 26px;
+        margin: 15px 0 0 0;
     }
 
     .page-hero p {
@@ -6318,17 +6338,19 @@ html {
 
     .password-length-correct-icon {
         font-size: 22px;
-        padding: 2px 3px;
+        padding: 3px;
+        top: calc(50% + 5px);
     }
 
     .password-length-incorrect-icon {
         font-size: 22px;
-        padding: 2px 5px;
+        padding: 3px 5px;
+        top: calc(50% + 5px);
     }
 
-    .password-signin i {
+    /* .password-signin i {
         top: 28px;
-    }
+    } */
 
     .registered-disclaimer,
     .unregistered-disclaimer {
@@ -6434,8 +6456,8 @@ html {
     }
 
     .users-form-group input {
-        margin: 5px 0 25px 0;
-        padding: 7px;
+        margin: 5px 0 15px 0;
+        /* padding: 6px 6px 6px 8px; */
     }
 
     .users-name-register {
@@ -6456,25 +6478,12 @@ html {
         width: 100%;
     }
 
-    /* .view-all-arrow-container {
-        top: 3px;
-    } */
-
     .view-all-container-heading h1 {
         /* display: none; */
         font-size: 20px;
         padding: 0 5px 10px 5px;
         width: 95%;
     }
-
-    /* .view-all-container-heading h3 {
-        font-size: 18px;
-    } */
-
-    /* .view-all-item-counter {
-        bottom: -25px;
-        padding-right: 20px;
-    } */
 
     .view-all-link {
         right: 90px;
