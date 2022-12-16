@@ -2883,7 +2883,7 @@ html {
     background-color: #fff;
     margin: auto;
     height: auto;
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
     width: 80%;
 }
@@ -6262,6 +6262,10 @@ html {
         right: 15px;
         top: 75px;
     } */
+
+    .enhance-navigation-container a {
+        font-size: 16px;
+    }
 
     .enhance-text h1,
     .rewards-text h1,
