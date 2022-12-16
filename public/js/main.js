@@ -21,10 +21,18 @@ function makeItStick() {
         upArrow.style.left = "5px";
     } else if (
         document.documentElement.scrollTop > 0 &&
-        window.innerWidth < 700
+        window.innerWidth < 700 &&
+        window.innerWidth > 400
     ) {
         makeItStickSettings();
         scrollPoint.style.paddingTop = "95px";
+        upArrow.style.left = "5px";
+    } else if (
+        document.documentElement.scrollTop > 0 &&
+        window.innerWidth < 400
+    ) {
+        makeItStickSettings();
+        scrollPoint.style.paddingTop = "110px";
         upArrow.style.left = "5px";
     } else {
         header.style.position = "relative";

@@ -4494,6 +4494,7 @@ html {
     .category-heading {
         font-size: 25px;
         min-height: 35px;
+        width: 90%;
     }
 
     .category-heading::after {
@@ -4778,9 +4779,9 @@ html {
 
     .category-heading {
         font-size: 22px;
-        min-height: 30px;
+        /* min-height: 30px; */
         padding: 0 5px;
-        width: 90%;
+        width: 95%;
     }
 
     .category-heading::after {
@@ -5380,6 +5381,10 @@ html {
     #loyalties,
     #values {
         top: -130px;
+    }
+
+    .card {
+        width: 275px;
     }
 
     .card-discount {
@@ -6191,7 +6196,7 @@ html {
 
     .category-heading {
         border-radius: 0;
-        font-size: 22px;
+        /* font-size: 22px; */
     }
 
     .container {
