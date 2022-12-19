@@ -5441,6 +5441,7 @@ html {
         padding: 0 0 10px 0;
     }
 
+    .alternate-container-heading,
     .category-heading {
         font-size: 25px;
         min-height: 45px;
@@ -6137,9 +6138,9 @@ html {
         padding: 5px 8px;
     } */
 
-    .alternate-container-heading {
+    /* .alternate-container-heading {
         font-size: 20px;
-    }
+    } */
 
     .back-button {
         left: 20px;
@@ -6189,7 +6190,7 @@ html {
     }
 
     .card {
-        height: 350px;
+        height: 360px;
         margin: 2px;
         /* width: 250px; */
     }
