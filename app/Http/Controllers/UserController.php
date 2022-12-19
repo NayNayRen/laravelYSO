@@ -325,7 +325,8 @@ class UserController extends Controller
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                'phone' => 'None Provided',
+                // 'phone' => 'None Provided',
+                'phone' => '123-456-7890',
                 'password' => Hash::make(Str::random(20))
             ]);
             Auth::login($user);
@@ -350,7 +351,8 @@ class UserController extends Controller
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                'phone' => 'None Provided',
+                // 'phone' => 'None Provided',
+                'phone' => '123-456-7890',
                 'password' => Hash::make(Str::random(20))
             ]);
             Auth::login($user);
@@ -376,7 +378,8 @@ class UserController extends Controller
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                'phone' => 'None Provided',
+                // 'phone' => 'None Provided',
+                'phone' => '123-456-7890',
                 'password' => Hash::make(Str::random(20))
             ]);
             Auth::login($user);
