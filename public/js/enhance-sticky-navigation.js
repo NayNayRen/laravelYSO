@@ -56,7 +56,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "109px";
         enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "45px";
+        enhanceNavigationScrollPoint.style.paddingTop = "42px";
     } else {
         enhanceNavigationContainer.style.position = "relative";
         enhanceNavigationContainer.style.width = "100%";

@@ -1438,11 +1438,11 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
-    height: 400px;
+    height: 405px;
     justify-content: space-between;
     margin: 5px 10px;
     padding: 5px;
-    width: 325px;
+    width: 330px;
     /* outline: solid 1px blue; */
 }
 
@@ -1573,9 +1573,18 @@ body {
 }
 
 .card-rules {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     color: #e6331f;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
     font-size: 14px;
     font-style: italic;
+    max-height: 65px;
+    overflow-y: scroll;
     padding: 5px 0;
     /* outline: solid 1px blue; */
 }
@@ -2582,22 +2591,6 @@ body {
     color: #808080;
 }
 
-/* .footer-social-media-links {
-    -webkit-transition: opacity 150ms ease;
-    display: inline-block;
-    height: auto;
-    transition: opacity 150ms ease;
-    width: 45px;
-}
-
-.footer-social-media-links img {
-    width: 100%;
-}
-
-.footer-social-media-links:hover {
-    opacity: 0.75;
-} */
-
 .footer-top-section {
     display: -ms-grid;
     display: grid;
@@ -2643,7 +2636,7 @@ body {
     border-radius: 5px;
     color: #fff;
     font-size: 18px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin: auto;
     padding: 8px 0;
     text-align: center;
@@ -4548,6 +4541,11 @@ html {
         padding: 50px 0;
     }
 
+    .get-deal-button {
+        /* font-size: 16px; */
+        padding: 5px 0;
+    }
+
     .links-container li a {
         margin: 0 10px;
     }
@@ -4840,7 +4838,7 @@ html {
 
     .get-deal-button {
         font-size: 16px;
-        padding: 5px 0;
+        /* padding: 5px 0; */
     }
 
     .main {
@@ -5420,9 +5418,9 @@ html {
     }
     /*  */
 
-    .card-location {
-        font-size: 16px;
-    }
+    /* .card-location {
+        font-size: 18px;
+    } */
 
     .card-location.active:hover {
         color: #0000ff;
@@ -6190,7 +6188,7 @@ html {
     }
 
     .card {
-        height: 360px;
+        height: 370px;
         margin: 2px;
         /* width: 250px; */
     }
@@ -6312,9 +6310,9 @@ html {
         padding: 35px 10px 5px 10px;
     }
 
-    .get-deal-button {
+    /* .get-deal-button {
         font-size: 14px;
-    }
+    } */
 
     .guest-error-content {
         min-height: 225px;
