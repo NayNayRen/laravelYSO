@@ -44,16 +44,14 @@
                 </div>
             </div>
             <div class="enhance-image">
-                <img src="{{ asset('img/navigation-pages/enhance-photo-1.jpg') }}"
-                    alt="Support Photo">
+                <img src="{{ asset('img/navigation-pages/enhance-photo-1.jpg') }}" alt="Support Photo">
             </div>
         </div>
         {{-- VALUES BLOCK --}}
         <div class="enhance-info">
             <div id="values"></div>
             <div class="enhance-image">
-                <img src="{{ asset('img/navigation-pages/enhance-photo-2.jpg') }}"
-                    alt="Support Photo">
+                <img src="{{ asset('img/navigation-pages/enhance-photo-2.jpg') }}" alt="Support Photo">
             </div>
             <div class="enhance-text">
                 <h1>Reach your audience with a touch of value.</h1>
@@ -87,16 +85,14 @@
                 </div>
             </div>
             <div class="enhance-image">
-                <img src="{{ asset('img/navigation-pages/enhance-photo-3.jpg') }}"
-                    alt="Support Photo">
+                <img src="{{ asset('img/navigation-pages/enhance-photo-3.jpg') }}" alt="Support Photo">
             </div>
         </div>
         {{-- CAMPAIGNS BLOCK --}}
         <div class="enhance-info">
             <div id="campaigns"></div>
             <div class="enhance-image">
-                <img src="{{ asset('img/navigation-pages/enhance-photo-4.jpg') }}"
-                    alt="Support Photo">
+                <img src="{{ asset('img/navigation-pages/enhance-photo-4.jpg') }}" alt="Support Photo">
             </div>
             <div class="enhance-text">
                 <h1>Track campaigns and know what works.</h1>

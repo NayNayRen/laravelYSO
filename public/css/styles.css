@@ -2214,7 +2214,7 @@ body {
     display: -webkit-box;
     display: flex;
     flex-direction: row;
-    font-family: "Roboto", sans-serif;
+    font-family: "Montserrat", sans-serif;
     justify-content: center;
     list-style-type: none;
     margin: 0;
@@ -4818,6 +4818,10 @@ html {
         font-size: 25px;
     }
 
+    .enhance-navigation-container a {
+        font-size: 18px;
+    }
+
     .filter-container form {
         padding: 5px 0;
     }
@@ -5653,11 +5657,6 @@ html {
         font-size: 20px;
     }
 
-    .enhance-navigation-container a {
-        font-size: 18px;
-        margin: 0 10px;
-    }
-
     .enhance-text h1,
     .rewards-text h1,
     .support-text h1 {
@@ -6123,22 +6122,6 @@ html {
     .alternate-card {
         width: 90%;
     }
-
-    /* .alternate-container .container-arrow-left {
-        top: -90px;
-    }
-
-    .alternate-container .container-arrow-right {
-        top: -90px;
-    } */
-
-    /* .alternate-container-count .view-all-item-counter .item {
-        padding: 5px 8px;
-    } */
-
-    /* .alternate-container-heading {
-        font-size: 20px;
-    } */
 
     .back-button {
         left: 20px;

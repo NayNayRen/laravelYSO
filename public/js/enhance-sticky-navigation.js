@@ -12,12 +12,12 @@ const campaigns = document.querySelector(".campaigns");
 
 // sticks secondary navigation when scrolling and window resize
 function stickContainer() {
-    if (document.documentElement.scrollTop > 555 && window.innerWidth > 1300) {
+    if (document.documentElement.scrollTop > 550 && window.innerWidth > 1300) {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "85%";
         enhanceNavigationContainer.style.top = "103px";
         enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "65px";
+        enhanceNavigationScrollPoint.style.paddingTop = "50px";
     } else if (
         document.documentElement.scrollTop > 450 &&
         window.innerWidth < 1300 &&
