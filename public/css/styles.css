@@ -3762,15 +3762,15 @@ html {
 }
 
 .up-arrow {
-    -webkit-transition: all 150ms ease;
+    -webkit-transition: all 250ms ease;
     bottom: 0;
     color: #e6331f;
     font-size: 45px;
     left: -40px;
     position: fixed;
     text-shadow: -1px 0 0 #000, 0 -1px 0 #000, 1px 0 0 #000, 0 1px 0 #000,
-        0 2px 5px rgba(0, 0, 0, 0.75);
-    transition: all 150ms ease;
+        0 2px 2px #000;
+    transition: all 250ms ease;
     z-index: 10;
 }
 
@@ -3779,22 +3779,22 @@ html {
 }
 
 .up-arrow-message {
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
-    -webkit-transition: all 150ms ease;
+    -webkit-box-shadow: 0 2px 2px #000;
+    -webkit-transition: all 250ms ease;
     background-color: #000;
     border-bottom-right-radius: 15px;
     border-bottom: solid 1px #e6331f;
     border-right: solid 1px #e6331f;
     border-top-right-radius: 15px;
     border-top: solid 1px #e6331f;
-    bottom: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
+    bottom: 55px;
+    box-shadow: 0 2px 2px #000;
     color: #fff;
     font-size: 14px;
     left: -80px;
     padding: 5px 10px 5px 5px;
     position: fixed;
-    transition: all 150ms ease;
+    transition: all 250ms ease;
     z-index: 1;
 }
 
@@ -4392,10 +4392,6 @@ html {
     .search-button {
         font-size: 16px;
     }
-
-    .up-arrow {
-        font-size: 40px;
-    }
 }
 
 @media (max-width: 1300px) {
@@ -4892,10 +4888,6 @@ html {
         padding: 2px 8px;
     }
 
-    /* .search-button:nth-child(odd) {
-        padding: 3px 10px;
-    } */
-
     .selected-deal-discount {
         font-size: 20px;
         width: 400px;
@@ -4923,6 +4915,10 @@ html {
     .selected-deal-name {
         font-size: 18px;
         width: 400px;
+    }
+
+    .up-arrow {
+        font-size: 40px;
     }
 
     .user-initials-container,
@@ -5940,7 +5936,7 @@ html {
     }
 
     .up-arrow {
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .up-arrow:hover {
