@@ -3,7 +3,7 @@
         <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
     </div>
     <div class="card-discount">{{ $deal->location }}</div>
-    <span class="card-name">{{ $deal->name }}</span><br>
+    <div class="card-name">{{ $deal->name }}</div>
 </div>
 <div>
     <div class="views-likes-container">
@@ -12,7 +12,7 @@
             <span>Likes:</span>
         </div>
         <div class="views-likes-icons">
-            @if(auth()->user())
+            @if (auth()->user())
                 <span class='share-deal user' aria-label="Share this item." name="{{ $deal->name }}">
                     <i class="fa fa-share" aria-hidden=" false"></i>
                 </span>
@@ -22,14 +22,15 @@
                 </span>
             @endif
             @php
-                if(auth()->user()){
-                $check =
-                App\Models\Favorite::where('deal_id',$deal->id)->where('user_id',auth()->user()->id)->first();
-                }else{
-                $check = null;
+                if (auth()->user()) {
+                    $check = App\Models\Favorite::where('deal_id', $deal->id)
+                        ->where('user_id', auth()->user()->id)
+                        ->first();
+                } else {
+                    $check = null;
                 }
             @endphp
-            @if($check != null)
+            @if ($check != null)
                 <span class='favorite-button' aria-label="Favorite this item.">
                     <i class="fa fa-star add-favorite favorite" id="{{ $deal->id }}" name="{{ $deal->name }}"
                         aria-hidden="false"></i>
@@ -42,7 +43,7 @@
             @endif
         </div>
     </div>
-    <a href="{{ route('deals.show',$deal->id) }}">
+    <a href="{{ route('deals.show', $deal->id) }}">
         <div class="get-deal-button">Get Deal Now!</div>
     </a>
 </div>

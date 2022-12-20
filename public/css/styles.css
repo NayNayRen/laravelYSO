@@ -1570,6 +1570,10 @@ body {
 .card-name {
     color: #808080;
     font-size: 16px;
+    max-height: 50px;
+    /* min-height: 50px; */
+    overflow-y: scroll;
+    /* outline: solid 1px blue; */
 }
 
 .card-rules {
@@ -4150,12 +4154,12 @@ html {
     margin-right: 10px;
 }
 
-.view-all {
+/* .view-all {
     background-color: #d3d3d3;
 }
 
 .view-all .card {
-    background-color: #333333;
+    background-color: blue;
     color: #fff;
     height: 325px;
     width: 225px;
@@ -4181,7 +4185,7 @@ html {
 
 .view-all .views-likes-icons i {
     font-size: 22px;
-}
+} */
 
 .view-all-arrow-container {
     -ms-flex-pack: distribute;
@@ -4926,10 +4930,10 @@ html {
         right: 10px;
     }
 
-    .view-all .card {
+    /* .view-all .card {
         height: 300px;
         width: 200px;
-    }
+    } */
 
     .view-all-arrow-container {
         width: 90%;
@@ -5999,7 +6003,7 @@ html {
         width: 100%;
     }
 
-    .view-all .card {
+    /* .view-all .card {
         margin: 2px 5px;
     }
 
@@ -6010,7 +6014,7 @@ html {
 
     .view-all .views-likes-icons i:hover {
         color: #fff;
-    }
+    } */
 
     .view-all-arrow-container {
         -ms-flex-pack: end;
@@ -6461,9 +6465,9 @@ html {
         margin-right: 0;
     }
 
-    .view-all .category-heading {
+    /* .view-all .category-heading {
         width: 100%;
-    }
+    } */
 
     .view-all-container-heading h1 {
         /* display: none; */

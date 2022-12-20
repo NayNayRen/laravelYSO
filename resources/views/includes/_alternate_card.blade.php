@@ -3,12 +3,12 @@
         <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
     </div>
     <div class="card-discount">{{ $deal->location }}</div>
-    <span class="card-name">{{ $deal->name }}</span><br>
+    <div class="card-name">{{ $deal->name }}</div>
 </div>
 <div>
     <div class="card-rules">
         <span aria-label="Deal expiration date.">Expiration <i class="fa fa-clock-o" aria-hidden="true"></i> :
-            @if($deal->expiration === null)
+            @if ($deal->expiration === null)
                 None
             @elseif($deal->expiration === '')
                 None
@@ -17,7 +17,7 @@
             @endif
         </span><br>
         <span aria-label="Deal limitations.">Limitations <i class="fa fa-exclamation" aria-hidden="true"></i> :
-            @if($deal->limitations === null)
+            @if ($deal->limitations === null)
                 None
             @elseif($deal->limitations === '')
                 None
@@ -33,7 +33,7 @@
             @php
                 $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
             @endphp
-            @if($dealLocation === null)
+            @if ($dealLocation === null)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
             @elseif($deal->id != $dealLocation->cid)
@@ -43,15 +43,14 @@
                 @php
                     $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
                 @endphp
-                @if($locationAddress->lat === null)
+                @if ($locationAddress->lat === null)
                     <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span>
                 @elseif($locationAddress->lon === null)
                     <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span>
                 @else
-                    <form action={{ route('locations.show', $dealLocation->lid) }}
-                        method="GET">
+                    <form action={{ route('locations.show', $dealLocation->lid) }} method="GET">
                         <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
                             aria-label="View this deal's location." value="map" name="submit">Location <i
                                 class=" fa fa-map-marker" aria-hidden="true"></i>
@@ -61,7 +60,7 @@
             @endif
         </div>
         <div class="views-likes-icons">
-            @if(auth()->user())
+            @if (auth()->user())
                 <span class='share-deal user' aria-label="Share this item." name="{{ $deal->name }}">
                     <i class="fa fa-share" aria-hidden=" false"></i>
                 </span>
@@ -71,14 +70,15 @@
                 </span>
             @endif
             @php
-                if(auth()->user()){
-                $check =
-                App\Models\Favorite::where('deal_id',$deal->id)->where('user_id',auth()->user()->id)->first();
-                }else{
-                $check = null;
+                if (auth()->user()) {
+                    $check = App\Models\Favorite::where('deal_id', $deal->id)
+                        ->where('user_id', auth()->user()->id)
+                        ->first();
+                } else {
+                    $check = null;
                 }
             @endphp
-            @if($check != null)
+            @if ($check != null)
                 <span class='favorite-button' aria-label="Favorite this item.">
                     <i class="fa fa-star add-favorite favorite" id="{{ $deal->id }}" name="{{ $deal->name }}"
                         aria-hidden="false"></i>
@@ -91,7 +91,7 @@
             @endif
         </div>
     </div>
-    <a href="{{ route('deals.show',$deal->id) }}">
+    <a href="{{ route('deals.show', $deal->id) }}">
         <div class="get-deal-button">Get Deal Now!</div>
     </a>
 </div>
