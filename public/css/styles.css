@@ -2069,6 +2069,19 @@ body {
     max-width: 300px;
 }
 
+.dashboard-user-container-sections div {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+}
+
 .dashboard-user-container h3 {
     font-size: 20px;
     margin: 0;
@@ -2078,7 +2091,6 @@ body {
     display: block;
     font-size: 18px;
     text-align: center;
-    width: 100%;
     /* outline: solid 1px blue; */
 }
 
@@ -2090,7 +2102,25 @@ body {
     color: #fff;
     font-size: 16px;
     font-weight: bold;
+    padding: 0 10px;
+    position: relative;
     /* outline: solid 1px blue; */
+}
+
+.dashboard-user-container span:nth-of-type(odd)::after,
+.dashboard-user-container span:nth-of-type(odd)::before {
+    content: "-";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dashboard-user-container span:nth-of-type(odd)::after {
+    right: 0;
+}
+
+.dashboard-user-container span:nth-of-type(odd)::before {
+    left: 0;
 }
 
 .dashboard-user-preferences-button {
@@ -5541,6 +5571,25 @@ html {
         font-size: 18px;
     }
 
+    .dashboard-user-container,
+    .registered-user-profile {
+        width: auto;
+    }
+
+    .dashboard-user-container span {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .dashboard-user-container span:nth-of-type(odd) {
+        font-size: 14px;
+        padding: 0 10px 0 0;
+    }
+
+    .dashboard-user-container span:nth-of-type(odd)::before {
+        display: none;
+    }
+
     .dashboard-user-container-sections {
         -ms-flex-align: start;
         -webkit-box-align: start;
@@ -5557,18 +5606,10 @@ html {
         max-width: 200px;
     }
 
-    .dashboard-user-container span {
-        font-size: 16px;
-        text-align: left;
-    }
-
-    .dashboard-user-container span:nth-of-type(odd) {
-        font-size: 14px;
-    }
-
-    .dashboard-user-container,
-    .registered-user-profile {
-        width: auto;
+    .dashboard-user-container-sections div {
+        -ms-flex-align: start;
+        -webkit-box-align: start;
+        align-items: flex-start;
     }
 
     .dashboard-user-container-show {

@@ -11,8 +11,8 @@
 
                     <h3>User Preferences</h3>
                     <div class="registered-user-profile">
-                        <img src="{{ asset('img/male-profile.png') }}"
-                            class="registered-user-profile-picture" alt="Profile Picture">
+                        <img src="{{ asset('img/male-profile.png') }}" class="registered-user-profile-picture"
+                            alt="Profile Picture">
                     </div>
                     <div>
                         <span>Logged In As</span>
@@ -27,8 +27,7 @@
                         <span>Phone</span>
                         <span>{{ auth()->user()->phone }}</span>
                     </div>
-                    <form action={{ route('user.showUpdateForm', auth()->user()->id) }}
-                        method="GET">
+                    <form action={{ route('user.showUpdateForm', auth()->user()->id) }} method="GET">
                         <button type="submit" class="dashboard-user-update-button" title="Update User Info"
                             aria-label="Update User Info"><i class=" fa fa-cog" aria-hidden="false"></i>
                         </button>
@@ -36,8 +35,7 @@
                     {{-- <span>Use the cog to update your details.</span> --}}
                 </div>
                 <div class="dashboard-user-container-sections">
-                    <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
-                        alt="Your Social Offers Logo">
+                    <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
                 </div>
             </div>
             <div class="dashboard-right-container">
@@ -45,7 +43,7 @@
                     <li class="c-list__item">
                         <a link="#fav1" class="c-list__link active">
                             <h4>Favorites</h4>
-                            @if($favorites === null)
+                            @if ($favorites === null)
                                 <div>0</div>
                             @else
                                 <div>{{ $favorites->count() }}</div>
@@ -55,7 +53,7 @@
                     <li class="c-list__item">
                         <a link="#fav2" class="c-list__link">
                             <h4>All Coupons</h4>
-                            @if($coupons === null)
+                            @if ($coupons === null)
                                 <div>0</div>
                             @else
                                 <div>{{ $coupons->count() }}</div>
@@ -65,7 +63,7 @@
                     <li class="c-list__item">
                         <a link="#fav3" class="c-list__link">
                             <h4>Redeemed</h4>
-                            @if($redeems === null)
+                            @if ($redeems === null)
                                 <div>0</div>
                             @else
                                 <div>{{ $redeems->count() }}</div>
@@ -75,11 +73,11 @@
                 </ul>
                 {{-- USER FAVORITES --}}
                 <div class="favBox active" id="fav1">
-                    @if($favorites != null && $favorites->count() > 0)
+                    @if ($favorites != null && $favorites->count() > 0)
                         {{-- CARD BLOCK --}}
-                        @if($favorites->count() === 1)
+                        @if ($favorites->count() === 1)
                             <div class="card-display-limited-amount">
-                                @foreach($favorites as $deal)
+                                @foreach ($favorites as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="limited-amount-card limited-amount-card--favorite">
                                         @include('includes._alternate_card')
@@ -88,7 +86,7 @@
                             </div>
                         @elseif($favorites->count() === 2)
                             <div class="card-display-limited-amount">
-                                @foreach($favorites as $deal)
+                                @foreach ($favorites as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="limited-amount-card limited-amount-card--favorite">
                                         @include('includes._alternate_card')
@@ -98,7 +96,7 @@
                         @else
                             <div
                                 class="card-display-view-all card-display-view-all--favorite owl-carousel owl-theme dashboard-carousel">
-                                @foreach($favorites as $deal)
+                                @foreach ($favorites as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="alternate-card alternate-card--favorite">
                                         @include('includes._alternate_card')
@@ -115,11 +113,11 @@
                 </div>
                 {{-- USER COUPONS --}}
                 <div class="favBox" id="fav2">
-                    @if($coupons != null && $coupons->count() > 0)
+                    @if ($coupons != null && $coupons->count() > 0)
                         {{-- CARD BLOCK --}}
-                        @if($coupons->count() === 1)
+                        @if ($coupons->count() === 1)
                             <div class="card-display-limited-amount">
-                                @foreach($coupons as $deal)
+                                @foreach ($coupons as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="limited-amount-card limited-amount-card--favorite">
                                         @include('includes._alternate_card')
@@ -128,7 +126,7 @@
                             </div>
                         @elseif($coupons->count() === 2)
                             <div class="card-display-limited-amount">
-                                @foreach($coupons as $deal)
+                                @foreach ($coupons as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="limited-amount-card limited-amount-card--favorite">
                                         @include('includes._alternate_card')
@@ -138,7 +136,7 @@
                         @else
                             <div
                                 class="card-display-view-all card-display-view-all--favorite owl-carousel owl-theme dashboard-carousel">
-                                @foreach($coupons as $deal)
+                                @foreach ($coupons as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="alternate-card alternate-card--favorite">
                                         @include('includes._alternate_card')
@@ -155,11 +153,11 @@
                 </div>
                 {{-- USER REDEEMABLES --}}
                 <div class="favBox" id="fav3">
-                    @if($redeems != null &&  $redeems->count() > 0)
+                    @if ($redeems != null && $redeems->count() > 0)
                         {{-- CARD BLOCK --}}
-                        @if($redeems->count() === 1)
+                        @if ($redeems->count() === 1)
                             <div class="card-display-limited-amount">
-                                @foreach($redeems as $deal)
+                                @foreach ($redeems as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="limited-amount-card limited-amount-card--favorite">
                                         @include('includes._alternate_card')
@@ -168,7 +166,7 @@
                             </div>
                         @elseif($redeems->count() === 2)
                             <div class="card-display-limited-amount">
-                                @foreach($redeems as $deal)
+                                @foreach ($redeems as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="limited-amount-card limited-amount-card--favorite">
                                         @include('includes._alternate_card')
@@ -178,7 +176,7 @@
                         @else
                             <div
                                 class="card-display-view-all card-display-view-all--favorite owl-carousel owl-theme dashboard-carousel">
-                                @foreach($redeems as $deal)
+                                @foreach ($redeems as $deal)
                                     {{-- CARD COMPONENT --}}
                                     <div class="alternate-card alternate-card--favorite">
                                         @include('includes._alternate_card')
@@ -199,8 +197,8 @@
                 <div class="dashboard-user-container-sections">
                     <h3>User Preferences</h3>
                     <div class="registered-user-profile">
-                        <img src="{{ asset('img/male-profile.png') }}"
-                            class="registered-user-profile-picture" alt="Profile Picture">
+                        <img src="{{ asset('img/male-profile.png') }}" class="registered-user-profile-picture"
+                            alt="Profile Picture">
                     </div>
                     <div>
                         <span>Logged In As</span>
@@ -216,8 +214,7 @@
                     </div>
                 </div>
                 <div class="dashboard-user-container-sections">
-                    <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
-                        alt="Your Social Offers Logo">
+                    <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
                 </div>
             </div>
             <div class="dashboard-right-container">
