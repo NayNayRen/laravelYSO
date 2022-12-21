@@ -22,13 +22,11 @@
                 </div>
                 <div class="banner-container-image banner-image-fun-1">
                 </div>
-                <img class="banner-logo" src="{{ asset('img/fun/congo-logo.png') }}"
-                    alt="Congo River Company Logo">
+                <img class="banner-logo" src="{{ asset('img/fun/congo-logo.png') }}" alt="Congo River Company Logo">
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/fun/amc-logo2.png') }}"
-                    alt="AMC Company Logo">
+                <img class="banner-logo" src="{{ asset('img/fun/amc-logo2.png') }}" alt="AMC Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-fun-2">
                 </div>
@@ -74,7 +72,7 @@
     {{-- HEADING AND MAP DISCLAIMER --}}
     <div class="view-all-container-heading">
         <h1>All the Entertainment you need.</h1>
-        @if(count($locations) === 0)
+        @if (count($locations) === 0)
             <span class="map-use-disclaimer">No location results came back to show on the map <i
                     class="fa fa-map-marker" aria-hidden="true"></i> , it
                 could just be a merchant hasn't registered any yet. Check
@@ -85,7 +83,7 @@
                 below
                 to
                 see the <span>{{ count($locations) }}</span>
-                @if(count($locations) > 1)
+                @if (count($locations) > 1)
                     locations
                 @else
                     location
@@ -107,8 +105,8 @@
     <span class="current-page" hidden>fun</span>
     <span class="submit-method">{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
-    @foreach($locations as $location)
-        @if(!empty($location->lat) && !empty($location->lon))
+    @foreach ($locations as $location)
+        @if (!empty($location->lat) && !empty($location->lon))
             <div class="location-results" hidden>
                 <span class="location-id">{{ $location->id }}</span><br>
                 <span class="location-name">{{ $location->name }}</span><br>
@@ -123,7 +121,7 @@
     {{-- MAIN CONTENT CONTAINER --}}
 
     <div class="alternate-container">
-        @if(count($deals) === 0 || $deals === null)
+        @if (count($deals) === 0 || $deals === null)
             <div class="card-display-limited-amount">
                 <h1>No deals available.</h1>
             </div>
@@ -136,12 +134,12 @@
             </span>
             <div class="container-right">
                 {{-- CARD BLOCK --}}
-                @if($deals->count() === 1)
+                @if ($deals->count() === 1)
                     <span class="alternate-container-count">
-                        {{ count($deals) }} Deal
+                        - {{ count($deals) }} Deal -
                     </span>
                     <div class="card-display-limited-amount">
-                        @foreach($deals as $deal)
+                        @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
                                 @include('includes._alternate_card')
@@ -150,10 +148,10 @@
                     </div>
                 @elseif($deals->count() === 2)
                     <span class="alternate-container-count">
-                        {{ count($deals) }} Deals
+                        - {{ count($deals) }} Deals -
                     </span>
                     <div class="card-display-limited-amount">
-                        @foreach($deals as $deal)
+                        @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
                                 @include('includes._alternate_card')
@@ -162,10 +160,10 @@
                     </div>
                 @else
                     <div class="alternate-count">
-                        {{ count($deals) }} Deals
+                        - {{ count($deals) }} Deals -
                     </div>
                     <div class="card-display-view-all">
-                        @foreach($deals as $deal)
+                        @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
                                 @include('includes._alternate_card')
@@ -184,17 +182,16 @@
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA&libraries=geometry"
-    async defer>
-</script>
+    async defer></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         // FAVORITE RESPONSE
-        $('.add-favorite').click(function () {
+        $('.add-favorite').click(function() {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             // console.log(name);
@@ -208,7 +205,7 @@
                     status: status,
                     id: id,
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + id).addClass('favorite');
@@ -244,7 +241,7 @@
             });
         });
         // SHOWS APPROPRIATE SHARE RESPONSE
-        $('.share-deal').click(function () {
+        $('.share-deal').click(function() {
             const name = $(this).attr('name');
             if ($('.share-deal').hasClass('user')) {
                 $('#shared-message-name').text(name);
@@ -263,6 +260,5 @@
             }
         });
     });
-
 </script>
 @include('includes._footer')

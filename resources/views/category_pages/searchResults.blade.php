@@ -22,8 +22,7 @@
                 </div>
                 <div class="banner-container-image banner-image-tech-3">
                 </div>
-                <img class="banner-logo" src="{{ asset('img/tech/best-buy-logo.png') }}"
-                    alt="Best Buy Logo">
+                <img class="banner-logo" src="{{ asset('img/tech/best-buy-logo.png') }}" alt="Best Buy Logo">
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
@@ -40,8 +39,7 @@
             </div>
             {{-- SLIDE 3 --}}
             <div class="banner-slide even">
-                <img class="banner-logo left"
-                    src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Adidas Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-main-4">
@@ -54,8 +52,7 @@
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
-                <img class="banner-logo"
-                    src="{{ asset('img/tech/micro-center-banner-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/tech/micro-center-banner-logo.png') }}"
                     alt="Micro Center Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-featured-4">
@@ -76,7 +73,7 @@
     {{-- HEADING AND MAP DISCLAIMER --}}
     <div class="view-all-container-heading">
         <h1>The Search results you want.</h1>
-        @if(count($locations) === 0)
+        @if (count($locations) === 0)
             <span class="map-use-disclaimer">No location results came back to show on the map <i
                     class="fa fa-map-marker" aria-hidden="true"></i> , it
                 could just be a merchant hasn't registered any yet.</span>
@@ -85,7 +82,7 @@
                 below
                 to
                 see the <span>{{ count($locations) }}</span>
-                @if(count($locations) > 1)
+                @if (count($locations) > 1)
                     locations
                 @else
                     location
@@ -107,8 +104,8 @@
     <span class="current-page" hidden>search</span>
     <span class="submit-method" hidden>{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
-    @foreach($locations as $location)
-        @if(!empty($location->lat) && !empty($location->lon))
+    @foreach ($locations as $location)
+        @if (!empty($location->lat) && !empty($location->lon))
             <div class="location-results" hidden>
                 <span class="location-id">{{ $location->id }}</span><br>
                 <span class="location-name">{{ $location->name }}</span><br>
@@ -122,13 +119,13 @@
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
     <p class="searched-words">You searched for :
-        @foreach($searchedWords as $searchedWord)
+        @foreach ($searchedWords as $searchedWord)
             <span>{{ $searchedWord }}</span>
         @endforeach
     </p>
     {{-- SEARCH RESULTS RESPONSE MESSAGES --}}
     {{-- if more than 3 words were used to search --}}
-    @if(count($searchedWords) > 3)
+    @if (count($searchedWords) > 3)
         <div class="search-results-message-container">
             <h1>Too many terms were used. Limit your search to 3 words or less please.</h1>
             <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
@@ -161,12 +158,12 @@
                 {{ $searchedDeals->withQueryString()->links('vendor.pagination.custom-view-all-pagination') }}
             </span>
             <div class="container-right">
-                @if($searchedDeals->count() === 1)
+                @if ($searchedDeals->count() === 1)
                     <span class="alternate-container-count">
-                        {{ count($searchedDeals) }} Deal
+                        - {{ count($searchedDeals) }} Deal -
                     </span>
                     <div class="card-display-limited-amount">
-                        @foreach($searchedDeals as $deal)
+                        @foreach ($searchedDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
                                 @include('includes._alternate_card')
@@ -175,10 +172,10 @@
                     </div>
                 @elseif($searchedDeals->count() === 2)
                     <span class="alternate-container-count">
-                        {{ count($searchedDeals) }} Deals
+                        - {{ count($searchedDeals) }} Deals -
                     </span>
                     <div class="card-display-limited-amount">
-                        @foreach($searchedDeals as $deal)
+                        @foreach ($searchedDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
                                 @include('includes._alternate_card')
@@ -187,10 +184,10 @@
                     </div>
                 @else
                     <div class="alternate-count">
-                        {{ count($searchedDeals) }} Deals
+                        - {{ count($searchedDeals) }} Deals -
                     </div>
                     <div class="card-display-view-all">
-                        @foreach($searchedDeals as $deal)
+                        @foreach ($searchedDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
                                 @include('includes._alternate_card')
@@ -210,17 +207,16 @@
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA&libraries=geometry"
-    async defer>
-</script>
+    async defer></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         // FAVORITE RESPONSE
-        $('.add-favorite').click(function () {
+        $('.add-favorite').click(function() {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             // console.log(name);
@@ -234,7 +230,7 @@
                     status: status,
                     id: id,
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + id).addClass('favorite');
@@ -270,7 +266,7 @@
             });
         });
         // SHOWS APPROPRIATE SHARE RESPONSE
-        $('.share-deal').click(function () {
+        $('.share-deal').click(function() {
             const name = $(this).attr('name');
             if ($('.share-deal').hasClass('user')) {
                 $('#shared-message-name').text(name);
@@ -289,6 +285,5 @@
             }
         });
     });
-
 </script>
 @include('includes._footer')

@@ -140,7 +140,7 @@
                 {{-- CARD BLOCK --}}
                 @if ($deals->count() === 1)
                     <span class="alternate-container-count">
-                        {{ count($deals) }} Deal
+                        - {{ count($deals) }} Deal -
                     </span>
                     <div class="card-display-limited-amount">
                         @foreach ($deals as $deal)
@@ -152,7 +152,7 @@
                     </div>
                 @elseif($deals->count() === 2)
                     <span class="alternate-container-count">
-                        {{ count($deals) }} Deals
+                        - {{ count($deals) }} Deals -
                     </span>
                     <div class="card-display-limited-amount">
                         @foreach ($deals as $deal)
@@ -164,7 +164,7 @@
                     </div>
                 @else
                     <div class="alternate-count">
-                        {{ count($deals) }} Deals
+                        - {{ count($deals) }} Deals -
                     </div>
                     <div class="card-display-view-all">
                         @foreach ($deals as $deal)
