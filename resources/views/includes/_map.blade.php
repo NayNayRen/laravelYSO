@@ -64,6 +64,21 @@
                         <li class="map-location-list-item">
                             <span class="map-location-name">{{ $location->name }}
                                 <span class="map-location-distance"></span>
+                                {{-- USED TO GET FAVORITES LOCATION --}}
+                                @if ($favorites != null)
+                                    @foreach ($favorites as $favorite)
+                                        @php
+                                            $favoriteLocations = App\Models\CouponLocation::where('cid', $favorite->id)->get();
+                                        @endphp
+                                        @foreach ($favoriteLocations as $favoriteLocation)
+                                            @if ($location->id === $favoriteLocation->lid)
+                                                <span class="map-location-favorite-icon"><i class="fa fa-star"
+                                                        aria-hidden="true"></i></span>
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                @endif
+                                {{--  --}}
                             </span>
                             <span class="map-location-address">{{ $location->location }}<i class="fa fa-map-marker"
                                     aria-hidden="true"></i></span>
