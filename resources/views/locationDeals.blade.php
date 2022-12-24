@@ -22,8 +22,7 @@
                 </div>
                 <div class="banner-container-image banner-image-tech-3">
                 </div>
-                <img class="banner-logo" src="{{ asset('img/tech/best-buy-logo.png') }}"
-                    alt="Best Buy Logo">
+                <img class="banner-logo" src="{{ asset('img/tech/best-buy-logo.png') }}" alt="Best Buy Logo">
             </div>
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
@@ -40,8 +39,7 @@
             </div>
             {{-- SLIDE 3 --}}
             <div class="banner-slide even">
-                <img class="banner-logo left"
-                    src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Adidas Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-main-4">
@@ -54,8 +52,7 @@
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
-                <img class="banner-logo"
-                    src="{{ asset('img/tech/micro-center-banner-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/tech/micro-center-banner-logo.png') }}"
                     alt="Micro Center Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-featured-4">
@@ -90,8 +87,8 @@
     <span class="current-page" hidden>single location</span>
     <span class="submit-method" hidden>{{ $submitMethod }}</span>
     <span hidden>{{ count($locations) }}</span>
-    @foreach($locations as $location)
-        @if(!empty($location->lat) && !empty($location->lon))
+    @foreach ($locations as $location)
+        @if (!empty($location->lat) && !empty($location->lon))
             <div class="location-results" hidden>
                 <span class="location-id">{{ $location->id }}</span><br>
                 <span class="location-name">{{ $location->name }}</span><br>
@@ -109,12 +106,12 @@
             Location Deals
         </div>
         <div class="alternate-container-location-info">
-            @if(count($locationDeals) === 0)
+            @if (count($locationDeals) === 0)
                 <div>No deals available for this location yet.</div>
             @else
                 <div>
                     - <span>{{ count($locationDeals) }}</span>
-                    @if(count($locationDeals) > 1)
+                    @if (count($locationDeals) > 1)
                         deals
                     @else
                         deal
@@ -127,9 +124,9 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            @if($locationDeals->count() === 1)
+            @if ($locationDeals->count() === 1)
                 <div class="card-display-limited-amount">
-                    @foreach($locationDeals as $deal)
+                    @foreach ($locationDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="limited-amount-card">
                             @include('includes._alternate_card')
@@ -138,7 +135,7 @@
                 </div>
             @elseif($locationDeals->count() === 2)
                 <div class="card-display-limited-amount">
-                    @foreach($locationDeals as $deal)
+                    @foreach ($locationDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="limited-amount-card">
                             @include('includes._alternate_card')
@@ -147,7 +144,7 @@
                 </div>
             @else
                 <div class="card-display-view-all owl-carousel owl-theme location-carousel">
-                    @foreach($locationDeals as $deal)
+                    @foreach ($locationDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="alternate-card">
                             @include('includes._alternate_card')
@@ -165,10 +162,9 @@
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
 <script src="{{ asset('js/show-map.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqYr4C7xfuJFJOEUGVmMSBtakLS-9ajSA&libraries=geometry"
-    async defer>
-</script>
+    async defer></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -205,7 +201,7 @@
             },
         });
         // FAVORITE RESPONSE
-        $('.add-favorite').click(function () {
+        $('.add-favorite').click(function() {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             // console.log(name);
@@ -219,7 +215,7 @@
                     status: status,
                     id: id,
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + id).addClass('favorite');
@@ -255,7 +251,7 @@
             });
         });
         // SHOWS APPROPRIATE SHARE RESPONSE
-        $('.share-deal').click(function () {
+        $('.share-deal').click(function() {
             const name = $(this).attr('name');
             if ($('.share-deal').hasClass('user')) {
                 $('#shared-message-name').text(name);
@@ -274,6 +270,5 @@
             }
         });
     });
-
 </script>
 @include('includes._footer')

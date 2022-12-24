@@ -27,8 +27,7 @@
                 </div>
                 <div class="banner-container-image banner-image-main-1">
                 </div>
-                <img class="banner-logo"
-                    src="{{ asset('img/fashion/fantastic-sams-banner-logo.png') }}"
+                <img class="banner-logo" src="{{ asset('img/fashion/fantastic-sams-banner-logo.png') }}"
                     alt="Fantastic Sams Company Logo">
             </div>
             {{-- SLIDE 2 --}}
@@ -59,8 +58,7 @@
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
-                <img class="banner-logo left"
-                    src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Adidas Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-main-4">
@@ -84,8 +82,7 @@
         @include('includes._dashboard')
         {{-- SEARCH CONTAINER --}}
         <div class="search-container">
-            <form action={{ route('deals.search') }} class="search-form" name="searchForm"
-                method="GET">
+            <form action={{ route('deals.search') }} class="search-form" name="searchForm" method="GET">
                 <input type="text" name="search" id="search-field" class="search-field"
                     placeholder="Search by type, city, or zip...">
                 {{-- <span class="search-form-error">{{ $message }}</span> --}}
@@ -110,7 +107,7 @@
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </span>
                     <ul class="all-button-dropdown">
-                        @foreach($categories as $category)
+                        @foreach ($categories as $category)
                             <li class="category-item">{{ $category }}</li>
                         @endforeach
                     </ul>
@@ -132,8 +129,7 @@
                 @auth
                     <a href="https://yso.netrbx.com/stores/188-bed-bath-beyond" target="_blank">
                         <div class="cashback-card">
-                            <div class="cashback-logo"><img
-                                    src="{{ asset('img/fashion/bed-bath-logo.png') }}"
+                            <div class="cashback-logo"><img src="{{ asset('img/fashion/bed-bath-logo.png') }}"
                                     alt="Bed Bath and Beyond Logo"></div>
                             <div class="cashback-discount">
                                 <h4>2.3%</h4>
@@ -143,8 +139,7 @@
                     </a>
                     <a href="https://yso.netrbx.com/stores/1108-office-depot" target="_blank">
                         <div class="cashback-card">
-                            <div class="cashback-logo"><img
-                                    src="{{ asset('img/tech/office-depot-logo.png') }}"
+                            <div class="cashback-logo"><img src="{{ asset('img/tech/office-depot-logo.png') }}"
                                     alt="Office Depot Logo"></div>
                             <div class="cashback-discount">
                                 <h4><span>up to</span>3.5%</h4>
@@ -154,8 +149,7 @@
                     </a>
                     <a href="https://yso.netrbx.com/stores/579-finish-line" target="_blank">
                         <div class="cashback-card">
-                            <div class="cashback-logo"><img
-                                    src="{{ asset('img/fashion/finish-line-logo.png') }}"
+                            <div class="cashback-logo"><img src="{{ asset('img/fashion/finish-line-logo.png') }}"
                                     alt="Finish Line Logo">
                             </div>
                             <div class="cashback-discount">
@@ -166,8 +160,7 @@
                     </a>
                     <a href="https://yso.netrbx.com/stores/837-journeys" target="_blank">
                         <div class="cashback-card">
-                            <div class="cashback-logo"><img
-                                    src="{{ asset('img/fashion/journeys-logo.png') }}"
+                            <div class="cashback-logo"><img src="{{ asset('img/fashion/journeys-logo.png') }}"
                                     alt="Journeys Logo"></div>
                             <div class="cashback-discount">
                                 <h4><span>up to</span>3.5%</h4>
@@ -177,8 +170,7 @@
                     </a>
                     <a href="https://yso.netrbx.com/stores/9280-best-buy-u-s" target="_blank">
                         <div class="cashback-card">
-                            <div class="cashback-logo"><img
-                                    src="{{ asset('img/tech/best-buy-logo2.png') }}"
+                            <div class="cashback-logo"><img src="{{ asset('img/tech/best-buy-logo2.png') }}"
                                     alt="Best Buy Logo">
                             </div>
                             <div class="cashback-discount">
@@ -196,8 +188,7 @@
                             <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
-                        <div class="cashback-logo"><img
-                                src="{{ asset('img/fashion/bed-bath-logo.png') }}"
+                        <div class="cashback-logo"><img src="{{ asset('img/fashion/bed-bath-logo.png') }}"
                                 alt="Bed Bath and Beyond Logo"></div>
                         <div class="cashback-discount">
                             <h4>2.3%</h4>
@@ -211,8 +202,7 @@
                             <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
-                        <div class="cashback-logo"><img
-                                src="{{ asset('img/tech/office-depot-logo.png') }}"
+                        <div class="cashback-logo"><img src="{{ asset('img/tech/office-depot-logo.png') }}"
                                 alt="Office Depot Logo"></div>
                         <div class="cashback-discount">
                             <h4><span>up to</span>3.5%</h4>
@@ -226,8 +216,7 @@
                             <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
-                        <div class="cashback-logo"><img
-                                src="{{ asset('img/fashion/finish-line-logo.png') }}"
+                        <div class="cashback-logo"><img src="{{ asset('img/fashion/finish-line-logo.png') }}"
                                 alt="Finish Line Logo">
                         </div>
                         <div class="cashback-discount">
@@ -242,8 +231,7 @@
                             <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
-                        <div class="cashback-logo"><img
-                                src="{{ asset('img/fashion/journeys-logo.png') }}"
+                        <div class="cashback-logo"><img src="{{ asset('img/fashion/journeys-logo.png') }}"
                                 alt="Journeys Logo"></div>
                         <div class="cashback-discount">
                             <h4><span>up to</span>3.5%</h4>
@@ -257,8 +245,7 @@
                             <a href={{ route('login.showLoginForm') }}>Log In</a>
                             <span>to continue.</span>
                         </div>
-                        <div class="cashback-logo"><img
-                                src="{{ asset('img/tech/best-buy-logo2.png') }}"
+                        <div class="cashback-logo"><img src="{{ asset('img/tech/best-buy-logo2.png') }}"
                                 alt="Best Buy Logo">
                         </div>
                         <div class="cashback-discount">
@@ -280,9 +267,9 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            @if($featuredDeals->count() === 1)
+            @if ($featuredDeals->count() === 1)
                 <div class="card-display-limited-amount">
-                    @foreach($featuredDeals as $deal)
+                    @foreach ($featuredDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -291,7 +278,7 @@
                 </div>
             @elseif($featuredDeals->count() === 2)
                 <div class="card-display-limited-amount">
-                    @foreach($featuredDeals as $deal)
+                    @foreach ($featuredDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -300,7 +287,7 @@
                 </div>
             @else
                 <div class="card-display card-display1 owl-carousel owl-theme homepage-carousel">
-                    @foreach($featuredDeals as $deal)
+                    @foreach ($featuredDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -319,9 +306,9 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            @if($categoryDeals->count() === 1)
+            @if ($categoryDeals->count() === 1)
                 <div class="card-display-limited-amount">
-                    @foreach($categoryDeals as $deal)
+                    @foreach ($categoryDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -330,7 +317,7 @@
                 </div>
             @elseif($categoryDeals->count() === 2)
                 <div class="card-display-limited-amount">
-                    @foreach($categoryDeals as $deal)
+                    @foreach ($categoryDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -339,7 +326,7 @@
                 </div>
             @else
                 <div class="card-display owl-carousel owl-theme homepage-carousel">
-                    @foreach($categoryDeals as $deal)
+                    @foreach ($categoryDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -357,9 +344,9 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            @if($techDeals->count() === 1)
+            @if ($techDeals->count() === 1)
                 <div class="card-display-limited-amount">
-                    @foreach($techDeals as $deal)
+                    @foreach ($techDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -368,7 +355,7 @@
                 </div>
             @elseif($techDeals->count() === 2)
                 <div class="card-display-limited-amount">
-                    @foreach($techDeals as $deal)
+                    @foreach ($techDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -377,7 +364,7 @@
                 </div>
             @else
                 <div class="card-display owl-carousel owl-theme homepage-carousel">
-                    @foreach($techDeals as $deal)
+                    @foreach ($techDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -402,9 +389,9 @@
         </div>
         <div class="container-right">
             {{-- CARD BLOCK --}}
-            @if($popularDeals->count() === 1)
+            @if ($popularDeals->count() === 1)
                 <div class="card-display-limited-amount">
-                    @foreach($popularDeals as $deal)
+                    @foreach ($popularDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -413,7 +400,7 @@
                 </div>
             @elseif($popularDeals->count() === 2)
                 <div class="card-display-limited-amount">
-                    @foreach($popularDeals as $deal)
+                    @foreach ($popularDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -422,7 +409,7 @@
                 </div>
             @else
                 <div class="card-display owl-carousel owl-theme homepage-carousel">
-                    @foreach($popularDeals as $deal)
+                    @foreach ($popularDeals as $deal)
                         {{-- CARD COMPONENT --}}
                         <div class="card">
                             @include('includes._card')
@@ -442,7 +429,7 @@
 <script src="{{ asset('js/show-cashback-message.js') }}"></script>
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -479,7 +466,7 @@
             },
         });
         // FAVORITE RESPONSE
-        $('.add-favorite').click(function () {
+        $('.add-favorite').click(function() {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             $.ajax({
@@ -492,7 +479,7 @@
                     status: status,
                     id: id,
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['success']) {
                         var r = (data['success']);
                         $('#' + id).addClass('favorite');
@@ -531,7 +518,7 @@
             });
         });
         // SHOWS APPROPRIATE SHARE RESPONSE
-        $('.share-deal').click(function () {
+        $('.share-deal').click(function() {
             const name = $(this).attr('name');
             if ($('.share-deal').hasClass('user')) {
                 $('#shared-message-name').text(name);
@@ -575,6 +562,5 @@
             }, 5000);
         }, 250);
     });
-
 </script>
 @include('includes._footer')
