@@ -1,4 +1,5 @@
 function loadScript() {
+    const windowOverlay = document.querySelector("#window-overlay");
     const dashboardOpenButton = document.querySelector(
         "#dashboard-open-button"
     );

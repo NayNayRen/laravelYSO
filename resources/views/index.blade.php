@@ -488,8 +488,8 @@
                         $(document).on('click', '.favorite-added-button', function() {
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
-                            // $('#dashboard-content').load(window.location + (
-                            //     ' #dashboard-content'));
+                            $('#dashboard-content').load(window.location + (
+                                ' #dashboard-content'));
                             // false reloads from browser cache
                             // location.reload(false);
                         });
@@ -503,8 +503,8 @@
                         $(document).on('click', '.favorite-removed-button', function() {
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
-                            // $('#dashboard-content').load(window.location + (
-                            //     ' #dashboard-content'));
+                            $('#dashboard-content').load(window.location + (
+                                ' #dashboard-content'));
                             // false reloads from browser cache
                             // location.reload(false);
                         });
