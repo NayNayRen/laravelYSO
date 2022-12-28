@@ -1,4 +1,4 @@
-function loadMainScript(){
+// function loadMainScript(){
     // containers that have actions
     const header = document.querySelector(".header");
     const scrollPoint = document.getElementById("scroll-point");
@@ -119,7 +119,12 @@ function loadMainScript(){
             $(activeCard).nextAll().removeClass("active");
             $(activeCard).prevAll().removeClass("active");
         });
-    });
-}
 
-window.onload = loadMainScript();
+        // $(document).on('click', '.add-favorite', function() {
+        //     $(".dashboard-carousel").owlCarousel('refresh');
+        //     console.log('clicked');
+        // });
+    });
+// }
+
+// window.onload = loadMainScript();
