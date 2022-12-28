@@ -38,7 +38,7 @@
                     <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
                 </div>
             </div>
-            <div class="dashboard-right-container">
+            <div id="dashboard-content" class="dashboard-right-container">
                 <ul class="c-list wrapper al-center">
                     <li class="c-list__item">
                         <a link="#fav1" class="c-list__link active">

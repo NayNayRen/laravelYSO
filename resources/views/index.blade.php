@@ -466,7 +466,7 @@
             },
         });
         // FAVORITE RESPONSE
-        $('.add-favorite').click(function() {
+        $(document).on('click', '.add-favorite', function() {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             $.ajax({
@@ -485,9 +485,11 @@
                         $('#' + id).addClass('favorite');
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
-                        $('.favorite-added-button').click(() => {
+                        $(document).on('click', '.favorite-added-button', function() {
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
+                            // $('#dashboard-content').load(window.location + (
+                            //     ' #dashboard-content'));
                             // false reloads from browser cache
                             // location.reload(false);
                         });
@@ -498,9 +500,11 @@
                         $('#favorite-removed-name').text(name);
                         $('.favorite-removed-message').addClass(
                             'show-selected-deal-message');
-                        $('.favorite-removed-button').click(() => {
+                        $(document).on('click', '.favorite-removed-button', function() {
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
+                            // $('#dashboard-content').load(window.location + (
+                            //     ' #dashboard-content'));
                             // false reloads from browser cache
                             // location.reload(false);
                         });
