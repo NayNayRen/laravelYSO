@@ -520,10 +520,8 @@
                                             items: 2,
                                         },
                                     },
-                                })
+                                });
                             });
-                            // false reloads from browser cache
-                            // location.reload(false);
                         });
                     }
                     if (data['delete']) {
@@ -567,10 +565,8 @@
                                             items: 2,
                                         },
                                     },
-                                })
+                                });
                             });
-                            // false reloads from browser cache
-                            // location.reload(false);
                         });
                     }
                     if (data['error']) {
@@ -581,7 +577,6 @@
                                 'show-selected-deal-message');
                         });
                     }
-                    // location.reload();
                 }
             });
         });
