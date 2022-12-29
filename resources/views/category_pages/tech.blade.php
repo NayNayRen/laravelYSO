@@ -214,40 +214,46 @@
                         $(document).on('click', '.favorite-added-button', function() {
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
-                            $('#dashboard-content').load(window.location + (
-                                ' #dashboard-content'), function() {
-                                $(".dashboard-carousel").owlCarousel({
-                                    loop: true,
-                                    nav: true,
-                                    items: 3,
-                                    autoplay: false,
-                                    autoplayTimeout: 3000,
-                                    smartSpeed: 500, // length of time to scroll in ms
-                                    // autoplayHoverPause: true, set to true causes autoplay on mobile
-                                    autoplayHoverPause: false,
-                                    dots: false,
-                                    touchDrag: true,
-                                    navText: [
-                                        "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
-                                        "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
-                                    ],
-                                    responsive: {
-                                        0: {
-                                            // < 540
-                                            items: 1,
-                                            dots: false,
-                                        },
-                                        540: {
-                                            // 540 - 1100
-                                            items: 1,
-                                        },
-                                        1100: {
-                                            // > 1100
-                                            items: 2,
-                                        },
-                                    },
-                                });
-                            });
+                            setTimeout(() => {
+                                // AJAX RELOADS DASHBOARD
+                                $('#dashboard-content').load(window
+                                    .location + (
+                                        ' #dashboard-content'),
+                                    function() {
+                                        $(".dashboard-carousel")
+                                            .owlCarousel({
+                                                loop: true,
+                                                nav: true,
+                                                items: 3,
+                                                autoplay: false,
+                                                autoplayTimeout: 3000,
+                                                smartSpeed: 500, // length of time to scroll in ms
+                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                autoplayHoverPause: false,
+                                                dots: false,
+                                                touchDrag: true,
+                                                navText: [
+                                                    "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+                                                    "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
+                                                ],
+                                                responsive: {
+                                                    0: {
+                                                        // < 540
+                                                        items: 1,
+                                                        dots: false,
+                                                    },
+                                                    540: {
+                                                        // 540 - 1100
+                                                        items: 1,
+                                                    },
+                                                    1100: {
+                                                        // > 1100
+                                                        items: 2,
+                                                    },
+                                                },
+                                            });
+                                    });
+                            }, 750);
                         });
                     }
                     if (data['delete']) {
@@ -259,40 +265,46 @@
                         $(document).on('click', '.favorite-removed-button', function() {
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
-                            $('#dashboard-content').load(window.location + (
-                                ' #dashboard-content'), function() {
-                                $(".dashboard-carousel").owlCarousel({
-                                    loop: true,
-                                    nav: true,
-                                    items: 3,
-                                    autoplay: false,
-                                    autoplayTimeout: 3000,
-                                    smartSpeed: 500, // length of time to scroll in ms
-                                    // autoplayHoverPause: true, set to true causes autoplay on mobile
-                                    autoplayHoverPause: false,
-                                    dots: false,
-                                    touchDrag: true,
-                                    navText: [
-                                        "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
-                                        "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
-                                    ],
-                                    responsive: {
-                                        0: {
-                                            // < 540
-                                            items: 1,
-                                            dots: false,
-                                        },
-                                        540: {
-                                            // 540 - 1100
-                                            items: 1,
-                                        },
-                                        1100: {
-                                            // > 1100
-                                            items: 2,
-                                        },
-                                    },
-                                });
-                            });
+                            setTimeout(() => {
+                                // AJAX RELOADS DASHBOARD
+                                $('#dashboard-content').load(window
+                                    .location + (
+                                        ' #dashboard-content'),
+                                    function() {
+                                        $(".dashboard-carousel")
+                                            .owlCarousel({
+                                                loop: true,
+                                                nav: true,
+                                                items: 3,
+                                                autoplay: false,
+                                                autoplayTimeout: 3000,
+                                                smartSpeed: 500, // length of time to scroll in ms
+                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                autoplayHoverPause: false,
+                                                dots: false,
+                                                touchDrag: true,
+                                                navText: [
+                                                    "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+                                                    "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
+                                                ],
+                                                responsive: {
+                                                    0: {
+                                                        // < 540
+                                                        items: 1,
+                                                        dots: false,
+                                                    },
+                                                    540: {
+                                                        // 540 - 1100
+                                                        items: 1,
+                                                    },
+                                                    1100: {
+                                                        // > 1100
+                                                        items: 2,
+                                                    },
+                                                },
+                                            });
+                                    });
+                            }, 750);
                         });
                     }
                     if (data['error']) {
