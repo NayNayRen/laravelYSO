@@ -72,7 +72,8 @@
                                         @endphp
                                         @foreach ($favoriteLocations as $favoriteLocation)
                                             @if ($location->id === $favoriteLocation->lid)
-                                                <span class="map-location-favorite-icon"><i class="fa fa-star"
+                                                <span id="map-location-favorite-icon"
+                                                    class="map-location-favorite-icon"><i class="fa fa-star"
                                                         aria-hidden="true"></i></span>
                                             @endif
                                         @endforeach

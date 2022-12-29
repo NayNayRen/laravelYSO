@@ -1935,8 +1935,8 @@ body {
     left: 0;
     min-height: 450px;
     opacity: 0;
-    overflow-x: hidden;
     /* opacity: 1; */
+    overflow-x: hidden;
     padding: 5px;
     position: absolute;
     top: 0;
@@ -2910,7 +2910,7 @@ html {
     background-color: #fff;
     margin: auto;
     height: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     width: 80%;
 }
@@ -4247,6 +4247,7 @@ html {
     justify-content: center;
     padding: 10px 0 0 0;
     position: relative;
+    /* outline: solid 1px blue; */
 }
 
 .view-all-container-heading h1 {
