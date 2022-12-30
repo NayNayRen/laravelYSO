@@ -103,7 +103,7 @@
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="alternate-container">
         <div class="alternate-container-heading">
-            Location Deals
+            Our Location Deals
         </div>
         <div class="alternate-container-location-info">
             @if (count($locationDeals) === 0)
@@ -122,7 +122,7 @@
                 </div>
             @endif
         </div>
-        <div class="container-right">
+        <div id="card-display" class="container-right">
             {{-- CARD BLOCK --}}
             @if ($locationDeals->count() === 1)
                 <div class="card-display-limited-amount">
@@ -225,12 +225,11 @@
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
-                                // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                // AJAX RELOADS PAGE CAROUSEL
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "",
                                     function() {
-                                        $(".dashboard-carousel")
+                                        $(".location-carousel")
                                             .owlCarousel({
                                                 loop: true,
                                                 nav: true,
@@ -239,6 +238,40 @@
                                                 autoplayTimeout: 3000,
                                                 smartSpeed: 500, // length of time to scroll in ms
                                                 // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                autoplayHoverPause: false,
+                                                dots: false,
+                                                touchDrag: true,
+                                                navText: [
+                                                    "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+                                                    "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
+                                                ],
+                                                responsive: {
+                                                    0: {
+                                                        items: 1,
+                                                        dots: false,
+                                                    },
+                                                    540: {
+                                                        items: 2,
+                                                    },
+                                                    1300: {
+                                                        items: 3,
+                                                    },
+                                                },
+                                            });
+                                    });
+                                // AJAX RELOADS DASHBOARD
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
+                                    function() {
+                                        $(".dashboard-carousel")
+                                            .owlCarousel({
+                                                loop: true,
+                                                nav: true,
+                                                items: 3,
+                                                autoplay: false,
+                                                autoplayTimeout: 3000,
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,
@@ -276,12 +309,11 @@
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
-                                // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                // AJAX RELOADS PAGE CAROUSEL
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "",
                                     function() {
-                                        $(".dashboard-carousel")
+                                        $(".location-carousel")
                                             .owlCarousel({
                                                 loop: true,
                                                 nav: true,
@@ -290,6 +322,40 @@
                                                 autoplayTimeout: 3000,
                                                 smartSpeed: 500, // length of time to scroll in ms
                                                 // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                autoplayHoverPause: false,
+                                                dots: false,
+                                                touchDrag: true,
+                                                navText: [
+                                                    "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+                                                    "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
+                                                ],
+                                                responsive: {
+                                                    0: {
+                                                        items: 1,
+                                                        dots: false,
+                                                    },
+                                                    540: {
+                                                        items: 2,
+                                                    },
+                                                    1300: {
+                                                        items: 3,
+                                                    },
+                                                },
+                                            });
+                                    });
+                                // AJAX RELOADS DASHBOARD
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
+                                    function() {
+                                        $(".dashboard-carousel")
+                                            .owlCarousel({
+                                                loop: true,
+                                                nav: true,
+                                                items: 3,
+                                                autoplay: false,
+                                                autoplayTimeout: 3000,
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,

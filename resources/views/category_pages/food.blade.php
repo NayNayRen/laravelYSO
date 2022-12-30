@@ -120,7 +120,6 @@
         @endif
     @endforeach
     {{-- MAIN CONTENT CONTAINER --}}
-
     <div class="alternate-container">
         @if (count($deals) === 0 || $deals === null)
             <div class="card-display-limited-amount">
@@ -128,7 +127,7 @@
             </div>
         @else
             <div class="alternate-container-heading">
-                Food Deals
+                Our Food Deals
             </div>
             <span class="alternate-container-count">
                 {{ $deals->links('vendor.pagination.custom-view-all-pagination') }}
@@ -139,7 +138,7 @@
                     <span class="alternate-container-count">
                         - {{ count($deals) }} Deal -
                     </span>
-                    <div class="card-display-limited-amount">
+                    <div id="card-display" class="card-display-limited-amount">
                         @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
@@ -151,7 +150,7 @@
                     <span class="alternate-container-count">
                         - {{ count($deals) }} Deals -
                     </span>
-                    <div class="card-display-limited-amount">
+                    <div id="card-display" class="card-display-limited-amount">
                         @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
@@ -163,7 +162,7 @@
                     <div class="alternate-count">
                         - {{ count($deals) }} Deals -
                     </div>
-                    <div class="card-display-view-all">
+                    <div id="card-display" class="card-display-view-all">
                         @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
@@ -217,10 +216,12 @@
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -229,8 +230,7 @@
                                                 items: 3,
                                                 autoplay: false,
                                                 autoplayTimeout: 3000,
-                                                smartSpeed: 500, // length of time to scroll in ms
-                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,
@@ -268,10 +268,12 @@
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -280,8 +282,7 @@
                                                 items: 3,
                                                 autoplay: false,
                                                 autoplayTimeout: 3000,
-                                                smartSpeed: 500, // length of time to scroll in ms
-                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,

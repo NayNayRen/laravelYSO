@@ -213,15 +213,15 @@
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
                         $(document).on('click', '.favorite-added-button', function() {
-                            // $('#card-display').load(window.location +
-                            //     ' #card-display');
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -230,8 +230,7 @@
                                                 items: 3,
                                                 autoplay: false,
                                                 autoplayTimeout: 3000,
-                                                smartSpeed: 500, // length of time to scroll in ms
-                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,
@@ -266,15 +265,15 @@
                         $('.favorite-removed-message').addClass(
                             'show-selected-deal-message');
                         $(document).on('click', '.favorite-removed-button', function() {
-                            // $('#card-display').load(window.location +
-                            //     ' #card-display');
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -283,8 +282,7 @@
                                                 items: 3,
                                                 autoplay: false,
                                                 autoplayTimeout: 3000,
-                                                smartSpeed: 500, // length of time to scroll in ms
-                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,

@@ -162,7 +162,7 @@
                     <span class="alternate-container-count">
                         - {{ count($searchedDeals) }} Deal -
                     </span>
-                    <div class="card-display-limited-amount">
+                    <div id="card-display" class="card-display-limited-amount">
                         @foreach ($searchedDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
@@ -174,7 +174,7 @@
                     <span class="alternate-container-count">
                         - {{ count($searchedDeals) }} Deals -
                     </span>
-                    <div class="card-display-limited-amount">
+                    <div id="card-display" class="card-display-limited-amount">
                         @foreach ($searchedDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
@@ -186,7 +186,7 @@
                     <div class="alternate-count">
                         - {{ count($searchedDeals) }} Deals -
                     </div>
-                    <div class="card-display-view-all">
+                    <div id="card-display" class="card-display-view-all">
                         @foreach ($searchedDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="limited-amount-card">
@@ -240,10 +240,12 @@
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -291,10 +293,12 @@
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({

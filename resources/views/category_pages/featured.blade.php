@@ -212,15 +212,15 @@
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
                         $(document).on('click', '.favorite-added-button', function() {
-                            // $('#card-display').load(window.location +
-                            //     ' #card-display');
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -265,15 +265,15 @@
                         $('.favorite-removed-message').addClass(
                             'show-selected-deal-message');
                         $(document).on('click', '.favorite-removed-button', function() {
-                            // $('#card-display').load(window.location +
-                            //     ' #card-display');
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                $('#card-display').load(window.location +
+                                    ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({

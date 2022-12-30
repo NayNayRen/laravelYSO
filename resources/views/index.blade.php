@@ -489,9 +489,9 @@
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -500,8 +500,7 @@
                                                 items: 3,
                                                 autoplay: false,
                                                 autoplayTimeout: 3000,
-                                                smartSpeed: 500, // length of time to scroll in ms
-                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,
@@ -539,9 +538,9 @@
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
-                                $('#dashboard-content').load(window
-                                    .location + (
-                                        ' #dashboard-content'),
+                                $('#dashboard-right-container').load(window
+                                    .location +
+                                    ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
                                             .owlCarousel({
@@ -550,8 +549,7 @@
                                                 items: 3,
                                                 autoplay: false,
                                                 autoplayTimeout: 3000,
-                                                smartSpeed: 500, // length of time to scroll in ms
-                                                // autoplayHoverPause: true, set to true causes autoplay on mobile
+                                                smartSpeed: 500, // scroll in ms
                                                 autoplayHoverPause: false,
                                                 dots: false,
                                                 touchDrag: true,
