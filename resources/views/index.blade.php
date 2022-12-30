@@ -577,6 +577,9 @@
                                                 homepageCarouselOptions
                                             );
                                     });
+                                // $(document).ajaxStop(function() {
+                                //     window.location.reload();
+                                // });
                             }, 750);
                         });
                     }
@@ -639,6 +642,9 @@
                                                 homepageCarouselOptions
                                             );
                                     });
+                                // $(document).ajaxStop(function() {
+                                //     window.location.reload();
+                                // });
                             }, 750);
                         });
                     }
