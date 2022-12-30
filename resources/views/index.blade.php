@@ -286,13 +286,15 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display card-display1 owl-carousel owl-theme homepage-carousel">
-                    @foreach ($featuredDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+                <div id="featured">
+                    <div class="card-display card-display1 owl-carousel owl-theme homepage-carousel">
+                        @foreach ($featuredDeals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             @endif
         </div>
@@ -325,13 +327,15 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display owl-carousel owl-theme homepage-carousel">
-                    @foreach ($categoryDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+                <div id="selected-category">
+                    <div class="card-display owl-carousel owl-theme homepage-carousel">
+                        @foreach ($categoryDeals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             @endif
         </div>
@@ -363,13 +367,15 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display owl-carousel owl-theme homepage-carousel">
-                    @foreach ($techDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+                <div id="tech">
+                    <div class="card-display owl-carousel owl-theme homepage-carousel">
+                        @foreach ($techDeals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             @endif
         </div>
@@ -408,13 +414,15 @@
                     @endforeach
                 </div>
             @else
-                <div class="card-display owl-carousel owl-theme homepage-carousel">
-                    @foreach ($popularDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+                <div id="popular">
+                    <div class="card-display owl-carousel owl-theme homepage-carousel">
+                        @foreach ($popularDeals as $deal)
+                            {{-- CARD COMPONENT --}}
+                            <div class="card">
+                                @include('includes._card')
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             @endif
         </div>
@@ -437,13 +445,13 @@
         });
         // HOMEPAGE CAROUSEL
         var owl = $(".homepage-carousel");
-        owl.owlCarousel({
+        const homepageCarouselOptions = {
             loop: true,
             nav: true,
             items: 3,
             autoplay: false,
             autoplayTimeout: 3000,
-            smartSpeed: 500, // length of time to scroll in ms
+            smartSpeed: 500, // scroll in ms
             // autoplayHoverPause: true, set to true causes autoplay on mobile
             autoplayHoverPause: false,
             dots: false,
@@ -464,7 +472,38 @@
                     items: 3,
                 },
             },
-        });
+        };
+        const dashboardCarouselOptions = {
+            loop: true,
+            nav: true,
+            items: 3,
+            autoplay: false,
+            autoplayTimeout: 3000,
+            smartSpeed: 500, // scroll in ms
+            autoplayHoverPause: false,
+            dots: false,
+            touchDrag: true,
+            navText: [
+                "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
+                "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
+            ],
+            responsive: {
+                0: {
+                    // < 540
+                    items: 1,
+                    dots: false,
+                },
+                540: {
+                    // 540 - 1100
+                    items: 1,
+                },
+                1100: {
+                    // > 1100
+                    items: 2,
+                },
+            },
+        };
+        owl.owlCarousel(homepageCarouselOptions);
         // FAVORITE RESPONSE
         $(document).on('click', '.add-favorite', function() {
             var id = $(this).attr('id');
@@ -494,36 +533,49 @@
                                     ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
-                                            .owlCarousel({
-                                                loop: true,
-                                                nav: true,
-                                                items: 3,
-                                                autoplay: false,
-                                                autoplayTimeout: 3000,
-                                                smartSpeed: 500, // scroll in ms
-                                                autoplayHoverPause: false,
-                                                dots: false,
-                                                touchDrag: true,
-                                                navText: [
-                                                    "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
-                                                    "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
-                                                ],
-                                                responsive: {
-                                                    0: {
-                                                        // < 540
-                                                        items: 1,
-                                                        dots: false,
-                                                    },
-                                                    540: {
-                                                        // 540 - 1100
-                                                        items: 1,
-                                                    },
-                                                    1100: {
-                                                        // > 1100
-                                                        items: 2,
-                                                    },
-                                                },
-                                            });
+                                            .owlCarousel(
+                                                dashboardCarouselOptions
+                                            );
+                                    });
+                                // featured reload
+                                $('#featured').load(window
+                                    .location +
+                                    ' #featured>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
+                                    });
+                                // selected category reload
+                                $('#selected-category').load(window
+                                    .location +
+                                    ' #selected-category>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
+                                    });
+                                // tech reload
+                                $('#tech').load(window
+                                    .location +
+                                    ' #tech>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
+                                    });
+                                // popular reload
+                                $('#popular').load(window
+                                    .location +
+                                    ' #popular>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
                                     });
                             }, 750);
                         });
@@ -543,36 +595,49 @@
                                     ' #dashboard-right-container>*', "",
                                     function() {
                                         $(".dashboard-carousel")
-                                            .owlCarousel({
-                                                loop: true,
-                                                nav: true,
-                                                items: 3,
-                                                autoplay: false,
-                                                autoplayTimeout: 3000,
-                                                smartSpeed: 500, // scroll in ms
-                                                autoplayHoverPause: false,
-                                                dots: false,
-                                                touchDrag: true,
-                                                navText: [
-                                                    "<div class='container-arrow-left' aria-label='Previous Arrow'><i class='fa fa-arrow-left' aria-hidden='false'></i></div>",
-                                                    "<div class='container-arrow-right' aria-label='Next Arrow'><i class='fa fa-arrow-right' aria-hidden='false'></i></div>",
-                                                ],
-                                                responsive: {
-                                                    0: {
-                                                        // < 540
-                                                        items: 1,
-                                                        dots: false,
-                                                    },
-                                                    540: {
-                                                        // 540 - 1100
-                                                        items: 1,
-                                                    },
-                                                    1100: {
-                                                        // > 1100
-                                                        items: 2,
-                                                    },
-                                                },
-                                            });
+                                            .owlCarousel(
+                                                dashboardCarouselOptions
+                                            );
+                                    });
+                                // featured reload
+                                $('#featured').load(window
+                                    .location +
+                                    ' #featured>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
+                                    });
+                                // selected category reload
+                                $('#selected-category').load(window
+                                    .location +
+                                    ' #selected-category>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
+                                    });
+                                // tech reload
+                                $('#tech').load(window
+                                    .location +
+                                    ' #tech>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
+                                    });
+                                // popular reload
+                                $('#popular').load(window
+                                    .location +
+                                    ' #popular>*', "",
+                                    function() {
+                                        $(".homepage-carousel")
+                                            .owlCarousel(
+                                                homepageCarouselOptions
+                                            );
                                     });
                             }, 750);
                         });
