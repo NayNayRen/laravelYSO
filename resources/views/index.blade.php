@@ -287,7 +287,7 @@
                 </div>
             @else
                 <div id="featured">
-                    <div class="card-display card-display1 owl-carousel owl-theme homepage-carousel">
+                    <div class="card-display card-display1 owl-carousel owl-theme featured-carousel">
                         @foreach ($featuredDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="card">
@@ -328,7 +328,7 @@
                 </div>
             @else
                 <div id="selected-category">
-                    <div class="card-display owl-carousel owl-theme homepage-carousel">
+                    <div class="card-display owl-carousel owl-theme selected-category-carousel">
                         @foreach ($categoryDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="card">
@@ -368,7 +368,7 @@
                 </div>
             @else
                 <div id="tech">
-                    <div class="card-display owl-carousel owl-theme homepage-carousel">
+                    <div class="card-display owl-carousel owl-theme tech-carousel">
                         @foreach ($techDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="card">
@@ -415,7 +415,7 @@
                 </div>
             @else
                 <div id="popular">
-                    <div class="card-display owl-carousel owl-theme homepage-carousel">
+                    <div class="card-display owl-carousel owl-theme popular-carousel">
                         @foreach ($popularDeals as $deal)
                             {{-- CARD COMPONENT --}}
                             <div class="card">
@@ -444,7 +444,11 @@
             }
         });
         // HOMEPAGE CAROUSEL
-        var owl = $(".homepage-carousel");
+        const featuredCarousel = $(".featured-carousel");
+        const selectedCategoryCarousel = $(".selected-category-carousel");
+        const techCarousel = $(".tech-carousel");
+        const popularCarousel = $(".popular-carousel");
+        // var owl = $(".homepage-carousel");
         const homepageCarouselOptions = {
             loop: true,
             nav: true,
@@ -503,7 +507,11 @@
                 },
             },
         };
-        owl.owlCarousel(homepageCarouselOptions);
+        featuredCarousel.owlCarousel(homepageCarouselOptions);
+        selectedCategoryCarousel.owlCarousel(homepageCarouselOptions);
+        techCarousel.owlCarousel(homepageCarouselOptions);
+        popularCarousel.owlCarousel(homepageCarouselOptions);
+        // owl.owlCarousel(homepageCarouselOptions);
         // FAVORITE RESPONSE
         $(document).on('click', '.add-favorite', function() {
             var id = $(this).attr('id');
@@ -542,7 +550,7 @@
                                     .location +
                                     ' #featured>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".featured-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
@@ -552,7 +560,7 @@
                                     .location +
                                     ' #selected-category>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".selected-category-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
@@ -562,7 +570,7 @@
                                     .location +
                                     ' #tech>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".tech-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
@@ -572,7 +580,7 @@
                                     .location +
                                     ' #popular>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".popular-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
@@ -607,7 +615,7 @@
                                     .location +
                                     ' #featured>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".featured-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
@@ -617,7 +625,7 @@
                                     .location +
                                     ' #selected-category>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".selected-category-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
@@ -627,7 +635,7 @@
                                     .location +
                                     ' #tech>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".tech-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
@@ -637,7 +645,7 @@
                                     .location +
                                     ' #popular>*', "",
                                     function() {
-                                        $(".homepage-carousel")
+                                        $(".popular-carousel")
                                             .owlCarousel(
                                                 homepageCarouselOptions
                                             );
