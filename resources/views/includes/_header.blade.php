@@ -31,8 +31,7 @@
         <div class="header-navigation">
             {{-- <a href={{ url()->previous() }}> --}}
             <a href={{ route('deals.index') }}>
-                <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-header-link"
-                    alt="Your Social Offers Logo">
+                <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-header-link" alt="Your Social Offers Logo">
             </a>
             {{-- PAGES NAVIGATION BLOCK --}}
             <div class="links-user-container">
@@ -40,17 +39,17 @@
                     <li><a href="https://yso.netrbx.com" target="__blank">cashback</a></li>
                     <li>
                         <a href={{ route('rewards') }}
-                            class="{{ (Request::is('navigation_pages/rewards') || Request::is('navigation_pages/rewards/*')) ? 'active' : '' }}">rewards</a>
+                            class="{{ Request::is('navigation_pages/rewards') || Request::is('navigation_pages/rewards/*') ? 'active' : '' }}">rewards</a>
                     </li>
                     <li><a href={{ route('enhance') }}
-                            class="{{ (Request::is('navigation_pages/enhance') || Request::is('navigation_pages/enhance/*')) ? 'active' : '' }}">enhance
+                            class="{{ Request::is('navigation_pages/enhance') || Request::is('navigation_pages/enhance/*') ? 'active' : '' }}">enhance
                             your sales</a>
                     </li>
                     <li><a href={{ route('support') }}
-                            class="{{ (Request::is('navigation_pages/support') || Request::is('navigation_pages/support/*')) ? 'active' : '' }}">support</a>
+                            class="{{ Request::is('navigation_pages/support') || Request::is('navigation_pages/support/*') ? 'active' : '' }}">support</a>
                     </li>
                     <li><a href={{ route('about') }}
-                            class="{{ (Request::is('navigation_pages/about') || Request::is('navigation_pages/about/*')) ? 'active' : '' }}">about
+                            class="{{ Request::is('navigation_pages/about') || Request::is('navigation_pages/about/*') ? 'active' : '' }}">about
                             yso</a></li>
                 </ul>
                 {{-- LOGGED IN USER INITIALS --}}
