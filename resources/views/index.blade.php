@@ -528,7 +528,6 @@
                 },
                 success: function(data) {
                     if (data['success']) {
-                        var r = (data['success']);
                         $('#' + id).addClass('favorite');
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
@@ -592,7 +591,6 @@
                         });
                     }
                     if (data['delete']) {
-                        var r = (data['delete']);
                         $('#' + parseInt(id)).removeClass('favorite');
                         $('#favorite-removed-name').text(name);
                         $('.favorite-removed-message').addClass(

@@ -59,7 +59,7 @@
     @else
         <div class="map-location-list-container">
             <div>
-                <ul class="map-location-list">
+                <ul id="map-location-favorite-icon-container" class="map-location-list">
                     @foreach ($locations as $location)
                         <li class="map-location-list-item">
                             <span class="map-location-name">{{ $location->name }}

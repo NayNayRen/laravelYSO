@@ -5,8 +5,7 @@
     <div class="selected-deal-container">
         {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
-        <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo'
-            alt="{{ $deal['name'] }}">
+        <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo' alt="{{ $deal['name'] }}">
         <span class="selected-deal-discount">{{ $deal['location'] }}</span>
         <span id='card-name' class="selected-deal-name">{{ $deal['name'] }}</span>
         {{-- UNREGISTERED USER CONTENT --}}
@@ -16,7 +15,7 @@
                 @php
                     $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
                 @endphp
-                @if($dealLocation === null)
+                @if ($dealLocation === null)
                     - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span> -
                 @elseif($deal->id != $dealLocation->cid)
@@ -26,19 +25,17 @@
                     @php
                         $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
                     @endphp
-                    @if($locationAddress->lat === null)
+                    @if ($locationAddress->lat === null)
                         - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                                 class="fa fa-map-marker" aria-hidden="true"></i></span> -
                     @elseif($locationAddress->lon === null)
                         - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                                 class="fa fa-map-marker" aria-hidden="true"></i></span> -
                     @else
-                        <form action={{ route('locations.show', $dealLocation->lid) }}
-                            method="GET">
-                            <button type="submit" class="card-location active"
-                                title="{{ $locationAddress->location }}" aria-label="View this deal's location."
-                                value="map" name="submit">- Location <i class=" fa fa-map-marker"
-                                    aria-hidden="true"></i> -
+                        <form action={{ route('locations.show', $dealLocation->lid) }} method="GET">
+                            <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
+                                aria-label="View this deal's location." value="map" name="submit">- Location <i
+                                    class=" fa fa-map-marker" aria-hidden="true"></i> -
                             </button>
                         </form>
                     @endif
@@ -67,9 +64,10 @@
             <div class="unregistered-user-wallet-container">
                 <div class="unregistered-user-wallet-buttons">
                     <img src="{{ asset('img/apple-wallet.png') }}" alt="Apple Wallet"> Add to Apple
-                    Wallet</div>
-                <div class="unregistered-user-wallet-buttons"><img
-                        src="{{ asset('img/google-wallet.png') }}" alt="Google Wallet">Add to Google
+                    Wallet
+                </div>
+                <div class="unregistered-user-wallet-buttons"><img src="{{ asset('img/google-wallet.png') }}"
+                        alt="Google Wallet">Add to Google
                     Wallet</div>
             </div>
             {{-- DISCLAIMER --}}
@@ -94,14 +92,14 @@
 <script src="{{ asset('js/unregistered-deal.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         // GUEST FAVORITE RESPONSE
-        $('.add-favorite').click(function () {
+        $('.add-favorite').click(function() {
             var id = $(this).attr('id');
             // alert(id);
             // console.log(id);
@@ -115,9 +113,8 @@
                     status: status,
                     id: id,
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['error']) {
-                        var r = (data['error']);
                         $('.guest-error-message').addClass('show-selected-deal-message');
                         $('.guest-error-button').click(() => {
                             $('.guest-error-message').removeClass(
@@ -128,7 +125,7 @@
             });
         });
         // GUEST SHARE RESPONSE
-        $('.share-deal').click(function () {
+        $('.share-deal').click(function() {
             $('.guest-error-message').addClass('show-selected-deal-message');
             $('.guest-error-button').click(() => {
                 $('.guest-error-message').removeClass(
@@ -136,7 +133,7 @@
             });
         });
         // GUEST COUPON RESPONSE
-        $('.add-coupon').click(function () {
+        $('.add-coupon').click(function() {
             var dealid = $('#deal-id').attr('value');
             var email = $('#registered-deal-email').attr('value');
             // console.log(dealid);
@@ -150,21 +147,19 @@
                     dealid: dealid,
                     email: email
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['message']) {
-                        var r = (data['message']);
                         $('.guest-error-message').addClass('show-selected-deal-message');
                         $('.guest-error-button').click(() => {
                             $('.guest-error-message').removeClass(
                                 'show-selected-deal-message');
                         });
-                        // alert(r);
                     }
                 }
             });
         });
         // GOOGLE & APPLE WALLET BUTTONS RESPONSE
-        $('.unregistered-user-wallet-buttons').click(function () {
+        $('.unregistered-user-wallet-buttons').click(function() {
             $('.guest-error-message').addClass('show-selected-deal-message');
             $('.guest-error-button').click(() => {
                 $('.guest-error-message').removeClass(
@@ -172,6 +167,5 @@
             });
         });
     });
-
 </script>
 @include('includes._footer')

@@ -20,6 +20,7 @@ class FavoriteController extends Controller
                     $check->delete();
                     return response()->json([
                         'delete' => 'Removed from Favorites list!',
+                        'request' => $request->all(),
                     ]);
                 } else {
                     $new  = new Favorite;
@@ -28,6 +29,7 @@ class FavoriteController extends Controller
                     $new->save();
                     return response()->json([
                         'success' => 'Added to Favorites successfully!',
+                        'request' => $request->all(),
                     ]);
                 }
             }

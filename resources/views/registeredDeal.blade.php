@@ -16,8 +16,7 @@
     <div class="selected-deal-container">
         {{-- SELECTED DEAL USING DEALS DATA --}}
         <h3>You scored a deal.</h3>
-        <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo'
-            alt="{{ $deal['name'] }}">
+        <img src="{{ $deal['picture_url'] }}" class='selected-deal-logo' alt="{{ $deal['name'] }}">
         <span class="selected-deal-discount">{{ $deal['location'] }}</span>
         <span id='card-name' class="selected-deal-name">{{ $deal['name'] }}</span>
         {{-- REGISTERED USER CONTENT --}}
@@ -27,7 +26,7 @@
                 @php
                     $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
                 @endphp
-                @if($dealLocation === null)
+                @if ($dealLocation === null)
                     - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span> -
                 @elseif($deal->id != $dealLocation->cid)
@@ -37,19 +36,17 @@
                     @php
                         $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
                     @endphp
-                    @if($locationAddress->lat === null)
+                    @if ($locationAddress->lat === null)
                         - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                                 class="fa fa-map-marker" aria-hidden="true"></i></span> -
                     @elseif($locationAddress->lon === null)
                         - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                                 class="fa fa-map-marker" aria-hidden="true"></i></span> -
                     @else
-                        <form action={{ route('locations.show', $dealLocation->lid) }}
-                            method="GET">
-                            <button type="submit" class="card-location active"
-                                title="{{ $locationAddress->location }}" aria-label="View this deal's location."
-                                value="map" name="submit">- Location <i class=" fa fa-map-marker"
-                                    aria-hidden="true"></i> -
+                        <form action={{ route('locations.show', $dealLocation->lid) }} method="GET">
+                            <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
+                                aria-label="View this deal's location." value="map" name="submit">- Location <i
+                                    class=" fa fa-map-marker" aria-hidden="true"></i> -
                             </button>
                         </form>
                     @endif
@@ -57,24 +54,22 @@
             </div>
 
             <div class="registered-share-fav-container">
-                <button class="selected-deal-share-fav-button share-deal"
-                    name="{{ $deal['name'] }}"><i class="fa fa-share"
-                        aria-hidden="true"></i>Share</button>
+                <button class="selected-deal-share-fav-button share-deal" name="{{ $deal['name'] }}"><i
+                        class="fa fa-share" aria-hidden="true"></i>Share</button>
                 @php
-                    $check = App\Models\Favorite::where('deal_id',(string)$deal['id'])->get()->first();
+                    $check = App\Models\Favorite::where('deal_id', (string) $deal['id'])
+                        ->get()
+                        ->first();
                 @endphp
-                @if($check != null)
+                @if ($check != null)
                     {{-- id="registered-favorite-deal-button" --}}
-                    <button class="selected-deal-share-fav-button add-favorite"
-                        id="{{ $deal['id'] }}"
+                    <button class="selected-deal-share-fav-button add-favorite" id="{{ $deal['id'] }}"
                         name="{{ $deal['name'] }}"><i class="fa fa-star favorite2"
                             aria-hidden="true"></i>Favorite</button>
                 @else
                     {{-- id="registered-favorite-deal-button" --}}
-                    <button class="selected-deal-share-fav-button add-favorite"
-                        id="{{ $deal['id'] }}"
-                        name="{{ $deal['name'] }}"><i class="fa fa-star"
-                            aria-hidden="true"></i>Favorite</button>
+                    <button class="selected-deal-share-fav-button add-favorite" id="{{ $deal['id'] }}"
+                        name="{{ $deal['name'] }}"><i class="fa fa-star" aria-hidden="true"></i>Favorite</button>
                 @endif
             </div>
             {{-- DISCLAIMER --}}
@@ -98,7 +93,7 @@
             {{-- REGISTERED SEND METHOD --}}
             <div class="registered-text-email-container">
                 {{-- <form action="{{ route('add.coupon') }}" method="POST">
-                @csrf--}}
+                @csrf --}}
                 <span id="registered-deal-label">Send the coupon via:</span>
                 <div class='registered-text-email-button-container'>
                     <button id="registered-text-button" class="selected-deal-text-email-button">Text</button>
@@ -106,9 +101,9 @@
                 </div>
                 {{-- SEND METHOD BUTTON --}}
                 <span class="registered-deal-response"></span>
-                <input type='hidden' value="{{ (string)$deal['id'] }}" id="deal-id">
-                <input type="tel" id='registered-deal-phone' class="registered-send-method" value="{{ $user->phone }}"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></input>
+                <input type='hidden' value="{{ (string) $deal['id'] }}" id="deal-id">
+                <input type="tel" id='registered-deal-phone' class="registered-send-method"
+                    value="{{ $user->phone }}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></input>
                 <input type="email" id='registered-deal-email' class="registered-send-method"
                     value="{{ $user->email }}"></input>
                 <span class="registered-text-redemption"></span>
@@ -131,7 +126,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ asset('js/registered-deal.js') }}"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         var old_email = '{{ $user->email }}';
         var old_phone = '{{ $user->phone }}';
         $.ajaxSetup({
@@ -140,25 +135,25 @@
             }
         });
 
-        $('#registered-text-button ').click(function () {
+        $('#registered-text-button ').click(function() {
             $('#registered-deal-email').attr('value', " ");
         });
 
-        $('#registered-email-button ').click(function () {
+        $('#registered-email-button ').click(function() {
             $('#registered-deal-phone').attr('value', " ");
         });
 
-        $('.registered-text-redemption ').click(function () {
+        $('.registered-text-redemption ').click(function() {
             $('#registered-deal-phone').attr('value', old_phone);
             $('#registered-deal-email').attr('value', " ");
         });
 
-        $('.registered-email-redemption ').click(function () {
+        $('.registered-email-redemption ').click(function() {
             $('#registered-deal-phone').attr('value', " ");
             $('#registered-deal-email').attr('value', old_email);
         });
         // USER FAVORITE RESPONSE
-        $('.add-favorite').click(function () {
+        $('.add-favorite').click(function() {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
             // console.log(name);
@@ -172,9 +167,8 @@
                     status: status,
                     id: id,
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['success']) {
-                        var r = (data['success']);
                         $('#' + parseInt(id)).find('i').addClass('favorite2');
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
@@ -185,7 +179,6 @@
                         });
                     }
                     if (data['delete']) {
-                        var r = (data['delete']);
                         $('#' + parseInt(id)).find('i').removeClass('favorite2');
                         $('#favorite-removed-name').text(name);
                         $('.favorite-removed-message').addClass(
@@ -200,7 +193,7 @@
             });
         });
         // SHOWS USER SHARE RESPONSE
-        $('.share-deal').click(function () {
+        $('.share-deal').click(function() {
             const name = $(this).attr('name');
             $('#shared-message-name').text(name);
             $('.share-message').addClass('show-selected-deal-message');
@@ -226,7 +219,7 @@
                     email: email,
                     phone: phone
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['emailed-already']) {
                         var r = (data['message']);
                         $('.coupon-message').addClass('show-selected-deal-message');
@@ -264,7 +257,6 @@
             });
         });
     });
-
 </script>
 
 @include('includes._footer')

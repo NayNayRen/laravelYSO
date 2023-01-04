@@ -236,7 +236,6 @@
                 },
                 success: function(data) {
                     if (data['success']) {
-                        var r = (data['success']);
                         $('#' + id).addClass('favorite');
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
@@ -254,13 +253,12 @@
                                         $(".dashboard-carousel")
                                             .owlCarousel(
                                                 dashboardCarouselOptions
-                                                );
+                                            );
                                     });
                             }, 750);
                         });
                     }
                     if (data['delete']) {
-                        var r = (data['delete']);
                         $('#' + parseInt(id)).removeClass('favorite');
                         $('#favorite-removed-name').text(name);
                         $('.favorite-removed-message').addClass(
@@ -279,13 +277,12 @@
                                         $(".dashboard-carousel")
                                             .owlCarousel(
                                                 dashboardCarouselOptions
-                                                );
+                                            );
                                     });
                             }, 750);
                         });
                     }
                     if (data['error']) {
-                        var r = (data['error']);
                         $('.guest-error-message').addClass('show-selected-deal-message');
                         $('.guest-error-button').click(() => {
                             $('.guest-error-message').removeClass(

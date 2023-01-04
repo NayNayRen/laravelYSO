@@ -271,6 +271,10 @@
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                // $('#map-location-favorite-icon-container')
+                                //     .load(window.location +
+                                //         ' #map-location-favorite-icon-container>*',
+                                //         "");
                                 $('#card-display').load(window.location +
                                     ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
@@ -296,6 +300,10 @@
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
+                                // $('#map-location-favorite-icon-container')
+                                //     .load(window.location +
+                                //         ' #map-location-favorite-icon-container>*',
+                                //         "");
                                 $('#card-display').load(window.location +
                                     ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
