@@ -37,9 +37,9 @@ Route::get('/navigation_pages/about', [NavigationPageController::class, 'about']
 
 // FAVORITE ROUTES
 // add to favorites
-Route::post('/favorite', [FavoriteController::class,'favoriteDeal'])->name('add.favorite');
+Route::post('/favorite', [FavoriteController::class, 'favoriteDeal'])->name('add.favorite');
 // add to coupons
-Route::post('/coupon', [CouponController::class,'userCoupons'])->name('add.coupon');
+Route::post('/coupon', [CouponController::class, 'userCoupons'])->name('add.coupon');
 
 // REGISTER, LOG IN, UPDATE & DELETE ROUTES
 // shows register form
@@ -71,7 +71,7 @@ Route::post('/auth/apple/callback', [UserController::class, 'appleCallback']);
 // show verify form
 Route::get('/verify/{id}', [UserController::class, 'showVerifyForm'])->name('login.showVerifyForm');
 // send verify code
-Route::post('/code', [UserController::class,'sendVerifyCode'])->name('send.code');
+Route::post('/code', [UserController::class, 'sendVerifyCode'])->name('send.code');
 // verify user
 Route::post('/verify/code/{id}', [UserController::class, 'verifyUser'])->name('login.verifyUser');
 
@@ -79,7 +79,7 @@ Route::post('/verify/code/{id}', [UserController::class, 'verifyUser'])->name('l
 // show change password otp form
 Route::get('/forgotpassword', [UserController::class, 'showForgotForm'])->name('login.showForgotForm');
 // send reset code
-Route::post('/resetcode', [UserController::class,'sendResetCode'])->name('send.reset_code');
+Route::post('/resetcode', [UserController::class, 'sendResetCode'])->name('send.reset_code');
 // sends password otp, redirects to change password
 // HAD TO CHANGE FROM POST TO GET
 Route::get('/resetpassword', [UserController::class, 'showResetForm'])->name('login.showResetForm');
