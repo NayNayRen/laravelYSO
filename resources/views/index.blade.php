@@ -265,7 +265,7 @@
             <span class="category-heading">Featured</span>
             <a href={{ route('deals.featured') }} class="view-all-link">View All</a>
         </div>
-        <div class="container-right">
+        <div id="featured" class="container-right">
             {{-- CARD BLOCK --}}
             @if ($featuredDeals->count() === 1)
                 <div class="card-display-limited-amount">
@@ -286,15 +286,13 @@
                     @endforeach
                 </div>
             @else
-                <div id="featured">
-                    <div class="card-display card-display1 owl-carousel owl-theme featured-carousel">
-                        @foreach ($featuredDeals as $deal)
-                            {{-- CARD COMPONENT --}}
-                            <div class="card">
-                                @include('includes._card')
-                            </div>
-                        @endforeach
-                    </div>
+                <div class="card-display card-display1 owl-carousel owl-theme featured-carousel">
+                    @foreach ($featuredDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
                 </div>
             @endif
         </div>
@@ -306,7 +304,7 @@
             <a href={{ route('deals.' . $categoryHeading) }} class="view-all-link">View
                 All</a>
         </div>
-        <div class="container-right">
+        <div id="selected-category" class="container-right">
             {{-- CARD BLOCK --}}
             @if ($categoryDeals->count() === 1)
                 <div class="card-display-limited-amount">
@@ -327,15 +325,13 @@
                     @endforeach
                 </div>
             @else
-                <div id="selected-category">
-                    <div class="card-display owl-carousel owl-theme selected-category-carousel">
-                        @foreach ($categoryDeals as $deal)
-                            {{-- CARD COMPONENT --}}
-                            <div class="card">
-                                @include('includes._card')
-                            </div>
-                        @endforeach
-                    </div>
+                <div class="card-display owl-carousel owl-theme selected-category-carousel">
+                    @foreach ($categoryDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
                 </div>
             @endif
         </div>
@@ -346,7 +342,7 @@
             <span class="category-heading">Tech</span>
             <a href={{ route('deals.tech') }} class="view-all-link">View All</a>
         </div>
-        <div class="container-right">
+        <div id="tech" class="container-right">
             {{-- CARD BLOCK --}}
             @if ($techDeals->count() === 1)
                 <div class="card-display-limited-amount">
@@ -367,15 +363,13 @@
                     @endforeach
                 </div>
             @else
-                <div id="tech">
-                    <div class="card-display owl-carousel owl-theme tech-carousel">
-                        @foreach ($techDeals as $deal)
-                            {{-- CARD COMPONENT --}}
-                            <div class="card">
-                                @include('includes._card')
-                            </div>
-                        @endforeach
-                    </div>
+                <div class="card-display owl-carousel owl-theme tech-carousel">
+                    @foreach ($techDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
                 </div>
             @endif
         </div>
@@ -393,7 +387,7 @@
             <span class="category-heading">Popular</span>
             <a href={{ route('deals.popular') }} class="view-all-link">View All</a>
         </div>
-        <div class="container-right">
+        <div id="popular" class="container-right">
             {{-- CARD BLOCK --}}
             @if ($popularDeals->count() === 1)
                 <div class="card-display-limited-amount">
@@ -414,15 +408,13 @@
                     @endforeach
                 </div>
             @else
-                <div id="popular">
-                    <div class="card-display owl-carousel owl-theme popular-carousel">
-                        @foreach ($popularDeals as $deal)
-                            {{-- CARD COMPONENT --}}
-                            <div class="card">
-                                @include('includes._card')
-                            </div>
-                        @endforeach
-                    </div>
+                <div class="card-display owl-carousel owl-theme popular-carousel">
+                    @foreach ($popularDeals as $deal)
+                        {{-- CARD COMPONENT --}}
+                        <div class="card">
+                            @include('includes._card')
+                        </div>
+                    @endforeach
                 </div>
             @endif
         </div>
