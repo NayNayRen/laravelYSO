@@ -8,6 +8,7 @@ function loadScript() {
     const clearMapButton = document.querySelector(".clear-map-button");
     const submitMethod = document.querySelector(".submit-method");
     const currentPage = document.querySelector(".current-page");
+    const windowOverlay = document.querySelector("#window-overlay");
     const hiddenMapCloseButton = document.querySelector(
         ".hidden-map-close-button"
     );
@@ -500,8 +501,10 @@ function loadScript() {
 
     // AUTOLOADS MAP IF SUBMIT METHOD IS THE HOMEPAGE MAP BUTTON
     function autoLoadMap() {
+        windowOverlay.classList.add("window-overlay-dim");
         hiddenMap.style.opacity = "1";
         hiddenMap.style.paddingTop = "40px";
+        window.scroll(0, 0);
         if (window.innerWidth > 1300) {
             loadMap(4);
             hiddenMap.style.height = "510px";
@@ -525,12 +528,14 @@ function loadScript() {
     // EVENT LISTENERS
     // OPENS MAP FROM MAP ICON
     hiddenMapOpenButton.addEventListener("click", () => {
+        windowOverlay.classList.add("window-overlay-dim");
         window.scroll(0, 0);
         autoLoadMap();
     });
 
     // CLOSES MAP
     hiddenMapCloseButton.addEventListener("click", () => {
+        windowOverlay.classList.remove("window-overlay-dim");
         hiddenMap.style.height = "0";
         hiddenMap.style.paddingTop = "0";
         hiddenMap.style.opacity = "0";

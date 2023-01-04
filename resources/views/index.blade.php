@@ -545,46 +545,46 @@
                                                 dashboardCarouselOptions
                                             );
                                     });
-                                // featured reload
-                                $('#featured').load(window
-                                    .location +
-                                    ' #featured>*', "",
-                                    function() {
-                                        $(".featured-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
-                                // selected category reload
-                                $('#selected-category').load(window
-                                    .location +
-                                    ' #selected-category>*', "",
-                                    function() {
-                                        $(".selected-category-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
-                                // tech reload
-                                $('#tech').load(window
-                                    .location +
-                                    ' #tech>*', "",
-                                    function() {
-                                        $(".tech-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
-                                // popular reload
-                                $('#popular').load(window
-                                    .location +
-                                    ' #popular>*', "",
-                                    function() {
-                                        $(".popular-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
+                                // // featured reload
+                                // $('#featured').load(window
+                                //     .location +
+                                //     ' #featured>*', "",
+                                //     function() {
+                                //         $(".featured-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
+                                // // selected category reload
+                                // $('#selected-category').load(window
+                                //     .location +
+                                //     ' #selected-category>*', "",
+                                //     function() {
+                                //         $(".selected-category-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
+                                // // tech reload
+                                // $('#tech').load(window
+                                //     .location +
+                                //     ' #tech>*', "",
+                                //     function() {
+                                //         $(".tech-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
+                                // // popular reload
+                                // $('#popular').load(window
+                                //     .location +
+                                //     ' #popular>*', "",
+                                //     function() {
+                                //         $(".popular-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
                                 // $(document).ajaxStop(function() {
                                 //     window.location.reload();
                                 // });
@@ -610,46 +610,46 @@
                                                 dashboardCarouselOptions
                                             );
                                     });
-                                // featured reload
-                                $('#featured').load(window
-                                    .location +
-                                    ' #featured>*', "",
-                                    function() {
-                                        $(".featured-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
-                                // selected category reload
-                                $('#selected-category').load(window
-                                    .location +
-                                    ' #selected-category>*', "",
-                                    function() {
-                                        $(".selected-category-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
-                                // tech reload
-                                $('#tech').load(window
-                                    .location +
-                                    ' #tech>*', "",
-                                    function() {
-                                        $(".tech-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
-                                // popular reload
-                                $('#popular').load(window
-                                    .location +
-                                    ' #popular>*', "",
-                                    function() {
-                                        $(".popular-carousel")
-                                            .owlCarousel(
-                                                homepageCarouselOptions
-                                            );
-                                    });
+                                // // featured reload
+                                // $('#featured').load(window
+                                //     .location +
+                                //     ' #featured>*', "",
+                                //     function() {
+                                //         $(".featured-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
+                                // // selected category reload
+                                // $('#selected-category').load(window
+                                //     .location +
+                                //     ' #selected-category>*', "",
+                                //     function() {
+                                //         $(".selected-category-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
+                                // // tech reload
+                                // $('#tech').load(window
+                                //     .location +
+                                //     ' #tech>*', "",
+                                //     function() {
+                                //         $(".tech-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
+                                // // popular reload
+                                // $('#popular').load(window
+                                //     .location +
+                                //     ' #popular>*', "",
+                                //     function() {
+                                //         $(".popular-carousel")
+                                //             .owlCarousel(
+                                //                 homepageCarouselOptions
+                                //             );
+                                //     });
                                 // $(document).ajaxStop(function() {
                                 //     window.location.reload();
                                 // });

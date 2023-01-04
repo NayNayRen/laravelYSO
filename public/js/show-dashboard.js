@@ -15,6 +15,7 @@ function loadScript() {
     );
 
     dashboardOpenButton.addEventListener("click", () => {
+        // window.scroll(0, 0);
         dashboard.style.zIndex = 3;
         dashboard.style.opacity = 1;
         windowOverlay.classList.add("window-overlay-dim");
