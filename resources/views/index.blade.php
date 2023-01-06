@@ -419,9 +419,39 @@
             @endif
         </div>
     </div>
+
+    {{-- ADDED FOR TESTING --}}
+    {{-- <div class="container">
+        <div class="container-left"></div>
+        <div class="container-right">
+            <div id="glide-1" class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        @foreach ($popularDeals as $deal)
+                            <li class="glide__slide">
+                                <div class="card">
+                                    @include('includes._card')
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                        prev
+                    </button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                        next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    {{-- ADDED FOR TESTING --}}
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script> --}}
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
@@ -435,6 +465,24 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        // ADDED FOR TESTING
+        // const glideOptions = {
+        //     type: "carousel",
+        //     perView: 3,
+        //     rewind: true,
+        //     animationDuration: 1000,
+        //     breakpoints: {
+        //         1300: {
+        //             perView: 2,
+        //         },
+        //         540: {
+        //             perView: 1,
+        //         },
+        //     },
+        // };
+        // const glideCarousel = new Glide("#glide-1", glideOptions);
+        // glideCarousel.mount();
+        // ADDED FOR TESTING
         // HOMEPAGE CAROUSEL
         const featuredCarousel = $(".featured-carousel");
         const selectedCategoryCarousel = $(".selected-category-carousel");
@@ -536,6 +584,23 @@
                                                 dashboardCarouselOptions
                                             );
                                     });
+                                // ADDED FOR TESTING
+                                // if (window.innerWidth > 1300) {
+                                //     glideCarousel.update({
+                                //         perView: 3,
+                                //     });
+                                // } else if (window.innerWidth < 1300 &&
+                                //     window.innerWidth > 540) {
+                                //     glideCarousel.update({
+                                //         perView: 2,
+                                //     });
+                                // } else if (window.innerWidth < 540 && window
+                                //     .innerWidth > 400) {
+                                //     glideCarousel.update({
+                                //         perView: 1,
+                                //     });
+                                // }
+                                // ADDED FOR TESTING
                                 // // featured reload
                                 // $('#featured').load(window
                                 //     .location +
@@ -600,6 +665,23 @@
                                                 dashboardCarouselOptions
                                             );
                                     });
+                                // ADDED FOR TESTING
+                                // if (window.innerWidth > 1300) {
+                                //     glideCarousel.update({
+                                //         perView: 3,
+                                //     });
+                                // } else if (window.innerWidth < 1300 &&
+                                //     window.innerWidth > 540) {
+                                //     glideCarousel.update({
+                                //         perView: 2,
+                                //     });
+                                // } else if (window.innerWidth < 540 && window
+                                //     .innerWidth > 400) {
+                                //     glideCarousel.update({
+                                //         perView: 1,
+                                //     });
+                                // }
+                                // ADDED FOR TESTING
                                 // // featured reload
                                 // $('#featured').load(window
                                 //     .location +
