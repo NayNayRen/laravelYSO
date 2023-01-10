@@ -584,6 +584,15 @@
                                                 dashboardCarouselOptions
                                             );
                                     });
+                                // console.log($(location).attr("href"));
+                                // $.get($(location).attr("href"), function(
+                                //     response) {
+                                //     const reloadPopular = $(
+                                //         response).find(
+                                //         '#popular')
+                                //     console.log(reloadPopular);
+
+                                // });
                                 // ADDED FOR TESTING
                                 // if (window.innerWidth > 1300) {
                                 //     glideCarousel.update({
