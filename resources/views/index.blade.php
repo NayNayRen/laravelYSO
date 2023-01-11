@@ -553,7 +553,6 @@
         $(document).on('click', '.add-favorite', function() {
             var id = $(this).attr('id');
             const name = $(this).attr('name');
-            const favButton = $(this).parent().attr('id', id);
             $.ajax({
                 url: "{{ route('add.favorite') }}",
                 method: "POST",
@@ -570,8 +569,6 @@
                         $('#favorite-added-name').text(name);
                         $('.favorite-added-message').addClass('show-selected-deal-message');
                         $(document).on('click', '.favorite-added-button', function() {
-                            // favButton.html(`<i class="fa fa-star add-favorite favorite" id="{{ $deal->id }}" name="{{ $deal->name }}"
-                            // aria-hidden="false"></i>`);
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
@@ -584,6 +581,14 @@
                                                 dashboardCarouselOptions
                                             );
                                     });
+                                // console.log($(location).attr("href"));
+                                // $.get($(location).attr("href"), function(
+                                //     response) {
+                                //     const reloadPopular = $(
+                                //         response).find(
+                                //         '#popular')
+                                //     console.log(reloadPopular);
+                                // });
                                 // ADDED FOR TESTING
                                 // if (window.innerWidth > 1300) {
                                 //     glideCarousel.update({
@@ -653,8 +658,6 @@
                         $('.favorite-removed-message').addClass(
                             'show-selected-deal-message');
                         $(document).on('click', '.favorite-removed-button', function() {
-                            // favButton.html(`<i class="fa fa-star add-favorite" id="{{ $deal->id }}" name="{{ $deal->name }}"
-                            // aria-hidden="false"></i>`);
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
                             setTimeout(() => {
@@ -667,13 +670,6 @@
                                                 dashboardCarouselOptions
                                             );
                                     });
-                                //     $('.favorite-button').each(function() {
-                                //         if ($(this).attr('id') ===
-                                //             id) {
-                                //             $(this).html(`<i class="fa fa-star add-favorite" id="{{ $deal->id }}" name="{{ $deal->name }}"
-                                // aria-hidden="false"></i>`);
-                                //         }
-                                //     });
                                 // ADDED FOR TESTING
                                 // if (window.innerWidth > 1300) {
                                 //     glideCarousel.update({
