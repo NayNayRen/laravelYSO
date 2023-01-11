@@ -419,7 +419,6 @@
             @endif
         </div>
     </div>
-
     {{-- ADDED FOR TESTING --}}
     {{-- <div class="container">
         <div class="container-left"></div>
@@ -488,7 +487,6 @@
         const selectedCategoryCarousel = $(".selected-category-carousel");
         const techCarousel = $(".tech-carousel");
         const popularCarousel = $(".popular-carousel");
-        // var owl = $(".homepage-carousel");
         const homepageCarouselOptions = {
             loop: true,
             nav: true,
@@ -509,10 +507,10 @@
                     items: 1,
                     dots: false,
                 },
-                540: {
+                700: {
                     items: 2,
                 },
-                1300: {
+                1400: {
                     items: 3,
                 },
             },
@@ -551,7 +549,6 @@
         selectedCategoryCarousel.owlCarousel(homepageCarouselOptions);
         techCarousel.owlCarousel(homepageCarouselOptions);
         popularCarousel.owlCarousel(homepageCarouselOptions);
-        // owl.owlCarousel(homepageCarouselOptions);
         // FAVORITE RESPONSE
         $(document).on('click', '.add-favorite', function() {
             var id = $(this).attr('id');
@@ -591,7 +588,6 @@
                                 //         response).find(
                                 //         '#popular')
                                 //     console.log(reloadPopular);
-
                                 // });
                                 // ADDED FOR TESTING
                                 // if (window.innerWidth > 1300) {

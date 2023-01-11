@@ -1989,14 +1989,14 @@ body {
 .dashboard-right-container .container-arrow-left {
     -webkit-transform: translateY(0);
     left: calc(100% - 200px);
-    top: 5px;
+    top: 15px;
     transform: translateY(0);
 }
 
 .dashboard-right-container .container-arrow-right {
     -webkit-transform: translateY(0);
     right: 100px;
-    top: 5px;
+    top: 15px;
     transform: translateY(0);
 }
 
@@ -4185,39 +4185,6 @@ html {
     margin-right: 10px;
 }
 
-/* .view-all {
-    background-color: #d3d3d3;
-}
-
-.view-all .card {
-    background-color: blue;
-    color: #fff;
-    height: 325px;
-    width: 225px;
-}
-
-.view-all .card-discount {
-    font-size: 14px;
-    max-height: 60px;
-}
-
-.view-all .card-logo-container {
-    max-height: 100px;
-}
-
-.view-all .card-name {
-    color: #c0c0c0;
-}
-
-.view-all .get-deal-button {
-    font-size: 16px;
-    padding: 5px 0;
-}
-
-.view-all .views-likes-icons i {
-    font-size: 22px;
-} */
-
 .view-all-arrow-container {
     -ms-flex-pack: distribute;
     display: -ms-flexbox;
@@ -4505,7 +4472,7 @@ html {
 
     .card {
         height: 375px;
-        width: 275px;
+        width: 300px;
     }
 
     .card-logo-container {
@@ -4774,7 +4741,7 @@ html {
     .card {
         height: 350px;
         margin: 2px 5px;
-        width: 250px;
+        width: 275px;
     }
 
     .card-logo-container {
@@ -4961,11 +4928,6 @@ html {
     .user-register-container {
         right: 10px;
     }
-
-    /* .view-all .card {
-        height: 300px;
-        width: 200px;
-    } */
 
     .view-all-arrow-container {
         width: 90%;
@@ -5417,9 +5379,9 @@ html {
         top: -130px;
     }
 
-    .card {
+    /* .card {
         width: 275px;
-    }
+    } */
 
     .card-discount {
         font-size: 14px;
@@ -6046,19 +6008,6 @@ html {
         width: 100%;
     }
 
-    /* .view-all .card {
-        margin: 2px 5px;
-    }
-
-    .view-all .get-deal-button {
-        font-size: 16px;
-        padding: 3px 0;
-    }
-
-    .view-all .views-likes-icons i:hover {
-        color: #fff;
-    } */
-
     .view-all-arrow-container {
         -ms-flex-pack: end;
         -webkit-box-pack: end;
@@ -6216,7 +6165,6 @@ html {
     .card {
         height: 370px;
         margin: 2px;
-        /* width: 250px; */
     }
 
     .category-heading {
