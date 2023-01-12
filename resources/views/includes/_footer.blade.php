@@ -8,8 +8,7 @@
             <div class="footer-top-section-left">
                 <div class="footer-top-section-left-header">
                     <a href={{ route('deals.index') }}>
-                        <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link"
-                            alt="Your Social Offers Logo">
+                        <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
                     </a>
                 </div>
                 <h3>Corporate Headquarters</h3>
