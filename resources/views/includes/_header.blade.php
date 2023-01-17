@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     {{-- ADDED FOR TESTING --}}
+    <link rel="stylesheet" href="{{ asset('css/glider.min.css') }}">
     {{-- ADDED FOR TESTING --}}
     <title>YourSocialOffers.com || {{ $pageTitle }}</title>
     <link rel="icon" href="{{ asset('img/yso-clipped-rw-outlined.png') }}" type="image/x-icon">

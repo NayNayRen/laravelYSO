@@ -420,16 +420,39 @@
         </div>
     </div>
     {{-- ADDED FOR TESTING --}}
-    {{-- <div class="container">
-        <div class="container-left"></div>
+    {{-- <div class="container gray-background">
+        <div class="container-left">
+            <span class="category-heading">Popular</span>
+            <a href={{ route('deals.popular') }} class="view-all-link">View All</a>
+        </div>
         <div class="container-right">
-            
+            <div class="glider-contain">
+                <div class="glider">
+                    @foreach ($popularDeals as $deal)
+                        <div class="slide">
+                            <div class="card">
+                                @include('includes._card')
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div aria-label="Previous" class="container-arrow-left glider-prev"><i class='fa fa-arrow-left'
+                        aria-hidden='false'></i>
+                </div>
+                <div aria-label="Next" class="container-arrow-right glider-next"><i class='fa fa-arrow-right'
+                        aria-hidden='false'></i>
+                </div>
+                <div role="tablist" class="dots"></div>
+            </div>
         </div>
     </div> --}}
     {{-- ADDED FOR TESTING --}}
 </main>
 {{-- PAGE SPECIFIC SCRIPTS --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{{-- ADDED FOR TESTING --}}
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+{{-- ADDED FOR TESTING --}}
 <script src="{{ asset('js/scrolling-banner.js') }}"></script>
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
@@ -443,6 +466,55 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        // ADDED FOR TESTING
+        // let gliders = document.querySelectorAll(".glider");
+        // gliders.forEach((glider) => {
+        //     new Glider(glider, {
+        //         slidesToShow: 1,
+        //         slidesToScroll: 1,
+        //         scrollLock: true,
+        //         draggable: true,
+        //         rewind: true,
+        //         duration: 2,
+        //         // dots: ele.parentNode.querySelector(".dots"),
+        //         arrows: {
+        //             prev: glider.parentNode.querySelector(".glider-prev"),
+        //             next: glider.parentNode.querySelector(".glider-next"),
+        //         },
+        //         responsive: [{
+        //                 // screens greater than > 400px
+        //                 breakpoint: 400,
+        //                 settings: {
+        //                     slidesToShow: 1,
+        //                     slidesToScroll: 1,
+        //                     // itemWidth: 150,
+        //                     duration: 2,
+        //                 },
+        //             },
+        //             {
+        //                 // screens greater than > 700px
+        //                 breakpoint: 700,
+        //                 settings: {
+        //                     slidesToShow: 2,
+        //                     slidesToScroll: 1,
+        //                     // itemWidth: 150,
+        //                     duration: 2,
+        //                 },
+        //             },
+        //             {
+        //                 // screens greater than > 1300px
+        //                 breakpoint: 1300,
+        //                 settings: {
+        //                     slidesToShow: 3,
+        //                     slidesToScroll: 1,
+        //                     // itemWidth: 150,
+        //                     duration: 2,
+        //                 },
+        //             },
+        //         ],
+        //     });
+        // });
+        //   ADDED FOR TESTING
         // HOMEPAGE CAROUSEL
         const featuredCarousel = $(".featured-carousel");
         const selectedCategoryCarousel = $(".selected-category-carousel");
