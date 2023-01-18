@@ -89,7 +89,7 @@ class CouponController extends Controller
     {
         //text ams starts here
         $service_plan_id = env('SERVICE_PLAN_ID');
-        $bearer_token = env('BEARER_TOCKEN');
+        $bearer_token = env('BEARER_TOKEN');
 
         //Any phone number assigned to your API
         $send_from = env('SEND_FROM');

@@ -230,7 +230,7 @@ class UserController extends Controller
     {
         // text sms starts here
         $service_plan_id = env('SERVICE_PLAN_ID');
-        $bearer_token = env('BEARER_TOCKEN');
+        $bearer_token = env('BEARER_TOKEN');
         // any phone number assigned to your API
         $send_from = env('SEND_FROM');
         // may be several, separate with a comma ,
