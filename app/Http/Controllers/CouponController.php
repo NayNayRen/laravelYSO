@@ -13,7 +13,6 @@ class CouponController extends Controller
 {
     public function userCoupons(Request $request)
     {
-
         if (auth()->user()) {
             $user_id = auth()->user()->id;
 

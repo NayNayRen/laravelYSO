@@ -108,7 +108,7 @@
                     value="{{ $user->email }}"></input>
                 <span class="registered-text-redemption"></span>
                 <span class="registered-email-redemption"></span>
-                <button id="registered-send-button" class="registered-send-button add-coupon">Send me the deal</button>
+                <button id="registered-send-button" class="registered-send-button add-coupon">Send Me The Deal</button>
             </div>
             {{-- </form> --}}
             <div class="registered-user-wallet-container">

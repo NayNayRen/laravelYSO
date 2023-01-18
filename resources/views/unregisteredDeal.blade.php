@@ -58,8 +58,8 @@
                     placeholder="mail@mail.com"></input>
                 <span class="unregistered-text-redemption"></span>
                 <span class="unregistered-email-redemption"></span>
-                <button id="unregistered-send-button" class="unregistered-send-button add-coupon">Send me the
-                    deal</button>
+                <button id="unregistered-send-button" class="unregistered-send-button add-coupon">Send Me The
+                    Deal</button>
             </div>
             <div class="unregistered-user-wallet-container">
                 <div class="unregistered-user-wallet-buttons">
