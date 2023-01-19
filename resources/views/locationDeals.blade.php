@@ -254,27 +254,27 @@
                         $(document).on('click', '.favorite-added-button', function() {
                             $('.favorite-added-message').removeClass(
                                 'show-selected-deal-message');
-                            setTimeout(() => {
-                                // AJAX RELOADS PAGE CAROUSEL
-                                $('#card-display').load(window.location +
-                                    ' #card-display>*', "",
-                                    function() {
-                                        $(".location-carousel")
-                                            .owlCarousel(
-                                                locationCarouselOptions
-                                            );
-                                    });
-                                // AJAX RELOADS DASHBOARD
-                                $('#dashboard-right-container').load(window
-                                    .location +
-                                    ' #dashboard-right-container>*', "",
-                                    function() {
-                                        $(".dashboard-carousel")
-                                            .owlCarousel(
-                                                dashboardCarouselOptions
-                                            );
-                                    });
-                            }, 750);
+                            // setTimeout(() => {
+                            //     // AJAX RELOADS PAGE CAROUSEL
+                            //     $('#card-display').load(window.location +
+                            //         ' #card-display>*', "",
+                            //         function() {
+                            //             $(".location-carousel")
+                            //                 .owlCarousel(
+                            //                     locationCarouselOptions
+                            //                 );
+                            //         });
+                            //     // AJAX RELOADS DASHBOARD
+                            //     $('#dashboard-right-container').load(window
+                            //         .location +
+                            //         ' #dashboard-right-container>*', "",
+                            //         function() {
+                            //             $(".dashboard-carousel")
+                            //                 .owlCarousel(
+                            //                     dashboardCarouselOptions
+                            //                 );
+                            //         });
+                            // }, 750);
                         });
                     }
                     if (data['delete']) {
@@ -285,27 +285,27 @@
                         $(document).on('click', '.favorite-removed-button', function() {
                             $('.favorite-removed-message').removeClass(
                                 'show-selected-deal-message');
-                            setTimeout(() => {
-                                // AJAX RELOADS PAGE CAROUSEL
-                                $('#card-display').load(window.location +
-                                    ' #card-display>*', "",
-                                    function() {
-                                        $(".location-carousel")
-                                            .owlCarousel(
-                                                locationCarouselOptions
-                                            );
-                                    });
-                                // AJAX RELOADS DASHBOARD
-                                $('#dashboard-right-container').load(window
-                                    .location +
-                                    ' #dashboard-right-container>*', "",
-                                    function() {
-                                        $(".dashboard-carousel")
-                                            .owlCarousel(
-                                                dashboardCarouselOptions
-                                            );
-                                    });
-                            }, 750);
+                            // setTimeout(() => {
+                            //     // AJAX RELOADS PAGE CAROUSEL
+                            //     $('#card-display').load(window.location +
+                            //         ' #card-display>*', "",
+                            //         function() {
+                            //             $(".location-carousel")
+                            //                 .owlCarousel(
+                            //                     locationCarouselOptions
+                            //                 );
+                            //         });
+                            //     // AJAX RELOADS DASHBOARD
+                            //     $('#dashboard-right-container').load(window
+                            //         .location +
+                            //         ' #dashboard-right-container>*', "",
+                            //         function() {
+                            //             $(".dashboard-carousel")
+                            //                 .owlCarousel(
+                            //                     dashboardCarouselOptions
+                            //                 );
+                            //         });
+                            // }, 750);
                         });
                     }
                     if (data['error']) {

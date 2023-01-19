@@ -247,15 +247,15 @@
                                 $('#card-display').load(window.location +
                                     ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-right-container').load(window
-                                    .location +
-                                    ' #dashboard-right-container>*', "",
-                                    function() {
-                                        $(".dashboard-carousel")
-                                            .owlCarousel(
-                                                dashboardCarouselOptions
-                                            );
-                                    });
+                                // $('#dashboard-right-container').load(window
+                                //     .location +
+                                //     ' #dashboard-right-container>*', "",
+                                //     function() {
+                                //         $(".dashboard-carousel")
+                                //             .owlCarousel(
+                                //                 dashboardCarouselOptions
+                                //             );
+                                //     });
                             }, 750);
                         });
                     }
@@ -271,15 +271,15 @@
                                 $('#card-display').load(window.location +
                                     ' #card-display>*', "");
                                 // AJAX RELOADS DASHBOARD
-                                $('#dashboard-right-container').load(window
-                                    .location +
-                                    ' #dashboard-right-container>*', "",
-                                    function() {
-                                        $(".dashboard-carousel")
-                                            .owlCarousel(
-                                                dashboardCarouselOptions
-                                            );
-                                    });
+                                // $('#dashboard-right-container').load(window
+                                //     .location +
+                                //     ' #dashboard-right-container>*', "",
+                                //     function() {
+                                //         $(".dashboard-carousel")
+                                //             .owlCarousel(
+                                //                 dashboardCarouselOptions
+                                //             );
+                                //     });
                             }, 750);
                         });
                     }
