@@ -18,8 +18,8 @@ class CouponController extends Controller
 
             if ($request->ajax()) {
                 if (isset($request->email)) {
-                    $check = UserCoupon::where('deal_id', $request->dealid)->where('user_id', $user_id)->first();
-                    if ($check != null && $check->email = $request->email) {
+                    $check = UserCoupon::where('deal_id', $request->dealid)->where('user_id', $user_id)->where('email', $request->email)->first();
+                    if ($check != null) {
                         return response()->json([
                             'emailed-already' => 'Coupon Already Emailed.',
                         ]);
@@ -34,7 +34,7 @@ class CouponController extends Controller
 
                         $nxt =  Carbon::createFromFormat('Y-m-d H:i:s', $new->created_at);
                         $data = array(
-                            'subject' => 'Sending Coupon.',
+                            'subject' => 'Your Coupon Sent From YSO.',
                             'id' => $deal->id,
                             'location' => $deal->location,
                             'picture_url' => $deal->picture_url,
@@ -50,8 +50,8 @@ class CouponController extends Controller
                     }
                 }
                 if (isset($request->phone)) {
-                    $check = UserCoupon::where('deal_id', $request->dealid)->where('user_id', $user_id)->first();
-                    if ($check != null && $check->phone = $request->phone) {
+                    $check = UserCoupon::where('deal_id', $request->dealid)->where('user_id', $user_id)->where('phone', $request->phone)->first();
+                    if ($check != null) {
                         return response()->json([
                             'texted-already' => 'Coupon Already Texted.',
                         ]);

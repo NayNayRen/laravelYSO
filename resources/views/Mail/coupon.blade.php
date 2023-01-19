@@ -28,14 +28,14 @@
                                     <tr>
                                         <td style="text-align: center;">
                                             <img src="{{ asset('img/yso-logo2.svg') }}" alt="logo"
-                                                style="margin: auto; margin-bottom: 20px; width:320px; background-color: #000; padding: 5px 10px;">
+                                                style="margin: auto; margin-bottom: 20px; width:320px; background-color: #000; padding: 10px 15px; border-radius: 5px;">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">
                                             <h1
-                                                style="font-size: 28px;line-height: 110%;margin-bottom: 20px;margin-top: 0;padding: 0;">
-                                                <div style="text-align: center;"> Your Coupon</div>
+                                                style="font-size: 28px; line-height: 110%; margin-bottom: 20px; margin-top: 0; padding: 0;">
+                                                <div style="text-align: center;">Your Coupon</div>
                                             </h1>
                                         </td>
                                     </tr>
@@ -56,16 +56,17 @@
                                                         display: flex;
                                                         flex-direction: column;
                                                         font-family: 'Roboto', sans-serif;
-                                                        height: 400px;
+                                                        height: 450px;
                                                         justify-content: space-between;
                                                         margin: 5px 10px;
                                                         padding: 5px;
                                                         width: 325px;
                                                         margin: auto;
+                                                        box-shadow: 0 0 5px #000;
                                                     ">
-                                                <div>
-                                                    <div class="card-logo-container"
-                                                        style="
+                                                {{-- <div> --}}
+                                                <div class="card-logo-container"
+                                                    style="
                                                                 -webkit-box-align: center;
                                                                 -webkit-box-pack: center;
                                                                 align-items: center;
@@ -79,40 +80,31 @@
                                                                 overflow: hidden;
                                                                 width: 100%;
                                                             ">
-                                                        <img src="{{ $data['picture_url'] }}" alt="{{ $data['name'] }}"
-                                                            class="card-logo"
-                                                            style="
+                                                    <img src="{{ $data['picture_url'] }}" alt="{{ $data['name'] }}"
+                                                        class="card-logo"
+                                                        style="
                                                                     display: block;
                                                                     width: 100%;
                                                                 ">
-                                                    </div>
-                                                    <span class="card-discount"
-                                                        style="font-size: 16px;">{{ $data['location'] }}Share this offer
-                                                        with friends and receive $3.00 off</span><br>
-                                                    <span class="card-discount" style="font-size: 16px;"> Coupon will be
-                                                        Expired After 24 Hours at : {{ $data['expiry'] }}</span><br>
-                                                    <span class="card-name"
+                                                </div>
+                                                <div class="card-discount"
+                                                    style="font-size: 16px; margin-bottom: 5px; max-height: 60px; overflow-y: scroll;">
+                                                    {{ $data['location'] }}</div>
+                                                <div class="card-discount"
+                                                    style="color: #808080; font-size: 16px; margin-bottom: 5px;">
+                                                    Share this
+                                                    offer
+                                                    with friends and receive $3.00 off</div>
+                                                <div class="card-discount" style="font-size: 16px; margin-bottom: 5px;">
+                                                    Coupon Will Expire
+                                                    After 24 Hours On: {{ $data['expiry'] }}</div>
+                                                <div class="card-name"
+                                                    style="color: #808080; font-size: 16px; max-height: 60px; overflow-y: scroll;">
+                                                    {{ $data['name'] }}
+                                                </div>
+                                                <div>
+                                                    <a href="{{ route('deals.show', $data['id']) }}"
                                                         style="
-                                                                color: #808080;
-                                                                font-size: 16px;
-                                                            ">
-                                                        {{ $data['name'] }}
-                                                        {{-- $3.00 discount --}}
-                                                    </span><br>
-                                                    <div>
-                                                        {{-- <div class="views-likes-container">
-                                                                <div>
-                                                                    <span>Views: {{ $data['views'] }}</span><br>
-                                                                    <span>Likes:</span>
-                                                                </div>
-                                                                <div class="views-likes-icons">
-                                                                    <i class="fa fa-share" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star add-favourite favourite"  id="{{$data['id']}}" aria-hidden="true"></i>
-                                                                    <i class="fa fa-star add-favourite"  id="{{$data['id']}}" aria-hidden="true"></i>
-                                                                </div>
-                                                            </div> --}}
-                                                        <a href="{{ route('deals.show', $data['id']) }}"
-                                                            style="
                                                                     background-color: #e6331f;
                                                                     display: block;
                                                                     border-radius: 5px;
@@ -124,13 +116,12 @@
                                                                     transition: color 150ms ease;
                                                                     width: 100%;
                                                                     margin-top: 10px;
+                                                                    text-decoration: none;
                                                                 ">
-                                                            <div class="get-deal-button">Get Deal Now!</div>
-                                                        </a>
-                                                    </div>
+                                                        <div class="get-deal-button">Get Deal Now!</div>
+                                                    </a>
                                                 </div>
-
-                                            </div>
+                                                {{-- </div> --}}
                                             </div>
                                         </td>
                                     </tr>

@@ -28,7 +28,7 @@
                                     <tr>
                                         <td style="text-align: center;">
                                             <img src="{{ asset('img/yso-logo2.svg') }}" alt="logo"
-                                                style="margin: auto; margin-bottom: 20px; width:320px; background-color: #000; padding: 5px 10px;">
+                                                style="margin: auto; margin-bottom: 20px; width:320px; background-color: #000; padding: 10px 15px;">
                                         </td>
                                     </tr>
                                     <tr>
