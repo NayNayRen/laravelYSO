@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 
 <head>
     <title>SOS Marketing</title>
@@ -27,14 +27,14 @@
                                     style="max-width:600px">
                                     <tr>
                                         <td style="text-align: center;">
-                                            <img src="{{ asset('img/yso-logo2.svg') }}" alt="logo"
+                                            <img src="{{ asset('img/yso-logo2.svg') }}" alt="YSO Logo"
                                                 style="margin: auto; margin-bottom: 20px; width:320px; background-color: #000; padding: 10px 15px; border-radius: 5px;">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">
                                             <h1
-                                                style="font-size: 28px; line-height: 110%; margin-bottom: 20px; margin-top: 0; padding: 0;">
+                                                style="font-size: 28px; line-height: 110%; margin-bottom: 20px; margin-top: 10px; padding: 0;">
                                                 <div style="text-align: center;">Your Coupon</div>
                                             </h1>
                                         </td>
@@ -64,7 +64,6 @@
                                                         margin: auto;
                                                         box-shadow: 0 0 5px #000;
                                                     ">
-                                                {{-- <div> --}}
                                                 <div class="card-logo-container"
                                                     style="
                                                                 -webkit-box-align: center;
@@ -121,7 +120,6 @@
                                                         <div class="get-deal-button">Get Deal Now!</div>
                                                     </a>
                                                 </div>
-                                                {{-- </div> --}}
                                             </div>
                                         </td>
                                     </tr>
@@ -134,6 +132,143 @@
             </tr>
         </table>
     </center>
+</body>
+
+</html> --}}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SOS Marketing</title>
+    <!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<![endif]-->
+    <style>
+        #table {
+            border-collapse: collapse;
+            border: 0;
+            border-spacing: 0;
+            background-color: #fff;
+            border-radius: 5px;
+            display: table;
+            flex-direction: column;
+            min-height: 475px;
+            max-height: auto;
+            justify-content: space-between;
+            padding: 0;
+            width: 400px;
+            margin: 10px auto 20px auto;
+        }
+    </style>
+
+</head>
+
+<body style="margin:0;padding:0;">
+    {{-- ENTIRE CONTAINER --}}
+    <table role="presentation"
+        style="width:100%; height: 100%; border-collapse:collapse; border:0;border-spacing:0; background:#fff;">
+        <tr>
+            {{-- CENTER CONTAINER --}}
+            <td align="center" style="padding:0;">
+                <table role="presentation"
+                    style="width:600px; height: 100%; border-collapse:collapse; border-spacing:0; text-align:left; font-family: 'Roboto', sans-serif; padding: 0;">
+                    <tr>
+                        {{-- HEADER CONTAINER --}}
+                        <td align="center" style="padding:0;">
+                            <img src="{{ asset('img/yso-logo2.svg') }}" alt="YSO Logo" width="350"
+                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; height:auto; display:block;">
+                            <h1 style="color: #000; font-size: 28px; margin: 0; padding: 0; ">Your Coupon
+                            </h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;">
+                            {{-- MAIN CARD --}}
+                            <table role="presentation" id="table">
+                                <tr>
+                                    <td style="padding:0;">
+                                        <img src="{{ $data['picture_url'] }}" alt="{{ $data['name'] }}" width="100%"
+                                            style="align-items: center;
+                                            border-radius: 5px;
+                                            display: flex;
+                                            justify-content: center;
+                                            margin-bottom: 5px;
+                                            display:block;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0;">
+                                        <p
+                                            style="padding:5px; font-size: 16px; margin-bottom: 5px; max-height: 75px; overflow-y: scroll;">
+                                            {{ $data['location'] }}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0;">
+                                        <p style="color: #808080; font-size: 16px; margin-bottom: 5px; padding:5px;"">
+                                            Share this
+                                            offer
+                                            with friends and receive $3.00 off.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0;">
+                                        <p style="color:#000; font-size: 16px; margin-bottom: 5px; padding: 5px;">
+                                            Coupon Will Expire
+                                            After 24 Hours On: {{ $data['expiry'] }}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0;">
+                                        <p
+                                            style="color: #808080; font-size: 16px; max-height: 75px; overflow-y: scroll; padding: 5px;">
+                                            {{ $data['name'] }}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0;">
+                                        <a href="{{ route('deals.show', $data['id']) }}"
+                                            style="background-color: #e6331f; display: block; border-radius: 5px; color:#000; font-size: 18px; margin: auto; padding: 8px 0; text-align: center; width: 100%; margin-top: 10px; text-decoration: none;">Get
+                                            Deal Now!
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        {{-- FOOTER --}}
+                        <td style="padding:0;">
+                            <p
+                                style="text-align:center; color: #fff; padding:20px; background-color: #000; margin: 0 0 10px 0; font-size: 16px; border-radius: 5px;">
+                                &copy; Copyright January 2023, <a href="https://pennexx.net/">PENNEXX</a>. All rights
+                                reserved. YourSocialOffers (YSO) is a subsidiary of <a
+                                    href="https://pennexx.net">pennexx.net</a> listed on
+                                OTC Markets as
+                                <a href="https://www.otcmarkets.com/stock/PNNX/overview">PNNX</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
 </body>
 
 </html>
