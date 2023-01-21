@@ -9,6 +9,7 @@
     {{-- COUPON MESSAGE --}}
     <div class="coupon-message">
         <h2 class="coupon-heading"></h2>
+        <p class="coupon-message-method"></p>
         <p class="coupon-message-name">{{ $deal['name'] }}</p>
         <button type="button" class="message-button coupon-button">OK</button>
         <a href={{ route('deals.index') }}>Show Me More Deals</a>
@@ -223,7 +224,8 @@
                     if (data['emailed-already']) {
                         var r = (data['message']);
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Already Emailed');
+                        $('.coupon-heading').text('Coupon Already Emailed To:');
+                        $('.coupon-message-method').text(email);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(
                                 'show-selected-deal-message');
@@ -231,7 +233,8 @@
                     }
                     if (data['emailed']) {
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Successfully Emailed');
+                        $('.coupon-heading').text('Coupon Successfully Emailed To:');
+                        $('.coupon-message-method').text(email);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(
                                 'show-selected-deal-message');
@@ -239,7 +242,8 @@
                     }
                     if (data['texted-already']) {
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Already Texted');
+                        $('.coupon-heading').text('Coupon Already Texted To:');
+                        $('.coupon-message-method').text(phone);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(
                                 'show-selected-deal-message');
@@ -247,7 +251,8 @@
                     }
                     if (data['texted']) {
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Successfully Texted');
+                        $('.coupon-heading').text('Coupon Successfully Texted To:');
+                        $('.coupon-message-method').text(phone);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(
                                 'show-selected-deal-message');

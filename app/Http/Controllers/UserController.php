@@ -94,12 +94,12 @@ class UserController extends Controller
             $user->email_code = $code;
             $user->save();
             $data = array(
-                'subject' => 'Email Verifiction Code',
+                'subject' => 'Your YSO Email Verifiction Code',
                 'code' => $code
             );
             Mail::to($request->id)->send(new VerifyMail($data));
             return response()->json([
-                'success' => 'Verification Code Emailed To ' . $request->id,
+                'success' => 'Verification Code Emailed To: ' . $request->id,
             ]);
         }
         // sent to phone
@@ -108,10 +108,10 @@ class UserController extends Controller
             $user->phone_code = $code;
             $user->save();
             $recipient = '+1' . str_replace('-', '', $request->id);
-            $message_to_send = "Your Phone Verification Code Is : " . $code;
+            $message_to_send = "Your YSO Phone Verification Code Is : " . $code;
             $this->sendSms($recipient, $message_to_send);
             return response()->json([
-                'success' => 'Verification Code Texted To ' . $recipient,
+                'success' => 'Verification Code Texted To: ' . $recipient,
             ]);
         }
         if ($email == null || $phone == null) {

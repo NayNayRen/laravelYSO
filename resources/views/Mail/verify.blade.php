@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 
 <head>
     <title>SOS Marketing</title>
@@ -79,6 +79,151 @@
             </tr>
         </table>
     </center>
+</body>
+
+</html> --}}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <title>SOS Marketing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="SOS Marketing Email Forms">
+    <meta name="keywords" content="SOS Marketing">
+    <!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<![endif]-->
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        /* #center-container {
+            border: solid 1px #000;
+        } */
+
+        #header-logo {
+            font-size: 28px;
+        }
+
+        #main-card {
+            -ms-flex-direction: column;
+            -ms-flex-pack: justify;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: vertical;
+            -webkit-box-pack: justify;
+            background-color: #fff;
+            border-collapse: collapse;
+            border-radius: 5px;
+            border-spacing: 0;
+            border: 0;
+            display: table;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 10px auto 20px auto;
+            max-height: auto;
+            min-height: 300px;
+            padding: 0;
+            width: 400px;
+        }
+
+        #main-card p {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        @media (max-width:400px) {
+            #center-container {
+                width: 100%;
+            }
+
+            #header-logo {
+                font-size: 30px;
+                width: 100%;
+            }
+
+            #main-card {
+                width: 90%;
+            }
+
+            #main-card p {
+                font-size: 26px !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body style="margin:0; padding:0;">
+    {{-- ENTIRE CONTAINER --}}
+    <table role="presentation"
+        style="width:100%; height:100%; border-collapse:collapse; border:0;border-spacing:0; background:#fff;">
+        <tr>
+            {{-- CENTER CONTAINER --}}
+            <td align="center" style="padding:0;">
+                <table role="presentation" id="center-container"
+                    style="width:600px; height:100%; border-collapse:collapse; border-spacing:0; font-family: 'Roboto', sans-serif; padding:0;">
+                    <tr>
+                        {{-- HEADER CONTAINER --}}
+                        <td align="center" style="padding:0;">
+                            {{-- <img src="{{ asset('img/yso-logo2.svg') }}" alt="YSO Logo" id="header-logo" width="350"
+                                height="auto"
+                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block;"> --}}
+                            <a href={{ route('deals.index') }} id="header-logo"
+                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block; color:#fff; text-decoration:none; width:100%;">
+                                <span>
+                                    Y<span style="color:#808080">our</span>S<span
+                                        style="color:#808080">ocial</span>O<span style="color:#808080">ffers</span><span
+                                        style="background-color:#e6331f; padding:2px;">.com</span>
+                                </span>
+                            </a>
+                            <h1 style="color:#000; font-size:30px; margin:0; padding:0; ">Verification Code
+                            </h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;">
+                            {{-- MAIN CARD --}}
+                            <table role="presentation" id="main-card">
+
+                                <tr>
+                                    <td style="padding:0;">
+                                        <p style="color:#808080; margin-bottom:5px; padding:5px;"">
+                                            Your Email Verification Code Is :</p>
+                                        <p style="color:#000; margin-bottom:5px; padding:5px;""> {{ $data['code'] }}
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        {{-- FOOTER --}}
+                        <td style="padding:0;">
+                            <p
+                                style="text-align:center; color: #fff; padding:20px; background-color:#000; margin: 0 0 10px 0; font-size:16px; border-radius:5px;">
+                                &copy; Copyright January 2023, <a href="https://pennexx.net/">PENNEXX</a>. All rights
+                                reserved. YourSocialOffers (YSO) is a subsidiary of <a
+                                    href="https://pennexx.net">pennexx.net</a> listed on
+                                OTC Markets as
+                                <a href="https://www.otcmarkets.com/stock/PNNX/overview">PNNX</a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
 </body>
 
 </html>
