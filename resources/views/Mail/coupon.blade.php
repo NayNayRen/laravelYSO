@@ -201,7 +201,6 @@
 
             #header-logo {
                 font-size: 30px !important;
-                width: 100%;
             }
 
             #main-card {
@@ -236,7 +235,7 @@
                                 height="auto"
                                 style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block;"> --}}
                             <a href={{ route('deals.index') }} id="header-logo"
-                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block; color:#fff; text-decoration:none; width:100%;">
+                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block; color:#fff; text-decoration:none;">
                                 <span>
                                     Y<span style="color:#808080">our</span>S<span
                                         style="color:#808080">ocial</span>O<span style="color:#808080">ffers</span><span
