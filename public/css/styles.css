@@ -2583,7 +2583,7 @@ body {
 .footer-bottom-section-disclaimer a:hover,
 .footer-bottom-section-policy-terms span:hover {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .footer-bottom-section-policy-terms {
@@ -2630,11 +2630,11 @@ body {
     font-size: 35px;
     margin-right: 25px;
     text-decoration: none;
-    transition: color 150ms ease;
+    transition: opacity 150ms ease;
 }
 
 .footer-social-media-container a:hover {
-    color: #808080;
+    opacity: 0.75;
 }
 
 .footer-top-section {
@@ -2665,6 +2665,15 @@ body {
     border-bottom: solid 1px #fff;
     height: 40px;
     /* outline: solid 1px blue; */
+}
+
+.footer-top-section-left-header a {
+    -webkit-transition: opacity 150ms ease;
+    transition: opacity 150ms ease;
+}
+
+.footer-top-section-left-header a:hover {
+    opacity: 0.75;
 }
 
 .footer-top-section-right-header {
@@ -4847,7 +4856,7 @@ html {
     }
 
     .footer-social-media-container a:hover {
-        color: #fff;
+        opacity: 1;
     }
 
     .get-deal-button {
@@ -5718,7 +5727,7 @@ html {
     }
 
     .footer {
-        padding: 25px 25px 10px 25px;
+        padding: 25px 25px 20px 25px;
         width: 100%;
     }
 
@@ -5728,8 +5737,18 @@ html {
         text-align: center;
     }
 
+    .footer-bottom-section-disclaimer a:hover,
+    .footer-bottom-section-policy-terms span:hover {
+        opacity: 1;
+    }
+
     .footer-bottom-section-policy-terms {
+        margin-top: 10px;
         width: 100%;
+    }
+
+    .footer-bottom-section-policy-terms span {
+        padding: 0 10px;
     }
 
     .footer-bottom-section-policy-terms span:nth-child(2) {
