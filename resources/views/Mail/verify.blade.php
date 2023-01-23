@@ -240,27 +240,27 @@
                                 padding:10px 10px 0 10px;">
                                 <a href="mailto: Support@YourSocialOffers.com">
                                     <img src="{{ asset('img/social/mail.png') }}" alt="Email Link" width="40"
-                                        height="40">
+                                        height="40" style="height:40px; width:40px;">
                                 </a>
                                 <a href="https://www.facebook.com/yoursocialoffers/?ref=py_c">
                                     <img src="{{ asset('img/social/facebook.png') }}" alt="Facebook Link" width="40"
-                                        height="40">
+                                        height="40" style="height:40px; width:40px;">
                                 </a>
                                 <a href="https://twitter.com/ysoffers">
                                     <img src="{{ asset('img/social/twitter.png') }}" alt="Twitter Link" width="40"
-                                        height="40">
+                                        height="40" style="height:40px; width:40px;">
                                 </a>
                                 <a href="https://www.instagram.com/yoursocialoffers/">
                                     <img src="{{ asset('img/social/instagram.png') }}" alt="Instagram Link"
-                                        width="40" height="40">
+                                        width="40" height="40" style="height:40px; width:40px;">
                                 </a>
                                 <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA">
                                     <img src="{{ asset('img/social/youtube.png') }}" alt="YouTube Link" width="40"
-                                        height="40">
+                                        height="40" style="height:40px; width:40px;">
                                 </a>
                                 <a href="#">
                                     <img src="{{ asset('img/social/linkedin.png') }}" alt="LinkedIn Link" width="40"
-                                        height="40">
+                                        height="40" style="height:40px; width:40px;">
                                 </a>
                             </div>
                             {{-- DISCLAIMER --}}
