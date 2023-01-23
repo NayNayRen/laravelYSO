@@ -214,6 +214,11 @@
             #main-card p {
                 font-size: 24px !important;
             }
+
+            #social-media-container img {
+                height: 45px !important;
+                width: 45px !important;
+            }
         }
     </style>
 
@@ -311,46 +316,38 @@
                     </tr>
                     <tr>
                         {{-- FOOTER --}}
-                        <td style="padding:0;">
+                        <td align="center" style="padding:0;">
                             {{-- SOCIAL MEDIA BLOCK --}}
                             <div
                                 style="
-                                -ms-flex-align:center;
-                                -ms-flex-direction:row;
-                                -ms-flex-pack:distribute;
-                                -webkit-box-align:center;
-                                -webkit-box-direction:normal;
-                                -webkit-box-orient:horizontal;
-                                align-items:center;
                                 background-color:#000;
                                 border-top-left-radius:5px; border-top-right-radius:5px;
-                                display:-ms-flexbox;
-                                display:-webkit-box;
-                                display:flex;
-                                flex-direction:row;
-                                justify-content:space-around;
                                 padding:10px 10px 0 10px;">
-                                <a href="mailto: Support@YourSocialOffers.com">
+                                <a href="mailto: Support@YourSocialOffers.com"
+                                    style="margin:0 10px; text-decoration:none;">
                                     <img src="{{ asset('img/social/mail.png') }}" alt="Email Link" width="40"
                                         height="40" style="height:40px; width:40px;">
                                 </a>
-                                <a href="https://www.facebook.com/yoursocialoffers/?ref=py_c">
+                                <a href="https://www.facebook.com/yoursocialoffers/?ref=py_c"
+                                    style="margin:0 10px; text-decoration:none;">
                                     <img src="{{ asset('img/social/facebook.png') }}" alt="Facebook Link" width="40"
                                         height="40" style="height:40px; width:40px;">
                                 </a>
-                                <a href="https://twitter.com/ysoffers">
+                                <a href="https://twitter.com/ysoffers" style="margin:0 10px; text-decoration:none;">
                                     <img src="{{ asset('img/social/twitter.png') }}" alt="Twitter Link" width="40"
                                         height="40" style="height:40px; width:40px;">
                                 </a>
-                                <a href="https://www.instagram.com/yoursocialoffers/">
+                                <a href="https://www.instagram.com/yoursocialoffers/"
+                                    style="margin:0 10px; text-decoration:none;">
                                     <img src="{{ asset('img/social/instagram.png') }}" alt="Instagram Link"
-                                        width="40" height="40" style="height:40px; width:40px;">
+                                        width="40" height="40" style="height:40px; margin:0 10px; width:40px;">
                                 </a>
-                                <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA">
+                                <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA"
+                                    style="margin:0 10px;text-decoration:none;">
                                     <img src="{{ asset('img/social/youtube.png') }}" alt="YouTube Link" width="40"
                                         height="40" style="height:40px; width:40px;">
                                 </a>
-                                <a href="#">
+                                <a href="#" style="margin:0 10px;text-decoration:none;">
                                     <img src="{{ asset('img/social/linkedin.png') }}" alt="LinkedIn Link"
                                         width="40" height="40" style="height:40px; width:40px;">
                                 </a>
