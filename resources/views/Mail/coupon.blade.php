@@ -229,11 +229,8 @@
                 <table role="presentation" id="center-container"
                     style="width:600px; height:100%; border-collapse:collapse; border-spacing:0; text-align:left; font-family: 'Roboto', sans-serif; padding:0;">
                     <tr>
-                        {{-- HEADER CONTAINER --}}
+                        {{-- LOGO CONTAINER --}}
                         <td align="center" style="padding:0;">
-                            {{-- <img src="{{ asset('img/yso-logo2.svg') }}" alt="YSO Logo" id="header-logo" width="350"
-                                height="auto"
-                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block;"> --}}
                             <a href={{ route('deals.index') }} id="header-logo"
                                 style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block; color:#fff; text-decoration:none;">
                                 <span>
@@ -242,7 +239,7 @@
                                         style="background-color:#e6331f; padding:2px;">.com</span>
                                 </span>
                             </a>
-                            <h1 style="color:#000; font-size:30px; margin:0; padding:0; ">Your Coupon
+                            <h1 style="color:#000; font-size:30px; margin:0; padding:0; ">- Your Coupon -
                             </h1>
                         </td>
                     </tr>
@@ -278,7 +275,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
-                                        <p style="color:#808080; margin-bottom:5px; padding:5px;"">
+                                        <p style="color:#808080; margin-bottom:5px; padding:5px;">
                                             Share this
                                             offer
                                             with friends and receive $3.00 off.
@@ -315,8 +312,52 @@
                     <tr>
                         {{-- FOOTER --}}
                         <td style="padding:0;">
+                            {{-- SOCIAL MEDIA BLOCK --}}
+                            <div
+                                style="
+                                -ms-flex-align:center;
+                                -ms-flex-direction:row;
+                                -ms-flex-pack:distribute;
+                                -webkit-box-align:center;
+                                -webkit-box-direction:normal;
+                                -webkit-box-orient:horizontal;
+                                align-items:center;
+                                background-color:#000;
+                                border-top-left-radius:5px; border-top-right-radius:5px;
+                                display:-ms-flexbox;
+                                display:-webkit-box;
+                                display:flex;
+                                flex-direction:row;
+                                justify-content:space-around;
+                                padding:10px 10px 0 10px;">
+                                <a href="mailto: Support@YourSocialOffers.com">
+                                    <img src="{{ asset('img/social/mail.png') }}" alt="Email Link" width="40"
+                                        height="40">
+                                </a>
+                                <a href="https://www.facebook.com/yoursocialoffers/?ref=py_c">
+                                    <img src="{{ asset('img/social/facebook.png') }}" alt="Facebook Link" width="40"
+                                        height="40">
+                                </a>
+                                <a href="https://twitter.com/ysoffers">
+                                    <img src="{{ asset('img/social/twitter.png') }}" alt="Twitter Link" width="40"
+                                        height="40">
+                                </a>
+                                <a href="https://www.instagram.com/yoursocialoffers/">
+                                    <img src="{{ asset('img/social/instagram.png') }}" alt="Instagram Link"
+                                        width="40" height="40">
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA">
+                                    <img src="{{ asset('img/social/youtube.png') }}" alt="YouTube Link" width="40"
+                                        height="40">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('img/social/linkedin.png') }}" alt="LinkedIn Link"
+                                        width="40" height="40">
+                                </a>
+                            </div>
+                            {{-- DISCLAIMER --}}
                             <p
-                                style="text-align:center; color: #fff; padding:20px; background-color:#000; margin: 0 0 10px 0; font-size:16px; border-radius:5px;">
+                                style="text-align:center; color:#fff; padding:20px; background-color:#000; margin: 0 0 10px 0; font-size:16px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
                                 &copy; Copyright January 2023, <a href="https://pennexx.net/">PENNEXX</a>. All rights
                                 reserved. YourSocialOffers (YSO) is a subsidiary of <a
                                     href="https://pennexx.net">pennexx.net</a> listed on
