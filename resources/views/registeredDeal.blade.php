@@ -224,7 +224,7 @@
                     if (data['emailed-already']) {
                         var r = (data['message']);
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Already Emailed To:');
+                        $('.coupon-heading').text('Coupon Already Emailed To');
                         $('.coupon-message-method').text(email);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(
@@ -233,7 +233,7 @@
                     }
                     if (data['emailed']) {
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Successfully Emailed To:');
+                        $('.coupon-heading').text('Coupon Successfully Emailed To');
                         $('.coupon-message-method').text(email);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(
@@ -242,7 +242,7 @@
                     }
                     if (data['texted-already']) {
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Already Texted To:');
+                        $('.coupon-heading').text('Coupon Already Texted To');
                         $('.coupon-message-method').text(phone);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(
@@ -251,7 +251,7 @@
                     }
                     if (data['texted']) {
                         $('.coupon-message').addClass('show-selected-deal-message');
-                        $('.coupon-heading').text('Coupon Successfully Texted To:');
+                        $('.coupon-heading').text('Coupon Successfully Texted To');
                         $('.coupon-message-method').text(phone);
                         $('.coupon-button').click(() => {
                             $('.coupon-message').removeClass(

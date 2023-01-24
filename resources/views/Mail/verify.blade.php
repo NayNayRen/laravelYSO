@@ -114,23 +114,6 @@
         }
 
         #main-card {
-            -ms-flex-direction: column;
-            -ms-flex-pack: justify;
-            -webkit-box-direction: normal;
-            -webkit-box-orient: vertical;
-            -webkit-box-pack: justify;
-            background-color: #fff;
-            border-collapse: collapse;
-            border-radius: 5px;
-            border-spacing: 0;
-            border: 0;
-            display: table;
-            flex-direction: column;
-            justify-content: space-between;
-            margin: 10px auto 20px auto;
-            max-height: auto;
-            min-height: 300px;
-            padding: 0;
             width: 400px;
         }
 
@@ -145,7 +128,7 @@
             }
 
             #header-logo {
-                font-size: 30px;
+                font-size: 32px !important;
             }
 
             #main-card {
@@ -192,7 +175,16 @@
                     <tr>
                         <td style="padding:0;">
                             {{-- MAIN CARD --}}
-                            <table role="presentation" id="main-card">
+                            <table role="presentation" id="main-card"
+                                style="background-color: #fff;
+                                border-collapse: collapse;
+                                border-radius: 5px;
+                                border-spacing: 0;
+                                border: 0;
+                                margin: 10px auto 20px auto;
+                                max-height: auto;
+                                min-height: 300px;
+                                padding: 0;">
                                 <tr>
                                     <td>
                                         <h2
@@ -205,7 +197,7 @@
                                         <p style="color:#808080; margin-bottom:5px; padding:5px;">
                                             Your Email Verification Code Is :</p>
                                         <p
-                                            style="background-color:#000; border-radius:5px; color:#fff; margin-bottom:5px; padding:5px;">
+                                            style="background-color:#000; border-radius:5px; color:#fff; margin-bottom:5px; padding:8px 5px;">
                                             {{ $data['code'] }}
                                         </p>
                                     </td>

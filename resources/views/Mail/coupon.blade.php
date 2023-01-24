@@ -166,23 +166,6 @@
         }
 
         #main-card {
-            -ms-flex-direction: column;
-            -ms-flex-pack: justify;
-            -webkit-box-direction: normal;
-            -webkit-box-orient: vertical;
-            -webkit-box-pack: justify;
-            background-color: #fff;
-            border-collapse: collapse;
-            border-radius: 5px;
-            border-spacing: 0;
-            border: 0;
-            display: table;
-            flex-direction: column;
-            justify-content: space-between;
-            margin: 10px auto 20px auto;
-            max-height: auto;
-            min-height: 500px;
-            padding: 0;
             width: 400px;
         }
 
@@ -200,7 +183,7 @@
             }
 
             #header-logo {
-                font-size: 30px !important;
+                font-size: 32px !important;
             }
 
             #main-card {
@@ -251,22 +234,24 @@
                     <tr>
                         <td style="padding:0;">
                             {{-- MAIN CARD --}}
-                            <table role="presentation" id="main-card">
+                            <table role="presentation" id="main-card"
+                                style="background-color: #fff;
+                                border-collapse: collapse;
+                                border-radius: 5px;
+                                border-spacing: 0;
+                                border: 0;
+                                margin: 10px auto 20px auto;
+                                max-height: auto;
+                                min-height: 500px;
+                                padding: 0;">
                                 <tr>
                                     <td style="padding:0;">
                                         <img src="{{ $data['picture_url'] }}" alt="{{ $data['name'] }}" width="100%"
                                             height="auto"
                                             style="
-                                            -ms-flex-align: center;
-                                            -ms-flex-pack: center;
-                                            -webkit-box-align: center;
-                                            -webkit-box-pack: center;
-                                            align-items: center;
+                                            background-color:#fff;
                                             border-radius: 5px;
-                                            display: -ms-flexbox;
-                                            display: -webkit-box;
-                                            display: flex;
-                                            justify-content: center;
+                                            color:#000;
                                             margin-bottom: 5px;
                                             display:block;">
                                     </td>
@@ -305,7 +290,7 @@
                                 <tr>
                                     <td style="padding:0;">
                                         <a href="{{ route('deals.show', $data['id']) }}"
-                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#000; margin:auto; padding:8px 0; text-align:center; width:100%; margin-top:10px; text-decoration:none;">Get
+                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#000; margin:10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
                                             Deal Now!
                                         </a>
                                     </td>
@@ -343,11 +328,11 @@
                                         width="40" height="40" style="height:40px; margin:0 10px; width:40px;">
                                 </a>
                                 <a href="https://www.youtube.com/channel/UCWH7dsxheL2ZOTrpfNiVBAA"
-                                    style="margin:0 10px;text-decoration:none;">
+                                    style="margin:0 10px; text-decoration:none;">
                                     <img src="{{ asset('img/social/youtube.png') }}" alt="YouTube Link" width="40"
                                         height="40" style="height:40px; width:40px;">
                                 </a>
-                                <a href="#" style="margin:0 10px;text-decoration:none;">
+                                <a href="#" style="margin:0 10px; text-decoration:none;">
                                     <img src="{{ asset('img/social/linkedin.png') }}" alt="LinkedIn Link"
                                         width="40" height="40" style="height:40px; width:40px;">
                                 </a>
