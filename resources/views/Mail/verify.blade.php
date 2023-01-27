@@ -109,6 +109,17 @@
             border: solid 1px #000;
         } */
 
+        #code,
+        #code-header {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #disclaimer {
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
         #header-logo {
             font-size: 28px;
         }
@@ -117,14 +128,19 @@
             width: 400px;
         }
 
-        #main-card p {
-            font-size: 20px;
-            text-align: center;
-        }
-
         @media (max-width:400px) {
             #center-container {
                 width: 100%;
+            }
+
+            #code,
+            #code-header {
+                font-size: 26px !important
+            }
+
+            #disclaimer {
+                font-size: 20px !important;
+                padding: 5px 15px !important;
             }
 
             #header-logo {
@@ -133,10 +149,6 @@
 
             #main-card {
                 width: 90%;
-            }
-
-            #main-card p {
-                font-size: 26px !important;
             }
 
             #social-media-container img {
@@ -183,7 +195,7 @@
                                 border: 0;
                                 margin: 10px auto 20px auto;
                                 max-height: auto;
-                                min-height: 300px;
+                                min-height: 325px;
                                 padding: 0;">
                                 <tr>
                                     <td>
@@ -194,17 +206,19 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
-                                        <p style="color:#808080; margin-bottom:5px; padding:5px;">
+                                        <p id="code-header" style="color:#808080; margin-bottom:5px; padding:5px;">
                                             Your Email Verification Code Is :</p>
-                                        <p
-                                            style="background-color:#000; border-radius:5px; color:#fff; margin-bottom:5px; padding:8px 5px;">
+                                        <p id="code"
+                                            style="background-color:#000; border-radius:5px; color:#fff; margin-bottom:5px; padding:10px 5px;">
                                             {{ $data['code'] }}
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p style="color:#808080; padding:5px; margin-bottom:5px;">Use
+                                        <p id="disclaimer"
+                                            style="background-color:#333333; border-radius:5px; color:#fff; font-style:italic; margin-bottom:5px;">
+                                            Use
                                             the code above to
                                             finish registration. Once registered, simply log in to start saving and
                                             sharing.</p>

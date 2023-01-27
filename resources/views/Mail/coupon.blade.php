@@ -161,6 +161,17 @@
             border: solid 1px #000;
         } */
 
+        #bottom-disclaimer {
+            font-size: 16px;
+            margin: 0 0 5px 0;
+            padding: 0 5px 5px 5px;
+        }
+
+        #discount,
+        #name {
+            font-size: 20px;
+        }
+
         #header-logo {
             font-size: 28px;
         }
@@ -173,13 +184,25 @@
             font-size: 18px;
         }
 
-        #main-card p {
-            font-size: 18px;
+        #top-disclaimer {
+            font-size: 16px;
+            margin: 5px 0 0 0;
+            padding: 5px 5px 0 5px;
         }
 
         @media (max-width:400px) {
+            #bottom-disclaimer {
+                font-size: 20px !important;
+                padding: 0 15px 5px 15px !important;
+            }
+
             #center-container {
                 width: 100%;
+            }
+
+            #discount,
+            #name {
+                font-size: 26px !important;
             }
 
             #header-logo {
@@ -194,13 +217,14 @@
                 font-size: 24px !important;
             }
 
-            #main-card p {
-                font-size: 24px !important;
-            }
-
             #social-media-container img {
                 height: 45px !important;
                 width: 45px !important;
+            }
+
+            #top-disclaimer {
+                font-size: 20px !important;
+                padding: 5px 15px 0 15px !important;
             }
         }
     </style>
@@ -242,7 +266,7 @@
                                 border: 0;
                                 margin: 10px auto 20px auto;
                                 max-height: auto;
-                                min-height: 500px;
+                                min-height: 525px;
                                 padding: 0;">
                                 <tr>
                                     <td style="padding:0;">
@@ -258,32 +282,42 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
-                                        <p style="padding:5px; margin-bottom:5px; max-height:75px; overflow-y:scroll;">
+                                        <p id="discount"
+                                            style="font-weight:bold; padding:5px; margin-bottom:5px; max-height:100px; overflow-y:scroll;">
                                             {{ $data['location'] }}
                                         </p>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td style="padding:0;">
-                                        <p style="color:#808080; margin-bottom:5px; padding:5px;">
-                                            Share this
-                                            offer
-                                            with friends and receive $3.00 off.
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="padding:0;">
                                         <p style="color:#000; margin-bottom:5px; padding:5px;">
                                             Coupon Will Expire
                                             After 24 Hours On: {{ $data['expiry'] }}
                                         </p>
                                     </td>
+                                </tr> --}}
+                                <tr>
+                                    <td style="padding:0;">
+                                        <p id="name"
+                                            style="color:#808080; margin-bottom:15px; max-height:100px; overflow-y:scroll; padding:5px;">
+                                            {{ $data['name'] }}
+                                        </p>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
-                                        <p style="color:#808080; max-height:75px; overflow-y:scroll; padding:5px;">
-                                            {{ $data['name'] }}
+                                        <p id="top-disclaimer"
+                                            style="background-color:#333333;
+                                            border-top-left-radius:5px; border-top-right-radius:5px; color:#fff; font-style:italic;">
+                                            Coupon Will Expire
+                                            After 24 Hours On: {{ $data['expiry'] }}
+                                        </p>
+                                        <p id="bottom-disclaimer"
+                                            style="background-color:#333333;
+                                            border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#fff; font-style:italic;">
+                                            Share this
+                                            offer
+                                            with friends and receive $3.00 off.
                                         </p>
                                     </td>
                                 </tr>
