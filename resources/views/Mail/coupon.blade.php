@@ -283,7 +283,7 @@
                                 <tr>
                                     <td style="padding:0;">
                                         <p id="discount"
-                                            style="font-weight:bold; padding:5px; margin-bottom:5px; max-height:100px; overflow-y:scroll;">
+                                            style="font-weight:bold; padding:5px; margin-bottom:10px; max-height:100px; overflow-y:scroll;">
                                             {{ $data['location'] }}
                                         </p>
                                     </td>
@@ -307,14 +307,14 @@
                                 <tr>
                                     <td style="padding:0;">
                                         <p id="top-disclaimer"
-                                            style="background-color:#333333;
-                                            border-top-left-radius:5px; border-top-right-radius:5px; color:#fff; font-style:italic;">
+                                            style="background-color:#DCDCDC;
+                                            border-top-left-radius:5px; border-top-right-radius:5px; color:#000; font-style:italic;">
                                             Coupon Will Expire
                                             After 24 Hours On: {{ $data['expiry'] }}
                                         </p>
                                         <p id="bottom-disclaimer"
-                                            style="background-color:#333333;
-                                            border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#fff; font-style:italic;">
+                                            style="background-color:#DCDCDC;
+                                            border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#000; font-style:italic;">
                                             Share this
                                             offer
                                             with friends and receive $3.00 off.
@@ -324,7 +324,7 @@
                                 <tr>
                                     <td style="padding:0;">
                                         <a href="{{ route('deals.show', $data['id']) }}"
-                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#000; margin:10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
+                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#fff; margin:10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
                                             Deal Now!
                                         </a>
                                     </td>

@@ -217,7 +217,7 @@
                                 <tr>
                                     <td>
                                         <p id="disclaimer"
-                                            style="background-color:#333333; border-radius:5px; color:#fff; font-style:italic; margin-bottom:5px;">
+                                            style="background-color:#DCDCDC; border-radius:5px; color:#000; font-style:italic; margin-bottom:10px;">
                                             Use
                                             the code above to
                                             finish registration. Once registered, simply log in to start saving and
