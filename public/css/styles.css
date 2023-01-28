@@ -159,8 +159,9 @@
 }
 
 .all-button:hover {
-    background-color: #808080;
-    color: #fff;
+    /* background-color: #808080; */
+    background-color: #c0c0c0;
+    /* color: #fff; */
     cursor: pointer;
 }
 
@@ -183,7 +184,7 @@
 
 .all-button-arrow-rotate {
     -webkit-transform: rotate(180deg);
-    color: #fff;
+    /* color: #fff; */
     top: 25%;
     transform: rotate(180deg);
 }
@@ -191,7 +192,8 @@
 .all-button-dropdown {
     -webkit-transform: translateX(-50%);
     -webkit-transition: max-height 250ms ease, opacity 250ms ease;
-    background-color: #808080;
+    /* background-color: #808080; */
+    background-color: #c0c0c0;
     border-radius: 5px;
     left: 50%;
     margin: 0;
@@ -218,8 +220,9 @@
 }
 
 .all-button-dropdown li:hover {
-    background-color: #000;
-    color: #fff;
+    /* background-color: #000; */
+    background-color: #808080;
+    /* color: #fff; */
     cursor: pointer;
 }
 
@@ -234,10 +237,11 @@
 .all-button-toggle {
     -webkit-box-shadow: 0 10px 10px #333333;
     box-shadow: 0 10px 10px #333333;
-    background-color: #808080;
+    /* background-color: #808080; */
+    background-color: #c0c0c0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    color: #fff;
+    /* color: #fff; */
 }
 /* VIEW ALL & LOCATION CARDS */
 .alternate-card,
@@ -1940,6 +1944,10 @@ body {
     overflow-y: scroll;
 }
 
+.dark-grey-text {
+    color: #333333;
+}
+
 .dashboard {
     -webkit-transition: opacity 250ms ease;
     background-color: #808080;
@@ -2456,8 +2464,9 @@ body {
 }
 
 .filter-selection:hover {
-    background-color: #808080;
-    color: #fff;
+    /* background-color: #808080; */
+    background-color: #c0c0c0;
+    /* color: #fff; */
     cursor: pointer;
 }
 
@@ -3905,8 +3914,9 @@ html {
 }
 
 .user-icon:hover {
-    background-color: #808080;
-    color: #fff;
+    /* background-color: #808080; */
+    background-color: #c0c0c0;
+    /* color: #fff; */
     cursor: pointer;
 }
 
@@ -4161,13 +4171,15 @@ html {
 }
 
 .users-form-group input {
-    background-color: #808080;
+    /* background-color: #808080; */
+    background-color: #c0c0c0;
     border-radius: 5px;
     border: none;
     color: #000;
     font-size: 18px;
     margin: 5px 0 25px 0;
-    outline: solid 1px #808080;
+    /* outline: solid 1px #808080; */
+    outline: solid 1px #c0c0c0;
     padding: 8px 8px 8px 10px;
     width: 100%;
 }
@@ -4991,11 +5003,11 @@ html {
     }
 
     .all-button-dropdown {
-        width: 200px;
+        width: 210px;
     }
 
     .all-button-dropdown li {
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px 10px 10px 15px;
     }
 
@@ -5570,7 +5582,7 @@ html {
     }
 
     .dashboard-user-container span:nth-of-type(odd) {
-        font-size: 14px;
+        /* font-size: 14px; */
         padding: 0 10px 0 0;
     }
 

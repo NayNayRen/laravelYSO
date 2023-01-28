@@ -14,7 +14,7 @@
             {{-- INITIAL PASSWORD --}}
             <div class="users-form-group password-register">
                 <label for="password">New Password</label><br>
-                <span class="gray-text password-message">At Least 8 Characters Long</span>
+                <span class="dark-grey-text password-message">At Least 8 Characters Long</span>
                 <input type="password" name="password" id="password">
                 <div class="password-length-icon">
                     <span class="password-length-incorrect-icon">
@@ -43,7 +43,8 @@
         </form>
         {{-- DISCLAIMER --}}
         <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
-            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
+            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a
+                href="#">Privacy
                 Statement</a>.</span>
     </div>
 </div>
@@ -68,6 +69,5 @@
             }, 5000);
         }, 250);
     })
-
 </script>
 @include('includes._footer')

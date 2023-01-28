@@ -35,7 +35,7 @@
             {{-- EMAIL --}}
             <div class="users-form-group">
                 <label for="email">Email</label><br>
-                <span class="gray-text password-message">smith@mail.com</span>
+                <span class="dark-grey-text password-message">smith@mail.com</span>
                 <input type="email" name="email" id="email" value="{{ auth()->user()->email }}">
                 @error('email')
                     <span class="users-form-group-error">{{ $message }}</span>
@@ -44,7 +44,7 @@
             {{-- PHONE NUMBER --}}
             <div class="users-form-group">
                 <label for="phone">Mobile Phone</label><br>
-                <span class="gray-text password-message">123-456-7890</span>
+                <span class="dark-grey-text password-message">123-456-7890</span>
                 <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     value="{{ auth()->user()->phone }}">
                 @error('phone')
@@ -54,7 +54,7 @@
             {{-- INITIAL PASSWORD --}}
             <div class="users-form-group password-register">
                 <label for="password">Password</label><br>
-                <span class="gray-text password-message">At Least 8 Characters Long</span>
+                <span class="dark-grey-text password-message">At Least 8 Characters Long</span>
                 <input type="password" name="password" id="password">
                 <div class="password-length-icon">
                     <span class="password-length-incorrect-icon">

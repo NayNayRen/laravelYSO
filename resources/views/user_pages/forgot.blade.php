@@ -17,7 +17,7 @@
             {{-- EMAIL --}}
             <div class="users-form-group input-type-email">
                 <label for="email">Email</label><br>
-                <span class="gray-text password-message">smith@mail.com</span>
+                <span class="dark-grey-text password-message">smith@mail.com</span>
                 <input type="email" name="email" id="email" value="{{ old('email') }}">
                 @error('email')
                     <span class="users-form-group-error">{{ $message }}</span>
@@ -40,21 +40,22 @@
         </form>
         {{-- DISCLAIMER --}}
         <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
-            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
+            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a
+                href="#">Privacy
                 Statement</a>.</span>
     </div>
 </div>
 {{-- PAGE SPECIFIC SCRIPT --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         // SHOW MESSAGES FOR OTP RESPONSE
-        $('#get_otp').click(function () {
+        $('#get_otp').click(function() {
             var email = $('#email').val();
             $.ajax({
                 url: "{{ route('send.reset_code') }}",
@@ -66,7 +67,7 @@
                     status: status,
                     email: email,
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['success']) {
                         var r = (data['success']);
                         $('.input-error-forgot').text('');
@@ -124,6 +125,5 @@
             }, 5000);
         }, 250);
     });
-
 </script>
 @include('includes._footer')

@@ -109,6 +109,7 @@ a {
     cursor: pointer;
 }
 .c-list__link.active h4 {
+    color: #e6331f;
     border-bottom: solid 1px #e6331f;
 }
 .favBox {
