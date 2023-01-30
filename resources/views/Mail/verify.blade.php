@@ -188,7 +188,7 @@
                                         style="background-color:#e6331f; padding:2px;">.com</span>
                                 </span>
                             </a>
-                            <h1 style="color:#000; font-size:30px; margin:0; padding:0;">- Verification Code -
+                            <h1 style="color:#000; font-size:30px; margin:0; padding:0;">- User Verification Code -
                             </h1>
                         </td>
                     </tr>
