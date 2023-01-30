@@ -16,7 +16,7 @@
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
-            <div class="banner-slide">
+            {{-- <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
                     <span class='banner-text-one'>
@@ -29,7 +29,7 @@
                 </div>
                 <img class="banner-logo" src="{{ asset('img/fashion/fantastic-sams-banner-logo.png') }}"
                     alt="Fantastic Sams Company Logo">
-            </div>
+            </div> --}}
             {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/food/bk-banner-logo.png') }}"
@@ -38,18 +38,22 @@
                 <div class="banner-container-image banner-image-main-2">
                 </div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>free!!!</span>
-                    <span class='banner-text-two'>medium fry with sandwich purchase.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Join!!!</span>
+                    <span class='banner-text-two'>And Get A BK Deal</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37406" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
             </div>
             {{-- SLIDE 3 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>$5 off</span>
-                    <span class='banner-text-two'>any order of $15 or more.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Get These Exclusive</span>
+                    <span class='banner-text-two'>Deals From McDondalds</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37407" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
                 <div class="banner-container-image banner-image-main-3">
                 </div>
@@ -64,13 +68,15 @@
                 <div class="banner-container-image banner-image-main-4">
                 </div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>1/2 off</span>
-                    <span class='banner-text-two'>second pair + a set of laces.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Get Up To</span>
+                    <span class='banner-text-two'>60% Off</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37405" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
             </div>
-            {{-- BANNER ARROWS --}}
         </div>
+        {{-- BANNER ARROWS --}}
         <div class="banner-arrows">
             <span id='prev' aria-label="Previous Slide"><i class="fa fa-arrow-left" aria-hidden="false"></i></span>
             <span id='next' aria-label="Next Slide"><i class="fa fa-arrow-right" aria-hidden="false"></i></span>
@@ -117,16 +123,17 @@
             </form>
         </div>
     </div>
+    {{--  --}}
     {{-- CASHBACK CONTAINER --}}
-    <div class="container">
+    {{-- <div class="container">
         <div class="container-left">
             <span class="category-heading">Cashback</span>
         </div>
-        <div class="container-right">
-            {{-- CARD BLOCK --}}
-            <div class="cashback-display">
-                {{-- CASHBACK CARDS WHEN LOGGED IN --}}
-                @auth
+        <div class="container-right"> --}}
+    {{-- CARD BLOCK --}}
+    {{-- <div class="cashback-display"> --}}
+    {{-- CASHBACK CARDS WHEN LOGGED IN --}}
+    {{-- @auth
                     <a href="https://yso.netrbx.com/stores/188-bed-bath-beyond" target="_blank">
                         <div class="cashback-card">
                             <div class="cashback-logo"><img src="{{ asset('img/fashion/bed-bath-logo.png') }}"
@@ -178,9 +185,9 @@
                                 <p>Cash Back Rewards</p>
                             </div>
                         </div>
-                    </a>
-                    {{-- CASHBACK CARDS WHEN NOT LOGGED IN --}}
-                @else
+                    </a> --}}
+    {{-- CASHBACK CARDS WHEN NOT LOGGED IN --}}
+    {{-- @else
                     <div class="cashback-card guest">
                         <div class="cashback-card-message">
                             <a href={{ route('user.create') }}>Register</a>
@@ -256,7 +263,8 @@
                 @endauth
             </div>
         </div>
-    </div>
+    </div> --}}
+    {{--  --}}
     <div>
     </div>
     {{-- FEATURED CONTAINER USING DEALS DATA --}}
@@ -457,7 +465,7 @@
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
-<script src="{{ asset('js/show-cashback-message.js') }}"></script>
+{{-- <script src="{{ asset('js/show-cashback-message.js') }}"></script> --}}
 </script>
 <script>
     $(document).ready(function() {

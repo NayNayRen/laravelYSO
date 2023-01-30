@@ -13,54 +13,105 @@
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
-            <div class="banner-slide">
+            {{-- <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>free wipers</span>
-                    <span class='banner-text-two'>with purchase of $50 or more.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Oil Change</span>
+                    <span class='banner-text-two'>Specials & More At Advanced Auto Parts</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37021" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
                 <div class="banner-container-image banner-image-auto-1">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/auto/advanced-auto-logo.png') }}"
                     alt="Advanced Auto Parts Company Logo">
-            </div>
+            </div> --}}
             {{-- SLIDE 2 --}}
-            <div class="banner-slide even">
+            {{-- <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/auto/aamco-logo.png') }}"
                     alt="Aamco Transmission Company Logo">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-image banner-image-auto-2">
                 </div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>30% off!!!</span>
-                    <span class='banner-text-two'>your next transmission fluid change.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Community Support</span>
+                    <span class='banner-text-two'>For Our Local Schools.</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37108" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
+                </div>
+            </div> --}}
+            {{-- SLIDE 3 --}}
+            {{-- <div class="banner-slide">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>Up To $150</span>
+                    <span class='banner-text-two'>Off On Select Set Of 4 Tires</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37039" class="banner-redemption"
+                        target="_blank">Get Deal Now!</a>
+                </div>
+                <div class="banner-container-image banner-image-auto-3">
+                </div>
+                <img class="banner-logo" src="{{ asset('img/auto/tires-plus-logo2.png') }}"
+                    alt="Tires Plus Company Logo">
+            </div> --}}
+            {{-- SLIDE 4 --}}
+            {{-- <div class="banner-slide even">
+                <img class="banner-logo" src="{{ asset('img/auto/sw-logo.png') }}" alt="Sherwin Williams Company Logo">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-image banner-image-auto-4">
+                </div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>$10 Off!!!</span>
+                    <span class='banner-text-two'>Any Order Over $50.00</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37035" class="banner-redemption"
+                        target="_blank">Get Deal Now!</a>
+                </div>
+            </div> --}}
+            {{-- SLIDE 2 --}}
+            <div class="banner-slide even">
+                <img class="banner-logo left" src="{{ asset('img/food/bk-banner-logo.png') }}"
+                    alt="Burger King Company Logo">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-image banner-image-main-2">
+                </div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>Join!!!</span>
+                    <span class='banner-text-two'>And Get A BK Deal</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37406" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
             </div>
             {{-- SLIDE 3 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>free rotation!!!</span>
-                    <span class='banner-text-two'>with purchase of 2 tires.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Get These Exclusive</span>
+                    <span class='banner-text-two'>Deals From McDondalds</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37407" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
-                <div class="banner-container-image banner-image-auto-3">
+                <div class="banner-container-image banner-image-main-3">
                 </div>
-                <img class="banner-logo" src="{{ asset('img/auto/tires-plus-logo2.png') }}"
-                    alt="Tires Plus Company Logo">
+                <img class="banner-logo" src="{{ asset('img/food/mcdonalds-banner-logo.png') }}"
+                    alt="McDonalds Company Logo">
             </div>
             {{-- SLIDE 4 --}}
             <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/auto/sw-logo.png') }}" alt="Sherwin Williams Company Logo">
+                <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                    alt="Adidas Company Logo">
                 <div class="banner-gradient"></div>
-                <div class="banner-container-image banner-image-auto-4">
+                <div class="banner-container-image banner-image-main-4">
                 </div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>2nd color</span>
-                    <span class='banner-text-two'>free with first mix.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Get Up To</span>
+                    <span class='banner-text-two'>60% Off</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37405" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
             </div>
         </div>

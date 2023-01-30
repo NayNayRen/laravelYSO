@@ -13,7 +13,7 @@
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
-            <div class="banner-slide">
+            {{-- <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
                     <span class='banner-text-one'>free!!!</span>
@@ -24,9 +24,9 @@
                 </div>
                 <img class="banner-logo" src="{{ asset('img/health/planet-fitness-banner-logo.png') }}"
                     alt="Planet Fitness Company Logo">
-            </div>
+            </div> --}}
             {{-- SLIDE 2 --}}
-            <div class="banner-slide even">
+            {{-- <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/health/whole-foods-logo.png') }}"
                     alt="Whole Foods Market Company Logo">
                 <div class="banner-gradient"></div>
@@ -37,22 +37,23 @@
                     <span class='banner-text-two'>are for 20% savings.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
                 </div>
-            </div>
+            </div> --}}
             {{-- SLIDE 3 --}}
-            <div class="banner-slide">
+            {{-- <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>Now!!!</span>
-                    <span class='banner-text-two'>open 24 hours.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                    <span class='banner-text-one'>Weekly Deals</span>
+                    <span class='banner-text-two'>And Clearance Sales</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37032" class="banner-redemption"
+                        target="_blank">Get Deal Now!</a>
                 </div>
                 <div class="banner-container-image banner-image-health-3">
                 </div>
                 <img class="banner-logo" src="{{ asset('img/health/walgreens-logo2.png') }}"
                     alt="Walgreens Company Logo">
-            </div>
+            </div> --}}
             {{-- SLIDE 4 --}}
-            <div class="banner-slide even">
+            {{-- <div class="banner-slide even">
                 <img class="banner-logo" src="{{ asset('img/health/natures-logo2.png') }}"
                     alt="Natures Food Patch Company Logo">
                 <div class="banner-gradient"></div>
@@ -62,6 +63,51 @@
                     <span class='banner-text-one'>family owned</span>
                     <span class='banner-text-two'>from ours, to yours.</span>
                     <a href="#" class="banner-redemption">Get Deal Now!</a>
+                </div>
+            </div> --}}
+            {{-- SLIDE 2 --}}
+            <div class="banner-slide even">
+                <img class="banner-logo left" src="{{ asset('img/food/bk-banner-logo.png') }}"
+                    alt="Burger King Company Logo">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-image banner-image-main-2">
+                </div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>Join!!!</span>
+                    <span class='banner-text-two'>And Get A BK Deal</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37406" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
+                </div>
+            </div>
+            {{-- SLIDE 3 --}}
+            <div class="banner-slide">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>Get These Exclusive</span>
+                    <span class='banner-text-two'>Deals From McDondalds</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37407" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
+                </div>
+                <div class="banner-container-image banner-image-main-3">
+                </div>
+                <img class="banner-logo" src="{{ asset('img/food/mcdonalds-banner-logo.png') }}"
+                    alt="McDonalds Company Logo">
+            </div>
+            {{-- SLIDE 4 --}}
+            <div class="banner-slide even">
+                <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
+                    alt="Adidas Company Logo">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-image banner-image-main-4">
+                </div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>Get Up To</span>
+                    <span class='banner-text-two'>60% Off</span>
+                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37405" class="banner-redemption"
+                        target="_blank">Get Deal
+                        Now!</a>
                 </div>
             </div>
         </div>

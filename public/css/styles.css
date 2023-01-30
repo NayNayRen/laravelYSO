@@ -1395,7 +1395,8 @@
 }
 
 .banner-text-one {
-    font-size: 75px;
+    /* font-size: 75px; */
+    font-size: 62px;
 }
 
 .banner-text-one img {
