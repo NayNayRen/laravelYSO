@@ -101,7 +101,7 @@ a {
     padding: 0 5px;
     position: absolute;
     text-align: center;
-    top: calc(100% + 8px);
+    top: calc(100% + 9px);
 }
 
 .c-list__link h4:hover {
@@ -109,8 +109,8 @@ a {
     cursor: pointer;
 }
 .c-list__link.active h4 {
-    color: #e6331f;
-    border-bottom: solid 1px #e6331f;
+    /* color: #e6331f; */
+    border-bottom: solid 2px #e6331f;
 }
 .favBox {
     display: none;

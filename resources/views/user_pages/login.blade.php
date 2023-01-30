@@ -35,7 +35,8 @@
             {{-- PASSWORD --}}
             <div class="users-form-group password-signin">
                 <label for="password">Password</label>
-                <a href="{{ route('login.showForgotForm') }}"><span class="dark-grey-text password-message">Forgot your
+                <a href="{{ route('login.showForgotForm') }}"><span
+                        class="dark-grey-text password-message forgot-password-link">Forgot your
                         password?</span></a>
                 <input type="password" name="password" id="password">
                 {{-- SHOW/HIDE PASSWORD EYE --}}

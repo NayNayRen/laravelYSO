@@ -163,8 +163,8 @@
 
         #bottom-disclaimer {
             font-size: 16px;
-            margin: 0 0 5px 0;
-            padding: 0 5px 5px 5px;
+            margin: 0 0 10px 0;
+            padding: 0 10px 5px 10px;
         }
 
         #discount,
@@ -187,13 +187,13 @@
         #top-disclaimer {
             font-size: 16px;
             margin: 5px 0 0 0;
-            padding: 5px 5px 0 5px;
+            padding: 5px 10px 0 10px;
         }
 
         @media (max-width:400px) {
             #bottom-disclaimer {
                 font-size: 20px !important;
-                padding: 0 15px 5px 15px !important;
+                padding: 0 15px 10px 15px !important;
             }
 
             #center-container {
@@ -224,7 +224,7 @@
 
             #top-disclaimer {
                 font-size: 20px !important;
-                padding: 5px 15px 0 15px !important;
+                padding: 10px 15px 0 15px !important;
             }
         }
     </style>
@@ -244,7 +244,7 @@
                         {{-- LOGO CONTAINER --}}
                         <td align="center" style="padding:0;">
                             <a href={{ route('deals.index') }} id="header-logo"
-                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius: 5px; display:block; color:#fff; text-decoration:none;">
+                                style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius:5px; display:block; color:#fff; text-decoration:none;">
                                 <span>
                                     Y<span style="color:#808080">our</span>S<span
                                         style="color:#808080">ocial</span>O<span style="color:#808080">ffers</span><span
@@ -288,14 +288,6 @@
                                         </p>
                                     </td>
                                 </tr>
-                                {{-- <tr>
-                                    <td style="padding:0;">
-                                        <p style="color:#000; margin-bottom:5px; padding:5px;">
-                                            Coupon Will Expire
-                                            After 24 Hours On: {{ $data['expiry'] }}
-                                        </p>
-                                    </td>
-                                </tr> --}}
                                 <tr>
                                     <td style="padding:0;">
                                         <p id="name"
@@ -310,21 +302,23 @@
                                             style="background-color:#DCDCDC;
                                             border-top-left-radius:5px; border-top-right-radius:5px; color:#000; font-style:italic;">
                                             Coupon Will Expire
-                                            After 24 Hours On: {{ $data['expiry'] }}
+                                            After 24 Hours On:<br>
+                                            <span style="color: #e6331f">{{ $data['expiry'] }}</span>
                                         </p>
                                         <p id="bottom-disclaimer"
                                             style="background-color:#DCDCDC;
                                             border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#000; font-style:italic;">
                                             Share this
                                             offer
-                                            with friends and receive $3.00 off.
+                                            with friends and receive:<br>
+                                            <span style="color:#e6331f;">$3.00 off</span>
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
                                         <a href="{{ route('deals.show', $data['id']) }}"
-                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#fff; margin:10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
+                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#fff; margin:15px auto 10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
                                             Deal Now!
                                         </a>
                                     </td>
@@ -339,8 +333,7 @@
                             {{-- SOCIAL MEDIA BLOCK --}}
                             <div
                                 style="
-                                background-color:#000;
-                                border-top-left-radius:5px; border-top-right-radius:5px;
+                                background-color:#000; border-top-left-radius:5px; border-top-right-radius:5px;
                                 padding:10px 10px 0 10px;">
                                 <a href="mailto: Support@YourSocialOffers.com"
                                     style="margin:0 10px; text-decoration:none;">

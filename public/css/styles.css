@@ -2694,6 +2694,16 @@ body {
     /* outline: solid 1px blue; */
 }
 
+.forgot-password-link {
+    -webkit-transition: opacity 150ms ease;
+    text-decoration: underline;
+    transition: opacity 150ms ease;
+}
+
+.forgot-password-link:hover {
+    opacity: 0.75;
+}
+
 .get-deal-button {
     -webkit-transition: color 150ms ease;
     background-color: #e6331f;
@@ -5778,6 +5788,10 @@ html {
 
     .footer-top-section {
         grid-template-columns: 1fr;
+    }
+
+    .forgot-password-link:hover {
+        opacity: 1;
     }
 
     .get-deal-button:hover {

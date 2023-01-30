@@ -140,7 +140,7 @@
 
             #disclaimer {
                 font-size: 20px !important;
-                padding: 5px 15px !important;
+                padding: 10px 15px !important;
             }
 
             #header-logo {
@@ -234,8 +234,7 @@
                             {{-- SOCIAL MEDIA BLOCK --}}
                             <div id="social-media-container"
                                 style="
-                                background-color:#000;
-                                border-top-left-radius:5px; border-top-right-radius:5px;
+                                background-color:#000; border-top-left-radius:5px; border-top-right-radius:5px;
                                 padding:10px 10px 0 10px;">
                                 <a href="mailto: Support@YourSocialOffers.com"
                                     style="margin:0 10px; text-decoration:none;">
