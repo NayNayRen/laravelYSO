@@ -109,6 +109,10 @@
             border: solid 1px #000;
         } */
 
+        #code {
+            margin-bottom: 5px;
+        }
+
         #code,
         #code-header {
             font-size: 20px;
@@ -131,6 +135,10 @@
         @media (max-width:400px) {
             #center-container {
                 width: 100%;
+            }
+
+            #code {
+                margin-bottom: 15px !important;
             }
 
             #code,
@@ -210,7 +218,7 @@
                                         <p id="code-header" style="color:#808080; margin-bottom:5px; padding:5px;">
                                             Your Email Verification Code Is :</p>
                                         <p id="code"
-                                            style="background-color:#000; border-radius:5px; color:#fff; margin-bottom:5px; padding:10px 5px;">
+                                            style="background-color:#333333; border-radius:5px; color:#fff; padding:10px 5px;">
                                             {{ $data['code'] }}
                                         </p>
                                     </td>

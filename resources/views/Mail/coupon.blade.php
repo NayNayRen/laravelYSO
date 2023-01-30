@@ -193,6 +193,7 @@
         @media (max-width:400px) {
             #bottom-disclaimer {
                 font-size: 20px !important;
+                margin: 0 0 15px 0 !important;
                 padding: 0 15px 10px 15px !important;
             }
 
@@ -224,6 +225,7 @@
 
             #top-disclaimer {
                 font-size: 20px !important;
+                margin: 15px 0 0 0 !important;
                 padding: 10px 15px 0 15px !important;
             }
         }
@@ -285,7 +287,7 @@
                                     <td style="padding:0;">
                                         {{-- DISCOUNT/LOCATION --}}
                                         <p id="discount"
-                                            style="font-weight:bold; padding:5px; margin-bottom:10px; max-height:100px; overflow-y:scroll;">
+                                            style="font-weight:bold; padding:5px; margin-bottom:10px; max-height:125px; overflow-y:scroll;">
                                             {{ $data['location'] }}
                                         </p>
                                     </td>
@@ -294,29 +296,29 @@
                                     <td style="padding:0;">
                                         {{-- DEAL NAME --}}
                                         <p id="name"
-                                            style="color:#808080; margin-bottom:15px; max-height:100px; overflow-y:scroll; padding:5px;">
+                                            style="color:#808080; margin-bottom:15px; max-height:125px; overflow-y:scroll; padding:5px;">
                                             {{ $data['name'] }}
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
-                                        {{-- EPIRATION --}}
+                                        {{-- EXPIRATION --}}
                                         <p id="top-disclaimer"
                                             style="background-color:#DCDCDC;
                                             border-top-left-radius:5px; border-top-right-radius:5px; color:#000; font-style:italic;">
                                             Coupon Will Expire
-                                            After 24 Hours On:<br>
-                                            <span style="color: #e6331f">{{ $data['expiry'] }}</span>
+                                            After 24 Hours On:
+                                            <span style="color: #e6331f; display:block;">{{ $data['expiry'] }}</span>
                                         </p>
                                         {{-- PROMO --}}
                                         <p id="bottom-disclaimer"
                                             style="background-color:#DCDCDC;
                                             border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#000; font-style:italic;">
-                                            Share this
-                                            offer
-                                            with friends and receive:<br>
-                                            <span style="color:#e6331f;">$3.00 off</span>
+                                            Share This
+                                            Offer
+                                            With Friends & Receive: <span style="color: #e6331f; display:block;">$3.00
+                                                off.</span>
                                         </p>
                                     </td>
                                 </tr>
@@ -324,7 +326,7 @@
                                     <td style="padding:0;">
                                         {{-- GET DEAL BUTTON --}}
                                         <a href="{{ route('deals.show', $data['id']) }}"
-                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#fff; margin:15px auto 10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
+                                            style="background-color: #e6331f; display:block; border-radius:5px; color:#fff; margin:10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
                                             Deal Now!
                                         </a>
                                     </td>

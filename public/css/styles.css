@@ -227,16 +227,16 @@
 }
 
 .all-button-dropdown-toggle {
-    -webkit-box-shadow: 0 10px 10px #333333;
-    box-shadow: 0 10px 10px #333333;
+    -webkit-box-shadow: 0 6px 5px #333333;
+    box-shadow: 0 6px 5px #333333;
     max-height: 350px;
     overflow-y: scroll;
     opacity: 1;
 }
 
 .all-button-toggle {
-    -webkit-box-shadow: 0 10px 10px #333333;
-    box-shadow: 0 10px 10px #333333;
+    -webkit-box-shadow: 0 5px 5px #333333;
+    box-shadow: 0 5px 5px #333333;
     /* background-color: #808080; */
     background-color: #c0c0c0;
     border-bottom-left-radius: 0;
