@@ -47,7 +47,7 @@ const bannerAds = [
     //     views: 1774,
     // },
     {
-        url: "https://yoursocialoffers.com/fbe/0/37015/0/showOffer",
+        url: "https://yoursocialoffers.com/showOffer.php?coupon=37015",
         img: "img/fashion/bed-bath-logo.png",
         name: "Bed Bath & Beyond",
         discount: "Every Day Specials",
