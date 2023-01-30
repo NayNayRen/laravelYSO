@@ -2729,7 +2729,7 @@ body {
     color: #fff;
 }
 
-.gray-text {
+.grey-text {
     color: #808080;
 }
 
@@ -4172,14 +4172,14 @@ html {
 
 .users-form-group input {
     /* background-color: #808080; */
-    background-color: #c0c0c0;
+    background-color: #a9a9a9;
     border-radius: 5px;
     border: none;
     color: #000;
     font-size: 18px;
     margin: 5px 0 25px 0;
     /* outline: solid 1px #808080; */
-    outline: solid 1px #c0c0c0;
+    outline: solid 1px #a9a9a9;
     padding: 8px 8px 8px 10px;
     width: 100%;
 }

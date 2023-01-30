@@ -6,9 +6,9 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Change Your Password</h1>
-        <span class="users-form-greeting gray-text">Continue by using an email below.</span>
-        <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
-        <span class="users-form-greeting gray-text">You'll then create and confirm that new password.</span>
+        <span class="users-form-greeting grey-text">Continue by using an email below.</span>
+        <span class="users-form-greeting grey-text">Followed by entering the One Time Password.</span>
+        <span class="users-form-greeting grey-text">You'll then create and confirm that new password.</span>
         {{-- SIGN IN FORM --}}
         {{-- HAD TO CHANGE FROM POST TO GET --}}
         {{-- <form action={{ route('login.showResetForm') }} method="POST"> --}}
@@ -39,7 +39,7 @@
             <input type="submit" class='users-buttons submit' value="Change Password"></input>
         </form>
         {{-- DISCLAIMER --}}
-        <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
+        <span class="users-form-disclaimer grey-text">By clicking Sign In, Continue with Facebook, Continue with Google,
             or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a
                 href="#">Privacy
                 Statement</a>.</span>

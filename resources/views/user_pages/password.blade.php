@@ -4,9 +4,9 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Create A New Password</h1>
-        <span class="users-form-greeting gray-text">Continue by creating a new password below.</span>
-        <span class="users-form-greeting gray-text">Followed by confirming that new password.</span>
-        <span class="users-form-greeting gray-text">You'll then be redirected to log in.</span>
+        <span class="users-form-greeting grey-text">Continue by creating a new password below.</span>
+        <span class="users-form-greeting grey-text">Followed by confirming that new password.</span>
+        <span class="users-form-greeting grey-text">You'll then be redirected to log in.</span>
         {{-- SAVE PASSWORD FORM --}}
         <form action={{ route('login.savePassword') }} method="POST">
             @csrf
@@ -42,7 +42,7 @@
             <input type="submit" class='users-buttons submit' value="Update Password"></input>
         </form>
         {{-- DISCLAIMER --}}
-        <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
+        <span class="users-form-disclaimer grey-text">By clicking Sign In, Continue with Facebook, Continue with Google,
             or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a
                 href="#">Privacy
                 Statement</a>.</span>

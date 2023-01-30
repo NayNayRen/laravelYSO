@@ -2,7 +2,7 @@
 <div class="main">
     <div class="users">
         <h1>Sign Up</h1>
-        <span class="users-form-greeting gray-text">Already have an account? <a
+        <span class="users-form-greeting grey-text">Already have an account? <a
                 href={{ route('login.showLoginForm') }}>Sign
                 In</a></span>
         {{-- SOCIAL MEDIA SIGN INS --}}
@@ -20,7 +20,7 @@
                 Continue with Apple
             </a>
         </div>
-        <span class="gray-text">Continue signing up using your email below.</span>
+        <span class="grey-text">Continue signing up using your email below.</span>
         {{-- REGISTER FORM --}}
         <form action={{ route('user.store') }} method="POST">
             @csrf
@@ -91,7 +91,7 @@
             {{-- SUBMIT BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Sign Up">
         </form>
-        <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
+        <span class="users-form-disclaimer grey-text">By clicking Sign In, Continue with Facebook, Continue with Google,
             or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a
                 href="#">Privacy
                 Statement</a>.</span>

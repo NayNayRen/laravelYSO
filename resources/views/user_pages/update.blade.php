@@ -3,7 +3,7 @@
     <div class="users">
         <h1>Update Details</h1>
 
-        <span class="users-form-greeting gray-text">You can change or update any of your details. Supply your
+        <span class="users-form-greeting grey-text">You can change or update any of your details. Supply your
             current password, or a new one, along with the password
             confirmation, then click
             Update to continue.</span>
@@ -98,7 +98,7 @@
                         </span>
                     </div>
                     <div>
-                        <span class="users-form-disclaimer gray-text">By continuing below, you will deleting your
+                        <span class="users-form-disclaimer grey-text">By continuing below, you will deleting your
                             account. All user details will be removed.
                             To do
                             so, provide your current email as confirmation of intent, then click Delete.</span>
@@ -113,7 +113,7 @@
             {{-- DELETE BUTTON --}}
             <input type="submit" class='users-buttons submit' value="Delete">
         </form>
-        <span class="users-form-disclaimer gray-text">By clicking Update or Delete to continue, you agree to our <a
+        <span class="users-form-disclaimer grey-text">By clicking Update or Delete to continue, you agree to our <a
                 href="#">Terms
                 and
                 Conditions</a> and <a href="#">Privacy

@@ -4,7 +4,7 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Sign In</h1>
-        <span class="users-form-greeting gray-text">New to YSO? <a href={{ route('user.create') }}>Sign Up</a></span>
+        <span class="users-form-greeting grey-text">New to YSO? <a href={{ route('user.create') }}>Sign Up</a></span>
         {{-- SOCIAL MEDIA SIGN INS --}}
         <div class="users-buttons-container">
             <a href="/auth/facebook/redirect" class="users-buttons facebook" aria-label="Continue with Facebook">
@@ -20,7 +20,7 @@
                 Continue with Apple
             </a>
         </div>
-        <span class="gray-text">Continue signing in using your email below.</span>
+        <span class="grey-text">Continue signing in using your email below.</span>
         {{-- SIGN IN FORM --}}
         <form action={{ route('login') }} method="POST">
             @csrf
@@ -51,7 +51,7 @@
             <input type="submit" class='users-buttons submit' value="Sign In">
         </form>
         {{-- DISCLAIMER --}}
-        <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
+        <span class="users-form-disclaimer grey-text">By clicking Sign In, Continue with Facebook, Continue with Google,
             or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a
                 href="#">Privacy
                 Statement</a>.</span>

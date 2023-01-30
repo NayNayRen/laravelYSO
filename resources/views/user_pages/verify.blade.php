@@ -6,9 +6,9 @@
     @include('includes._flash_message_user')
     <div class="users">
         <h1>Verify Your Account</h1>
-        <span class="users-form-greeting gray-text">Continue signing in by choosing a verification method.</span>
-        <span class="users-form-greeting gray-text">Followed by entering the One Time Password.</span>
-        <span class="users-form-greeting gray-text">You'll then be redirected to log in.</span>
+        <span class="users-form-greeting grey-text">Continue signing in by choosing a verification method.</span>
+        <span class="users-form-greeting grey-text">Followed by entering the One Time Password.</span>
+        <span class="users-form-greeting grey-text">You'll then be redirected to log in.</span>
         {{-- VERIFICATION FORM --}}
         <form action={{ route('login.verifyUser', $user->id) }} method="POST">
             @csrf
@@ -48,8 +48,9 @@
             <input type="submit" class='users-buttons submit' value="Verify User"></input>
         </form>
         {{-- DISCLAIMER --}}
-        <span class="users-form-disclaimer gray-text">By clicking Sign In, Continue with Facebook, Continue with Google,
-            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy
+        <span class="users-form-disclaimer grey-text">By clicking Sign In, Continue with Facebook, Continue with Google,
+            or Continue with Apple, you agree to our <a href="#">Terms and Conditions</a> and <a
+                href="#">Privacy
                 Statement</a>.</span>
     </div>
 </div>
@@ -57,7 +58,7 @@
 <script src="{{ asset('js/show-verify-dropdown.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -65,7 +66,7 @@
         });
 
         // SHOW MESSAGES FOR OTP RESPONSE
-        $('#get_otp').click(function () {
+        $('#get_otp').click(function() {
             var id = $('#verify_by').val();
             var userid = '{{ $user->id }}';
             $.ajax({
@@ -79,7 +80,7 @@
                     id: id,
                     userid: userid
                 },
-                success: function (data) {
+                success: function(data) {
                     if (data['success']) {
                         var r = (data['success']);
                         $('.input-error-verify').text('');
@@ -124,6 +125,5 @@
             }, 5000);
         }, 250);
     });
-
 </script>
 @include('includes._footer')
