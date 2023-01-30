@@ -82,8 +82,8 @@
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
-                    <span class='banner-text-one'>Get These Exclusive</span>
-                    <span class='banner-text-two'>Deals From McDondalds</span>
+                    <span class='banner-text-one'>Get These</span>
+                    <span class='banner-text-two'>Exclusive Deals From McDondalds</span>
                     <a href="https://yoursocialoffers.com/showOffer.php?coupon=37407" class="banner-redemption"
                         target="_blank">Get Deal
                         Now!</a>
