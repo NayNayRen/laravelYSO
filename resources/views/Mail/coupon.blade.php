@@ -236,13 +236,13 @@
     <table role="presentation"
         style="width:100%; height:100%; border-collapse:collapse; border:0;border-spacing:0; background:#fff;">
         <tr>
-            {{-- CENTER CONTAINER --}}
             <td align="center" style="padding:0;">
+                {{-- CENTER CONTAINER --}}
                 <table role="presentation" id="center-container"
                     style="width:600px; height:100%; border-collapse:collapse; border-spacing:0; text-align:left; font-family: 'Roboto', sans-serif; padding:0;">
                     <tr>
-                        {{-- LOGO CONTAINER --}}
                         <td align="center" style="padding:0;">
+                            {{-- LOGO CONTAINER --}}
                             <a href={{ route('deals.index') }} id="header-logo"
                                 style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius:5px; display:block; color:#fff; text-decoration:none;">
                                 <span>
@@ -270,6 +270,7 @@
                                 padding: 0;">
                                 <tr>
                                     <td style="padding:0;">
+                                        {{-- DEAL PICTURE --}}
                                         <img src="{{ $data['picture_url'] }}" alt="{{ $data['name'] }}" width="100%"
                                             height="auto"
                                             style="
@@ -282,6 +283,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
+                                        {{-- DISCOUNT/LOCATION --}}
                                         <p id="discount"
                                             style="font-weight:bold; padding:5px; margin-bottom:10px; max-height:100px; overflow-y:scroll;">
                                             {{ $data['location'] }}
@@ -290,6 +292,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
+                                        {{-- DEAL NAME --}}
                                         <p id="name"
                                             style="color:#808080; margin-bottom:15px; max-height:100px; overflow-y:scroll; padding:5px;">
                                             {{ $data['name'] }}
@@ -298,6 +301,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
+                                        {{-- EPIRATION --}}
                                         <p id="top-disclaimer"
                                             style="background-color:#DCDCDC;
                                             border-top-left-radius:5px; border-top-right-radius:5px; color:#000; font-style:italic;">
@@ -305,6 +309,7 @@
                                             After 24 Hours On:<br>
                                             <span style="color: #e6331f">{{ $data['expiry'] }}</span>
                                         </p>
+                                        {{-- PROMO --}}
                                         <p id="bottom-disclaimer"
                                             style="background-color:#DCDCDC;
                                             border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#000; font-style:italic;">
@@ -317,6 +322,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
+                                        {{-- GET DEAL BUTTON --}}
                                         <a href="{{ route('deals.show', $data['id']) }}"
                                             style="background-color: #e6331f; display:block; border-radius:5px; color:#fff; margin:15px auto 10px auto; padding:10px 0; text-align:center; width:100%; text-decoration:none;">Get
                                             Deal Now!

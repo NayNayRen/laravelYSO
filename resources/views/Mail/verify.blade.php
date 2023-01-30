@@ -165,13 +165,13 @@
     <table role="presentation"
         style="width:100%; height:100%; border-collapse:collapse; border:0;border-spacing:0; background:#fff;">
         <tr>
-            {{-- CENTER CONTAINER --}}
             <td align="center" style="padding:0;">
+                {{-- CENTER CONTAINER --}}
                 <table role="presentation" id="center-container"
                     style="width:600px; height:100%; border-collapse:collapse; border-spacing:0; font-family: 'Roboto', sans-serif; padding:0;">
                     <tr>
-                        {{-- LOGO CONTAINER --}}
                         <td align="center" style="padding:0;">
+                            {{-- LOGO CONTAINER --}}
                             <a href={{ route('deals.index') }} id="header-logo"
                                 style="margin: 20px auto 20px auto; background-color: #000; padding: 10px 15px; border-radius:5px; display:block; color:#fff; text-decoration:none;">
                                 <span>
@@ -206,6 +206,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0;">
+                                        {{-- VERIFICATION CODE --}}
                                         <p id="code-header" style="color:#808080; margin-bottom:5px; padding:5px;">
                                             Your Email Verification Code Is :</p>
                                         <p id="code"
@@ -216,6 +217,7 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        {{-- USAGE INSTRUCTIONS --}}
                                         <p id="disclaimer"
                                             style="background-color:#DCDCDC; border-radius:5px; color:#000; font-style:italic; margin-bottom:10px;">
                                             Use
