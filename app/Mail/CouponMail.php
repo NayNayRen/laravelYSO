@@ -12,7 +12,7 @@ class CouponMail extends Mailable
     use Queueable, SerializesModels;
 
     public $data;
-    
+
     /**
      * Create a new message instance.
      *
@@ -21,7 +21,6 @@ class CouponMail extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
-
     }
 
     /**
@@ -32,6 +31,6 @@ class CouponMail extends Mailable
     public function build()
     {
         return $this->subject($this->data['subject'])
-                    ->view('Mail.coupon');
+            ->view('Mail.coupon');
     }
 }
