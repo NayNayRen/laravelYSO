@@ -104,7 +104,7 @@
                                         style="background-color:#e6331f; padding:2px;">.com</span>
                                 </span>
                             </a>
-                            <h1 style="color:#000; font-size:30px; margin:0; padding:0;">- Password Change Code -
+                            <h1 style="color:#000; font-size:30px; margin:0; padding:0;">- Password Change -
                             </h1>
                         </td>
                     </tr>
