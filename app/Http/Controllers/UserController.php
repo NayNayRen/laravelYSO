@@ -172,6 +172,7 @@ class UserController extends Controller
                 'subject' => 'Your YSO Password Change Code',
                 'code' => $code
             );
+            // Mail::to($request->email)->send(new VerifyMail($data));
             Mail::to($request->email)->send(new PasswordMail($data));
             return response()->json([
                 'success' => 'Verification Code Emailed To ' . $request->email,
