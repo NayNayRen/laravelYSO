@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\User;
 use App\Mail\VerifyMail;
+use App\Mail\PasswordMail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -168,10 +169,10 @@ class UserController extends Controller
             $user->email_code = $code;
             $user->update();
             $data = array(
-                'subject' => 'Reset Password Code',
+                'subject' => 'Your YSO Password Change Code',
                 'code' => $code
             );
-            Mail::to($request->email)->send(new VerifyMail($data));
+            Mail::to($request->email)->send(new PasswordMail($data));
             return response()->json([
                 'success' => 'Verification Code Emailed To ' . $request->email,
             ]);
