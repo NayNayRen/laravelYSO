@@ -175,7 +175,7 @@ class UserController extends Controller
             // Mail::to($request->email)->send(new VerifyMail($data));
             Mail::to($request->email)->send(new PasswordMail($data));
             return response()->json([
-                'success' => 'Verification Code Emailed To ' . $request->email,
+                'success' => 'Password Code Emailed To ' . $request->email,
             ]);
         } else {
             return response()->json([

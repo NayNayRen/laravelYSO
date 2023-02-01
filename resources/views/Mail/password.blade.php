@@ -125,7 +125,7 @@
                                     <td>
                                         <h2
                                             style="color:#e6331f; font-size:26px; margin:0; padding:0; text-align:center;">
-                                            Looks Like You Requested To Change Your YSO Password</h2>
+                                            Request To Change Your YSO Password</h2>
                                     </td>
                                 </tr>
                                 <tr>
