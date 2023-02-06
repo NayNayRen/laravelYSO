@@ -222,7 +222,6 @@
                 },
                 success: function(data) {
                     if (data['emailed-already']) {
-                        var r = (data['message']);
                         $('.coupon-message').addClass('show-selected-deal-message');
                         $('.coupon-heading').text('Coupon Already Emailed To');
                         $('.coupon-message-method').text(email);
