@@ -100,7 +100,7 @@ class UserController extends Controller
             );
             Mail::to($request->id)->send(new VerifyMail($data));
             return response()->json([
-                'success' => 'Verification Code Emailed To: ' . $request->id,
+                'success' => 'Verification Code Emailed To : ' . $request->id,
             ]);
         }
         // sent to phone
@@ -109,10 +109,10 @@ class UserController extends Controller
             $user->phone_code = $code;
             $user->save();
             $recipient = '+1' . str_replace('-', '', $request->id);
-            $message_to_send = "Your YSO Phone Verification Code Is : " . $code;
+            $message_to_send = "Your YSO Phone Verification Code Is :\n" . $code;
             $this->sendSms($recipient, $message_to_send);
             return response()->json([
-                'success' => 'Verification Code Texted To: ' . $recipient,
+                'success' => 'Verification Code Texted To : ' . $request->id,
             ]);
         }
         if ($email == null || $phone == null) {
@@ -230,36 +230,26 @@ class UserController extends Controller
     // CONNECTION TO SEND OTP VIA PHONE
     public function sendSms($recipient, $message_to_send)
     {
-        // text sms starts here
-        $service_plan_id = env('SERVICE_PLAN_ID');
-        $bearer_token = env('BEARER_TOKEN');
-        // any phone number assigned to your API
-        $send_from = env('SEND_FROM');
-        // may be several, separate with a comma ,
-        // +18135012075 
-        $recipient_phone_numbers = $recipient;
-        $message = $message_to_send;
-        // check recipient_phone_numbers for multiple numbers and make it an array.
-        if (stristr($recipient_phone_numbers, ',')) {
-            $recipient_phone_numbers = explode(',', $recipient_phone_numbers);
-        } else {
-            $recipient_phone_numbers = [$recipient_phone_numbers];
-        }
-        // set necessary fields to be JSON encoded
+        //text ams starts here
+        // Set necessary fields to be JSON encoded
         $content = [
-            'to' => array_values($recipient_phone_numbers),
-            'from' => $send_from,
-            'body' => $message
+            'from' => '19512637122',
+            'to' => [$recipient],
+            'body' => $message_to_send
         ];
+
         $data = json_encode($content);
-        $ch = curl_init("https://us.sms.api.sinch.com/xms/v1/{$service_plan_id}/batches");
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
-        curl_setopt($ch, CURLOPT_XOAUTH2_BEARER, $bearer_token);
+        $ch = curl_init("https://sms.api.sinch.com/xms/v1/a6c7726640314b1eb8dcf92fed42ccd7/batches");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // Set HTTP Header for POST request 
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            'Authorization: Bearer a13611040543430ca425709b7ed64048',
+            'Content-Length: ' . strlen($data)
+        ));
         $result = curl_exec($ch);
         curl_close($ch);
     }

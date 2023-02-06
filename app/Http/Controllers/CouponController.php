@@ -67,7 +67,7 @@ class CouponController extends Controller
                         $nxt =  Carbon::createFromFormat('Y-m-d H:i:s', $new->created_at);
                         $route = route('deals.show', $deal->id);
                         $recipient = '+1' . str_replace('-', '', $request->phone);
-                        $message_to_send = "Coupon Details \n" . $deal->name . "\n Click the link below to find details \n" . $route . "\n Coupon will expire after 24 Hours at: " . $nxt;
+                        $message_to_send = "Coupon Details\n" . $deal->name . "\nClick the link below to find details\n" . $route . "\nCoupon will expire after 24 Hours at :\n" . $nxt;
 
                         $this->sendSms($recipient, $message_to_send);
 
@@ -86,74 +86,63 @@ class CouponController extends Controller
 
     public function sendSms($recipient, $message_to_send)
     {
-        // $service_plan_id = env('SERVICE_PLAN_ID');
-        // $bearer_token = env('BEARER_TOKEN');
-        // $send_from = env('SEND_FROM');
-        $data = array(
+        //text sms starts here
+        // Set necessary fields to be JSON encoded
+        $content = [
             'from' => '19512637122',
             'to' => [$recipient],
             'body' => $message_to_send
-        );
+        ];
 
-        $payload = json_encode($data);
-        // Prepare new cURL resource
-        $ch = curl_init('https://sms.api.sinch.com/xms/v1/a6c7726640314b1eb8dcf92fed42ccd7/batches');
+        $data = json_encode($content);
+        $ch = curl_init("https://sms.api.sinch.com/xms/v1/a6c7726640314b1eb8dcf92fed42ccd7/batches");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLINFO_HEADER_OUT, true);
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         // Set HTTP Header for POST request 
-        curl_setopt(
-            $ch,
-            CURLOPT_HTTPHEADER,
-            array(
-                'Content-Type: application/json',
-                'Authorization: Bearer a13611040543430ca425709b7ed64048',
-                'Content-Length: ' . strlen($payload)
-            )
-        );
-        // Submit the POST request
-        $result = curl_exec($ch);
-        print_r($result);
-        // Close cURL session handle
-        curl_close($ch);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            'Authorization: Bearer a13611040543430ca425709b7ed64048',
+            'Content-Length: ' . strlen($data)
+        ));
 
-        // //text ams starts here
-        // $service_plan_id = env('SERVICE_PLAN_ID');
-        // $bearer_token = env('BEARER_TOKEN');
-
-        // //Any phone number assigned to your API
-        // $send_from = env('SEND_FROM');
-        // //May be several, separate with a comma ,
-        // // +18135012075 
-        // $recipient_phone_numbers = $recipient;
-        // // $message = "Click on the link bellow to Find You Coupon Details  {$recipient_phone_numbers} from {$send_from}";
-        // $message = $message_to_send;
-
-        // // Check recipient_phone_numbers for multiple numbers and make it an array.
-        // if (stristr($recipient_phone_numbers, ',')) {
-        //     $recipient_phone_numbers = explode(',', $recipient_phone_numbers);
-        // } else {
-        //     $recipient_phone_numbers = [$recipient_phone_numbers];
-        // }
-
-        // // Set necessary fields to be JSON encoded
-        // $content = [
-        //     'to' => array_values($recipient_phone_numbers),
-        //     'from' => $send_from,
-        //     'body' => $message
-        // ];
-
-        // $data = json_encode($content);
-        // $ch = curl_init("https://us.sms.api.sinch.com/xms/v1/{$service_plan_id}/batches");
-        // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         // curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BEARER);
         // curl_setopt($ch, CURLOPT_XOAUTH2_BEARER, $bearer_token);
-        // curl_setopt($ch, CURLOPT_POST, true);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        // $service_plan_id = env('SERVICE_PLAN_ID');
+        // $bearer_token = env('BEARER_TOKEN');
+        // $send_from = env('SEND_FROM');
+        // $data = array(
+        //     'from' => '19512637122',
+        //     'to' => [$recipient],
+        //     'body' => $message_to_send
+        // );
+
+        // $payload = json_encode($data);
+        // // Prepare new cURL resource
+        // $ch = curl_init('https://sms.api.sinch.com/xms/v1/a6c7726640314b1eb8dcf92fed42ccd7/batches');
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        // curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+        // curl_setopt($ch, CURLOPT_POST, true);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        // // Set HTTP Header for POST request 
+        // curl_setopt(
+        //     $ch,
+        //     CURLOPT_HTTPHEADER,
+        //     array(
+        //         'Content-Type: application/json',
+        //         'Authorization: Bearer a13611040543430ca425709b7ed64048',
+        //         'Content-Length: ' . strlen($payload)
+        //     )
+        // );
+        // // Submit the POST request
         // $result = curl_exec($ch);
+        // print_r($result);
+        // // Close cURL session handle
         // curl_close($ch);
     }
 }
