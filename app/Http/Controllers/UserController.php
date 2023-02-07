@@ -263,18 +263,30 @@ class UserController extends Controller
     // UPDATE USER DETAILS
     public function updateUser(Request $request, User $user)
     {
-        $formInputs = $request->validate([
-            'firstName' => ['required'],
-            'lastName' => ['required'],
-            'email' => ['required', 'email'],
-            'phone' => ['required'],
-            'password' => ['required', 'confirmed', 'min:8']
-        ]);
+        // if password and confirmation are left empty, password stays current
+        if ($request->password === null && $request->password_confirmation === null) {
+            $formInputs = $request->validate([
+                'firstName' => ['required'],
+                'lastName' => ['required'],
+                'email' => ['required', 'email'],
+                'phone' => ['required']
+            ]);
+        }
+        // if password is not empty, confirmation must match, password is updated
+        if ($request->password != null) {
+            $formInputs = $request->validate([
+                'firstName' => ['required'],
+                'lastName' => ['required'],
+                'email' => ['required', 'email'],
+                'phone' => ['required'],
+                'password' => ['required', 'confirmed', 'min:8']
+            ]);
+            // hash password
+            $formInputs['password'] = bcrypt($formInputs['password']);
+        }
         // capitalize first and last name
         $formInputs['firstName'] = ucfirst($formInputs['firstName']);
         $formInputs['lastName'] = ucfirst($formInputs['lastName']);
-        // hash password
-        $formInputs['password'] = bcrypt($formInputs['password']);
         // update user
         $user->update($formInputs);
         return redirect(route('deals.index'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully updated your information.');

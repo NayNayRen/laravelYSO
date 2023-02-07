@@ -51,6 +51,11 @@
                     <span class="users-form-group-error">{{ $message }}</span>
                 @enderror
             </div>
+            <span class="users-form-greeting grey-text">If the password input below is left empty, your current password
+                will
+                be kept. However, if a new password is used, then you must also confirm that new password to update
+                it.</span>
+            <p></p>
             {{-- INITIAL PASSWORD --}}
             <div class="users-form-group password-register">
                 <label for="password">Password</label><br>
