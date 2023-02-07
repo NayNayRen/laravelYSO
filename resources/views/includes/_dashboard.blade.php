@@ -15,7 +15,7 @@
                             alt="Profile Picture">
                     </div>
                     <div>
-                        <span>Logged In As</span>
+                        <span>User</span>
                         <span>{{ ucfirst(auth()->user()->firstName) }}
                             {{ ucfirst(auth()->user()->lastName) }}</span>
                     </div>
@@ -201,7 +201,7 @@
                             alt="Profile Picture">
                     </div>
                     <div>
-                        <span>Logged In As</span>
+                        <span>User</span>
                         <span>Guest</span>
                     </div>
                     <div>
