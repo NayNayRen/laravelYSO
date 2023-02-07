@@ -273,7 +273,7 @@ class UserController extends Controller
             ]);
         }
         // if password is not empty, confirmation must match, password is updated
-        if ($request->password != null) {
+        if ($request->password != null || $request->password_confirmation != null) {
             $formInputs = $request->validate([
                 'firstName' => ['required'],
                 'lastName' => ['required'],
