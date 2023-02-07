@@ -2264,7 +2264,7 @@ body {
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
     align-items: center;
-    background-color: #808080;
+    background-color: #a9a9a9;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -2287,7 +2287,7 @@ body {
 }
 
 .enhance-navigation-container a:hover {
-    color: #d3d3d3;
+    color: #808080;
 }
 
 .enhance-text,

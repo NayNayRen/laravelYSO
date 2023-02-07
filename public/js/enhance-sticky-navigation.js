@@ -82,27 +82,27 @@ window.addEventListener("load", () => {
         campaigns.style.borderBottom = "none";
     });
     gains.addEventListener("click", () => {
-        gains.style.borderBottom = "solid 1px #e6331f";
+        gains.style.borderBottom = "solid 2px #e6331f";
         values.style.borderBottom = "none";
         loyalties.style.borderBottom = "none";
         campaigns.style.borderBottom = "none";
     });
     values.addEventListener("click", () => {
         gains.style.borderBottom = "none";
-        values.style.borderBottom = "solid 1px #e6331f";
+        values.style.borderBottom = "solid 2px #e6331f";
         loyalties.style.borderBottom = "none";
         campaigns.style.borderBottom = "none";
     });
     loyalties.addEventListener("click", () => {
         gains.style.borderBottom = "none";
         values.style.borderBottom = "none";
-        loyalties.style.borderBottom = "solid 1px #e6331f";
+        loyalties.style.borderBottom = "solid 2px #e6331f";
         campaigns.style.borderBottom = "none";
     });
     campaigns.addEventListener("click", () => {
         gains.style.borderBottom = "none";
         values.style.borderBottom = "none";
         loyalties.style.borderBottom = "none";
-        campaigns.style.borderBottom = "solid 1px #e6331f";
+        campaigns.style.borderBottom = "solid 2px #e6331f";
     });
 });
