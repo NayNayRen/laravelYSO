@@ -62,11 +62,13 @@
         {{-- FOOTER DISCLAIMER --}}
         <div class="footer-bottom-section">
             <div class="footer-bottom-section-disclaimer">
-                <span>&copy; Copyright January 2021, <a href="https://pennexx.net/">PENNEXX</a>. All rights
+                <span>&copy; Copyright January 2021, <a href="https://pennexx.net/" target="_blank">PENNEXX</a>. All
+                    rights
                     reserved.</span>
-                <span>YourSocialOffers (YSO) is a subsidiary of <a href="https://pennexx.net">pennexx.net</a> listed on
+                <span>YourSocialOffers (YSO) is a subsidiary of <a href="https://pennexx.net"
+                        target="_blank">pennexx.net</a> listed on
                     OTC Markets as
-                    <a href="https://www.otcmarkets.com/stock/PNNX/overview">PNNX</a></span>
+                    <a href="https://www.otcmarkets.com/stock/PNNX/overview" target="_blank">PNNX</a></span>
             </div>
             <div class="footer-bottom-section-policy-terms">
                 <span>Privacy Policy</span><span>Terms of Use</span>
