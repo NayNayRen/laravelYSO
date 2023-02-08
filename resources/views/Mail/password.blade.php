@@ -196,7 +196,7 @@
                             {{-- DISCLAIMER --}}
                             <p
                                 style="text-align:center; color:#fff; padding:20px; background-color:#000; margin: 0 0 10px 0; font-size:16px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;">
-                                &copy; Copyright January 2023, <a href="https://pennexx.net/">PENNEXX</a>. All rights
+                                &copy; Copyright January 2021, <a href="https://pennexx.net/">PENNEXX</a>. All rights
                                 reserved. YourSocialOffers (YSO) is a subsidiary of <a
                                     href="https://pennexx.net">pennexx.net</a> listed on
                                 OTC Markets as
