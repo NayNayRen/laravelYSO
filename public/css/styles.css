@@ -1427,8 +1427,9 @@ body {
 #values {
     left: 0;
     position: absolute;
-    top: -50px;
-    /* outline: solid 1px blue; */
+    top: -100px;
+    /* outline: solid 1px blue;
+    z-index: 10; */
 }
 
 .card {
@@ -2263,8 +2264,10 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
+    /* -webkit-box-shadow: 0 1px 0 #000; */
     align-items: center;
     background-color: #a9a9a9;
+    /* box-shadow: 0 1px 0 #000; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;

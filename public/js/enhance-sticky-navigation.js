@@ -5,10 +5,12 @@ const enhanceNavigationContainer = document.querySelector(
 const enhanceNavigationScrollPoint = document.getElementById(
     "enhance-navigation-scroll-point"
 );
-const gains = document.querySelector(".gains");
-const values = document.querySelector(".values");
-const loyalties = document.querySelector(".loyalties");
-const campaigns = document.querySelector(".campaigns");
+
+const topContainer = document.querySelector("#gains");
+const navigationLinks = document.querySelectorAll(".enhance-navigation-link");
+const containerHeadings = document.querySelectorAll(
+    ".enhance-container-heading"
+);
 
 // sticks secondary navigation when scrolling and window resize
 function stickContainer() {
@@ -16,7 +18,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "85%";
         enhanceNavigationContainer.style.top = "103px";
-        enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
+        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "50px";
     } else if (
         document.documentElement.scrollTop > 450 &&
@@ -26,7 +28,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "90%";
         enhanceNavigationContainer.style.top = "103px";
-        enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
+        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "50px";
     } else if (
         document.documentElement.scrollTop > 450 &&
@@ -36,7 +38,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "95%";
         enhanceNavigationContainer.style.top = "103px";
-        enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
+        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "50px";
     } else if (
         document.documentElement.scrollTop > 455 &&
@@ -46,7 +48,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "92px";
-        enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
+        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "45px";
     } else if (
         document.documentElement.scrollTop > 375 &&
@@ -55,54 +57,51 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "109px";
-        enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
+        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "42px";
     } else {
         enhanceNavigationContainer.style.position = "relative";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "0";
-        enhanceNavigationContainer.style.boxShadow = "none";
+        // enhanceNavigationContainer.style.boxShadow = "none";
         enhanceNavigationScrollPoint.style.paddingTop = "0";
     }
+}
+
+function secondaryNavActions() {
+    containerHeadings.forEach((heading) => {
+        const windowHeight = window.innerHeight;
+        const headingDistanceFromTop = heading.getBoundingClientRect().top;
+        if (headingDistanceFromTop < windowHeight * 0.5) {
+            navigationLinks.forEach((link) => {
+                if (link.getAttribute("value") === heading.innerText) {
+                    link.style.borderBottom = "solid 2px #000";
+                    // link.style.borderTop = "solid 2px #000";
+                } else {
+                    link.style.borderBottom = "none";
+                    // link.style.borderTop = "none";
+                }
+            });
+        }
+        if (topContainer.getBoundingClientRect().top > 115) {
+            navigationLinks.forEach((link) => {
+                link.style.borderBottom = "none";
+                // link.style.borderTop = "none";
+            });
+        }
+    });
 }
 
 // sticks navigation to the top of the page
 window.addEventListener("resize", () => {
     stickContainer();
+    secondaryNavActions();
 });
 window.addEventListener("scroll", () => {
     stickContainer();
+    secondaryNavActions();
 });
 window.addEventListener("load", () => {
     stickContainer();
-    upArrow.addEventListener("click", () => {
-        gains.style.borderBottom = "none";
-        values.style.borderBottom = "none";
-        loyalties.style.borderBottom = "none";
-        campaigns.style.borderBottom = "none";
-    });
-    gains.addEventListener("click", () => {
-        gains.style.borderBottom = "solid 2px #e6331f";
-        values.style.borderBottom = "none";
-        loyalties.style.borderBottom = "none";
-        campaigns.style.borderBottom = "none";
-    });
-    values.addEventListener("click", () => {
-        gains.style.borderBottom = "none";
-        values.style.borderBottom = "solid 2px #e6331f";
-        loyalties.style.borderBottom = "none";
-        campaigns.style.borderBottom = "none";
-    });
-    loyalties.addEventListener("click", () => {
-        gains.style.borderBottom = "none";
-        values.style.borderBottom = "none";
-        loyalties.style.borderBottom = "solid 2px #e6331f";
-        campaigns.style.borderBottom = "none";
-    });
-    campaigns.addEventListener("click", () => {
-        gains.style.borderBottom = "none";
-        values.style.borderBottom = "none";
-        loyalties.style.borderBottom = "none";
-        campaigns.style.borderBottom = "solid 2px #e6331f";
-    });
+    secondaryNavActions();
 });

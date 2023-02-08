@@ -98,16 +98,20 @@
         {{-- SECONDARY STICKY NAVIGATION --}}
         <ul class="enhance-navigation-container">
             <li>
-                <a href="#gains" class="gains">Gains</a>
+                <a href="#gains" class="gains enhance-navigation-link"
+                    value="Enhance your gains with new customers.">Gains</a>
             </li>
             <li>
-                <a href="#values" class="values">Values</a>
+                <a href="#values" class="enhance-navigation-link values"
+                    value="Reach your audience with a touch of value.">Values</a>
             </li>
             <li>
-                <a href="#loyalties" class="loyalties">Loyalties</a>
+                <a href="#loyalties" class="enhance-navigation-link loyalties"
+                    value="Give loyal customers a reason to be loyal.">Loyalties</a>
             </li>
             <li>
-                <a href="#campaigns" class="campaigns">Campaigns</a>
+                <a href="#campaigns" class="enhance-navigation-link campaigns"
+                    value="Track campaigns and know what works.">Campaigns</a>
             </li>
         </ul>
         {{-- MAIN CONTENT CONTAINER --}}
@@ -116,7 +120,7 @@
             <div class="enhance-info">
                 <div id="gains"></div>
                 <div class="enhance-text">
-                    <h1>Enhance your gains with new customers.</h1>
+                    <h1 class="enhance-container-heading">Enhance your gains with new customers.</h1>
                     <div>
                         <p>Reaching into social media with a YSO campaign to find new customers brings a wealth of
                             people
@@ -138,7 +142,7 @@
                     <img src="{{ asset('img/navigation-pages/enhance-photo-2.jpg') }}" alt="Support Photo">
                 </div>
                 <div class="enhance-text">
-                    <h1>Reach your audience with a touch of value.</h1>
+                    <h1 class="enhance-container-heading">Reach your audience with a touch of value.</h1>
                     <div>
                         <p>Customers benefit while being rewarded when shopping in store or online. Sharing their
                             experiences also benefits the merchant. We help these merchants by offering complete
@@ -159,7 +163,7 @@
             <div class="enhance-info">
                 <div id="loyalties"></div>
                 <div class="enhance-text">
-                    <h1>Give loyal customers a reason to be loyal.</h1>
+                    <h1 class="enhance-container-heading">Give loyal customers a reason to be loyal.</h1>
                     <div>
                         <p>For the first time, YSO allows you to easily share your customer's recommendations with their
                             friends, creating an organic and viral marketing campaign that brings you to a vast new
@@ -182,7 +186,7 @@
                     <img src="{{ asset('img/navigation-pages/enhance-photo-4.jpg') }}" alt="Support Photo">
                 </div>
                 <div class="enhance-text">
-                    <h1>Track campaigns and know what works.</h1>
+                    <h1 class="enhance-container-heading">Track campaigns and know what works.</h1>
                     <div>
                         <p>Creating a unique rewards program allows you to customize incentives tailored to your
                             customers.
