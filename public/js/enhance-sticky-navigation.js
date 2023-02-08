@@ -68,6 +68,7 @@ function stickContainer() {
     }
 }
 
+// underlines secondary nav based on scroll position, not click
 function secondaryNavActions() {
     containerHeadings.forEach((heading) => {
         const windowHeight = window.innerHeight;
@@ -75,18 +76,15 @@ function secondaryNavActions() {
         if (headingDistanceFromTop < windowHeight * 0.5) {
             navigationLinks.forEach((link) => {
                 if (link.getAttribute("value") === heading.innerText) {
-                    link.style.borderBottom = "solid 2px #000";
-                    // link.style.borderTop = "solid 2px #000";
+                    link.style.borderBottom = "solid 2px #e6331f";
                 } else {
                     link.style.borderBottom = "none";
-                    // link.style.borderTop = "none";
                 }
             });
         }
         if (topContainer.getBoundingClientRect().top > 115) {
             navigationLinks.forEach((link) => {
                 link.style.borderBottom = "none";
-                // link.style.borderTop = "none";
             });
         }
     });
