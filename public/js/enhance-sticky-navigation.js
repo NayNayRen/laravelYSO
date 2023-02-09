@@ -49,7 +49,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "92px";
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "45px";
+        enhanceNavigationScrollPoint.style.paddingTop = "50px";
     } else if (
         document.documentElement.scrollTop > 375 &&
         window.innerWidth < 500
@@ -58,7 +58,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "109px";
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "42px";
+        enhanceNavigationScrollPoint.style.paddingTop = "45px";
     } else {
         enhanceNavigationContainer.style.position = "relative";
         enhanceNavigationContainer.style.width = "100%";
@@ -76,15 +76,18 @@ function secondaryNavActions() {
         if (headingDistanceFromTop < windowHeight * 0.5) {
             navigationLinks.forEach((link) => {
                 if (link.getAttribute("value") === heading.innerText) {
-                    link.style.borderBottom = "solid 2px #e6331f";
+                    // link.style.outline = "solid 1px #e6331f";
+                    link.style.backgroundColor = "#DCDCDC";
                 } else {
-                    link.style.borderBottom = "none";
+                    // link.style.outline = "none";
+                    link.style.backgroundColor = "transparent";
                 }
             });
         }
         if (topContainer.getBoundingClientRect().top > 115) {
             navigationLinks.forEach((link) => {
-                link.style.borderBottom = "none";
+                // link.style.outline = "none";
+                link.style.backgroundColor = "transparent";
             });
         }
     });

@@ -1427,7 +1427,7 @@ body {
 #values {
     left: 0;
     position: absolute;
-    top: -100px;
+    top: -105px;
     /* outline: solid 1px blue;
     z-index: 10; */
 }
@@ -2276,15 +2276,17 @@ body {
     justify-content: center;
     list-style-type: none;
     margin: 0;
-    padding: 10px 5px;
+    padding: 15px 5px;
     z-index: 1;
 }
 
 .enhance-navigation-container a {
     -webkit-transition: color 150ms ease;
+    border-radius: 5px;
     color: #000;
     font-size: 20px;
     margin: 0 10px;
+    padding: 2px 5px;
     text-decoration: none;
     transition: color 150ms ease;
 }
@@ -5712,6 +5714,10 @@ html {
         font-size: 20px;
     }
 
+    .enhance-navigation-container a:hover {
+        color: #000;
+    }
+
     .enhance-text h1,
     .rewards-text h1,
     .support-text h1 {
@@ -6302,6 +6308,7 @@ html {
 
     .enhance-navigation-container a {
         font-size: 16px;
+        margin: 0 5px;
     }
 
     .enhance-text h1,
