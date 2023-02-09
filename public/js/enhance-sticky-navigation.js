@@ -51,7 +51,7 @@ function stickContainer() {
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "55px";
     } else if (
-        document.documentElement.scrollTop > 380 &&
+        document.documentElement.scrollTop > 375 &&
         window.innerWidth < 500
     ) {
         enhanceNavigationContainer.style.position = "fixed";
