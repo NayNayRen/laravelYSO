@@ -43,11 +43,11 @@
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
+            from(rgba(0, 0, 0, 0.5)),
+            to(rgba(0, 0, 0, 0.9))
         ),
         url("../img/navigation-pages/about-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
         url("../img/navigation-pages/about-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -2173,11 +2173,11 @@ body {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
+            from(rgba(0, 0, 0, 0.5)),
+            to(rgba(0, 0, 0, 0.9))
         ),
         url("../img/navigation-pages/enhance-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
         url("../img/navigation-pages/enhance-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -3420,11 +3420,11 @@ html {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
+            from(rgba(0, 0, 0, 0.5)),
+            to(rgba(0, 0, 0, 0.9))
         ),
         url("../img/navigation-pages/rewards-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
         url("../img/navigation-pages/rewards-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -3821,11 +3821,11 @@ html {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
+            from(rgba(0, 0, 0, 0.5)),
+            to(rgba(0, 0, 0, 0.9))
         ),
         url("../img/navigation-pages/support-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
         url("../img/navigation-pages/support-banner.jpg");
     background-position: center;
     background-size: cover;
