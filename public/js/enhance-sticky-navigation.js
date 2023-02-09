@@ -19,7 +19,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.width = "85%";
         enhanceNavigationContainer.style.top = "103px";
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "50px";
+        enhanceNavigationScrollPoint.style.paddingTop = "70px";
     } else if (
         document.documentElement.scrollTop > 450 &&
         window.innerWidth < 1300 &&
@@ -29,7 +29,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.width = "90%";
         enhanceNavigationContainer.style.top = "103px";
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "50px";
+        enhanceNavigationScrollPoint.style.paddingTop = "65px";
     } else if (
         document.documentElement.scrollTop > 450 &&
         window.innerWidth < 1000 &&
@@ -39,7 +39,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.width = "95%";
         enhanceNavigationContainer.style.top = "103px";
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "50px";
+        enhanceNavigationScrollPoint.style.paddingTop = "60px";
     } else if (
         document.documentElement.scrollTop > 455 &&
         window.innerWidth < 700 &&
@@ -49,16 +49,16 @@ function stickContainer() {
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "92px";
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "50px";
+        enhanceNavigationScrollPoint.style.paddingTop = "55px";
     } else if (
-        document.documentElement.scrollTop > 375 &&
+        document.documentElement.scrollTop > 380 &&
         window.innerWidth < 500
     ) {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "109px";
         // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "45px";
+        enhanceNavigationScrollPoint.style.paddingTop = "60px";
     } else {
         enhanceNavigationContainer.style.position = "relative";
         enhanceNavigationContainer.style.width = "100%";
