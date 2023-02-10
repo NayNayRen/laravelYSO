@@ -97,22 +97,26 @@
         <div id="enhance-navigation-scroll-point"></div>
         {{-- SECONDARY STICKY NAVIGATION --}}
         <ul class="enhance-navigation-container">
-            <li>
-                <a href="#gains" class="gains enhance-navigation-link"
-                    value="Enhance your gains with new customers.">Gains</a>
-            </li>
-            <li>
-                <a href="#values" class="enhance-navigation-link values"
-                    value="Reach your audience with a touch of value.">Values</a>
-            </li>
-            <li>
-                <a href="#loyalties" class="enhance-navigation-link loyalties"
-                    value="Give loyal customers a reason to be loyal.">Loyalties</a>
-            </li>
-            <li>
-                <a href="#campaigns" class="enhance-navigation-link campaigns"
-                    value="Track campaigns and know what works.">Campaigns</a>
-            </li>
+            <a href="#gains">
+                <li class="enhance-navigation-link gains" value="Enhance your gains with new customers.">
+                    Gains
+                </li>
+            </a>
+            <a href="#values">
+                <li class="enhance-navigation-link values" value="Reach your audience with a touch of value.">
+                    Values
+                </li>
+            </a>
+            <a href="#loyalties">
+                <li class="enhance-navigation-link loyalties" value="Give loyal customers a reason to be loyal.">
+                    Loyalties
+                </li>
+            </a>
+            <a href="#campaigns">
+                <li class="enhance-navigation-link campaigns" value="Track campaigns and know what works.">
+                    Campaigns
+                </li>
+            </a>
         </ul>
         {{-- MAIN CONTENT CONTAINER --}}
         <div class="enhance-container">

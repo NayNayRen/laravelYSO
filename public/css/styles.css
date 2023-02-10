@@ -1427,7 +1427,7 @@ body {
 #values {
     left: 0;
     position: absolute;
-    top: -105px;
+    top: -115px;
     /* outline: solid 1px blue;
     z-index: 10; */
 }
@@ -2273,20 +2273,32 @@ body {
     display: flex;
     flex-direction: row;
     font-family: "Montserrat", sans-serif;
+    height: 55px;
     justify-content: center;
     list-style-type: none;
     margin: 0;
-    padding: 15px 5px;
+    padding: 0;
     z-index: 1;
+}
+
+.enhance-navigation-container li {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    height: 100%;
+    margin: 0 10px;
+    padding: 0 20px;
+    /* outline: solid 1px blue; */
 }
 
 .enhance-navigation-container a {
     -webkit-transition: color 150ms ease;
-    border-radius: 5px;
     color: #000;
     font-size: 20px;
-    margin: 0 10px;
-    padding: 2px 5px;
+    height: 100%;
     text-decoration: none;
     transition: color 150ms ease;
 }
@@ -4510,12 +4522,12 @@ html {
 
     #campaigns,
     #gains,
-    #loyalties,
     #values {
-        left: 0;
-        position: absolute;
-        top: -60px;
-        /* outline: solid 1px blue; */
+        top: -70px;
+    }
+
+    #loyalties {
+        top: -95px;
     }
 
     .card {
@@ -4781,9 +4793,12 @@ html {
 
     #campaigns,
     #gains,
-    #loyalties,
     #values {
-        top: -100px;
+        top: -120px;
+    }
+
+    #loyalties {
+        top: -130px;
     }
 
     .card {
@@ -5424,7 +5439,7 @@ html {
     #gains,
     #loyalties,
     #values {
-        top: -130px;
+        top: -140px;
     }
 
     /* .card {
@@ -5712,6 +5727,17 @@ html {
     .enhance-middle-banner h2,
     .rewards-bottom-banner h2 {
         font-size: 20px;
+    }
+
+    .enhance-navigation-container {
+        -ms-flex-pack: space-evenly;
+        -webkit-box-pack: space-evenly;
+        justify-content: space-evenly;
+    }
+
+    .enhance-navigation-container li {
+        margin: 0;
+        padding: 0 10px;
     }
 
     .enhance-navigation-container a:hover {
@@ -6233,7 +6259,7 @@ html {
     #gains,
     #loyalties,
     #values {
-        top: -145px;
+        top: -155px;
     }
 
     .card {
@@ -6310,9 +6336,14 @@ html {
         top: 75px;
     } */
 
+    .enhance-navigation-container {
+        -ms-flex-pack: justify;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
     .enhance-navigation-container a {
         font-size: 16px;
-        margin: 0 5px;
     }
 
     .enhance-text h1,
