@@ -18,7 +18,6 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "85%";
         enhanceNavigationContainer.style.top = "103px";
-        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "70px";
     } else if (
         document.documentElement.scrollTop > 450 &&
@@ -28,7 +27,6 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "90%";
         enhanceNavigationContainer.style.top = "103px";
-        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
         enhanceNavigationScrollPoint.style.paddingTop = "65px";
     } else if (
         document.documentElement.scrollTop > 450 &&
@@ -38,8 +36,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "95%";
         enhanceNavigationContainer.style.top = "103px";
-        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "60px";
+        enhanceNavigationScrollPoint.style.paddingTop = "65px";
     } else if (
         document.documentElement.scrollTop > 455 &&
         window.innerWidth < 700 &&
@@ -48,8 +45,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "92px";
-        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "60px";
+        enhanceNavigationScrollPoint.style.paddingTop = "65px";
     } else if (
         document.documentElement.scrollTop > 380 &&
         window.innerWidth < 500
@@ -57,13 +53,11 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "109px";
-        // enhanceNavigationContainer.style.boxShadow = "0 1px 0 #000";
-        enhanceNavigationScrollPoint.style.paddingTop = "60px";
+        enhanceNavigationScrollPoint.style.paddingTop = "65px";
     } else {
         enhanceNavigationContainer.style.position = "relative";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "0";
-        // enhanceNavigationContainer.style.boxShadow = "none";
         enhanceNavigationScrollPoint.style.paddingTop = "0";
     }
 }
@@ -76,17 +70,14 @@ function secondaryNavActions() {
         if (headingDistanceFromTop < windowHeight * 0.5) {
             navigationLinks.forEach((link) => {
                 if (link.getAttribute("value") === heading.innerText) {
-                    // link.style.outline = "solid 1px #e6331f";
                     link.style.backgroundColor = "#DCDCDC";
                 } else {
-                    // link.style.outline = "none";
                     link.style.backgroundColor = "transparent";
                 }
             });
         }
         if (topContainer.getBoundingClientRect().top > 115) {
             navigationLinks.forEach((link) => {
-                // link.style.outline = "none";
                 link.style.backgroundColor = "transparent";
             });
         }

@@ -2284,6 +2284,7 @@ body {
 .enhance-navigation-container li {
     -ms-flex-align: center;
     -webkit-box-align: center;
+    -webkit-transition: background-color 150ms ease;
     align-items: center;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -2291,6 +2292,7 @@ body {
     height: 100%;
     margin: 0 10px;
     padding: 0 20px;
+    transition: background-color 150ms ease;
     /* outline: solid 1px blue; */
 }
 
