@@ -36,7 +36,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "95%";
         enhanceNavigationContainer.style.top = "103px";
-        enhanceNavigationScrollPoint.style.paddingTop = "65px";
+        enhanceNavigationScrollPoint.style.paddingTop = "60px";
     } else if (
         document.documentElement.scrollTop > 455 &&
         window.innerWidth < 700 &&
@@ -45,15 +45,15 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "92px";
-        enhanceNavigationScrollPoint.style.paddingTop = "65px";
+        enhanceNavigationScrollPoint.style.paddingTop = "60px";
     } else if (
-        document.documentElement.scrollTop > 380 &&
+        document.documentElement.scrollTop > 375 &&
         window.innerWidth < 500
     ) {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "100%";
         enhanceNavigationContainer.style.top = "109px";
-        enhanceNavigationScrollPoint.style.paddingTop = "65px";
+        enhanceNavigationScrollPoint.style.paddingTop = "60px";
     } else {
         enhanceNavigationContainer.style.position = "relative";
         enhanceNavigationContainer.style.width = "100%";
