@@ -43,11 +43,11 @@
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
-            to(rgba(0, 0, 0, 0.9))
+            from(rgba(0, 0, 0, 0.6)),
+            to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/about-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/about-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -95,8 +95,8 @@
     -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     border-radius: 50%;
-    border: solid 1px #000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* border: solid 1px #000; */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     height: 150px;
     padding: 5px;
     position: absolute;
@@ -2173,11 +2173,11 @@ body {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
-            to(rgba(0, 0, 0, 0.9))
+            from(rgba(0, 0, 0, 0.6)),
+            to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/enhance-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/enhance-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -2895,6 +2895,10 @@ html {
     position: absolute;
 }
 
+.light-grey-text {
+    color: #c0c0c0;
+}
+
 .links-container {
     -ms-flex-direction: row;
     -ms-flex-pack: distribute;
@@ -3031,7 +3035,7 @@ html {
 }
 
 .page-hero h2 {
-    color: #b5b2b4;
+    color: #c0c0c0;
     font-size: 38px;
     text-align: center;
 }
@@ -3343,15 +3347,21 @@ html {
     display: block;
 }
 
+.registered-user-profile span:first-of-type {
+    margin-top: 10px;
+}
+
 .registered-user-profile-picture {
     -ms-flex-align: center;
     -ms-flex-pack: center;
     -webkit-box-align: center;
     -webkit-box-pack: center;
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     align-items: center;
     background-color: #fff;
     border-radius: 50%;
-    border: solid 1px #000;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    /* border: solid 1px #000; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -3434,11 +3444,11 @@ html {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
-            to(rgba(0, 0, 0, 0.9))
+            from(rgba(0, 0, 0, 0.6)),
+            to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/rewards-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/rewards-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -3835,11 +3845,11 @@ html {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.5)),
-            to(rgba(0, 0, 0, 0.9))
+            from(rgba(0, 0, 0, 0.6)),
+            to(rgba(0, 0, 0, 1))
         ),
         url("../img/navigation-pages/support-banner.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/support-banner.jpg");
     background-position: center;
     background-size: cover;
@@ -4985,6 +4995,10 @@ html {
         width: 400px;
     }
 
+    .support-text a {
+        font-size: 16px;
+    }
+
     .up-arrow {
         font-size: 40px;
     }
@@ -6034,9 +6048,9 @@ html {
         width: 300px;
     }
 
-    .support-text a {
-        font-size: 18px;
-    }
+    /* .support-text a {
+        font-size: 16px;
+    } */
 
     .support-text a:hover {
         color: #808080;

@@ -7,8 +7,8 @@
         <p>
             <a href={{ route('deals.index') }} class="page-hero-logo">
                 <span>
-                    Y<span class="grey-text">our</span>S<span class="grey-text">ocial</span>O<span
-                        class="grey-text">ffers</span><span class="red-background">.com</span>
+                    Y<span class="light-grey-text">our</span>S<span class="light-grey-text">ocial</span>O<span
+                        class="light-grey-text">ffers</span><span class="red-background">.com</span>
                 </span>
             </a> re-defines the way social media can be used to create growth potential and capitalize on the social
             media billion-dollar marketplace.
