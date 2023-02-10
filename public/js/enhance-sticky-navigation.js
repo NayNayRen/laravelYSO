@@ -18,7 +18,7 @@ function stickContainer() {
         enhanceNavigationContainer.style.position = "fixed";
         enhanceNavigationContainer.style.width = "85%";
         enhanceNavigationContainer.style.top = "103px";
-        enhanceNavigationScrollPoint.style.paddingTop = "70px";
+        enhanceNavigationScrollPoint.style.paddingTop = "65px";
     } else if (
         document.documentElement.scrollTop > 450 &&
         window.innerWidth < 1300 &&

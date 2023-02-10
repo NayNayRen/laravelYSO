@@ -2299,7 +2299,7 @@ body {
 .enhance-navigation-container a {
     -webkit-transition: color 150ms ease;
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
     height: 100%;
     text-decoration: none;
     transition: color 150ms ease;
@@ -4893,7 +4893,7 @@ html {
     }
 
     .enhance-navigation-container a {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .filter-container form {
@@ -5754,6 +5754,8 @@ html {
     .enhance-navigation-container li {
         margin: 0;
         padding: 0 10px;
+        width: 100%;
+        /* outline: solid 1px blue; */
     }
 
     .enhance-navigation-container a:hover {
@@ -6359,7 +6361,7 @@ html {
     }
 
     .enhance-navigation-container a {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .enhance-text h1,
