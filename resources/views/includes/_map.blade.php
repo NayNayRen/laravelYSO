@@ -14,8 +14,10 @@
     {{-- CLEARS MARKERS FROM MAP --}}
     <span class="clear-map-button">Clear</span>
     @include('includes._map_message')
+    {{-- DISTANCE SELECTION DROPDOWN --}}
     <div class="map-search-distance-container">
         <div>
+            {{-- DEFAULT DISTANCE --}}
             <span type='button' class="map-search-distance-button">
                 15 miles</span>
             <span type='button' class="map-distance-go-button">Go
@@ -23,6 +25,7 @@
             <span class="map-search-distance-arrow">
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
             </span>
+            {{-- DISTANCE SELECTIONS --}}
             <ul class="map-search-distance-dropdown">
                 <li class="map-search-distance-selection" value="25">
                     25 miles</li>
@@ -39,6 +42,7 @@
             </ul>
         </div>
     </div>
+    {{-- IF THERES NO LOCATIONS TO SHOW THERES NO DETAILS --}}
     @if ($locations->count() < 1)
         <div class="map-location-list-container">
             <div>
@@ -57,6 +61,7 @@
             </div>
         </div>
     @else
+        {{-- IF THERE IS LOCATIONS THEN SHOW DETAILS --}}
         <div class="map-location-list-container">
             <div>
                 <ul id="map-location-favorite-icon-container" class="map-location-list">
@@ -80,6 +85,7 @@
                                 @endif
                                 {{--  --}}
                             </span>
+                            {{-- LOCATION ADDRESS --}}
                             <span class="map-location-address">{{ $location->location }}<i class="fa fa-map-marker"
                                     aria-hidden="true"></i></span>
                         </li>
@@ -87,6 +93,7 @@
                 </ul>
             </div>
             <div>
+                {{-- HIDE/SHOW LOCATIONS LIST --}}
                 <span class="map-location-list-button" aria-label="Show locations list."><i class="fa fa-list-ul"
                         aria-hidden="true"></i>
                 </span>

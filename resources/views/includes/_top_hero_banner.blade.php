@@ -1,3 +1,4 @@
+{{-- TOP HERO BANNER USED ON MAIN INDEX, SEARCH, LOCATION AND ALL CATEGORY PAGES --}}
 <div class="banner-slide-container">
     {{-- SLIDE 1 --}}
     {{-- <div class="banner-slide">

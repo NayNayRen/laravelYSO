@@ -1,3 +1,5 @@
+{{-- EXTRA HERO SLIDES NO LONGER USED --}}
+{{-- LABELED BY CATEGORY, COPY/PASTE TO ADD --}}
 {{-- AUTO --}}
 {{-- SLIDE 1 --}}
 <div class="banner-slide">

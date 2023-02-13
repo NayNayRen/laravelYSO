@@ -1,4 +1,4 @@
-{{-- HIDDEN GUEST ERROR MESSAGE --}}
+{{-- HIDDEN GUEST NOTIFICATION MESSAGE --}}
 <div class="guest-error-message">
     <div class="guest-error-content">
         <h2>You're Visiting As A Guest</h2>

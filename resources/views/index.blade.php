@@ -63,10 +63,8 @@
             </form>
         </div>
     </div>
-    {{--  --}}
     {{-- CASHBACK CONTAINER --}}
     {{-- @include('includes._cashback_slides') --}}
-    {{--  --}}
     <div>
     </div>
     {{-- FEATURED CONTAINER USING DEALS DATA --}}

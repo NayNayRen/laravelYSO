@@ -1,3 +1,4 @@
+{{-- ALTERNATE CARD IS USED ON VIEW ALL, DASHBOARD, SEARCH AND LOCATION PAGES --}}
 <div>
     <div class="card-logo-container">
         <img src="{{ $deal->picture_url }}" class="card-logo" alt="{{ $deal->name }}">
@@ -6,6 +7,7 @@
     <div class="card-name">{{ $deal->name }}</div>
 </div>
 <div>
+    {{-- EPIRATIONS AND LIMITATIONS --}}
     <div class="card-rules">
         <span aria-label="Deal expiration date.">Expiration <i class="fa fa-clock-o" aria-hidden="true"></i> :
             @if ($deal->expiration === null)
@@ -33,6 +35,7 @@
             @php
                 $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
             @endphp
+            {{-- IF NO DEAL LOCATION --}}
             @if ($dealLocation === null)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
@@ -43,6 +46,7 @@
                 @php
                     $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
                 @endphp
+                {{-- IF NO DEAL ADDRESS --}}
                 @if ($locationAddress->lat === null)
                     <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span>
@@ -50,6 +54,7 @@
                     <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span>
                 @else
+                    {{-- IF DEAL HAS A LOCATION --}}
                     <form action={{ route('locations.show', $dealLocation->lid) }} method="GET">
                         <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
                             aria-label="View this deal's location." value="map" name="submit">Location <i
@@ -60,11 +65,13 @@
             @endif
         </div>
         <div class="views-likes-icons">
+            {{-- SHOW USERS SOCIAL LINKS --}}
             @if (auth()->user())
                 <span class='share-deal user' aria-label="Share this item." name="{{ $deal->name }}">
                     <i class="fa fa-share" aria-hidden=" false"></i>
                 </span>
             @else
+                {{-- SHOW GUEST MESSAGE --}}
                 <span class='share-deal guest' aria-label="Share this item.">
                     <i class="fa fa-share" aria-hidden=" false"></i>
                 </span>
@@ -78,12 +85,14 @@
                     $check = null;
                 }
             @endphp
+            {{-- IF LOGGED IN, HIGHLIGHT IF A FAVORITE --}}
             @if ($check != null)
                 <span class='favorite-button' aria-label="Favorite this item.">
                     <i class="fa fa-star add-favorite favorite" id="{{ $deal->id }}" name="{{ $deal->name }}"
                         aria-hidden="false"></i>
                 </span>
             @else
+                {{-- IF NOT A FAVORITE DONT HIGHLIGHT --}}
                 <span class='favorite-button' aria-label="Favorite this item.">
                     <i class="fa fa-star add-favorite" id="{{ $deal->id }}" name="{{ $deal->name }}"
                         aria-hidden="false"></i>

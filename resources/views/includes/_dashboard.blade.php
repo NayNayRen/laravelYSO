@@ -1,3 +1,4 @@
+{{-- DASHBOARD COMPONENT --}}
 <div id='dashboard' class="dashboard">
     <div class="dashboard-content">
         <span id="dashboard-close-button" class="dashboard-close-button">Close
@@ -6,9 +7,9 @@
             title="User Details"><i class="fa fa-ellipsis-h" aria-hidden="false"></i>
         </span>
         @auth
+            {{-- IF LOGGED IN, SHOW USER DETAILS --}}
             <div class="dashboard-user-container">
                 <div class="dashboard-user-container-sections">
-
                     <h3>User Preferences</h3>
                     <div class="registered-user-profile">
                         <img src="{{ asset('img/male-profile.png') }}" class="registered-user-profile-picture"
@@ -32,12 +33,13 @@
                             aria-label="Update User Info"><i class=" fa fa-cog" aria-hidden="false"></i>
                         </button>
                     </form>
-                    {{-- <span>Use the cog to update your details.</span> --}}
                 </div>
+                {{-- YSO LOGO --}}
                 <div class="dashboard-user-container-sections">
                     <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
                 </div>
             </div>
+            {{-- EACH DEALS CONTAINER --}}
             <div id="dashboard-right-container" class="dashboard-right-container">
                 <ul class="c-list wrapper al-center">
                     <li class="c-list__item">
@@ -193,6 +195,7 @@
                 </div>
             </div>
         @else
+            {{-- IF NOT LOGGED IN, GUEST DISPLAY --}}
             <div class="dashboard-user-container">
                 <div class="dashboard-user-container-sections">
                     <h3>User Preferences</h3>
@@ -217,6 +220,7 @@
                     <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
                 </div>
             </div>
+            {{-- GUEST NOTIFICATION --}}
             <div class="dashboard-right-container">
                 <h4 class="mb-3">You're visiting as a guest.</h4>
                 <h5 class="mb-3">Please head over to <a href={{ route('user.create') }}>Register</a>

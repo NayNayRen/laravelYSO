@@ -1,3 +1,5 @@
+{{-- TO USE --}}
+{{-- UNCOMMENT ON INDEX PAGE AND UNCOMMEMT SCRIPT FILE TOO --}}
 <div class="container">
     <div class="container-left">
         <span class="category-heading">Cashback</span>

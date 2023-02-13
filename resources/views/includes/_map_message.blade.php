@@ -1,7 +1,7 @@
+{{-- MAP MESSAGE IF THERES NO LOCATIONS TO SHOW --}}
 <div class="map-message">
     <div class="map-message-button-container">
-        <span class="map-message-close" aria-label="Close Message Window"><i class="fa fa-times"
-                aria-hidden="false"></i>
+        <span class="map-message-close" aria-label="Close Message Window"><i class="fa fa-times" aria-hidden="false"></i>
         </span>
     </div>
     <h4 class="map-message-header">Oh no...</h4>
