@@ -67,7 +67,7 @@ class CouponController extends Controller
                         $nxt =  Carbon::createFromFormat('Y-m-d H:i:s', $new->created_at);
                         $route = route('deals.show', $deal->id);
                         $recipient = '+1' . str_replace('-', '', $request->phone);
-                        $message_to_send = "Coupon Details\n" . $deal->name . "\nClick the link below to find details\n" . $route . "\nCoupon will expire after 24 Hours at :\n" . $nxt;
+                        $message_to_send = "Coupon Details\n" . $deal->name . "\nClick the link below :\n" . $route . "\nCoupon will expire after 24 Hours at :\n" . $nxt;
 
                         $this->sendSms($recipient, $message_to_send);
 
