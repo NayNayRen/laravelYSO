@@ -13,56 +13,6 @@
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
-            {{-- <div class="banner-slide">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>free round</span>
-                    <span class='banner-text-two'>for you & a guest after initial purchase.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-                <div class="banner-container-image banner-image-fun-1">
-                </div>
-                <img class="banner-logo" src="{{ asset('img/fun/congo-logo.png') }}" alt="Congo River Company Logo">
-            </div> --}}
-            {{-- SLIDE 2 --}}
-            {{-- <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/fun/amc-logo2.png') }}" alt="AMC Company Logo">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-image banner-image-fun-2">
-                </div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>on demand</span>
-                    <span class='banner-text-two'>with 20% lower rates.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-            </div> --}}
-            {{-- SLIDE 3 --}}
-            {{-- <div class="banner-slide">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>lower</span>
-                    <span class='banner-text-two'>rates with groups of 4 or more.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-                <div class="banner-container-image banner-image-fun-3">
-                </div>
-                <img class="banner-logo" src="{{ asset('img/fun/top-golf-banner-logo.png') }}"
-                    alt="Top Golf Company Logo">
-            </div> --}}
-            {{-- SLIDE 4 --}}
-            {{-- <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/fun/adventure-island-logo2.png') }}"
-                    alt="Adventure Island Company Logo">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-image banner-image-fun-4">
-                </div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>free admission</span>
-                    <span class='banner-text-two'>for florida residents.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-            </div> --}}
-            {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/food/bk-banner-logo.png') }}"
                     alt="Burger King Company Logo">
@@ -77,7 +27,7 @@
                         Now!</a>
                 </div>
             </div>
-            {{-- SLIDE 3 --}}
+            {{-- SLIDE 2 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
@@ -92,7 +42,7 @@
                 <img class="banner-logo" src="{{ asset('img/food/mcdonalds-banner-logo.png') }}"
                     alt="McDonalds Company Logo">
             </div>
-            {{-- SLIDE 4 --}}
+            {{-- SLIDE 3 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Adidas Company Logo">

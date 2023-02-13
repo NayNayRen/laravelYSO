@@ -13,59 +13,6 @@
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
-            {{-- <div class="banner-slide">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>Join!!!</span>
-                    <span class='banner-text-two'>Pizza Hut Rewards Now</span>
-                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37002" class="banner-redemption"
-                        target="_blank">Get Deal Now!</a>
-                </div>
-                <div class="banner-container-image banner-image-food-1">
-                </div>
-                <img class="banner-logo" src="{{ asset('img/food/pizza-hut-banner-logo.png') }}"
-                    alt="Pizza Hut Company Logo">
-            </div> --}}
-            {{-- SLIDE 2 --}}
-            {{-- <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/food/hooters-banner-logo.png') }}"
-                    alt="Hooters Company Logo">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-image banner-image-food-2">
-                </div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>buy 10!!!</span>
-                    <span class='banner-text-two'>get 10, bone or boneless.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-            </div> --}}
-            {{-- SLIDE 3 --}}
-            {{-- <div class="banner-slide">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>15% Off</span>
-                    <span class='banner-text-two'>Any Footlong Sandwich</span>
-                    <a href="https://yoursocialoffers.com/showOffer.php?coupon=37102" class="banner-redemption"
-                        target="_blank">Get Deal Now!</a>
-                </div>
-                <div class="banner-container-image banner-image-food-3">
-                </div>
-                <img class="banner-logo" src="{{ asset('img/food/subway-logo2.png') }}" alt="Subway Company Logo">
-            </div> --}}
-            {{-- SLIDE 4 --}}
-            {{-- <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/food/checkers-banner-logo.png') }}"
-                    alt="Checkers Company Logo">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-image banner-image-food-4">
-                </div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>2 for $5</span>
-                    <span class='banner-text-two'>mix from a limited menu.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-            </div> --}}
-            {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/food/bk-banner-logo.png') }}"
                     alt="Burger King Company Logo">
@@ -80,7 +27,7 @@
                         Now!</a>
                 </div>
             </div>
-            {{-- SLIDE 3 --}}
+            {{-- SLIDE 2 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
@@ -95,7 +42,7 @@
                 <img class="banner-logo" src="{{ asset('img/food/mcdonalds-banner-logo.png') }}"
                     alt="McDonalds Company Logo">
             </div>
-            {{-- SLIDE 4 --}}
+            {{-- SLIDE 3 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Adidas Company Logo">

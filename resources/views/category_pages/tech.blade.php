@@ -13,56 +13,6 @@
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
-            {{-- <div class="banner-slide">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>early deal</span>
-                    <span class='banner-text-two'>notices when you join our mailing list.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-                <div class="banner-container-image banner-image-tech-1">
-                </div>
-                <img class="banner-logo" src="{{ asset('img/tech/micro-center-banner-logo.png') }}"
-                    alt="Micro Center Company Logo">
-            </div> --}}
-            {{-- SLIDE 2 --}}
-            {{-- <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/tech/newegg-logo2.png') }}" alt="Newegg Company Logo">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-image banner-image-tech-2">
-                </div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>free shipping!!!</span>
-                    <span class='banner-text-two'>on orders of $75 or more.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-            </div> --}}
-            {{-- SLIDE 3 --}}
-            {{-- <div class="banner-slide">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>20% off</span>
-                    <span class='banner-text-two'>first use of geek squad.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-                <div class="banner-container-image banner-image-tech-3">
-                </div>
-                <img class="banner-logo" src="{{ asset('img/tech/best-buy-logo.png') }}" alt="Best Buy Company Logo">
-            </div> --}}
-            {{-- SLIDE 4 --}}
-            {{-- <div class="banner-slide even">
-                <img class="banner-logo" src="{{ asset('img/tech/apple-store-logo2.png') }}"
-                    alt="Apple Store Company Logo">
-                <div class="banner-gradient"></div>
-                <div class="banner-container-image banner-image-tech-4">
-                </div>
-                <div class="banner-container-text">
-                    <span class='banner-text-one'>discounted</span>
-                    <span class='banner-text-two'>rates with in store repairs.</span>
-                    <a href="#" class="banner-redemption">Get Deal Now!</a>
-                </div>
-            </div> --}}
-            {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/food/bk-banner-logo.png') }}"
                     alt="Burger King Company Logo">
@@ -77,7 +27,7 @@
                         Now!</a>
                 </div>
             </div>
-            {{-- SLIDE 3 --}}
+            {{-- SLIDE 2 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
@@ -92,7 +42,7 @@
                 <img class="banner-logo" src="{{ asset('img/food/mcdonalds-banner-logo.png') }}"
                     alt="McDonalds Company Logo">
             </div>
-            {{-- SLIDE 4 --}}
+            {{-- SLIDE 3 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Adidas Company Logo">
