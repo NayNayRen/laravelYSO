@@ -13,6 +13,21 @@
     <div class="banner">
         <div class="banner-slide-container">
             {{-- SLIDE 1 --}}
+            {{-- <div class="banner-slide">
+                <div class="banner-gradient"></div>
+                <div class="banner-container-text">
+                    <span class='banner-text-one'>
+                        <img src="{{ asset('img/fashion/fantastic-sams-logo.png') }}"
+                            alt="Fantastic Sams Company Logo"></span>
+                    <span class='banner-text-two'>$10 gift card.</span>
+                    <a href="#" class="banner-redemption">Get Deal Now!</a>
+                </div>
+                <div class="banner-container-image banner-image-main-1">
+                </div>
+                <img class="banner-logo" src="{{ asset('img/fashion/fantastic-sams-banner-logo.png') }}"
+                    alt="Fantastic Sams Company Logo">
+            </div> --}}
+            {{-- SLIDE 2 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/food/bk-banner-logo.png') }}"
                     alt="Burger King Company Logo">
@@ -27,7 +42,7 @@
                         Now!</a>
                 </div>
             </div>
-            {{-- SLIDE 2 --}}
+            {{-- SLIDE 3 --}}
             <div class="banner-slide">
                 <div class="banner-gradient"></div>
                 <div class="banner-container-text">
@@ -42,7 +57,7 @@
                 <img class="banner-logo" src="{{ asset('img/food/mcdonalds-banner-logo.png') }}"
                     alt="McDonalds Company Logo">
             </div>
-            {{-- SLIDE 3 --}}
+            {{-- SLIDE 4 --}}
             <div class="banner-slide even">
                 <img class="banner-logo left" src="{{ asset('img/fashion/adidas-banner-logo.png') }}"
                     alt="Adidas Company Logo">
