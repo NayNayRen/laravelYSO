@@ -103,7 +103,7 @@
                         </span>
                     </div>
                     <div>
-                        <span class="users-form-disclaimer grey-text">By continuing below, you will deleting your
+                        <span class="users-form-disclaimer grey-text">By continuing below, you will be deleting your
                             account. All user details will be removed.
                             To do
                             so, provide your current email as confirmation of intent, then click Delete.</span>
