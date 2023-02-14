@@ -67,7 +67,7 @@
     {{-- @include('includes._cashback_slides') --}}
     <div>
     </div>
-    {{-- FEATURED CONTAINER USING DEALS DATA --}}
+    {{-- FEATURED CONTAINER --}}
     <div class="container">
         <div class="container-left">
             <span class="category-heading">Featured</span>
