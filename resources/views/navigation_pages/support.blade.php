@@ -21,13 +21,13 @@
                 <h1>Business Support</h1>
                 <h3>We are here to help you build your personalized campaigns, social media endevours, and marketing
                     ideas.</h3>
-                <a href="mailto: Support@YourSocialOffers.com" aria-label="Support Email"><i class="fa fa-envelope-o"
+                <a href="mailto: Support@YourSocialOffers.com" aria-label="Support Email"><i class="fa fa-envelope"
                         aria-hidden="true"></i>
                     Support@YourSocialOffers.com
                 </a>
                 <p>Regardless of your social media marketing needs, we can help. Users and merchants alike can call us
                     for
-                    assistance with any of our products. </p>
+                    assistance with any of our products.</p>
             </div>
         </div>
         {{-- USER SUPPORT BLOCK --}}
@@ -35,13 +35,13 @@
             <div class="support-text">
                 <h1>User Support</h1>
                 <h3>Our friendly support staff is standing by to assist you with any of your needs.</h3>
-                <a href="mailto: Support@YourSocialOffers.com" aria-label="Support Email"><i class="fa fa-envelope-o"
+                <a href="mailto: Support@YourSocialOffers.com" aria-label="Support Email"><i class="fa fa-envelope"
                         aria-hidden="true"></i>
                     Support@YourSocialOffers.com
                 </a>
                 <p>We are available by email and by phone for any questions or concerns regarding any issues faced while
                     using our application. Let us guide you through the process of setting up a personalized social
-                    media marketing campaign, or redeeming rewards. </p>
+                    media marketing campaign, or redeeming rewards.</p>
             </div>
             <div class="support-image">
                 <img src="{{ asset('img/navigation-pages/support-photo-1.jpg') }}" alt="Support Photo">
