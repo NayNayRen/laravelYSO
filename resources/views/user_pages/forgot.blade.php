@@ -28,7 +28,7 @@
             <input type="button" id="get_otp" class='users-buttons submit' value="Get OTP"></input>
             {{-- VARIFICATION CODE --}}
             <div class="users-form-group password-signin">
-                <label for="verification_code">Verification Code</label>
+                <label for="verification_code">Password Code</label>
                 <input type="tel" name="verification_code" id="password" pattern="[0-9]{6}"
                     placeholder="Enter 6 Digit Code">
                 @error('verification_code')

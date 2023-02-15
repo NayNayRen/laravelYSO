@@ -83,7 +83,7 @@
                 <button id="unregistered-share-deal-button" class="selected-deal-share-fav-button share-deal"><i
                         class="fa fa-share" aria-hidden="true"></i>Share</button>
                 <button id="unregistered-favorite-deal-button " class="selected-deal-share-fav-button add-favorite"><i
-                        class="fa fa-star-o" aria-hidden="true"></i>Favorite</button>
+                        class="fa fa-star" aria-hidden="true"></i>Favorite</button>
             </div>
         </div>
     </div>

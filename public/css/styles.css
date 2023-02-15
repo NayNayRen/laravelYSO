@@ -2984,7 +2984,7 @@ html {
 }
 
 .message-button {
-    -webkit-transition: background-color 150ms ease;
+    -webkit-transition: color 150ms ease;
     background-color: #e6331f;
     border-radius: 5px;
     border: none;
@@ -2992,12 +2992,12 @@ html {
     font-size: 18px;
     margin: 10px 0;
     padding: 10px 5px;
-    transition: background-color 150ms ease;
+    transition: color 150ms ease;
     width: 90%;
 }
 
 .message-button:hover {
-    background-color: #000;
+    color: #000;
     cursor: pointer;
 }
 
@@ -4179,7 +4179,7 @@ html {
 .users-deletion-warning div:first-of-type i {
     color: #ff8c00;
     font-size: 20px;
-    text-shadow: 0 0 1px #000;
+    text-shadow: 0 1px 0 #000;
 }
 
 .users-form-greeting {
@@ -5458,9 +5458,9 @@ html {
         top: -140px;
     }
 
-    /* .card {
-        width: 275px;
-    } */
+    .card {
+        height: 360px;
+    }
 
     .card-discount {
         font-size: 14px;
@@ -6281,7 +6281,7 @@ html {
     }
 
     .card {
-        height: 370px;
+        /* height: 370px; */
         margin: 2px;
     }
 
