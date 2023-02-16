@@ -75,9 +75,11 @@ function secondaryNavActions() {
                     link.style.backgroundColor = "transparent";
                 }
             });
-            heading.firstElementChild.style.color = "#e6331f";
+            // heading.firstElementChild.style.color = "#e6331f";
+            heading.firstElementChild.classList.add("enhance-text-change");
         } else {
-            heading.firstElementChild.style.color = "#000";
+            // heading.firstElementChild.style.color = "#000";
+            heading.firstElementChild.classList.remove("enhance-text-change");
         }
         if (topContainer.getBoundingClientRect().top > 115) {
             navigationLinks.forEach((link) => {

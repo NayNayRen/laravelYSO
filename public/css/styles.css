@@ -2247,6 +2247,7 @@ body {
 .rewards-top-banner h1 {
     color: #000;
     font-size: 35px;
+    font-weight: normal;
     margin: 0;
 }
 
@@ -2254,6 +2255,7 @@ body {
 .rewards-bottom-banner h2 {
     color: #fff;
     font-size: 30px;
+    font-weight: normal;
 }
 
 .enhance-navigation-container {
@@ -2264,10 +2266,10 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
-    /* -webkit-box-shadow: 0 1px 0 #000; */
+    -webkit-box-shadow: 0 2px 5px #333333;
     align-items: center;
     background-color: #a9a9a9;
-    /* box-shadow: 0 1px 0 #000; */
+    box-shadow: 0 2px 5px #333333;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -2317,6 +2319,7 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
+    color: #000;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -2348,6 +2351,11 @@ body {
     border-bottom: solid 1px #808080;
     font-size: 18px;
     padding: 0 0 5px 0;
+}
+
+.enhance-text-change {
+    color: #e6331f;
+    text-decoration: underline;
 }
 
 .favorite-added-message div,
@@ -3457,17 +3465,19 @@ html {
 .rewards-top-banner h2 {
     color: #d3d3d3;
     font-size: 30px;
+    font-weight: normal;
 }
 
 .rewards-top-banner h3 {
     color: #fff;
     font-size: 25px;
+    font-weight: normal;
     margin: 0;
 }
 
 .rewards-top-banner p {
     color: #000;
-    border-bottom: solid 1px #e6331f;
+    border-bottom: solid 1px #fff;
     font-size: 22px;
     margin-bottom: 5px;
     padding: 0 30px 5px 30px;
@@ -4535,7 +4545,7 @@ html {
     #campaigns,
     #gains,
     #values {
-        top: -70px;
+        top: -75px;
     }
 
     #loyalties {
@@ -4816,7 +4826,7 @@ html {
     }
 
     #loyalties {
-        top: -130px;
+        top: -135px;
     }
 
     .card {
@@ -5461,7 +5471,7 @@ html {
     #gains,
     #loyalties,
     #values {
-        top: -140px;
+        top: -145px;
     }
 
     .card {
@@ -6283,7 +6293,7 @@ html {
     #gains,
     #loyalties,
     #values {
-        top: -155px;
+        top: -160px;
     }
 
     .card {
