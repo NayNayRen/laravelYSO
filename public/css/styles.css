@@ -4589,6 +4589,12 @@ html {
         font-size: 22px;
     }
 
+    .enhance-text h1,
+    .rewards-text h1,
+    .support-text h1 {
+        font-size: 28px;
+    }
+
     .filter-search-container {
         -ms-flex-pack: distribute;
         justify-content: space-around;

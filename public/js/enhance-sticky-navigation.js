@@ -75,6 +75,9 @@ function secondaryNavActions() {
                     link.style.backgroundColor = "transparent";
                 }
             });
+            heading.firstElementChild.style.color = "#e6331f";
+        } else {
+            heading.firstElementChild.style.color = "#000";
         }
         if (topContainer.getBoundingClientRect().top > 115) {
             navigationLinks.forEach((link) => {
