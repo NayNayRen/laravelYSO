@@ -2355,7 +2355,7 @@ body {
 
 .enhance-text-change {
     color: #e6331f;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .favorite-added-message div,
