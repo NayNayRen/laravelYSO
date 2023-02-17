@@ -2955,7 +2955,7 @@ html {
 }
 
 .links-container li a:hover {
-    color: #e6331f;
+    /* color: #e6331f; */
     border-bottom: solid 1px #e6331f;
 }
 
@@ -5892,7 +5892,7 @@ html {
         -webkit-box-orient: vertical;
         -webkit-box-pack: start;
         -webkit-transform: translate(0, 0);
-        border-bottom: solid 2px #fff;
+        border-bottom: solid 2px #808080;
         flex-direction: column;
         justify-content: flex-start;
         left: 0;
@@ -6103,9 +6103,10 @@ html {
         width: 35px;
     }
 
-    /* .user-initials {
-        margin: 0 10px 0 10px;
-    } */
+    .user-initials {
+        height: 45px;
+        width: 45px;
+    }
 
     .user-initials-container {
         font-size: 20px;
