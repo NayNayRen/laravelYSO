@@ -63,12 +63,10 @@
                         ->first();
                 @endphp
                 @if ($check != null)
-                    {{-- id="registered-favorite-deal-button" --}}
                     <button class="selected-deal-share-fav-button add-favorite" id="{{ $deal['id'] }}"
                         name="{{ $deal['name'] }}"><i class="fa fa-star favorite2"
                             aria-hidden="true"></i>Favorite</button>
                 @else
-                    {{-- id="registered-favorite-deal-button" --}}
                     <button class="selected-deal-share-fav-button add-favorite" id="{{ $deal['id'] }}"
                         name="{{ $deal['name'] }}"><i class="fa fa-star" aria-hidden="true"></i>Favorite</button>
                 @endif

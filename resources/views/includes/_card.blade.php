@@ -17,12 +17,12 @@
             {{-- SHOW USERS SOCIAL LINKS --}}
             @if (auth()->user())
                 <span class='share-deal user' aria-label="Share this item." name="{{ $deal->name }}">
-                    <i class="fa fa-share" aria-hidden=" false"></i>
+                    <i class="fa fa-share" aria-hidden="false"></i>
                 </span>
             @else
                 {{-- SHOW GUEST MESSAGE --}}
                 <span class='share-deal guest' aria-label="Share this item.">
-                    <i class="fa fa-share" aria-hidden=" false"></i>
+                    <i class="fa fa-share" aria-hidden="false"></i>
                 </span>
             @endif
             @php
