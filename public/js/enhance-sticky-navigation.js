@@ -70,7 +70,7 @@ function secondaryNavActions() {
         if (headingDistanceFromTop < windowHeight * 0.5) {
             navigationLinks.forEach((link) => {
                 if (link.getAttribute("value") === heading.innerText) {
-                    link.style.backgroundColor = "#DCDCDC";
+                    link.style.backgroundColor = "#c0c0c0";
                 } else {
                     link.style.backgroundColor = "transparent";
                 }

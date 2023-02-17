@@ -2233,7 +2233,7 @@ body {
     -webkit-box-pack: center;
     align-items: center;
     /* background-color: #808080; */
-    background-color: rgba(128, 128, 128, 0.8);
+    background-color: #a9a9a9;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -2270,7 +2270,8 @@ body {
     -webkit-box-pack: center;
     -webkit-box-shadow: 0 2px 5px #333333;
     align-items: center;
-    background-color: #a9a9a9;
+    /* background-color: #a9a9a9; */
+    background-color: #d3d3d3;
     box-shadow: 0 2px 5px #333333;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -4312,12 +4313,6 @@ html {
     text-transform: capitalize;
     width: 800px;
 }
-
-/* .view-all-container-heading h3 {
-    font-size: 30px;
-    margin: 20px auto 30px auto;
-    text-align: center;
-} */
 
 .view-all-arrow-container .view-all-item-counter {
     -webkit-transform: translateX(-50%);
