@@ -2123,7 +2123,7 @@ body {
 
 .dashboard-user-container span:nth-of-type(odd) {
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding: 0 10px;
     position: relative;
@@ -3869,13 +3869,14 @@ html {
 }
 
 .support-text a {
-    color: #333333;
+    -webkit-transition: color 150ms ease;
+    color: #000;
     font-size: 20px;
     transition: color 150ms ease;
 }
 
 .support-text a:hover {
-    color: #000;
+    color: #808080;
 }
 
 .up-arrow {
@@ -5645,7 +5646,6 @@ html {
     }
 
     .dashboard-user-container span:nth-of-type(odd) {
-        /* font-size: 14px; */
         padding: 0 10px 0 0;
     }
 
@@ -6066,12 +6066,8 @@ html {
         width: 300px;
     }
 
-    /* .support-text a {
-        font-size: 16px;
-    } */
-
     .support-text a:hover {
-        color: #808080;
+        color: #000;
     }
 
     .up-arrow {
