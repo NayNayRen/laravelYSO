@@ -1953,8 +1953,7 @@ body {
 .dashboard {
     -webkit-box-shadow: 0 0 20px #000;
     -webkit-transition: opacity 250ms ease;
-    /* background-color: #808080; */
-    background-color: rgba(128, 128, 128, 0.8);
+    background-color: #808080;
     box-shadow: 0 0 20px #000;
     left: 0;
     min-height: 450px;
@@ -2054,8 +2053,7 @@ body {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     align-items: center;
-    /* background-color: #808080; */
-    background-color: rgba(128, 128, 128, 0.8);
+    background-color: #808080;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
