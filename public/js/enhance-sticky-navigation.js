@@ -69,21 +69,28 @@ function secondaryNavActions() {
         const headingDistanceFromTop = heading.getBoundingClientRect().top;
         if (headingDistanceFromTop < windowHeight * 0.5) {
             navigationLinks.forEach((link) => {
-                if (link.getAttribute("value") === heading.innerText) {
-                    link.style.backgroundColor = "#c0c0c0";
+                if (
+                    link.getAttribute("value") ===
+                    heading.firstElementChild.innerText
+                ) {
+                    link.classList.add("enhance-navigation-highlight");
                 } else {
-                    link.style.backgroundColor = "transparent";
+                    link.classList.remove("enhance-navigation-highlight");
                 }
             });
-            // heading.firstElementChild.style.color = "#e6331f";
-            heading.firstElementChild.classList.add("enhance-text-change");
+            heading.firstElementChild.classList.add(
+                "enhance-container-heading-text"
+            );
+            heading.firstElementChild.firstElementChild.style.width = "100%";
         } else {
-            // heading.firstElementChild.style.color = "#000";
-            heading.firstElementChild.classList.remove("enhance-text-change");
+            heading.firstElementChild.classList.remove(
+                "enhance-container-heading-text"
+            );
+            heading.firstElementChild.firstElementChild.style.width = "0";
         }
         if (topContainer.getBoundingClientRect().top > 115) {
             navigationLinks.forEach((link) => {
-                link.style.backgroundColor = "transparent";
+                link.classList.remove("enhance-navigation-highlight");
             });
         }
     });

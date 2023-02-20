@@ -2184,11 +2184,35 @@ body {
     background-size: cover;
 }
 
+.enhance-container-heading div {
+    -webkit-transition: color 500ms ease;
+    display: inline;
+    position: relative;
+    transition: color 500ms ease;
+    /* outline: solid 1px blue; */
+}
+
+.enhance-container-heading span {
+    -webkit-transition: width 500ms ease;
+    background-color: #e6331f;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    transition: width 500ms ease;
+    width: 0;
+}
+
+.enhance-container-heading-text {
+    -webkit-transition: color 500ms ease;
+    color: #e6331f;
+    transition: color 500ms ease;
+}
+
 .enhance-image,
 .rewards-image,
 .support-image {
     -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    /* border-radius: 50%; */
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     width: 100%;
     /* outline: solid 1px blue; */
@@ -2196,7 +2220,6 @@ body {
 .enhance-image img,
 .rewards-image img,
 .support-image img {
-    /* border-radius: 50%; */
     height: 100%;
     width: 100%;
 }
@@ -2305,6 +2328,7 @@ body {
     -webkit-transition: color 150ms ease;
     color: #000;
     font-size: 18px;
+    /* font-weight: bold; */
     height: 100%;
     text-decoration: none;
     transition: color 150ms ease;
@@ -2312,6 +2336,11 @@ body {
 
 .enhance-navigation-container a:hover {
     color: #808080;
+}
+
+.enhance-navigation-highlight {
+    background-color: #e6331f;
+    color: #fff;
 }
 
 .enhance-text,
@@ -2354,11 +2383,6 @@ body {
     border-bottom: solid 1px #808080;
     font-size: 18px;
     padding: 0 0 5px 0;
-}
-
-.enhance-text-change {
-    color: #e6331f;
-    /* text-decoration: underline; */
 }
 
 .favorite-added-message div,
