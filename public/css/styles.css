@@ -53,6 +53,20 @@
     background-size: cover;
 }
 
+.about-us-container {
+    position: relative;
+}
+
+.about-us-container-watermark {
+    -webkit-transform: translate(-50%, -50%);
+    left: 50%;
+    opacity: 0.05;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+}
+
 .about-us-personal-info {
     -ms-flex-direction: column;
     -ms-flex-pack: center;
@@ -4505,6 +4519,10 @@ html {
 }
 
 @media (max-width: 1300px) {
+    .about-us-container-watermark {
+        width: 500px;
+    }
+
     .about-us-personal-info p {
         width: 85%;
     }
@@ -5063,6 +5081,10 @@ html {
 }
 
 @media (max-width: 700px) {
+    .about-us-container-watermark {
+        width: 400px;
+    }
+
     .about-us-personal-info {
         height: auto;
     }
@@ -6239,6 +6261,10 @@ html {
 }
 
 @media (max-width: 400px) {
+    .about-us-container-watermark {
+        display: none;
+    }
+
     .about-us-personal-info h1 {
         font-size: 22px;
     }

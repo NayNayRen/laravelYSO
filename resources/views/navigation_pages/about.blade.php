@@ -21,6 +21,9 @@
     </div>
     {{-- MAIN CONTENT CONTAINER --}}
     <div class="about-us-container">
+        {{-- YSO WATERMARK --}}
+        <img class="about-us-container-watermark" src="{{ asset('img/yso-clipped-rw-outlined.png') }}"
+            alt="YSO Logo Watermark">
         {{-- VINCE BLOCK --}}
         <div class="about-us-personal-info">
             <h1>Vincent Risalvato</h1>
