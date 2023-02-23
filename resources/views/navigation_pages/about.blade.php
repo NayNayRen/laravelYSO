@@ -29,7 +29,8 @@
             <h1>Vincent Risalvato</h1>
             <h2>Chief Technology Officer</h2>
             <p>Mr. Risalvato is a Computer Scientist and entrepreneur. He has created and sold companies worth more than
-                20 million dollars. Mr. Risalvato's designs have shipped internationally. He has been accepted by the
+                20 million dollars. Mr. Risalvato's designs have also shipped internationally. He has been accepted by
+                the
                 courts as an expert in the field of computer science and his testimony has been relied upon to determine
                 the outcome of billion dollar cases.
             </p>
