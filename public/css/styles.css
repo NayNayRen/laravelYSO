@@ -4922,6 +4922,10 @@ html {
         top: 75px;
     }
 
+    .dashboard-user-container span:nth-of-type(odd) {
+        font-size: 18px;
+    }
+
     .enhance-image,
     .rewards-image {
         margin-top: 15px;
@@ -6378,6 +6382,10 @@ html {
     .dashboard,
     .dashboard-content {
         min-height: 375px;
+    }
+
+    .dashboard-user-container span:nth-of-type(odd) {
+        font-size: 16px;
     }
 
     /* .dashboard-right-container .container-arrow-left {

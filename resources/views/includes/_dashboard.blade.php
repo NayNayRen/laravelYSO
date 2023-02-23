@@ -107,10 +107,10 @@
                             </div>
                         @endif
                     @else
-                        <div class="dashboard-right-container">
-                            <h4 class="mb-3">My Favorites</h4>
-                            <h5 class="mb-3">No items in my Favorites list.</h5>
-                        </div>
+                        {{-- <div class="dashboard-right-container"> --}}
+                        <h4 class="mb-3">My Favorites</h4>
+                        <h5 class="mb-3">No items in my Favorites list.</h5>
+                        {{-- </div> --}}
                     @endif
                 </div>
                 {{-- USER COUPONS --}}
@@ -147,10 +147,10 @@
                             </div>
                         @endif
                     @else
-                        <div class="dashboard-right-container">
-                            <h4 class="mb-3">My Coupons</h4>
-                            <h5 class="mb-3">No items in my Coupons list.</h5>
-                        </div>
+                        {{-- <div class="dashboard-right-container"> --}}
+                        <h4 class="mb-3">My Coupons</h4>
+                        <h5 class="mb-3">No items in my Coupons list.</h5>
+                        {{-- </div> --}}
                     @endif
                 </div>
                 {{-- USER REDEEMABLES --}}
@@ -187,10 +187,10 @@
                             </div>
                         @endif
                     @else
-                        <div class="dashboard-right-container">
-                            <h4 class="mb-3">My Redeemed Coupons</h4>
-                            <h5 class="mb-3">No items in my Redeemed list.</h5>
-                        </div>
+                        {{-- <div class="dashboard-right-container"> --}}
+                        <h4 class="mb-3">My Redeemed Coupons</h4>
+                        <h5 class="mb-3">No items in my Redeemed list.</h5>
+                        {{-- </div> --}}
                     @endif
                 </div>
             </div>
