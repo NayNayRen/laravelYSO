@@ -1968,9 +1968,10 @@ body {
     -webkit-box-shadow: 0 0 20px #000;
     -webkit-transition: opacity 250ms ease;
     background-color: #808080;
+    /* background-color: #a9a9a9; */
     box-shadow: 0 0 20px #000;
     left: 0;
-    min-height: 450px;
+    min-height: 475px;
     opacity: 0;
     /* opacity: 1; */
     overflow-x: hidden;
@@ -2009,7 +2010,7 @@ body {
     display: -webkit-box;
     display: flex;
     flex-direction: row;
-    min-height: 450px;
+    min-height: 475px;
     position: relative;
     /* outline: solid 1px blue; */
 }
@@ -2174,6 +2175,7 @@ body {
     border: none;
     color: #fff;
     font-size: 25px;
+    text-shadow: 0 2px 5px #333333;
     transition: color 250ms ease;
 }
 
@@ -3662,6 +3664,7 @@ html {
 .search-results-message-container a {
     -webkit-transition: color 150ms ease;
     color: #e6331f;
+    text-decoration: underline;
     transition: color 150ms ease;
 }
 
@@ -3728,7 +3731,7 @@ html {
 .searched-words span {
     color: #e6331f;
     /* font-weight: bold; */
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .selected-deal-container {
@@ -4925,7 +4928,7 @@ html {
     .map,
     .map-content {
         /* min-height: 350px; */
-        min-height: 400px;
+        min-height: 425px;
     }
 
     .dashboard-right-container .container-arrow-left {
@@ -6360,7 +6363,7 @@ html {
     .container {
         padding: 0 0 10px 0;
     }
-    /* remove if switching back */
+
     .container ~ .container {
         padding: 0 0 0 0;
     }
@@ -6407,7 +6410,8 @@ html {
 
     .dashboard,
     .dashboard-content {
-        min-height: 375px;
+        /* min-height: 375px; */
+        min-height: 400px;
     }
 
     .dashboard-user-container span:nth-of-type(odd) {
@@ -6478,10 +6482,6 @@ html {
     .update-password-message p {
         padding: 35px 10px 5px 10px;
     }
-
-    /* .get-deal-button {
-        font-size: 14px;
-    } */
 
     .guest-error-content {
         min-height: 225px;

@@ -77,23 +77,23 @@
     @if (count($searchedWords) > 3)
         <div class="search-results-message-container">
             <h1>Too many terms were used. Limit your search to 3 words or less please.</h1>
-            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
+            <p>Return back <a href={{ route('deals.index') }}>home</a> to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>
         </div>
         {{-- if search was left empty --}}
     @elseif($searchedDeals === null)
         <div class="search-results-message-container">
-            <h1>You didn't use any terms, so we brought back all our locations.</h1>
-            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
+            <h1>You didn't use any terms, so we brought back all of the locations we have.</h1>
+            <p>Return back <a href={{ route('deals.index') }}>home</a> to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>
         </div>
         {{-- if search has no results --}}
     @elseif(count($searchedDeals) === 0)
         <div class="search-results-message-container">
-            <h1>Your search didn't return any results. You should keep looking though.</h1>
-            <p>Return back <a href={{ route('deals.index') }}> home</a> to browse...</p>
+            <h1>Your search didn't return any results.<br>You should keep looking though.</h1>
+            <p>Return back <a href={{ route('deals.index') }}>home</a> to browse...</p>
             <span>or...</span>
             <p>Continue your search above.</p>
         </div>
