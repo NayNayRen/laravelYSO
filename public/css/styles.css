@@ -60,7 +60,7 @@
 .about-us-container-watermark {
     -webkit-transform: translate(-50%, -50%);
     left: 50%;
-    opacity: 0.035;
+    opacity: 0.025;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
