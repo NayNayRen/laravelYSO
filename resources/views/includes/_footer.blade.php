@@ -72,7 +72,9 @@
                 <a href="https://www.otcmarkets.com/stock/PNNX/overview" target="_blank">PNNX</a></span>
         </div>
         <div class="footer-bottom-section-policy-terms">
-            <span>Privacy Policy</span><span>Terms of Use</span>
+            <a href="https://yoursocialoffers.com/privacy-policy.html" target="_blank">Privacy Policy</a>
+            <a href="https://yoursocialoffers.com/privacy-policy.html" target="_blank">Terms of
+                Use</a>
         </div>
     </div>
 </div>

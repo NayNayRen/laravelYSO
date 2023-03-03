@@ -2661,7 +2661,7 @@ body {
 }
 
 .footer-bottom-section-disclaimer a:hover,
-.footer-bottom-section-policy-terms span:hover {
+.footer-bottom-section-policy-terms a:hover {
     cursor: pointer;
     opacity: 0.75;
 }
@@ -2676,13 +2676,15 @@ body {
     flex-direction: row;
 }
 
-.footer-bottom-section-policy-terms span {
+.footer-bottom-section-policy-terms a {
     -webkit-transition: opacity 150ms ease;
+    color: #fff;
     font-size: 14px;
+    text-decoration: underline;
     transition: opacity 150ms ease;
 }
 
-.footer-bottom-section-policy-terms span:nth-child(2) {
+.footer-bottom-section-policy-terms a:nth-child(2) {
     margin-left: 45px;
 }
 
@@ -5888,7 +5890,7 @@ html {
     }
 
     .footer-bottom-section-disclaimer a:hover,
-    .footer-bottom-section-policy-terms span:hover {
+    .footer-bottom-section-policy-terms a:hover {
         opacity: 1;
     }
 
@@ -5897,11 +5899,11 @@ html {
         width: 100%;
     }
 
-    .footer-bottom-section-policy-terms span {
+    .footer-bottom-section-policy-terms a {
         padding: 0 10px;
     }
 
-    .footer-bottom-section-policy-terms span:nth-child(2) {
+    .footer-bottom-section-policy-terms a:nth-child(2) {
         margin-left: 0;
     }
 
