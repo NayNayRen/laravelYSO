@@ -2,7 +2,7 @@
 <div class="main">
     {{-- PAGE HERO/BANNER --}}
     <div class="page-hero rewards-background">
-        <h1>Rewards and Deals</h1>
+        <h1>Rewards & Deals</h1>
         <h2>For you, and those that matter to you.</h2>
         <div class="page-hero-button-container">
             <a href={{ route('support') }} class="page-hero-button">Learn
@@ -34,15 +34,13 @@
                 </div>
             </div>
             <div class="rewards-image">
-                <img src="{{ asset('img/navigation-pages/rewards-photo-2.jpg') }}"
-                    alt="Rewards Photo">
+                <img src="{{ asset('img/navigation-pages/rewards-photo-2.jpg') }}" alt="Rewards Photo">
             </div>
         </div>
         {{-- SECOND BLOCK --}}
         <div class="rewards-info">
             <div class="rewards-image">
-                <img src="{{ asset('img/navigation-pages/rewards-photo-1.jpg') }}"
-                    alt="Rewards Photo">
+                <img src="{{ asset('img/navigation-pages/rewards-photo-1.jpg') }}" alt="Rewards Photo">
             </div>
             <div class="rewards-text">
                 <h1>Nothing beats a qualified referral.</h1>

@@ -86,7 +86,7 @@
     <div class="main">
         {{-- PAGE HERO/BANNER --}}
         <div class="page-hero enhance-background">
-            <h1>Sales and Revenue</h1>
+            <h1>Sales & Revenue</h1>
             <h2>Get more of each with YSO.</h2>
             <div class="page-hero-button-container">
                 <a href="https://yourgrowthdashboard.com/" class="page-hero-button" target="_blank">Learn More</a>

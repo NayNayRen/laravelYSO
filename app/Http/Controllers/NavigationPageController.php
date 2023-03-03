@@ -7,23 +7,31 @@ use Illuminate\Http\Request;
 class NavigationPageController extends Controller
 {
     // routes to the header navigation pages
-    public function rewards(){
+    public function rewards()
+    {
         return view('navigation_pages/rewards', [
-        'pageTitle' => 'Rewards']);
+            'pageTitle' => 'Rewards & Deals'
+        ]);
     }
 
-    public function enhance(){
+    public function enhance()
+    {
         return view('navigation_pages/enhance', [
-        'pageTitle' => 'Enhance']);
+            'pageTitle' => 'Sales & Revenue'
+        ]);
     }
 
-    public function support(){
+    public function support()
+    {
         return view('navigation_pages/support', [
-        'pageTitle' => 'Support']);
+            'pageTitle' => 'Business Support'
+        ]);
     }
 
-    public function about(){
+    public function about()
+    {
         return view('navigation_pages/about', [
-        'pageTitle' => 'AboutYSO']);
+            'pageTitle' => 'About YSO'
+        ]);
     }
 }

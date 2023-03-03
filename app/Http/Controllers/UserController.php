@@ -43,7 +43,7 @@ class UserController extends Controller
         $formInputs['password'] = bcrypt($formInputs['password']);
         // create new user
         $user = User::create($formInputs);
-        return redirect(route('login.showVerifyForm', $user->id))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully registered. Choose a verification method to continue.');
+        return redirect(route('login.showVerifyForm', $user->id))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully registered.<br>Choose a verification method to continue.');
     }
 
     // SHOW THE LOG IN FORM
@@ -66,10 +66,10 @@ class UserController extends Controller
                 if (auth()->attempt($formInputs)) {
                     // generates a session token
                     $request->session()->regenerate();
-                    return redirect('/')->with('flash-message-user', 'Greetings ' . ucfirst(auth()->user()->firstName) . ', you are now logged in.');
+                    return redirect('/')->with('flash-message-user', '- Welcome ' . ucfirst(auth()->user()->firstName) . ' -' . '<br>You are now logged in.');
                 }
             } else {
-                return redirect(route('login.showVerifyForm', $check->id))->with('flash-message-user', 'Hello ' . ucfirst($check->firstName) . ', please verify with your Email or Phone to log in.');
+                return redirect(route('login.showVerifyForm', $check->id))->with('flash-message-user', '- Hello ' . ucfirst($check->firstName) . ' -' . '<br>Please verify with your Email or Phone to log in.');
             }
         }
         // don't specify if the email is correct or not for security reasons
@@ -132,7 +132,7 @@ class UserController extends Controller
             if ($user->email_code != null && $user->email_code == $request->verification_code) {
                 $user->email_verified = 1;
                 $user->save();
-                return redirect(route('login.showLoginForm'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your email. Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully verified your email.<br>Log in to continue.');
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
@@ -143,7 +143,7 @@ class UserController extends Controller
             if ($user->phone_code != null && $user->phone_code == $request->verification_code) {
                 $user->phone_verified = 1;
                 $user->save();
-                return redirect(route('login.showLoginForm'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully verified your phone. Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . 'You have successfully verified your phone.<br>Log in to continue.');
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
@@ -208,7 +208,7 @@ class UserController extends Controller
                 if ($request->password == $request->password_confirmation) {
                     $user->password = bcrypt($request->password);
                     $user->update();
-                    return redirect(route('login.showLoginForm'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully reset your password.');
+                    return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully reset your password.');
                 } else {
                     return back()->withErrors([
                         'password' => 'Passwords Do Not Match.',
@@ -289,7 +289,7 @@ class UserController extends Controller
         $formInputs['lastName'] = ucfirst($formInputs['lastName']);
         // update user
         $user->update($formInputs);
-        return redirect(route('deals.index'))->with('flash-message-user', 'Hello ' . ucfirst($user->firstName) . ', you have successfully updated your information.');
+        return redirect(route('deals.index'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully updated your information.');
     }
 
     // DELETE USER
