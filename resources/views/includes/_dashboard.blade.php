@@ -54,7 +54,7 @@
                     </li>
                     <li class="c-list__item">
                         <a link="#fav2" class="c-list__link">
-                            <h4>All Coupons</h4>
+                            <h4>Coupons</h4>
                             @if ($coupons === null)
                                 <div>0</div>
                             @else
@@ -188,7 +188,7 @@
                         @endif
                     @else
                         {{-- <div class="dashboard-right-container"> --}}
-                        <h4 class="mb-3">My Redeemed Coupons</h4>
+                        <h4 class="mb-3">My Redeemables</h4>
                         <h5 class="mb-3">No items in my Redeemed list.</h5>
                         {{-- </div> --}}
                     @endif

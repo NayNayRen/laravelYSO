@@ -43,7 +43,7 @@ class UserController extends Controller
         $formInputs['password'] = bcrypt($formInputs['password']);
         // create new user
         $user = User::create($formInputs);
-        return redirect(route('login.showVerifyForm', $user->id))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully registered.<br>Choose a verification method to continue.');
+        return redirect(route('login.showVerifyForm', $user->id))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully registered.<br>Verify your account to continue.');
     }
 
     // SHOW THE LOG IN FORM
@@ -132,7 +132,7 @@ class UserController extends Controller
             if ($user->email_code != null && $user->email_code == $request->verification_code) {
                 $user->email_verified = 1;
                 $user->save();
-                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully verified your email.<br>Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully verified your email. Log in to continue.');
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
@@ -143,7 +143,7 @@ class UserController extends Controller
             if ($user->phone_code != null && $user->phone_code == $request->verification_code) {
                 $user->phone_verified = 1;
                 $user->save();
-                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . 'You have successfully verified your phone.<br>Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . 'You have successfully verified your phone. Log in to continue.');
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
