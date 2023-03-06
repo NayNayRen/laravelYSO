@@ -314,7 +314,7 @@ class UserController extends Controller
         $request->session()->invalidate();
         // and regen their @csrf token
         $request->session()->regenerateToken();
-        return redirect('/')->with('flash-message-user', 'You have now logged out.');
+        return redirect('/')->with('flash-message-user', '- Goodbye -<br>You have now logged out.');
     }
 
 
