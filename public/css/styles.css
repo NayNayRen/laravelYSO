@@ -2680,7 +2680,7 @@ body {
     -webkit-transition: opacity 150ms ease;
     color: #fff;
     font-size: 14px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     transition: opacity 150ms ease;
 }
 
