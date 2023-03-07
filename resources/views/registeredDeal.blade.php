@@ -10,7 +10,7 @@
     <div class="coupon-message">
         <h2 class="coupon-heading"></h2>
         <p class="coupon-message-method"></p>
-        <p class="coupon-message-name">{{ $deal['name'] }}</p>
+        {{-- <p class="coupon-message-name">{{ $deal['name'] }}</p> --}}
         <button type="button" class="message-button coupon-button">OK</button>
         <a href={{ route('deals.index') }}>Show Me More Deals</a>
     </div>

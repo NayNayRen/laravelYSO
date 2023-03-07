@@ -1953,6 +1953,7 @@ body {
     color: #000;
     font-weight: bold;
     margin-bottom: 0;
+    /* text-align: center; */
 }
 
 .coupon-message p:last-of-type {
@@ -5682,8 +5683,13 @@ html {
         color: #000;
     }
 
-    .coupon-message p {
+    /* .coupon-message p {
         font-size: 18px;
+    } */
+
+    .coupon-message p:first-of-type {
+        font-size: 16px;
+        text-align: center;
     }
 
     /* .dashboard {
