@@ -73,7 +73,11 @@
                         $('.input-error-forgot').text('');
                         $('.users-form-group-error').css('display', 'none');
                         $('#get_otp').addClass('d-none');
-                        $('.otp-method').text(r);
+                        // $('.otp-method').text(r);
+                        $('.otp-method').html(
+                            `<h3>- Code Emailed To -</h3>
+                            <p>${email}</p>`
+                        );
                         setTimeout(() => {
                             if ($(window).width() > 400) {
                                 $('.otp-message').css('top', '150px');

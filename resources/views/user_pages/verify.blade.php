@@ -82,11 +82,16 @@
                 },
                 success: function(data) {
                     if (data['success']) {
+                        console.log(id);
                         var r = (data['success']);
                         $('.input-error-verify').text('');
                         $('.users-form-group-error').css('display', 'none');
                         $('#get_otp').addClass('d-none');
-                        $('.otp-method').text(r);
+                        // $('.otp-method').text(r);
+                        $('.otp-method').html(
+                            `<h3>- Code Sent To -</h3>
+                            <p>${id}</p>`
+                        );
                         setTimeout(() => {
                             if ($(window).width() > 400) {
                                 $('.otp-message').css('top', '150px');

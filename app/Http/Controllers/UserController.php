@@ -43,7 +43,11 @@ class UserController extends Controller
         $formInputs['password'] = bcrypt($formInputs['password']);
         // create new user
         $user = User::create($formInputs);
-        return redirect(route('login.showVerifyForm', $user->id))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully registered.<br>Verify your account to continue.');
+        return redirect(route('login.showVerifyForm', $user->id))->with(
+            'flash-message-user',
+            '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
+            <p>You have successfully registered. Verify your account to continue.</p>'
+        );
     }
 
     // SHOW THE LOG IN FORM
@@ -66,10 +70,18 @@ class UserController extends Controller
                 if (auth()->attempt($formInputs)) {
                     // generates a session token
                     $request->session()->regenerate();
-                    return redirect('/')->with('flash-message-user', '- Welcome ' . ucfirst(auth()->user()->firstName) . ' -' . '<br>You are now logged in.');
+                    return redirect('/')->with(
+                        'flash-message-user',
+                        '<h3>- Welcome ' . ucfirst(auth()->user()->firstName) . ' -</h3>
+                        <p>You are now logged in.</p>'
+                    );
                 }
             } else {
-                return redirect(route('login.showVerifyForm', $check->id))->with('flash-message-user', '- Hello ' . ucfirst($check->firstName) . ' -' . '<br>Please verify with your Email or Phone to log in.');
+                return redirect(route('login.showVerifyForm', $check->id))->with(
+                    'flash-message-user',
+                    '<h3>- Hello ' . ucfirst($check->firstName) . ' -</h3>
+                    <p>Please verify with your Email or Phone to log in.</p>'
+                );
             }
         }
         // don't specify if the email is correct or not for security reasons
@@ -132,7 +144,11 @@ class UserController extends Controller
             if ($user->email_code != null && $user->email_code == $request->verification_code) {
                 $user->email_verified = 1;
                 $user->save();
-                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully verified your email. Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with(
+                    'flash-message-user',
+                    '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
+                    <p>You have successfully verified your email. Log in to continue.</p>'
+                );
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
@@ -143,7 +159,11 @@ class UserController extends Controller
             if ($user->phone_code != null && $user->phone_code == $request->verification_code) {
                 $user->phone_verified = 1;
                 $user->save();
-                return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . 'You have successfully verified your phone. Log in to continue.');
+                return redirect(route('login.showLoginForm'))->with(
+                    'flash-message-user',
+                    '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
+                    <p>You have successfully verified your phone. Log in to continue.</p>'
+                );
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
             }
@@ -208,7 +228,11 @@ class UserController extends Controller
                 if ($request->password == $request->password_confirmation) {
                     $user->password = bcrypt($request->password);
                     $user->update();
-                    return redirect(route('login.showLoginForm'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully reset your password.');
+                    return redirect(route('login.showLoginForm'))->with(
+                        'flash-message-user',
+                        '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
+                        <p>You have successfully reset your password.</p>'
+                    );
                 } else {
                     return back()->withErrors([
                         'password' => 'Passwords Do Not Match.',
@@ -289,7 +313,11 @@ class UserController extends Controller
         $formInputs['lastName'] = ucfirst($formInputs['lastName']);
         // update user
         $user->update($formInputs);
-        return redirect(route('deals.index'))->with('flash-message-user', '- Hello ' . ucfirst($user->firstName) . ' -' . '<br>You have successfully updated your information.');
+        return redirect(route('deals.index'))->with(
+            'flash-message-user',
+            '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
+            <p>You have successfully updated your information.</p>'
+        );
     }
 
     // DELETE USER
@@ -299,7 +327,11 @@ class UserController extends Controller
         if ($deletionEmail === auth()->user()->email) {
             // delete user after correct email supplied
             $user->delete();
-            return redirect(route('deals.index'))->with('flash-message-user', 'User was deleted successfully.');
+            return redirect(route('deals.index'))->with(
+                'flash-message-user',
+                '<h3>- The User -</h3>
+                <p>Was deleted successfully.</p>'
+            );
         } else {
             return back()->withErrors(['deletion_email' => 'Incorrect Email Provided']);
         }
@@ -314,7 +346,11 @@ class UserController extends Controller
         $request->session()->invalidate();
         // and regen their @csrf token
         $request->session()->regenerateToken();
-        return redirect('/')->with('flash-message-user', '- Goodbye -<br>You have now logged out.');
+        return redirect('/')->with(
+            'flash-message-user',
+            '<h3>- Goodbye -</h3>
+            <p>You have now logged out.</p>'
+        );
     }
 
 
@@ -356,12 +392,22 @@ class UserController extends Controller
             ]);
             Auth::login($user);
             if (($user->phone_verified || $user->email_verified)) {
-                return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) . ', you have used Facebook to log in.')->with('mediaName', 'facebook');
+                return redirect(route('deals.index'))->with(
+                    'update-password-message',
+                    '<h3>- Hello ' . ucfirst(auth()->user()->firstName) . ' -</h3>
+                    <p>You have used Facebook to log in.</p>'
+                )->with('mediaName', 'facebook');
             } else {
-                return redirect(route('login.showVerifyForm', ['id' => $user->id]))->with('flash-message-user', 'Please verify your account once to continue.');
+                return redirect(route('login.showVerifyForm', ['id' => $user->id]))->with(
+                    'flash-message-user',
+                    '<p>Please verify your account once to continue.</p>'
+                );
             }
         } catch (Exception $e) {
-            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+            return redirect(route('login.showLoginForm'))->with(
+                'flash-message-user',
+                '<p>An error has occurred, try signing again.</p>'
+            );
         }
     }
 
@@ -383,12 +429,22 @@ class UserController extends Controller
             ]);
             Auth::login($user);
             if (($user->phone_verified || $user->email_verified)) {
-                return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) . ', you have used Google to log in.')->with('mediaName', 'google');
+                return redirect(route('deals.index'))->with(
+                    'update-password-message',
+                    '<h3>- Hello ' . ucfirst(auth()->user()->firstName) . ' -</h3>
+                    <p>You have used Google to log in.</p>'
+                )->with('mediaName', 'google');
             } else {
-                return redirect(route('login.showVerifyForm', ['id' => $user->id]))->with('flash-message-user', 'Please verify your account once to continue.');
+                return redirect(route('login.showVerifyForm', ['id' => $user->id]))->with(
+                    'flash-message-user',
+                    '<p>Please verify your account once to continue.</p>'
+                );
             }
         } catch (Exception $e) {
-            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+            return redirect(route('login.showLoginForm'))->with(
+                'flash-message-user',
+                '<p>An error has occurred, try signing again.</p>'
+            );
         }
     }
 
@@ -411,12 +467,22 @@ class UserController extends Controller
             ]);
             Auth::login($user);
             if (($user->phone_verified || $user->email_verified)) {
-                return redirect(route('deals.index'))->with('update-password-message', 'Hello ' . ucfirst(auth()->user()->firstName) . ', you have used Apple to log in.')->with('mediaName', 'apple');
+                return redirect(route('deals.index'))->with(
+                    'update-password-message',
+                    '<h3>- Hello ' . ucfirst(auth()->user()->firstName) . ' -</h3>
+                    <p>You have used Apple to log in.</p>'
+                )->with('mediaName', 'apple');
             } else {
-                return redirect(route('login.showVerifyForm', ['id' => $user->id]))->with('flash-message-user', 'Please verify your account once to continue.');
+                return redirect(route('login.showVerifyForm', ['id' => $user->id]))->with(
+                    'flash-message-user',
+                    '<p>Please verify your account once to continue.</p>'
+                );
             }
         } catch (Exception $e) {
-            return redirect(route('login.showLoginForm'))->with('flash-message-user', 'An error has occurred, try signing again.');
+            return redirect(route('login.showLoginForm'))->with(
+                'flash-message-user',
+                '<p>An error has occurred, try signing again.</p>'
+            );
         }
     }
 

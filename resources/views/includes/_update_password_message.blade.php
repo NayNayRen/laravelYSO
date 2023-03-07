@@ -6,7 +6,7 @@
             <img src="{{ asset('img/yso-logo2.svg') }}" class="yso-link" alt="Your Social Offers Logo">
         </div>
         {{-- MESSAGE AND SOCIAL MEDIA USED --}}
-        <p>{{ session('update-password-message') }}</p>
+        <div>{!! session('update-password-message') !!}</div>
         <span class='update-password-media-icon' aria-label="Social Media Icon"><i class="fa fa-{{ session('mediaName') }}"
                 aria-hidden="true"></i>
         </span>
