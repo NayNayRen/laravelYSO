@@ -132,10 +132,10 @@
                                 <tr>
                                     <td style="padding:0;">
                                         {{-- VERIFICATION CODE --}}
-                                        <p id="code-header" style="color:#808080; margin-bottom:5px; padding:5px;">
+                                        <p id="code-header" style="color:#000; margin-bottom:5px; padding:5px;">
                                             Your Password Change Code Is :</p>
                                         <p id="code"
-                                            style="background-color:#333333; border-radius:5px; color:#fff; padding:10px 5px;">
+                                            style="background-color:#a9a9a9; border-radius:5px; color:#000; padding:10px 5px;">
                                             {{ $data['code'] }}
                                         </p>
                                     </td>
