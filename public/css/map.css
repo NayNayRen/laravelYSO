@@ -557,12 +557,13 @@
     background-color: #fff;
     border-radius: 4px;
     color: #000;
-    padding: 2px 5px;
+    padding: 2px 6px;
 }
 
 .map-use-disclaimer span {
     color: #fff;
     font-weight: bold;
+    text-shadow: 0 2px 2px #333333;
 }
 
 @media (max-width: 1300px) {
