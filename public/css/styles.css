@@ -285,7 +285,8 @@
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
-    background-color: #d3d3d3;
+    /* background-color: #d3d3d3; */
+    background-color: #c0c0c0;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
