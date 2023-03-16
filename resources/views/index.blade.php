@@ -64,7 +64,7 @@
         </div>
     </div>
     {{-- CASHBACK CONTAINER --}}
-    @include('includes._cashback_slides')
+    {{-- @include('includes._cashback_slides') --}}
     <div>
     </div>
     {{-- FEATURED CONTAINER --}}
@@ -234,7 +234,7 @@
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
-<script src="{{ asset('js/show-cashback-message.js') }}"></script>
+{{-- <script src="{{ asset('js/show-cashback-message.js') }}"></script> --}}
 </script>
 <script>
     $(document).ready(function() {
