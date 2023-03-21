@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        // added for Apple callback in user log in
+        'auth/apple/callback'
     ];
 }
