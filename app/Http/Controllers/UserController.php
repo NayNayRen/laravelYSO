@@ -353,8 +353,6 @@ class UserController extends Controller
         );
     }
 
-
-
     // SOCIAL MEDIA LOG INS
     // redirects go to medias auth page
     public function facebookRedirect()
@@ -386,7 +384,6 @@ class UserController extends Controller
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                // 'phone' => 'None Provided',
                 'phone' => '123-456-7890',
                 'password' => Hash::make(Str::random(20))
             ]);
@@ -423,7 +420,6 @@ class UserController extends Controller
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                // 'phone' => 'None Provided',
                 'phone' => '123-456-7890',
                 'password' => Hash::make(Str::random(20))
             ]);
@@ -453,15 +449,13 @@ class UserController extends Controller
         try {
             $appleUser = Socialite::driver('apple')->user();
             // dd($appleUser);
-            $names = explode(' ', $appleUser->name);
-            $firstName = $names[0];
-            $lastName = $names[count($names) - 1];
+            $firstName = $appleUser->user['name']['firstName'];
+            $lastName = $appleUser->user['name']['lastName'];
             $user = User::firstOrCreate([
-                'email' => $appleUser->email
+                'email' => $appleUser->user['email']
             ], [
                 'firstName' => $firstName,
                 'lastName' => $lastName,
-                // 'phone' => 'None Provided',
                 'phone' => '123-456-7890',
                 'password' => Hash::make(Str::random(20))
             ]);
