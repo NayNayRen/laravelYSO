@@ -2,6 +2,8 @@
 <div class="main">
     {{-- USER LOG IN ERROR MESSAGE --}}
     @include('includes._flash_message_user')
+    {{-- VERIFICATION MESSAGE --}}
+    @include('includes._verification_message')
     <div class="users">
         <h1>Sign In</h1>
         <span class="users-form-greeting grey-text">New to YSO? <a href={{ route('user.create') }}>Sign Up</a></span>
@@ -64,6 +66,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(() => {
+        // VERIFICATION MESSAGE AFTER FIRST TIME SIGN UP
+        if ($(window).width() > 400) {
+            $('.verification-message').css('top', '150px');
+        }
+        if ($(window).width() <= 400) {
+            $('.verification-message').css('top', '0');
+        }
+        $('.verification-button').click(() => {
+            $('.verification-message').css('top', '-100%');
+        });
         // FLASH MESSAGE DISPLAY WITH TIMER TO REMOVE
         // waits for 250ms then shows message
         setTimeout(() => {

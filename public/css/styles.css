@@ -2553,7 +2553,8 @@ body {
 
 .flash-message-user,
 .otp-message,
-.update-password-message {
+.update-password-message,
+.verification-message {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: distribute;
@@ -2588,7 +2589,8 @@ body {
 
 .flash-message-user div:first-of-type,
 .otp-message div:first-of-type,
-.update-password-message div:first-of-type {
+.update-password-message div:first-of-type,
+.verification-message div:first-of-type {
     background-color: #000;
     border-radius: 5px;
     padding: 20px 5px;
@@ -2597,7 +2599,8 @@ body {
 
 .flash-message-user div:last-of-type,
 .otp-message div:last-of-type,
-.update-password-message div:last-of-type {
+.update-password-message div:last-of-type,
+.verification-message div:last-of-type {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -webkit-box-align: center;
@@ -2616,7 +2619,8 @@ body {
 
 .flash-message-user div:last-of-type h3,
 .otp-message div:last-of-type h3,
-.update-password-message div:last-of-type h3 {
+.update-password-message div:last-of-type h3,
+.verification-message div:last-of-type h3 {
     color: #000;
     font-size: 24px;
     margin-bottom: 5px;
@@ -2624,7 +2628,8 @@ body {
 
 .flash-message-user p,
 .otp-message p,
-.update-password-message p {
+.update-password-message p,
+.verification-message p {
     color: #e6331f;
     font-size: 18px;
     font-weight: bold;
@@ -3994,7 +3999,8 @@ html {
     z-index: 1;
 }
 
-.update-password-disclaimer {
+.update-password-disclaimer,
+.verification-disclaimer {
     color: #808080;
     font-size: 14px;
     font-weight: bold;
@@ -6496,7 +6502,8 @@ html {
 
     .flash-message-user,
     .otp-message,
-    .update-password-message {
+    .update-password-message,
+    .verification-message {
         border-radius: 0;
         font-size: 18px;
         min-height: 200px;
@@ -6506,27 +6513,31 @@ html {
 
     .flash-message-user div:first-of-type,
     .otp-message div:first-of-type,
-    .update-password-message div:first-of-type {
+    .update-password-message div:first-of-type,
+    .verification-message div:first-of-type {
         border-radius: 0;
         width: 100%;
     }
 
     .flash-message-user div:last-of-type,
     .otp-message div:last-of-type,
-    .update-password-message div:last-of-type {
+    .update-password-message div:last-of-type,
+    .verification-message div:last-of-type {
         width: 100%;
     }
 
     .flash-message-user div:last-of-type h3,
     .otp-message div:last-of-type h3,
-    .update-password-message div:last-of-type h3 {
+    .update-password-message div:last-of-type h3,
+    .verification-message div:last-of-type h3 {
         font-size: 20px;
         margin-top: 35px;
     }
 
     .flash-message-user p,
     .otp-message p,
-    .update-password-message p {
+    .update-password-message p,
+    .verification-message p {
         font-size: 16px;
         padding: 0 10px 5px 10px;
         /* padding: 35px 10px 5px 10px; */

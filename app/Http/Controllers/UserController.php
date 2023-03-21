@@ -145,9 +145,9 @@ class UserController extends Controller
                 $user->email_verified = 1;
                 $user->save();
                 return redirect(route('login.showLoginForm'))->with(
-                    'flash-message-user',
+                    'verification-message',
                     '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
-                    <p>You have successfully verified by email. Log in to continue.</p>'
+                    <p>You were successfully verified by email. Read the disclaimer below to continue.</p>'
                 );
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
@@ -160,9 +160,9 @@ class UserController extends Controller
                 $user->phone_verified = 1;
                 $user->save();
                 return redirect(route('login.showLoginForm'))->with(
-                    'flash-message-user',
+                    'verification-message',
                     '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
-                    <p>You have successfully verified by phone. Log in to continue.</p>'
+                    <p>You were successfully verified by phone. Read the disclaimer below to continue.</p>'
                 );
             } else {
                 return back()->withErrors(['verification_code' => 'Incorrect Verification Code.']);
