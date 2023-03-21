@@ -449,8 +449,14 @@ class UserController extends Controller
         try {
             $appleUser = Socialite::driver('apple')->user();
             // dd($appleUser);
-            $firstName = $appleUser->user['name']['firstName'];
-            $lastName = $appleUser->user['name']['lastName'];
+            if ($appleUser->name === null) {
+                $previousUser = User::where('email', $appleUser->user['email'])->first();
+                $firstName = $previousUser->firstName;
+                $lastName = $previousUser->lastName;
+            } else {
+                $firstName = $appleUser->user['name']['firstName'];
+                $lastName = $appleUser->user['name']['lastName'];
+            }
             $user = User::firstOrCreate([
                 'email' => $appleUser->user['email']
             ], [
