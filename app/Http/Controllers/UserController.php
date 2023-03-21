@@ -46,7 +46,7 @@ class UserController extends Controller
         return redirect(route('login.showVerifyForm', $user->id))->with(
             'flash-message-user',
             '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
-            <p>You have successfully registered. Verify your account to continue.</p>'
+            <p>You have successfully registered. Verify your account once to continue.</p>'
         );
     }
 
@@ -329,7 +329,7 @@ class UserController extends Controller
             $user->delete();
             return redirect(route('deals.index'))->with(
                 'flash-message-user',
-                '<h3>- The User -</h3>
+                '<h3>- User -</h3>
                 <p>Was deleted successfully.</p>'
             );
         } else {
