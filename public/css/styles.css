@@ -285,8 +285,8 @@
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
-    /* background-color: #808080; */
-    background-color: #d3d3d3;
+    /* background-color: #d3d3d3; */
+    background-color: #c0c0c0;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -349,20 +349,21 @@
 }
 /* VIEW ALL PAGINATION BUTTONS */
 .alternate-container-count .view-all-item-counter .item {
-    -webkit-transition: all 150ms ease;
+    -webkit-transition: -webkit-box-shadow 250ms ease;
     background-color: #fff;
     color: #000;
     font-weight: bold;
     margin: 0;
     padding: 5px 15px;
-    transition: all 150ms ease;
+    transition: -webkit-box-shadow 250ms ease;
+    transition: box-shadow 250ms ease, -webkit-box-shadow 250ms ease;
+    transition: box-shadow 250ms ease;
     /* outline: solid 1px blue; */
 }
 
 .alternate-container-count .view-all-item-counter .item:hover {
     -webkit-box-shadow: 0 0 2px #333333;
     box-shadow: 0 0 2px #333333;
-    /* color: #e6331f; */
 }
 
 .alternate-container-count .view-all-item-counter .item.active {
@@ -512,8 +513,8 @@
 }
 
 .banner-arrows-alternate {
-    /* background-color: #808080; */
-    background-color: #a9a9a9;
+    background-color: #808080;
+    /* background-color: #a9a9a9; */
 }
 
 .banner-arrows span {
@@ -3753,8 +3754,8 @@ html {
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
     align-items: center;
-    /* background-color: #808080; */
-    background-color: #a9a9a9;
+    background-color: #808080;
+    /* background-color: #a9a9a9; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -4385,8 +4386,8 @@ html {
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
     align-items: center;
-    /* background-color: #808080; */
-    background-color: #a9a9a9;
+    background-color: #808080;
+    /* background-color: #a9a9a9; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -5210,7 +5211,6 @@ html {
     .alternate-container-count .view-all-item-counter .item:hover {
         -webkit-box-shadow: none;
         box-shadow: none;
-        /* color: #000; */
     }
 
     .alternate-count {
