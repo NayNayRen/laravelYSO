@@ -8,9 +8,9 @@
         {{-- VERIFICATION MESSAGE --}}
         <div>{!! session('verification-message') !!}</div>
         {{-- MEDIA USED AND PASSWORD DISCLAIMER --}}
-        <span class="verification-disclaimer">- Note -<br>If you used a social media for first time sign up, you need to
+        <span class="verification-disclaimer">- Note -<br>If you used a social media for first time sign up, you should
             use the same
-            media once to sign in so you can update your password.</span>
+            media once to sign in so you can update your passwor to something you know.</span>
         <button type="button" class="message-button verification-button">OK</button>
     </div>
 @endif

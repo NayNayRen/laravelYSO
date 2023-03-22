@@ -2591,8 +2591,17 @@ body {
 .otp-message div:first-of-type,
 .update-password-message div:first-of-type,
 .verification-message div:first-of-type {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
     background-color: #000;
     border-radius: 5px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    justify-content: center;
     padding: 20px 5px;
     width: 90%;
 }
@@ -2623,7 +2632,7 @@ body {
 .verification-message div:last-of-type h3 {
     color: #000;
     font-size: 24px;
-    margin-bottom: 5px;
+    margin: 5px auto;
 }
 
 .flash-message-user p,
@@ -2633,7 +2642,6 @@ body {
     color: #e6331f;
     font-size: 18px;
     font-weight: bold;
-    /* line-height: 25px; */
     margin: 10px 0 5px 0;
     width: 90%;
 }
@@ -4004,7 +4012,7 @@ html {
     color: #808080;
     font-size: 14px;
     font-weight: bold;
-    margin: 10px auto;
+    margin: 0 auto 10px auto;
     width: 90%;
 }
 
