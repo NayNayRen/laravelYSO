@@ -21,7 +21,7 @@
     </div>
     {{-- HEADING AND MAP DISCLAIMER --}}
     <div class="view-all-container-heading">
-        <h1>For the easiest of Food choices.</h1>
+        <h1>For the easiest of Food choices</h1>
         @if (count($locations) === 0)
             <span class="map-use-disclaimer">No location results came back to show on the map <i
                     class="fa fa-map-marker" aria-hidden="true"></i> , it
@@ -84,9 +84,9 @@
             <div class="container-right">
                 {{-- CARD BLOCK --}}
                 @if ($deals->count() === 1)
-                    <span class="alternate-container-count">
+                    <div class="alternate-count">
                         - {{ count($deals) }} Deal -
-                    </span>
+                    </div>
                     <div id="card-display" class="card-display-limited-amount">
                         @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}
@@ -96,9 +96,9 @@
                         @endforeach
                     </div>
                 @elseif($deals->count() === 2)
-                    <span class="alternate-container-count">
+                    <div class="alternate-count">
                         - {{ count($deals) }} Deals -
-                    </span>
+                    </div>
                     <div id="card-display" class="card-display-limited-amount">
                         @foreach ($deals as $deal)
                             {{-- CARD COMPONENT --}}

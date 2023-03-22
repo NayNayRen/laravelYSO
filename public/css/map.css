@@ -554,8 +554,10 @@
 }
 
 .map-use-disclaimer i {
+    -webkit-box-shadow: 0 2px 2px #808080;
     background-color: #fff;
     border-radius: 4px;
+    box-shadow: 0 2px 2px #808080;
     color: #000;
     padding: 2px 6px;
 }

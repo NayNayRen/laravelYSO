@@ -21,7 +21,7 @@
     </div>
     {{-- HEADING AND MAP DISCLAIMER --}}
     <div class="view-all-container-heading">
-        <h1>Your Selected Location.</h1>
+        <h1>Your Selected Location</h1>
         {{-- HIDDEN DASHBOARD --}}
         @include('includes._dashboard')
     </div>
@@ -62,11 +62,11 @@
                 <div>
                     - <span>{{ count($locationDeals) }}</span>
                     @if (count($locationDeals) > 1)
-                        deals
+                        Deals
                     @else
-                        deal
+                        Deal
                     @endif
-                    from
+                    From
                     <span>{{ ucwords($location->name) }}</span> -<br>
                     {{ $location->location }}
                 </div>

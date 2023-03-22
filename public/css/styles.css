@@ -285,8 +285,8 @@
     -ms-flex-direction: column;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
-    /* background-color: #d3d3d3; */
-    background-color: #c0c0c0;
+    background-color: #d3d3d3;
+    /* background-color: #c0c0c0; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -420,10 +420,11 @@
 
 .alternate-container-location-info span {
     color: #e6331f;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .alternate-count {
+    color: #000;
     padding-bottom: 5px;
     text-align: center;
     width: 100%;
@@ -512,8 +513,8 @@
 }
 
 .banner-arrows-alternate {
-    background-color: #808080;
-    /* background-color: #a9a9a9; */
+    /* background-color: #808080; */
+    background-color: #a9a9a9;
 }
 
 .banner-arrows span {
@@ -3753,8 +3754,8 @@ html {
     -webkit-box-orient: horizontal;
     -webkit-box-pack: center;
     align-items: center;
-    background-color: #808080;
-    /* background-color: #a9a9a9; */
+    /* background-color: #808080; */
+    background-color: #a9a9a9;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -4385,8 +4386,8 @@ html {
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
     align-items: center;
-    background-color: #808080;
-    /* background-color: #a9a9a9; */
+    /* background-color: #808080; */
+    background-color: #a9a9a9;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
