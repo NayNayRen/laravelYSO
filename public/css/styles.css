@@ -362,7 +362,7 @@
 .alternate-container-count .view-all-item-counter .item:hover {
     -webkit-box-shadow: 0 0 2px #333333;
     box-shadow: 0 0 2px #333333;
-    color: #e6331f;
+    /* color: #e6331f; */
 }
 
 .alternate-container-count .view-all-item-counter .item.active {
@@ -5210,7 +5210,7 @@ html {
     .alternate-container-count .view-all-item-counter .item:hover {
         -webkit-box-shadow: none;
         box-shadow: none;
-        color: #000;
+        /* color: #000; */
     }
 
     .alternate-count {
