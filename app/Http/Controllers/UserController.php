@@ -370,6 +370,7 @@ class UserController extends Controller
         return Socialite::driver('apple')->redirect();
     }
 
+    // FACEBOOK LOG IN
     // callbacks come back from the auth page with user data
     public function facebookCallback()
     {
@@ -408,6 +409,7 @@ class UserController extends Controller
         }
     }
 
+    // GOOGLE LOG IN
     public function googleCallback()
     {
         try {
@@ -444,11 +446,14 @@ class UserController extends Controller
         }
     }
 
+    // APPLE LOG IN
     public function appleCallback()
     {
         try {
             $appleUser = Socialite::driver('apple')->user();
-            // dd($appleUser);
+            $token = $appleUser->token;
+            $appleUserWithToken = Socialite::with('apple')->userFromToken($token);
+            dd($appleUserWithToken);
             if ($appleUser->name === null) {
                 $previousUser = User::where('email', $appleUser->user['email'])->first();
                 $firstName = $previousUser->firstName;
@@ -485,41 +490,4 @@ class UserController extends Controller
             );
         }
     }
-
-    // public function appleRedirect() {
-    // 	return Socialite::driver('apple')->stateless()->scopes(["name", "email"])->redirect();
-    // }
-
-    // public function appleCallback(AppleToken $appleToken) {
-    // 	config()->set('services.apple.client_secret', $appleToken->generate());
-    // 	$socialUser = Socialite::driver('apple')->stateless()->user();
-    // 	$dbUser = User::where('email', $socialUser->getEmail())->first();
-    // 	try {
-    //         $persistedUser = User::firstOrCreate(
-    // 			['email' => $socialUser->getEmail()],
-    // 			['firstName' => 'SSO_NAME_NULL',
-    //             'lastName' => 'SSO_NAME_NULL',
-    // 			'email' => $socialUser->getEmail(),
-    //             'phone' => 'SSO_PHONE_NULL',
-    //             'password' => 'SSO_PASSWORD_NULL',
-    // 			]
-    // 		);
-    // 		$user_id = DB::table('users')->where('email', $socialUser->getEmail())->first()->id;
-    // 		// $social_login_provider = SocialLoginProvider::firstOrCreate(
-    // 		// 	['provider_name' => 'apple',
-    // 		// 	'provider_id' => $socialUser->getId()
-    // 		// 	],
-    // 		// 	['provider_name' => 'apple',
-    // 		// 	'provider_id' => $socialUser->getId(),
-    // 		// 	'user_id' => User::where('email', $socialUser->getEmail())->first()->id
-    // 		// 	]
-    // 		// );
-    // 		Log::info($user_id);
-    // 		Auth::loginUsingId($user_id);
-    // 		return redirect("/");
-    // 	} catch(Exception $e) {
-    // 		dd($e->getMessage());
-    // 	}
-    // }
-
 }
