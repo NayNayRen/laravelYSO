@@ -367,8 +367,7 @@ class UserController extends Controller
 
     public function appleRedirect()
     {
-        return Socialite::driver('apple')->scopes(["email"])->redirect();
-        // return Socialite::driver('apple')->redirect();
+        return Socialite::driver('apple')->redirect();
     }
 
     // callbacks come back from the auth page with user data
@@ -449,7 +448,7 @@ class UserController extends Controller
     {
         try {
             $appleUser = Socialite::driver('apple')->user();
-            dd($appleUser);
+            // dd($appleUser);
             // $token = $appleUser->token;
             // $appleUserWithToken = Socialite::with('apple')->userFromToken($token);
             // dd($appleUserWithToken);
