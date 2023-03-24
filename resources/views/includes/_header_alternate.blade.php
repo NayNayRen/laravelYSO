@@ -54,7 +54,7 @@
                         <form action={{ route('logout') }} method="POST">
                             @csrf
                             <button type="submit" class="user-logout-button" aria-label="Logout" title="Logout"><i
-                                    class="fa fa-sign-out" aria-hidden="true"></i></button>
+                                    class="fa fa-sign-out" aria-hidden="false"></i></button>
                         </form>
                     </div>
                 @else

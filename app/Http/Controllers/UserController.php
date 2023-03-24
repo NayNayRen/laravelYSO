@@ -46,7 +46,7 @@ class UserController extends Controller
         return redirect(route('login.showVerifyForm', $user->id))->with(
             'flash-message-user',
             '<h3>- Hello ' . ucfirst($user->firstName) . ' -</h3>
-            <p>You have successfully registered. Verify your account once to continue.</p>'
+            <p>You have successfully registered with YSO. Verify your account once to continue.</p>'
         );
     }
 
@@ -73,7 +73,7 @@ class UserController extends Controller
                     return redirect('/')->with(
                         'flash-message-user',
                         '<h3>- Welcome ' . ucfirst(auth()->user()->firstName) . ' -</h3>
-                        <p>You are now logged in.</p>'
+                        <p>You are now logged in to YSO.</p>'
                     );
                 }
             } else {
@@ -329,8 +329,8 @@ class UserController extends Controller
             $user->delete();
             return redirect(route('deals.index'))->with(
                 'flash-message-user',
-                '<h3>- User -</h3>
-                <p>Was deleted successfully.</p>'
+                '<h3>- Prior User -</h3>
+                <p>Was deleted successfully from YSO.</p>'
             );
         } else {
             return back()->withErrors(['deletion_email' => 'Incorrect Email Provided']);
@@ -348,8 +348,8 @@ class UserController extends Controller
         $request->session()->regenerateToken();
         return redirect('/')->with(
             'flash-message-user',
-            '<h3>- Goodbye -</h3>
-            <p>You have now logged out.</p>'
+            '<h3>- Thank You -</h3>
+            <p>You have now logged out of YSO.</p>'
         );
     }
 
