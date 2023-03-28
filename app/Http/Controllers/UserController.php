@@ -450,6 +450,11 @@ class UserController extends Controller
             $appleUser = Socialite::driver('apple')->user();
             // dd($appleUser);
             // $token = $appleUser->token;
+            // $tokenParts = explode('.', $token);
+            // $tokenHeader = base64_decode($tokenParts[0]);
+            // $tokenPayload = base64_decode($tokenParts[1]);
+            // $jwtHeader = json_decode($tokenHeader);
+            // $jwtPayload = json_decode($tokenPayload);
             // $appleUserWithToken = Socialite::with('apple')->userFromToken($token);
             // dd($appleUserWithToken);
             if ($appleUser->name === null) {
