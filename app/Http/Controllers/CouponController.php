@@ -112,37 +112,5 @@ class CouponController extends Controller
         // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
         curl_close($ch);
-
-        // $service_plan_id = env('SERVICE_PLAN_ID');
-        // $bearer_token = env('BEARER_TOKEN');
-        // $send_from = env('SEND_FROM');
-        // $data = array(
-        //     'from' => '19512637122',
-        //     'to' => [$recipient],
-        //     'body' => $message_to_send
-        // );
-
-        // $payload = json_encode($data);
-        // // Prepare new cURL resource
-        // $ch = curl_init('https://sms.api.sinch.com/xms/v1/a6c7726640314b1eb8dcf92fed42ccd7/batches');
-        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        // curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-        // curl_setopt($ch, CURLOPT_POST, true);
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        // // Set HTTP Header for POST request 
-        // curl_setopt(
-        //     $ch,
-        //     CURLOPT_HTTPHEADER,
-        //     array(
-        //         'Content-Type: application/json',
-        //         'Authorization: Bearer a13611040543430ca425709b7ed64048',
-        //         'Content-Length: ' . strlen($payload)
-        //     )
-        // );
-        // // Submit the POST request
-        // $result = curl_exec($ch);
-        // print_r($result);
-        // // Close cURL session handle
-        // curl_close($ch);
     }
 }
