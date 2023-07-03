@@ -10,18 +10,14 @@
     {{-- EPIRATIONS AND LIMITATIONS --}}
     <div class="card-rules">
         <span aria-label="Deal expiration date.">Expiration <i class="fa fa-clock-o" aria-hidden="true"></i> :
-            @if ($deal->expiration === null)
-                None
-            @elseif($deal->expiration === '')
+            @if ($deal->expiration === null || $deal->expiration === '')
                 None
             @else
                 {{ ucwords($deal->expiration) }}
             @endif
         </span><br>
         <span aria-label="Deal limitations.">Limitations <i class="fa fa-exclamation" aria-hidden="true"></i> :
-            @if ($deal->limitations === null)
-                None
-            @elseif($deal->limitations === '')
+            @if ($deal->limitations === null || $deal->limitations === '')
                 None
             @else
                 {{ ucwords($deal->limitations) }}
@@ -33,30 +29,30 @@
             <span>Views: {{ $deal->views }}</span><br>
             <span>Likes:</span><br>
             @php
-                $dealLocation = App\Models\CouponLocation::where('cid', $deal->id)->first();
+                $deal_location = App\Models\CouponLocation::where('deal_id', $deal->id)->first();
             @endphp
             {{-- IF NO DEAL LOCATION --}}
-            @if ($dealLocation === null)
+            @if ($deal_location === null)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
-            @elseif($deal->id != $dealLocation->cid)
+            @elseif($deal->id != $deal_location->deal_id)
                 <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                         class="fa fa-map-marker" aria-hidden="true"></i></span>
             @else
                 @php
-                    $locationAddress = App\Models\Location::where('id', $dealLocation->lid)->first();
+                    $location = App\Models\Location::where('id', $deal_location->location_id)->first();
                 @endphp
                 {{-- IF NO DEAL ADDRESS --}}
-                @if ($locationAddress->lat === null)
+                @if ($location === null)
                     <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span>
-                @elseif($locationAddress->lon === null)
+                    {{-- @elseif($location === null)
                     <span class="card-location inactive" aria-label="No location for this deal.">Location <i
-                            class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            class="fa fa-map-marker" aria-hidden="true"></i></span> --}}
                 @else
                     {{-- IF DEAL HAS A LOCATION --}}
-                    <form action={{ route('locations.show', $dealLocation->lid) }} method="GET">
-                        <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
+                    <form action={{ route('locations.show', $deal_location->location_id) }} method="GET">
+                        <button type="submit" class="card-location active" title="{{ $location->location }}"
                             aria-label="View this deal's location." value="map" name="submit">Location <i
                                 class=" fa fa-map-marker" aria-hidden="true"></i>
                         </button>

@@ -73,10 +73,10 @@
                                 @if ($favorites != null)
                                     @foreach ($favorites as $favorite)
                                         @php
-                                            $favoriteLocations = App\Models\CouponLocation::where('cid', $favorite->id)->get();
+                                            $favoriteLocations = App\Models\CouponLocation::where('deal_id', $favorite->id)->get();
                                         @endphp
                                         @foreach ($favoriteLocations as $favoriteLocation)
-                                            @if ($location->id === $favoriteLocation->lid)
+                                            @if ($location->id === $favoriteLocation->location_id)
                                                 <span class="map-location-favorite-icon"><i class="fa fa-star"
                                                         aria-hidden="true"></i></span>
                                             @endif

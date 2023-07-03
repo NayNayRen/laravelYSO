@@ -14,15 +14,14 @@ class Location extends Model
     public static function getAllLocations()
     {
         $dealResults = Deal::orderBy('id')->get();
-        // $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
         $locationIds = CouponLocation::orderBy('id')
             ->where(function ($q) use ($dealResults) {
                 foreach ($dealResults as $dealResult) {
-                    $q->orWhere('cid', $dealResult->id);
+                    $q->orWhere('deal_id', $dealResult->id);
                 }
             })->get();
         $locations = Location::orderBy('name')
-            ->whereIn('id', $locationIds->pluck('lid'))
+            ->whereIn('id', $locationIds->pluck('location_id'))
             ->whereNotNull('lat')
             ->WhereNotNull('lon')
             ->get();
@@ -43,9 +42,9 @@ class Location extends Model
                         ->orWhere('category', 'like', '%' . $word . '%');
                 }
             })->get();
-        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
+        $locationIds = CouponLocation::whereIn('deal_id', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
-            ->whereIn('id', $locationIds->pluck('lid'))
+            ->whereIn('id', $locationIds->pluck('location_id'))
             ->whereNotNull('lat')
             ->whereNotNull('lon')
             ->get();
@@ -61,9 +60,9 @@ class Location extends Model
             ->where('name', 'like', '%' . $type . '%')
             ->orWhere('location', 'like', '%' . $type . '%')
             ->orWhere('category', 'like', '%' . $type . '%')->get();
-        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
+        $locationIds = CouponLocation::whereIn('deal_id', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
-            ->whereIn('id', $locationIds->pluck('lid'))
+            ->whereIn('id', $locationIds->pluck('location_id'))
             ->whereNotNull('lat')
             ->whereNotNull('lon')
             ->get();
@@ -80,9 +79,9 @@ class Location extends Model
             ->whereIn('id', Deal::select('id')
                 ->orderBy('id', 'asc')->take(30)
                 ->get()->modelKeys());
-        $locationIds = CouponLocation::whereIn('cid', $allFeatured->pluck('id'));
+        $locationIds = CouponLocation::whereIn('deal_id', $allFeatured->pluck('id'));
         $locationResults = Location::orderBy('name')
-            ->whereIn('id', $locationIds->pluck('lid'))
+            ->whereIn('id', $locationIds->pluck('location_id'))
             ->whereNotNull('lat')
             ->whereNotNull('lon')
             ->get();
@@ -96,9 +95,9 @@ class Location extends Model
         // $dealResults = Deal::viewAllPopular();
         $dealResults = Deal::orderBy('views', 'asc')
             ->where('views', '>', 75)->get();
-        $locationIds = CouponLocation::whereIn('cid', $dealResults->pluck('id'));
+        $locationIds = CouponLocation::whereIn('deal_id', $dealResults->pluck('id'));
         $locationResults = Location::orderBy('name')
-            ->whereIn('id', $locationIds->pluck('lid'))
+            ->whereIn('id', $locationIds->pluck('location_id'))
             ->whereNotNull('lat')
             ->whereNotNull('lon')
             ->get();
@@ -110,10 +109,10 @@ class Location extends Model
     public static function getLocation($locationId)
     {
         $locationIds = CouponLocation::orderBy('id')
-            ->where('lid', $locationId)->get();
+            ->where('location_id', $locationId)->get();
         // dd($locationIds);
         $locations = Location::orderBy('name')
-            ->whereIn('id', $locationIds->pluck('lid'))
+            ->whereIn('id', $locationIds->pluck('location_id'))
             ->whereNotNull('lat')
             ->WhereNotNull('lon')
             ->get();
@@ -124,10 +123,10 @@ class Location extends Model
     public static function getLocationDeals($locationId)
     {
         $locationIds = CouponLocation::orderBy('id')
-            ->where('lid', $locationId)->get();
+            ->where('location_id', $locationId)->get();
         // dd($locationIds);
         $locationDeals = Deal::orderBy('name')
-            ->whereIn('id', $locationIds->pluck('cid'))->get();
+            ->whereIn('id', $locationIds->pluck('deal_id'))->get();
         // dd($locationDeals);
         return $locationDeals;
     }

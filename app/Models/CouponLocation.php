@@ -9,8 +9,7 @@ class CouponLocation extends Model
 {
     use HasFactory;
     //  needed to continue using capitalized table name
-    // not a proper naming convention
-    protected $table = 'CouponLocations';
+    protected $table = 'deal_locations';
 
     public static function getCouponLocations()
     {
