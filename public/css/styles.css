@@ -1457,6 +1457,7 @@ body {
     -webkit-box-pack: justify;
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0 0 5px #000;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -2847,7 +2848,7 @@ body {
     background-color: #808080;
 }
 
-.gray-background .card {
+/* .gray-background .card {
     background-color: #808080;
     color: #fff;
 }
@@ -2858,7 +2859,7 @@ body {
 
 .gray-background .card-name {
     color: #fff;
-}
+} */
 
 .grey-text {
     color: #808080;
@@ -4935,9 +4936,9 @@ html {
         width: 275px;
     }
 
-    .card-logo-container {
+    /* .card-logo-container {
         height: 100px;
-    }
+    } */
 
     .cashback-card {
         -webkit-transition: -webkit-transform 150ms ease;
