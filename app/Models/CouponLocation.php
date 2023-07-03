@@ -12,7 +12,8 @@ class CouponLocation extends Model
     // not a proper naming convention
     protected $table = 'CouponLocations';
 
-    public static function getCouponLocations(){
+    public static function getCouponLocations()
+    {
         $couponLocationIds = CouponLocation::get();
         return $couponLocationIds;
     }
