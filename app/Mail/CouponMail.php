@@ -31,6 +31,6 @@ class CouponMail extends Mailable
     public function build()
     {
         return $this->subject($this->data['subject'])
-            ->view('Mail.coupon');
+            ->view('mail.coupon');
     }
 }

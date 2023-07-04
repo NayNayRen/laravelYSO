@@ -31,6 +31,6 @@ class PasswordMail extends Mailable
     public function build()
     {
         return $this->subject($this->data['subject'])
-            ->view('Mail.password');
+            ->view('mail.password');
     }
 }
