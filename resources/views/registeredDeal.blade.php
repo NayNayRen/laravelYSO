@@ -25,27 +25,27 @@
 
             <div class="registered-location-container">
                 @php
-                    $dealLocation = App\Models\CouponLocation::where('deal_id', $deal->id)->first();
+                    $deal_location = App\Models\CouponLocation::where('deal_id', $deal->id)->first();
                 @endphp
-                @if ($dealLocation === null)
+                @if ($deal_location === null)
                     - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span> -
-                @elseif($deal->id != $dealLocation->deal_id)
+                @elseif($deal->id != $deal_location->deal_id)
                     - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                             class="fa fa-map-marker" aria-hidden="true"></i></span> -
                 @else
                     @php
-                        $locationAddress = App\Models\Location::where('id', $dealLocation->location_id)->first();
+                        $location = App\Models\Location::where('id', $deal_location->location_id)->first();
                     @endphp
-                    @if ($locationAddress->lat === null)
+                    @if ($location === null)
                         - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
                                 class="fa fa-map-marker" aria-hidden="true"></i></span> -
-                    @elseif($locationAddress->lon === null)
+                        {{-- @elseif($locationAddress->lon === null)
                         - <span class="card-location inactive" aria-label="No location for this deal.">Location <i
-                                class="fa fa-map-marker" aria-hidden="true"></i></span> -
+                                class="fa fa-map-marker" aria-hidden="true"></i></span> - --}}
                     @else
-                        <form action={{ route('locations.show', $dealLocation->location_id) }} method="GET">
-                            <button type="submit" class="card-location active" title="{{ $locationAddress->location }}"
+                        <form action={{ route('locations.show', $deal_location->location_id) }} method="GET">
+                            <button type="submit" class="card-location active" title="{{ $location->location }}"
                                 aria-label="View this deal's location." value="map" name="submit">- Location <i
                                     class=" fa fa-map-marker" aria-hidden="true"></i> -
                             </button>
