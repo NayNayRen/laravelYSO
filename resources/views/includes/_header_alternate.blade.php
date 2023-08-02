@@ -38,7 +38,8 @@
             {{-- PAGES NAVIGATION BLOCK --}}
             <div class="links-user-container dont-display">
                 <ul class="links-container">
-                    <li><a href="https://yso.netrbx.com" target="__blank">cashback</a></li>
+                    {{-- <li><a href="https://yso.netrbx.com" target="__blank">cashback</a></li> --}}
+                    <li><a href="#">cashback</a></li>
                     <li><a href={{ route('rewards') }}>rewards</a></li>
                     <li><a href={{ route('enhance') }}>enhance your sales</a>
                     </li>

@@ -37,7 +37,8 @@
             {{-- PAGES NAVIGATION BLOCK --}}
             <div class="links-user-container">
                 <ul class="links-container">
-                    <li><a href="https://yso.netrbx.com" target="__blank">cashback</a></li>
+                    {{-- <li><a href="https://yso.netrbx.com" target="__blank">cashback</a></li> --}}
+                    <li><a href="#">cashback</a></li>
                     <li>
                         <a href={{ route('rewards') }}
                             class="{{ Request::is('navigation_pages/rewards') || Request::is('navigation_pages/rewards/*') ? 'active' : '' }}">rewards</a>
