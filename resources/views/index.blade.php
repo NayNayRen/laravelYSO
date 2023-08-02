@@ -64,7 +64,7 @@
         </div>
     </div>
     {{-- CASHBACK CONTAINER --}}
-    {{-- @include('includes._cashback_slides') --}}
+    @include('includes._cashback_slides')
     <div>
     </div>
     {{-- FEATURED CONTAINER --}}
@@ -75,16 +75,15 @@
         </div>
         <div id="featured" class="container-right">
             {{-- CARD BLOCK --}}
-            @if ($featuredDeals->count() === 1)
-                <div class="card-display-limited-amount">
-                    @foreach ($featuredDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+            @if ($featuredDeals->count() === 0)
+                <div class="no-deals-container">
+                    <h2>Unfortunately...</h2>
+                    <p>There were no deals to be shown.</p>
+                    <h3>However...</h3>
+                    <p>There are plenty more.</p>
+                    <h3>Please continue your search.</h3>
                 </div>
-            @elseif($featuredDeals->count() === 2)
+            @elseif($featuredDeals->count() === 1 || $featuredDeals->count() === 2)
                 <div class="card-display-limited-amount">
                     @foreach ($featuredDeals as $deal)
                         {{-- CARD COMPONENT --}}
@@ -114,16 +113,15 @@
         </div>
         <div id="selected-category" class="container-right">
             {{-- CARD BLOCK --}}
-            @if ($categoryDeals->count() === 1)
-                <div class="card-display-limited-amount">
-                    @foreach ($categoryDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+            @if ($categoryDeals->count() === 0)
+                <div class="no-deals-container">
+                    <h2>Unfortunately...</h2>
+                    <p>There were no deals to be shown.</p>
+                    <h3>However...</h3>
+                    <p>There are plenty more.</p>
+                    <h3>Please continue your search.</h3>
                 </div>
-            @elseif($categoryDeals->count() === 2)
+            @elseif($categoryDeals->count() === 1 || $categoryDeals->count() === 2)
                 <div class="card-display-limited-amount">
                     @foreach ($categoryDeals as $deal)
                         {{-- CARD COMPONENT --}}
@@ -152,16 +150,15 @@
         </div>
         <div id="tech" class="container-right">
             {{-- CARD BLOCK --}}
-            @if ($techDeals->count() === 1)
-                <div class="card-display-limited-amount">
-                    @foreach ($techDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+            @if ($techDeals->count() === 0)
+                <div class="no-deals-container">
+                    <h2>Unfortunately...</h2>
+                    <p>There were no deals to be shown.</p>
+                    <h3>However...</h3>
+                    <p>There are plenty more.</p>
+                    <h3>Please continue your search.</h3>
                 </div>
-            @elseif($techDeals->count() === 2)
+            @elseif($techDeals->count() === 1 || $techDeals->count() === 2)
                 <div class="card-display-limited-amount">
                     @foreach ($techDeals as $deal)
                         {{-- CARD COMPONENT --}}
@@ -197,16 +194,15 @@
         </div>
         <div id="popular" class="container-right">
             {{-- CARD BLOCK --}}
-            @if ($popularDeals->count() === 1)
-                <div class="card-display-limited-amount">
-                    @foreach ($popularDeals as $deal)
-                        {{-- CARD COMPONENT --}}
-                        <div class="card">
-                            @include('includes._card')
-                        </div>
-                    @endforeach
+            @if ($popularDeals->count() === 0)
+                <div class="no-deals-container">
+                    <h2>Unfortunately...</h2>
+                    <p>There were no deals to be shown.</p>
+                    <h3>However...</h3>
+                    <p>There are plenty more.</p>
+                    <h3>Please continue your search.</h3>
                 </div>
-            @elseif($popularDeals->count() === 2)
+            @elseif($popularDeals->count() === 1 || $popularDeals->count() === 2)
                 <div class="card-display-limited-amount">
                     @foreach ($popularDeals as $deal)
                         {{-- CARD COMPONENT --}}
@@ -234,7 +230,7 @@
 <script src="{{ asset('js/show-all-dropdown.js') }}"></script>
 <script src="{{ asset('js/fading-ad.js') }}"></script>
 <script src="{{ asset('js/show-dashboard.js') }}"></script>
-{{-- <script src="{{ asset('js/show-cashback-message.js') }}"></script> --}}
+<script src="{{ asset('js/show-cashback-message.js') }}"></script>
 </script>
 <script>
     $(document).ready(function() {

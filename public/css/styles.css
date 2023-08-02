@@ -6,30 +6,36 @@
     background-color: #000;
     transition: opacity 150ms ease;
 }
+
 .facebook {
     -webkit-transition: opacity 150ms ease;
     background-color: #3b5a98;
     transition: opacity 150ms ease;
 }
+
 .google {
     -webkit-transition: opacity 150ms ease;
     background-color: #4285f6;
     transition: opacity 150ms ease;
 }
+
 .apple:hover,
 .facebook:hover,
 .google:hover {
     opacity: 0.75;
 }
+
 .submit {
     -webkit-transition: opacity 150ms ease;
     background-color: #e6331f;
     transition: color 150ms ease;
 }
+
 .submit:hover {
     color: #000;
     cursor: pointer;
 }
+
 /*  */
 
 * {
@@ -39,13 +45,11 @@
 
 .about-us-background {
     background-attachment: fixed;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             left bottom,
             from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
-        ),
+            to(rgba(0, 0, 0, 1))),
         url("../img/navigation-pages/about-banner.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/about-banner.jpg");
@@ -257,6 +261,7 @@
     border-bottom-right-radius: 0;
     /* color: #fff; */
 }
+
 /* VIEW ALL & LOCATION CARDS */
 .alternate-card,
 .limited-amount-card {
@@ -280,6 +285,7 @@
     width: 400px;
     /* outline: solid 1px blue; */
 }
+
 /* VIEW ALL & LOCATION DEALS CONTAINER */
 .alternate-container {
     -ms-flex-direction: column;
@@ -298,6 +304,7 @@
     left: 20px;
     top: calc(50% - 10px);
 }
+
 /* OWL CAROUSEL BUTTONS */
 .alternate-container .container-arrow-right {
     right: 20px;
@@ -330,14 +337,17 @@
     padding: 0 5px;
     transition: color 150ms ease;
 }
+
 /* VIEW ALL PAGINATION PREVIOUS ARROW */
 .alternate-container-count .view-all-left-arrow {
     margin: 0 10px 0 0;
 }
+
 /* VIEW ALL PAGINATION NEXT ARROW */
 .alternate-container-count .view-all-right-arrow {
     margin: 0 0 0 10px;
 }
+
 /* VIEW ALL PAGINATION COUNT */
 .alternate-container-count .view-all-item-counter {
     color: #000;
@@ -347,6 +357,7 @@
     width: auto;
     /* outline: solid 1px blue; */
 }
+
 /* VIEW ALL PAGINATION BUTTONS */
 .alternate-container-count .view-all-item-counter .item {
     -webkit-transition: -webkit-box-shadow 250ms ease;
@@ -567,19 +578,15 @@
 
 .banner-image-auto-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/auto/advanced-auto-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/auto/advanced-auto-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -588,19 +595,15 @@
 
 .banner-image-auto-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/auto/aamco-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/auto/aamco-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -609,19 +612,15 @@
 
 .banner-image-auto-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/auto/tires-plus-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/auto/tires-plus-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -630,19 +629,15 @@
 
 .banner-image-auto-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/auto/sw-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/auto/sw-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -651,19 +646,15 @@
 
 .banner-image-fashion-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/fashion/pacsun-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fashion/pacsun-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -672,19 +663,15 @@
 
 .banner-image-fashion-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/fashion/puma-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fashion/puma-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -693,19 +680,15 @@
 
 .banner-image-fashion-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/fashion/adidas-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fashion/adidas-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -714,19 +697,15 @@
 
 .banner-image-fashion-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/fashion/fantastic-sams-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fashion/fantastic-sams-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -735,19 +714,15 @@
 
 .banner-image-featured-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fashion/puma-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fashion/puma-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -756,19 +731,15 @@
 
 .banner-image-featured-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/health/planet-fitness-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/health/planet-fitness-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -777,19 +748,15 @@
 
 .banner-image-featured-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fun/top-golf-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fun/top-golf-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -798,19 +765,15 @@
 
 .banner-image-featured-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/tech/micro-center-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/tech/micro-center-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -819,19 +782,15 @@
 
 .banner-image-food-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/food/pizza-hut-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/food/pizza-hut-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -840,19 +799,15 @@
 
 .banner-image-food-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/food/hooters-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/food/hooters-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -861,19 +816,15 @@
 
 .banner-image-food-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/food/subway-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/food/subway-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -882,19 +833,15 @@
 
 .banner-image-food-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/food/checkers-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/food/checkers-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -903,19 +850,15 @@
 
 .banner-image-fun-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fun/congo-river-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fun/congo-river-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -924,19 +867,15 @@
 
 .banner-image-fun-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fun/amc-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fun/amc-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -945,19 +884,15 @@
 
 .banner-image-fun-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fun/top-golf-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fun/top-golf-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -966,19 +901,15 @@
 
 .banner-image-fun-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fun/adventure-island-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fun/adventure-island-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -987,19 +918,15 @@
 
 .banner-image-health-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/health/planet-fitness-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/health/planet-fitness-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1008,19 +935,15 @@
 
 .banner-image-health-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/health/whole-foods-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/health/whole-foods-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1029,19 +952,15 @@
 
 .banner-image-health-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/health/walgreens-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/health/walgreens-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1050,19 +969,15 @@
 
 .banner-image-health-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/health/natures-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/health/natures-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1071,19 +986,15 @@
 
 .banner-image-main-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fashion/fantastic-sams-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fashion/fantastic-sams-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1092,19 +1003,15 @@
 
 .banner-image-main-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/food/bk-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/food/bk-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1113,19 +1020,15 @@
 
 .banner-image-main-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/food/md-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/food/md-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1134,19 +1037,15 @@
 
 .banner-image-main-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fashion/adidas-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fashion/adidas-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1155,19 +1054,15 @@
 
 .banner-image-popular-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fun/congo-river-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fun/congo-river-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1176,19 +1071,15 @@
 
 .banner-image-popular-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/fun/amc-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/fun/amc-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1197,19 +1088,15 @@
 
 .banner-image-popular-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/auto/advanced-auto-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/auto/advanced-auto-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1218,19 +1105,15 @@
 
 .banner-image-popular-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("../img/auto/sw-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/auto/sw-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1239,19 +1122,15 @@
 
 .banner-image-tech-1 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/tech/micro-center-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/tech/micro-center-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1260,19 +1139,15 @@
 
 .banner-image-tech-2 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/tech/newegg-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/tech/newegg-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1281,19 +1156,15 @@
 
 .banner-image-tech-3 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             right top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/tech/best-buy-banner.jpg");
-    background-image: linear-gradient(
-            to right,
+    background-image: linear-gradient(to right,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/tech/best-buy-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1302,19 +1173,15 @@
 
 .banner-image-tech-4 {
     background-color: #333333;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             right top,
             left top,
             from(rgba(255, 255, 255, 1)),
-            color-stop(40%, rgba(255, 255, 255, 0))
-        ),
+            color-stop(40%, rgba(255, 255, 255, 0))),
         url("..img/tech/apple-store-banner.jpg");
-    background-image: linear-gradient(
-            to left,
+    background-image: linear-gradient(to left,
             rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0) 40%
-        ),
+            rgba(255, 255, 255, 0) 40%),
         url("../img/tech/apple-store-banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -1804,7 +1671,7 @@ body {
     /* outline: solid 1px blue; */
 }
 
-.container ~ .container {
+.container~.container {
     padding: 15px 40px;
 }
 
@@ -2193,13 +2060,11 @@ body {
 
 .enhance-background {
     background-attachment: fixed;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             left bottom,
             from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
-        ),
+            to(rgba(0, 0, 0, 1))),
         url("../img/navigation-pages/enhance-banner.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/enhance-banner.jpg");
@@ -2240,6 +2105,7 @@ body {
     width: 100%;
     /* outline: solid 1px blue; */
 }
+
 .enhance-image img,
 .rewards-image img,
 .support-image img {
@@ -2989,6 +2855,7 @@ html {
     left: 0;
     position: absolute;
 }
+
 .input-error-verify {
     bottom: -17px;
     color: #e6331f;
@@ -3101,6 +2968,13 @@ html {
 .message-button:hover {
     color: #000;
     cursor: pointer;
+}
+
+.no-deals-container {
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
 }
 
 .page-hero {
@@ -3542,13 +3416,11 @@ html {
 
 .rewards-background {
     background-attachment: fixed;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             left bottom,
             from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
-        ),
+            to(rgba(0, 0, 0, 1))),
         url("../img/navigation-pages/rewards-banner.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/rewards-banner.jpg");
@@ -3947,13 +3819,11 @@ html {
 
 .support-background {
     background-attachment: fixed;
-    background-image: -webkit-gradient(
-            linear,
+    background-image: -webkit-gradient(linear,
             left top,
             left bottom,
             from(rgba(0, 0, 0, 0.6)),
-            to(rgba(0, 0, 0, 1))
-        ),
+            to(rgba(0, 0, 0, 1))),
         url("../img/navigation-pages/support-banner.jpg");
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
         url("../img/navigation-pages/support-banner.jpg");
@@ -4307,6 +4177,7 @@ html {
     display: inline;
     transition: color 150ms ease;
 }
+
 .users-form-greeting a:hover,
 .users-form-disclaimer a:hover {
     color: #000;
@@ -5279,18 +5150,14 @@ html {
     }
 
     .banner-gradient {
-        background: -webkit-gradient(
-            linear,
-            left top,
-            right top,
-            from(rgba(255, 255, 255, 1)),
-            to(rgba(255, 255, 255, 0))
-        );
-        background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 1),
-            rgba(255, 255, 255, 0)
-        );
+        background: -webkit-gradient(linear,
+                left top,
+                right top,
+                from(rgba(255, 255, 255, 1)),
+                to(rgba(255, 255, 255, 0)));
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 1),
+                rgba(255, 255, 255, 0));
         bottom: 0;
         display: block;
         left: 0;
@@ -5618,6 +5485,7 @@ html {
         -webkit-box-pack: start;
         justify-content: flex-start;
     }
+
     /*  */
 
     /* .card-location {
@@ -5663,7 +5531,7 @@ html {
         padding: 10px 5px 0 5px;
     }
 
-    .container ~ .container {
+    .container~.container {
         padding: 10px 5px 0 5px;
     }
 
@@ -6357,6 +6225,7 @@ html {
     .google:hover {
         opacity: 1;
     }
+
     .submit:hover {
         color: #fff;
     }
@@ -6434,7 +6303,7 @@ html {
         padding: 0 0 10px 0;
     }
 
-    .container ~ .container {
+    .container~.container {
         padding: 0 0 0 0;
     }
 
