@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="/public/img/logo.png" alt="My Logo" width="153" height="100" />
+</p>
+
 ## About Your Social Offers (YSO)
 
 A prototype discount/coupon/rebate web and mobile app. My first build in my first development role. It initially started as me building it as a one-user system using just the front end and the browser's local storage.
@@ -26,10 +30,6 @@ Once signed, you have access to:
 All data is saved to phpMyAdmin and none is used outside of this application. Nothing is sent anywhere, only used for YSO development purposes.
 
 -   Visit : **[Your Social Offers Rebate App](https://ysot.yso.co/)**
-
-<p align="center">
-    <img src="/public/img/logo.png" alt="My Logo" width="153" height="100" />
-</p>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
