@@ -21,8 +21,7 @@
                 <h1>Business Support</h1>
                 <h3>We are here to help you build your personalized campaigns, social media endevours, and marketing
                     ideas.</h3>
-                <a href="mailto: Support@YourSocialOffers.com" aria-label="Support Email"><i class="fa fa-envelope"
-                        aria-hidden="true"></i>
+                <a href="#" aria-label="Support Email"><i class="fa fa-envelope" aria-hidden="true"></i>
                     Support@YourSocialOffers.com
                 </a>
                 <p>Regardless of your social media marketing needs, we can help. Users and merchants alike can call us
@@ -35,8 +34,7 @@
             <div class="support-text">
                 <h1>User Support</h1>
                 <h3>Our friendly support staff is standing by to assist you with any of your needs.</h3>
-                <a href="mailto: Support@YourSocialOffers.com" aria-label="Support Email"><i class="fa fa-envelope"
-                        aria-hidden="true"></i>
+                <a href="#" aria-label="Support Email"><i class="fa fa-envelope" aria-hidden="true"></i>
                     Support@YourSocialOffers.com
                 </a>
                 <p>We are available by email and by phone for any questions or concerns regarding any issues faced while
