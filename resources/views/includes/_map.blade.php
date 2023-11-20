@@ -43,7 +43,7 @@
         </div>
     </div>
     {{-- IF THERES NO LOCATIONS TO SHOW THERES NO DETAILS --}}
-    @if ($locations->count() < 1)
+    @if (count($locations) < 1)
         <div class="map-location-list-container">
             <div>
                 <ul class="map-location-list">
