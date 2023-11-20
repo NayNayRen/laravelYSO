@@ -26,7 +26,7 @@
     <div id="scroll-point"></div>
     <div class="header">
         <div class="header-greeting">Find deals, share them with friends... Your Social Offers become their offers too!
-            <a href="https://yourgrowthdashboard.com/" target="_blank">Learn More</a>
+            <a href={{ route('support') }}>Learn More</a>
         </div>
         {{-- LOGO/HOME ICON BUTTON --}}
         <div class="header-navigation">
@@ -89,8 +89,8 @@
             <h1>Sales & Revenue</h1>
             <h2>Get more of each with YSO.</h2>
             <div class="page-hero-button-container">
-                <a href="https://yourgrowthdashboard.com/" class="page-hero-button" target="_blank">Learn More</a>
-                <a href="https://beta.yso.co/" class="page-hero-button" target="_blank">Sign Up</a>
+                <a href={{ route('support') }} class="page-hero-button">Learn More</a>
+                <a href="https://beta.yso.co/" class="page-hero-button">Sign Up</a>
             </div>
         </div>
         {{-- SCROLL POINT KICKS IN --}}
@@ -133,7 +133,7 @@
                             you
                             cannot find otherwise. The time and budget it would take to reach the masses with a
                             conventional campaign is out of bounds for most.</p>
-                        <a href="https://yourgrowthdashboard.com/" class="page-hero-button" target="_blank">Learn
+                        <a href={{ route('support') }} class="page-hero-button">Learn
                             More</a>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                             experiences also benefits the merchant. We help these merchants by offering complete
                             flexibility
                             to easily create and share all of their offers and services.</p>
-                        <a href="https://yourgrowthdashboard.com/" class="page-hero-button" target="_blank">Learn
+                        <a href={{ route('support') }} class="page-hero-button">Learn
                             More</a>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
                             base. Rewards can be distributed and shared via your social media outlets. YSO lets you
                             design
                             your custom campaign and share it quickly, reaching your new and existing customers.</p>
-                        <a href="https://yourgrowthdashboard.com/" class="page-hero-button" target="_blank">Learn
+                        <a href={{ route('support') }} class="page-hero-button">Learn
                             More</a>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                             In turn, you can update and track each incentive you create, knowing which incentive hits
                             home
                             with your customers.</p>
-                        <a href="https://yourgrowthdashboard.com/" class="page-hero-button" target="_blank">Learn
+                        <a href={{ route('support') }} class="page-hero-button">Learn
                             More</a>
                     </div>
                 </div>
