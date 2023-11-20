@@ -2,10 +2,11 @@
 
 /* REGISTER AND LOG IN MEDIA BUTTONS */
 .apple {
-    -webkit-transition: opacity 150ms ease;
     background-color: #000;
+}
+
+.apple:hover {
     cursor: not-allowed;
-    transition: opacity 150ms ease;
 }
 
 .facebook {
@@ -20,7 +21,6 @@
     transition: opacity 150ms ease;
 }
 
-.apple:hover,
 .facebook:hover,
 .google:hover {
     opacity: 0.75;
@@ -6377,7 +6377,6 @@ html {
         top: 10px;
     }
 
-    .apple:hover,
     .facebook:hover,
     .google:hover {
         opacity: 1;

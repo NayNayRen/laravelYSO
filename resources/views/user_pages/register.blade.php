@@ -15,10 +15,10 @@
                 <i class="fa fa-google" aria-hidden="true"></i>
                 Continue with Google
             </a>
-            <a href="#" class="users-buttons apple" aria-label="Continue with Apple">
+            <div class="users-buttons apple" aria-label="Continue with Apple">
                 <i class="fa fa-apple" aria-hidden="true"></i>
                 Continue with Apple
-            </a>
+            </div>
         </div>
         <span class="grey-text">Continue signing up using your email below.</span>
         {{-- REGISTER FORM --}}
