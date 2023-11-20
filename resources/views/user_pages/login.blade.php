@@ -17,7 +17,8 @@
                 <i class="fa fa-google" aria-hidden="true"></i>
                 Continue with Google
             </a>
-            <a href="/auth/apple/redirect" class="users-buttons apple" aria-label="Continue with Apple">
+            {{-- <a href="/auth/apple/redirect" class="users-buttons apple" aria-label="Continue with Apple"> --}}
+            <a href="#" class="users-buttons apple" aria-label="Continue with Apple">
                 <i class="fa fa-apple" aria-hidden="true"></i>
                 Continue with Apple
             </a>
