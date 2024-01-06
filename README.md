@@ -29,7 +29,7 @@ Once signed, you have access to:
 
 All data is saved to phpMyAdmin and none is used outside of this application. Nothing is sent anywhere, only used for YSO development purposes.
 
--   Visit : **[Your Social Offers Rebate App](https://ysot.yso.co/)**
+-   Visit : **[Your Social Offers Rebate App](https://laravelyso.net)**
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
